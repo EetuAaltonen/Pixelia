@@ -1437,6 +1437,25 @@ if (distance_to_object(obj_iron_ore) &lt; 10 and mining == 0 ||
 {
     draw_sprite(spr_E,1,x,y-20);   
 }
+
+//Enemy's stats
+//if (instance_exists(obj_bat))
+//{
+    if (distance_to_point(instance_nearest(x, y, obj_bat).x, 
+        instance_nearest(x, y, obj_bat).y) &lt; 50)
+    {
+        enemy = instance_nearest(x, y, obj_bat);
+        var str_draw, def_draw, mag_draw;
+        str_draw = instance_nearest(x, y, obj_bat).str;
+        draw_text(x, view_yview-30, string(str_draw));
+        
+        def_draw = instance_nearest(x, y, obj_bat).def;
+        draw_text(x, view_yview-40, string(def_draw));
+        
+        mag_draw = instance_nearest(x, y, obj_bat).mag;
+        draw_text(x, view_yview-50, string(mag_draw));
+    }
+//}
 </string>
           </argument>
         </arguments>

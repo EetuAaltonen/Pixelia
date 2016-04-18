@@ -322,7 +322,6 @@ draw_text(view_xview+316,view_yview+278, string(xp_limit));
 var slash;
 slash = "/  "
 draw_text(view_xview+306,view_yview+278, string(slash));
-
 </string>
           </argument>
         </arguments>
