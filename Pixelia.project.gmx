@@ -28,6 +28,16 @@
     <sprites name="HUD">
       <sprite>sprites\spr_darkness</sprite>
       <sprite>sprites\spr_lightness</sprite>
+      <sprite>sprites\spr_quests</sprite>
+      <sprite>sprites\spr_counter</sprite>
+      <sprite>sprites\spr_counter_items</sprite>
+      <sprite>sprites\spr_stats</sprite>
+      <sprite>sprites\spr_pointer</sprite>
+      <sprite>sprites\spr_mouse</sprite>
+      <sprite>sprites\spr_screen</sprite>
+      <sprite>sprites\spr_enemies_stats</sprite>
+      <sprite>sprites\spr_hud</sprite>
+      <sprite>sprites\spr_hud_quest</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_abilitylights</sprite>
@@ -91,8 +101,6 @@
     <sprite>sprites\spr_coin</sprite>
     <sprite>sprites\spr_combat_skills</sprite>
     <sprite>sprites\spr_compass</sprite>
-    <sprite>sprites\spr_counter</sprite>
-    <sprite>sprites\spr_counter_items</sprite>
     <sprite>sprites\spr_crouch</sprite>
     <sprite>sprites\spr_desk</sprite>
     <sprite>sprites\spr_dialog</sprite>
@@ -113,8 +121,6 @@
     <sprite>sprites\spr_heal</sprite>
     <sprite>sprites\spr_hitbox</sprite>
     <sprite>sprites\spr_hitbox_small</sprite>
-    <sprite>sprites\spr_hud</sprite>
-    <sprite>sprites\spr_hud_quest</sprite>
     <sprite>sprites\spr_inventory</sprite>
     <sprite>sprites\spr_inventory_iron</sprite>
     <sprite>sprites\spr_inventory_log</sprite>
@@ -131,28 +137,23 @@
     <sprite>sprites\spr_mining_dust</sprite>
     <sprite>sprites\spr_mining_hit</sprite>
     <sprite>sprites\spr_money_draw</sprite>
-    <sprite>sprites\spr_mouse</sprite>
     <sprite>sprites\spr_night</sprite>
     <sprite>sprites\spr_pause</sprite>
     <sprite>sprites\spr_pelaaja_shield</sprite>
     <sprite>sprites\spr_pixelia</sprite>
     <sprite>sprites\spr_platform</sprite>
     <sprite>sprites\spr_play</sprite>
-    <sprite>sprites\spr_ponter</sprite>
     <sprite>sprites\spr_potion</sprite>
     <sprite>sprites\spr_Q_ready</sprite>
-    <sprite>sprites\spr_quests</sprite>
     <sprite>sprites\spr_quests_dialogs</sprite>
     <sprite>sprites\spr_quit</sprite>
     <sprite>sprites\spr_quit_draw</sprite>
     <sprite>sprites\spr_restart</sprite>
-    <sprite>sprites\spr_screen</sprite>
     <sprite>sprites\spr_shelf</sprite>
     <sprite>sprites\spr_sign</sprite>
     <sprite>sprites\spr_sign_bg</sprite>
     <sprite>sprites\spr_spawner</sprite>
     <sprite>sprites\spr_stamina</sprite>
-    <sprite>sprites\spr_stats</sprite>
     <sprite>sprites\spr_talk</sprite>
     <sprite>sprites\spr_testit</sprite>
     <sprite>sprites\spr_torch</sprite>
@@ -189,9 +190,11 @@
     <script>scripts\scr_player_cave_stairs.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_coin_collected.gml</script>
+    <script>scripts\scr_potion_collected.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_sign</font>
+    <font>fonts\fnt_enemies_stats</font>
     <font>fonts\fnt_item_counter</font>
     <font>fonts\fnt_dialog</font>
   </fonts>
@@ -207,11 +210,16 @@
       <object>objects\obj_door</object>
       <object>objects\obj_cave_door</object>
       <object>objects\obj_door_locked</object>
+      <object>objects\obj_blacksmith_shop</object>
+      <object>objects\obj_blacksmith_floor</object>
+      <object>objects\obj_blacksmith_roof</object>
+      <object>objects\obj_blacksmith_wall</object>
     </objects>
     <objects name="Collectable">
       <object>objects\obj_potion</object>
       <object>objects\obj_coin</object>
       <object>objects\obj_coin_collected</object>
+      <object>objects\obj_potion_collected</object>
       <object>objects\obj_medicpack</object>
       <object>objects\obj_coin_drop</object>
       <object>objects\obj_iron_ore</object>
@@ -237,6 +245,8 @@
         <object>objects\obj_hud</object>
       </objects>
       <object>objects\obj_money_target</object>
+      <object>objects\obj_potion_target</object>
+      <object>objects\obj_dialog</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
@@ -307,17 +317,12 @@
     <object>objects\obj_aim</object>
     <object>objects\obj_arrow</object>
     <object>objects\obj_arrow1</object>
-    <object>objects\obj_blacksmith_floor</object>
-    <object>objects\obj_blacksmith_roof</object>
-    <object>objects\obj_blacksmith_shop</object>
     <object>objects\obj_blacksmith_shoper</object>
-    <object>objects\obj_blacksmith_wall</object>
     <object>objects\obj_blood</object>
     <object>objects\obj_body</object>
     <object>objects\obj_compass</object>
     <object>objects\obj_heal</object>
     <object>objects\obj_cycle</object>
-    <object>objects\obj_dialog</object>
     <object>objects\obj_dust</object>
     <object>objects\obj_enemy_turn_left</object>
     <object>objects\obj_enemy_turn_right</object>

@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_hud_quest,0,view_xview+296, view_yview+3);
+            <string>draw_set_font(fnt_dialog);
+draw_sprite(spr_hud_quest,0,view_xview+296, view_yview+3);
 draw_set_color(c_black);
 
 quest = global.guest;
