@@ -54,6 +54,14 @@ x = obj_spawner.x;
 y = obj_spawner.y;
 global.room_change = 0;
 
+//Drop coins after death
+coin_drop = 0;
+
+//Enemies' stats
+global.enemy_stats1 = 0;
+global.enemy_stats2 = 0;
+global.enemy_stats3 = 0;
+
 //Gravity
 acceleration = 0;
 
@@ -63,7 +71,7 @@ use = 0;
 //Slice
 cooldown_slice = 1;
 
-//Slice
+//Shield
 cooldown_shield = 1;
 
 //Push
@@ -89,7 +97,6 @@ can_jump = 1;
 lights=0;
 roll=0;
 cooldown_roll=1;
-loop=0;
 
 
 
@@ -401,6 +408,40 @@ sprite_index=spr_pelaaja;
             <string>//Platform
 key_down = keyboard_check(vk_down);
 
+//Lives
+/*if (global.lives &lt;= 0)
+{
+        //alarm[7]=120;
+        //global.pause = 1;
+        //global.damage = 0;
+        //visible = false;
+        //instance_create(x,y-5,obj_body);
+        
+        //Drop coins after death
+        coin_drop = global.coin/2;
+        
+        //Enemies' stats
+        global.enemy_stats1 = 0;
+        global.enemy_stats2 = 0;
+        global.enemy_stats3 = 0;
+        
+        instance_create(x, y-5, obj_grave);
+        
+        while coin_drop &lt; global.coin
+        {
+            instance_create(x, y-5, obj_coin);
+            coin_drop += 1;
+        }
+        if (coin_drop == global.coin and global.lives &lt;= 0)
+        {
+    
+            global.coin = 0;
+            coin_drop = 0;
+        }
+        instance_destroy();
+        room_restart();
+}*/
+
 //Push
 if (push == 1)
 {
@@ -652,29 +693,7 @@ if (keyboard_check(vk_up) and not place_free(x,y+1)and not keyboard_check(vk_dow
     sprite_index=spr_jump;
     // audio_play_sound(snd_jump,1,false);
 }
-    
-//Lives
-if (global.lives&lt;=0)
-{
-        alarm[7]=120;
-        global.pause = 1;
-        global.damage = 0;
-        visible = false;
-        instance_create(x,y-5,obj_body);
-        instance_create(x,y-5,obj_grave);
-        
-        while loop&lt;global.coin
-        {
-            instance_create(x,y-5,obj_coin);
-            loop += 1;
-        }
-        if (loop==global.coin and global.lives&lt;=0)
-        {
-    
-            global.coin=0;
-            loop=0;
-        }
-}
+
 //Abilities
 if roll=1 and  hspeed&gt;0 and not keyboard_check(vk_shift)
 {
@@ -700,129 +719,6 @@ if keyboard_check(vk_delete)
 {
     global.lives=0;
 }*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith_wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith_roof">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith_floor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
 </string>
           </argument>
         </arguments>
@@ -1111,6 +1007,129 @@ if (!place_free(x+hspeed,y+vspeed))
             <kind>1</kind>
             <string>lives=5
 global.xp=global.xp+1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_blacksmith_wall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if vspeed&gt;25{lives=lives-1}
+if vspeed&gt;50{lives=lives-5}
+if (!place_free(x+hspeed,y))
+{
+    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
+    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
+    hspeed=0;
+}
+if (!place_free(x,y+vspeed))
+{
+    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
+    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
+    vspeed=0;
+}
+
+if (!place_free(x+hspeed,y+vspeed))
+{
+    hspeed=0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_blacksmith_roof">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if vspeed&gt;25{lives=lives-1}
+if vspeed&gt;50{lives=lives-5}
+if (!place_free(x+hspeed,y))
+{
+    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
+    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
+    hspeed=0;
+}
+if (!place_free(x,y+vspeed))
+{
+    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
+    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
+    vspeed=0;
+}
+
+if (!place_free(x+hspeed,y+vspeed))
+{
+    hspeed=0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_blacksmith_floor">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if vspeed&gt;25{lives=lives-1}
+if vspeed&gt;50{lives=lives-5}
+if (!place_free(x+hspeed,y))
+{
+    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
+    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
+    hspeed=0;
+}
+if (!place_free(x,y+vspeed))
+{
+    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
+    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
+    vspeed=0;
+}
+
+if (!place_free(x+hspeed,y+vspeed))
+{
+    hspeed=0;
+}
 </string>
           </argument>
         </arguments>
@@ -1957,6 +1976,10 @@ alarm[1] = 25;
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
+//Enemies' stats
+global.enemy_stats1 = 0;
+global.enemy_stats2 = 0;
+global.enemy_stats3 = 0;
 room_restart();
 </string>
           </argument>

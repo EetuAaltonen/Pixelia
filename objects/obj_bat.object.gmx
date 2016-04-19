@@ -30,6 +30,9 @@ hspeed = 1;
 vspeed = 0;
 alarm[1] = random_range(30, 150);
 
+//Damage
+get_damage = 1;
+
 //Stats generator
 def = 0;
 str = 0;
@@ -39,7 +42,7 @@ def_ = 0;
 str_ = 0;
 mag_ = 0;
 
-rand = random_range(1, 200);
+rand = random_range(1, 2000);
 if (rand &lt; 10 )
 {
     str_ = 1;
@@ -53,6 +56,30 @@ else if (rand &gt; 20 and rand &lt; 30)
     mag_ = 1; 
 }
 
+else if (rand &gt; 30 and rand &lt; 35)
+{
+    str_ = 5; 
+}
+else if (rand &gt; 35 and rand &lt; 40)
+{
+    def_ = 5; 
+}
+else if (rand &gt; 40 and rand &lt; 45)
+{
+    mag_ = 5; 
+}
+else if (rand == 46)
+{
+    str_ = 10; 
+}
+else if (rand == 47)
+{
+    def_ = 10; 
+}
+else if (rand == 48)
+{
+    mag_ = 10; 
+}
 //Strength
 str = 1 + str_;
 
@@ -63,7 +90,30 @@ def = 1 + def_;
 mag = 1 + mag_;
 
 //Stats draw
-state = 0;
+draw_state = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>get_damage = 1;
 </string>
           </argument>
         </arguments>
@@ -94,6 +144,49 @@ alarm[1] = random_range(30, 150);
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (def &lt;= 0)
+{
+    //Enemies' stats
+    if (draw_state == global.enemy_stats1)
+    {
+        global.enemy_stats1 = 0;
+        draw_state = false;
+    }
+    else if (draw_state == global.enemy_stats2)
+    {
+        global.enemy_stats2 = 0;
+        draw_state = false;
+    }
+    else if (draw_state == global.enemy_stats3)
+    {
+        global.enemy_stats3 = 0;
+        draw_state = false;
+    }
+    
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_stone">
       <action>
         <libid>1</libid>
@@ -119,6 +212,64 @@ alarm[1] = random_range(30, 150);
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_grass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hspeed *= -1;
+vspeed = 0;
+alarm[1] = random_range(30, 150);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_hitbox">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.damage == 1)
+{
+    global.lives -= str;
+    scr_got_damage();
+}
+else
+{
+    global.pause = 0;
+    global.pause_draw = 0;
+    global.inventory = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_lights">
       <action>
         <libid>1</libid>
@@ -136,7 +287,12 @@ alarm[1] = random_range(30, 150);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>if (get_damage == 1)
+{
+    get_damage = 0;
+    def = def - 1;
+    alarm[2] = 20;
+}
 </string>
           </argument>
         </arguments>
@@ -188,23 +344,40 @@ alarm[1] = random_range(30, 150);
 
 //Font
 draw_set_font(fnt_enemies_stats);
-    
-if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
+
+if (distance_to_object(obj_pelaaja) &lt; 60)
 {
     
-    if (global.enemy_stats1 == 0)
+    if (global.enemy_stats1 == 0 and draw_state == false)
     {
         //State
-        global.enemy_stats1 = 1; 
-        state = global.enemy_stats1;
-        
+        global.enemy_stats1 = 1;
+        draw_state = global.enemy_stats1;
+        depth = -4001;
+    }
+    else if (global.enemy_stats2 == 0 and draw_state == false)
+    {
+        //State
+        global.enemy_stats2 = 2;
+        draw_state = global.enemy_stats2;
+        depth = -4001;
+    }
+    else if (global.enemy_stats3 == 0 and draw_state == false)
+    {
+        //State
+        global.enemy_stats3 = 3;
+        draw_state = global.enemy_stats3;
+        depth = -4001;
+    }
+    else if (global.enemy_stats1 == draw_state)
+    {
         //Draw stats background
-        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+140,
+        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
                     view_yview+3, image_xscale, image_yscale, 
                     image_angle, c_white, 0.7);
                     
         //Draw stats picture
-        draw_sprite_ext(spr_bat, image_index, view_xview+155,
+        draw_sprite_ext(spr_bat, image_index, view_xview+145,
                     view_yview+10, image_xscale, image_yscale, 
                     image_angle, c_white, image_alpha);
         
@@ -213,15 +386,15 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         str_draw = str;
         if (str &gt; 1)
         {       
-            draw_text_color(view_xview+190, view_yview+2, string(str),
+            draw_text_color(view_xview+180, view_yview+2, string(str),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+175, view_yview+2, "S:",
+            draw_text_color(view_xview+165, view_yview+2, "S:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+190, view_yview+2, string(str));
-            draw_text(view_xview+175, view_yview+2, "S: ");
+            draw_text(view_xview+180, view_yview+2, string(str));
+            draw_text(view_xview+165, view_yview+2, "S: ");
         }
         
         //Draw defence
@@ -229,15 +402,15 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         def_draw = def;
         if (def &gt; 1)
         {
-            draw_text_color(view_xview+220, view_yview+2, string(def),
+            draw_text_color(view_xview+210, view_yview+2, string(def),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+205, view_yview+2, "D:",
+            draw_text_color(view_xview+195, view_yview+2, "D:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+220, view_yview+2, string(def));
-            draw_text(view_xview+205, view_yview+2, "D:");
+            draw_text(view_xview+210, view_yview+2, string(def));
+            draw_text(view_xview+195, view_yview+2, "D:");
         }
         
         //Draw magic
@@ -245,30 +418,26 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         mag_draw = mag;    
         if (mag &gt; 1)
         {
-            draw_text_color(view_xview+250, view_yview+2, string(mag),
+            draw_text_color(view_xview+240, view_yview+2, string(mag),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+235, view_yview+2, "M:",
+            draw_text_color(view_xview+225, view_yview+2, "M:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+250, view_yview+2, string(mag));
-            draw_text(view_xview+235, view_yview+2, "M:");
+            draw_text(view_xview+240, view_yview+2, string(mag));
+            draw_text(view_xview+225, view_yview+2, "M:");
         }
     }
-    else if (global.enemy_stats2 == 0)
+    else if (global.enemy_stats2 == draw_state)
     {
-        //State
-        global.enemy_stats2 = 1;
-        state = global.enemy_stats2;
-        
         //Draw stats background
-        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+140,
+        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
                     view_yview+17, image_xscale, image_yscale, 
                     image_angle, c_white, 0.7);
                     
         //Draw stats picture
-        draw_sprite_ext(spr_bat, image_index, view_xview+155,
+        draw_sprite_ext(spr_bat, image_index, view_xview+145,
                     view_yview+24, image_xscale, image_yscale, 
                     image_angle, c_white, image_alpha);
         
@@ -277,15 +446,15 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         str_draw = str;
         if (str &gt; 1)
         {       
-            draw_text_color(view_xview+190, view_yview+16, string(str),
+            draw_text_color(view_xview+180, view_yview+16, string(str),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+175, view_yview+16, "S:",
+            draw_text_color(view_xview+165, view_yview+16, "S:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+190, view_yview+16, string(str));
-            draw_text(view_xview+175, view_yview+16, "S: ");
+            draw_text(view_xview+180, view_yview+16, string(str));
+            draw_text(view_xview+165, view_yview+16, "S: ");
         }
         
         //Draw defence
@@ -293,15 +462,15 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         def_draw = def;
         if (def &gt; 1)
         {
-            draw_text_color(view_xview+220, view_yview+16, string(def),
+            draw_text_color(view_xview+210, view_yview+16, string(def),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+205, view_yview+16, "D:",
+            draw_text_color(view_xview+195, view_yview+16, "D:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+220, view_yview+16, string(def));
-            draw_text(view_xview+205, view_yview+16, "D:");
+            draw_text(view_xview+210, view_yview+16, string(def));
+            draw_text(view_xview+195, view_yview+16, "D:");
         }
         
         //Draw magic
@@ -309,31 +478,27 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         mag_draw = mag;    
         if (mag &gt; 1)
         {
-            draw_text_color(view_xview+250, view_yview+16, string(mag),
+            draw_text_color(view_xview+240, view_yview+16, string(mag),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+235, view_yview+16, "M:",
+            draw_text_color(view_xview+225, view_yview+16, "M:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+250, view_yview+16, string(mag));
-            draw_text(view_xview+235, view_yview+16, "M:");
+            draw_text(view_xview+240, view_yview+16, string(mag));
+            draw_text(view_xview+225, view_yview+16, "M:");
         }
     }
-    else if (global.enemy_stats3 == 0)
+    else if (global.enemy_stats3 == draw_state)
     {
-        //State
-        global.enemy_stats3 = 1;
-        state = global.enemy_stats3;   
-    
         //Draw stats background
-        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+140,
-                    view_yview+24, image_xscale, image_yscale, 
+        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
+                    view_yview+31, image_xscale, image_yscale, 
                     image_angle, c_white, 0.7);
                     
         //Draw stats picture
-        draw_sprite_ext(spr_bat, image_index, view_xview+155,
-                    view_yview+24, image_xscale, image_yscale, 
+        draw_sprite_ext(spr_bat, image_index, view_xview+145,
+                    view_yview+38, image_xscale, image_yscale, 
                     image_angle, c_white, image_alpha);
         
         //Draw strength
@@ -341,15 +506,15 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         str_draw = str;
         if (str &gt; 1)
         {       
-            draw_text_color(view_xview+190, view_yview+16, string(str),
+            draw_text_color(view_xview+180, view_yview+30, string(str),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+175, view_yview+16, "S:",
+            draw_text_color(view_xview+165, view_yview+30, "S:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+190, view_yview+16, string(str));
-            draw_text(view_xview+175, view_yview+16, "S: ");
+            draw_text(view_xview+180, view_yview+30, string(str));
+            draw_text(view_xview+165, view_yview+30, "S: ");
         }
         
         //Draw defence
@@ -357,15 +522,15 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         def_draw = def;
         if (def &gt; 1)
         {
-            draw_text_color(view_xview+220, view_yview+16, string(def),
+            draw_text_color(view_xview+210, view_yview+30, string(def),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+205, view_yview+16, "D:",
+            draw_text_color(view_xview+195, view_yview+30, "D:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+220, view_yview+16, string(def));
-            draw_text(view_xview+205, view_yview+16, "D:");
+            draw_text(view_xview+210, view_yview+30, string(def));
+            draw_text(view_xview+195, view_yview+30, "D:");
         }
         
         //Draw magic
@@ -373,39 +538,39 @@ if (distance_to_point(obj_pelaaja.x, obj_pelaaja.y) &lt; 60 and state == 0)
         mag_draw = mag;    
         if (mag &gt; 1)
         {
-            draw_text_color(view_xview+250, view_yview+16, string(mag),
+            draw_text_color(view_xview+240, view_yview+30, string(mag),
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+235, view_yview+16, "M:",
+            draw_text_color(view_xview+225, view_yview+30, "M:",
             c_yellow, c_yellow, c_yellow, c_yellow, 1);
         }
         else
         {
-            draw_text(view_xview+250, view_yview+16, string(mag));
-            draw_text(view_xview+235, view_yview+16, "M:");
+            draw_text(view_xview+240, view_yview+30, string(mag));
+            draw_text(view_xview+225, view_yview+30, "M:");
         }
     }
+    else
+    {
+        draw_state = false;
+    }
 }
-else if (state == 1)
+else if (not draw_state == false) 
 {
-    if (state == global.enemy_stats1)
+    depth = -100;
+    if (draw_state == global.enemy_stats1)
     {
         global.enemy_stats1 = 0;
-        state = 0;
+        draw_state = false;
     }
-    else if (state == global.enemy_stats2)
+    else if (draw_state == global.enemy_stats2)
     {
         global.enemy_stats2 = 0;
-        state = 0;
+        draw_state = false;
     }
-    else if (state == global.enemy_stats3)
+    else if (draw_state == global.enemy_stats3)
     {
         global.enemy_stats3 = 0;
-        state = 0;
-    }
-    else if (state == global.enemy_stats4)
-    {
-        global.enemy_stats4 = 0;
-        state = 0;
+        draw_state = false;
     }
 }
 </string>

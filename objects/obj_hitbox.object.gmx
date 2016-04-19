@@ -158,7 +158,7 @@ part_particles_create(global.ps, x, y, global.pt_Blood, random_range(5,10));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_got_damage();
+            <string>//scr_got_damage();
 </string>
           </argument>
         </arguments>
