@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>visible=false
+            <string>visible = false;
 </string>
           </argument>
         </arguments>
@@ -73,10 +73,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if visible=true
-    {visible=false}
-if visible=false
-    {visible=true};
+            <string>if (visible = true)
+{
+    visible = false;
+}
+else if (visible=false)
+{
+    visible = true;
+}
 </string>
           </argument>
         </arguments>

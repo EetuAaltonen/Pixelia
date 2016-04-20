@@ -3,7 +3,7 @@
   <spriteName>spr_grave</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-102</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_alpha = 1;
 gravity = 1;
-alarm[1] = 100;
+alarm[1] = 1000;
 </string>
           </argument>
         </arguments>
@@ -52,13 +52,13 @@ alarm[1] = 100;
             <kind>1</kind>
             <string>if global.pause == 0
 {
-    image_alpha=image_alpha-0.2;
-    alarm[1] = 100;
+    image_alpha = image_alpha-0.2;
+    alarm[1] = 1000;
 }
 else
 {
-    image_alpha=image_alpha-0;
-    alarm[1] = 100;
+    image_alpha = image_alpha-0;
+    alarm[1] = 1000;
 }
 </string>
           </argument>
@@ -91,7 +91,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_maa">
+    <event eventtype="4" ename="obj_stone">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -108,25 +108,99 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_grass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_cave_bridge_0003">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_cave_bridge_0002">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_cave_bridge_0001">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
 </string>
           </argument>
         </arguments>

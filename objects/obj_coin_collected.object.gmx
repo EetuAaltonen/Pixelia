@@ -32,7 +32,7 @@ move_towards_point(obj_money_target.x, obj_money_target.y, 8)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_money_target">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,8 +49,11 @@ move_towards_point(obj_money_target.x, obj_money_target.y, 8)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.coin += 1;
-instance_destroy();
+            <string>if (distance_to_object(obj_money_target) &lt; 40)
+{
+    global.coin += 1;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

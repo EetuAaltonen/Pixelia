@@ -409,38 +409,35 @@ sprite_index=spr_pelaaja;
 key_down = keyboard_check(vk_down);
 
 //Lives
-/*if (global.lives &lt;= 0)
+if (global.lives &lt;= 0)
 {
-        //alarm[7]=120;
+        //alarm[7] = 120;
         //global.pause = 1;
         //global.damage = 0;
-        //visible = false;
-        //instance_create(x,y-5,obj_body);
         
         //Drop coins after death
-        coin_drop = global.coin/2;
+        coin_drop = round(global.coin/2);
         
         //Enemies' stats
         global.enemy_stats1 = 0;
         global.enemy_stats2 = 0;
         global.enemy_stats3 = 0;
         
-        instance_create(x, y-5, obj_grave);
-        
+        //Drop coins
         while coin_drop &lt; global.coin
         {
             instance_create(x, y-5, obj_coin);
             coin_drop += 1;
+            global.coin -= 1;
         }
-        if (coin_drop == global.coin and global.lives &lt;= 0)
-        {
-    
-            global.coin = 0;
-            coin_drop = 0;
-        }
-        instance_destroy();
-        room_restart();
-}*/
+        
+        //Create grave
+        instance_create(x, y-5, obj_grave);
+        
+        x = obj_spawner.x;
+        y = obj_spawner.y;
+        global.lives = 10;
+}
 
 //Push
 if (push == 1)

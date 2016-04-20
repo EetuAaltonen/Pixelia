@@ -42,7 +42,7 @@ def_ = 0;
 str_ = 0;
 mag_ = 0;
 
-rand = random_range(1, 2000);
+rand = random_range(30, 48);
 if (rand &lt; 10 )
 {
     str_ = 1;

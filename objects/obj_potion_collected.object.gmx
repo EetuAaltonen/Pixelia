@@ -31,7 +31,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_potion_target">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,8 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.potion += 1;
-instance_destroy();
+            <string>if (distance_to_object(obj_potion_target) &lt; 40)
+{
+    global.potion += 1;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
