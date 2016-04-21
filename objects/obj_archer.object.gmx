@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>gravity = 0.5;
 shoot = 1;
+aiming = true;
 image_xscale = 1;
 
 instance_create(x - 5, y + 9, obj_archer_bow);
@@ -108,8 +109,17 @@ else
     image_xscale = -1;
 }
 
+if (obj_pelaaja.x &gt; 0 | obj_pelaaja.x &lt; 0)
+{
+    aiming = true;
+}
+else
+{
+    aiming = false;
+}
+
 //Shoot
-if (distance_to_object(obj_pelaaja) &lt; 100 and shoot == 1)
+if (shoot == 1 and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
 {
     instance_create(x, y, obj_arrow);
     alarm[1] = 100;

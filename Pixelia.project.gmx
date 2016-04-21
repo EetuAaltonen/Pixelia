@@ -40,12 +40,12 @@
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
+      <sprite>sprites\spr_shadow_die</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_bat</sprite>
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_shadow</sprite>
-      <sprite>sprites\spr_shadow_die</sprite>
       <sprite>sprites\spr_</sprite>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_archer_bow</sprite>

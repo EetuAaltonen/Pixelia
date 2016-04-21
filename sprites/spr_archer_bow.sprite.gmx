@@ -3,12 +3,12 @@
   <type>0</type>
   <xorig>9</xorig>
   <yorigin>7</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
-  <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>18</bbox_right>
+  <sepmasks>-1</sepmasks>
+  <bboxmode>2</bboxmode>
+  <bbox_left>24</bbox_left>
+  <bbox_right>138</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>14</bbox_bottom>
   <HTile>0</HTile>
@@ -17,10 +17,11 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>19</width>
+  <width>139</width>
   <height>15</height>
   <frames>
     <frame index="0">images\spr_archer_bow_0.png</frame>
     <frame index="1">images\spr_archer_bow_1.png</frame>
+    <frame index="2">images\spr_archer_bow_2.png</frame>
   </frames>
 </sprite>

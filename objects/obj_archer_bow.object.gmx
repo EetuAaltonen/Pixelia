@@ -28,7 +28,31 @@
             <string>image_speed = 0;
 image_index = 0;
 image_xscale = 1;
+shoot = false;
 image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shoot = false;
 </string>
           </argument>
         </arguments>
@@ -51,8 +75,7 @@ image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (/*(obj_pelaaja.x &lt; -5 | obj_pelaaja.x &gt; 5)
-    and*/ distance_to_object(obj_pelaaja) &lt; 100)
+            <string>if (distance_to_object(obj_pelaaja) &lt; 100)
 {
     image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
     
@@ -67,10 +90,40 @@ image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
         y = (instance_nearest(x, y, obj_archer)).y + 4; 
     }
 }
-else if (obj_pelaaja.x &gt; -3 and obj_pelaaja.x &lt; 3
-         and distance_to_object(obj_pelaaja) &lt; 100)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (distance_to_object(obj_pelaaja) == 0
+    and not distance_to_object(obj_grass) == 0)
 {
-    image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
+    if (instance_nearest(x, y, obj_archer).shoot == 1 and shoot == true)
+    {
+        image_index = 2;
+    }
+    if (shoot == false)
+    {
+        shoot = true;
+        alarm[1] = 10;
+    }
 }
 </string>
           </argument>
