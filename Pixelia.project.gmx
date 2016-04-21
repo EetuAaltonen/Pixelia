@@ -50,6 +50,10 @@
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_archer_bow</sprite>
     </sprites>
+    <sprites name="Enemy pictures">
+      <sprite>sprites\spr_pic_bat</sprite>
+      <sprite>sprites\spr_pic_archer</sprite>
+    </sprites>
     <sprites name="HUD">
       <sprite>sprites\spr_darkness</sprite>
       <sprite>sprites\spr_lightness</sprite>
@@ -248,6 +252,11 @@
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
+      <object>objects\obj_wood_dust</object>
+      <object>objects\obj_mining_hit</object>
+      <object>objects\obj_mining_dust</object>
+      <object>objects\obj_lever_signal</object>
+      <object>objects\obj_heal</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_shadow</object>
@@ -261,15 +270,6 @@
       <object>objects\obj_</object>
     </objects>
     <objects name="HUD">
-      <object>objects\obj_quests</object>
-      <object>objects\obj_stats</object>
-      <object>objects\obj_item_counter</object>
-      <object>objects\obj_dialogs</object>
-      <object>objects\obj_counter</object>
-      <object>objects\obj_mouse</object>
-      <object>objects\obj_pointer</object>
-      <object>objects\obj_screen</object>
-      <object>objects\obj_darkness</object>
       <objects name="Draw">
         <object>objects\obj_W_ready</object>
         <object>objects\obj_quit_draw</object>
@@ -278,9 +278,23 @@
         <object>objects\obj_building</object>
         <object>objects\obj_hud</object>
       </objects>
-      <object>objects\obj_money_target</object>
-      <object>objects\obj_potion_target</object>
+      <object>objects\obj_counter</object>
+      <object>objects\obj_darkness</object>
       <object>objects\obj_dialog</object>
+      <object>objects\obj_dialogs</object>
+      <object>objects\obj_item_counter</object>
+      <object>objects\obj_money_target</object>
+      <object>objects\obj_mouse</object>
+      <object>objects\obj_pointer</object>
+      <object>objects\obj_potion_target</object>
+      <object>objects\obj_quests</object>
+      <object>objects\obj_screen</object>
+      <objects name="Stats">
+        <object>objects\obj_lives</object>
+        <object>objects\obj_mana</object>
+        <object>objects\obj_stamina</object>
+        <object>objects\obj_stats</object>
+      </objects>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
@@ -319,30 +333,19 @@
     <object>objects\obj_enemy_turn_right</object>
     <object>objects\obj_flower</object>
     <object>objects\obj_goal</object>
-    <object>objects\obj_heal</object>
     <object>objects\obj_leaf</object>
-    <object>objects\obj_lever_signal</object>
-    <object>objects\obj_mining_dust</object>
-    <object>objects\obj_mining_hit</object>
     <object>objects\obj_NPC</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_pet</object>
     <object>objects\obj_pet_ammo</object>
     <object>objects\obj_use</object>
-    <object>objects\obj_wood_dust</object>
     <object>objects\obj_wood_hit</object>
-    <object>objects\obj_xscale_switch</object>
     <objects name="Player">
       <object>objects\obj_pelaaja1</object>
       <object>objects\obj_pelaaja</object>
       <objects name="Abilities">
         <object>objects\obj_lights</object>
         <object>objects\obj_pelaaja_shield</object>
-      </objects>
-      <objects name="Stats">
-        <object>objects\obj_lives</object>
-        <object>objects\obj_mana</object>
-        <object>objects\obj_stamina</object>
       </objects>
       <object>objects\obj_spawner</object>
       <object>objects\obj_hitbox</object>

@@ -176,7 +176,6 @@
     <instance objName="obj_quit_draw" x="75" y="50" name="inst_98F3CCC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_archer" x="449" y="289" name="inst_1C7675C9" locked="0" code="" scaleX="1" scaleY="1.04166662693024" colour="4294967295" rotation="0"/>
     <instance objName="obj_archer" x="520" y="348" name="inst_E2598817" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_xscale_switch" x="517" y="352" name="inst_D725776C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goal" x="665" y="215" name="inst_ED91F462" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_compass" x="30" y="60" name="inst_C0DF9ADF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stamina" x="55" y="130" name="inst_A61365F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -27,10 +27,137 @@
             <kind>1</kind>
             <string>gravity = 0.5;
 shoot = 1;
-aiming = true;
-image_xscale = 1;
+//Create a bow
+instance_create(x - 5, y + 6, obj_archer_bow);
+//Animation = Ready
+(instance_nearest(x, y, obj_archer_bow)).image_index = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Damage
+get_damage = 1;
 
-instance_create(x - 5, y + 9, obj_archer_bow);
+//Stats generator
+def = 0;
+str = 0;
+mag = 0;
+
+def_ = 0;
+str_ = 0;
+mag_ = 0;
+
+rand = random_range(30, 48);
+if (rand &lt; 10 )
+{
+    str_ = 1;
+}
+else if (rand &gt;= 10 and rand &lt;= 20)
+{
+    def_ = 1;
+}
+else if (rand &gt; 20 and rand &lt; 30)
+{
+    mag_ = 1; 
+}
+
+else if (rand &gt; 30 and rand &lt; 35)
+{
+    str_ = 5; 
+}
+else if (rand &gt; 35 and rand &lt; 40)
+{
+    def_ = 5; 
+}
+else if (rand &gt; 40 and rand &lt; 45)
+{
+    mag_ = 5; 
+}
+else if (rand == 46)
+{
+    str_ = 10; 
+}
+else if (rand == 47)
+{
+    def_ = 10; 
+}
+else if (rand == 48)
+{
+    mag_ = 10; 
+}
+//Strength
+str = 0;
+
+//Defence
+def = 1 + def_;
+
+//Magic
+mag = 1 + mag_;
+
+//Stats draw
+draw_state = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>get_damage = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>(instance_nearest(x, y, obj_archer_bow)).image_index = 2;
 </string>
           </argument>
         </arguments>
@@ -82,6 +209,51 @@ instance_create(x - 5, y + 9, obj_archer_bow);
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (def &lt;= 0)
+{
+    //Enemies' stats
+    if (draw_state == global.enemy_stats1)
+    {
+        global.enemy_stats1 = 0;
+        draw_state = false;
+    }
+    else if (draw_state == global.enemy_stats2)
+    {
+        global.enemy_stats2 = 0;
+        draw_state = false;
+    }
+    else if (draw_state == global.enemy_stats3)
+    {
+        global.enemy_stats3 = 0;
+        draw_state = false;
+    }
+    //XP
+    global.xp += 20;
+    
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -102,30 +274,26 @@ instance_create(x - 5, y + 9, obj_archer_bow);
             <string>//Turn
 if (obj_pelaaja.x &gt; x)
 {
-    image_xscale = 1;
+    image_index = 0;
 }
 else
 {
-    image_xscale = -1;
-}
-
-if (obj_pelaaja.x &gt; 0 | obj_pelaaja.x &lt; 0)
-{
-    aiming = true;
-}
-else
-{
-    aiming = false;
+    image_index = 1;
 }
 
 //Shoot
 if (shoot == 1 and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
 {
     instance_create(x, y, obj_arrow);
+    (instance_nearest(x, y, obj_arrow)).mag = mag;
+    //Animation
+        //Neutral
+    alarm[2] = 10;
+        //Ready
+    alarm[3] = 80;
+        //Shoot
     alarm[1] = 100;
     shoot = 0;
-    //Animation
-    alarm[2] = 10;
     (instance_nearest(x, y, obj_archer_bow)).image_index = 1;
 }
 </string>
@@ -175,6 +343,267 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+//Font
+draw_set_font(fnt_enemies_stats);
+
+if (distance_to_object(obj_pelaaja) &lt; 200)
+{
+    
+    if (global.enemy_stats1 == 0 and draw_state == false)
+    {
+        //State
+        global.enemy_stats1 = 1;
+        draw_state = global.enemy_stats1;
+        
+        (instance_nearest(x, y, obj_archer_bow)).depth = -4002;
+        depth = -4001;
+    }
+    else if (global.enemy_stats2 == 0 and draw_state == false)
+    {
+        //State
+        global.enemy_stats2 = 2;
+        draw_state = global.enemy_stats2;
+        
+        (instance_nearest(x, y, obj_archer_bow)).depth = -4002;
+        depth = -4001;
+    }
+    else if (global.enemy_stats3 == 0 and draw_state == false)
+    {
+        //State
+        global.enemy_stats3 = 3;
+        draw_state = global.enemy_stats3;
+        
+        (instance_nearest(x, y, obj_archer_bow)).depth = -4002;
+        depth = -4001;
+    }
+    else if (global.enemy_stats1 == draw_state)
+    {
+        //Draw stats background
+        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
+                    view_yview+3, image_xscale, image_yscale, 
+                    image_angle, c_white, 0.7);
+                    
+        //Draw stats picture
+        draw_sprite_ext(spr_pic_archer, image_index, view_xview+145,
+                    view_yview+10, image_xscale, image_yscale, 
+                    image_angle, c_white, image_alpha);
+        
+        //Draw strength
+        var str_draw;
+        str_draw = str;
+        if (str &gt; 1)
+        {       
+            draw_text_color(view_xview+180, view_yview+2, string(str),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+165, view_yview+2, "S:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+180, view_yview+2, string(str));
+            draw_text(view_xview+165, view_yview+2, "S: ");
+        }
+        
+        //Draw defence
+        var def_draw;
+        def_draw = def;
+        if (def &gt; 1)
+        {
+            draw_text_color(view_xview+210, view_yview+2, string(def),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+195, view_yview+2, "D:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+210, view_yview+2, string(def));
+            draw_text(view_xview+195, view_yview+2, "D:");
+        }
+        
+        //Draw magic
+        var mag_draw;
+        mag_draw = mag;    
+        if (mag &gt; 1)
+        {
+            draw_text_color(view_xview+240, view_yview+2, string(mag),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+225, view_yview+2, "M:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+240, view_yview+2, string(mag));
+            draw_text(view_xview+225, view_yview+2, "M:");
+        }
+    }
+    else if (global.enemy_stats2 == draw_state)
+    {
+        //Draw stats background
+        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
+                    view_yview+17, image_xscale, image_yscale, 
+                    image_angle, c_white, 0.7);
+                    
+        //Draw stats picture
+        draw_sprite_ext(spr_pic_archer, image_index, view_xview+145,
+                    view_yview+24, image_xscale, image_yscale, 
+                    image_angle, c_white, image_alpha);
+        
+        //Draw strength
+        var str_draw;
+        str_draw = str;
+        if (str &gt; 1)
+        {       
+            draw_text_color(view_xview+180, view_yview+16, string(str),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+165, view_yview+16, "S:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+180, view_yview+16, string(str));
+            draw_text(view_xview+165, view_yview+16, "S: ");
+        }
+        
+        //Draw defence
+        var def_draw;
+        def_draw = def;
+        if (def &gt; 1)
+        {
+            draw_text_color(view_xview+210, view_yview+16, string(def),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+195, view_yview+16, "D:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+210, view_yview+16, string(def));
+            draw_text(view_xview+195, view_yview+16, "D:");
+        }
+        
+        //Draw magic
+        var mag_draw;
+        mag_draw = mag;    
+        if (mag &gt; 1)
+        {
+            draw_text_color(view_xview+240, view_yview+16, string(mag),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+225, view_yview+16, "M:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+240, view_yview+16, string(mag));
+            draw_text(view_xview+225, view_yview+16, "M:");
+        }
+    }
+    else if (global.enemy_stats3 == draw_state)
+    {
+        //Draw stats background
+        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
+                    view_yview+31, image_xscale, image_yscale, 
+                    image_angle, c_white, 0.7);
+                    
+        //Draw stats picture
+        draw_sprite_ext(spr_pic_archer, image_index, view_xview+145,
+                    view_yview+38, image_xscale, image_yscale, 
+                    image_angle, c_white, image_alpha);
+        
+        //Draw strength
+        var str_draw;
+        str_draw = str;
+        if (str &gt; 1)
+        {       
+            draw_text_color(view_xview+180, view_yview+30, string(str),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+165, view_yview+30, "S:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+180, view_yview+30, string(str));
+            draw_text(view_xview+165, view_yview+30, "S: ");
+        }
+        
+        //Draw defence
+        var def_draw;
+        def_draw = def;
+        if (def &gt; 1)
+        {
+            draw_text_color(view_xview+210, view_yview+30, string(def),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+195, view_yview+30, "D:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+210, view_yview+30, string(def));
+            draw_text(view_xview+195, view_yview+30, "D:");
+        }
+        
+        //Draw magic
+        var mag_draw;
+        mag_draw = mag;    
+        if (mag &gt; 1)
+        {
+            draw_text_color(view_xview+240, view_yview+30, string(mag),
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            draw_text_color(view_xview+225, view_yview+30, "M:",
+            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+        }
+        else
+        {
+            draw_text(view_xview+240, view_yview+30, string(mag));
+            draw_text(view_xview+225, view_yview+30, "M:");
+        }
+    }
+    else
+    {
+        draw_state = false;
+    }
+}
+else if (not draw_state == false) 
+{
+    depth = -100;
+    if (draw_state == global.enemy_stats1)
+    {
+        global.enemy_stats1 = 0;
+        draw_state = false;
+    }
+    else if (draw_state == global.enemy_stats2)
+    {
+        global.enemy_stats2 = 0;
+        draw_state = false;
+    }
+    else if (draw_state == global.enemy_stats3)
+    {
+        global.enemy_stats3 = 0;
+        draw_state = false;
+    }
+}
 </string>
           </argument>
         </arguments>

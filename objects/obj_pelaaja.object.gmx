@@ -408,37 +408,6 @@ sprite_index=spr_pelaaja;
             <string>//Platform
 key_down = keyboard_check(vk_down);
 
-//Lives
-if (global.lives &lt;= 0)
-{
-        //alarm[7] = 120;
-        //global.pause = 1;
-        //global.damage = 0;
-        
-        //Drop coins after death
-        coin_drop = round(global.coin/2);
-        
-        //Enemies' stats
-        global.enemy_stats1 = 0;
-        global.enemy_stats2 = 0;
-        global.enemy_stats3 = 0;
-        
-        //Drop coins
-        while coin_drop &lt; global.coin
-        {
-            instance_create(x, y-5, obj_coin);
-            coin_drop += 1;
-            global.coin -= 1;
-        }
-        
-        //Create grave
-        instance_create(x, y-5, obj_grave);
-        
-        x = obj_spawner.x;
-        y = obj_spawner.y;
-        global.lives = 10;
-}
-
 //Push
 if (push == 1)
 {
@@ -559,7 +528,7 @@ else
         and !place_free(x, y+3))
     {
         image_speed = 0.5;
-        hspeed = -3;
+        hspeed = -4;
     }
     
     else if (keyboard_check(vk_shift)
@@ -569,7 +538,7 @@ else
         and !place_free(x, y+3))
     {
         image_speed = 0.5;
-        hspeed = 3;
+        hspeed = 4;
     }
     
     //Stop
@@ -635,54 +604,6 @@ if(global.pause=1)
     exit;
 }
 
-//Gravity and Stop   
-
-if (place_free(x,y+1)) || (ladder == 0) 
-{
-    gravity = 0.5;
-}
-
-if (keyboard_check_released(vk_right))
-{
-    hspeed=0;
-}
-
-if (keyboard_check_released(vk_left))
-{
-    hspeed=0;
-}
-
-//Movement
-if (hspeed &gt; 0) 
-{
-    image_xscale=1;
-}
-
-if (hspeed &lt; 0) 
-{
-    image_xscale=-1;
-}
-
-if (keyboard_check(vk_left) and not keyboard_check(vk_down))
-{
-    image_speed=0.5;
-    hspeed=-2+global.load;
-    sprite_index=spr_pelaaja;
-}
-
-if (keyboard_check(vk_right) and not keyboard_check(vk_down))
-{
-    image_speed=0.5;
-    hspeed=2-global.load;
-    sprite_index=spr_pelaaja;
-}
-
-if hspeed=0 and vspeed=0 and not keyboard_check(vk_down) and not place_free(x,y+1)
-{
-    image_speed=0.2;
-    sprite_index=spr_stand;
-}
-
 //Jump
 if (keyboard_check(vk_up) and not place_free(x,y+1)and not keyboard_check(vk_down)) 
 {
@@ -704,18 +625,56 @@ if roll=1 and hspeed&lt;0 and not keyboard_check(vk_shift)
     image_speed=0.5;
     image_xscale=-1;
 }
-
-//Use
-if (distance_to_object(obj_tree) &lt; 50)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Lives
+if (global.lives &lt;= 0)
 {
-    draw_sprite(spr_E, 0, x, y-32);
+        //alarm[7] = 120;
+        //global.pause = 1;
+        //global.damage = 0;
+        
+        //Drop coins after death
+        coin_drop = round(global.coin/2);
+        
+        //Enemies' stats
+        global.enemy_stats1 = 0;
+        global.enemy_stats2 = 0;
+        global.enemy_stats3 = 0;
+        
+        //Drop coins
+        while coin_drop &lt; global.coin
+        {
+            instance_create(x, y-5, obj_coin);
+            coin_drop += 1;
+            global.coin -= 1;
+        }
+        
+        //Create grave
+        instance_create(x, y-5, obj_grave);
+        
+        x = obj_spawner.x;
+        y = obj_spawner.y;
+        global.lives = 10;
 }
-
-//Restart Room
-if keyboard_check(vk_delete)
-{
-    global.lives=0;
-}*/
 </string>
           </argument>
         </arguments>

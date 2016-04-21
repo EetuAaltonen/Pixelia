@@ -28,6 +28,7 @@
             <string>move_towards_point(obj_pelaaja.x, obj_pelaaja.y, 10);
 gravity = 0;
 can_hurt = true;
+mag = 0;
 </string>
           </argument>
         </arguments>
@@ -99,7 +100,7 @@ image_angle = direction;
             <kind>1</kind>
             <string>if (can_hurt == true)
 {
-    global.lives -= 1;
+    global.lives -= mag;
     scr_got_damage();
     instance_destroy();
 }

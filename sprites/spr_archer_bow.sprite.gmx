@@ -8,7 +8,7 @@
   <sepmasks>-1</sepmasks>
   <bboxmode>2</bboxmode>
   <bbox_left>24</bbox_left>
-  <bbox_right>138</bbox_right>
+  <bbox_right>168</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>14</bbox_bottom>
   <HTile>0</HTile>
@@ -17,7 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>139</width>
+  <width>169</width>
   <height>15</height>
   <frames>
     <frame index="0">images\spr_archer_bow_0.png</frame>
