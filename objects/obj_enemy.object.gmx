@@ -123,7 +123,7 @@ if (distance_to_object(obj_spawner) &lt; 20)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_maa">
+    <event eventtype="4" ename="obj_lights">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -140,23 +140,8 @@ if (distance_to_object(obj_spawner) &lt; 20)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
+            <string>global.xp+=10
+instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -208,30 +193,6 @@ if (!place_free(x+hspeed,y+vspeed))
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.xp+=10
-instance_destroy()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_door">
       <action>
         <libid>1</libid>
@@ -266,6 +227,45 @@ if (!place_free(x+hspeed,y+vspeed))
     {
         hspeed=0;
     }    
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_maa">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!place_free(x+hspeed,y))
+{
+    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
+    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
+    hspeed=0;
+}
+if (!place_free(x,y+vspeed))
+{
+    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
+    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
+    vspeed=0;
+}
+
+if (!place_free(x+hspeed,y+vspeed))
+{
+    hspeed=0;
+}
 </string>
           </argument>
         </arguments>

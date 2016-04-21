@@ -9,6 +9,19 @@
     <sound>sound\snd_menu_bg</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="Ammon">
+      <sprite>sprites\spr_arrow</sprite>
+      <sprite>sprites\spr_cannonball</sprite>
+      <sprite>sprites\spr___ammo</sprite>
+      <sprite>sprites\spr_shadow_ammo</sprite>
+    </sprites>
+    <sprites name="Blocks">
+      <sprite>sprites\spr_maa</sprite>
+      <sprite>sprites\spr_stone</sprite>
+      <sprite>sprites\spr_grass</sprite>
+      <sprite>sprites\spr_heikko</sprite>
+      <sprite>sprites\spr_secret_stonewall</sprite>
+    </sprites>
     <sprites name="Buildings">
       <sprite>sprites\spr_cave_bridge_0001</sprite>
       <sprite>sprites\spr_cave_bridge_0002</sprite>
@@ -25,6 +38,18 @@
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_gold_ore</sprite>
     </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\spr_arrow_effect</sprite>
+    </sprites>
+    <sprites name="Enemies">
+      <sprite>sprites\spr_bat</sprite>
+      <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_shadow</sprite>
+      <sprite>sprites\spr_shadow_die</sprite>
+      <sprite>sprites\spr_</sprite>
+      <sprite>sprites\spr_archer</sprite>
+      <sprite>sprites\spr_archer_bow</sprite>
+    </sprites>
     <sprites name="HUD">
       <sprite>sprites\spr_darkness</sprite>
       <sprite>sprites\spr_lightness</sprite>
@@ -38,6 +63,14 @@
       <sprite>sprites\spr_enemies_stats</sprite>
       <sprite>sprites\spr_hud</sprite>
       <sprite>sprites\spr_hud_quest</sprite>
+    </sprites>
+    <sprites name="Misc">
+      <sprite>sprites\spr_barrel</sprite>
+      <sprite>sprites\spr_crate</sprite>
+      <sprite>sprites\spr_crate_0001</sprite>
+      <sprite>sprites\spr_crate_0002</sprite>
+      <sprite>sprites\spr_chest</sprite>
+      <sprite>sprites\spr_spike</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_abilitylights</sprite>
@@ -55,37 +88,9 @@
       <sprite>sprites\spr_stand</sprite>
       <sprite>sprites\sprite61</sprite>
     </sprites>
-    <sprites name="Enemies">
-      <sprite>sprites\spr_bat</sprite>
-      <sprite>sprites\spr_enemy</sprite>
-      <sprite>sprites\spr_shadow_ammo</sprite>
-      <sprite>sprites\spr_shadow</sprite>
-      <sprite>sprites\spr_shadow_die</sprite>
-      <sprite>sprites\spr_</sprite>
-      <sprite>sprites\spr___ammo</sprite>
-    </sprites>
-    <sprites name="Blocks">
-      <sprite>sprites\spr_maa</sprite>
-      <sprite>sprites\spr_stone</sprite>
-      <sprite>sprites\spr_grass</sprite>
-      <sprite>sprites\spr_heikko</sprite>
-      <sprite>sprites\spr_secret_stonewall</sprite>
-    </sprites>
-    <sprites name="Misc">
-      <sprite>sprites\spr_barrel</sprite>
-      <sprite>sprites\spr_crate</sprite>
-      <sprite>sprites\spr_crate_0001</sprite>
-      <sprite>sprites\spr_crate_0002</sprite>
-      <sprite>sprites\spr_chest</sprite>
-      <sprite>sprites\spr_spike</sprite>
-    </sprites>
-    <sprite>sprites\spr_pet</sprite>
-    <sprite>sprites\spr_aim</sprite>
-    <sprite>sprites\spr_pet_ammo</sprite>
-    <sprite>sprites\spr_anvil</sprite>
     <sprite>sprites\spr_achiements</sprite>
-    <sprite>sprites\spr_archer</sprite>
-    <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_aim</sprite>
+    <sprite>sprites\spr_anvil</sprite>
     <sprite>sprites\spr_arrow1</sprite>
     <sprite>sprites\spr_blacksmith_floor</sprite>
     <sprite>sprites\spr_blacksmith_roof</sprite>
@@ -97,7 +102,7 @@
     <sprite>sprites\spr_building</sprite>
     <sprite>sprites\spr_cannon_left</sprite>
     <sprite>sprites\spr_cannon_right</sprite>
-    <sprite>sprites\spr_cannonball</sprite>
+    <sprite>sprites\spr_cave_rock</sprite>
     <sprite>sprites\spr_coin</sprite>
     <sprite>sprites\spr_combat_skills</sprite>
     <sprite>sprites\spr_compass</sprite>
@@ -130,6 +135,7 @@
     <sprite>sprites\spr_leaf</sprite>
     <sprite>sprites\spr_level_draw</sprite>
     <sprite>sprites\spr_lever</sprite>
+    <sprite>sprites\spr_lever_signal</sprite>
     <sprite>sprites\spr_lights</sprite>
     <sprite>sprites\spr_lives</sprite>
     <sprite>sprites\spr_mana</sprite>
@@ -140,6 +146,8 @@
     <sprite>sprites\spr_night</sprite>
     <sprite>sprites\spr_pause</sprite>
     <sprite>sprites\spr_pelaaja_shield</sprite>
+    <sprite>sprites\spr_pet</sprite>
+    <sprite>sprites\spr_pet_ammo</sprite>
     <sprite>sprites\spr_pixelia</sprite>
     <sprite>sprites\spr_platform</sprite>
     <sprite>sprites\spr_play</sprite>
@@ -171,8 +179,6 @@
     <sprite>sprites\spr_xscale_switch</sprite>
     <sprite>sprites\sprite77</sprite>
     <sprite>sprites\sprite94</sprite>
-    <sprite>sprites\spr_lever_signal</sprite>
-    <sprite>sprites\spr_cave_rock</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_menu</background>
@@ -199,6 +205,20 @@
     <font>fonts\fnt_dialog</font>
   </fonts>
   <objects name="objects">
+    <objects name="Ammon">
+      <object>objects\obj_arrow</object>
+      <object>objects\obj_shadow_ammo</object>
+      <object>objects\obj___ammo</object>
+      <object>objects\obj_cannonball</object>
+      <object>objects\obj_arrow1</object>
+    </objects>
+    <objects name="Blocks">
+      <object>objects\obj_maa</object>
+      <object>objects\obj_heikko</object>
+      <object>objects\obj_grass</object>
+      <object>objects\obj_stone</object>
+      <object>objects\obj_secret_stonewall</object>
+    </objects>
     <objects name="Buildings">
       <object>objects\obj_blacksmith</object>
       <object>objects\obj_cave_bridge_0001</object>
@@ -225,6 +245,20 @@
       <object>objects\obj_iron_ore</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_chest</object>
+    </objects>
+    <objects name="Effects">
+      <object>objects\obj_arrow_effect</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\obj_shadow</object>
+      <object>objects\obj_cannon_right</object>
+      <object>objects\obj_cannon_left</object>
+      <object>objects\obj_archer</object>
+      <object>objects\obj_archer_bow</object>
+      <object>objects\obj_enemy</object>
+      <object>objects\obj_enemy2</object>
+      <object>objects\obj_bat</object>
+      <object>objects\obj_</object>
     </objects>
     <objects name="HUD">
       <object>objects\obj_quests</object>
@@ -253,44 +287,6 @@
       <object>objects\obj_play</object>
       <object>objects\obj_quit</object>
     </objects>
-    <objects name="Player">
-      <object>objects\obj_pelaaja1</object>
-      <object>objects\obj_pelaaja</object>
-      <objects name="Abilities">
-        <object>objects\obj_lights</object>
-        <object>objects\obj_pelaaja_shield</object>
-      </objects>
-      <objects name="Stats">
-        <object>objects\obj_lives</object>
-        <object>objects\obj_mana</object>
-        <object>objects\obj_stamina</object>
-      </objects>
-      <object>objects\obj_spawner</object>
-      <object>objects\obj_hitbox</object>
-    </objects>
-    <objects name="Enemies">
-      <object>objects\obj_shadow</object>
-      <object>objects\obj_cannon_right</object>
-      <object>objects\obj_cannon_left</object>
-      <object>objects\obj_archer</object>
-      <object>objects\obj_cannonball</object>
-      <object>objects\obj_enemy</object>
-      <object>objects\obj_enemy2</object>
-      <object>objects\obj_shadow_ammo</object>
-      <object>objects\obj_bat</object>
-      <object>objects\obj_</object>
-      <object>objects\obj___ammo</object>
-    </objects>
-    <objects name="Blocks">
-      <object>objects\obj_maa</object>
-      <object>objects\obj_heikko</object>
-      <object>objects\obj_grass</object>
-      <object>objects\obj_stone</object>
-      <object>objects\obj_secret_stonewall</object>
-    </objects>
-    <objects name="Travelling">
-      <object>objects\obj_world</object>
-    </objects>
     <objects name="Misc">
       <object>objects\obj_barrel</object>
       <object>objects\obj_anvil</object>
@@ -312,32 +308,48 @@
       <object>objects\obj_crate_0001</object>
       <object>objects\obj_crate_0002</object>
     </objects>
-    <object>objects\obj_pet</object>
-    <object>objects\obj_pet_ammo</object>
     <object>objects\obj_aim</object>
-    <object>objects\obj_arrow</object>
-    <object>objects\obj_arrow1</object>
     <object>objects\obj_blacksmith_shoper</object>
     <object>objects\obj_blood</object>
     <object>objects\obj_body</object>
     <object>objects\obj_compass</object>
-    <object>objects\obj_heal</object>
     <object>objects\obj_cycle</object>
     <object>objects\obj_dust</object>
     <object>objects\obj_enemy_turn_left</object>
     <object>objects\obj_enemy_turn_right</object>
     <object>objects\obj_flower</object>
     <object>objects\obj_goal</object>
+    <object>objects\obj_heal</object>
     <object>objects\obj_leaf</object>
     <object>objects\obj_lever_signal</object>
     <object>objects\obj_mining_dust</object>
     <object>objects\obj_mining_hit</object>
     <object>objects\obj_NPC</object>
     <object>objects\obj_pause</object>
+    <object>objects\obj_pet</object>
+    <object>objects\obj_pet_ammo</object>
     <object>objects\obj_use</object>
     <object>objects\obj_wood_dust</object>
     <object>objects\obj_wood_hit</object>
     <object>objects\obj_xscale_switch</object>
+    <objects name="Player">
+      <object>objects\obj_pelaaja1</object>
+      <object>objects\obj_pelaaja</object>
+      <objects name="Abilities">
+        <object>objects\obj_lights</object>
+        <object>objects\obj_pelaaja_shield</object>
+      </objects>
+      <objects name="Stats">
+        <object>objects\obj_lives</object>
+        <object>objects\obj_mana</object>
+        <object>objects\obj_stamina</object>
+      </objects>
+      <object>objects\obj_spawner</object>
+      <object>objects\obj_hitbox</object>
+    </objects>
+    <objects name="Travelling">
+      <object>objects\obj_world</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
