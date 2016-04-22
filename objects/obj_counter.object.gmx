@@ -86,6 +86,9 @@ global.kill_counter = 0;
           <argument>
             <kind>1</kind>
             <string>mana_regerate = 1;
+
+//Fix draw error
+global.mana = round(global.mana);
 </string>
           </argument>
         </arguments>
@@ -132,7 +135,7 @@ global.kill_counter = 0;
           <argument>
             <kind>1</kind>
             <string>alarm[4] = 100; //Mana regeration
-if (mana_regerate == 1 and !keyboard_check(ord('Q')))
+if (mana_regerate == 1)
 {
     global.mana += manreg;
 }
@@ -159,6 +162,9 @@ if (mana_regerate == 1 and !keyboard_check(ord('Q')))
           <argument>
             <kind>1</kind>
             <string>stamina_regerate = 1;
+
+//Fix draw error
+global.stamina = round(global.stamina);
 </string>
           </argument>
         </arguments>
@@ -206,7 +212,7 @@ if (mana_regerate == 1 and !keyboard_check(ord('Q')))
             <kind>1</kind>
             <string>alarm[1] = 50;
 
-if (stamina_regerate == 1 and !keyboard_check(vk_shift))
+if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
 {
     global.stamina += stamreg;
 }
@@ -246,23 +252,31 @@ if (stamina_regerate == 1 and !keyboard_check(vk_shift))
     
     if (global.stamina &gt;= 0 
         and obj_pelaaja.hspeed &gt; 2 
-        and keyboard_check(vk_shift) 
+        and keyboard_check(vk_shift)  
         and stamina_usage == 1)
     {
         stamina_usage = 0;
         stamina_regerate = 0;
-        global.stamina -= 1;
+        global.stamina -= 0.5;
         alarm[2] = 5;
         alarm[3] = 50;
     }
     else if (global.stamina &gt;= 0 
         and obj_pelaaja.hspeed &lt; -2 
-        and keyboard_check(vk_shift) 
+        and keyboard_check(vk_shift)
         and stamina_usage == 1)
     {
         stamina_usage = 0;
         stamina_regerate = 0;
-        global.stamina -= 1;
+        global.stamina -= 0.5;
+        alarm[2] = 5;
+        alarm[3] = 50;
+    }
+    else if (stamina_usage == 1 and obj_pelaaja.roll == 1 
+             || stamina_usage == 1 and obj_pelaaja.slice == 1)
+    {
+        stamina_usage = 0;
+        stamina_regerate = 0;
         alarm[2] = 5;
         alarm[3] = 50;
     }
@@ -278,9 +292,9 @@ if (stamina_regerate == 1 and !keyboard_check(vk_shift))
         global.mana = 0;
     }
     
-    if (global.mana &gt;= 0 
-        and obj_pelaaja.sprite_index == spr_pelaaja_slice 
-        and mana_usage == 1)
+    if (global.mana &gt;= 0
+        and mana_usage == 1
+        and obj_pelaaja.sprite_index == spr_pelaaja_shield)
     {
         mana_usage = 0;
         mana_regerate = 0;

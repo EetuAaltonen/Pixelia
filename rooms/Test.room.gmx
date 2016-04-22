@@ -166,7 +166,7 @@
     <instance objName="obj_blacksmith" x="437" y="129" name="inst_7D81B12C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_building" x="-150" y="39" name="inst_533CA9C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadow" x="485" y="46" name="inst_4DC78BC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Q_ready" x="-70" y="29" name="inst_876EA61C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Q_ready" x="-71" y="28" name="inst_876EA61C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="199" y="267" name="inst_843F4D82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="183" y="267" name="inst_D5955BB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="167" y="267" name="inst_1E958037" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -220,6 +220,7 @@
     <instance objName="obj_inv_close_button" x="649" y="-48" name="inst_32A71E98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_draw_hotbar_bg" x="207" y="-70" name="inst_403640F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_inv_skilltree_button" x="443" y="-48" name="inst_39B70029" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_A_ready" x="-49" y="28" name="inst_C5BA6887" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
