@@ -27,6 +27,16 @@
             <kind>1</kind>
             <string>x = view_xview + 3;
 y = view_yview + 54;
+
+//Animation
+if (global.inventory == 1)
+{
+    image_index = 1;
+}
+else
+{
+    image_index = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -49,7 +59,8 @@ y = view_yview + 54;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>global.inventory = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -71,7 +82,7 @@ y = view_yview + 54;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.inventory == 1)
+            <string>if (global.inventory &gt; 0)
 {
     draw_self();
 }

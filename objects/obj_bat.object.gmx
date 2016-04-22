@@ -201,6 +201,9 @@ alarm[1] = random_range(30, 150);
     //XP
     global.xp += 5;
     
+    //Kill counter
+    global.kill_counter += 1;
+    
     instance_destroy();
 }
 </string>

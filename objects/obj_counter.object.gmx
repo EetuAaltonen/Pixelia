@@ -57,6 +57,12 @@ else
 {
     visible = true;
 }
+
+//Death counter
+global.death_counter = 1000;
+
+//Kill counter
+global.kill_counter = 1000;
 </string>
           </argument>
         </arguments>

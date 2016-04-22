@@ -83,7 +83,7 @@ else if (obj_pelaaja.image_xscale == -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0.6;
+            <string>image_speed = 0.6;
 </string>
           </argument>
         </arguments>

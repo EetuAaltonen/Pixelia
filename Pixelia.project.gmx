@@ -79,6 +79,8 @@
         <sprite>sprites\spr_inventory_bg</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_inventory_iron</sprite>
+        <sprite>sprites\spr_death_counter</sprite>
+        <sprite>sprites\spr_kill_counter</sprite>
         <sprite>sprites\spr_inventory_log</sprite>
       </sprites>
       <sprite>sprites\spr_building</sprite>

@@ -3,7 +3,7 @@
   <spriteName>spr_coin</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-4002</depth>
+  <depth>-5003</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>

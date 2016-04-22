@@ -73,7 +73,7 @@ room_goto(Menu);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.inventory == 1)
+            <string>if (global.inventory &gt; 0)
 {
     draw_self();
 }

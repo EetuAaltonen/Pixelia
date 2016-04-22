@@ -110,7 +110,7 @@ if (keyboard_check_pressed(vk_tab) and
     global.inventory = 1;
 }
 else if (keyboard_check_pressed(vk_tab) and
-         global.inventory == 1 and global.dialogs == 0)
+         global.inventory &gt; 0 and global.dialogs == 0)
 {
     global.inventory = 0;
 }
@@ -169,22 +169,39 @@ draw_sprite_ext(spr_potion, image_index, view_xview+372,
 //Inventory
 if (global.inventory == 1)
 {
-    
+    //Logo
+    draw_sprite(spr_inventory_iron, 0, view_xview+30, view_yview+120);
     //Iron
     var ironore;
     ironore = global.ironore;
     draw_text_color(view_xview+45,view_yview+120, string(ironore),
             c_black, c_black, c_black, c_black, 1);
     //Logo
-    draw_sprite(spr_inventory_iron, 0, view_xview+30, view_yview+120);
-
+    draw_sprite(spr_inventory_log, 0, view_xview+30, view_yview+150);
     //Logs
     var logs;
     logs = global.logs;
     draw_text_color(view_xview+45,view_yview+150, string(logs),
             c_black, c_black, c_black, c_black, 1);
-    //Logo
-    draw_sprite(spr_inventory_log, 0, view_xview+30, view_yview+150);
+    
+}
+else if(global.inventory == 2)
+{
+    //Text
+    draw_sprite(spr_death_counter, 0, view_xview+30, view_yview+120);
+    //Deat counter
+    var death_counter;
+    death_counter = global.death_counter;
+    draw_text_color(view_xview+45,view_yview+118, string(death_counter),
+            c_black, c_black, c_black, c_black, 1);
+    
+    //Text
+    draw_sprite(spr_kill_counter, 0, view_xview+30, view_yview+150);
+    //Kill counter
+    var kill_counter;
+    kill_counter = global.kill_counter;
+    draw_text_color(view_xview+45,view_yview+148, string(kill_counter),
+            c_black, c_black, c_black, c_black, 1);
 }
 </string>
           </argument>
