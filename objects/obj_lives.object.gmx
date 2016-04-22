@@ -3,7 +3,7 @@
   <spriteName>spr_lives</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-4001</depth>
+  <depth>-5002</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -97,9 +97,8 @@ switch (global.lives)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, view_xview+3, 
-                view_yview+3, image_xscale, image_yscale, 
-                image_angle, c_white, image_alpha);
+            <string>draw_sprite_ext(sprite_index, image_index, view_xview+3, view_yview+3,
+                image_xscale, image_yscale, image_angle, c_white, image_alpha);
 </string>
           </argument>
         </arguments>

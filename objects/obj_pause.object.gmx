@@ -51,7 +51,7 @@ global.inventory = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause_draw=1)
+            <string>if (global.pause_draw = 1)
 {
     draw_set_halign(fa_center);
     draw_set_color(c_black);
@@ -67,7 +67,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="73">
+    <event eventtype="9" enumb="80">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -84,43 +84,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.inventory == 0
-{
-    global.pause = 1;
-    global.pause_draw = 1;
-    global.inventory = 1;
-
-}
-else
-{
-    global.pause = 0;
-    global.pause_draw = 0;
-    global.inventory = 0;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.pause == 0
+            <string>if (global.pause == 0)
 {
     global.pause = 1;
     global.pause_draw = 1;

@@ -703,47 +703,6 @@ if (global.lives &lt;= 0)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_blocker5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;30{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_desk">
       <action>
         <libid>1</libid>
@@ -804,6 +763,47 @@ if (!place_free(x+hspeed,y+vspeed))
             <kind>1</kind>
             <string>scr_solidify();
 scr_falling_damage();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_blocker5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if vspeed&gt;30{lives=lives-1}
+if vspeed&gt;50{lives=lives-5}
+if (!place_free(x+hspeed,y))
+{
+    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
+    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
+    hspeed=0;
+}
+if (!place_free(x,y+vspeed))
+{
+    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
+    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
+    vspeed=0;
+}
+
+if (!place_free(x+hspeed,y+vspeed))
+{
+    hspeed=0;
+}
 </string>
           </argument>
         </arguments>
@@ -1411,25 +1411,6 @@ if (distance_to_object(obj_iron_ore) &lt; 10 and mining == 0 ||
     distance_to_object(obj_cave_door) &lt; 4)
 {
     draw_sprite(spr_E,1,x,y-20);   
-}
-
-//Enemy's stats
-if (instance_exists(obj_bat))
-{
-    if (distance_to_point(instance_nearest(x, y, obj_bat).x, 
-        instance_nearest(x, y, obj_bat).y) &lt; 50)
-    {
-        enemy = instance_nearest(x, y, obj_bat);
-        var str_draw, def_draw, mag_draw;
-        str_draw = instance_nearest(x, y, obj_bat).str;
-        draw_text(x, view_yview-30, string(str_draw));
-        
-        def_draw = instance_nearest(x, y, obj_bat).def;
-        draw_text(x, view_yview-40, string(def_draw));
-        
-        mag_draw = instance_nearest(x, y, obj_bat).mag;
-        draw_text(x, view_yview-50, string(mag_draw));
-    }
 }
 </string>
           </argument>

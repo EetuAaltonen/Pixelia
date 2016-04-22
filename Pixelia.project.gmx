@@ -49,6 +49,7 @@
       <sprite>sprites\spr_blood</sprite>
       <sprite>sprites\spr_heal</sprite>
       <sprite>sprites\spr_mining_hit</sprite>
+      <sprite>sprites\spr_talk</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_bat</sprite>
@@ -63,33 +64,44 @@
       <sprite>sprites\spr_pic_archer</sprite>
     </sprites>
     <sprites name="HUD">
+      <sprites name="Draw">
+        <sprite>sprites\spr_enemies_stats</sprite>
+        <sprite>sprites\spr_hotbar_bg</sprite>
+        <sprite>sprites\spr_hud_quest</sprite>
+        <sprite>sprites\spr_quit_draw</sprite>
+        <sprite>sprites\spr_restart</sprite>
+      </sprites>
       <sprites name="Inventory">
+        <sprite>sprites\spr_inv_inventory_button</sprite>
+        <sprite>sprites\spr_inv_menu_button</sprite>
+        <sprite>sprites\spr_inv_stats_button</sprite>
+        <sprite>sprites\spr_inv_close_button</sprite>
+        <sprite>sprites\spr_inventory_bg</sprite>
+        <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_inventory_iron</sprite>
         <sprite>sprites\spr_inventory_log</sprite>
       </sprites>
       <sprite>sprites\spr_building</sprite>
       <sprite>sprites\spr_counter</sprite>
-      <sprite>sprites\spr_counter_items</sprite>
       <sprite>sprites\spr_darkness</sprite>
       <sprite>sprites\spr_dialog_A</sprite>
       <sprite>sprites\spr_dialog_D</sprite>
       <sprite>sprites\spr_draw_hotbar_bg</sprite>
       <sprite>sprites\spr_draw_inventory_bg</sprite>
       <sprite>sprites\spr_E</sprite>
-      <sprite>sprites\spr_enemies_stats</sprite>
-      <sprite>sprites\spr_hotbar_bg</sprite>
-      <sprite>sprites\spr_hud_quest</sprite>
+      <sprite>sprites\spr_inventory</sprite>
       <sprite>sprites\spr_lightness</sprite>
-      <sprite>sprites\spr_mana</sprite>
       <sprite>sprites\spr_money_draw</sprite>
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_pointer</sprite>
       <sprite>sprites\spr_quests</sprite>
+      <sprite>sprites\spr_quests_dialogs</sprite>
       <sprite>sprites\spr_screen</sprite>
       <sprite>sprites\spr_stats</sprite>
       <sprites name="Stats">
-        <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_lives</sprite>
+        <sprite>sprites\spr_mana</sprite>
+        <sprite>sprites\spr_stamina</sprite>
       </sprites>
     </sprites>
     <sprites name="Misc">
@@ -166,17 +178,11 @@
     <sprite>sprites\spr_play</sprite>
     <sprite>sprites\spr_potion</sprite>
     <sprite>sprites\spr_Q_ready</sprite>
-    <sprite>sprites\spr_quests_dialogs</sprite>
     <sprite>sprites\spr_quit</sprite>
-    <sprite>sprites\spr_quit_draw</sprite>
-    <sprite>sprites\spr_restart</sprite>
     <sprite>sprites\spr_shelf</sprite>
     <sprite>sprites\spr_sign</sprite>
     <sprite>sprites\spr_sign_bg</sprite>
     <sprite>sprites\spr_spawner</sprite>
-    <sprite>sprites\spr_stamina</sprite>
-    <sprite>sprites\spr_talk</sprite>
-    <sprite>sprites\spr_testit</sprite>
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_tree_1</sprite>
     <sprite>sprites\spr_tree_5</sprite>
@@ -191,6 +197,7 @@
     <sprite>sprites\spr_xscale_switch</sprite>
     <sprite>sprites\sprite77</sprite>
     <sprite>sprites\sprite94</sprite>
+    <sprite>sprites\spr_inventory_button</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_menu</background>
@@ -199,7 +206,6 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_auto_tile.gml</script>
-    <script>scripts\scr_level_draw.gml</script>
     <script>scripts\scr_got_damage.gml</script>
     <script>scripts\scr_solidify.gml</script>
     <script>scripts\scr_falling_damage.gml</script>
@@ -261,8 +267,13 @@
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
       <object>objects\obj_wood_dust</object>
+      <object>objects\obj_wood_hit</object>
       <object>objects\obj_mining_hit</object>
+      <object>objects\obj_dust</object>
+      <object>objects\obj_blood</object>
       <object>objects\obj_mining_dust</object>
+      <object>objects\obj_leaf</object>
+      <object>objects\obj_use</object>
       <object>objects\obj_lever_signal</object>
       <object>objects\obj_heal</object>
     </objects>
@@ -279,31 +290,37 @@
     </objects>
     <objects name="HUD">
       <objects name="Draw">
-        <object>objects\obj_W_ready</object>
+        <object>objects\obj_building</object>
+        <object>objects\obj_Q_ready</object>
         <object>objects\obj_quit_draw</object>
         <object>objects\obj_restart_draw</object>
-        <object>objects\obj_Q_ready</object>
-        <object>objects\obj_building</object>
-        <object>objects\obj_draw_inventory_bg</object>
-        <object>objects\obj_draw_hotbar_bg</object>
+        <object>objects\obj_W_ready</object>
       </objects>
       <object>objects\obj_counter</object>
       <object>objects\obj_darkness</object>
       <object>objects\obj_dialog</object>
       <object>objects\obj_dialogs</object>
-      <object>objects\obj_item_counter</object>
+      <objects name="Inventory">
+        <object>objects\obj_inventory</object>
+        <object>objects\obj_inv_inventory_button</object>
+        <object>objects\obj_inv_stats_button</object>
+        <object>objects\obj_inv_menu_button</object>
+        <object>objects\obj_inv_close_button</object>
+      </objects>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
       <object>objects\obj_pointer</object>
       <object>objects\obj_potion_target</object>
       <object>objects\obj_quests</object>
       <object>objects\obj_screen</object>
+      <object>objects\obj_stats</object>
       <objects name="Stats">
         <object>objects\obj_lives</object>
         <object>objects\obj_mana</object>
         <object>objects\obj_stamina</object>
-        <object>objects\obj_stats</object>
       </objects>
+      <object>objects\obj_draw_hotbar_bg</object>
+      <object>objects\obj_draw_inventory_bg</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
@@ -311,44 +328,39 @@
       <object>objects\obj_quit</object>
     </objects>
     <objects name="Misc">
-      <object>objects\obj_barrel</object>
       <object>objects\obj_anvil</object>
+      <object>objects\obj_barrel</object>
+      <object>objects\obj_blocker5</object>
       <object>objects\obj_crate</object>
-      <object>objects\obj_furnace</object>
-      <object>objects\obj_grave</object>
-      <object>objects\obj_lever</object>
-      <object>objects\obj_shelf</object>
-      <object>objects\obj_platform</object>
+      <object>objects\obj_crate_0001</object>
+      <object>objects\obj_crate_0002</object>
       <object>objects\obj_desk</object>
+      <object>objects\obj_flower</object>
+      <object>objects\obj_furnace</object>
       <object>objects\obj_gold_bar</object>
+      <object>objects\obj_grave</object>
+      <object>objects\obj_iron_bar</object>
       <object>objects\obj_ladder</object>
+      <object>objects\obj_lever</object>
+      <object>objects\obj_platform</object>
+      <object>objects\obj_shelf</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_spikes</object>
       <object>objects\obj_torch</object>
       <object>objects\obj_weaponrack</object>
-      <object>objects\obj_iron_bar</object>
-      <object>objects\obj_blocker5</object>
-      <object>objects\obj_crate_0001</object>
-      <object>objects\obj_crate_0002</object>
     </objects>
     <object>objects\obj_aim</object>
-    <object>objects\obj_blacksmith_shoper</object>
-    <object>objects\obj_blood</object>
     <object>objects\obj_body</object>
+    <object>objects\obj_blacksmith_shoper</object>
     <object>objects\obj_compass</object>
     <object>objects\obj_cycle</object>
-    <object>objects\obj_dust</object>
     <object>objects\obj_enemy_turn_left</object>
     <object>objects\obj_enemy_turn_right</object>
-    <object>objects\obj_flower</object>
     <object>objects\obj_goal</object>
-    <object>objects\obj_leaf</object>
     <object>objects\obj_NPC</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_pet</object>
     <object>objects\obj_pet_ammo</object>
-    <object>objects\obj_use</object>
-    <object>objects\obj_wood_hit</object>
     <objects name="Player">
       <object>objects\obj_pelaaja1</object>
       <object>objects\obj_pelaaja</object>

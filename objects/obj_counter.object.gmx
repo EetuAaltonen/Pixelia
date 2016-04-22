@@ -304,13 +304,21 @@ if (stamina_regerate == 1 and !keyboard_check(vk_shift))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black);
-scr_level_draw(); //Script
+            <string>//Level
+var level;
+level = global.level;
+draw_text_color(view_xview+180,view_yview+278, string(level),
+                c_black, c_black, c_black, c_black, 1);
+//Level - logo
+draw_sprite_ext(spr_level_draw, image_index, view_xview+165,
+                view_yview+285, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);
 
 //XP
 var xp;
 xp = global.xp;
-draw_text(view_xview+286,view_yview+278, string(xp));
+draw_text_color(view_xview+286,view_yview+278, string(xp),
+                c_black, c_black, c_black, c_black, 1);
 //XP - logo
 draw_sprite_ext(spr_xp_draw, image_index, view_xview+271,
                 view_yview+285, image_xscale, image_yscale, 
@@ -318,10 +326,11 @@ draw_sprite_ext(spr_xp_draw, image_index, view_xview+271,
 //XP Limit
 var xp_limit;
 xp_limit = global.limit;
-draw_text(view_xview+316,view_yview+278, string(xp_limit));
-var slash;
-slash = "/  "
-draw_text(view_xview+306,view_yview+278, string(slash));
+draw_text_color(view_xview+316,view_yview+278, string(xp_limit),
+                c_black, c_black, c_black, c_black, 1);
+//Slash;
+draw_text_color(view_xview+306,view_yview+278, "/",
+                c_black, c_black, c_black, c_black, 1);
 </string>
           </argument>
         </arguments>

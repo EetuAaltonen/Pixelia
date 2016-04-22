@@ -3,7 +3,7 @@
   <spriteName>spr_inventory</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-3000</depth>
+  <depth>-5002</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, view_xview, view_yview, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+            <string>//Inventory
+global.inventory = 0;
+
+//Coins
+global.coin = 0;
+
+//Item counter
+global.potion = 0;
+global.ironore = 0;
+global.logs = 0;
+
+//Skills
+global.auto_healing = 1;
+
+if (room == Menu)
+{
+    visible = false;
+}
+else
+{
+    visible = true;
+}
 </string>
           </argument>
         </arguments>
@@ -48,13 +69,56 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.inventory == 1
+            <string>//Coin
+if (global.coin &lt; 0)
 {
-    visible=true
+    global.coin = 0;
 }
-else
+
+//Auto-healing
+if (global.auto_healing == 1
+    and global.potion &gt; 0
+    and global.lives &lt; 5)
 {
-    visible=false
+    global.potion -= 1;
+    global.lives += 10;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Open inventory
+if (keyboard_check_pressed(vk_tab) and
+    global.inventory == 0 and global.dialogs == 0)
+{
+    global.inventory = 1;
+}
+else if (keyboard_check_pressed(vk_tab) and
+         global.inventory == 1 and global.dialogs == 0)
+{
+    global.inventory = 0;
+}
+
+//Forced close inventory
+if (room == Menu)
+{
+    global.inventory = 0;
 }
 </string>
           </argument>
@@ -78,7 +142,50 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, view_xview, view_yview, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+            <string>//Font
+draw_set_font(fnt_item_counter);
+draw_set_color(c_white);
+
+//Coins
+var coin;
+coin = global.coin;
+draw_text_color(view_xview+440,view_yview+278, string(coin),
+            c_black, c_black, c_black, c_black, 1);
+//Logo
+draw_sprite_ext(spr_money_draw, image_index, view_xview+425, 
+                view_yview+285, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);
+
+//Potion
+var potion;
+potion = global.potion;
+draw_text_color(view_xview+380,view_yview+278, string(potion),
+            c_black, c_black, c_black, c_black, 1);
+//Logo
+draw_sprite_ext(spr_potion, image_index, view_xview+372, 
+                view_yview+285, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);
+
+//Inventory
+if (global.inventory == 1)
+{
+    
+    //Iron
+    var ironore;
+    ironore = global.ironore;
+    draw_text_color(view_xview+45,view_yview+120, string(ironore),
+            c_black, c_black, c_black, c_black, 1);
+    //Logo
+    draw_sprite(spr_inventory_iron, 0, view_xview+30, view_yview+120);
+
+    //Logs
+    var logs;
+    logs = global.logs;
+    draw_text_color(view_xview+45,view_yview+150, string(logs),
+            c_black, c_black, c_black, c_black, 1);
+    //Logo
+    draw_sprite(spr_inventory_log, 0, view_xview+30, view_yview+150);
+}
 </string>
           </argument>
         </arguments>
