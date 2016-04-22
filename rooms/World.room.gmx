@@ -141,7 +141,6 @@
     <instance objName="obj_maa" x="1130" y="375" name="inst_9989BBC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maa" x="1160" y="375" name="inst_ECF8EA8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sign" x="670" y="253" name="inst_56C43ABB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hud" x="230" y="20" name="inst_FBE25E92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="125" y="350" name="inst_53BF2479" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sign" x="100" y="349" name="inst_17A08D28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="295" y="305" name="inst_6A3F3BC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

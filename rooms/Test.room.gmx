@@ -180,7 +180,6 @@
     <instance objName="obj_grass" x="39" y="267" name="inst_A2BE168F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="23" y="267" name="inst_71EABBDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="7" y="267" name="inst_827A8B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hud" x="-173" y="-105" name="inst_62844E09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_W_ready" x="-93" y="28" name="inst_B560A034" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_quests" x="91" y="-32" name="inst_CA0F9B4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialogs" x="150" y="-31" name="inst_32709630" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -213,6 +212,8 @@
     <instance objName="obj_coin" x="33" y="247" name="inst_00A9FD27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_archer" x="697" y="185" name="inst_9D9C8089" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_archer" x="444" y="186" name="inst_6B81BB97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_draw_inventory_bg" x="208" y="-32" name="inst_F7BADFC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_draw_hotbar_bg" x="264" y="-32" name="inst_885ED946" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

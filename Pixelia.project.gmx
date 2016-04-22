@@ -35,12 +35,20 @@
     </sprites>
     <sprites name="Collectable">
       <sprite>sprites\spr_iron_ore</sprite>
+      <sprite>sprites\spr_medicpack</sprite>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_gold_ore</sprite>
+      <sprite>sprites\spr_coin</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
       <sprite>sprites\spr_shadow_die</sprite>
+      <sprite>sprites\spr_dust</sprite>
+      <sprite>sprites\spr_mining_dust</sprite>
+      <sprite>sprites\spr_lever_signal</sprite>
+      <sprite>sprites\spr_blood</sprite>
+      <sprite>sprites\spr_heal</sprite>
+      <sprite>sprites\spr_mining_hit</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\spr_bat</sprite>
@@ -55,18 +63,34 @@
       <sprite>sprites\spr_pic_archer</sprite>
     </sprites>
     <sprites name="HUD">
-      <sprite>sprites\spr_darkness</sprite>
-      <sprite>sprites\spr_lightness</sprite>
-      <sprite>sprites\spr_quests</sprite>
+      <sprites name="Inventory">
+        <sprite>sprites\spr_inventory_iron</sprite>
+        <sprite>sprites\spr_inventory_log</sprite>
+      </sprites>
+      <sprite>sprites\spr_building</sprite>
       <sprite>sprites\spr_counter</sprite>
       <sprite>sprites\spr_counter_items</sprite>
-      <sprite>sprites\spr_stats</sprite>
-      <sprite>sprites\spr_pointer</sprite>
-      <sprite>sprites\spr_mouse</sprite>
-      <sprite>sprites\spr_screen</sprite>
+      <sprite>sprites\spr_darkness</sprite>
+      <sprite>sprites\spr_dialog_A</sprite>
+      <sprite>sprites\spr_dialog_D</sprite>
+      <sprite>sprites\spr_draw_hotbar_bg</sprite>
+      <sprite>sprites\spr_draw_inventory_bg</sprite>
+      <sprite>sprites\spr_E</sprite>
       <sprite>sprites\spr_enemies_stats</sprite>
-      <sprite>sprites\spr_hud</sprite>
+      <sprite>sprites\spr_hotbar_bg</sprite>
       <sprite>sprites\spr_hud_quest</sprite>
+      <sprite>sprites\spr_lightness</sprite>
+      <sprite>sprites\spr_mana</sprite>
+      <sprite>sprites\spr_money_draw</sprite>
+      <sprite>sprites\spr_mouse</sprite>
+      <sprite>sprites\spr_pointer</sprite>
+      <sprite>sprites\spr_quests</sprite>
+      <sprite>sprites\spr_screen</sprite>
+      <sprite>sprites\spr_stats</sprite>
+      <sprites name="Stats">
+        <sprite>sprites\spr_inventory</sprite>
+        <sprite>sprites\spr_lives</sprite>
+      </sprites>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_barrel</sprite>
@@ -74,7 +98,14 @@
       <sprite>sprites\spr_crate_0001</sprite>
       <sprite>sprites\spr_crate_0002</sprite>
       <sprite>sprites\spr_chest</sprite>
+      <sprite>sprites\spr_torch</sprite>
       <sprite>sprites\spr_spike</sprite>
+      <sprite>sprites\spr_anvil</sprite>
+      <sprite>sprites\spr_grave</sprite>
+      <sprite>sprites\spr_lever</sprite>
+      <sprite>sprites\spr_ladder</sprite>
+      <sprite>sprites\spr_gold_bar</sprite>
+      <sprite>sprites\spr_iron_bar</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_abilitylights</sprite>
@@ -85,16 +116,22 @@
       <sprite>sprites\spr_pelaaja</sprite>
       <sprite>sprites\spr_pelaaja_mining</sprite>
       <sprite>sprites\spr_pelaaja_down</sprite>
+      <sprite>sprites\spr_stand</sprite>
       <sprite>sprites\spr_roll</sprite>
-      <sprite>sprites\spr_pelaaja_slice</sprite>
       <sprite>sprites\spr_pelaaja_woodcutting</sprite>
       <sprite>sprites\spr_run</sprite>
-      <sprite>sprites\spr_stand</sprite>
       <sprite>sprites\sprite61</sprite>
+      <sprite>sprites\spr_hitbox_small</sprite>
+      <sprite>sprites\spr_hitbox</sprite>
+      <sprite>sprites\spr_jump</sprite>
+      <sprite>sprites\spr_pelaaja_slice</sprite>
+      <sprites name="Abilities">
+        <sprite>sprites\spr_pelaaja_shield</sprite>
+        <sprite>sprites\spr_lights</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
-    <sprite>sprites\spr_anvil</sprite>
     <sprite>sprites\spr_arrow1</sprite>
     <sprite>sprites\spr_blacksmith_floor</sprite>
     <sprite>sprites\spr_blacksmith_roof</sprite>
@@ -102,21 +139,14 @@
     <sprite>sprites\spr_blacksmith_shoper</sprite>
     <sprite>sprites\spr_blacksmith_wall</sprite>
     <sprite>sprites\spr_blocker5</sprite>
-    <sprite>sprites\spr_blood</sprite>
-    <sprite>sprites\spr_building</sprite>
     <sprite>sprites\spr_cannon_left</sprite>
     <sprite>sprites\spr_cannon_right</sprite>
     <sprite>sprites\spr_cave_rock</sprite>
-    <sprite>sprites\spr_coin</sprite>
     <sprite>sprites\spr_combat_skills</sprite>
     <sprite>sprites\spr_compass</sprite>
     <sprite>sprites\spr_crouch</sprite>
     <sprite>sprites\spr_desk</sprite>
     <sprite>sprites\spr_dialog</sprite>
-    <sprite>sprites\spr_dialog_A</sprite>
-    <sprite>sprites\spr_dialog_D</sprite>
-    <sprite>sprites\spr_dust</sprite>
-    <sprite>sprites\spr_E</sprite>
     <sprite>sprites\spr_empty_tree</sprite>
     <sprite>sprites\spr_enemy_turn_left</sprite>
     <sprite>sprites\spr_enemy_turn_right</sprite>
@@ -125,31 +155,10 @@
     <sprite>sprites\spr_furnace</sprite>
     <sprite>sprites\spr_gem</sprite>
     <sprite>sprites\spr_goal</sprite>
-    <sprite>sprites\spr_gold_bar</sprite>
-    <sprite>sprites\spr_grave</sprite>
-    <sprite>sprites\spr_heal</sprite>
-    <sprite>sprites\spr_hitbox</sprite>
-    <sprite>sprites\spr_hitbox_small</sprite>
-    <sprite>sprites\spr_inventory</sprite>
-    <sprite>sprites\spr_inventory_iron</sprite>
-    <sprite>sprites\spr_inventory_log</sprite>
-    <sprite>sprites\spr_iron_bar</sprite>
-    <sprite>sprites\spr_jump</sprite>
-    <sprite>sprites\spr_ladder</sprite>
     <sprite>sprites\spr_leaf</sprite>
     <sprite>sprites\spr_level_draw</sprite>
-    <sprite>sprites\spr_lever</sprite>
-    <sprite>sprites\spr_lever_signal</sprite>
-    <sprite>sprites\spr_lights</sprite>
-    <sprite>sprites\spr_lives</sprite>
-    <sprite>sprites\spr_mana</sprite>
-    <sprite>sprites\spr_medicpack</sprite>
-    <sprite>sprites\spr_mining_dust</sprite>
-    <sprite>sprites\spr_mining_hit</sprite>
-    <sprite>sprites\spr_money_draw</sprite>
     <sprite>sprites\spr_night</sprite>
     <sprite>sprites\spr_pause</sprite>
-    <sprite>sprites\spr_pelaaja_shield</sprite>
     <sprite>sprites\spr_pet</sprite>
     <sprite>sprites\spr_pet_ammo</sprite>
     <sprite>sprites\spr_pixelia</sprite>
@@ -168,7 +177,6 @@
     <sprite>sprites\spr_stamina</sprite>
     <sprite>sprites\spr_talk</sprite>
     <sprite>sprites\spr_testit</sprite>
-    <sprite>sprites\spr_torch</sprite>
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_tree_1</sprite>
     <sprite>sprites\spr_tree_5</sprite>
@@ -276,7 +284,8 @@
         <object>objects\obj_restart_draw</object>
         <object>objects\obj_Q_ready</object>
         <object>objects\obj_building</object>
-        <object>objects\obj_hud</object>
+        <object>objects\obj_draw_inventory_bg</object>
+        <object>objects\obj_draw_hotbar_bg</object>
       </objects>
       <object>objects\obj_counter</object>
       <object>objects\obj_darkness</object>
