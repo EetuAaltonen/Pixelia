@@ -3,7 +3,7 @@
   <spriteName>spr_Q_ready</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-4001</depth>
+  <depth>-5002</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -51,7 +51,7 @@ image_index = 0;
             <kind>1</kind>
             <string>if (instance_exists(obj_pelaaja))
 {  
-    if (obj_pelaaja.cooldown_slice == 1)
+    if (obj_pelaaja.cooldown_slice == 1 and global.stamina &gt;= 2)
     {
         image_index = 0;
     }

@@ -20,6 +20,6 @@
   <width>100</width>
   <height>20</height>
   <frames>
-    <frame index="0">images\spr_inv_menu_button_0.png</frame>
+    <frame index="0">images\spr_inv_save_exit_button_0.png</frame>
   </frames>
 </sprite>

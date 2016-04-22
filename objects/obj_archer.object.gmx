@@ -291,7 +291,7 @@ if (shoot == 1 and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
     (instance_nearest(x, y, obj_arrow)).mag = mag;
     //Animation
         //Neutral
-    alarm[2] = 10;
+    alarm[2] = 20;
         //Ready
     alarm[3] = 80;
         //Shoot

@@ -381,7 +381,7 @@ obj_pelaaja.sprite_index=spr_down;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lights = 0;
+            <string>slice = 0;
 sprite_index=spr_pelaaja;
 </string>
           </argument>
@@ -415,7 +415,7 @@ if (push == 1)
 }
 
 //Inventory
-else if (global.inventory &lt; 0)
+else if (global.inventory &gt; 0)
 {
     hspeed = 0;
     vspeed = 0;
@@ -1607,7 +1607,7 @@ else if (image_xscale == -1)
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>global.mana</string>
+            <string>global.stamina</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -1691,9 +1691,9 @@ else if (image_xscale == -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Lights
-global.mana -= 2;
-lights = 1;
+            <string>//Slice
+global.stamina -= 2;
+slice = 1;
 image_speed = 0.5;
 sprite_index = spr_pelaaja_slice;
 alarm[1] = 25;

@@ -59,10 +59,10 @@ else
 }
 
 //Death counter
-global.death_counter = 1000;
+global.death_counter = 0;
 
 //Kill counter
-global.kill_counter = 1000;
+global.kill_counter = 0;
 </string>
           </argument>
         </arguments>

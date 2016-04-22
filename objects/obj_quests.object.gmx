@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.guest = "Beging";
+            <string>global.guest = "Beginning";
 </string>
           </argument>
         </arguments>
@@ -48,12 +48,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_dialog);
-draw_sprite(spr_hud_quest,0,view_xview+296, view_yview+3);
+            <string>draw_set_font(fnt_item_counter);
+draw_sprite(spr_hud_quest,0,view_xview+295, view_yview+3);
 draw_set_color(c_black);
 
 quest = global.guest;
-draw_text(view_xview+299, view_yview+3, string(quest));
+draw_text(view_xview+305, view_yview+5, string(quest));
 </string>
           </argument>
         </arguments>

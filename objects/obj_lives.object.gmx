@@ -97,8 +97,11 @@ switch (global.lives)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, view_xview+3, view_yview+3,
-                image_xscale, image_yscale, image_angle, c_white, image_alpha);
+            <string>if (!room == Menu)
+{
+    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+3,
+                    image_xscale, image_yscale, image_angle, c_white, image_alpha);
+}
 </string>
           </argument>
         </arguments>

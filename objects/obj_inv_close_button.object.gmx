@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = view_xview + 333;
+            <string>x = view_xview + 464;
 y = view_yview + 54;
 </string>
           </argument>

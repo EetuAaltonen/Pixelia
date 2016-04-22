@@ -174,14 +174,14 @@ if (global.inventory == 1)
     //Iron
     var ironore;
     ironore = global.ironore;
-    draw_text_color(view_xview+45,view_yview+120, string(ironore),
+    draw_text_color(view_xview+50,view_yview+112, string(ironore),
             c_black, c_black, c_black, c_black, 1);
     //Logo
     draw_sprite(spr_inventory_log, 0, view_xview+30, view_yview+150);
     //Logs
     var logs;
     logs = global.logs;
-    draw_text_color(view_xview+45,view_yview+150, string(logs),
+    draw_text_color(view_xview+50,view_yview+143, string(logs),
             c_black, c_black, c_black, c_black, 1);
     
 }
@@ -192,7 +192,7 @@ else if(global.inventory == 2)
     //Deat counter
     var death_counter;
     death_counter = global.death_counter;
-    draw_text_color(view_xview+45,view_yview+118, string(death_counter),
+    draw_text_color(view_xview+50,view_yview+112, string(death_counter),
             c_black, c_black, c_black, c_black, 1);
     
     //Text
@@ -200,7 +200,7 @@ else if(global.inventory == 2)
     //Kill counter
     var kill_counter;
     kill_counter = global.kill_counter;
-    draw_text_color(view_xview+45,view_yview+148, string(kill_counter),
+    draw_text_color(view_xview+50,view_yview+143, string(kill_counter),
             c_black, c_black, c_black, c_black, 1);
 }
 </string>

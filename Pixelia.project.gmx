@@ -73,8 +73,9 @@
       </sprites>
       <sprites name="Inventory">
         <sprite>sprites\spr_inv_inventory_button</sprite>
-        <sprite>sprites\spr_inv_menu_button</sprite>
+        <sprite>sprites\spr_inv_save_exit_button</sprite>
         <sprite>sprites\spr_inv_stats_button</sprite>
+        <sprite>sprites\spr_inv_skilltree_button</sprite>
         <sprite>sprites\spr_inv_close_button</sprite>
         <sprite>sprites\spr_inventory_bg</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
@@ -303,11 +304,12 @@
       <object>objects\obj_dialog</object>
       <object>objects\obj_dialogs</object>
       <objects name="Inventory">
-        <object>objects\obj_inventory</object>
-        <object>objects\obj_inv_inventory_button</object>
-        <object>objects\obj_inv_stats_button</object>
-        <object>objects\obj_inv_menu_button</object>
         <object>objects\obj_inv_close_button</object>
+        <object>objects\obj_inv_inventory_button</object>
+        <object>objects\obj_inv_save_exit_button</object>
+        <object>objects\obj_inv_skilltree_button</object>
+        <object>objects\obj_inv_stats_button</object>
+        <object>objects\obj_inventory</object>
       </objects>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
