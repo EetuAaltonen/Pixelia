@@ -70,11 +70,6 @@ else if (rand &gt;= 10 and rand &lt;= 20)
 {
     def_ = 1;
 }
-else if (rand &gt; 20 and rand &lt; 30)
-{
-    mag_ = 1; 
-}
-
 else if (rand &gt; 30 and rand &lt; 35)
 {
     str_ = 5; 
@@ -82,10 +77,6 @@ else if (rand &gt; 30 and rand &lt; 35)
 else if (rand &gt; 35 and rand &lt; 40)
 {
     def_ = 5; 
-}
-else if (rand &gt; 40 and rand &lt; 45)
-{
-    mag_ = 5; 
 }
 else if (rand == 46)
 {
@@ -95,10 +86,6 @@ else if (rand == 47)
 {
     def_ = 10; 
 }
-else if (rand == 48)
-{
-    mag_ = 10; 
-}
 //Strength
 str = 1 + str_;
 
@@ -106,7 +93,7 @@ str = 1 + str_;
 def = 1 + def_;
 
 //Magic
-mag = 1 + mag_;
+mag = 0;
 
 //Stats draw
 draw_state = false;
@@ -367,7 +354,7 @@ alarm[1] = random_range(30, 150);
             <string>draw_self();
 
 //Font
-draw_set_font(fnt_enemies_stats);
+//draw_set_font(fnt_enemies_stats);
 
 if (distance_to_object(obj_pelaaja) &lt; 60)
 {

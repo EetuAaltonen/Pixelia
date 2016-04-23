@@ -25,13 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.2;
-hspeed = 1;
-vspeed = 0;
-alarm[1] = random_range(30, 150);
+            <string>image_speed = 0;
 
 //Attack
 attack = false;
+can_punch = true;
 
 //Jump
 jump = false;
@@ -76,10 +74,6 @@ else if (rand &gt;= 10 and rand &lt;= 20)
 {
     def_ = 1;
 }
-else if (rand &gt; 20 and rand &lt; 30)
-{
-    mag_ = 1; 
-}
 
 else if (rand &gt; 30 and rand &lt; 35)
 {
@@ -89,10 +83,6 @@ else if (rand &gt; 35 and rand &lt; 40)
 {
     def_ = 5; 
 }
-else if (rand &gt; 40 and rand &lt; 45)
-{
-    mag_ = 5; 
-}
 else if (rand == 46)
 {
     str_ = 10; 
@@ -101,10 +91,6 @@ else if (rand == 47)
 {
     def_ = 10; 
 }
-else if (rand == 48)
-{
-    mag_ = 10; 
-}
 //Strength
 str = 1 + str_;
 
@@ -112,58 +98,10 @@ str = 1 + str_;
 def = 1 + def_;
 
 //Magic
-mag = 1 + mag_;
+mag = 0;
 
 //Stats draw
 draw_state = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="6">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspeed = -4;
-hspeed = 2;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspeed = -4;
-hspeed = -2;
 </string>
           </argument>
         </arguments>
@@ -187,8 +125,6 @@ hspeed = -2;
           <argument>
             <kind>1</kind>
             <string>jump = false;
-vspeed = 0;
-hspeed = 0;
 </string>
           </argument>
         </arguments>
@@ -211,8 +147,7 @@ hspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Attack --&gt; false
-attack = false;
+            <string>can_punch = true;
 </string>
           </argument>
         </arguments>
@@ -258,12 +193,9 @@ attack = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (attack == false)
-{
-    hspeed *= -1;
-    vspeed = 0;
-    alarm[1] = random_range(30, 150);
-}
+            <string>//Attack --&gt; false
+attack = false;
+hspeed = 0;
 </string>
           </argument>
         </arguments>
@@ -335,7 +267,7 @@ attack = false;
           <argument>
             <kind>1</kind>
             <string>//Gravity
-if (place_free(x, y+2))
+if (place_free(x, y+2) || place_meeting(x, y+2, obj_pelaaja))
 {
     gravity = 0.5;
 }
@@ -343,68 +275,10 @@ else
 {
     gravity = 0;
 }
-
-//Turn image_xscale
-if (hspeed &gt; 0)
-{
-    sprite_index = spr_rat;
-}
-else if (hspeed &lt; 0)
-{
-    sprite_index = spr_rat_1;
-}
-
-//Attack
-if (distance_to_object(obj_pelaaja) &lt; 80 and obj_pelaaja.x &gt; x)
-{
-    if (jump == false)
-    {
-        hspeed = 1;
-        attack = true;
-        alarm[3] = 10; //Attack --&gt; false
-    }
-    
-    //Jump
-    else if ((obj_pelaaja.y - y) &lt; -4 and hspeed &gt; 0
-        and jump == false and !place_free(x+5, y)
-        and distance_to_object(obj_pelaaja) &gt; 2)
-    {
-        jump = true;
-        attack = true;
-        alarm[3] = 20; //Attack --&gt; false
-        alarm[4] = 40; //Jump --&gt; false
-        hspeed = 2; //If too close wall
-        alarm[6] = 20; //Do Jump
-    }
-}
-else if (distance_to_object(obj_pelaaja) &lt; 80 and obj_pelaaja.x &lt; x)
-{
-    if (jump == false)
-    {
-        hspeed = -1;
-        attack = true;
-        alarm[3] = 20; //Attack --&gt; false
-    }
-    
-    //Jump
-    else if ((obj_pelaaja.y - y) &lt; -4 and hspeed &lt; 0
-        and jump == false and !place_free(x-5, y)
-        and distance_to_object(obj_pelaaja) &gt; 2)
-    {
-        jump = true;
-        attack = true;
-        alarm[3] = 20; //Attack --&gt; false
-        alarm[4] = 40; //Jump --&gt; false
-        hspeed = -2; //If too close wall
-        alarm[5] = 20; //Do Jump
-    }
-}
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="obj_hitbox">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -421,16 +295,122 @@ else if (distance_to_object(obj_pelaaja) &lt; 80 and obj_pelaaja.x &lt; x)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.damage == 1)
+            <string>//Turn image_xscale
+if (hspeed &gt; 0)
 {
-    global.lives -= str;
-    scr_got_damage();
+    sprite_index = spr_rat;
+    image_speed = 0.2;
+}
+else if (hspeed &lt; 0)
+{
+    sprite_index = spr_rat_1;
+    image_speed = 0.2;
+}
+else if (hspeed == 0 and obj_pelaaja.x &gt; x)
+{
+    sprite_index = spr_rat;
+    image_speed = 0;
+}
+else if (hspeed == 0 and obj_pelaaja.x &lt; x)
+{
+    sprite_index = spr_rat_1;
+    image_speed = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Attack
+if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &gt; x)
+{
+    attack = true;
+    //Jump
+    if (hspeed &gt; 0 and place_meeting(x+10, y, obj_grass) //!place_free(x+10, y)
+        and !place_free(x, y+3))
+    {
+        jump = true;
+        alarm[4] = 20; //Jump --&gt; false
+        vspeed = -5;
+        hspeed = 2;
+    }
+    else if (jump == false)
+    {
+        hspeed = 1.5;
+    }
+}
+else if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &lt; x)
+{
+    attack = true;
+    //Jump
+    if (hspeed &lt; 0 and place_meeting(x-10, y, obj_grass) //!place_free(x-10, y)
+        and !place_free(x, y+3))
+    {
+        jump = true;
+        alarm[4] = 20; //Jump --&gt; false
+        vspeed = -5;
+        hspeed = -2;
+    }
+    else if (jump == false)
+    {
+        hspeed = -1.5;
+    } 
 }
 else
 {
-    global.pause = 0;
-    global.pause_draw = 0;
-    global.inventory = 0;
+    alarm[1] = 10; //Attack --&gt; false
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Punch / Hit
+if (distance_to_object(obj_pelaaja) &lt; 6 and sprite_index == spr_rat
+    and can_punch == true)
+{
+    can_punch = false;
+    alarm[3] = 50; //Cooldown
+    instance_create(x+15, y, obj_enemy_hit);
+    (instance_nearest(x, y, obj_enemy_hit)).str = str;
+}
+else if (distance_to_object(obj_pelaaja) &lt; 6 and sprite_index == spr_rat_1
+         and can_punch == true)
+{
+    can_punch = false;
+    alarm[3] = 50; //Cooldown
+    instance_create(x-15, y, obj_enemy_hit);
+    (instance_nearest(x, y, obj_enemy_hit)).str = str;
 }
 </string>
           </argument>
@@ -482,9 +462,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspeed *= -1;
-vspeed = 0;
-alarm[1] = random_range(30, 150);
+            <string>scr_solidify();
 </string>
           </argument>
         </arguments>
@@ -507,9 +485,7 @@ alarm[1] = random_range(30, 150);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspeed *= -1;
-vspeed = 0;
-alarm[1] = random_range(30, 150);
+            <string>scr_solidify();
 </string>
           </argument>
         </arguments>
@@ -560,7 +536,7 @@ alarm[1] = random_range(30, 150);
             <string>draw_self();
 
 //Font
-draw_set_font(fnt_enemies_stats);
+//draw_set_font(fnt_enemies_stats);
 
 if (distance_to_object(obj_pelaaja) &lt; 60)
 {

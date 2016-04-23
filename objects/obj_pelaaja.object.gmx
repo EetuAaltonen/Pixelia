@@ -362,7 +362,7 @@ sprite_index = spr_pelaaja;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>use=0;
+            <string>use = 0;
 </string>
           </argument>
         </arguments>

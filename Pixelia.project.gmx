@@ -60,17 +60,18 @@
       <sprite>sprites\spr_leaf</sprite>
       <sprite>sprites\spr_wood_hit</sprite>
       <sprite>sprites\spr_use</sprite>
+      <sprite>sprites\spr_enemy_hit</sprite>
       <sprite>sprites\spr_wood_dust</sprite>
     </sprites>
     <sprites name="Enemies">
-      <sprite>sprites\spr_bat</sprite>
-      <sprite>sprites\spr_enemy</sprite>
-      <sprite>sprites\spr_shadow</sprite>
       <sprite>sprites\spr_</sprite>
       <sprite>sprites\spr_archer</sprite>
+      <sprite>sprites\spr_archer_bow</sprite>
+      <sprite>sprites\spr_bat</sprite>
+      <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_rat</sprite>
       <sprite>sprites\spr_rat_1</sprite>
-      <sprite>sprites\spr_archer_bow</sprite>
+      <sprite>sprites\spr_shadow</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Draw">
@@ -298,6 +299,7 @@
       <object>objects\obj_enemy2</object>
       <object>objects\obj_bat</object>
       <object>objects\obj_rat</object>
+      <object>objects\obj_enemy_hit</object>
       <object>objects\obj_</object>
     </objects>
     <objects name="HUD">

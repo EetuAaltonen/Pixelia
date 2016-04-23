@@ -371,7 +371,7 @@ instance_destroy();
             <string>draw_self();
 
 //Font
-draw_set_font(fnt_enemies_stats);
+//draw_set_font(fnt_enemies_stats);
 
 if (distance_to_object(obj_pelaaja) &lt; 200)
 {
