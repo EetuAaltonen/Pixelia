@@ -490,7 +490,7 @@ else
     {
         gravity = 0.3;
     }
-    else
+    else if (!place_free(x, y+3) and roll == 0)
     {
         gravity = 0.5;
     }
@@ -570,7 +570,8 @@ else
     }
     
     //Roll
-    if (roll == 1 and  hspeed &gt; 0 and not keyboard_check(vk_shift))
+    if (roll == 1 and  hspeed &gt; 0 and not keyboard_check(vk_shift)
+        and !place_free(x, y+3))
     {
         sprite_index = spr_pelaaja_roll;
         hspeed = 5;
@@ -579,7 +580,8 @@ else
         image_xscale = 1;
         image_alpha = 0.5;
     }
-    else if (roll == 1 and hspeed &lt; 0 and not keyboard_check(vk_shift))
+    else if (roll == 1 and hspeed &lt; 0 and not keyboard_check(vk_shift)
+             and !place_free(x, y+3))
     {
         sprite_index = spr_pelaaja_roll;
         hspeed = -5;

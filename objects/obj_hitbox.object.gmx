@@ -131,11 +131,11 @@ if (global.room_change = 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_got_damage();
-
-//Blood
-part_particles_create(global.ps, x, y, global.pt_Blood, random_range(5,10));
-
+            <string>if (global.damage == 1)
+{
+    global.lives -= 1;
+    scr_got_damage();
+}
 </string>
           </argument>
         </arguments>
