@@ -409,10 +409,7 @@ sprite_index=spr_pelaaja;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Platform
-key_down = keyboard_check(vk_down);
-
-//Push
+            <string>//Push
 if (push == 1)
 {
     scr_player_push();
@@ -573,6 +570,7 @@ else
     if (roll == 1 and  hspeed &gt; 0 and not keyboard_check(vk_shift)
         and !place_free(x, y+3))
     {
+        global.damage = 0;
         sprite_index = spr_pelaaja_roll;
         hspeed = 5;
         gravity = 0;
@@ -583,6 +581,7 @@ else
     else if (roll == 1 and hspeed &lt; 0 and not keyboard_check(vk_shift)
              and !place_free(x, y+3))
     {
+        global.damage = 0;
         sprite_index = spr_pelaaja_roll;
         hspeed = -5;
         gravity = 0;
@@ -648,37 +647,30 @@ else
           <argument>
             <kind>1</kind>
             <string>//Lives
-if (global.lives &lt;= 0)
+scr_pelaaja_dead();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.damage == 0)
 {
-        //alarm[7] = 120;
-        //global.pause = 1;
-        //global.damage = 0;
-        
-        //Drop coins after death
-        coin_drop = round(global.coin/2);
-        
-        //Enemies' stats
-        global.enemy_stats1 = 0;
-        global.enemy_stats2 = 0;
-        global.enemy_stats3 = 0;
-        
-        //Drop coins
-        while coin_drop &lt; global.coin
-        {
-            instance_create(x, y-5, obj_coin);
-            coin_drop += 1;
-            global.coin -= 1;
-        }
-        
-        //Create grave
-        instance_create(x, y-5, obj_grave);
-        
-        //Death counter
-        global.death_counter += 1;
-        
-        x = obj_spawner.x;
-        y = obj_spawner.y;
-        global.lives = 10;
+    image_alpha = 0.5;
 }
 </string>
           </argument>
@@ -1382,8 +1374,8 @@ if (!place_free(x+hspeed,y+vspeed))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.money=0;
-global.lives=0;
+            <string>global.lives = 0;
+scr_pelaaja_dead();
 </string>
           </argument>
         </arguments>
@@ -1921,7 +1913,6 @@ alarm[1] = 25;
 {
     //Roll
     roll = 1;
-    global.damage = 0;
     alarm[5] = 15;
 }
 </string>

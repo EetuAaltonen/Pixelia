@@ -44,6 +44,8 @@
       <sprite>sprites\spr_gold_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_potion</sprite>
+      <sprite>sprites\spr_tree</sprite>
+      <sprite>sprites\spr_tree_1</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
@@ -66,11 +68,9 @@
       <sprite>sprites\spr_shadow</sprite>
       <sprite>sprites\spr_</sprite>
       <sprite>sprites\spr_archer</sprite>
+      <sprite>sprites\spr_rat</sprite>
+      <sprite>sprites\spr_rat_1</sprite>
       <sprite>sprites\spr_archer_bow</sprite>
-    </sprites>
-    <sprites name="Enemy pictures">
-      <sprite>sprites\spr_pic_bat</sprite>
-      <sprite>sprites\spr_pic_archer</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Draw">
@@ -83,6 +83,11 @@
         <sprite>sprites\spr_quit_draw</sprite>
         <sprite>sprites\spr_restart</sprite>
         <sprite>sprites\spr_W_ready</sprite>
+      </sprites>
+      <sprites name="Enemy pictures">
+        <sprite>sprites\spr_pic_bat</sprite>
+        <sprite>sprites\spr_pic_rat</sprite>
+        <sprite>sprites\spr_pic_archer</sprite>
       </sprites>
       <sprites name="Inventory">
         <sprite>sprites\spr_inv_inventory_button</sprite>
@@ -127,7 +132,6 @@
       <sprite>sprites\spr_crate_0002</sprite>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_torch</sprite>
-      <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_anvil</sprite>
       <sprite>sprites\spr_grave</sprite>
       <sprite>sprites\spr_lever</sprite>
@@ -139,6 +143,7 @@
       <sprite>sprites\spr_flower</sprite>
       <sprite>sprites\spr_sign</sprite>
       <sprite>sprites\spr_shelf</sprite>
+      <sprite>sprites\spr_weaponrack</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_body</sprite>
@@ -192,16 +197,17 @@
     <sprite>sprites\spr_quit</sprite>
     <sprite>sprites\spr_sign_bg</sprite>
     <sprite>sprites\spr_spawner</sprite>
-    <sprite>sprites\spr_tree</sprite>
-    <sprite>sprites\spr_tree_1</sprite>
     <sprite>sprites\spr_tree_5</sprite>
     <sprite>sprites\spr_wall_phy</sprite>
-    <sprite>sprites\spr_weaponrack</sprite>
-    <sprite>sprites\spr_world</sprite>
     <sprite>sprites\spr_xp_draw</sprite>
-    <sprite>sprites\spr_xscale_switch</sprite>
     <sprite>sprites\sprite77</sprite>
     <sprite>sprites\sprite94</sprite>
+    <sprites name="Traps">
+      <sprite>sprites\spr_spike</sprite>
+    </sprites>
+    <sprites name="Travelling">
+      <sprite>sprites\spr_world</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_menu</background>
@@ -210,15 +216,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_auto_tile.gml</script>
-    <script>scripts\scr_got_damage.gml</script>
-    <script>scripts\scr_solidify.gml</script>
-    <script>scripts\scr_falling_damage.gml</script>
-    <script>scripts\scr_player_woodcutting.gml</script>
-    <script>scripts\scr_player_push.gml</script>
-    <script>scripts\scr_player_cave_stairs.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_coin_collected.gml</script>
+    <script>scripts\scr_falling_damage.gml</script>
+    <script>scripts\scr_got_damage.gml</script>
+    <script>scripts\scr_pelaaja_dead.gml</script>
+    <script>scripts\scr_player_cave_stairs.gml</script>
+    <script>scripts\scr_player_push.gml</script>
+    <script>scripts\scr_player_woodcutting.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
+    <script>scripts\scr_solidify.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_sign</font>
@@ -290,6 +297,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_enemy2</object>
       <object>objects\obj_bat</object>
+      <object>objects\obj_rat</object>
       <object>objects\obj_</object>
     </objects>
     <objects name="HUD">
@@ -351,13 +359,12 @@
       <object>objects\obj_platform</object>
       <object>objects\obj_shelf</object>
       <object>objects\obj_sign</object>
-      <object>objects\obj_spikes</object>
       <object>objects\obj_torch</object>
       <object>objects\obj_weaponrack</object>
     </objects>
     <object>objects\obj_aim</object>
-    <object>objects\obj_body</object>
     <object>objects\obj_blacksmith_shoper</object>
+    <object>objects\obj_body</object>
     <object>objects\obj_compass</object>
     <object>objects\obj_cycle</object>
     <object>objects\obj_enemy_turn_left</object>
@@ -376,6 +383,9 @@
       </objects>
       <object>objects\obj_spawner</object>
       <object>objects\obj_hitbox</object>
+    </objects>
+    <objects name="Traps">
+      <object>objects\obj_spikes</object>
     </objects>
     <objects name="Travelling">
       <object>objects\obj_world</object>

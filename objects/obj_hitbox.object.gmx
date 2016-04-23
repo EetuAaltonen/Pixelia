@@ -58,6 +58,7 @@ scr_blood_particle();
           <argument>
             <kind>1</kind>
             <string>global.damage = 1;
+obj_pelaaja.image_alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -133,6 +134,12 @@ if (global.room_change = 1)
             <kind>1</kind>
             <string>if (global.damage == 1)
 {
+    //Spike trap
+    if (distance_to_object(obj_spikes) == 0)
+    {
+        (instance_nearest(x , y, obj_spikes)).image_index = 1;
+        (instance_nearest(x , y, obj_spikes)).alarm[1] = 2000;
+    }
     global.lives -= 1;
     scr_got_damage();
 }
