@@ -107,29 +107,6 @@ draw_state = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>jump = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -193,9 +170,7 @@ draw_state = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Attack --&gt; false
-attack = false;
-hspeed = 0;
+            <string>jump = false;
 </string>
           </argument>
         </arguments>
@@ -339,13 +314,12 @@ else if (hspeed == 0 and obj_pelaaja.x &lt; x)
             <string>//Attack
 if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &gt; x)
 {
-    attack = true;
     //Jump
     if (hspeed &gt; 0 and place_meeting(x+10, y, obj_grass) //!place_free(x+10, y)
         and !place_free(x, y+3))
     {
         jump = true;
-        alarm[4] = 20; //Jump --&gt; false
+        alarm[1] = 20; //Jump --&gt; false
         vspeed = -5;
         hspeed = 2;
     }
@@ -356,7 +330,6 @@ if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &gt; x)
 }
 else if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &lt; x)
 {
-    attack = true;
     //Jump
     if (hspeed &lt; 0 and place_meeting(x-10, y, obj_grass) //!place_free(x-10, y)
         and !place_free(x, y+3))
@@ -371,9 +344,9 @@ else if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &lt; x)
         hspeed = -1.5;
     } 
 }
-else
+else if (distance_to_object(obj_pelaaja) &gt;= 100)
 {
-    alarm[1] = 10; //Attack --&gt; false
+    hspeed = 0;
 }
 </string>
           </argument>
@@ -536,7 +509,7 @@ alarm[1] = random_range(30, 150);
             <string>draw_self();
 
 //Font
-//draw_set_font(fnt_enemies_stats);
+draw_set_font(fnt_enemies_stats);
 
 if (distance_to_object(obj_pelaaja) &lt; 60)
 {
@@ -588,7 +561,6 @@ if (distance_to_object(obj_pelaaja) &lt; 60)
         {
             draw_text_color(view_xview+180, view_yview+2, string(str),
             c_white, c_white, c_white, c_white, 1);
-            draw_text(view_xview+165, view_yview+2, "S: ");
             draw_text_color(view_xview+165, view_yview+2, "S: ",
             c_white, c_white, c_white, c_white, 1);
         }

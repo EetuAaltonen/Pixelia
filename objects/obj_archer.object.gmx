@@ -371,7 +371,7 @@ instance_destroy();
             <string>draw_self();
 
 //Font
-//draw_set_font(fnt_enemies_stats);
+draw_set_font(fnt_enemies_stats);
 
 if (distance_to_object(obj_pelaaja) &lt; 200)
 {
@@ -429,7 +429,6 @@ if (distance_to_object(obj_pelaaja) &lt; 200)
         {
             draw_text_color(view_xview+180, view_yview+2, string(str),
             c_white, c_white, c_white, c_white, 1);
-            draw_text(view_xview+165, view_yview+2, "S: ");
             draw_text_color(view_xview+165, view_yview+2, "S: ",
             c_white, c_white, c_white, c_white, 1);
         }
