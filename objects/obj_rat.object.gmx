@@ -323,7 +323,7 @@ if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &gt; x)
         vspeed = -5;
         hspeed = 2;
     }
-    else if (jump == false)
+    else
     {
         hspeed = 1.5;
     }
@@ -339,12 +339,12 @@ else if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &lt; x)
         vspeed = -5;
         hspeed = -2;
     }
-    else if (jump == false)
+    else if (distance_to_object(obj_pelaaja) &lt; 100)
     {
         hspeed = -1.5;
     } 
 }
-else if (distance_to_object(obj_pelaaja) &gt;= 100)
+else
 {
     hspeed = 0;
 }
