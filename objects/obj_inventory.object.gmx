@@ -203,6 +203,16 @@ else if(global.inventory == 2)
     draw_text_color(view_xview+50,view_yview+143, string(kill_counter),
             c_black, c_black, c_black, c_black, 1);
 }
+else if(global.inventory == 2)
+{
+    //Text
+    draw_sprite(spr_ts_infobox , 0, view_xview+30, view_yview+120);
+    //Deat counter
+    var death_counter;
+    death_counter = global.death_counter;
+    draw_text_color(view_xview+50,view_yview+112, string(death_counter),
+            c_black, c_black, c_black, c_black, 1);
+}
 </string>
           </argument>
         </arguments>

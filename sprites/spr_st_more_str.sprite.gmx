@@ -20,7 +20,7 @@
   <width>30</width>
   <height>19</height>
   <frames>
-    <frame index="0">images\spr_st_stamina_reg_0.png</frame>
-    <frame index="1">images\spr_st_stamina_reg_1.png</frame>
+    <frame index="0">images\spr_st_more_str_0.png</frame>
+    <frame index="1">images\spr_st_more_str_1.png</frame>
   </frames>
 </sprite>

@@ -49,14 +49,8 @@ global.level = 1;
 global.xp = 0;
 global.limit = 20;
 
-if (room == Menu)
-{
-    visible = false;
-}
-else
-{
-    visible = true;
-}
+//Skillpoint
+global.skillpoint = 1;
 
 //Death counter
 global.death_counter = 0;
@@ -324,7 +318,13 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Level
+            <string>//Draw
+if (!room == Menu)
+{
+    draw_self();
+}
+
+//Level
 var level;
 level = global.level;
 draw_text_color(view_xview+180,view_yview+278, string(level),
