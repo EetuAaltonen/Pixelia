@@ -91,17 +91,28 @@
         <sprite>sprites\spr_pic_archer</sprite>
       </sprites>
       <sprites name="Inventory">
+        <sprites name="Skilltree">
+          <sprite>sprites\spr_st_2xcoin</sprite>
+          <sprite>sprites\spr_st_mana_reg</sprite>
+          <sprite>sprites\spr_st_more_mana</sprite>
+          <sprite>sprites\spr_st_more_stamina</sprite>
+          <sprite>sprites\spr_st_stamina_reg</sprite>
+          <sprite>sprites\sprite170</sprite>
+          <sprite>sprites\spr_info_box</sprite>
+        </sprites>
+        <sprite>sprites\spr_inv_close_button</sprite>
         <sprite>sprites\spr_inv_inventory_button</sprite>
         <sprite>sprites\spr_inv_save_exit_button</sprite>
-        <sprite>sprites\spr_inv_stats_button</sprite>
         <sprite>sprites\spr_inv_skilltree_button</sprite>
-        <sprite>sprites\spr_inv_close_button</sprite>
-        <sprite>sprites\spr_inventory_bg</sprite>
+        <sprite>sprites\spr_inv_stats_button</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
+        <sprite>sprites\spr_inventory_bg</sprite>
         <sprite>sprites\spr_inventory_iron</sprite>
-        <sprite>sprites\spr_death_counter</sprite>
-        <sprite>sprites\spr_kill_counter</sprite>
         <sprite>sprites\spr_inventory_log</sprite>
+        <sprites name="Stats">
+          <sprite>sprites\spr_death_counter</sprite>
+          <sprite>sprites\spr_kill_counter</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_building</sprite>
       <sprite>sprites\spr_counter</sprite>
