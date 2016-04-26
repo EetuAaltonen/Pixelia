@@ -29,17 +29,21 @@
 global.load = 0; //Carrying - slow your movement
 
 //Stamina
+global.stam_plus = 0;
 global.stamina = 10;
 stamina_usage = 1;
 stamreg = 2;
+global.stamreg_plus = 0; //skill
 stamina_regerate = 1;
 alarm[1] = 50; //Stamina regeration
 alarm[2] = 10; //Stamina usage
 
 //Mana
+global.man_plus = 0;
 global.mana = 10;
 mana_usage = 1;
 manreg = 2;
+global.manreg_plus = 0; //skill
 mana_regerate = 1;
 alarm[4] = 50; //Mana regeration
 alarm[5] = 10; //Mana usage
@@ -131,7 +135,7 @@ global.mana = round(global.mana);
             <string>alarm[4] = 100; //Mana regeration
 if (mana_regerate == 1)
 {
-    global.mana += manreg;
+    global.mana += manreg + global.manreg_plus;
 }
 </string>
           </argument>
@@ -208,7 +212,7 @@ global.stamina = round(global.stamina);
 
 if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
 {
-    global.stamina += stamreg;
+    global.stamina += stamreg + global.stamreg_plus;
 }
 </string>
           </argument>
@@ -235,7 +239,7 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
             <string>if (instance_exists(obj_pelaaja))
 {
     //Stamina
-    if (global.stamina &gt; 10)
+    if (global.stamina &gt; (10 + global.stam_plus))
     {
         global.stamina = 10;
     }
@@ -277,7 +281,7 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
     
     //Mana
     
-    if (global.mana &gt; 10)
+    if (global.mana &gt; (10 + global.man_plus)
     {
         global.mana = 10;
     }

@@ -292,7 +292,11 @@
     <instance objName="obj_grass" x="823" y="283" name="inst_33B7DA3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="839" y="283" name="inst_0B446CD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="855" y="283" name="inst_334096AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_st_2xcoin" x="-144" y="-71" name="inst_7F4A496C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_st_2xcoin" x="-187" y="-33" name="inst_7F4A496C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_st_more_str" x="-375" y="-32" name="inst_70B75789" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_st_carry_weight" x="-219" y="-33" name="inst_71BA38B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_st_more_mana" x="-342" y="-32" name="inst_7F4308CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_st_mana_reg" x="-309" y="-32" name="inst_57C3092F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

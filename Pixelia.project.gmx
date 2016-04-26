@@ -92,13 +92,18 @@
       </sprites>
       <sprites name="Inventory">
         <sprites name="Skilltree">
-          <sprite>sprites\spr_st_info_box</sprite>
           <sprite>sprites\spr_st_2xcoin</sprite>
+          <sprite>sprites\spr_st_auto_heal</sprite>
+          <sprite>sprites\spr_st_better_prices</sprite>
           <sprite>sprites\spr_st_carry_weight</sprite>
+          <sprite>sprites\spr_st_hidden_things</sprite>
+          <sprite>sprites\spr_st_info_box</sprite>
           <sprite>sprites\spr_st_mana_reg</sprite>
           <sprite>sprites\spr_st_more_mana</sprite>
           <sprite>sprites\spr_st_more_stamina</sprite>
           <sprite>sprites\spr_st_more_str</sprite>
+          <sprite>sprites\spr_st_moving_speed</sprite>
+          <sprite>sprites\spr_st_no_dakness</sprite>
           <sprite>sprites\spr_st_stamina_reg</sprite>
           <sprite>sprites\sprite170</sprite>
         </sprites>
@@ -332,6 +337,10 @@
         <object>objects\obj_inventory</object>
         <objects name="Skilltree">
           <object>objects\obj_st_2xcoin</object>
+          <object>objects\obj_st_carry_weight</object>
+          <object>objects\obj_st_more_mana</object>
+          <object>objects\obj_st_mana_reg</object>
+          <object>objects\obj_st_more_str</object>
         </objects>
         <objects name="Button">
           <object>objects\obj_inv_stats_button</object>
