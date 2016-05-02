@@ -31,5 +31,15 @@
     <frame index="8">images\spr_stamina_8.png</frame>
     <frame index="9">images\spr_stamina_9.png</frame>
     <frame index="10">images\spr_stamina_10.png</frame>
+    <frame index="11">images\spr_stamina_11.png</frame>
+    <frame index="12">images\spr_stamina_12.png</frame>
+    <frame index="13">images\spr_stamina_13.png</frame>
+    <frame index="14">images\spr_stamina_14.png</frame>
+    <frame index="15">images\spr_stamina_15.png</frame>
+    <frame index="16">images\spr_stamina_16.png</frame>
+    <frame index="17">images\spr_stamina_17.png</frame>
+    <frame index="18">images\spr_stamina_18.png</frame>
+    <frame index="19">images\spr_stamina_19.png</frame>
+    <frame index="20">images\spr_stamina_20.png</frame>
   </frames>
 </sprite>

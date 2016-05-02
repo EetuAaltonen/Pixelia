@@ -239,6 +239,7 @@
     <script>scripts\scr_coin_collected.gml</script>
     <script>scripts\scr_falling_damage.gml</script>
     <script>scripts\scr_got_damage.gml</script>
+    <script>scripts\scr_move_out_of_room.gml</script>
     <script>scripts\scr_pelaaja_dead.gml</script>
     <script>scripts\scr_player_cave_stairs.gml</script>
     <script>scripts\scr_player_push.gml</script>

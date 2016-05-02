@@ -29,8 +29,8 @@
 global.load = 0; //Carrying - slow your movement
 
 //Stamina
-global.stam_plus = 0;
-global.stamina = 10;
+global.stam_plus = 5; //Max = 10
+global.stamina = (10 + global.stam_plus);
 stamina_usage = 1;
 stamreg = 2;
 global.stamreg_plus = 0; //skill
@@ -39,8 +39,8 @@ alarm[1] = 50; //Stamina regeration
 alarm[2] = 10; //Stamina usage
 
 //Mana
-global.man_plus = 0;
-global.mana = 10;
+global.man_plus = 8; //Max = 10
+global.mana = (10 + global.man_plus);
 mana_usage = 1;
 manreg = 2;
 global.manreg_plus = 0; //skill
@@ -241,7 +241,7 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
     //Stamina
     if (global.stamina &gt; (10 + global.stam_plus))
     {
-        global.stamina = 10;
+        global.stamina = (10 + global.stam_plus);
     }
     else if (global.stamina &lt; 0)
     {
@@ -281,9 +281,9 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
     
     //Mana
     
-    if (global.mana &gt; (10 + global.man_plus)
+    if (global.mana &gt; (10 + global.man_plus))
     {
-        global.mana = 10;
+        global.mana = (10 + global.man_plus);
     }
     else if (global.mana &lt; 0)
     {

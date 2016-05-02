@@ -25,8 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = view_xview + 180;
-y = view_yview + 250;
+            <string>//Position
+if (global.inventory &gt; 0)
+{
+    x = view_xview + 180;
+    y = view_yview + 250;
+}
+else
+{
+    scr_move_out_of_room();
+}
 
 //Animation
 if (global.skillpoint &gt; 0 and global.level &gt; 0)

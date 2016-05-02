@@ -127,7 +127,7 @@ else
             <kind>1</kind>
             <string>if (!room == Menu)
 {
-    if (global.pause == 0 || global.inventory &gt; 0)
+    if (/*global.pause == 0 ||*/ global.inventory &gt; 0)
     {
         draw_self();
     }
