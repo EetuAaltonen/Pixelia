@@ -417,8 +417,15 @@ else if (global.inventory &gt; 0)
     vspeed = 0;
 }
 
-//Dialogs
-else if (global.dialogs == 1)
+//Shop
+else if (global.shop &gt; 0)
+{
+    hspeed = 0;
+    vspeed = 0;
+}
+
+//Dialog
+else if (global.dialog == 1)
 {
     hspeed = 0;
     vspeed = 0;

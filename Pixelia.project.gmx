@@ -74,6 +74,11 @@
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
     <sprites name="HUD">
+      <sprites name="Dialog">
+        <sprite>sprites\spr_dialog</sprite>
+        <sprite>sprites\spr_dialog_backgroud</sprite>
+        <sprite>sprites\spr_dialog_bg</sprite>
+      </sprites>
       <sprites name="Draw">
         <sprite>sprites\spr_A_ready</sprite>
         <sprite>sprites\spr_enemies_stats</sprite>
@@ -84,6 +89,8 @@
         <sprite>sprites\spr_quit_draw</sprite>
         <sprite>sprites\spr_restart</sprite>
         <sprite>sprites\spr_W_ready</sprite>
+        <sprite>sprites\spr_dialog_A</sprite>
+        <sprite>sprites\spr_dialog_D</sprite>
       </sprites>
       <sprites name="Enemy pictures">
         <sprite>sprites\spr_pic_bat</sprite>
@@ -112,6 +119,7 @@
         <sprite>sprites\spr_inv_save_exit_button</sprite>
         <sprite>sprites\spr_inv_skilltree_button</sprite>
         <sprite>sprites\spr_inv_stats_button</sprite>
+        <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_inventory_bg</sprite>
         <sprite>sprites\spr_inventory_iron</sprite>
@@ -121,21 +129,22 @@
           <sprite>sprites\spr_kill_counter</sprite>
         </sprites>
       </sprites>
+      <sprites name="Shop">
+        <sprite>sprites\spr_shop_background</sprite>
+        <sprite>sprites\spr_shop</sprite>
+        <sprite>sprites\spr_shop_bg</sprite>
+      </sprites>
       <sprite>sprites\spr_building</sprite>
       <sprite>sprites\spr_counter</sprite>
       <sprite>sprites\spr_darkness</sprite>
-      <sprite>sprites\spr_dialog_A</sprite>
-      <sprite>sprites\spr_dialog_D</sprite>
       <sprite>sprites\spr_draw_hotbar_bg</sprite>
       <sprite>sprites\spr_draw_inventory_bg</sprite>
       <sprite>sprites\spr_E</sprite>
-      <sprite>sprites\spr_inventory</sprite>
       <sprite>sprites\spr_lightness</sprite>
       <sprite>sprites\spr_money_draw</sprite>
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_pointer</sprite>
       <sprite>sprites\spr_quests</sprite>
-      <sprite>sprites\spr_quests_dialogs</sprite>
       <sprite>sprites\spr_screen</sprite>
       <sprite>sprites\spr_stats</sprite>
       <sprites name="Stats">
@@ -164,6 +173,10 @@
       <sprite>sprites\spr_shelf</sprite>
       <sprite>sprites\spr_weaponrack</sprite>
     </sprites>
+    <sprites name="NPCs">
+      <sprite>sprites\spr_blacksmith_shoper</sprite>
+      <sprite>sprites\spr_merchant</sprite>
+    </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_body</sprite>
       <sprite>sprites\spr_pelaaja</sprite>
@@ -190,7 +203,6 @@
     <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
     <sprite>sprites\spr_arrow1</sprite>
-    <sprite>sprites\spr_blacksmith_shoper</sprite>
     <sprite>sprites\spr_blocker5</sprite>
     <sprite>sprites\spr_cannon_left</sprite>
     <sprite>sprites\spr_cannon_right</sprite>
@@ -198,7 +210,6 @@
     <sprite>sprites\spr_combat_skills</sprite>
     <sprite>sprites\spr_compass</sprite>
     <sprite>sprites\spr_crouch</sprite>
-    <sprite>sprites\spr_dialog</sprite>
     <sprite>sprites\spr_empty_tree</sprite>
     <sprite>sprites\spr_enemy_turn_left</sprite>
     <sprite>sprites\spr_enemy_turn_right</sprite>
@@ -307,6 +318,7 @@
       <object>objects\obj_use</object>
       <object>objects\obj_lever_signal</object>
       <object>objects\obj_heal</object>
+      <object>objects\obj_body</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_shadow</object>
@@ -332,9 +344,15 @@
       </objects>
       <object>objects\obj_counter</object>
       <object>objects\obj_darkness</object>
-      <object>objects\obj_dialog</object>
-      <object>objects\obj_dialogs</object>
       <objects name="Inventory">
+        <objects name="Button">
+          <object>objects\obj_inv_stats_button</object>
+          <object>objects\obj_inv_skilltree_button</object>
+          <object>objects\obj_inv_save_exit_button</object>
+          <object>objects\obj_inv_inventory_button</object>
+          <object>objects\obj_inv_close_button</object>
+        </objects>
+        <object>objects\obj_draw_inventory_bg</object>
         <object>objects\obj_inventory</object>
         <objects name="Skilltree">
           <object>objects\obj_st_2xcoin</object>
@@ -342,13 +360,6 @@
           <object>objects\obj_st_more_mana</object>
           <object>objects\obj_st_mana_reg</object>
           <object>objects\obj_st_more_str</object>
-        </objects>
-        <objects name="Button">
-          <object>objects\obj_inv_stats_button</object>
-          <object>objects\obj_inv_skilltree_button</object>
-          <object>objects\obj_inv_save_exit_button</object>
-          <object>objects\obj_inv_inventory_button</object>
-          <object>objects\obj_inv_close_button</object>
         </objects>
       </objects>
       <object>objects\obj_money_target</object>
@@ -364,7 +375,14 @@
         <object>objects\obj_stamina</object>
       </objects>
       <object>objects\obj_draw_hotbar_bg</object>
-      <object>objects\obj_draw_inventory_bg</object>
+      <objects name="Shop">
+        <object>objects\obj_draw_shop_bg</object>
+        <object>objects\obj_shop</object>
+      </objects>
+      <objects name="Dialog">
+        <object>objects\obj_dialog</object>
+        <object>objects\obj_dialog</object>
+      </objects>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
@@ -392,15 +410,17 @@
       <object>objects\obj_torch</object>
       <object>objects\obj_weaponrack</object>
     </objects>
+    <objects name="NPCs">
+      <object>objects\obj_blacksmith_shoper</object>
+      <object>objects\obj_merchant</object>
+      <object>objects\obj_NPC</object>
+    </objects>
     <object>objects\obj_aim</object>
-    <object>objects\obj_blacksmith_shoper</object>
-    <object>objects\obj_body</object>
     <object>objects\obj_compass</object>
     <object>objects\obj_cycle</object>
     <object>objects\obj_enemy_turn_left</object>
     <object>objects\obj_enemy_turn_right</object>
     <object>objects\obj_goal</object>
-    <object>objects\obj_NPC</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_pet</object>
     <object>objects\obj_pet_ammo</object>
