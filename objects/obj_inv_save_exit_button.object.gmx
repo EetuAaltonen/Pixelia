@@ -57,7 +57,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.inventory = 0;
+            <string>scr_savegame();
+global.inventory = 0;
 room_goto(Menu);
 </string>
           </argument>

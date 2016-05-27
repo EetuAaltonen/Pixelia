@@ -199,6 +199,7 @@
         <sprite>sprites\spr_down2</sprite>
         <sprite>sprites\spr_abilitylights</sprite>
       </sprites>
+      <sprite>sprites\spr_saving</sprite>
     </sprites>
     <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
@@ -257,6 +258,9 @@
     <script>scripts\scr_player_woodcutting.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <script>scripts\scr_savegame.gml</script>
+    <script>scripts\scr_loadgame.gml</script>
+    <script>scripts\scr_current_room.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_sign</font>
@@ -433,6 +437,7 @@
       </objects>
       <object>objects\obj_spawner</object>
       <object>objects\obj_hitbox</object>
+      <object>objects\Saving</object>
     </objects>
     <objects name="Traps">
       <object>objects\obj_spikes</object>

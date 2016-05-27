@@ -98,6 +98,8 @@ roll = 0;
 
 //Cooldown ?
 cooldown = 1;
+
+scr_current_room();
 </string>
           </argument>
         </arguments>
