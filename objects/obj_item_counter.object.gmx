@@ -29,10 +29,10 @@
 global.inventory = 0;
 
 //Coins
-global.coin = 0;
+global.coins = 0;
 
 //Item counter
-global.potion = 0;
+global.potions = 0;
 global.ironore = 0;
 global.logs = 0;
 
@@ -70,18 +70,18 @@ else
           <argument>
             <kind>1</kind>
             <string>//Coin
-if (global.coin &lt; 0)
+if (global.coins &lt; 0)
 {
-    global.coin = 0;
+    global.coins = 0;
 }
 
 //Auto-healing
 if (global.auto_healing == 1
-    and global.potion &gt; 0
-    and global.lives &lt; 5)
+    and global.potions &gt; 0
+    and global.health &lt; 5)
 {
-    global.potion -= 1;
-    global.lives += 10;
+    global.potions -= 1;
+    global.health += 10;
 }
 </string>
           </argument>
@@ -111,7 +111,7 @@ draw_set_color(c_white);
 
 //Coins
 var coin;
-coin = global.coin;
+coin = global.coins;
 draw_text_color(view_xview+440,view_yview+278, string(coin),
             c_black, c_black, c_black, c_black, 1);
 //Logo
@@ -121,7 +121,7 @@ draw_sprite_ext(spr_money_draw, image_index, view_xview+425,
 
 //Potion
 var potion;
-potion = global.potion;
+potion = global.potions;
 draw_text_color(view_xview+380,view_yview+278, string(potion),
             c_black, c_black, c_black, c_black, 1);
 //Logo

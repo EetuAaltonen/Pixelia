@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>global.level=1
 global.xp=0
-global.limit=20
+global.xp_limit=20
 x=+100
 y=+100
 if room=Menu
@@ -56,9 +56,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.xp&gt;=global.limit
+            <string>if global.xp&gt;=global.xp_limit
     {global.level=global.level+1
-     global.limit=global.limit+10
+     global.xp_limit=global.xp_limit+10
      global.xp=0}
 </string>
           </argument>

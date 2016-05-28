@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>if (distance_to_object(obj_potion_target) &lt; 40)
 {
-    global.potion += 1;
+    global.potions += 1;
     instance_destroy();
 }
 </string>

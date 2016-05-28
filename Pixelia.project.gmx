@@ -152,6 +152,7 @@
         <sprite>sprites\spr_mana</sprite>
         <sprite>sprites\spr_stamina</sprite>
       </sprites>
+      <sprite>sprites\spr_first_loading</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_barrel</sprite>
@@ -249,24 +250,25 @@
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_coin_collected.gml</script>
+    <script>scripts\scr_current_room.gml</script>
     <script>scripts\scr_falling_damage.gml</script>
     <script>scripts\scr_got_damage.gml</script>
+    <script>scripts\scr_loadgame.gml</script>
     <script>scripts\scr_move_out_of_room.gml</script>
     <script>scripts\scr_pelaaja_dead.gml</script>
     <script>scripts\scr_player_cave_stairs.gml</script>
     <script>scripts\scr_player_push.gml</script>
     <script>scripts\scr_player_woodcutting.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
-    <script>scripts\scr_solidify.gml</script>
     <script>scripts\scr_savegame.gml</script>
-    <script>scripts\scr_loadgame.gml</script>
-    <script>scripts\scr_current_room.gml</script>
+    <script>scripts\scr_solidify.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_sign</font>
     <font>fonts\fnt_enemies_stats</font>
     <font>fonts\fnt_item_counter</font>
     <font>fonts\fnt_dialog</font>
+    <font>fonts\fnt_loading</font>
   </fonts>
   <objects name="objects">
     <objects name="Ammon">
@@ -445,10 +447,12 @@
     <objects name="Travelling">
       <object>objects\obj_world</object>
     </objects>
+    <object>objects\obj_first_loading</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
     <room>rooms\Test</room>
+    <room>rooms\First_loading</room>
     <room>rooms\Cave</room>
     <room>rooms\Cave_0001</room>
     <room>rooms\Home</room>

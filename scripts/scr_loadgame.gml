@@ -9,7 +9,7 @@ if (file_exists("Save.sav"))
     var LoadedIronores = ini_read_string("Save1","ironores","0");
     var LoadedLogs = ini_read_string("Save1","logs","0");
     
-    var LoadedQuest= ini_read_string("Save1","quest","0");
+    //var LoadedQuest= ini_read_string("Save1","quest","0");
     
     //LoadedRoom = real(base64_decode(LoadedRoom));
     //LoadedCoins = real(base64_decode(LoadedCoins));
@@ -17,14 +17,14 @@ if (file_exists("Save.sav"))
     ini_close();
     
     global.current_room = LoadedRoom;
-    global.lives = LoadedHealth;
-    global.coin = round(LoadedCoins);
+    global.health = LoadedHealth;
+    global.coins = round(LoadedCoins);
     
-    global.potion = round(LoadedPotions);
+    global.potions = round(LoadedPotions);
     global.ironore = round(LoadedIronores);
     global.logs = round(LoadedLogs);
     
-    var SavedQuest = global.guest;
+    //var SavedQuest = global.guest;
     
     room_goto(global.current_room);
 }

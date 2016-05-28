@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_pelaaja))
+            <string>global.damage = 1;
+if (instance_exists(obj_pelaaja))
 {  
     x = obj_pelaaja.x-4;
     y = obj_pelaaja.y;
-    global.damage = 1;
 }
 
 //Blood
@@ -105,8 +105,12 @@ obj_pelaaja.image_alpha = 1;
         x = obj_pelaaja.x+2;
         image_xscale = -1; 
     }
-}   
-if (global.room_change = 1)
+}
+else
+{
+    scr_move_out_of_room();
+}  
+/*if (global.room_change = 1)
 {
     instance_destroy();
 }
@@ -140,7 +144,7 @@ if (global.room_change = 1)
         (instance_nearest(x , y, obj_spikes)).image_index = 1;
         (instance_nearest(x , y, obj_spikes)).alarm[1] = 2000;
     }
-    global.lives -= 1;
+    global.health -= 1;
     scr_got_damage();
 }
 </string>

@@ -51,7 +51,7 @@ alarm[5] = 10; //Mana usage
 //Level
 global.level = 1;
 global.xp = 0;
-global.limit = 20;
+global.xp_limit = 20;
 
 //Skillpoint
 global.skillpoint = 1;
@@ -219,7 +219,7 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -238,6 +238,14 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
             <kind>1</kind>
             <string>if (instance_exists(obj_pelaaja))
 {
+    //Level and xp
+    if (global.xp &gt;= global.xp_limit)
+    {
+        global.level += 1;
+        global.skillpoint += 1;
+        global.xp = 0;
+    }
+    
     //Stamina
     if (global.stamina &gt; (10 + global.stam_plus))
     {
@@ -349,7 +357,7 @@ draw_sprite_ext(spr_xp_draw, image_index, view_xview+271,
                 image_angle, c_white, image_alpha);
 //XP Limit
 var xp_limit;
-xp_limit = global.limit;
+xp_limit = global.xp_limit;
 draw_text_color(view_xview+316,view_yview+278, string(xp_limit),
                 c_black, c_black, c_black, c_black, 1);
 //Slash;

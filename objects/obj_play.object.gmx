@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>global.pelaajaspawner = 1;
-scr_loadgame();
+room_goto(First_loading)
 </string>
           </argument>
         </arguments>

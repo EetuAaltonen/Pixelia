@@ -317,7 +317,7 @@ if place_free(x,y+1){sprite_index=spr_jump}
     
 if keyboard_check(vk_delete)
     {instance_destroy()
-     global.coin=global.coin-50
+     global.coins=global.coins-50
      room_restart()}
 
 //Ability
@@ -345,7 +345,7 @@ if use=1 and obj_pelaaja.image_xscale=-1
 //Lives
 if lives&lt;=0
     {instance_destroy()
-    global.coin=global.coin-30
+    global.coins=global.coins-30
     room_restart()}
 </string>
           </argument>
@@ -559,7 +559,7 @@ global.xp=global.xp+1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.coin=global.coin+1;
+            <string>global.coins=global.coins+1;
 </string>
           </argument>
         </arguments>

@@ -1,12 +1,12 @@
 //Lives
-if (global.lives <= 0)
+if (global.health <= 0)
 {
         //alarm[7] = 120;
         //global.pause = 1;
         //global.damage = 0;
         
         //Drop coins after death
-        coin_drop = round(global.coin*0.5);
+        coin_drop = round(global.coins*0.5);
         
         //Enemies' stats
         global.enemy_stats1 = 0;
@@ -14,10 +14,10 @@ if (global.lives <= 0)
         global.enemy_stats3 = 0;
         
         //Drop coins
-        while coin_drop < global.coin
+        while coin_drop < global.coins
         {
             instance_create(x, y-5, obj_coin);
-            global.coin -= 1;
+            global.coins -= 1;
         }
         
         //Create grave
@@ -28,5 +28,5 @@ if (global.lives <= 0)
         
         x = obj_spawner.x;
         y = obj_spawner.y;
-        global.lives = 10;
+        global.health = 10;
 }

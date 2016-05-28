@@ -1,1 +1,4 @@
-global.current_room = room;
+if (!room == Menu)
+{
+    global.current_room = room;
+}

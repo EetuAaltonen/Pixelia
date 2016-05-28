@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Health
-global.lives = 20;
+global.health = 20;
 image_speed = 0;
 </string>
           </argument>
@@ -51,7 +51,7 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>//Lives image_index
-switch (global.lives)
+switch (global.health)
 {
     case 20: image_index = 0; break;
     case 19: image_index = 1; break;
@@ -76,31 +76,31 @@ switch (global.lives)
     case 0: image_index = 20; break;
 }
  /*
-if global.lives==5
+if global.health==5
 {
     sprite_index=spr_lives_5;
 }
 
-else if global.lives==4
+else if global.health==4
 {
     sprite_index=spr_lives_4;
 }
 
-else if global.lives==3
+else if global.health==3
 {
     sprite_index=spr_lives_3;
 }
 
-else if global.lives==2
+else if global.health==2
 {
     sprite_index=spr_lives_2;
 }
 
-else if global.lives==1
+else if global.health==1
 {
     sprite_index=spr_lives_1;
 }
-else if global.lives&lt;=0
+else if global.health&lt;=0
 {
     sprite_index=spr_lives_0;
 }

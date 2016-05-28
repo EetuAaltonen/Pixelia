@@ -217,7 +217,7 @@ alarm[1] = random_range(30, 150);
             <kind>1</kind>
             <string>if (global.damage == 1)
 {
-    global.lives -= str;
+    global.health -= str;
     scr_got_damage();
 }
 else

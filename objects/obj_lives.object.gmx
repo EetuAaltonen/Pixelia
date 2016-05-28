@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Health
-global.lives = 20;
+global.health = 20;
 image_speed = 0;
 </string>
           </argument>
@@ -51,7 +51,7 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>//Lives image_index
-switch (global.lives)
+switch (global.health)
 {
     case 20: image_index = 0; break;
     case 19: image_index = 1; break;
@@ -97,7 +97,7 @@ switch (global.lives)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu)
+            <string>if (!room == Menu and instance_exists(obj_pelaaja))
 {
     draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+3,
                     image_xscale, image_yscale, image_angle, c_white, image_alpha);
