@@ -4,7 +4,7 @@ if (file_exists("Save.sav"))
 }
 ini_open("Save.sav");
 var SavedRoom = global.current_room; //base64_encode(string(global.current_room));
-var SavedHealth = global.player_health; //base64_encode(string(global.coins));
+var SavedHealth = global.pelaaja_health; //base64_encode(string(global.coins));
 var SavedCoins = global.coins; //base64_encode(string(global.coins));
 
 var SavedSkillPoint = global.skillpoint;

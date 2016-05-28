@@ -22,7 +22,7 @@ if (file_exists("Save.sav"))
     ini_close();
     
     global.current_room = LoadedRoom;
-    global.player_health = round(real(LoadedHealth));
+    global.pelaaja_health = round(real(LoadedHealth));
     global.coins = round(real(LoadedCoins));
     
     global.skillpoint = round(real(SavedSkillPoint));
