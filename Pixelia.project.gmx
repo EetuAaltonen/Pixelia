@@ -387,7 +387,6 @@
       </objects>
       <objects name="Dialog">
         <object>objects\obj_dialog</object>
-        <object>objects\obj_dialog</object>
       </objects>
     </objects>
     <objects name="Menus">
@@ -426,6 +425,7 @@
     <object>objects\obj_cycle</object>
     <object>objects\obj_enemy_turn_left</object>
     <object>objects\obj_enemy_turn_right</object>
+    <object>objects\obj_first_loading</object>
     <object>objects\obj_goal</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_pet</object>
@@ -447,7 +447,6 @@
     <objects name="Travelling">
       <object>objects\obj_world</object>
     </objects>
-    <object>objects\obj_first_loading</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>

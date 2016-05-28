@@ -5,6 +5,11 @@ if (file_exists("Save.sav"))
     var LoadedCoins = ini_read_string("Save1","coins","0");
     var LoadedHealth = ini_read_string("Save1","health","0");
     
+    
+    var SavedSkillPoint = ini_read_string("Save1","skillpoints","0");
+    var SavedDeathCounter = ini_read_string("Save1","deaths","0");
+    var SavedKillCounter = ini_read_string("Save1","kills","0");
+    
     var LoadedPotions = ini_read_string("Save1","potions","0");
     var LoadedIronores = ini_read_string("Save1","ironores","0");
     var LoadedLogs = ini_read_string("Save1","logs","0");
@@ -17,12 +22,16 @@ if (file_exists("Save.sav"))
     ini_close();
     
     global.current_room = LoadedRoom;
-    global.health = LoadedHealth;
-    global.coins = round(LoadedCoins);
+    global.player_health = round(real(LoadedHealth));
+    global.coins = round(real(LoadedCoins));
     
-    global.potions = round(LoadedPotions);
-    global.ironore = round(LoadedIronores);
-    global.logs = round(LoadedLogs);
+    global.skillpoint = round(real(SavedSkillPoint));
+    global.death_counter = round(real(SavedDeathCounter));
+    global.kill_counter = round(real(SavedKillCounter));
+    
+    global.potions = round(real(LoadedPotions));
+    global.ironore = round(real(LoadedIronores));
+    global.logs = round(real(LoadedLogs));
     
     //var SavedQuest = global.guest;
     

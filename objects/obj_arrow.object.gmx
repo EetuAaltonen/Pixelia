@@ -100,7 +100,7 @@ image_angle = direction;
             <kind>1</kind>
             <string>if (can_hurt == true)
 {
-    global.health -= mag;
+    global.player_health -= mag;
     scr_got_damage();
     instance_destroy();
 }

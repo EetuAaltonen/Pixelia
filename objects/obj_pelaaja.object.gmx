@@ -1315,7 +1315,7 @@ if (!place_free(x+hspeed,y+vspeed))
 }
 if (vspeed &gt; 50)
 {
-    global.health -= 5;
+    global.player_health -= 5;
 }*/
 
 if (!place_free(x+hspeed,y))
@@ -1379,7 +1379,7 @@ if (!place_free(x+hspeed,y+vspeed))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.health = 0;
+            <string>global.player_health = 0;
 scr_pelaaja_dead();
 </string>
           </argument>

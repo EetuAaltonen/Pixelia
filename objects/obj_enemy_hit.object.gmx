@@ -103,7 +103,7 @@ alarm[1] = 10;
 {
     if (global.damage == 1)
     {
-        global.health -= str;
+        global.player_health -= str;
         scr_got_damage();
     }
     else

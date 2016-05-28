@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Health
-global.health = 20;
+global.player_health = 20;
 image_speed = 0;
 </string>
           </argument>
@@ -51,7 +51,7 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>//Lives image_index
-switch (global.health)
+switch (global.player_health)
 {
     case 20: image_index = 0; break;
     case 19: image_index = 1; break;

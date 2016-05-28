@@ -69,10 +69,10 @@ if (global.coins &lt; 0)
 //Auto-healing
 if (global.auto_healing == 1
     and global.potions &gt; 0
-    and global.health &lt; 5)
+    and global.player_health &lt; 5)
 {
     global.potions -= 1;
-    global.health += 10;
+    global.player_health += 10;
 }
 </string>
           </argument>
@@ -96,8 +96,8 @@ if (global.auto_healing == 1
             <kind>1</kind>
             <string>//Open inventory
 if (keyboard_check_pressed(vk_tab) and
-    global.inventory == 0 /*and global.dialog == 0 and
-    global.shop == 0 and !room == First_loading*/)
+    global.inventory == 0 and global.dialog == 0 and
+    global.shop == 0)
 {
     global.inventory = 1;
     global.shop = 0;
@@ -109,7 +109,7 @@ else if (keyboard_check_pressed(vk_tab) and
 }
 
 //Forced close inventory
-if (room == Menu)
+if (room == Menu or room == First_loading)
 {
     global.inventory = 0;
 }
