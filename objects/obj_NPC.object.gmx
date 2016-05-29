@@ -87,7 +87,7 @@ if(distance_to_object(obj_pelaaja) &lt; 10)
     global.inventory == 0)
 {
     global.dialog = true;
-    if (global.guest == "Begin")
+    if (global.guest == "Beginning")
     {
         global.dialog_text = 1; //Start text number
         global.dialog_max = 2; //End text number

@@ -46,6 +46,8 @@
       <sprite>sprites\spr_potion</sprite>
       <sprite>sprites\spr_tree</sprite>
       <sprite>sprites\spr_tree_1</sprite>
+      <sprite>sprites\spr_icon_iron</sprite>
+      <sprite>sprites\spr_icon_log</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
@@ -122,8 +124,6 @@
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_inventory_bg</sprite>
-        <sprite>sprites\spr_inventory_iron</sprite>
-        <sprite>sprites\spr_inventory_log</sprite>
         <sprites name="Stats">
           <sprite>sprites\spr_death_counter</sprite>
           <sprite>sprites\spr_kill_counter</sprite>

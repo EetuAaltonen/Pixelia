@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.guest = "Beginning";
+            <string>global.quest = "Beginning";
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,7 @@
 draw_sprite(spr_hud_quest,0,view_xview+295, view_yview+3);
 draw_set_color(c_black);
 
-quest = global.guest;
+quest = global.quest;
 draw_text(view_xview+305, view_yview+5, string(quest));
 </string>
           </argument>
