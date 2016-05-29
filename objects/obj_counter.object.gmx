@@ -51,7 +51,7 @@ alarm[5] = 10; //Mana usage
 //Level
 global.level = 1;
 global.xp = 0;
-global.xp_limit = 20;
+global.xp_limit = 100;
 
 //Skillpoint
 global.skillpoint = 1;
@@ -241,8 +241,9 @@ if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
     //Level and xp
     if (global.xp &gt;= global.xp_limit)
     {
-        global.level += 1;
         global.skillpoint += 1;
+        global.level += 1
+        global.xp_limit += 100;
         global.xp = 0;
     }
     

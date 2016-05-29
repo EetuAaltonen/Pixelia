@@ -160,6 +160,7 @@ if (log &gt; 1 and wood == 1 and obj_pelaaja.woodcutting = 1)
 }
 else if (log &lt;= 1)
 {
+    global.xp += (2 * global.level); 
     alarm[1] = 200;
 }
 </string>

@@ -4,8 +4,12 @@ if (file_exists("Save.sav"))
 }
 ini_open("Save.sav");
 var SavedRoom = global.current_room; //base64_encode(string(global.current_room));
-var SavedHealth = global.pelaaja_health; //base64_encode(string(global.coins));
+var SavedHealth = global.player_health; //base64_encode(string(global.coins));
 var SavedCoins = global.coins; //base64_encode(string(global.coins));
+
+var SavedLevel = global.level;
+var SavedXp = global.xp;
+var SavedXpLimit = global.xp_limit;
 
 var SavedSkillPoint = global.skillpoint;
 var SavedDeathCounter = global.death_counter;
@@ -21,6 +25,10 @@ var SavedLogs = global.logs; //base64_encode(string(global.logs));
 ini_write_real("Save1","room",SavedRoom);
 ini_write_real("Save1","health",SavedHealth);
 ini_write_real("Save1","coins",SavedCoins);
+
+ini_write_real("Save1","level",SavedLevel);
+ini_write_real("Save1","xp",SavedXp);
+ini_write_real("Save1","xplimit",SavedXpLimit);
 
 ini_write_real("Save1","skillpoints",SavedSkillPoint);
 ini_write_real("Save1","deaths",SavedDeathCounter);

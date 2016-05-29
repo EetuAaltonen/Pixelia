@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>gravity = 0.5;
-shoot = 1;
+shoot = true;
 //Create a bow
 instance_create(x - 5, y + 6, obj_archer_bow);
 //Animation = Ready
@@ -203,7 +203,7 @@ draw_state = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shoot = 1;
+            <string>shoot = true;
 </string>
           </argument>
         </arguments>
@@ -285,7 +285,7 @@ else
 }
 
 //Shoot
-if (shoot == 1 and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
+if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
 {
     instance_create(x, y, obj_arrow);
     (instance_nearest(x, y, obj_arrow)).mag = mag;
@@ -296,7 +296,7 @@ if (shoot == 1 and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
     alarm[3] = 80;
         //Shoot
     alarm[1] = 100;
-    shoot = 0;
+    shoot = false;
     (instance_nearest(x, y, obj_archer_bow)).image_index = 1;
 }
 </string>

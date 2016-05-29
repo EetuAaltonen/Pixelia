@@ -94,7 +94,7 @@ if (global.dialog == 1)
     var dialog_check;
     dialog_check = global.dialog_check1;
     draw_text(view_xview+445,view_yview+225, string(dialog_check))
-
+    
     var dialog_check2;
     dialog_check2 = global.dialog_check2;
     draw_text(view_xview+464,view_yview+225, string(dialog_check2))

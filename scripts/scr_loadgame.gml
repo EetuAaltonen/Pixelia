@@ -5,6 +5,9 @@ if (file_exists("Save.sav"))
     var LoadedCoins = ini_read_string("Save1","coins","0");
     var LoadedHealth = ini_read_string("Save1","health","0");
     
+    var SavedLevel = ini_read_string("Save1","level","0");
+    var SavedXp = ini_read_string("Save1","xp","0");
+    var SavedXpLimit = ini_read_string("Save1","xplimit","0");
     
     var SavedSkillPoint = ini_read_string("Save1","skillpoints","0");
     var SavedDeathCounter = ini_read_string("Save1","deaths","0");
@@ -22,8 +25,12 @@ if (file_exists("Save.sav"))
     ini_close();
     
     global.current_room = LoadedRoom;
-    global.pelaaja_health = round(real(LoadedHealth));
+    global.player_health = round(real(LoadedHealth));
     global.coins = round(real(LoadedCoins));
+    
+    global.level = round(real(SavedLevel));
+    global.xp = round(real(SavedXp));
+    global.xp_limit = round(real(SavedXpLimit));
     
     global.skillpoint = round(real(SavedSkillPoint));
     global.death_counter = round(real(SavedDeathCounter));

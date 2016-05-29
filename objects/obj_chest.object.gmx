@@ -105,6 +105,7 @@ alarm[1] = 20;
             <kind>1</kind>
             <string>while (drop &lt; value)
 {
+    global.xp += (5 * global.level); 
     instance_create(x,y-17,obj_coin_drop);
     drop += 1;
     image_index = 1;

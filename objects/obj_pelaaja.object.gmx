@@ -652,7 +652,7 @@ else
           <argument>
             <kind>1</kind>
             <string>//Lives
-scr_pelaaja_dead();
+scr_player_dead();
 </string>
           </argument>
         </arguments>
@@ -1380,7 +1380,7 @@ if (!place_free(x+hspeed,y+vspeed))
           <argument>
             <kind>1</kind>
             <string>global.player_health = 0;
-scr_pelaaja_dead();
+scr_player_dead();
 </string>
           </argument>
         </arguments>

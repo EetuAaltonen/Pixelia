@@ -76,7 +76,7 @@
     <sprites name="HUD">
       <sprites name="Dialog">
         <sprite>sprites\spr_dialog</sprite>
-        <sprite>sprites\spr_dialog_backgroud</sprite>
+        <sprite>sprites\spr_dialog_background</sprite>
         <sprite>sprites\spr_dialog_bg</sprite>
       </sprites>
       <sprites name="Draw">
@@ -255,7 +255,7 @@
     <script>scripts\scr_got_damage.gml</script>
     <script>scripts\scr_loadgame.gml</script>
     <script>scripts\scr_move_out_of_room.gml</script>
-    <script>scripts\scr_pelaaja_dead.gml</script>
+    <script>scripts\scr_player_dead.gml</script>
     <script>scripts\scr_player_cave_stairs.gml</script>
     <script>scripts\scr_player_push.gml</script>
     <script>scripts\scr_player_woodcutting.gml</script>
@@ -387,6 +387,7 @@
       </objects>
       <objects name="Dialog">
         <object>objects\obj_dialog</object>
+        <object>objects\obj_dialog_bg</object>
       </objects>
     </objects>
     <objects name="Menus">

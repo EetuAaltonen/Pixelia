@@ -69,10 +69,10 @@ if (global.coins &lt; 0)
 //Auto-healing
 if (global.auto_healing == 1
     and global.potions &gt; 0
-    and global.pelaaja_health &lt; 5)
+    and global.player_health &lt; 5)
 {
     global.potions -= 1;
-    global.pelaaja_health += 10;
+    global.player_health += 10;
 }
 </string>
           </argument>
@@ -231,10 +231,10 @@ if (room == Menu or room == First_loading)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.potions &gt; 0 and global.pelaaja_health &lt; 20)
+            <string>if (global.potions &gt; 0 and global.player_health &lt; 20)
 {
     global.potions -= 1;
-    global.pelaaja_health += 10;
+    global.player_health += 10;
 }
 </string>
           </argument>
