@@ -171,12 +171,13 @@ if (room == Menu or room == First_loading)
         x1 = 100;
         y1 = 112;
         item_id = 0;
+        i = 0;
         global.inventory_draw_item[1] = 1;
         global.inventory_draw_item[2] = 2;
-        global.item_count = 3;
+        global.item_count = 2;
         global.inventory_draw_item[item_id] = 0;
          
-        for (i = 0; i &lt; global.item_count; i += 1;)
+        for (i = 0; i &lt; global.item_count; i++;)
         {
             //Item index
             ini_open("ItemsIndex.sav");
