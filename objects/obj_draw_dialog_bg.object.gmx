@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == 1)
+            <string>if (global.dialog == true)
 {
     draw_sprite_ext(spr_dialog,0,view_xview, view_yview+240,
                     image_xscale, image_yscale, 0, c_white, 0.7);

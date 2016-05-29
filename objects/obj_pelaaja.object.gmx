@@ -427,7 +427,7 @@ else if (global.shop &gt; 0)
 }
 
 //Dialog
-else if (global.dialog == 1)
+else if (global.dialog == true)
 {
     hspeed = 0;
     vspeed = 0;

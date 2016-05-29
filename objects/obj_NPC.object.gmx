@@ -82,11 +82,11 @@ if(distance_to_object(obj_pelaaja) &lt; 10)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == 0 and
+            <string>if (global.dialog == false and
     distance_to_object(obj_pelaaja) &lt; 10 and
     global.inventory == 0)
 {
-    global.dialog = 1;
+    global.dialog = true;
     if (global.guest == "Begin")
     {
         global.dialog_text = 1; //Start text number
@@ -103,9 +103,9 @@ if(distance_to_object(obj_pelaaja) &lt; 10)
         global.dialog_check2 = global.dialog_max - global.dialog_text+1;
     }
 }
-else if (global.dialog == 1)
+else if (global.dialog == true)
 {
-    global.dialog = 0; //Close dialog
+    global.dialog = false; //Close dialog
     global.dialog_text = 0; //Return text
     global.dialog_max = 0; //Return end text number
     global.dialog_check1 = 1; //Return text number in dialog

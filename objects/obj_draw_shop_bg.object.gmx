@@ -28,7 +28,7 @@
             <string>//Shop bg
 if (global.shop &gt; 0)
 {
-    draw_sprite(spr_shop_background, 0, view_xview, view_yview+64);
+    draw_sprite(spr_shop_background, 0, view_xview, view_yview+65);
 }
 </string>
           </argument>

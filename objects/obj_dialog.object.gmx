@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.dialog = 0;
+            <string>global.dialog = false;
 global.dialog_text = 0;
 global.dialog_min = 0; //first text
 global.dialog_max = 0; //second text
@@ -89,7 +89,7 @@ switch (global.dialog_text)
 draw_set_font(fnt_dialog);
 draw_set_color(c_white);
 
-if (global.dialog == 1)
+if (global.dialog == true)
 {
     var dialog_check;
     dialog_check = global.dialog_check1;
@@ -147,7 +147,7 @@ if (global.dialog == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == 1 and 
+            <string>if (global.dialog == true and 
     !global.dialog_text == 0 and
     global.dialog_text &lt; global.dialog_max)
 {
@@ -177,7 +177,7 @@ if (global.dialog == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == 1 and
+            <string>if (global.dialog == true and
     !global.dialog_text == 0 and
     global.dialog_text &gt; global.dialog_min)
 {
