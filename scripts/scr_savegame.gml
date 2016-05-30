@@ -29,19 +29,23 @@ ini_write_real("Save1","level",SavedLevel);
 ini_write_real("Save1","xp",SavedXp);
 ini_write_real("Save1","xplimit",SavedXpLimit);
 
+ini_write_real("Save1","coins",SavedCoins);
+ini_write_real("Save1","potions",SavedPotions);
+
 ini_write_real("Save1","skillpoints",SavedSkillPoint);
 ini_write_real("Save1","deaths",SavedDeathCounter);
 ini_write_real("Save1","kills",SavedKillCounter);
 
 ini_write_string("Save1","quest",SavedQuest);
 
-ini_write_real("Save1","coins",SavedCoins);
-ini_write_real("Save1","potions",SavedPotions);
-ini_write_real("Save1","ironores",SavedIronores);
-ini_write_real("Save1","logs",SavedLogs);
-
 //ini_write_real("Save1","quest",string(SavedQuest));
 
 //ini_write_string("Save1","room",SavedRoom);
 //ini_write_string("Save1","coins",SavedCoins);
 ini_close();
+
+//Save inventory
+/*ini_open("Save.sav");
+ini_write_real("Save1","ironores",SavedIronores);
+ini_write_real("Save1","logs",SavedLogs);
+ini_close();*/

@@ -110,6 +110,7 @@ else if (keyboard_check_released(vk_tab) and
 {
     global.inventory = 0;
     loop_stop = false;
+    scr_savegame();
 }
 
 //Forced close inventory
@@ -169,6 +170,7 @@ if (room == Menu or room == First_loading)
     //Inventory
     if (global.inventory == 1)
     {
+        scr_savegame();
         if (loop_stop == false)
         {
             global.item_amount[global.n2] = 0;

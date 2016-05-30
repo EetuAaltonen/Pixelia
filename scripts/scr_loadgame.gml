@@ -16,8 +16,8 @@ if (file_exists("Save.sav"))
     
     var LoadedCoins = ini_read_string("Save1","coins","0");
     var LoadedPotions = ini_read_string("Save1","potions","0");
-    var LoadedIronores = ini_read_string("Save1","ironores","0");
-    var LoadedLogs = ini_read_string("Save1","logs","0");
+    /*var LoadedIronores = ini_read_string("Save1","ironores","0");
+    var LoadedLogs = ini_read_string("Save1","logs","0");*/
     
     //var LoadedQuest= ini_read_string("Save1","quest","0");
     
@@ -41,8 +41,8 @@ if (file_exists("Save.sav"))
     
     global.coins = round(real(LoadedCoins));
     global.potions = round(real(LoadedPotions));
-    global.ironore = round(real(LoadedIronores));
-    global.logs = round(real(LoadedLogs));
+    /*global.ironore = round(real(LoadedIronores));
+    global.logs = round(real(LoadedLogs));*/
     
     //var LoadedQuest = global.guest;
     
