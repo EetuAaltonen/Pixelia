@@ -184,7 +184,7 @@ if (room == Menu or room == First_loading)
             {
                 //Item amount
                 ini_open("Inventory.sav");
-                global.ItemAmount = ini_read_string("Save1",string(global.n1),"0");
+                global.ItemAmount = ini_read_real("Save1",string(global.n1),"0");
                 ini_close();
                 
                 //Item index
@@ -194,7 +194,7 @@ if (room == Menu or room == First_loading)
                 
                 if (round(real(global.ItemAmount)) &gt; 0)
                 {                   
-                    global.item_amount[global.n1] = round(real(global.ItemAmount));
+                    global.item_amount[global.n1] = round(global.ItemAmount);
                     global.item_sprite[global.n1] = global.SpriteIndex;
                     global.item_amount[global.n2] = global.item_amount[global.n1];
                     global.item_sprite[global.n2] = global.item_sprite[global.n1];
@@ -204,7 +204,7 @@ if (room == Menu or room == First_loading)
                 {
                     i -= 1;
                 }
-                global.n1 += 1;   
+                global.n1 += 1;  
             }
         }  
         loop_stop = true;

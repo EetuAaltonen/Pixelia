@@ -152,6 +152,11 @@ if (iron &gt; 1 and mining == 1 and obj_pelaaja.mining = 1)
     }
     global.ironore += 1;
     drop = 0;
+    
+    //Save to inventory
+    global.n1 = 1;
+    global.AddedItemAmount = 1;
+    scr_save_to_inventory();
 }
 else if (iron &lt;= 1)
 {

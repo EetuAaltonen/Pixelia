@@ -255,11 +255,12 @@
     <script>scripts\scr_got_damage.gml</script>
     <script>scripts\scr_loadgame.gml</script>
     <script>scripts\scr_move_out_of_room.gml</script>
-    <script>scripts\scr_player_dead.gml</script>
     <script>scripts\scr_player_cave_stairs.gml</script>
+    <script>scripts\scr_player_dead.gml</script>
     <script>scripts\scr_player_push.gml</script>
     <script>scripts\scr_player_woodcutting.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
+    <script>scripts\scr_save_to_inventory.gml</script>
     <script>scripts\scr_savegame.gml</script>
     <script>scripts\scr_solidify.gml</script>
   </scripts>
