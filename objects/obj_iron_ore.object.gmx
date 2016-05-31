@@ -153,6 +153,9 @@ if (iron &gt; 1 and mining == 1 and obj_pelaaja.mining = 1)
     global.ironore += 1;
     drop = 0;
     
+    //XP
+    scr_add_xp();
+    
     //Save to inventory
     global.n1 = 1;
     global.AddedItemAmount = 1;
@@ -160,7 +163,6 @@ if (iron &gt; 1 and mining == 1 and obj_pelaaja.mining = 1)
 }
 else if (iron &lt;= 1)
 {
-    global.xp += (2 * global.level);
     alarm[1] = 200;
 }
 </string>
