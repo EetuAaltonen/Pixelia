@@ -49,6 +49,9 @@
       <sprite>sprites\spr_icon_ironore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
     </sprites>
+    <sprites name="Crafting">
+      <sprite>sprites\spr_alchemy_station</sprite>
+    </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
       <sprite>sprites\spr_shadow_die</sprite>
@@ -313,6 +316,9 @@
       <object>objects\obj_iron_ore</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_chest</object>
+    </objects>
+    <objects name="Crafting">
+      <object>objects\obj_alchemy_station</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
