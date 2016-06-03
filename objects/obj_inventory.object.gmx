@@ -40,6 +40,10 @@ global.potions = 0;
 global.ironore = 0;
 global.logs = 0;
 
+//Ingredients
+global.flower_1 = 0;
+global.flower_2 = 0;
+
 //Skills
 global.auto_healing = 1;
 </string>
@@ -159,15 +163,23 @@ if (room == Menu or room == First_loading)
                     view_yview+285, image_xscale, image_yscale, 
                     image_angle, c_white, image_alpha);
     
+    //Flower_1
+    draw_text_color(view_xview+250,view_yview+278, string(global.flower_1),
+                c_black, c_black, c_black, c_black, 1);
+    //Flower_2
+    draw_text_color(view_xview+240,view_yview+278, string(global.flower_2),
+                c_black, c_black, c_black, c_black, 1);
+                
+    //Logo
+    draw_sprite_ext(spr_potion, image_index, view_xview+372, 
+                    view_yview+285, image_xscale, image_yscale, 
+                    image_angle, c_white, image_alpha);
+    
     //Potion
     var potion;
     potion = global.potions;
     draw_text_color(view_xview+380,view_yview+278, string(potion),
                 c_black, c_black, c_black, c_black, 1);
-    //Logo
-    draw_sprite_ext(spr_potion, image_index, view_xview+372, 
-                    view_yview+285, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
     
     //Inventory
     if (global.inventory == 1)
@@ -239,9 +251,7 @@ if (room == Menu or room == First_loading)
         //Text
         draw_sprite(spr_kill_counter, 0, view_xview+30, view_yview+150);
         //Kill counter
-        var kill_counter;
-        kill_counter = global.kill_counter;
-        draw_text_color(view_xview+50,view_yview+143, string(kill_counter),
+        draw_text_color(view_xview+50,view_yview+143, string(global.kill_counter),
                 c_black, c_black, c_black, c_black, 1);
     }
     else if(global.inventory == 2)
@@ -249,9 +259,7 @@ if (room == Menu or room == First_loading)
         //Text
         draw_sprite(spr_ts_infobox , 0, view_xview+30, view_yview+120);
         //Deat counter
-        var death_counter;
-        death_counter = global.death_counter;
-        draw_text_color(view_xview+50,view_yview+112, string(death_counter),
+        draw_text_color(view_xview+50,view_yview+112, string(global.death_counter),
                 c_black, c_black, c_black, c_black, 1);
     }
 }

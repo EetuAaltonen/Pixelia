@@ -1410,6 +1410,7 @@ if (distance_to_object(obj_iron_ore) &lt; 10 and mining == 0 ||
     distance_to_object(obj_ladder) &lt; 1 and ladder == 0 || 
     distance_to_object(obj_crate) &lt; 2 and push == 0 ||
     distance_to_object(obj_lever) &lt; 4 ||
+    distance_to_object(obj_alchemy_station) &lt; 10 ||
     distance_to_object(obj_cave_door) &lt; 4)
 {
     draw_sprite(spr_E,1,x,y-20);   
