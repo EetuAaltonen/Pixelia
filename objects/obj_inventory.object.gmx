@@ -193,7 +193,7 @@ if (room == Menu or room == First_loading)
             global.item_sprite[global.n1] = 0;
             global.n1 = 0;
             global.n2 = 0;
-            global.item_count = 2;
+            //global.item_count = 2;
             repeat(3) //Number of items in Inventory.sav
             //for (i = 0; i &lt; global.item_count; i++;)
             {
