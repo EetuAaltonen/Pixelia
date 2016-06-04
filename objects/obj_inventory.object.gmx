@@ -108,6 +108,7 @@ if (keyboard_check_released(vk_tab) and
     global.shop == false)
 {
     global.inventory = 1;
+    global.inventory_page = 0; //Inventory page
 }
 else if (keyboard_check_released(vk_tab) and
          global.inventory &gt; 0 and global.dialog == false)
@@ -124,6 +125,39 @@ if (room == Menu or room == First_loading)
     global.inventory = 0;
     global.item_count = 0;
     loop_stop = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Inventory page
+if (global.inventory == 1 and keyboard_check_released(vk_right) and
+    (global.item_count - ((global.inventory_page+1)*6)) &gt; 0)
+{
+    global.inventory_page += 1;
+    global.page_update = true;
+}
+else if (global.inventory == 1 and keyboard_check_released(vk_left)
+         and global.inventory_page &gt; 0)
+{
+    global.inventory_page -= 1;
+    global.page_update = true;
 }
 </string>
           </argument>
@@ -193,7 +227,7 @@ if (room == Menu or room == First_loading)
             global.item_sprite[global.n1] = 0;
             global.n1 = 0;
             global.n2 = 0;
-            repeat(8) //Number of items in Inventory.sav
+            repeat(14) //Number of items (+1) in Inventory.sav
             //for (i = 0; i &lt; global.item_count; i++;)
             {
                 //Item amount
@@ -225,7 +259,6 @@ if (room == Menu or room == First_loading)
         loop_stop = true;
         var y1;
         y1 = 112;
-        global.inventory_page = 1; //Inventory page
         if (global.item_count &gt; 0)
         {
             if (global.page_update == true)
@@ -235,24 +268,22 @@ if (room == Menu or room == First_loading)
                 global.start_count = 0; //First item number
                 if (global.item_count &gt; 6)
                 {
-                    if (global.inventory_page == 0)
+                    if ((global.item_count - ((global.inventory_page+1)*6)) &gt; 0 and global.inventory_page == 0)
                     {
                         global.start_count = 0;
                         global.end_count = 6;
                         
                     }
-                    else if (global.inventory_page &gt; 0)
+                    else if ((global.item_count - ((global.inventory_page+1)*6)) &gt; 0 and
+                            global.inventory_page &gt; 0)
                     {
-                        global.start_count = ((global.inventory_page*6));
-                        global.end_count = global.item_count - (global.inventory_page * 6)
-                        if (global.end_count &lt; 0)
-                        {
-                            global.end_count = ((global.inventory_page * 6) + global.start_count)
-                        }
-                        else //If listable item count &lt; 6
-                        {
-                            global.end_count += /*(((global.inventory_page * 6) + (*/(global.item_count/* - (global.inventory_page * 6)*/)/** -1))-1)*/
-                        }
+                        global.start_count = (global.inventory_page*6);
+                        global.end_count = ((global.inventory_page*6)*2);
+                    }
+                    else /*if (global.inventory_page &gt; 0)*/
+                    {
+                        global.start_count = (global.inventory_page*6);
+                        global.end_count = global.item_count;
                     }
                 }
                 global.page_update = false;
@@ -262,7 +293,7 @@ if (room == Menu or room == First_loading)
                 draw_text_color(view_xview+50,view_yview+y1, string(global.item_amount[global.n2]),
                                 c_black, c_black, c_black, c_black, 1);
                 draw_sprite(asset_get_index(global.item_sprite[global.n2]), 0,view_xview+30, view_yview+7+y1);
-                
+        
                 y1 += 20;
             }
         }    
