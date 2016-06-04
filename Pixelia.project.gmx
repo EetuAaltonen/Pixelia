@@ -39,8 +39,8 @@
     </sprites>
     <sprites name="Collectable">
       <sprites name="Ingredients">
-        <sprite>sprites\sprite188</sprite>
-        <sprite>sprites\sprite190</sprite>
+        <sprite>sprites\spr_flower_1</sprite>
+        <sprite>sprites\spr_flower_2</sprite>
       </sprites>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>

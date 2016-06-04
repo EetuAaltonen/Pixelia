@@ -35,7 +35,7 @@ global.n2 = 0;
 global.coins = 0;
 
 //Item counter
-//global.item_count = 2;
+global.page_update = true;
 global.potions = 0;
 global.ironore = 0;
 global.logs = 0;
@@ -193,8 +193,7 @@ if (room == Menu or room == First_loading)
             global.item_sprite[global.n1] = 0;
             global.n1 = 0;
             global.n2 = 0;
-            //global.item_count = 2;
-            repeat(3) //Number of items in Inventory.sav
+            repeat(8) //Number of items in Inventory.sav
             //for (i = 0; i &lt; global.item_count; i++;)
             {
                 //Item amount
@@ -226,9 +225,39 @@ if (room == Menu or room == First_loading)
         loop_stop = true;
         var y1;
         y1 = 112;
+        global.inventory_page = 1; //Inventory page
         if (global.item_count &gt; 0)
         {
-            for (global.n2 = 0; global.n2 &lt; global.item_count; global.n2++;)
+            if (global.page_update == true)
+            {
+                global.start_count = 0; //First item number
+                global.end_count = 6; //Limit of list
+                global.start_count = 0; //First item number
+                if (global.item_count &gt; 6)
+                {
+                    if (global.inventory_page == 0)
+                    {
+                        global.start_count = 0;
+                        global.end_count = 6;
+                        
+                    }
+                    else if (global.inventory_page &gt; 0)
+                    {
+                        global.start_count = ((global.inventory_page*6));
+                        global.end_count = global.item_count - (global.inventory_page * 6)
+                        if (global.end_count &lt; 0)
+                        {
+                            global.end_count = ((global.inventory_page * 6) + global.start_count)
+                        }
+                        else //If listable item count &lt; 6
+                        {
+                            global.end_count += /*(((global.inventory_page * 6) + (*/(global.item_count/* - (global.inventory_page * 6)*/)/** -1))-1)*/
+                        }
+                    }
+                }
+                global.page_update = false;
+            }
+            for (global.n2 = global.start_count; global.n2 != global.end_count; global.n2++;)
             {
                 draw_text_color(view_xview+50,view_yview+y1, string(global.item_amount[global.n2]),
                                 c_black, c_black, c_black, c_black, 1);
