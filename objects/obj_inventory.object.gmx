@@ -30,13 +30,11 @@ global.inventory = 0;
 loop_stop = false;
 global.n1 = 0;
 global.n2 = 0;
-global.inventory_page = 0;
-global.inventory_page_max = 0;
 
 //Coins
 global.coins = 0;
 
-//Item counter
+//Item counter and inventory
 global.page_update = true;
 global.potions = 0;
 global.ironore = 0;
@@ -110,6 +108,9 @@ if (keyboard_check_released(vk_tab) and
     global.shop == false)
 {
     global.inventory = 1;
+    global.inventory_page = 0;
+    global.start_count = 0;
+    global.end_count = 8;
 }
 else if (keyboard_check_released(vk_tab) and
          global.inventory &gt; 0 and global.dialog == false)
@@ -228,7 +229,7 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
             global.item_sprite[global.n1] = 0;
             global.n1 = 0;
             global.n2 = 0;
-            repeat(14) //Number of items (+1) in Inventory.sav
+            repeat(21 + 1) //Number of items (+1) in Inventory.sav
             //for (i = 0; i &lt; global.item_count; i++;)
             {
                 //Item amount
@@ -304,8 +305,13 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
             }
             //Page number background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+79, view_yview+95);
-            //Page number
+            //Page number max
             global.inventory_page_max = (round(global.item_count/8));
+            if ((global.inventory_page_max - (global.item_count/8)) &lt; 0 )
+            {   
+                global.inventory_page_max += 1;
+            }
+            //Draw page number and max
             draw_text_color(view_xview+20,view_yview+87, 
                             string("PAGE: " + string(global.inventory_page + 1) + "       / " + string(global.inventory_page_max)),
                             c_black, c_black, c_black, c_black, 1);
