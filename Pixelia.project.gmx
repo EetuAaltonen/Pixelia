@@ -40,7 +40,9 @@
     <sprites name="Collectable">
       <sprites name="Ingredients">
         <sprite>sprites\spr_flower_1</sprite>
+        <sprite>sprites\spr_icon_flower_1</sprite>
         <sprite>sprites\spr_flower_2</sprite>
+        <sprite>sprites\spr_icon_flower_2</sprite>
       </sprites>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
@@ -135,6 +137,8 @@
           <sprite>sprites\spr_death_counter</sprite>
           <sprite>sprites\spr_kill_counter</sprite>
         </sprites>
+        <sprite>sprites\spr_inv_item_bg</sprite>
+        <sprite>sprites\spr_inv_item_amount_bg</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>
