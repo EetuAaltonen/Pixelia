@@ -139,6 +139,7 @@
         </sprites>
         <sprite>sprites\spr_inv_item_bg</sprite>
         <sprite>sprites\spr_inv_item_amount_bg</sprite>
+        <sprite>sprites\spr_inv_item_description_bg</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>

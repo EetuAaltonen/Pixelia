@@ -232,22 +232,32 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
             repeat(21 + 1) //Number of items (+1) in Inventory.sav
             //for (i = 0; i &lt; global.item_count; i++;)
             {
+                //Item index
+                ini_open("ItemsInfo.sav");
+                global.SpriteIndex = ini_read_string("Index",string(global.n1),"spr_aim");
+                ini_close();
+                
+                //Item description
+                ini_open("ItemsInfo.sav");
+                global.ItemDescription = ini_read_string("Description",string(global.n1),"Name not found...");
+                ini_close();
+                
                 //Item amount
                 ini_open("Inventory.sav");
                 global.ItemAmount = ini_read_real("Save1",string(global.n1),"0");
                 ini_close();
                 
-                //Item index
-                ini_open("ItemsIndex.sav");
-                global.SpriteIndex = ini_read_string("ItemIndex",string(global.n1),"spr_aim");
-                ini_close();
-                
                 if (not round(real(global.ItemAmount)) == 0)
                 {                   
-                    global.item_amount[global.n1] = round(global.ItemAmount);
                     global.item_sprite[global.n1] = global.SpriteIndex;
-                    global.item_amount[global.n2] = global.item_amount[global.n1];
+                    global.item_description[global.n1] = global.ItemDescription;
+                    global.item_amount[global.n1] = round(global.ItemAmount);
+                    
+                    //Draw
                     global.item_sprite[global.n2] = global.item_sprite[global.n1];
+                    global.item_description[global.n2] = global.item_description[global.n1];
+                    global.item_amount[global.n2] = global.item_amount[global.n1];
+                    
                     global.n2 += 1;
                 }
                 //else
@@ -296,15 +306,20 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                 draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);
                 //Item icons
                 draw_sprite(asset_get_index(global.item_sprite[global.n2]), 0,view_xview+30, view_yview+7+y1);                
+                //Item description background
+                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
+                //Item description
+                draw_text_color(view_xview+55,view_yview+y1, string(global.item_description[global.n2]),
+                                c_black, c_black, c_black, c_black, 1);
                 //Item amount background
-                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+110, view_yview+7+y1);
+                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
                 //Item amount
-                draw_text_color(view_xview+55,view_yview+y1, string(global.item_amount[global.n2]),
+                draw_text_color(view_xview+207,view_yview+y1, string(global.item_amount[global.n2]),
                                 c_black, c_black, c_black, c_black, 1);
                 y1 += 19;
             }
             //Page number background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+79, view_yview+95);
+            draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
             //Page number max
             global.inventory_page_max = (round(global.item_count/8));
             if ((global.inventory_page_max - (global.item_count/8)) &lt; 0 )
