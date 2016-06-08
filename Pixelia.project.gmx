@@ -205,6 +205,7 @@
         <sprite>sprites\spr_lights</sprite>
         <sprite>sprites\spr_pelaaja_slice</sprite>
         <sprite>sprites\spr_pelaaja_roll</sprite>
+        <sprite>sprites\spr_player_bow</sprite>
       </sprites>
       <sprites name="Old">
         <sprite>sprites\spr_roll</sprite>
@@ -213,6 +214,7 @@
         <sprite>sprites\spr_abilitylights</sprite>
       </sprites>
       <sprite>sprites\spr_saving</sprite>
+      <sprite>sprites\spr_plr_bow</sprite>
     </sprites>
     <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
@@ -287,6 +289,7 @@
   <objects name="objects">
     <objects name="Ammon">
       <object>objects\obj_arrow</object>
+      <object>objects\obj_plr_arrow</object>
       <object>objects\obj_shadow_ammo</object>
       <object>objects\obj___ammo</object>
       <object>objects\obj_cannonball</object>
@@ -455,14 +458,16 @@
     <object>objects\obj_pet</object>
     <object>objects\obj_pet_ammo</object>
     <objects name="Player">
-      <object>objects\obj_pelaaja1</object>
-      <object>objects\obj_pelaaja</object>
       <objects name="Abilities">
         <object>objects\obj_lights</object>
         <object>objects\obj_pelaaja_shield</object>
       </objects>
-      <object>objects\obj_spawner</object>
       <object>objects\obj_hitbox</object>
+      <object>objects\obj_pelaaja</object>
+      <object>objects\obj_pelaaja1</object>
+      <object>objects\obj_plr_aim</object>
+      <object>objects\obj_plr_bow</object>
+      <object>objects\obj_spawner</object>
       <object>objects\Saving</object>
     </objects>
     <objects name="Traps">
