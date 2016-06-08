@@ -77,26 +77,30 @@ shoot = false;
     hspeed = obj_pelaaja.hspeed;
     vspeed = obj_pelaaja.vspeed;
     if ((keyboard_check(vk_up) and !keyboard_check(vk_down) and
-        (obj_pelaaja.image_xscale = 1 and (x &gt; (obj_pelaaja.x + 5)))) /*or
-        (keyboard_check(vk_up) and !keyboard_check(vk_down) and y &gt; obj_pelaaja.y)*/)
+        (obj_pelaaja.image_xscale = 1 and (x &gt; (obj_pelaaja.x + 5)))) or
+        (keyboard_check(vk_up) and !keyboard_check(vk_down) and
+        (obj_pelaaja.image_xscale = 1 and  y &gt; obj_pelaaja.y)))
     {
         aim_speed = 2;
     }
     else if ((keyboard_check(vk_up) and !keyboard_check(vk_down) and
-        (obj_pelaaja.image_xscale = -1 and (x &lt; (obj_pelaaja.x - 5))))/* or
-        (keyboard_check(vk_up) and !keyboard_check(vk_down) and y &gt; obj_pelaaja.y)*/)
+        (obj_pelaaja.image_xscale = -1 and (x &lt; (obj_pelaaja.x - 5)))) or
+        (keyboard_check(vk_up) and !keyboard_check(vk_down) and
+        (obj_pelaaja.image_xscale = -1 and y &gt; obj_pelaaja.y)))
     {
         aim_speed = -2;
     }
     else if ((keyboard_check(vk_down) and !keyboard_check(vk_up) and
-        (obj_pelaaja.image_xscale = 1 and (x &gt; (obj_pelaaja.x + 5)))) /*or
-        (keyboard_check(vk_down) and !keyboard_check(vk_up) and y &lt; obj_pelaaja.y)*/)
+        (obj_pelaaja.image_xscale = 1 and (x &gt; (obj_pelaaja.x + 5)))) or
+        (keyboard_check(vk_down) and !keyboard_check(vk_up) and
+        (obj_pelaaja.image_xscale = 1 and y &lt; obj_pelaaja.y)))
     {
         aim_speed = -2;
     }
     else if ((keyboard_check(vk_down) and !keyboard_check(vk_up) and
-        (obj_pelaaja.image_xscale = -1 and (x &lt; (obj_pelaaja.x - 5)))) /*or
-        (keyboard_check(vk_down) and !keyboard_check(vk_up) and y &lt; obj_pelaaja.y)*/)
+        (obj_pelaaja.image_xscale = -1 and (x &lt; (obj_pelaaja.x - 5)))) or
+        (keyboard_check(vk_down) and !keyboard_check(vk_up) and
+        (obj_pelaaja.image_xscale = -1 and y &lt; obj_pelaaja.y)))
     {
         aim_speed = 2;
     }
