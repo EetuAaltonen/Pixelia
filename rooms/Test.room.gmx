@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_pelaaja" x="66" y="138" name="inst_B03B783F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawner" x="117" y="229" name="inst_E44F1DB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawner" x="62" y="177" name="inst_E44F1DB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="39" y="283" name="inst_A0F3B3A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="55" y="283" name="inst_8B6FFFC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="71" y="283" name="inst_70B333BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
