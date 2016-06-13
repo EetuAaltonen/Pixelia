@@ -372,7 +372,7 @@
     <objects name="HUD">
       <objects name="Alchemy station">
         <object>objects\obj_draw_alch_bg</object>
-        <object>objects\obj_aclhemy</object>
+        <object>objects\obj_alchemy</object>
         <object>objects\obj_alch_close_button</object>
       </objects>
       <objects name="Crafting">

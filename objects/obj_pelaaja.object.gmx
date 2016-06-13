@@ -452,6 +452,13 @@ else if (global.inventory &gt; 0)
     vspeed = 0;
 }
 
+//Alchemy
+else if (global.alchemy &gt; 0)
+{
+    hspeed = 0;
+    vspeed = 0;
+}
+
 //Shop
 else if (global.shop &gt; 0)
 {

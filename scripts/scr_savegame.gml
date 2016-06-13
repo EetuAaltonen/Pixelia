@@ -43,9 +43,3 @@ ini_write_string("Save1","quest",SavedQuest);
 //ini_write_string("Save1","room",SavedRoom);
 //ini_write_string("Save1","coins",SavedCoins);
 ini_close();
-
-//Save inventory
-/*ini_open("Save.sav");
-ini_write_real("Save1","ironores",SavedIronores);
-ini_write_real("Save1","logs",SavedLogs);
-ini_close();*/
