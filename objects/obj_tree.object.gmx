@@ -164,7 +164,7 @@ if (log &gt; 1 and wood == 1 and obj_pelaaja.woodcutting = 1)
     //Save to inventory
     global.n1 = 2;
     global.AddedItemAmount = 1;
-    //scr_save_to_inventory();
+    scr_save_to_inventory();
 }
 else if (log &lt;= 1)
 {

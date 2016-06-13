@@ -195,15 +195,7 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
     //Logo
     draw_sprite_ext(spr_money_draw, image_index, view_xview+425, 
                     view_yview+285, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
-    
-    //Flower_1
-    draw_text_color(view_xview+250,view_yview+278, string(global.flower_1),
-                c_black, c_black, c_black, c_black, 1);
-    //Flower_2
-    draw_text_color(view_xview+240,view_yview+278, string(global.flower_2),
-                c_black, c_black, c_black, c_black, 1);
-                
+                    image_angle, c_white, image_alpha);                
     //Logo
     draw_sprite_ext(spr_potion, image_index, view_xview+372, 
                     view_yview+285, image_xscale, image_yscale, 
