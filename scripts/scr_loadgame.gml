@@ -52,4 +52,16 @@ else
 {
     room_goto(Test);
 }
-
+if (not file_exists("Inventory.sav"))
+{
+    ini_open("Inventory.sav");
+    global.n1 = global.number_of_items; //Have to start biggest number of items
+    repeat(global.number_of_items) //Number of items (+1) in Inventory.sav
+    {
+        ini_write_real("Save1",string(global.n1),0.0000);
+        global.n1 -= 1;
+    }
+    global.n1 = 0;
+    ini_write_real("Save1",string(global.n1),0.0000);
+    ini_close();
+}

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Inventory
 global.inventory = 0;
+global.number_of_items = 13; //In Inventory.sav (don't count 0!)
 loop_stop = false;
 global.n1 = 0;
 global.n2 = 0;
@@ -104,20 +105,19 @@ if (global.auto_healing == 1
             <kind>1</kind>
             <string>//Open inventory
 if (keyboard_check_released(vk_tab) and
-    global.inventory == 0 and global.dialog == false and
-    global.shop == false)
+    global.inventory == 0)
 {
+    global.page_update = true;
+    loop_stop = false;
     global.inventory = 1;
     global.inventory_page = 0;
     global.start_count = 0;
-    global.end_count = 8;
+    global.end_count = 0;
 }
 else if (keyboard_check_released(vk_tab) and
-         global.inventory &gt; 0 and global.dialog == false)
+         global.inventory &gt; 0)
 {
     global.inventory = 0;
-    loop_stop = false;
-    global.item_count = 0;
     scr_savegame();
 }
 
@@ -125,8 +125,6 @@ else if (keyboard_check_released(vk_tab) and
 if (room == Menu or room == First_loading)
 {
     global.inventory = 0;
-    global.item_count = 0;
-    loop_stop = false;
 }
 </string>
           </argument>
@@ -225,12 +223,11 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
         {
             global.item_amount[global.n2] = 0;
             global.item_amount[global.n1] = 0;
-            global.item_sprite[global.n2] = 0;
-            global.item_sprite[global.n1] = 0;
+            global.item_sprite[global.n2] = "spr_aim";
+            global.item_sprite[global.n1] = "spr_aim";
             global.n1 = 0;
             global.n2 = 0;
-            repeat(10 + 1) //Number of items (+1) in Inventory.sav
-            //for (i = 0; i &lt; global.item_count; i++;)
+            repeat(global.number_of_items + 1)
             {
                 //Item index
                 ini_open("ItemsInfo.sav");
@@ -247,7 +244,7 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                 global.ItemAmount = ini_read_real("Save1",string(global.n1),"0");
                 ini_close();
                 
-                if (round(real(global.ItemAmount)) &gt; 0)
+                if (not round(real(global.ItemAmount)) == 0)
                 {                   
                     global.item_sprite[global.n1] = global.SpriteIndex;
                     global.item_description[global.n1] = global.ItemDescription;
@@ -260,10 +257,6 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                     
                     global.n2 += 1;
                 }
-                //else
-                //{
-                //    i -= 1;
-                //}
                 global.n1 += 1;
             }
             global.item_count = global.n2; 
@@ -291,7 +284,7 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                         global.start_count = (global.inventory_page*8);
                         global.end_count = ((global.inventory_page*8)*2);
                     }
-                    else /*if (global.inventory_page &gt; 0)*/
+                    else
                     {
                         global.start_count = (global.inventory_page*8);
                         global.end_count = global.item_count;
@@ -300,6 +293,7 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                 else
                 {
                     global.end_count = global.item_count;
+                    global.start_count = 0;
                 }
                 global.page_update = false;
             }
