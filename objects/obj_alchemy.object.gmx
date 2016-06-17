@@ -31,6 +31,9 @@ global.number_of_ingredients = 2; //In Inventory.sav (don't count 0!)
 alch_loop_stop = false;
 global.alch1 = 0;
 global.alch2 = 0;
+global.alch_slot_1 = false;
+global.alch_slot_2 = false;
+global.alch_slot_3 = false;
 </string>
           </argument>
         </arguments>
@@ -161,6 +164,8 @@ if (room == Menu or room == First_loading)
                     global.alch_end_count = global.alch_count;
                     global.alch_start_count = 0;
                 }
+                //Item icons
+                instance_create(view_xview+30, view_yview+7+y1, obj_alch_flower_1)
                 global.alch_page_update = false;
             }
             for (global.alch2 = global.alch_start_count; global.alch2 &lt; global.alch_end_count; global.alch2++;)
@@ -168,7 +173,8 @@ if (room == Menu or room == First_loading)
                 //Item background
                 draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);
                 //Item icons
-                draw_sprite(asset_get_index(global.alch_sprite[global.alch2]), 0,view_xview+30, view_yview+7+y1);                
+                //instance_create(view_xview+30, view_yview+7+y1, obj_alch_flower_1)
+                //draw_sprite(asset_get_index(global.alch_sprite[global.alch2]), 0,view_xview+30, view_yview+7+y1);                
                 //Item description background
                 draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
                 //Item description

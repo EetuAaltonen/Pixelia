@@ -88,6 +88,7 @@
       <sprites name="Alchemy station">
         <sprite>sprites\spr_alchemy</sprite>
         <sprite>sprites\spr_alchemy_bg</sprite>
+        <sprite>sprites\spr_alch_ingr_bg</sprite>
       </sprites>
       <sprites name="Dialog">
         <sprite>sprites\spr_dialog</sprite>
@@ -374,10 +375,16 @@
         <object>objects\obj_draw_alch_bg</object>
         <object>objects\obj_alchemy</object>
         <object>objects\obj_alch_close_button</object>
+        <object>objects\obj_alch_slot_1</object>
+        <object>objects\obj_alch_slot_2</object>
+        <object>objects\obj_alch_slot_3</object>
       </objects>
       <objects name="Crafting">
         <object>objects\obj_ingr_flower_1</object>
         <object>objects\obj_ingr_flower_2</object>
+        <objects name="Alchemy ingredients">
+          <object>objects\obj_alch_flower_1</object>
+        </objects>
       </objects>
       <objects name="Dialog">
         <object>objects\obj_dialog</object>
