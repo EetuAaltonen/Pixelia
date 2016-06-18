@@ -28,7 +28,7 @@
             <string>selected = false;
 x_prev = x;
 y_prev = y;
-number = 1;
+number = 4; //Order number in inventory
 </string>
           </argument>
         </arguments>
@@ -53,6 +53,25 @@ number = 1;
             <kind>1</kind>
             <string>if (global.alchemy == 0)
 {
+    instance_destroy();
+}
+if (global.alch_amount[number] == 0)
+{
+    if (y == obj_alch_slot_1.y)
+    {
+        global.alch_slot_1 = false;
+        obj_alch_slot_1.number = 0;
+    }
+    else if (y == obj_alch_slot_2.y)
+    {
+        global.alch_slot_2 = false;
+        obj_alch_slot_2.number = 0;
+    }
+    else if (y == obj_alch_slot_3.y)
+    {
+        global.alch_slot_3 = false;
+        obj_alch_slot_3.number = 0;
+    }
     instance_destroy();
 }
 </string>

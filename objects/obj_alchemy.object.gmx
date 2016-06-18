@@ -94,8 +94,8 @@ if (room == Menu or room == First_loading)
         {
             global.alch_amount[global.alch2] = 0;
             global.alch_amount[global.alch1] = 0;
-            global.alch_sprite[global.alch2] = "spr_aim";
-            global.alch_sprite[global.alch1] = "spr_aim";
+            global.alch_object[global.alch2] = "spr_aim";
+            global.alch_object[global.alch1] = "spr_aim";
             global.alch1 = 3; //Start
             global.alch2 = 0;
             repeat(global.number_of_ingredients)
@@ -180,6 +180,7 @@ if (room == Menu or room == First_loading)
                     {
                         //Igredients
                         instance_create(view_xview+30, view_yview+7+y2, global.alch_object[global.alch2])
+                        (global.alch_object[global.alch2]).amount = global.alch_amount[global.alch2];
                         y2 += 19;
                     }
                     create_only_once = false;
@@ -189,7 +190,7 @@ if (room == Menu or room == First_loading)
                                 c_black, c_black, c_black, c_black, 1);
                 //Igredient amount background
                 draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
-                //Igredientamount
+                //Igredient amount
                 draw_text_color(view_xview+207,view_yview+y1, string(global.alch_amount[global.alch2]),
                                 c_black, c_black, c_black, c_black, 1);
                 y1 += 19;

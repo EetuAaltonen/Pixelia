@@ -276,6 +276,7 @@
   <scripts name="scripts">
     <scripts name="Alchemy">
       <script>scripts\scr_alchemy_recipes.gml</script>
+      <script>scripts\scr_alchemy_mix_potion.gml</script>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_inventory_item_info.gml</script>
