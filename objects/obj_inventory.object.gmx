@@ -221,14 +221,18 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
             repeat(global.number_of_items + 1)
             {
                 //Item index
-                ini_open("ItemsInfo.sav");
+                /*ini_open("ItemsInfo.sav");
                 global.SpriteIndex = ini_read_string("Index",string(global.n1),"spr_aim");
-                ini_close();
+                ini_close();*/
+                scr_inventory_item_info();
+                global.SpriteIndex = string(Icon[global.n1]);
                 
                 //Item description
-                ini_open("ItemsInfo.sav");
+                /*ini_open("ItemsInfo.sav");
                 global.ItemDescription = ini_read_string("Description",string(global.n1),"Name not found...");
-                ini_close();
+                ini_close();*/
+                scr_inventory_item_info();
+                global.ItemDescription = string(Descr[global.n1]);
                 
                 //Item amount
                 ini_open("Inventory.sav");

@@ -3,7 +3,7 @@
   <spriteName>spr_icon_flower_1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5050</depth>
+  <depth>-5003</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,7 @@
             <string>selected = false;
 x_prev = x;
 y_prev = y;
+number = 1;
 </string>
           </argument>
         </arguments>
@@ -83,22 +84,43 @@ y_prev = y;
         x = obj_alch_slot_1.x;
         y = obj_alch_slot_1.y;
         selected = true;
+        global.alch_slot_1 = true;
+        obj_alch_slot_1.number = number;
     }
     else if (global.alch_slot_2 == false)
     {
         x = obj_alch_slot_2.x;
         y = obj_alch_slot_2.y;
         selected = true;
+        global.alch_slot_2 = true;
+        obj_alch_slot_2.number = number;
     }
     else if (global.alch_slot_3 == false)
     {
         x = obj_alch_slot_3.x;
         y = obj_alch_slot_3.y;
         selected = true;
+        global.alch_slot_3 = true;
+        obj_alch_slot_3.number = number;
     }
 }
 else if (selected == true)
 {
+    if (y == obj_alch_slot_1.y)
+    {
+        global.alch_slot_1 = false;
+        obj_alch_slot_1.number = 0;
+    }
+    else if (y == obj_alch_slot_2.y)
+    {
+        global.alch_slot_2 = false;
+        obj_alch_slot_2.number = 0;
+    }
+    else if (y == obj_alch_slot_3.y)
+    {
+        global.alch_slot_3 = false;
+        obj_alch_slot_3.number = 0;
+    }
     x = x_prev;
     y = y_prev;
     selected = false;
