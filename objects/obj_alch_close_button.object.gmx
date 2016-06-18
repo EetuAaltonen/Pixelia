@@ -57,7 +57,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.alchemy = 0;
+            <string>global.alchemy = false;
 alch_loop_stop = false;
 </string>
           </argument>

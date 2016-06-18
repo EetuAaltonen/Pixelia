@@ -50,7 +50,7 @@ create_only_once = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy &gt; 0)
+            <string>if (global.alchemy == true)
 {
     x = view_xview+350;
     y = view_yview+147;
@@ -124,12 +124,13 @@ else
 {
     scr_alchemy_recipes();
     var number1, number2, number3;
-    number1 = obj_alch_slot_1.number;
-    number2 = obj_alch_slot_2.number;
-    number3 = obj_alch_slot_3.number;
-    //if is_array(Potion[number1, number2 + number3])
+    number1 = string(obj_alch_slot_1.number);
+    number2 = string(obj_alch_slot_2.number);
+    number3 = string(obj_alch_slot_3.number);
+    recipe_id = (number1 + number2 + number3)
+    //if is_array(Potion[recipe_id ])
     //{
-        instance_create(x, y, Potion[1, 5]/*Potion[number1, (number2 + number3)]*/);
+        instance_create(x, y, Potion[recipe_id]);
     //}
     create_only_once = true;
 }

@@ -72,10 +72,10 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == 0 and can_open_or_close == true and
+            <string>if (global.alchemy == false and can_open_or_close == true and
     global.inventory == 0)
 {
-    global.alchemy = 1;
+    global.alchemy = true;
     obj_alchemy.alch_page_update = true;
     obj_alchemy.alch_loop_stop = false;
     obj_alchemy.create_only_once = true;
@@ -107,9 +107,9 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy &gt; 0 and can_open_or_close == true)
+            <string>if (global.alchemy == true and can_open_or_close == true)
 {
-    global.alchemy = 0;
+    global.alchemy = false;
     can_open_or_close = false;
     alarm[1] = 20;
 }

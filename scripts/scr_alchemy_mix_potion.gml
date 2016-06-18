@@ -1,8 +1,3 @@
-//Save to inventory
-global.n1 = 6;
-global.AddedItemAmount = 1;
-scr_save_to_inventory();
-
 //Changed ingredient count in inventory
 global.n1 = obj_alch_slot_1.number;
 global.AddedItemAmount = -1;

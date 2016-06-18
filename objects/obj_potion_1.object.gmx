@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == 0 || global.alch_slot_4 == false)
+            <string>if (global.alchemy == false || global.alch_slot_4 == false)
 {
     obj_alch_slot_4.create_only_once = false;
     instance_destroy();
@@ -52,7 +52,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_alchemy_mix_potion();
+            <string>//Save to inventory
+global.n1 = 6;
+global.AddedItemAmount = 1;
+scr_save_to_inventory();
+
+scr_alchemy_mix_potion();
 </string>
           </argument>
         </arguments>

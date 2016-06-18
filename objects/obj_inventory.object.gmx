@@ -105,7 +105,7 @@ if (global.auto_healing == 1
             <kind>1</kind>
             <string>//Open inventory
 if (keyboard_check_released(vk_tab) and
-    global.inventory == 0 and global.alchemy == 0)
+    global.inventory == 0 and global.alchemy == false)
 {
     global.page_update = true;
     loop_stop = false;

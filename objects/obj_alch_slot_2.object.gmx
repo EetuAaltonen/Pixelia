@@ -78,7 +78,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy &gt; 0)
+            <string>if (global.alchemy == true)
 {
     x = view_xview+300;
     y = view_yview+147;  
