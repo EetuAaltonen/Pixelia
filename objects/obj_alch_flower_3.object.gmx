@@ -96,7 +96,7 @@ if (global.alch_amount[number] == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (selected == false)
+            <string>if (selected == false and global.alch_slot_4 == false)
 {
     if (global.alch_slot_1 == false)
     {

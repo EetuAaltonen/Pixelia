@@ -202,28 +202,28 @@ if (room == Menu or room == First_loading)
                                 c_black, c_black, c_black, c_black, 1);
                 y1 += 19;
             }
-            //Forge
-            draw_text_color(view_xview+20,view_yview+60, "Forge",
-                            c_black, c_black, c_black, c_black, 1);
-            //Page number background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
-            //Page number max
-            forg_page_max = (round(forg_count/8));
-            if ((forg_page_max - (forg_count/8)) &lt; 0 )
-            {   
-                forg_page_max += 1;
-            }
-            //Draw page number and max
-            draw_text_color(view_xview+20,view_yview+87, 
-                            string("PAGE: " + string(forg_page + 1) + "       / " + string(forg_page_max)),
-                            c_black, c_black, c_black, c_black, 1);
         }
         else
         {
             //If empty
             draw_text_color(view_xview+30, view_yview+117, "You have't any materials...",
                                 c_black, c_black, c_black, c_black, 1);
-        }  
+        }
+        //Forge
+        draw_text_color(view_xview+20,view_yview+60, "Forge",
+                        c_black, c_black, c_black, c_black, 1);
+        //Page number background
+        draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
+        //Page number max
+        forg_page_max = (round(forg_count/8));
+        if ((forg_page_max - (forg_count/8)) &lt; 0 )
+        {   
+            forg_page_max += 1;
+        }
+        //Draw page number and max
+        draw_text_color(view_xview+20,view_yview+87, 
+                        string("PAGE: " + string(forg_page + 1) + "       / " + string(forg_page_max)),
+                        c_black, c_black, c_black, c_black, 1); 
     }
 }
 </string>

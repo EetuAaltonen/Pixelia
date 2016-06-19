@@ -54,16 +54,6 @@ create_only_once = false;
 {
     x = view_xview+350;
     y = view_yview+147;
-    if (global.forg_slot_1 == true and
-        global.forg_slot_2 == true and
-        global.forg_slot_3 == true)
-    {
-        global.forg_slot_4 = true;
-    }
-    else
-    {
-        global.forg_slot_4 = false;
-    }
 }
 else
 {
@@ -98,25 +88,33 @@ else
     if (create_only_once == false)
     {  
         scr_forge_recipes();
-        var number1, number2, number3;
+        var number1, number2, number3, recipe_id;
         number1 = string(obj_forg_slot_1.number);
         if (global.forg_slot_1 == true)
         {
-            number2 = string(obj_forg_slot_2.number)
+            number1 = obj_forg_slot_1.number;
         }
         else
         {
-            number2 = "0";
+            number1 = 0;
         }
-        if (global.forg_slot_1 == true)
+        if (global.forg_slot_2 == true)
         {
-            number3 = string(obj_forg_slot_2.number)
+            number2 = obj_forg_slot_2.number;
         }
         else
         {
-            number3 = "0";
+            number2 = 0;
         }
-        recipe_id = (number1 + number2 + number3)
+        if (global.forg_slot_3 == true)
+        {
+            number3 = obj_forg_slot_3.number;
+        }
+        else
+        {
+            number3 = 0;
+        }
+        recipe_id = string(string(number1) + string(number2) + string(number3));
         if (Material[recipe_id])
         {
             global.forg_slot_4 = true;
