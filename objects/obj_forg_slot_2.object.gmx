@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_index = 0;
 image_speed = 0;
-create_only_once = false;
+number = 0;
 </string>
           </argument>
         </arguments>
@@ -50,38 +50,7 @@ create_only_once = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == true)
-{
-    x = view_xview+350;
-    y = view_yview+147;
-}
-else
-{
-    global.alch_slot_4 = false;
-    scr_move_out_of_room();
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.alch_slot_4 == false)
+            <string>if (global.forg_slot_2 == false)
 {
     image_index = 0;
 }
@@ -109,36 +78,17 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alch_slot_1 == true and
-    global.alch_slot_2 == true and
-    global.alch_slot_3 == true)
+            <string>if (global.forge == true)
 {
-    if (create_only_once == false)
-    {  
-        scr_alchemy_recipes();
-        var number1, number2, number3;
-        number1 = string(obj_alch_slot_1.number);
-        number2 = string(obj_alch_slot_2.number);
-        number3 = string(obj_alch_slot_3.number);
-        recipe_id = (number1 + number2 + number3)
-        if (Potion[recipe_id])
-        {
-            global.alch_slot_4 = true;
-            instance_create(x, y, Potion[recipe_id]);
-            create_only_once = true;
-        }
-        else
-        {
-            global.alch_slot_4 = false;
-            create_only_once = false;
-        }
-    }
+    x = view_xview+300;
+    y = view_yview+147;  
 }
 else
 {
-    global.alch_slot_4 = false;
-    create_only_once = false;
+    global.forg_slot_2 = false;
+    scr_move_out_of_room();
 }
+
 </string>
           </argument>
         </arguments>

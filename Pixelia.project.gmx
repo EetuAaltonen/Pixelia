@@ -38,6 +38,10 @@
       <sprite>sprites\spr_blacksmith_roof</sprite>
     </sprites>
     <sprites name="Collectable">
+      <sprites name="Forge materials">
+        <sprite>sprites\spr_icon_coal</sprite>
+        <sprite>sprites\spr_icon_ironbar</sprite>
+      </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_flower_1</sprite>
         <sprite>sprites\spr_flower_2</sprite>
@@ -65,6 +69,8 @@
     </sprites>
     <sprites name="Crafting">
       <sprite>sprites\spr_alchemy_station</sprite>
+      <sprite>sprites\spr_forge</sprite>
+      <sprite>sprites\spr_workbench</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
@@ -93,10 +99,18 @@
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
     <sprites name="HUD">
-      <sprites name="Alchemy station">
-        <sprite>sprites\spr_alchemy</sprite>
-        <sprite>sprites\spr_alchemy_bg</sprite>
-        <sprite>sprites\spr_alch_ingr_bg</sprite>
+      <sprites name="Crafting">
+        <sprites name="Alchemy station">
+          <sprite>sprites\spr_alchemy</sprite>
+        </sprites>
+        <sprites name="Forge">
+          <sprite>sprites\spr_smelter</sprite>
+        </sprites>
+        <sprites name="Workbench">
+          <sprite>sprites\spr_crafting_table</sprite>
+        </sprites>
+        <sprite>sprites\spr_crafting_bg</sprite>
+        <sprite>sprites\spr_crafting_material_bg</sprite>
       </sprites>
       <sprites name="Dialog">
         <sprite>sprites\spr_dialog</sprite>
@@ -274,9 +288,19 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Alchemy">
-      <script>scripts\scr_alchemy_recipes.gml</script>
-      <script>scripts\scr_alchemy_mix_potion.gml</script>
+    <scripts name="Crafting">
+      <scripts name="Alchemy">
+        <script>scripts\scr_alchemy_mix_potion.gml</script>
+        <script>scripts\scr_alchemy_recipes.gml</script>
+      </scripts>
+      <scripts name="Forge">
+        <script>scripts\scr_forge_recipes.gml</script>
+        <script>scripts\scr_forge_smelt_ore.gml</script>
+      </scripts>
+      <scripts name="Workbench">
+        <script>scripts\scr_workbench_craft.gml</script>
+        <script>scripts\scr_workbench_recipes.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_inventory_item_info.gml</script>
@@ -362,11 +386,17 @@
       <object>objects\obj_tree</object>
     </objects>
     <objects name="Crafting">
-      <objects name="Alchemy station">
+      <objects name="Alchemy station recipes">
         <object>objects\obj_potion_1</object>
         <object>objects\obj_potion_2</object>
       </objects>
       <object>objects\obj_alchemy_station</object>
+      <object>objects\obj_forge</object>
+      <object>objects\obj_workbench</object>
+      <objects name="Forge recipes">
+        <object>objects\obj_coal</object>
+        <object>objects\obj_ironbar</object>
+      </objects>
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
@@ -396,20 +426,34 @@
       <object>objects\obj_</object>
     </objects>
     <objects name="HUD">
-      <objects name="Alchemy station">
-        <object>objects\obj_draw_alch_bg</object>
-        <object>objects\obj_alchemy</object>
-        <object>objects\obj_alch_close_button</object>
-        <object>objects\obj_alch_slot_1</object>
-        <object>objects\obj_alch_slot_2</object>
-        <object>objects\obj_alch_slot_3</object>
-        <object>objects\obj_alch_slot_4</object>
-      </objects>
       <objects name="Crafting">
-        <objects name="Alchemy ingredients">
-          <object>objects\obj_alch_flower_1</object>
-          <object>objects\obj_alch_flower_2</object>
-          <object>objects\obj_alch_flower_3</object>
+        <objects name="Alchemy station">
+          <objects name="Ingredients">
+            <object>objects\obj_alch_flower_1</object>
+            <object>objects\obj_alch_flower_2</object>
+            <object>objects\obj_alch_flower_3</object>
+          </objects>
+          <object>objects\obj_alch_slot_1</object>
+          <object>objects\obj_alch_slot_2</object>
+          <object>objects\obj_alch_slot_3</object>
+          <object>objects\obj_alch_slot_4</object>
+          <object>objects\obj_alchemy</object>
+        </objects>
+        <objects name="Forge">
+          <objects name="Materials">
+            <object>objects\obj_forg_ironore</object>
+            <object>objects\obj_forg_log</object>
+          </objects>
+          <object>objects\obj_forg_slot_1</object>
+          <object>objects\obj_forg_slot_2</object>
+          <object>objects\obj_forg_slot_3</object>
+          <object>objects\obj_forg_slot_4</object>
+          <object>objects\obj_smelter</object>
+        </objects>
+        <object>objects\obj_craft_close_button</object>
+        <object>objects\obj_draw_craft_bg</object>
+        <objects name="Workbench">
+          <object>objects\obj_crafting_table</object>
         </objects>
       </objects>
       <objects name="Dialog">

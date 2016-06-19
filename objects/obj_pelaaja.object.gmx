@@ -452,8 +452,8 @@ else if (global.inventory &gt; 0)
     vspeed = 0;
 }
 
-//Alchemy
-else if (global.alchemy &gt; 0)
+//Crafting
+else if (global.alchemy == true || global.forge== true || global.workbench == true)
 {
     hspeed = 0;
     vspeed = 0;

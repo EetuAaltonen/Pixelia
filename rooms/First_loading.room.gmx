@@ -83,12 +83,18 @@
     <instance objName="obj_lives" x="-342" y="-219" name="inst_BE4C4012" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dialog_bg" x="14" y="-288" name="inst_3569854F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_alchemy" x="263" y="-230" name="inst_8754677D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_draw_alch_bg" x="322" y="-229" name="inst_468DA405" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alch_close_button" x="239" y="-270" name="inst_E58136C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alch_slot_1" x="251" y="-193" name="inst_FFB766D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alch_slot_2" x="285" y="-194" name="inst_EA077C0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alch_slot_3" x="325" y="-194" name="inst_01AC82E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_alch_slot_4" x="251" y="-169" name="inst_C1649E6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_draw_craft_bg" x="263" y="-268" name="inst_468DA405" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_craft_close_button" x="238" y="-309" name="inst_E58136C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alch_slot_1" x="213" y="-201" name="inst_FFB766D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alch_slot_2" x="243" y="-199" name="inst_EA077C0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alch_slot_3" x="213" y="-225" name="inst_01AC82E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alch_slot_4" x="274" y="-198" name="inst_C1649E6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_smelter" x="317" y="-230" name="inst_73A5588F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crafting_table" x="317" y="-268" name="inst_8BD564DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forg_slot_1" x="362" y="-243" name="inst_E2D52132" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forg_slot_2" x="363" y="-219" name="inst_533ADD9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forg_slot_3" x="354" y="-198" name="inst_019978F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forg_slot_4" x="315" y="-196" name="inst_90913A5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

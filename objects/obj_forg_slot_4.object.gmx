@@ -50,14 +50,24 @@ create_only_once = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == true)
+            <string>if (global.forge == true)
 {
     x = view_xview+350;
     y = view_yview+147;
+    if (global.forg_slot_1 == true and
+        global.forg_slot_2 == true and
+        global.forg_slot_3 == true)
+    {
+        global.forg_slot_4 = true;
+    }
+    else
+    {
+        global.forg_slot_4 = false;
+    }
 }
 else
 {
-    global.alch_slot_4 = false;
+    global.forg_slot_4 = false;
     scr_move_out_of_room();
 }
 
@@ -81,13 +91,49 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alch_slot_4 == false)
+            <string>if (global.forg_slot_1 == true ||
+    global.forg_slot_2 == true ||
+    global.forg_slot_3 == true)
 {
-    image_index = 0;
+    if (create_only_once == false)
+    {  
+        scr_forge_recipes();
+        var number1, number2, number3;
+        number1 = string(obj_forg_slot_1.number);
+        if (global.forg_slot_1 == true)
+        {
+            number2 = string(obj_forg_slot_2.number)
+        }
+        else
+        {
+            number2 = "0";
+        }
+        if (global.forg_slot_1 == true)
+        {
+            number3 = string(obj_forg_slot_2.number)
+        }
+        else
+        {
+            number3 = "0";
+        }
+        recipe_id = (number1 + number2 + number3)
+        if (Material[recipe_id])
+        {
+            global.forg_slot_4 = true;
+            instance_create(x, y, Material[recipe_id]);
+            create_only_once = true;
+        }
+        else
+        {
+            global.forg_slot_4 = false;
+            create_only_once = false;
+        }
+    }
 }
 else
 {
-    image_index = 1;
+    global.forg_slot_4 = false;
+    create_only_once = false;
 }
 </string>
           </argument>
@@ -109,35 +155,13 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alch_slot_1 == true and
-    global.alch_slot_2 == true and
-    global.alch_slot_3 == true)
+            <string>if (global.forg_slot_4 == false)
 {
-    if (create_only_once == false)
-    {  
-        scr_alchemy_recipes();
-        var number1, number2, number3;
-        number1 = string(obj_alch_slot_1.number);
-        number2 = string(obj_alch_slot_2.number);
-        number3 = string(obj_alch_slot_3.number);
-        recipe_id = (number1 + number2 + number3)
-        if (Potion[recipe_id])
-        {
-            global.alch_slot_4 = true;
-            instance_create(x, y, Potion[recipe_id]);
-            create_only_once = true;
-        }
-        else
-        {
-            global.alch_slot_4 = false;
-            create_only_once = false;
-        }
-    }
+    image_index = 0;
 }
 else
 {
-    global.alch_slot_4 = false;
-    create_only_once = false;
+    image_index = 1;
 }
 </string>
           </argument>
