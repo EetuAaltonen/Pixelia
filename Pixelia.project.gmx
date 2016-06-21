@@ -15,6 +15,9 @@
       <sprite>sprites\spr___ammo</sprite>
       <sprite>sprites\spr_shadow_ammo</sprite>
     </sprites>
+    <sprites name="Animals">
+      <sprite>sprites\spr_chicken</sprite>
+    </sprites>
     <sprites name="Blocks">
       <sprite>sprites\spr_maa</sprite>
       <sprite>sprites\spr_stone</sprite>
@@ -38,6 +41,9 @@
       <sprite>sprites\spr_blacksmith_roof</sprite>
     </sprites>
     <sprites name="Collectable">
+      <sprites name="Animals">
+        <sprite>sprites\spr_feather</sprite>
+      </sprites>
       <sprites name="Forge materials">
         <sprite>sprites\spr_icon_coal</sprite>
         <sprite>sprites\spr_icon_ironbar</sprite>
@@ -322,7 +328,6 @@
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
-    <script>scripts\scr_coin_collected.gml</script>
     <script>scripts\scr_move_out_of_room.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
     <script>scripts\scr_solidify.gml</script>
@@ -342,6 +347,9 @@
       <object>objects\obj___ammo</object>
       <object>objects\obj_cannonball</object>
       <object>objects\obj_arrow1</object>
+    </objects>
+    <objects name="Animals">
+      <object>objects\obj_chicken</object>
     </objects>
     <objects name="Blocks">
       <object>objects\obj_maa</object>
@@ -367,6 +375,9 @@
       <object>objects\obj_blacksmith_wall</object>
     </objects>
     <objects name="Collectable">
+      <objects name="Animals">
+        <object>objects\obj_feather</object>
+      </objects>
       <objects name="Ingredients">
         <object>objects\obj_flower_1</object>
         <object>objects\obj_flower_1_collected</object>
