@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//Inventory
 global.inventory = 0;
-global.number_of_items = 13; //In Inventory.sav (don't count 0!)
+last_order_number_of_items = 3001; //In Inventory.sav
 loop_stop = false;
 global.n1 = 0;
 global.n2 = 0;
@@ -191,21 +191,21 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
     var coin;
     coin = global.coins;
     draw_text_color(view_xview+440,view_yview+278, string(coin),
-                c_black, c_black, c_black, c_black, 1);
-    //Logo
+                    c_black, c_black, c_black, c_black, 1);
+    //Coin logo
     draw_sprite_ext(spr_money_draw, image_index, view_xview+425, 
                     view_yview+285, image_xscale, image_yscale, 
                     image_angle, c_white, image_alpha);                
-    //Logo
-    draw_sprite_ext(spr_potion, image_index, view_xview+372, 
-                    view_yview+285, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
-    
-    //Potion
+    //Potions
     var potion;
     potion = global.potions;
     draw_text_color(view_xview+380,view_yview+278, string(potion),
-                c_black, c_black, c_black, c_black, 1);
+                    c_black, c_black, c_black, c_black, 1);
+                    
+    //Potion logo
+    draw_sprite_ext(spr_potion, image_index, view_xview+372, 
+                    view_yview+285, image_xscale, image_yscale, 
+                    image_angle, c_white, image_alpha);
     
     //Inventory
     if (global.inventory == 1)
@@ -216,32 +216,42 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
             global.item_amount[global.n1] = 0;
             global.item_sprite[global.n2] = "spr_aim";
             global.item_sprite[global.n1] = "spr_aim";
-            global.n1 = 0;
+            global.n1 = 1;
             global.n2 = 0;
-            repeat(global.number_of_items + 1)
+            for(global.n1 = 1; global.n1 &lt; (last_order_number_of_items + 1); global.n1++)
             {
-                //Item index
-                /*ini_open("ItemsInfo.sav");
-                global.SpriteIndex = ini_read_string("Index",string(global.n1),"spr_aim");
-                ini_close();*/
-                scr_inventory_item_info();
-                global.SpriteIndex = string(Icon[global.n1]);
-                
-                //Item description
-                /*ini_open("ItemsInfo.sav");
-                global.ItemDescription = ini_read_string("Description",string(global.n1),"Name not found...");
-                ini_close();*/
-                scr_inventory_item_info();
-                global.ItemDescription = string(Descr[global.n1]);
-                
                 //Item amount
                 ini_open("Inventory.sav");
-                global.ItemAmount = ini_read_real("Save1",string(global.n1),"0");
+                global.ItemAmount = ini_read_real("Save1",string(global.n1), -1);
                 ini_close();
                 
                 if (not round(real(global.ItemAmount)) == 0)
                 {                   
+                    if (global.ItemAmount == -1)
+                    {
+                        if (global.n1 &lt; 1000)
+                        {
+                            global.n1 = 1000;
+                        }
+                        else if (1000 &lt; global.n1 and global.n1 &lt; 2000)
+                        {
+                            global.n1 = 2000;
+                        }
+                        else if (2000 &lt; global.n1 and global.n1 &lt; 3000)
+                        {
+                            global.n1 = 3000;
+                        }
+                    }
+                    
+                    //Item index
+                    scr_inventory_item_info();
+                    global.SpriteIndex = string(Icon[global.n1]);
+                    
+                    //Item description
+                    scr_inventory_item_info();
+                    global.ItemDescription = string(Descr[global.n1]);
                     global.item_sprite[global.n1] = global.SpriteIndex;
+                    
                     global.item_description[global.n1] = global.ItemDescription;
                     global.item_amount[global.n1] = round(global.ItemAmount);
                     
@@ -252,7 +262,6 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                     
                     global.n2 += 1;
                 }
-                global.n1 += 1;
             }
             global.item_count = global.n2; 
         } 
