@@ -57,10 +57,4 @@ else if (x == obj_forg_slot_4.x and y == obj_forg_slot_4.y)
     global.n1 = number;
     global.AddedItemAmount = 1;
     scr_save_to_inventory();
-    
-    global.forge = true;
 }
-global.forg_slot_4 = false;
-obj_forg_slot_4.create_only_once = false;
-obj_forge.forg_loop_stop = false;
-obj_forge.forg_page_update = true;

@@ -89,7 +89,6 @@ else
     {  
         scr_forge_recipes();
         var number1, number2, number3, recipe_id;
-        number1 = string(obj_forg_slot_1.number);
         if (global.forg_slot_1 == true)
         {
             number1 = obj_forg_slot_1.number;

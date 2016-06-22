@@ -119,7 +119,6 @@ if (room == Menu or room == First_loading)
     {
         if (forg_loop_stop == false)
         {
-            forg_loop_stop = true;
             forg_amount[forg2] = 0;
             forg_amount[forg1] = 0;
             forg_object[forg2] = "spr_aim";
@@ -168,7 +167,8 @@ if (room == Menu or room == First_loading)
                     }
                 }
             }
-            forg_count = forg2; 
+            forg_count = forg2;
+            forg_loop_stop = true;
         }
         var y1, y2;
         y1 = 110;
@@ -213,7 +213,7 @@ if (room == Menu or room == First_loading)
                 draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);               
                 //Material description background
                 draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
-                //Create objects on the list
+                // objects on the list
                 if (create_only_once == true)
                 {
                     for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)

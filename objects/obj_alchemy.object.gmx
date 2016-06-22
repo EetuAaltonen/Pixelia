@@ -96,7 +96,7 @@ if (room == Menu or room == First_loading)
             global.alch_amount[global.alch1] = 0;
             global.alch_object[global.alch2] = "spr_aim";
             global.alch_object[global.alch1] = "spr_aim";
-            global.alch1 = 3; //Start
+            global.alch1 = 1000; //Start
             global.alch2 = 0;
             repeat(number_of_ingredients)
             {
@@ -184,10 +184,11 @@ if (room == Menu or room == First_loading)
                 //Create objects on the list
                 if (create_only_once == true)
                 {
+                    scr_inventory_item_info();
                     for (global.alch2 = global.alch_start_count; global.alch2 &lt; global.alch_end_count; global.alch2++;)
                     {
                         //Ingredients
-                        instance_create(view_xview+30, view_yview+7+y2, global.alch_object[global.alch2])
+                        instance_create(view_xview+30, view_yview+7+y2, Object[global.alch2])
                         y2 += 19;
                     }
                     create_only_once = false;

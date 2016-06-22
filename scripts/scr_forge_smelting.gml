@@ -18,9 +18,8 @@ if (global.forg_slot_3 == true)
     scr_save_to_inventory();
 }
 
-global.forge = false;
-obj_forg_slot_4.create_only_once = false;
-obj_forge.forg_loop_stop = false;
-obj_forge.forg_page_update = true;
+obj_smelter.forg_page_update = true;
+obj_smelter.forg_loop_stop = false;
+obj_smelter.create_only_once = true;
 
 instance_destroy();
