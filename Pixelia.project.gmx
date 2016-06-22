@@ -47,6 +47,7 @@
       <sprites name="Forge materials">
         <sprite>sprites\spr_icon_coal</sprite>
         <sprite>sprites\spr_icon_ironbar</sprite>
+        <sprite>sprites\spr_icon_steelbar</sprite>
       </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_flower_1</sprite>
@@ -173,6 +174,7 @@
         <sprite>sprites\spr_inv_item_bg</sprite>
         <sprite>sprites\spr_inv_item_amount_bg</sprite>
         <sprite>sprites\spr_inv_item_description_bg</sprite>
+        <sprite>sprites\spr_item_info_box</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>
@@ -301,7 +303,12 @@
       </scripts>
       <scripts name="Forge">
         <script>scripts\scr_forge_recipes.gml</script>
-        <script>scripts\scr_forge_smelt_ore.gml</script>
+        <script>scripts\scr_forge_smelting.gml</script>
+        <scripts name="Forge materials">
+          <script>scripts\scr_forg_mater_mouse_released_1.gml</script>
+          <script>scripts\scr_forg_mater_step_1.gml</script>
+          <script>scripts\scr_forg_mater_step_2.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Workbench">
         <script>scripts\scr_workbench_craft.gml</script>
@@ -397,16 +404,22 @@
       <object>objects\obj_tree</object>
     </objects>
     <objects name="Crafting">
-      <objects name="Alchemy station recipes">
-        <object>objects\obj_potion_1</object>
-        <object>objects\obj_potion_2</object>
-      </objects>
       <object>objects\obj_alchemy_station</object>
       <object>objects\obj_forge</object>
       <object>objects\obj_workbench</object>
-      <objects name="Forge recipes">
-        <object>objects\obj_coal</object>
-        <object>objects\obj_ironbar</object>
+      <objects name="Ingredients">
+        <object>objects\obj_ingr_flower_1</object>
+        <object>objects\obj_ingr_flower_2</object>
+        <object>objects\obj_ingr_flower_3</object>
+        <object>objects\obj_potion_1</object>
+        <object>objects\obj_potion_2</object>
+      </objects>
+      <objects name="Materials">
+        <object>objects\obj_mater_ironore</object>
+        <object>objects\obj_mater_log</object>
+        <object>objects\obj_mater_coal</object>
+        <object>objects\obj_mater_ironbar</object>
+        <object>objects\obj_mater_steelbar</object>
       </objects>
     </objects>
     <objects name="Effects">
@@ -439,11 +452,6 @@
     <objects name="HUD">
       <objects name="Crafting">
         <objects name="Alchemy station">
-          <objects name="Ingredients">
-            <object>objects\obj_alch_flower_1</object>
-            <object>objects\obj_alch_flower_2</object>
-            <object>objects\obj_alch_flower_3</object>
-          </objects>
           <object>objects\obj_alch_slot_1</object>
           <object>objects\obj_alch_slot_2</object>
           <object>objects\obj_alch_slot_3</object>
@@ -451,10 +459,6 @@
           <object>objects\obj_alchemy</object>
         </objects>
         <objects name="Forge">
-          <objects name="Materials">
-            <object>objects\obj_forg_ironore</object>
-            <object>objects\obj_forg_log</object>
-          </objects>
           <object>objects\obj_forg_slot_1</object>
           <object>objects\obj_forg_slot_2</object>
           <object>objects\obj_forg_slot_3</object>

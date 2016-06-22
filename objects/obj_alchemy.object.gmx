@@ -206,7 +206,7 @@ if (room == Menu or room == First_loading)
         else
         {
             //If empty
-            draw_text_color(view_xview+30, view_yview+117, "You have't any ingredients...",
+            draw_text_color(view_xview+30, view_yview+117, "You don't have any ingredients...",
                                 c_black, c_black, c_black, c_black, 1);
         }  
         //Alchemy station

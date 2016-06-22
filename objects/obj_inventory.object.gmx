@@ -241,6 +241,10 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
                         {
                             global.n1 = 3000;
                         }
+                        else if (global.n1 &gt; 3000)
+                        {
+                            break;
+                        }
                     }
                     
                     //Item index
@@ -357,11 +361,6 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
     }
     /*else if(global.inventory == 3)
     {
-        //Text
-        draw_sprite(spr_st_infobox , 0, view_xview+30, view_yview+120);
-        //Deat counter
-        draw_text_color(view_xview+50,view_yview+112, string(global.death_counter),
-                c_black, c_black, c_black, c_black, 1);
     }*/
 }
 </string>

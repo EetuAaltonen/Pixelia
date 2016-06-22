@@ -57,7 +57,7 @@ global.n1 = 8;
 global.AddedItemAmount = 1;
 scr_save_to_inventory();
 
-scr_forge_smelt_ore();
+scr_forge_smelting();
 </string>
           </argument>
         </arguments>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//Forge
 global.forge = false;
-number_of_ores = 2; //In Inventory.sav (don't count 0!)
+last_order_number_of_ores = 999; //In Inventory.sav (don't count 0!)
 forg_loop_stop = false;
 create_only_once = true;
 forg1 = 0;
@@ -36,6 +36,8 @@ global.forg_slot_1 = false;
 global.forg_slot_2 = false;
 global.forg_slot_3 = false;
 global.forg_slot_4 = false;
+//Crafted material info
+crafted_material_info_number = 0;
 </string>
           </argument>
         </arguments>
@@ -67,6 +69,31 @@ if (room == Menu or room == First_loading)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.forg_slot_4 = false)
+{
+   //Crafted material info
+   crafted_material_info_number = 0; 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -92,29 +119,30 @@ if (room == Menu or room == First_loading)
     {
         if (forg_loop_stop == false)
         {
+            forg_loop_stop = true;
             forg_amount[forg2] = 0;
             forg_amount[forg1] = 0;
             forg_object[forg2] = "spr_aim";
             forg_object[forg1] = "spr_aim";
             forg1 = 1; //Start
             forg2 = 0;
-            repeat(number_of_ores)
-            {
-                //Material index
+            for(forg1 = 1; forg1 &lt; (last_order_number_of_ores + 1); forg1++)
+            { 
+                //Material amount
+                ini_open("Inventory.sav");
+                ForgAmount = ini_read_real("Save1",string(forg1),-1);
+                ini_close();
+                
+                //Material object
                 scr_inventory_item_info();
                 ForgObject = Object[forg1];
                 
-                //Material description
-                scr_inventory_item_info();
-                ForgDescription = string(Descr[forg1]);
-                
-                //Material amount
-                ini_open("Inventory.sav");
-                ForgAmount = ini_read_real("Save1",string(forg1),"0");
-                ini_close();
-                
                 if (not round(real(ForgAmount)) == 0)
-                {                   
+                {                      
+                    //Material description
+                    scr_inventory_item_info();
+                    ForgDescription = string(Descr[forg1]);    
+                
                     forg_object[forg1] = ForgObject;
                     forg_description[forg1] = ForgDescription;
                     forg_amount[forg1] = round(ForgAmount);
@@ -126,6 +154,11 @@ if (room == Menu or room == First_loading)
                     
                     forg2 += 1;
                 }
+                else if (ForgAmount == -1)
+                {
+                    //forg1 = (last_order_number_of_ores + 1);
+                    break;
+                }
                 else
                 {
                     //Forced delete Material if amount = 0 (while making potions)
@@ -134,7 +167,6 @@ if (room == Menu or room == First_loading)
                         forg_amount[(ForgObject).number] = 0;
                     }
                 }
-                forg1 += 1;
             }
             forg_count = forg2; 
         }
@@ -173,7 +205,7 @@ if (room == Menu or room == First_loading)
                     forg_end_count = forg_count;
                     forg_start_count = 0;
                 }
-                global.alch_page_update = false;
+                forg_page_update = false;
             }
             for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)
             {
@@ -200,13 +232,19 @@ if (room == Menu or room == First_loading)
                 //Material amount
                 draw_text_color(view_xview+207,view_yview+y1, string(forg_amount[forg2]),
                                 c_black, c_black, c_black, c_black, 1);
+                //Crafted material info background
+                draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
+                //Crafted material info
+                scr_inventory_item_info();
+                draw_text_color(view_xview+355,view_yview+175, string(Info[crafted_material_info_number]),
+                            c_black, c_black, c_black, c_black, 1);
                 y1 += 19;
             }
         }
         else
         {
             //If empty
-            draw_text_color(view_xview+30, view_yview+117, "You have't any materials...",
+            draw_text_color(view_xview+30, view_yview+117, "You don't have any ores...",
                                 c_black, c_black, c_black, c_black, 1);
         }
         //Forge
