@@ -25,15 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Position
+            <string>//Check if some menu is open
 if (global.alchemy == true || global.forge == true || global.workbench == true)
 {
-    x = view_xview + 464;
-    y = view_yview + 54;
 }
 else
 {
-    scr_move_out_of_room();
+    instance_destroy();
 }
 </string>
           </argument>

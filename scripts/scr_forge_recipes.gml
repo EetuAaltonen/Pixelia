@@ -1,14 +1,19 @@
+//Default info text
+Info[spr_grass] = "Info...";
+
 //Ironbar
 Recipe[100] = spr_icon_ironbar;
 Recipe[010] = spr_icon_ironbar;
 Recipe[001] = spr_icon_ironbar;
-Id[spr_icon_ironbar] = 4 //id
+Id[spr_icon_ironbar] = 4;
+Info[spr_icon_ironbar] = "Ironbar";
 
 //Coal
 Recipe[200] = spr_icon_coal;
 Recipe[020] = spr_icon_coal;
 Recipe[002] = spr_icon_coal;
-Id[spr_icon_coal] = 3 //id
+Id[spr_icon_coal] = 3;
+Info[spr_icon_coal] = "Coal";
 
 //Steel
 Recipe[340] = spr_icon_steelbar;
@@ -17,5 +22,6 @@ Recipe[430] = spr_icon_steelbar;
 Recipe[403] = spr_icon_steelbar;
 Recipe[034] = spr_icon_steelbar;
 Recipe[043] = spr_icon_steelbar;
-Id[spr_icon_steelbar] = 5 //id
+Id[spr_icon_steelbar] = 5;
+Info[spr_icon_steelbar] = "Steelbar";
 

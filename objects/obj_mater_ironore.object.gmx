@@ -51,28 +51,35 @@ number = 1; //Order number in inventory
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_forg_mater_step_1();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_forg_mater_step_2();
+            <string>if (global.forge == false)
+{
+    instance_destroy();
+}
+else if (obj_smelter.update_amounts == true and selected == false)
+{
+    instance_destroy();
+}
+var forg1;
+forg1 = number;
+if (obj_smelter.forg_amount[forg1] == 0)
+{
+    if (x == obj_forg_slot_1.x and y == obj_forg_slot_1.y)
+    {
+        global.forg_slot_1 = false;
+        obj_forg_slot_1.number = 0;
+    }
+    else if (x == obj_forg_slot_2.x and y == obj_forg_slot_2.y)
+    {
+        global.forg_slot_2 = false;
+        obj_forg_slot_2.number = 0;
+    }
+    else if (x == obj_forg_slot_3.x and y == obj_forg_slot_3.y)
+    {
+        global.forg_slot_3 = false;
+        obj_forg_slot_3.number = 0;
+    }
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

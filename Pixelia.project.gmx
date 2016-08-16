@@ -306,8 +306,6 @@
         <script>scripts\scr_forge_smelting.gml</script>
         <scripts name="Forge materials">
           <script>scripts\scr_forg_mater_mouse_released_1.gml</script>
-          <script>scripts\scr_forg_mater_step_1.gml</script>
-          <script>scripts\scr_forg_mater_step_2.gml</script>
         </scripts>
       </scripts>
       <scripts name="Workbench">
