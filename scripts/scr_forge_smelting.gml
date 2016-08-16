@@ -1,4 +1,4 @@
-//Changed material count in inventory
+//Change material count in inventory
 if (global.forg_slot_1 == true)
 {
     global.n1 = obj_forg_slot_1.number;

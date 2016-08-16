@@ -44,6 +44,17 @@
       <sprites name="Animals">
         <sprite>sprites\spr_feather</sprite>
       </sprites>
+      <sprite>sprites\spr_coal_ore</sprite>
+      <sprite>sprites\spr_coin</sprite>
+      <sprite>sprites\spr_gold_ore</sprite>
+      <sprite>sprites\spr_icon_ironore</sprite>
+      <sprite>sprites\spr_icon_log</sprite>
+      <sprite>sprites\spr_iron_ore</sprite>
+      <sprite>sprites\spr_medicpack</sprite>
+      <sprite>sprites\spr_tree</sprite>
+      <sprite>sprites\spr_tree_1</sprite>
+    </sprites>
+    <sprites name="Crafting">
       <sprites name="Forge materials">
         <sprite>sprites\spr_icon_coal</sprite>
         <sprite>sprites\spr_icon_ironbar</sprite>
@@ -64,17 +75,6 @@
         <sprite>sprites\spr_potion_1</sprite>
         <sprite>sprites\spr_potion_2</sprite>
       </sprites>
-      <sprite>sprites\spr_coal_ore</sprite>
-      <sprite>sprites\spr_coin</sprite>
-      <sprite>sprites\spr_gold_ore</sprite>
-      <sprite>sprites\spr_icon_ironore</sprite>
-      <sprite>sprites\spr_icon_log</sprite>
-      <sprite>sprites\spr_iron_ore</sprite>
-      <sprite>sprites\spr_medicpack</sprite>
-      <sprite>sprites\spr_tree</sprite>
-      <sprite>sprites\spr_tree_1</sprite>
-    </sprites>
-    <sprites name="Crafting">
       <sprite>sprites\spr_alchemy_station</sprite>
       <sprite>sprites\spr_forge</sprite>
       <sprite>sprites\spr_workbench</sprite>
@@ -421,6 +421,7 @@
         <object>objects\obj_mater_ironbar</object>
         <object>objects\obj_mater_steelbar</object>
       </objects>
+      <object>objects\obj_forg_crafted_item</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>

@@ -76,6 +76,10 @@ can_open_or_close = true;
     global.inventory == 0)
 {
     global.forge = true;
+    
+    //Create 
+    instance_create(view_xview+350, view_yview+147, obj_forg_crafted_item);
+    
     obj_smelter.forg_page_update = true;
     obj_smelter.forg_loop_stop = false;
     obj_smelter.create_only_once = true;
