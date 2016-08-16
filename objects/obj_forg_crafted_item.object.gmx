@@ -172,28 +172,35 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (recipe_exists = true)
+            <string>if (recipe_exists == true)
 {
-    var item1_amount, item2_amount, item3_amount;
     //Change material count in inventory
+    var item1_amount, item2_amount, item3_amount;
     if (global.forg_slot_1 == true)
     {
-        item1_amount = obj_forg_slot_1.number;
+        global.n1 = obj_forg_slot_1.number;
         global.AddedItemAmount = -1;
         scr_save_to_inventory();
     }
     if (global.forg_slot_2 == true)
     {
-        item2_amount = obj_forg_slot_2.number;
+        global.n1 = obj_forg_slot_2.number;
         global.AddedItemAmount = -1;
         scr_save_to_inventory();
     }
     if (global.forg_slot_3 == true)
     {
-        item3_amount = obj_forg_slot_3.number;
+        global.n1 = obj_forg_slot_3.number;
         global.AddedItemAmount = -1;
         scr_save_to_inventory();
     }
+    //Add crafted material
+    global.n1 = Id[sprite_index];
+    global.AddedItemAmount = 1;
+    scr_save_to_inventory();
+    
+    recipe_exists = false;
+    recipe_check = true;
 }
 </string>
           </argument>
