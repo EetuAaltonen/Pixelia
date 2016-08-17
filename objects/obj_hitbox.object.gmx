@@ -108,12 +108,8 @@ obj_pelaaja.image_alpha = 1;
 }
 else
 {
-    scr_move_out_of_room();
-}  
-/*if (global.room_change = 1)
-{
     instance_destroy();
-}
+}  
 </string>
           </argument>
         </arguments>

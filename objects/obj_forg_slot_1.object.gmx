@@ -50,17 +50,11 @@ number = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == true)
-{
-    x = view_xview+300;
-    y = view_yview+117;  
-}
-else
+            <string>if (global.forge == false)
 {
     global.forg_slot_1 = false;
-    scr_move_out_of_room();
+    instance_destroy();  
 }
-
 </string>
           </argument>
         </arguments>

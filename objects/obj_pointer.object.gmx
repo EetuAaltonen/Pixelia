@@ -32,7 +32,7 @@
 }
 else
 {
-    scr_move_out_of_room();
+    instance_destroy();
 }
 </string>
           </argument>

@@ -78,15 +78,10 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == true)
+            <string>if (global.forge == false)
 {
-    x = view_xview+300;
-    y = view_yview+177;  
-}
-else
-{
-    global.forg_slot_3 = false;
-    scr_move_out_of_room();
+    global.forg_slot_4 = false;
+    instance_destroy();  
 }
 
 </string>

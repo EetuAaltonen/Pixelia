@@ -49,15 +49,10 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == true)
-{
-    x = view_xview+350;
-    y = view_yview+147;
-}
-else
+            <string>if (global.forge == false)
 {
     global.forg_slot_4 = false;
-    scr_move_out_of_room();
+    instance_destroy();  
 }
 
 </string>
@@ -80,79 +75,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if (global.forg_slot_1 == true ||
-    global.forg_slot_2 == true ||
-    global.forg_slot_3 == true)
-{
-    if (create_only_once == false)
-    {  
-        scr_forge_recipes();
-        var number1, number2, number3, recipe_id;
-        if (global.forg_slot_1 == true)
-        {
-            number1 = obj_forg_slot_1.number;
-        }
-        else
-        {
-            number1 = 0;
-        }
-        if (global.forg_slot_2 == true)
-        {
-            number2 = obj_forg_slot_2.number;
-        }
-        else
-        {
-            number2 = 0;
-        }
-        if (global.forg_slot_3 == true)
-        {
-            number3 = obj_forg_slot_3.number;
-        }
-        else
-        {
-            number3 = 0;
-        }
-        recipe_id = string(string(number1) + string(number2) + string(number3));
-        if (Material[recipe_id])
-        {
-            global.forg_slot_4 = true;
-            instance_create(x, y, Material[recipe_id]);
-            create_only_once = true;
-        }
-        else
-        {
-            global.forg_slot_4 = false;
-            create_only_once = false;
-        }
-    }
-}
-else
-{
-    global.forg_slot_4 = false;
-    create_only_once = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//if (global.forg_slot_4 == false)
-if (instance_exists(obj_forg_crafted_item))
+            <string>if (instance_exists(obj_forg_crafted_item))
 {
     if (obj_forg_crafted_item.recipe_exists == false)
     {

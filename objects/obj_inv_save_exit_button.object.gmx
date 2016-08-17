@@ -25,15 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Position
-if (global.inventory &gt; 0)
+            <string>//When inventory closed
+if (global.inventory == 0)
 {
-    x = view_xview + 349;
-    y = view_yview + 54;
-}
-else
-{
-    scr_move_out_of_room();
+    instance_destroy();
 }
 </string>
           </argument>

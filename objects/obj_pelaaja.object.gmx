@@ -62,8 +62,14 @@ global.enemy_stats1 = 0;
 global.enemy_stats2 = 0;
 global.enemy_stats3 = 0;
 
+//Hitbox
+instance_create(x, y, obj_hitbox);
+
+//Quest pointer
+instance_create(x, y, obj_pointer);
+
 //Gravity
-acceleration = 0;
+acceleration = 0; //???
 
 //Use
 use = 0;

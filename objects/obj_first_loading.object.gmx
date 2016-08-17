@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_first_loading</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -26,30 +26,23 @@
           <argument>
             <kind>1</kind>
             <string>global.current_room = Test;
-alarm[1] = 50;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_loadgame();
+
+//Create needed objects
+scr_first_loading_screen_objects();
+var object, n1;
+for(n1 = 1; n1 &gt; 0; n1++)
+{
+    object = Object[n1];
+    if (object == "stop")
+    {
+        break;
+    }
+    else
+    {
+        instance_create(x-100, y-100, object);
+    }
+}
+scr_loadgame();
 </string>
           </argument>
         </arguments>

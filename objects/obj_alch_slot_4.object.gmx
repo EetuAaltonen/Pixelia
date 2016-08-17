@@ -50,15 +50,12 @@ create_only_once = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == true)
-{
-    x = view_xview+350;
-    y = view_yview+147;
-}
-else
+            <string>if (global.alchemy == false)
 {
     global.alch_slot_4 = false;
-    scr_move_out_of_room();
+    instance_destroy();
+    //x = view_xview+350;
+    //y = view_yview+147;
 }
 
 </string>
@@ -109,7 +106,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alch_slot_1 == true and
+            <string>/*if (global.alch_slot_1 == true and
     global.alch_slot_2 == true and
     global.alch_slot_3 == true)
 {
