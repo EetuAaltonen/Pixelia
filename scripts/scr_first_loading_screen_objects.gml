@@ -11,4 +11,5 @@ Object[9] = obj_dialog_bg_controller;
 Object[10] = obj_lives;
 Object[11] = obj_mana;
 Object[12] = obj_stamina;
-Object[13] = "stop";
+Object[13] = obj_counter;
+Object[14] = "stop";

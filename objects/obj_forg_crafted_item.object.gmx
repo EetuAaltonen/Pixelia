@@ -138,10 +138,19 @@ else
         number3 = 0;
     }
     recipe_id = string(string(number1) + string(number2) + string(number3));
-    if (Recipe[recipe_id])
+    if (real(recipe_id) &lt;= array_length_1d(Recipe))
     {
-        recipe_exists = true;
-        sprite_index = Recipe[recipe_id];
+        if (Recipe[recipe_id])
+        {
+            recipe_exists = true;
+            sprite_index = Recipe[recipe_id];
+        }
+        else
+        {
+            recipe_exists = false;
+            visible = false;
+            sprite_index = spr_grass;
+        }
     }
     else
     {
@@ -205,9 +214,9 @@ else
     recipe_check = true; //Check if recipe is still exists
     
     //Update forge listing
-    obj_smelter.update_list = true;
-    obj_smelter.update_amounts = true; //Update amounts in list
-    obj_smelter.create_once = true; //Create objects once on the list
+    obj_forge_controller.update_list = true;
+    obj_forge_controller.update_amounts = true; //Update amounts in list
+    obj_forge_controller.create_once = true; //Create objects once on the list
 }
 </string>
           </argument>

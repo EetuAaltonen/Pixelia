@@ -78,12 +78,17 @@ can_open_or_close = true;
     global.forge = true;
     
     //Create
+    instance_create(view_xview+300, view_yview+117, obj_forg_slot_1); //Slots
+    instance_create(view_xview+300, view_yview+147, obj_forg_slot_2);
+    instance_create(view_xview+300, view_yview+177, obj_forg_slot_3);
+    instance_create(view_xview+350, view_yview+147, obj_forg_slot_4);
+    
     instance_create(view_xview+464, view_yview+54, obj_craft_close_button);
     instance_create(view_xview+350, view_yview+147, obj_forg_crafted_item); //Crafted item (slot 4)
     
-    obj_smelter.update_amounts = true; //Update amounts in list
-    obj_smelter.update_list = true;
-    obj_smelter.create_once = true; //Create objects once on the list
+    obj_forge_controller.update_amounts = true; //Update amounts in list
+    obj_forge_controller.update_list = true;
+    obj_forge_controller.create_once = true; //Create objects once on the list
     can_open_or_close = false;
     alarm[1] = 20;
 }
