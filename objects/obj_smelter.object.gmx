@@ -99,9 +99,9 @@ if (room == Menu or room == First_loading)
         {
             if (update_amounts == true)
             {
-                forg_amount[forg2] = 0;
+                forg_amount_draw[forg2] = 0;
                 forg_amount[forg1] = 0;
-                forg_object[forg2] = "spr_aim";
+                forg_object_draw[forg2] = "spr_aim";
                 forg_object[forg1] = "spr_aim";
                 forg1 = 1; //Start
                 forg2 = 0;
@@ -127,9 +127,9 @@ if (room == Menu or room == First_loading)
                         forg_amount[forg1] = round(ForgAmount);
                         
                         //Draw
-                        forg_object[forg2] = forg_object[forg1];
-                        forg_description[forg2] = forg_description[forg1];
-                        forg_amount[forg2] = forg_amount[forg1];
+                        forg_object_draw[forg2] = forg_object[forg1];
+                        forg_description_draw[forg2] = forg_description[forg1];
+                        forg_amount_draw[forg2] = forg_amount[forg1];
                         
                         forg2 += 1;
                     }
@@ -186,6 +186,16 @@ if (room == Menu or room == First_loading)
                 forg_end_count = forg_count;
                 forg_start_count = 0;
             }
+            if (create_once == true)
+            {
+                for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)
+                {
+                    //Materials
+                    instance_create(view_xview+30, view_yview+7+y2, forg_object_draw[forg2])
+                    y2 += 19;
+                }
+                create_once = false;
+            }
             for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)
             {
                 //Material background
@@ -193,26 +203,13 @@ if (room == Menu or room == First_loading)
                 //Material description background
                 draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
                 //Create objects on the list
-                if (create_once == true)
-                {
-                    if not (instance_exists(forg_object[forg2])) //Check if not already selected
-                    {
-                        for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)
-                        {
-                            //Materials
-                            instance_create(view_xview+30, view_yview+7+y2, forg_object[forg2])
-                            y2 += 19;
-                        }
-                    }
-                    create_once = false;
-                }
                 //Material description
-                draw_text_color(view_xview+55,view_yview+y1, string(forg_description[forg2]),
+                draw_text_color(view_xview+55,view_yview+y1, string(forg_description_draw[forg2]),
                                 c_black, c_black, c_black, c_black, 1);
                 //Material amount background
                 draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
                 //Material amount
-                draw_text_color(view_xview+207,view_yview+y1, string(forg_amount[forg2]),
+                draw_text_color(view_xview+207,view_yview+y1, string(forg_amount_draw[forg2]),
                                 c_black, c_black, c_black, c_black, 1);
                 y1 += 19;
             }

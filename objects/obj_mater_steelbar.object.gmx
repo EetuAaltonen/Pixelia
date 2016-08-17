@@ -26,9 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>selected = false;
-x_prev = x;
-y_prev = y;
 number = 5; //Order number in inventory
+object = obj_mater_steelbar;
 </string>
           </argument>
         </arguments>
@@ -51,35 +50,8 @@ number = 5; //Order number in inventory
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == false)
-{
-    instance_destroy();
-}
-else if (obj_smelter.update_amounts == true and selected == false)
-{
-    instance_destroy();
-}
-var forg1;
-forg1 = number;
-if (obj_smelter.forg_amount[forg1] == 0)
-{
-    if (x == obj_forg_slot_1.x and y == obj_forg_slot_1.y)
-    {
-        global.forg_slot_1 = false;
-        obj_forg_slot_1.number = 0;
-    }
-    else if (x == obj_forg_slot_2.x and y == obj_forg_slot_2.y)
-    {
-        global.forg_slot_2 = false;
-        obj_forg_slot_2.number = 0;
-    }
-    else if (x == obj_forg_slot_3.x and y == obj_forg_slot_3.y)
-    {
-        global.forg_slot_3 = false;
-        obj_forg_slot_3.number = 0;
-    }
-    instance_destroy();
-}
+            <string>scr_check_if_instance_destroy();
+scr_check_if_selected_true();
 </string>
           </argument>
         </arguments>

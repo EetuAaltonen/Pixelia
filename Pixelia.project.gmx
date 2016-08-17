@@ -112,6 +112,7 @@
         </sprites>
         <sprites name="Forge">
           <sprite>sprites\spr_smelter</sprite>
+          <sprite>sprites\spr_forg_bg</sprite>
         </sprites>
         <sprites name="Workbench">
           <sprite>sprites\spr_crafting_table</sprite>
@@ -306,6 +307,8 @@
         <script>scripts\scr_forge_smelting.gml</script>
         <scripts name="Forge materials">
           <script>scripts\scr_forg_mater_mouse_released_1.gml</script>
+          <script>scripts\scr_check_if_instance_destroy.gml</script>
+          <script>scripts\scr_check_if_selected_true.gml</script>
         </scripts>
       </scripts>
       <scripts name="Workbench">
@@ -419,7 +422,6 @@
         <object>objects\obj_mater_ironbar</object>
         <object>objects\obj_mater_steelbar</object>
       </objects>
-      <object>objects\obj_forg_crafted_item</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
@@ -458,6 +460,8 @@
           <object>objects\obj_alchemy</object>
         </objects>
         <objects name="Forge">
+          <object>objects\obj_draw_forg_bg</object>
+          <object>objects\obj_forg_crafted_item</object>
           <object>objects\obj_forg_slot_1</object>
           <object>objects\obj_forg_slot_2</object>
           <object>objects\obj_forg_slot_3</object>
