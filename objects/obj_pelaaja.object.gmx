@@ -451,29 +451,22 @@ else if (global.plr_bow == true)
     }
 }
 
-//Inventory
-else if (global.inventory &gt; 0)
-{
-    hspeed = 0;
-    vspeed = 0;
-}
-
-//Crafting
-else if (global.alchemy == true || global.forge== true || global.workbench == true)
-{
-    hspeed = 0;
-    vspeed = 0;
-}
+//If some menu is open
+//else if (!global.hud_state == "null")
+//{
+    //hspeed = 0;
+    //vspeed = 0;
+//}
 
 //Shop
-else if (global.shop &gt; 0)
+else if (global.shop &gt; 0) //Same as previous?
 {
     hspeed = 0;
     vspeed = 0;
 }
 
 //Dialog
-else if (global.dialog == true)
+else if (global.dialog == true)//Same as 2x previous?
 {
     hspeed = 0;
     vspeed = 0;

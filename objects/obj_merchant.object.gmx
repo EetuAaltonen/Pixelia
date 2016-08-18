@@ -82,7 +82,7 @@ if(distance_to_object(obj_pelaaja) &lt; 10)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.shop == false and global.inventory == 0 and
+            <string>/*if (global.shop == false and global.inventory == 0 and
     global.dialog == false and distance_to_object(obj_pelaaja) &lt; 10)
 {
     global.shop = true; 

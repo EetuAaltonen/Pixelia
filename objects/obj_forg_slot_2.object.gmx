@@ -78,7 +78,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == false)
+            <string>if (!global.hud_state == "forge")
 {
     global.forg_slot_2 = false;
     instance_destroy();  

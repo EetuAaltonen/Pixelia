@@ -72,10 +72,9 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == false and can_open_or_close == true and
-    global.inventory == 0)
+            <string>if (!global.hud_state == "forge" and can_open_or_close == true)
 {
-    global.forge = true;
+    global.hud_state = "forge";
     
     //Create
     instance_create(view_xview+300, view_yview+117, obj_forg_slot_1); //Slots
@@ -114,9 +113,9 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forge == true and can_open_or_close == true)
+            <string>if (global.hud_state == "forge" and can_open_or_close == true)
 {
-    global.forge = false;
+    global.hud_state = "null";
     can_open_or_close = false;
     alarm[1] = 20;
 }
