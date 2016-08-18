@@ -23,3 +23,6 @@ Object[15] = obj_money_target;
 Object[16] = obj_potion_target;
 //Screen
 Object[17] = obj_screen_controller;
+Object[18] = obj_hud_state_switcher;
+Object[19] = obj_hotbar_controller;
+Object[20] = obj_hotbar_bg_controller;

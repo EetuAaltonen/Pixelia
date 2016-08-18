@@ -523,6 +523,8 @@
         <object>objects\obj_mana</object>
         <object>objects\obj_stamina</object>
       </objects>
+      <object>objects\obj_hotbar_controller</object>
+      <object>objects\obj_hud_state_switcher</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
