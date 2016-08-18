@@ -1,8 +1,8 @@
-if (global.forge == false)
+if not(global.hud_state == "forge")
 {
     instance_destroy();
 }
-else if (obj_forge_controller.update_amounts == true and selected == false)
+if (obj_forge_controller.update_amounts == true and selected == false)
 {
     instance_destroy();
 }

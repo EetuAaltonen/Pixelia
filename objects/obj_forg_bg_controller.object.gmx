@@ -39,7 +39,7 @@ if (global.hud_state == "forge")
     //Crafted material info
     scr_forge_recipes();
     draw_text_color(view_xview+355,view_yview+175, string(Info[obj_forg_crafted_item.sprite_index]),
-    c_black, c_black, c_black, c_black, 1);
+                    c_black, c_black, c_black, c_black, 1);
 }
 </string>
           </argument>

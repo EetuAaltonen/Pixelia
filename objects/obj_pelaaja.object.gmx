@@ -452,11 +452,11 @@ else if (global.plr_bow == true)
 }
 
 //If some menu is open
-//else if (!global.hud_state == "null")
-//{
-    //hspeed = 0;
-    //vspeed = 0;
-//}
+else if not(global.hud_state == "null")
+{
+    hspeed = 0;
+    vspeed = 0;
+}
 
 //Shop
 else if (global.shop &gt; 0) //Same as previous?
@@ -1896,7 +1896,7 @@ alarm[1] = 25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.inventory == 0)
+            <string>if (!string_pos("inventory", string(global.hud_state)))
 {
     //Use
     if (use == 0)
