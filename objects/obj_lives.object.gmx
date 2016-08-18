@@ -102,11 +102,9 @@ switch (global.player_health)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu and instance_exists(obj_pelaaja))
-{
-    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+3,
-                    image_xscale, image_yscale, image_angle, c_white, image_alpha);
-}
+            <string>draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+3,
+                image_xscale, image_yscale, image_angle, c_white, image_alpha);
+
 </string>
           </argument>
         </arguments>

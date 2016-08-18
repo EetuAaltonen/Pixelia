@@ -76,7 +76,7 @@
     <instance objName="obj_grass" x="120" y="460" name="inst_1AE0933F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="120" y="492" name="inst_3E272BCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lives" x="-143" y="-51" name="inst_333D66B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_counter" x="-42" y="54" name="inst_6DD69E28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_exp_counter" x="-42" y="54" name="inst_6DD69E28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_inventory_controller" x="-98" y="53" name="inst_51BC8A7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mana" x="-94" y="23" name="inst_A1E60CDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stamina" x="-94" y="8" name="inst_F8C11273" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

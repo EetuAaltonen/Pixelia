@@ -26,6 +26,92 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+
+//Mana
+global.man_plus = 8; //Max = 10
+global.mana = (10 + global.man_plus);
+mana_usage = 1;
+manreg = 2;
+global.manreg_plus = 0; //skill
+mana_regerate = 1;
+alarm[1] = 50; //Mana regeration
+alarm[2] = 10; //Mana usage
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>mana_regerate = 1;
+
+//Fix draw error
+global.mana = round(global.mana);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>mana_usage = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = 100; //Mana regeration
+if (mana_regerate == 1)
+{
+    global.mana += manreg + global.manreg_plus;
+}
 </string>
           </argument>
         </arguments>
@@ -48,7 +134,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Mana image_index
+            <string>if (instance_exists(obj_pelaaja))
+{
+    if (global.mana &gt; (10 + global.man_plus))
+    {
+        global.mana = (10 + global.man_plus);
+    }
+    else if (global.mana &lt; 0)
+    {
+        global.mana = 0;
+    }
+    
+    if (global.mana &gt;= 0
+        and mana_usage == 1
+        and obj_pelaaja.sprite_index == spr_pelaaja_shield)
+    {
+        mana_usage = 0;
+        mana_regerate = 0;
+        alarm[1] = 5;
+        alarm[3] = 50;
+    }
+}
+
+//Mana image_index
 switch (global.mana)
 {
     case 20: image_index = 0; break;
@@ -95,11 +203,8 @@ switch (global.mana)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu and instance_exists(obj_pelaaja))
-{
-    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+40,
+            <string>draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+40,
                     image_xscale, image_yscale, image_angle, c_white, image_alpha);
-}
 </string>
           </argument>
         </arguments>

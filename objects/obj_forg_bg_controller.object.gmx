@@ -3,8 +3,8 @@
   <spriteName>spr_forg_bg</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5002</depth>
-  <persistent>0</persistent>
+  <depth>-5000</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,14 +27,18 @@
             <kind>1</kind>
             <string>draw_self();
 
+scr_forge_recipes();
 if (global.forge == true)
 {
+    //Forge background
+    draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
+
     //Crafted material info background
     draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
     
     //Crafted material info
     scr_forge_recipes();
-    draw_text_color(view_xview+355,view_yview+175, string(Info[sprite_index]),
+    draw_text_color(view_xview+355,view_yview+175, string(Info[obj_forg_crafted_item.sprite_index]),
     c_black, c_black, c_black, c_black, 1);
 }
 </string>

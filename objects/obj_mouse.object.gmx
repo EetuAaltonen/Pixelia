@@ -71,7 +71,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.building == 1)
+            <string>/*if (global.building == 1)
 {
     image_index = 1;
 }
@@ -125,7 +125,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu)
+            <string>if (!room == Menu and !room == First_loading)
 {
     if (global.pause == 0 || global.inventory &gt; 0 || 
     global.alchemy == true || global.forge == true || global.workbench == true)

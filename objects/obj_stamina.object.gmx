@@ -26,6 +26,93 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+
+//Stamina
+global.stam_plus = 5; //Max = 10
+global.stamina = (10 + global.stam_plus);
+stamina_usage = 1;
+stamreg = 2;
+global.stamreg_plus = 0; //skill
+stamina_regerate = 1;
+alarm[1] = 50; //Stamina regeration
+alarm[2] = 10; //Stamina usage
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>stamina_regerate = 1;
+
+//Fix draw error
+global.stamina = round(global.stamina);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>stamina_usage = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = 50;
+
+if (stamina_regerate == 1 /*and !keyboard_check(vk_shift)*/)
+{
+    global.stamina += stamreg + global.stamreg_plus;
+}
 </string>
           </argument>
         </arguments>
@@ -48,7 +135,50 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Stamina image_index
+            <string>if (instance_exists(obj_pelaaja))
+{
+    if (global.stamina &gt; (10 + global.stam_plus))
+    {
+        global.stamina = (10 + global.stam_plus);
+    }
+    else if (global.stamina &lt; 0)
+    {
+        global.stamina = 0;
+    }
+    
+    if (global.stamina &gt;= 0 
+        and obj_pelaaja.hspeed &gt; 2 
+        and keyboard_check(vk_shift)  
+        and stamina_usage == 1)
+    {
+        stamina_usage = 0;
+        stamina_regerate = 0;
+        global.stamina -= 0.5;
+        alarm[2] = 5;
+        alarm[3] = 50;
+    }
+    else if (global.stamina &gt;= 0 
+        and obj_pelaaja.hspeed &lt; -2 
+        and keyboard_check(vk_shift)
+        and stamina_usage == 1)
+    {
+        stamina_usage = 0;
+        stamina_regerate = 0;
+        global.stamina -= 0.5;
+        alarm[2] = 5;
+        alarm[3] = 50;
+    }
+    else if (stamina_usage == 1 and obj_pelaaja.roll == 1 
+             || stamina_usage == 1 and obj_pelaaja.slice == 1)
+    {
+        stamina_usage = 0;
+        stamina_regerate = 0;
+        alarm[2] = 5;
+        alarm[3] = 50;
+    }
+}
+
+//Stamina image_index
 switch (global.stamina)
 {
     case 20: image_index = 0; break;
@@ -95,11 +225,8 @@ switch (global.stamina)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu and instance_exists(obj_pelaaja))
-{
-    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+30,
+            <string>draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+30,
                     image_xscale, image_yscale, image_angle, c_white, image_alpha);
-}
 </string>
           </argument>
         </arguments>

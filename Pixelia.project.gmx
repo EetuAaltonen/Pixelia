@@ -460,7 +460,7 @@
           <object>objects\obj_alchemy_station_controller</object>
         </objects>
         <objects name="Forge">
-          <object>objects\obj_draw_forg_bg</object>
+          <object>objects\obj_forg_bg_controller</object>
           <object>objects\obj_forg_crafted_item</object>
           <object>objects\obj_forg_slot_1</object>
           <object>objects\obj_forg_slot_2</object>
@@ -487,7 +487,7 @@
         <object>objects\obj_W_ready</object>
       </objects>
       <objects name="Inventory">
-        <objects name="Button">
+        <objects name="Buttons">
           <object>objects\obj_inv_stats_button</object>
           <object>objects\obj_inv_skilltree_button</object>
           <object>objects\obj_inv_save_exit_button</object>
@@ -504,7 +504,7 @@
           <object>objects\obj_st_more_str</object>
         </objects>
       </objects>
-      <object>objects\obj_counter</object>
+      <object>objects\obj_exp_counter</object>
       <object>objects\obj_darkness</object>
       <object>objects\obj_hotbar_bg_controller</object>
       <object>objects\obj_money_target</object>
@@ -512,7 +512,7 @@
       <object>objects\obj_pointer</object>
       <object>objects\obj_potion_target</object>
       <object>objects\obj_quests</object>
-      <object>objects\obj_screen</object>
+      <object>objects\obj_screen_controller</object>
       <object>objects\obj_stats</object>
       <objects name="Shop">
         <object>objects\obj_shop_bg_controller</object>

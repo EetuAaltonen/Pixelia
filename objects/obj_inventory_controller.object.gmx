@@ -188,188 +188,185 @@ else if (global.inventory == 1 and keyboard_check_released(vk_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu)
-{    
-    //Font
-    draw_set_font(fnt_item_counter);
-    draw_set_color(c_white);
-    
-    //Coins
-    var coin;
-    coin = global.coins;
-    draw_text_color(view_xview+440,view_yview+278, string(coin),
-                    c_black, c_black, c_black, c_black, 1);
-    //Coin logo
-    draw_sprite_ext(spr_money_draw, image_index, view_xview+425, 
-                    view_yview+285, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);                
-    //Potions
-    var potion;
-    potion = global.potions;
-    draw_text_color(view_xview+380,view_yview+278, string(potion),
-                    c_black, c_black, c_black, c_black, 1);
-                    
-    //Potion logo
-    draw_sprite_ext(spr_potion, image_index, view_xview+372, 
-                    view_yview+285, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
-    
-    //Inventory
-    if (global.inventory == 1)
-    {
-        if (loop_stop == false)
-        {
-            global.item_amount[global.n2] = 0;
-            global.item_amount[global.n1] = 0;
-            global.item_sprite[global.n2] = "spr_aim";
-            global.item_sprite[global.n1] = "spr_aim";
-            global.n1 = 1;
-            global.n2 = 0;
-            for(global.n1 = 1; global.n1 &lt; (last_order_number_of_items + 1); global.n1++)
-            {
-                //Item amount
-                ini_open("Inventory.sav");
-                global.ItemAmount = ini_read_real("Save1",string(global.n1), -1);
-                ini_close();
+            <string>//Font
+draw_set_font(fnt_item_counter);
+draw_set_color(c_white);
+
+//Coins
+var coin;
+coin = global.coins;
+draw_text_color(view_xview+440,view_yview+278, string(coin),
+                c_black, c_black, c_black, c_black, 1);
+//Coin logo
+draw_sprite_ext(spr_money_draw, image_index, view_xview+425, 
+                view_yview+285, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);                
+//Potions
+var potion;
+potion = global.potions;
+draw_text_color(view_xview+380,view_yview+278, string(potion),
+                c_black, c_black, c_black, c_black, 1);
                 
-                if (not round(real(global.ItemAmount)) == 0)
-                {                   
-                    if (global.ItemAmount == -1)
-                    {
-                        if (global.n1 &lt; 1000)
-                        {
-                            global.n1 = 1000;
-                        }
-                        else if (1000 &lt; global.n1 and global.n1 &lt; 2000)
-                        {
-                            global.n1 = 2000;
-                        }
-                        else if (2000 &lt; global.n1 and global.n1 &lt; 3000)
-                        {
-                            global.n1 = 3000;
-                        }
-                        else if (global.n1 &gt; 3000)
-                        {
-                            break;
-                        }
-                    }
-                    
-                    //Item index
-                    scr_inventory_item_info();
-                    global.SpriteIndex = string(Icon[global.n1]);
-                    
-                    //Item description
-                    scr_inventory_item_info();
-                    global.ItemDescription = string(Descr[global.n1]);
-                    global.item_sprite[global.n1] = global.SpriteIndex;
-                    
-                    global.item_description[global.n1] = global.ItemDescription;
-                    global.item_amount[global.n1] = round(global.ItemAmount);
-                    
-                    //Draw
-                    global.item_sprite[global.n2] = global.item_sprite[global.n1];
-                    global.item_description[global.n2] = global.item_description[global.n1];
-                    global.item_amount[global.n2] = global.item_amount[global.n1];
-                    
-                    global.n2 += 1;
-                }
-            }
-            global.item_count = global.n2; 
-        } 
-        loop_stop = true;
-        var y1;
-        y1 = 110;
-        if (global.item_count &gt; 0)
+//Potion logo
+draw_sprite_ext(spr_potion, image_index, view_xview+372, 
+                view_yview+285, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);
+
+//Inventory
+if (global.inventory == 1)
+{
+    if (loop_stop == false)
+    {
+        global.item_amount[global.n2] = 0;
+        global.item_amount[global.n1] = 0;
+        global.item_sprite[global.n2] = "spr_aim";
+        global.item_sprite[global.n1] = "spr_aim";
+        global.n1 = 1;
+        global.n2 = 0;
+        for(global.n1 = 1; global.n1 &lt; (last_order_number_of_items + 1); global.n1++)
         {
-            if (global.page_update == true)
-            {
-                global.end_count = 8; //Limit of list
-                global.start_count = 0; //First item number
-                if (global.item_count &gt; 8)
+            //Item amount
+            ini_open("Inventory.sav");
+            global.ItemAmount = ini_read_real("Save1",string(global.n1), -1);
+            ini_close();
+            
+            if (not round(real(global.ItemAmount)) == 0)
+            {                   
+                if (global.ItemAmount == -1)
                 {
-                    if ((global.item_count - ((global.inventory_page+1)*8)) &gt; 0 and global.inventory_page == 0)
+                    if (global.n1 &lt; 1000)
                     {
-                        global.start_count = 0;
-                        global.end_count = 8;
-                        
+                        global.n1 = 1000;
                     }
-                    else if ((global.item_count - ((global.inventory_page+1)*8)) &gt; 0 and
-                            global.inventory_page &gt; 0)
+                    else if (1000 &lt; global.n1 and global.n1 &lt; 2000)
                     {
-                        global.start_count = (global.inventory_page*8);
-                        global.end_count = ((global.inventory_page*8)*2);
+                        global.n1 = 2000;
                     }
-                    else
+                    else if (2000 &lt; global.n1 and global.n1 &lt; 3000)
                     {
-                        global.start_count = (global.inventory_page*8);
-                        global.end_count = global.item_count;
+                        global.n1 = 3000;
                     }
+                    else if (global.n1 &gt; 3000)
+                    {
+                        break;
+                    }
+                }
+                
+                //Item index
+                scr_inventory_item_info();
+                global.SpriteIndex = string(Icon[global.n1]);
+                
+                //Item description
+                scr_inventory_item_info();
+                global.ItemDescription = string(Descr[global.n1]);
+                global.item_sprite[global.n1] = global.SpriteIndex;
+                
+                global.item_description[global.n1] = global.ItemDescription;
+                global.item_amount[global.n1] = round(global.ItemAmount);
+                
+                //Draw
+                global.item_sprite[global.n2] = global.item_sprite[global.n1];
+                global.item_description[global.n2] = global.item_description[global.n1];
+                global.item_amount[global.n2] = global.item_amount[global.n1];
+                
+                global.n2 += 1;
+            }
+        }
+        global.item_count = global.n2; 
+    } 
+    loop_stop = true;
+    var y1;
+    y1 = 110;
+    if (global.item_count &gt; 0)
+    {
+        if (global.page_update == true)
+        {
+            global.end_count = 8; //Limit of list
+            global.start_count = 0; //First item number
+            if (global.item_count &gt; 8)
+            {
+                if ((global.item_count - ((global.inventory_page+1)*8)) &gt; 0 and global.inventory_page == 0)
+                {
+                    global.start_count = 0;
+                    global.end_count = 8;
+                    
+                }
+                else if ((global.item_count - ((global.inventory_page+1)*8)) &gt; 0 and
+                        global.inventory_page &gt; 0)
+                {
+                    global.start_count = (global.inventory_page*8);
+                    global.end_count = ((global.inventory_page*8)*2);
                 }
                 else
                 {
+                    global.start_count = (global.inventory_page*8);
                     global.end_count = global.item_count;
-                    global.start_count = 0;
                 }
-                global.page_update = false;
             }
-            for (global.n2 = global.start_count; global.n2 &lt; global.end_count; global.n2++;)
+            else
             {
-                //Item background
-                draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);
-                //Item icons
-                draw_sprite(asset_get_index(global.item_sprite[global.n2]), 0,view_xview+30, view_yview+7+y1);                
-                //Item description background
-                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
-                //Item description
-                draw_text_color(view_xview+55,view_yview+y1, string(global.item_description[global.n2]),
-                                c_black, c_black, c_black, c_black, 1);
-                //Item amount background
-                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
-                //Item amount
-                draw_text_color(view_xview+207,view_yview+y1, string(global.item_amount[global.n2]),
-                                c_black, c_black, c_black, c_black, 1);
-                y1 += 19;
+                global.end_count = global.item_count;
+                global.start_count = 0;
             }
-            //Page number background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
-            //Page number max
-            global.inventory_page_max = (round(global.item_count/8));
-            if ((global.inventory_page_max - (global.item_count/8)) &lt; 0 )
-            {   
-                global.inventory_page_max += 1;
-            }
-            //Draw page number and max
-            draw_text_color(view_xview+20,view_yview+87, 
-                            string("PAGE: " + string(global.inventory_page + 1) + "       / " + string(global.inventory_page_max)),
-                            c_black, c_black, c_black, c_black, 1);
+            global.page_update = false;
         }
-        else
+        for (global.n2 = global.start_count; global.n2 &lt; global.end_count; global.n2++;)
         {
-            //If empty
-            draw_text_color(view_xview+30, view_yview+117, "Inventory is empty...",
-                                c_black, c_black, c_black, c_black, 1);
-        }  
+            //Item background
+            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);
+            //Item icons
+            draw_sprite(asset_get_index(global.item_sprite[global.n2]), 0,view_xview+30, view_yview+7+y1);                
+            //Item description background
+            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
+            //Item description
+            draw_text_color(view_xview+55,view_yview+y1, string(global.item_description[global.n2]),
+                            c_black, c_black, c_black, c_black, 1);
+            //Item amount background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
+            //Item amount
+            draw_text_color(view_xview+207,view_yview+y1, string(global.item_amount[global.n2]),
+                            c_black, c_black, c_black, c_black, 1);
+            y1 += 19;
+        }
+        //Page number background
+        draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
+        //Page number max
+        global.inventory_page_max = (round(global.item_count/8));
+        if ((global.inventory_page_max - (global.item_count/8)) &lt; 0 )
+        {   
+            global.inventory_page_max += 1;
+        }
+        //Draw page number and max
+        draw_text_color(view_xview+20,view_yview+87, 
+                        string("PAGE: " + string(global.inventory_page + 1) + "       / " + string(global.inventory_page_max)),
+                        c_black, c_black, c_black, c_black, 1);
     }
-    else if(global.inventory == 2)
+    else
     {
-        //Text
-        draw_sprite(spr_death_counter, 0, view_xview+30, view_yview+120);
-        //Deat counter
-        var death_counter;
-        death_counter = global.death_counter;
-        draw_text_color(view_xview+50,view_yview+112, string(death_counter),
-                c_black, c_black, c_black, c_black, 1);
-        
-        //Text
-        draw_sprite(spr_kill_counter, 0, view_xview+30, view_yview+150);
-        //Kill counter
-        draw_text_color(view_xview+50,view_yview+143, string(global.kill_counter),
-                c_black, c_black, c_black, c_black, 1);
-    }
-    /*else if(global.inventory == 3)
-    {
-    }*/
+        //If empty
+        draw_text_color(view_xview+30, view_yview+117, "Inventory is empty...",
+                            c_black, c_black, c_black, c_black, 1);
+    }  
 }
+else if(global.inventory == 2)
+{
+    //Text
+    draw_sprite(spr_death_counter, 0, view_xview+30, view_yview+120);
+    //Deat counter
+    var death_counter;
+    death_counter = global.death_counter;
+    draw_text_color(view_xview+50,view_yview+112, string(death_counter),
+            c_black, c_black, c_black, c_black, 1);
+    
+    //Text
+    draw_sprite(spr_kill_counter, 0, view_xview+30, view_yview+150);
+    //Kill counter
+    draw_text_color(view_xview+50,view_yview+143, string(global.kill_counter),
+            c_black, c_black, c_black, c_black, 1);
+}
+/*else if(global.inventory == 3)
+{
+}*/
 </string>
           </argument>
         </arguments>
