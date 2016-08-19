@@ -299,12 +299,10 @@
   <scripts name="scripts">
     <scripts name="Crafting">
       <scripts name="Alchemy">
-        <script>scripts\scr_alchemy_mix_potion.gml</script>
         <script>scripts\scr_alchemy_recipes.gml</script>
       </scripts>
       <scripts name="Forge">
         <script>scripts\scr_forge_recipes.gml</script>
-        <script>scripts\scr_forge_smelting.gml</script>
         <scripts name="Forge materials">
           <script>scripts\scr_forg_mater_mouse_released_1.gml</script>
           <script>scripts\scr_check_if_instance_destroy.gml</script>
@@ -328,17 +326,17 @@
       <script>scripts\scr_falling_damage.gml</script>
     </scripts>
     <scripts name="Save/Load game">
-      <script>scripts\scr_savegame.gml</script>
-      <script>scripts\scr_save_to_inventory.gml</script>
-      <script>scripts\scr_loadgame.gml</script>
       <script>scripts\scr_current_room.gml</script>
+      <script>scripts\scr_first_loading_screen_objects.gml</script>
+      <script>scripts\scr_loadgame.gml</script>
+      <script>scripts\scr_save_to_inventory.gml</script>
+      <script>scripts\scr_savegame.gml</script>
     </scripts>
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
     <script>scripts\scr_solidify.gml</script>
-    <script>scripts\scr_first_loading_screen_objects.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_sign</font>
@@ -412,8 +410,6 @@
         <object>objects\obj_ingr_flower_1</object>
         <object>objects\obj_ingr_flower_2</object>
         <object>objects\obj_ingr_flower_3</object>
-        <object>objects\obj_potion_1</object>
-        <object>objects\obj_potion_2</object>
       </objects>
       <objects name="Materials">
         <object>objects\obj_mater_ironore</object>
@@ -452,12 +448,13 @@
     </objects>
     <objects name="HUD">
       <objects name="Crafting">
-        <objects name="Alchemy station">
+        <objects name="Alchemy">
+          <object>objects\obj_alch_crafted_item</object>
           <object>objects\obj_alch_slot_1</object>
           <object>objects\obj_alch_slot_2</object>
           <object>objects\obj_alch_slot_3</object>
           <object>objects\obj_alch_slot_4</object>
-          <object>objects\obj_alchemy_station_controller</object>
+          <object>objects\obj_alchemy_controller</object>
         </objects>
         <objects name="Forge">
           <object>objects\obj_forg_bg_controller</object>

@@ -72,18 +72,27 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == false and can_open_or_close == true and
-    global.inventory == 0)
+            <string>if not(global.hud_state == "alchemy")
 {
-    global.alchemy = true;
-    obj_alchemy.alch_page_update = true;
-    obj_alchemy.alch_loop_stop = false;
-    obj_alchemy.create_only_once = true;
-    global.alchemy_page = 0;    
-    global.alch_start_count = 0;
-    global.alch_end_count = 0;
-    can_open_or_close = false;
-    alarm[1] = 20;
+    if (can_open_or_close == true)
+    {
+        can_open_or_close = false;
+        global.hud_state = "alchemy";
+        alarm[1] = 20;
+        
+        //Create
+        instance_create(view_xview+300, view_yview+117, obj_alch_slot_1); //Slots
+        instance_create(view_xview+300, view_yview+147, obj_alch_slot_2);
+        instance_create(view_xview+300, view_yview+177, obj_alch_slot_3);
+        instance_create(view_xview+350, view_yview+147, obj_alch_slot_4);
+        
+        instance_create(view_xview+464, view_yview+54, obj_craft_close_button);
+        instance_create(view_xview+350, view_yview+147, obj_alch_crafted_item); //Crafted item (slot 4)
+        
+        obj_alchemy_controller.update_amounts = true; //Update amounts in list
+        obj_alchemy_controller.update_list = true;
+        obj_alchemy_controller.create_once = true; //Create objects once on the list
+    }
 }
 </string>
           </argument>
@@ -107,10 +116,10 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == true and can_open_or_close == true)
+            <string>if (global.hud_state == "alchemy" and can_open_or_close == true)
 {
-    global.alchemy = false;
     can_open_or_close = false;
+    global.hud_state = "null";
     alarm[1] = 20;
 }
 </string>

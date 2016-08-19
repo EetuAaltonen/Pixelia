@@ -4,7 +4,7 @@
 Object[1] = obj_inventory_controller;
 Object[2] = obj_inventory_bg_controller;
 //Crafting
-Object[3] = obj_alchemy_station_controller;
+Object[3] = obj_alchemy_controller;
 Object[4] = obj_forge_controller;
 Object[5] = obj_forg_bg_controller;
 Object[6] = obj_workbench_controller;
