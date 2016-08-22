@@ -24,5 +24,8 @@ Object[16] = obj_potion_target;
 //Screen
 Object[17] = obj_screen_controller;
 Object[18] = obj_hud_state_switcher;
-Object[19] = obj_hotbar_controller;
-Object[20] = obj_hotbar_bg_controller;
+Object[19] = obj_hotbar_bg_controller;
+//Skill hotbar icons
+Object[20] = obj_skill_A;
+Object[21] = obj_skill_Q;
+Object[22] = obj_skill_W;

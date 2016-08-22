@@ -28,6 +28,34 @@
             <string>move_towards_point(obj_plr_aim.x, obj_plr_aim.y, 10);
 can_hurt = true;
 gravity = 0;
+alarm[2] = 20; //Add gravity
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (can_hurt == true)
+{    
+    gravity += 0.1;
+    alarm[2] = 20;
+}
 </string>
           </argument>
         </arguments>
@@ -56,7 +84,7 @@ gravity = 0;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -73,15 +101,31 @@ gravity = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity = 0;
-image_angle = direction;
+            <string>image_angle = direction;
 
-if (distance_to_object(obj_grass) == 0 and can_hurt == true)
+if (distance_to_object(all) == 0 and can_hurt == true)
 {
-    speed = 0;
-    instance_create(x, y, obj_arrow_effect);
-    alarm[1] = 200;
-    can_hurt = false;
+    if not((distance_to_object(obj_pelaaja) == 0) and
+        (distance_to_object(obj_plr_bow) == 0) and
+        (distance_to_object(obj_plr_aim) == 0))
+    {       
+        speed = 0;
+        gravity = 0;
+        instance_create(x, y, obj_arrow_effect);
+        alarm[1] = 200;
+        
+        var x1, y1;
+        near = instance_nearest(x, y, object_index);
+        x1 = x - ((instance_nearest(x, y, object_index)).x);
+        y1 = y - ((instance_nearest(x, y, object_index)).y);
+        
+        can_hurt = false;
+    }
+}
+if (can_hurt == false)
+{
+    x = (near).x + x1;
+    y = (near).y + y1;   
 }
 </string>
           </argument>

@@ -72,7 +72,7 @@ can_open_or_close = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == false and can_open_or_close == true and
+            <string>/*if (global.alchemy == false and can_open_or_close == true and
     global.inventory == 0)
 {
     global.alchemy = true;

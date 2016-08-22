@@ -242,6 +242,7 @@
         <sprite>sprites\spr_pelaaja_slice</sprite>
         <sprite>sprites\spr_pelaaja_roll</sprite>
         <sprite>sprites\spr_player_bow</sprite>
+        <sprite>sprites\spr_plr_bow_1</sprite>
       </sprites>
       <sprites name="Old">
         <sprite>sprites\spr_roll</sprite>
@@ -477,11 +478,9 @@
       </objects>
       <objects name="Draw">
         <object>objects\obj_building</object>
-        <object>objects\obj_Q_ready</object>
-        <object>objects\obj_A_ready</object>
-        <object>objects\obj_quit_draw</object>
-        <object>objects\obj_restart_draw</object>
-        <object>objects\obj_W_ready</object>
+        <object>objects\obj_skill_A</object>
+        <object>objects\obj_skill_Q</object>
+        <object>objects\obj_skill_W</object>
       </objects>
       <objects name="Inventory">
         <objects name="Buttons">
@@ -504,7 +503,6 @@
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_hotbar_bg_controller</object>
-      <object>objects\obj_hotbar_controller</object>
       <object>objects\obj_hud_state_switcher</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>

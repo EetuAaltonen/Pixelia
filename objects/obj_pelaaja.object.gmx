@@ -1898,7 +1898,7 @@ alarm[1] = 25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!string_pos("inventory", string(global.hud_state)))
+            <string>if (!string_pos("inventory", string(global.hud_state)) and global.plr_bow == false)
 {
     //Use
     if (use == 0)
