@@ -142,7 +142,7 @@ else if (hit == 0)
             <kind>1</kind>
             <string>count = random_range(3, 6);
 
-if (log &gt; 1 and wood == 1 and obj_pelaaja.woodcutting = 1)
+if (log &gt; 1 and wood == 1 and obj_pelaaja.action_state = "woodcutting")
 {
     log -= 1;
     image_index += 1;

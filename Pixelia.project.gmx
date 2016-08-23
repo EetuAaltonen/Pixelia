@@ -24,6 +24,7 @@
       <sprite>sprites\spr_grass</sprite>
       <sprite>sprites\spr_heikko</sprite>
       <sprite>sprites\spr_secret_stonewall</sprite>
+      <sprite>sprites\spr_water</sprite>
     </sprites>
     <sprites name="Buildings">
       <sprite>sprites\spr_cave_bridge_0001</sprite>
@@ -253,6 +254,8 @@
       </sprites>
       <sprite>sprites\spr_saving</sprite>
       <sprite>sprites\spr_plr_bow</sprite>
+      <sprite>sprites\spr_fishing_bobber</sprite>
+      <sprite>sprites\spr_fishing_line</sprite>
     </sprites>
     <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
@@ -322,9 +325,12 @@
     <scripts name="Player">
       <script>scripts\scr_falling_damage.gml</script>
       <script>scripts\scr_got_damage.gml</script>
+      <script>scripts\scr_plr_bow.gml</script>
       <script>scripts\scr_plr_cave_stairs.gml</script>
       <script>scripts\scr_plr_dead.gml</script>
       <script>scripts\scr_plr_fishing.gml</script>
+      <script>scripts\scr_plr_ladder.gml</script>
+      <script>scripts\scr_plr_mining.gml</script>
       <script>scripts\scr_plr_push.gml</script>
       <script>scripts\scr_plr_woodcutting.gml</script>
     </scripts>
@@ -361,11 +367,12 @@
       <object>objects\obj_chicken</object>
     </objects>
     <objects name="Blocks">
-      <object>objects\obj_maa</object>
-      <object>objects\obj_heikko</object>
       <object>objects\obj_grass</object>
-      <object>objects\obj_stone</object>
+      <object>objects\obj_heikko</object>
+      <object>objects\obj_maa</object>
       <object>objects\obj_secret_stonewall</object>
+      <object>objects\obj_stone</object>
+      <object>objects\obj_water</object>
     </objects>
     <objects name="Buildings">
       <object>objects\obj_blacksmith</object>
@@ -576,6 +583,8 @@
       <object>objects\obj_plr_aim</object>
       <object>objects\obj_plr_bow</object>
       <object>objects\obj_spawner</object>
+      <object>objects\obj_fishing_line</object>
+      <object>objects\obj_fishing_bobber</object>
     </objects>
     <objects name="Traps">
       <object>objects\obj_spikes</object>
