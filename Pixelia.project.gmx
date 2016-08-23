@@ -53,6 +53,7 @@
       <sprite>sprites\spr_medicpack</sprite>
       <sprite>sprites\spr_tree</sprite>
       <sprite>sprites\spr_tree_1</sprite>
+      <sprite>sprites\spr_fishing_spot</sprite>
     </sprites>
     <sprites name="Crafting">
       <sprites name="Forge materials">
@@ -403,6 +404,7 @@
       <object>objects\obj_potion</object>
       <object>objects\obj_potion_collected</object>
       <object>objects\obj_tree</object>
+      <object>objects\obj_fishing_spot</object>
     </objects>
     <objects name="Crafting">
       <object>objects\obj_alchemy_station</object>
