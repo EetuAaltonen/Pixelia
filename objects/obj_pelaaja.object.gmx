@@ -1174,7 +1174,7 @@ scr_falling_damage();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_grass">
+    <event eventtype="4" ename="obj_maa">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1191,8 +1191,32 @@ scr_falling_damage();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
+            <string>/*if (vspeed &gt; 25)
+{
+    globel.lives -= 1;
+}
+if (vspeed &gt; 50)
+{
+    global.player_health -= 5;
+}*/
+
+if (!place_free(x+hspeed,y))
+{
+    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
+    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
+    hspeed=0;
+}
+if (!place_free(x,y+vspeed))
+{
+    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
+    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
+    vspeed=0;
+}
+
+if (!place_free(x+hspeed,y+vspeed))
+{
+    hspeed=0;
+}
 </string>
           </argument>
         </arguments>
@@ -1237,7 +1261,7 @@ if (!place_free(x+hspeed,y+vspeed))
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_maa">
+    <event eventtype="4" ename="obj_grass">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1254,32 +1278,8 @@ if (!place_free(x+hspeed,y+vspeed))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if (vspeed &gt; 25)
-{
-    globel.lives -= 1;
-}
-if (vspeed &gt; 50)
-{
-    global.player_health -= 5;
-}*/
-
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
+            <string>scr_solidify();
+scr_falling_damage();
 </string>
           </argument>
         </arguments>

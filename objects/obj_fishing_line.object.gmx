@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_xscale = 2.5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -29,7 +52,15 @@
 {
     x = obj_pelaaja.x + 10;
     y = obj_pelaaja.y;
-    image_angle = point_direction(x, y, obj_fishing_bobber.x, obj_fishing_bobber.y);
+    image_angle = point_direction(x, y, obj_fishing_bobber.x, obj_fishing_bobber.y-3);
+    if (distance_to_object(obj_fishing_bobber) &gt; 1)
+    {
+       image_xscale = image_xscale+0.1;
+    }
+    else if (distance_to_object(obj_fishing_bobber) = 0)
+    {
+       image_xscale = image_xscale-0.1;
+    }
 }
 
 if not(obj_pelaaja.action_state == "fishing")

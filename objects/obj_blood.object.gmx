@@ -111,7 +111,7 @@ if(global.pause=1)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_grass">
+    <event eventtype="4" ename="obj_maa">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -135,7 +135,7 @@ hspeed = 0;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_maa">
+    <event eventtype="4" ename="obj_grass">
       <action>
         <libid>1</libid>
         <id>603</id>

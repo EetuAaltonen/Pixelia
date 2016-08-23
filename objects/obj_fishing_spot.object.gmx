@@ -51,7 +51,7 @@
             <string>if (obj_pelaaja.action_state == "null")
 {
     obj_pelaaja.action_state = "fishing";
-    instance_create(obj_pelaaja.x+20, obj_pelaaja.y+5, obj_fishing_bobber);
+    instance_create(obj_pelaaja.x+100, obj_pelaaja.y+10, obj_fishing_bobber);
     instance_create(obj_pelaaja.x, obj_pelaaja.y, obj_fishing_line);
 }
 </string>

@@ -25,6 +25,7 @@
       <sprite>sprites\spr_heikko</sprite>
       <sprite>sprites\spr_secret_stonewall</sprite>
       <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_water_waves</sprite>
     </sprites>
     <sprites name="Buildings">
       <sprite>sprites\spr_cave_bridge_0001</sprite>
