@@ -114,15 +114,15 @@ if (distance_to_object(all) == 0 and can_hurt == true)
         instance_create(x, y, obj_arrow_effect);
         alarm[1] = 200;
         
-        var x1, y1;
+        /*var x1, y1;
         near = instance_nearest(x, y, object_index);
         x1 = x - ((instance_nearest(x, y, object_index)).x);
-        y1 = y - ((instance_nearest(x, y, object_index)).y);
+        y1 = y - ((instance_nearest(x, y, object_index)).y);*/
         
         can_hurt = false;
     }
 }
-if (can_hurt == false)
+/*if (can_hurt == false)
 {
     x = (near).x + x1;
     y = (near).y + y1;   

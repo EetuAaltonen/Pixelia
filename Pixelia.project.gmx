@@ -319,12 +319,13 @@
       <script>scripts\scr_inventory_item_info.gml</script>
     </scripts>
     <scripts name="Player">
-      <script>scripts\scr_player_cave_stairs.gml</script>
-      <script>scripts\scr_player_dead.gml</script>
-      <script>scripts\scr_player_push.gml</script>
-      <script>scripts\scr_player_woodcutting.gml</script>
-      <script>scripts\scr_got_damage.gml</script>
       <script>scripts\scr_falling_damage.gml</script>
+      <script>scripts\scr_got_damage.gml</script>
+      <script>scripts\scr_plr_cave_stairs.gml</script>
+      <script>scripts\scr_plr_dead.gml</script>
+      <script>scripts\scr_plr_fishing.gml</script>
+      <script>scripts\scr_plr_push.gml</script>
+      <script>scripts\scr_plr_woodcutting.gml</script>
     </scripts>
     <scripts name="Save/Load game">
       <script>scripts\scr_current_room.gml</script>

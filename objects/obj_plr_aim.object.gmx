@@ -68,7 +68,7 @@ shoot = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_pelaaja) and global.plr_bow == true)
+            <string>if (instance_exists(obj_pelaaja) and obj_pelaaja.action_state == "bow")
 {   
     dir_now := point_direction(obj_pelaaja.x,obj_pelaaja.y,x,y);
     dir_new := (dir_now + aim_speed + 360)mod(360); //360
@@ -139,7 +139,6 @@ shoot = false;
 }
 else
 {
-    global.plr_bow = false;
     instance_destroy();
 }
 </string>

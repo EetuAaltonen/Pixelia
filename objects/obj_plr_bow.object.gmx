@@ -99,7 +99,6 @@ bow_can_shoot = true;
 }
 else
 {
-    global.plr_bow = false;
     instance_destroy();
 }
 </string>
@@ -124,7 +123,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.plr_bow == true)
+            <string>if (obj_pelaaja.action_state == "bow")
 {
     if (keyboard_check(ord("E")) and bow_can_shoot == true)
     {
