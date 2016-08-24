@@ -103,29 +103,25 @@ alarm[2] = 20; //Add gravity
             <kind>1</kind>
             <string>image_angle = direction;
 
-if (distance_to_object(all) == 0 and can_hurt == true)
+if (distance_to_object(obj_grass) == 0 and can_hurt == true)
 {
-    if not((distance_to_object(obj_pelaaja) == 0) and
+    /*if not((distance_to_object(obj_pelaaja) == 0) and
         (distance_to_object(obj_plr_bow) == 0) and
         (distance_to_object(obj_plr_aim) == 0))
     {       
         speed = 0;
-        gravity = 0;
+        gravity = 0;*/
         instance_create(x, y, obj_arrow_effect);
-        alarm[1] = 200;
+        /*alarm[1] = 200;
         
-        /*var x1, y1;
+        var x1, y1;
         near = instance_nearest(x, y, object_index);
         x1 = x - ((instance_nearest(x, y, object_index)).x);
-        y1 = y - ((instance_nearest(x, y, object_index)).y);*/
+        y1 = y - ((instance_nearest(x, y, object_index)).y);
         
         can_hurt = false;
-    }
-}
-/*if (can_hurt == false)
-{
-    x = (near).x + x1;
-    y = (near).y + y1;   
+    }*/
+    instance_destroy();
 }
 </string>
           </argument>

@@ -50,8 +50,16 @@
             <kind>1</kind>
             <string>if (instance_exists(obj_fishing_bobber) and instance_exists(obj_pelaaja))
 {
-    x = obj_pelaaja.x + 10;
-    y = obj_pelaaja.y;
+    if (obj_pelaaja.image_xscale == 1)
+    {
+        x = obj_pelaaja.x + 18;
+        y = obj_pelaaja.y - 7;
+    }
+    else
+    {
+        x = obj_pelaaja.x - 18;
+        y = obj_pelaaja.y - 7;
+    }
     image_angle = point_direction(x, y, obj_fishing_bobber.x, obj_fishing_bobber.y-3);
     if (distance_to_object(obj_fishing_bobber) &gt; 1)
     {

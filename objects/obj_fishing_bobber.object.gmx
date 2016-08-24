@@ -125,7 +125,7 @@ alarm[2] = random_range(50, 80);
     move_towards_point((instance_nearest(x, y, obj_fishing_vein)).x,
                        ((instance_nearest(x, y, obj_fishing_vein)).y - 
                        distance_to_object(instance_nearest(x, y, obj_fishing_vein))), 2); 
-    if (distance_to_object(obj_water) &lt; 2)
+    if (distance_to_object(obj_fishing_vein) &lt; 1)
     {
         hspeed = 0;
         vspeed = 0;

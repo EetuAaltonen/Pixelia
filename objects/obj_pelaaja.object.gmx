@@ -1863,7 +1863,7 @@ alarm[1] = 25;
     {
         obj_pelaaja.action_state = "fishing";
         scr_plr_fishing();
-        instance_create(obj_pelaaja.x+10, obj_pelaaja.y-10, obj_fishing_bobber);
+        instance_create(obj_pelaaja.x, obj_pelaaja.y-10, obj_fishing_bobber);
         instance_create(obj_pelaaja.x, obj_pelaaja.y, obj_fishing_line);
     }
     else if (action_state == "fishing")
