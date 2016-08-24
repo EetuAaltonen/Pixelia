@@ -1859,7 +1859,14 @@ alarm[1] = 25;
     }
     
     //Fishing
-    if (action_state == "fishing")
+    if (action_state == "null" and distance_to_object(obj_fishing_spot) &lt; 4)
+    {
+        obj_pelaaja.action_state = "fishing";
+        scr_plr_fishing();
+        instance_create(obj_pelaaja.x+10, obj_pelaaja.y-10, obj_fishing_bobber);
+        instance_create(obj_pelaaja.x, obj_pelaaja.y, obj_fishing_line);
+    }
+    else if (action_state == "fishing")
     {
         action_state = "null";
         sprite_index = spr_pelaaja;
