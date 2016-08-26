@@ -109,6 +109,9 @@
       <sprite>sprites\spr_rat_1</sprite>
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
+    <sprites name="Home">
+      <sprite>sprites\spr_home_farmland</sprite>
+    </sprites>
     <sprites name="HUD">
       <sprites name="Crafting">
         <sprites name="Alchemy station">
@@ -460,6 +463,9 @@
       <object>objects\obj_rat</object>
       <object>objects\obj_enemy_hit</object>
       <object>objects\obj_</object>
+    </objects>
+    <objects name="Home">
+      <object>objects\obj_home_farmland</object>
     </objects>
     <objects name="HUD">
       <objects name="Crafting">
