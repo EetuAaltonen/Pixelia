@@ -111,6 +111,9 @@
     </sprites>
     <sprites name="Home">
       <sprite>sprites\spr_home_farmland</sprite>
+      <sprite>sprites\spr_home_farmland_1</sprite>
+      <sprite>sprites\spr_home_farmland_2</sprite>
+      <sprite>sprites\spr_home_farmland_3</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Crafting">

@@ -382,6 +382,7 @@ sprite_index=spr_pelaaja;
     case "mining": action_state = "mining"; break;
     case "woodcutting": action_state = "woodcutting"; break;
     case "fishing": action_state = "fishing"; break;
+    case "plating": action_state = "planting"; break;
     case "bow": action_state = "bow"; break;
 }
 </string>
@@ -449,6 +450,12 @@ else if (action_state == "woodcutting")
 else if (action_state == "fishing")
 {
     scr_plr_fishing();
+}
+//Planting seeds
+else if (action_state == "planting")
+{
+    hspeed = 0;
+    vspeed = 0;
 }
 
 //Default movements
@@ -1144,7 +1151,7 @@ scr_falling_damage();
             <kind>1</kind>
             <string>//global.room_change = 1;
 //alarm[8]=10;
-room_goto(Home/*Cave_0001/*);
+room_goto(Home/*Cave_0001*/);
 </string>
           </argument>
         </arguments>

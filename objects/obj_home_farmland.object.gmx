@@ -3,7 +3,7 @@
   <spriteName>spr_home_farmland</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-82</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,60 @@
             <string>image_speed = 0;
 growth = 0;
 state = 0;
+selecting_seed = false;
+selected_seed = 1;
+seed_type = "wheat";
+harvesting = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>harvesting = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (growth &lt; 100)
+{
+    growth += 1;
+    alarm[1] = 5;
+}
 </string>
           </argument>
         </arguments>
@@ -52,15 +106,17 @@ state = 0;
             <kind>1</kind>
             <string>switch (state)
 {
-    case 0: image_index = 0; break;
-    case 1: image_index = 1; break;
-    case 2: image_index = 2; break;
-    case 3: image_index = 3; break;
-    case 4: image_index = 4; break;
-    case 5: image_index = 5; break;
-    case 6: image_index = 6; break;
-    case 7: image_index = 7; break;
-    case 8: image_index = 8; break;
+    case 1: image_index = 0; break;
+    case 2: image_index = 1; break;
+    case 3: image_index = 2; break;
+    case 4: image_index = 3; break;
+    case 5: image_index = 4; break;
+    case 6: image_index = 5; break;
+    case 7: image_index = 6; break;
+    case 8: image_index = 7; break;
+    case 9: image_index = 8; break;
+    case 10: image_index = 9; break;
+    case 11: image_index = 10; break;
 }
 </string>
           </argument>
@@ -82,41 +138,116 @@ state = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (growth == 0)
+            <string>switch (selected_seed)
 {
-    state = 0;
+    case 1: seed_type = "Wheat"; break;
+    case 2: seed_type = "Barley"; break;
+    case 3: seed_type = "Carrot"; break;
 }
-else if (growth &gt; 0 and growth &lt; 11)
-{
-    state = 1;
-}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (growth &gt; 0 and growth &lt; 11)
+{state = 1;}
 else if (growth &gt; 10 and growth &lt; 21)
-{
-    state = 2;
-}
+{state = 2;}
 else if (growth &gt; 20 and growth &lt; 31)
-{
-    state = 3;
-}
+{state = 3;}
 else if (growth &gt; 30 and growth &lt; 41)
-{
-    state = 4;
-}
+{state = 4;}
 else if (growth &gt; 40 and growth &lt; 51)
-{
-    state = 5;
-}
+{state = 5;}
 else if (growth &gt; 50 and growth &lt; 61)
-{
-    state = 6;
-}
+{state = 6;}
 else if (growth &gt; 60 and growth &lt; 71)
-{
-    state = 7;
-}
+{state = 7;}
 else if (growth &gt; 70 and growth &lt; 81)
+{state = 8;}
+else if (growth &gt; 80 and growth &lt; 91)
+{state = 9;}
+else if (growth &gt; 90 and growth &lt; 100)
+{state = 10;}
+else if (growth == 100)
+{state = 11;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (selecting_seed == true)
 {
-    state = 8;
+    if (keyboard_check_released(vk_right) and selected_seed &lt; 4)
+    {
+        selected_seed += 1;     
+    }
+    else if (keyboard_check_released(vk_left) and selected_seed &gt; 1)
+    {
+        selected_seed -= 1;
+    }
+    else if (keyboard_check_released(ord('E')))
+    {
+        selecting_seed = false;
+        obj_pelaaja.action_state = "null";
+        obj_pelaaja.sprite_index = spr_pelaaja;
+        growth = 1;
+        alarm[1] = 20;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (growth &gt; 0)
+{
+    sprite_index = asset_get_index(string("spr_home_farmland_" + string(selected_seed)));
 }
 </string>
           </argument>
@@ -140,9 +271,18 @@ else if (growth &gt; 70 and growth &lt; 81)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (growth == 0)
+            <string>if (growth == 0 and harvesting == false and
+    selecting_seed == false and obj_pelaaja.action_state = "null")
 {
-    
+    obj_pelaaja.action_state = "planting";
+    selecting_seed = true;   
+}
+else if (growth == 100)
+{
+    harvesting = true;
+    growth = 0;
+    sprite_index = spr_home_farmland;
+    alarm[2] = 30;
 }
 </string>
           </argument>
@@ -167,8 +307,12 @@ else if (growth &gt; 70 and growth &lt; 81)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_set_halign(fa_center);
-draw_text_colour(x, y, string(growth),c_black, c_black, c_black, c_black, 1);
+draw_text_colour(x, y-10, string(string(growth) + " %"),c_black, c_black, c_black, c_black, 1);
+
+if (selecting_seed == true)
+{
+    draw_text_colour(x, y-20, string(seed_type),c_black, c_black, c_black, c_black, 1);
+}
 </string>
           </argument>
         </arguments>
