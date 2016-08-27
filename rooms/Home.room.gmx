@@ -244,6 +244,7 @@
     <instance objName="obj_spawner" x="102" y="435" name="inst_29139BAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_home_farmland" x="256" y="420" name="inst_72F7A78C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pelaaja" x="83" y="381" name="inst_720E0AF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_home_purchasable" x="256" y="436" name="inst_915D5521" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

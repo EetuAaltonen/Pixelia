@@ -253,6 +253,41 @@ else if (growth == 100)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists(obj_home_purchasable))
+{
+    if (distance_to_object(obj_home_purchasable) == 0)
+    {
+        image_alpha = 0.5;
+    }
+    else
+    {
+        image_alpha = 1;
+    }
+}
+else
+{
+    image_alpha = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_use">
       <action>
@@ -271,18 +306,21 @@ else if (growth == 100)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (growth == 0 and harvesting == false and
-    selecting_seed == false and obj_pelaaja.action_state = "null")
+            <string>if (image_alpha == 1)
 {
-    obj_pelaaja.action_state = "planting";
-    selecting_seed = true;   
-}
-else if (growth == 100)
-{
-    harvesting = true;
-    growth = 0;
-    sprite_index = spr_home_farmland;
-    alarm[2] = 30;
+    if (growth == 0 and harvesting == false and
+        selecting_seed == false and obj_pelaaja.action_state = "null")
+    {
+        obj_pelaaja.action_state = "planting";
+        selecting_seed = true;   
+    }
+    else if (growth == 100)
+    {
+        harvesting = true;
+        growth = 0;
+        sprite_index = spr_home_farmland;
+        alarm[2] = 30;
+    }
 }
 </string>
           </argument>
@@ -307,11 +345,14 @@ else if (growth == 100)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text_colour(x, y-10, string(string(growth) + " %"),c_black, c_black, c_black, c_black, 1);
-
-if (selecting_seed == true)
+if (image_alpha == 1)
 {
-    draw_text_colour(x, y-20, string(seed_type),c_black, c_black, c_black, c_black, 1);
+    draw_text_colour(x, y-10, string(string(growth) + " %"),c_black, c_black, c_black, c_black, 1);
+    
+    if (selecting_seed == true)
+    {
+        draw_text_colour(x, y-20, string(seed_type),c_black, c_black, c_black, c_black, 1);
+    }
 }
 </string>
           </argument>

@@ -114,6 +114,7 @@
       <sprite>sprites\spr_home_farmland_1</sprite>
       <sprite>sprites\spr_home_farmland_2</sprite>
       <sprite>sprites\spr_home_farmland_3</sprite>
+      <sprite>sprites\spr_home_purchasable</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Crafting">
@@ -328,6 +329,9 @@
         <script>scripts\scr_workbench_recipes.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Home">
+      <script>scripts\scr_prices.gml</script>
+    </scripts>
     <scripts name="Inventory">
       <script>scripts\scr_inventory_item_info.gml</script>
     </scripts>
@@ -449,7 +453,6 @@
       <object>objects\obj_blood</object>
       <object>objects\obj_mining_dust</object>
       <object>objects\obj_leaf</object>
-      <object>objects\obj_use</object>
       <object>objects\obj_lever_signal</object>
       <object>objects\obj_heal</object>
       <object>objects\obj_body</object>
@@ -469,6 +472,7 @@
     </objects>
     <objects name="Home">
       <object>objects\obj_home_farmland</object>
+      <object>objects\obj_home_purchasable</object>
     </objects>
     <objects name="HUD">
       <objects name="Crafting">
@@ -590,14 +594,15 @@
         <object>objects\obj_lights</object>
         <object>objects\obj_pelaaja_shield</object>
       </objects>
+      <object>objects\obj_fishing_bobber</object>
+      <object>objects\obj_fishing_line</object>
       <object>objects\obj_hitbox</object>
       <object>objects\obj_pelaaja</object>
       <object>objects\obj_pelaaja1</object>
       <object>objects\obj_plr_aim</object>
       <object>objects\obj_plr_bow</object>
       <object>objects\obj_spawner</object>
-      <object>objects\obj_fishing_line</object>
-      <object>objects\obj_fishing_bobber</object>
+      <object>objects\obj_use</object>
     </objects>
     <objects name="Traps">
       <object>objects\obj_spikes</object>
