@@ -41,6 +41,7 @@
       <sprite>sprites\spr_blacksmith_wall</sprite>
       <sprite>sprites\spr_blacksmith_floor</sprite>
       <sprite>sprites\spr_blacksmith_roof</sprite>
+      <sprite>sprites\spr_build_blachsmith</sprite>
     </sprites>
     <sprites name="Collectable">
       <sprites name="Animals">
@@ -109,7 +110,7 @@
       <sprite>sprites\spr_rat_1</sprite>
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
-    <sprites name="Home">
+    <sprites name="Home_Village">
       <sprite>sprites\spr_home_farmland</sprite>
       <sprite>sprites\spr_home_farmland_1</sprite>
       <sprite>sprites\spr_home_farmland_2</sprite>
@@ -470,9 +471,10 @@
       <object>objects\obj_enemy_hit</object>
       <object>objects\obj_</object>
     </objects>
-    <objects name="Home">
+    <objects name="Home_Village">
       <object>objects\obj_home_farmland</object>
       <object>objects\obj_home_purchasable</object>
+      <object>objects\obj_home_blacksmith</object>
     </objects>
     <objects name="HUD">
       <objects name="Crafting">
@@ -617,7 +619,7 @@
     <room>rooms\First_loading</room>
     <room>rooms\Cave</room>
     <room>rooms\Cave_0001</room>
-    <room>rooms\Home</room>
+    <room>rooms\Home_Village</room>
     <room>rooms\World</room>
     <room>rooms\Map</room>
     <room>rooms\Blacksmith</room>

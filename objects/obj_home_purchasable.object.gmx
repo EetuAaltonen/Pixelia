@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>price = 0;
 alarm[1] = 10;
-Id = string(string(x) + "," + string(y))
+Id = string("obj_purchasable:" + string(x) + "," + string(y))
 State = "on_sale";
 ini_open("Save.sav");
 State = ini_read_string("Save1",Id,"on_sale");
@@ -107,7 +107,7 @@ if (State == "sold")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.coins &gt;= price)
+            <string>if (global.coins &gt; price || global.coins == price)
 {
     global.coins -= price;
     ini_open("Save.sav");

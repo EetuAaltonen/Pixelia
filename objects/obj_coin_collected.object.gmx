@@ -49,7 +49,8 @@ move_towards_point(obj_money_target.x, obj_money_target.y, 8)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_money_target) &lt; 40)
+            <string>move_towards_point(obj_money_target.x, obj_money_target.y, 8)
+if (distance_to_object(obj_money_target) &lt; 40)
 {
     global.coins += 1;
     instance_destroy();

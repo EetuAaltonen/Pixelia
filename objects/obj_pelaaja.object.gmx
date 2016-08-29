@@ -1151,7 +1151,7 @@ scr_falling_damage();
             <kind>1</kind>
             <string>//global.room_change = 1;
 //alarm[8]=10;
-room_goto(Home/*Cave_0001*/);
+room_goto(Home_Village/*Cave_0001*/);
 </string>
           </argument>
         </arguments>

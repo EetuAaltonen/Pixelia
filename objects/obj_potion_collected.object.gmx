@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_potion_target) &lt; 40)
+            <string>move_towards_point(obj_potion_target.x, obj_potion_target.y, 8)
+if (distance_to_object(obj_potion_target) &lt; 40)
 {
     global.potions += 1;
     instance_destroy();
