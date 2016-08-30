@@ -216,13 +216,20 @@ else if (growth == 100)
     {
         selected_seed -= 1;
     }
-    else if (keyboard_check_released(ord('E')))
+    else if (keyboard_check_pressed(ord('E')))
     {
         selecting_seed = false;
         obj_pelaaja.action_state = "null";
         obj_pelaaja.sprite_index = spr_pelaaja;
         growth = 1;
         alarm[1] = 20;
+    }
+    else if (keyboard_check_released(vk_escape))
+    {
+        selected_seed = 1;
+        selecting_seed = false;
+        obj_pelaaja.action_state = "null";
+        obj_pelaaja.sprite_index = spr_pelaaja;
     }
 }
 </string>

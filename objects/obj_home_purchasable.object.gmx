@@ -31,6 +31,49 @@ Id = string("obj_purchasable:" + string(x) + "," + string(y))
 State = "on_sale";
 ini_open("Save.sav");
 State = ini_read_string("Save1",Id,"on_sale");
+
+//Confirm purchse
+i = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Confirm purchase
+if (keyboard_check(ord('E')) and i &lt; 3)
+{
+    alarm[2] = 10;
+    i += 1;
+}
+else if (i == 3)
+{
+    i = 0;
+    global.coins -= price;
+    ini_open("Save.sav");
+    ini_write_string("Save1",Id,"sold");
+    State = "sold";
+}
+else
+{
+    i = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -109,10 +152,8 @@ if (State == "sold")
             <kind>1</kind>
             <string>if (global.coins &gt; price || global.coins == price)
 {
-    global.coins -= price;
-    ini_open("Save.sav");
-    ini_write_string("Save1",Id,"sold");
-    State = "sold";
+    i = 1;
+    alarm[2] = 100;
 }
 </string>
           </argument>
@@ -138,6 +179,11 @@ if (State == "sold")
             <kind>1</kind>
             <string>draw_self();
 draw_text_colour(x, y-10, string(string(price) + " $"),c_black, c_black, c_black, c_black, 1);
+
+if (i &gt; 0)
+{
+    draw_text_colour(x, y-30, string("Hold 'E' to confirm..."),c_black, c_black, c_black, c_black, 1);
+}
 </string>
           </argument>
         </arguments>
