@@ -69,10 +69,12 @@ else if (i == 3)
     ini_open("Save.sav");
     ini_write_string("Save1",Id,"sold");
     State = "sold";
+    obj_pelaaja.action_state = "null";
 }
 else
 {
     i = 0;
+    obj_pelaaja.action_state = "null";
 }
 </string>
           </argument>
@@ -98,7 +100,11 @@ else
             <kind>1</kind>
             <string>if (distance_to_object(obj_home_farmland) == 0)
 {
-    price = Coins["obj_home_farmland"];
+    price = Coins[1];
+}
+else if (distance_to_object(obj_home_blacksmith) == 0)
+{
+    price = Coins[2];
 }
 </string>
           </argument>
@@ -150,10 +156,14 @@ if (State == "sold")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.coins &gt; price || global.coins == price)
-{
-    i = 1;
-    alarm[2] = 100;
+            <string>if (obj_pelaaja.action_state == "null")
+{    
+    if (global.coins &gt; price || global.coins == price)
+    {
+        obj_pelaaja.action_state = "confirm";
+        i = 1;
+        alarm[2] = 100;
+    }
 }
 </string>
           </argument>

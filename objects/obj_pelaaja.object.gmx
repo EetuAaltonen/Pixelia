@@ -377,6 +377,7 @@ sprite_index=spr_pelaaja;
             <string>switch (action_state)
 {
     case "null": action_state = "null"; break;
+    case "confirm": action_state = "confirm"; break;
     case "push": action_state = "push"; break;
     case "ladder": action_state = "ladder"; break;
     case "mining": action_state = "mining"; break;
@@ -410,6 +411,12 @@ sprite_index=spr_pelaaja;
             <string>//Action states
 //If some menu is open
 if not(global.hud_state == "null")
+{
+    hspeed = 0;
+    vspeed = 0;
+}
+//Push
+else if (action_state == "confirm")
 {
     hspeed = 0;
     vspeed = 0;
