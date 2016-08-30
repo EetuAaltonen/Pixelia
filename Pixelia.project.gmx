@@ -396,19 +396,18 @@
     </objects>
     <objects name="Buildings">
       <object>objects\obj_blacksmith</object>
+      <object>objects\obj_blacksmith_floor</object>
+      <object>objects\obj_blacksmith_roof</object>
+      <object>objects\obj_blacksmith_shop</object>
+      <object>objects\obj_blacksmith_wall</object>
       <object>objects\obj_cave_bridge_0001</object>
       <object>objects\obj_cave_bridge_0002</object>
       <object>objects\obj_cave_bridge_0003</object>
-      <object>objects\obj_cave_stairs_0001</object>
-      <object>objects\obj_cave_stairs_0002</object>
       <object>objects\obj_cave_bridge_broken</object>
-      <object>objects\obj_door</object>
       <object>objects\obj_cave_door</object>
+      <object>objects\obj_door</object>
       <object>objects\obj_door_locked</object>
-      <object>objects\obj_blacksmith_shop</object>
-      <object>objects\obj_blacksmith_floor</object>
-      <object>objects\obj_blacksmith_roof</object>
-      <object>objects\obj_blacksmith_wall</object>
+      <object>objects\obj_stairs_0001</object>
     </objects>
     <objects name="Collectable">
       <objects name="Animals">

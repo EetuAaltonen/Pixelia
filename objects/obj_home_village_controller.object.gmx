@@ -25,10 +25,75 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.home_happiness = 0;
-global.home_defence = 0;
-global.home_hunger = 0;
-global.home_thirst = 0;
+            <string>global.home_happiness = 100;
+global.home_defence = 100;
+global.home_hunger = 100;
+global.home_thirst = 100;
+
+/*ini_open("Save.sav");
+global.home_happiness = ini_read_real("Save1","home_happiness",SavedHomeHappiness);
+global.home_defence = ini_read_real("Save1","home_defence",SavedHomeDefence);
+global.home_hunger = ini_read_real("Save1","home_hunger",SavedHomeHunger);
+global.home_thirst = ini_read_real("Save1","home_thirst",SavedHomeThirst);
+ini_close();*/
+
+alarm[1] = 10; //Happiness decreases if
+alarm[2] = 200; //Hunger decreases
+alarm[3] = 200; //Thirst decreases
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.home_thirst &gt; 9)
+{
+    global.home_thirst -= 10;
+    alarm[3] = 200;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.home_hunger &gt; 9)
+{
+    global.home_hunger -= 10;
+    alarm[2] = 200;
+}
 </string>
           </argument>
         </arguments>

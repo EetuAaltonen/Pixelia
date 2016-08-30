@@ -21,6 +21,12 @@ var SavedPotions = global.potions;
 var SavedIronores = global.ironore;
 var SavedLogs = global.logs;
 
+//Home village
+var SavedHomeHappiness = global.home_happiness;
+var SavedHomeDefence = global.home_defence;
+var SavedHomeHunger = global.home_hunger;
+var SavedHomeThirst = global.home_thirst;
+
 
 ini_write_real("Save1","room",SavedRoom);
 ini_write_real("Save1","health",SavedHealth);
@@ -37,6 +43,13 @@ ini_write_real("Save1","deaths",SavedDeathCounter);
 ini_write_real("Save1","kills",SavedKillCounter);
 
 ini_write_string("Save1","quest",SavedQuest);
+
+ini_write_real("Save1","potions",SavedPotions);
+
+ini_write_real("Save1","home_happiness",SavedHomeHappiness);
+ini_write_real("Save1","home_defence",SavedHomeDefence);
+ini_write_real("Save1","home_hunger",SavedHomeHunger);
+ini_write_real("Save1","home_thirst",SavedHomeThirst);
 
 //ini_write_real("Save1","quest",string(SavedQuest));
 

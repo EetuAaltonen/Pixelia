@@ -466,6 +466,8 @@
     <instance objName="obj_coin" x="642" y="439" name="inst_BD1025EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="643" y="447" name="inst_1CD1DDAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_home_purchasable" x="512" y="372" name="inst_C8990611" locked="0" code="" scaleX="4" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs_0001" x="762" y="428" name="inst_62429DCC" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs_0001" x="712" y="428" name="inst_6D48F130" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

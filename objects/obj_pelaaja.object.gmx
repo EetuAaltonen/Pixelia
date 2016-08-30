@@ -598,6 +598,17 @@ else if (action_state == "null")
         sprite_index = spr_pelaaja; 
     }
     
+    //Stairs
+    if (place_meeting(x+hspeed, y, obj_stairs_0001))
+    {
+        scr_plr_cave_stairs();
+    }
+    if (distance_to_object(obj_stairs_0001) == 0)
+    {
+        scr_solidify();
+        scr_falling_damage();
+    }
+    
     //Blocked
     if (!place_free(x,y-3))
     {
@@ -605,9 +616,6 @@ else if (action_state == "null")
         sprite_index = spr_pelaaja_down;
         alarm[7] = 10; //Fix animation stuck
     }
-    
-    //Stairs
-    scr_plr_cave_stairs();
 }
 </string>
           </argument>
@@ -1019,7 +1027,7 @@ scr_falling_damage();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_cave_stairs_0002">
+    <event eventtype="4" ename="obj_stairs_0001">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1036,32 +1044,7 @@ scr_falling_damage();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_cave_stairs_0001">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
+            <string>///test
 </string>
           </argument>
         </arguments>
