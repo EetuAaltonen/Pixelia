@@ -1,7 +1,7 @@
-if (file_exists("Save.sav"))
+/*if (file_exists("Save.sav"))
 {
     file_delete("Save.sav");
-}
+}*/
 ini_open("Save.sav");
 var SavedRoom = global.current_room; //base64_encode(string(global.current_room));
 var SavedHealth = global.player_health;

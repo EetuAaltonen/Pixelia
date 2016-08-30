@@ -27,10 +27,11 @@
             <kind>1</kind>
             <string>price = 0;
 alarm[1] = 10;
-Id = string("obj_purchasable:" + string(x) + "," + string(y))
+Id = string("obj_home_purchasable:" + string(x) + "," + string(y))
 State = "on_sale";
 ini_open("Save.sav");
 State = ini_read_string("Save1",Id,"on_sale");
+ini_close();
 
 //Confirm purchse
 i = 0;
@@ -70,6 +71,7 @@ else if (i == 3)
     ini_write_string("Save1",Id,"sold");
     State = "sold";
     obj_pelaaja.action_state = "null";
+    ini_close();
 }
 else
 {
