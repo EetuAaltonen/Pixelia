@@ -28,3 +28,5 @@ Object[18] = obj_hotbar_bg_controller;
 Object[19] = obj_skill_A;
 Object[20] = obj_skill_Q;
 Object[21] = obj_skill_W;
+//Home village
+Object[22] = obj_home_village_controller;

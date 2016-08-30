@@ -183,6 +183,12 @@
         <sprites name="Stats">
           <sprite>sprites\spr_death_counter</sprite>
           <sprite>sprites\spr_kill_counter</sprite>
+          <sprites name="Home_Village">
+            <sprite>sprites\spr_home_happiness</sprite>
+            <sprite>sprites\spr_home_defence</sprite>
+            <sprite>sprites\spr_home_hunger</sprite>
+            <sprite>sprites\spr_home_thirst</sprite>
+          </sprites>
         </sprites>
         <sprite>sprites\spr_inv_item_bg</sprite>
         <sprite>sprites\spr_inv_item_amount_bg</sprite>
@@ -475,6 +481,7 @@
       <object>objects\obj_home_farmland</object>
       <object>objects\obj_home_purchasable</object>
       <object>objects\obj_home_blacksmith</object>
+      <object>objects\obj_home_village_controller</object>
     </objects>
     <objects name="HUD">
       <objects name="Crafting">
