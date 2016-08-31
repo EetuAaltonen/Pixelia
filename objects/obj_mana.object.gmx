@@ -134,7 +134,7 @@ if (mana_regerate == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_pelaaja))
+            <string>if (instance_exists(obj_player))
 {
     if (global.mana &gt; (10 + global.man_plus))
     {
@@ -147,7 +147,7 @@ if (mana_regerate == 1)
     
     if (global.mana &gt;= 0
         and mana_usage == 1
-        and obj_pelaaja.sprite_index == spr_pelaaja_shield)
+        and obj_player.sprite_index == spr_pelaaja_shield)
     {
         mana_usage = 0;
         mana_regerate = 0;

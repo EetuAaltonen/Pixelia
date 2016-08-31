@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>global.damage = 1;
-if (instance_exists(obj_pelaaja))
+if (instance_exists(obj_player))
 {  
-    x = obj_pelaaja.x-4;
-    y = obj_pelaaja.y;
+    x = obj_player.x-4;
+    y = obj_player.y;
 }
 
 //Blood
@@ -58,7 +58,7 @@ scr_blood_particle();
           <argument>
             <kind>1</kind>
             <string>global.damage = 1;
-obj_pelaaja.image_alpha = 1;
+obj_player.image_alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -81,12 +81,12 @@ obj_pelaaja.image_alpha = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_pelaaja))
+            <string>if (instance_exists(obj_player))
 {  
-    vspeed = obj_pelaaja.vspeed;
-    hspeed = obj_pelaaja.hspeed;
-    y = obj_pelaaja.y;
-    if (obj_pelaaja.sprite_index == spr_pelaaja_down)
+    vspeed = obj_player.vspeed;
+    hspeed = obj_player.hspeed;
+    y = obj_player.y;
+    if (obj_player.sprite_index == spr_plr_down)
     {
         sprite_index = spr_hitbox_small;
     }
@@ -95,14 +95,14 @@ obj_pelaaja.image_alpha = 1;
         sprite_index = spr_hitbox;
     }
      
-    if (obj_pelaaja.image_xscale == 1)
+    if (obj_player.image_xscale == 1)
     {
-        x = obj_pelaaja.x-2;
+        x = obj_player.x-2;
         image_xscale = 1;  
     }
-    else if (obj_pelaaja.image_xscale == -1)
+    else if (obj_player.image_xscale == -1)
     {
-        x = obj_pelaaja.x+2;
+        x = obj_player.x+2;
         image_xscale = -1; 
     }
 }

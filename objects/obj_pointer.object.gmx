@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_pelaaja))
+            <string>if (instance_exists(obj_player))
 {
-    x = obj_pelaaja.x;
-    y = obj_pelaaja.y;
+    x = obj_player.x;
+    y = obj_player.y;
 }
 else
 {
@@ -56,11 +56,11 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_goal) and instance_exists(obj_pelaaja))
+            <string>if (instance_exists(obj_goal) and instance_exists(obj_player))
 {
     image_angle = point_direction(x, y, obj_goal.x, obj_goal.y);
-    x = obj_pelaaja.x
-    y = obj_pelaaja.y
+    x = obj_player.x
+    y = obj_player.y
     image_alpha = 0.7;
 }
 else

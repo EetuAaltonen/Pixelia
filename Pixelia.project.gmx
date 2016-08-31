@@ -245,16 +245,6 @@
       <sprite>sprites\spr_merchant</sprite>
     </sprites>
     <sprites name="Player">
-      <sprite>sprites\spr_body</sprite>
-      <sprite>sprites\spr_pelaaja</sprite>
-      <sprite>sprites\spr_pelaaja_mining</sprite>
-      <sprite>sprites\spr_pelaaja_down</sprite>
-      <sprite>sprites\spr_plr_fishing</sprite>
-      <sprite>sprites\spr_pelaaja_woodcutting</sprite>
-      <sprite>sprites\sprite61</sprite>
-      <sprite>sprites\spr_hitbox_small</sprite>
-      <sprite>sprites\spr_hitbox</sprite>
-      <sprite>sprites\spr_pelaaja_jump</sprite>
       <sprites name="Abilities">
         <sprite>sprites\spr_pelaaja_shield</sprite>
         <sprite>sprites\spr_lights</sprite>
@@ -269,10 +259,20 @@
         <sprite>sprites\spr_down2</sprite>
         <sprite>sprites\spr_abilitylights</sprite>
       </sprites>
-      <sprite>sprites\spr_saving</sprite>
-      <sprite>sprites\spr_plr_bow</sprite>
+      <sprite>sprites\spr_body</sprite>
       <sprite>sprites\spr_fishing_bobber</sprite>
       <sprite>sprites\spr_fishing_line</sprite>
+      <sprite>sprites\spr_hitbox</sprite>
+      <sprite>sprites\spr_hitbox_small</sprite>
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_plr_bow</sprite>
+      <sprite>sprites\spr_plr_down</sprite>
+      <sprite>sprites\spr_plr_fishing</sprite>
+      <sprite>sprites\spr_plr_jump</sprite>
+      <sprite>sprites\spr_plr_mining</sprite>
+      <sprite>sprites\spr_plr_woodcutting</sprite>
+      <sprite>sprites\spr_saving</sprite>
+      <sprite>sprites\sprite61</sprite>
     </sprites>
     <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
@@ -605,8 +605,7 @@
       <object>objects\obj_fishing_bobber</object>
       <object>objects\obj_fishing_line</object>
       <object>objects\obj_hitbox</object>
-      <object>objects\obj_pelaaja</object>
-      <object>objects\obj_pelaaja1</object>
+      <object>objects\obj_player</object>
       <object>objects\obj_plr_aim</object>
       <object>objects\obj_plr_bow</object>
       <object>objects\obj_spawner</object>
