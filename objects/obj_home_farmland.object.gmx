@@ -219,8 +219,8 @@ else if (growth == 100)
     else if (keyboard_check_pressed(ord('E')))
     {
         selecting_seed = false;
-        obj_pelaaja.action_state = "null";
-        obj_pelaaja.sprite_index = spr_pelaaja;
+        obj_player.action_state = "null";
+        obj_player.sprite_index = spr_pelaaja;
         growth = 1;
         alarm[1] = 20;
     }
@@ -228,8 +228,8 @@ else if (growth == 100)
     {
         selected_seed = 1;
         selecting_seed = false;
-        obj_pelaaja.action_state = "null";
-        obj_pelaaja.sprite_index = spr_pelaaja;
+        obj_player.action_state = "null";
+        obj_player.sprite_index = spr_pelaaja;
     }
 }
 </string>
@@ -316,9 +316,9 @@ else
             <string>if (image_alpha == 1)
 {
     if (growth == 0 and harvesting == false and
-        selecting_seed == false and obj_pelaaja.action_state = "null")
+        selecting_seed == false and obj_player.action_state = "null")
     {
-        obj_pelaaja.action_state = "planting";
+        obj_player.action_state = "planting";
         selecting_seed = true;   
     }
     else if (growth == 100)

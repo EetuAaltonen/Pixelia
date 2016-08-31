@@ -1729,7 +1729,7 @@ alarm[1] = 25;
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_lights</object>
+            <object>obj_plr_slice</object>
           </argument>
           <argument>
             <kind>0</kind>
@@ -1882,10 +1882,10 @@ alarm[1] = 25;
     //Fishing
     if (action_state == "null" and distance_to_object(obj_fishing_spot) &lt; 4)
     {
-        obj_pelaaja.action_state = "fishing";
+        obj_player.action_state = "fishing";
         scr_plr_fishing();
-        instance_create(obj_pelaaja.x, obj_pelaaja.y-10, obj_fishing_bobber);
-        instance_create(obj_pelaaja.x, obj_pelaaja.y, obj_fishing_line);
+        instance_create(obj_player.x, obj_player.y-10, obj_fishing_bobber);
+        instance_create(obj_player.x, obj_player.y, obj_fishing_line);
     }
     else if (action_state == "fishing")
     {

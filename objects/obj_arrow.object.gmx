@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_towards_point(obj_pelaaja.x, obj_pelaaja.y, 10);
+            <string>move_towards_point(obj_player.x, obj_player.y, 10);
 gravity = 0;
 can_hurt = true;
 mag = 0;
@@ -109,7 +109,7 @@ image_angle = direction;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_pelaaja_shield">
+    <event eventtype="4" ename="obj_plr_shield">
       <action>
         <libid>1</libid>
         <id>603</id>

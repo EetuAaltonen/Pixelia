@@ -74,10 +74,10 @@ alarm[2] = 40;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_pelaaja) &lt; 40 and
-    distance_to_object(obj_pelaaja) &gt; 20)
+            <string>if (distance_to_object(obj_player) &lt; 40 and
+    distance_to_object(obj_player) &gt; 20)
 {
-    move_towards_point(obj_pelaaja.x, obj_pelaaja.y, 1)
+    move_towards_point(obj_player.x, obj_player.y, 1)
     if (shoot == 1)
     {
         instance_create(x, y, obj___ammo) //?????

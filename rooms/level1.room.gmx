@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_pelaaja" xview="0" yview="0" wview="800" hview="500" xport="0" yport="0" wport="800" hport="500" hborder="400" vborder="10" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="obj_player" xview="0" yview="0" wview="800" hview="500" xport="0" yport="0" wport="800" hport="500" hborder="400" vborder="10" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_maa" x="190" y="485" name="inst_CE02AE9D" locked="0" code="" scaleX="11.875" scaleY="1.09375" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pelaaja" x="135" y="435" name="inst_F183A2EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="135" y="435" name="inst_F183A2EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_maa" x="350" y="455" name="inst_D4005AEE" locked="0" code="" scaleX="1.25" scaleY="1.40625" colour="4294967295" rotation="0"/>
     <instance objName="obj_maa" x="505" y="450" name="inst_86C22D4D" locked="0" code="" scaleX="1.25" scaleY="1.71875" colour="4294967295" rotation="0"/>
     <instance objName="obj_maa" x="390" y="350" name="inst_DC24EFB1" locked="0" code="" scaleX="0.9375" scaleY="0.779999971389771" colour="4294967295" rotation="0"/>

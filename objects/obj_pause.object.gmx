@@ -56,7 +56,7 @@ global.inventory = 0;
     draw_set_halign(fa_center);
     draw_set_color(c_black);
     draw_set_alpha(1);
-    draw_text(obj_pelaaja.x,obj_pelaaja.y-90,"Game Paused");
+    draw_text(obj_player.x,obj_player.y-90,"Game Paused");
     // draw_set_color(c_black);
 }
 else

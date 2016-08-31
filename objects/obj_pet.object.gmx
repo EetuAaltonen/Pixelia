@@ -115,22 +115,22 @@ pet_dy += pet_grav
 
 //Catch up horizontally
 
-player_xdistance = obj_pelaaja.x - x;
+player_xdistance = obj_player.x - x;
 
 if (pet_out_of_view)
 {
-    x = obj_pelaaja.x - obj_pelaaja.sprite_width;
-    y = obj_pelaaja.y;
+    x = obj_player.x - obj_player.sprite_width;
+    y = obj_player.y;
     pet_dy = 0;
     
     pet_out_of_view = false;
 }
-else if (abs(player_xdistance) &gt; 2 * obj_pelaaja.sprite_width)
+else if (abs(player_xdistance) &gt; 2 * obj_player.sprite_width)
 {
     if (place_meeting(x, y + 1, obj_stone || obj_grass)) pet_dy = pet_jump_speed * -1;
     pet_dx = pet_speed * sign(player_xdistance) * 1.5;
 }
-else if (abs(player_xdistance) &gt; 1.5 * obj_pelaaja.sprite_width)
+else if (abs(player_xdistance) &gt; 1.5 * obj_player.sprite_width)
 {
     if (place_meeting(x, y + 1, obj_stone || obj_grass)) pet_dy = pet_jump_speed * -1;
     pet_dx = pet_speed * sign(player_xdistance);
@@ -138,11 +138,11 @@ else if (abs(player_xdistance) &gt; 1.5 * obj_pelaaja.sprite_width)
 else pet_dy = 0;
 
 //Catch up vertically
-player_ydistance = y - obj_pelaaja.y;
+player_ydistance = y - obj_player.y;
 
-if (player_ydistance &gt; 1.5 * obj_pelaaja.sprite_height)
+if (player_ydistance &gt; 1.5 * obj_player.sprite_height)
 {
-    if (place_meeting(x, y + 1, obj_stone || obj_grass)) pet_dy = obj_pelaaja.vspeed * -1;
+    if (place_meeting(x, y + 1, obj_stone || obj_grass)) pet_dy = obj_player.vspeed * -1;
 }
 </string>
           </argument>

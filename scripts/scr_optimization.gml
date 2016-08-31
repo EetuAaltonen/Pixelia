@@ -1,7 +1,7 @@
 //Optimization
-if (instance_exists(obj_pelaaja))
+if (instance_exists(obj_player))
 {
-    if (distance_to_object(obj_pelaaja) > 500)
+    if (distance_to_object(obj_player) > 500)
     {
         visible = false;
     }

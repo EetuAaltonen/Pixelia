@@ -73,9 +73,9 @@ if hspeed &lt; 0
 }
 
 
-if (distance_to_object(obj_pelaaja) &lt; 50)
+if (distance_to_object(obj_player) &lt; 50)
 {
-    dir = sign(obj_pelaaja.x - x);
+    dir = sign(obj_player.x - x);
     hspeed = dir * 0.8;
     image_speed = 0.5;
 }
@@ -123,7 +123,7 @@ if (distance_to_object(obj_spawner) &lt; 20)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
+    <event eventtype="4" ename="obj_plr_slice">
       <action>
         <libid>1</libid>
         <id>603</id>

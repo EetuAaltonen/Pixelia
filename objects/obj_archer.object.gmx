@@ -275,7 +275,7 @@ draw_state = false;
           <argument>
             <kind>1</kind>
             <string>//Turn
-if (obj_pelaaja.x &gt; x)
+if (obj_player.x &gt; x)
 {
     image_index = 0;
 }
@@ -304,7 +304,7 @@ if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
+    <event eventtype="4" ename="obj_plr_slice">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -373,7 +373,7 @@ instance_destroy();
 //Font
 draw_set_font(fnt_enemies_stats);
 
-if (distance_to_object(obj_pelaaja) &lt; 200)
+if (distance_to_object(obj_player) &lt; 200)
 {
     
     if (global.enemy_stats1 == 0 and draw_state == false)

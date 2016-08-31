@@ -202,7 +202,7 @@ if (hspeed &gt; 0 and place_meeting(x+10, y, obj_grass) //!place_free(x+10, y)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
+    <event eventtype="4" ename="obj_plr_slice">
       <action>
         <libid>1</libid>
         <id>603</id>

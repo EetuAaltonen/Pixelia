@@ -70,13 +70,13 @@ else if (i == 3)
     ini_open("Save.sav");
     ini_write_string("Save1",Id,"sold");
     State = "sold";
-    obj_pelaaja.action_state = "null";
+    obj_player.action_state = "null";
     ini_close();
 }
 else
 {
     i = 0;
-    obj_pelaaja.action_state = "null";
+    obj_player.action_state = "null";
 }
 </string>
           </argument>
@@ -158,11 +158,11 @@ if (State == "sold")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_pelaaja.action_state == "null")
+            <string>if (obj_player.action_state == "null")
 {    
     if (global.coins &gt; price || global.coins == price)
     {
-        obj_pelaaja.action_state = "confirm";
+        obj_player.action_state = "confirm";
         i = 1;
         alarm[2] = 100;
     }

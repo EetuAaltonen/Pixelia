@@ -49,7 +49,7 @@ global.turria = global.myhp
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.myhp&lt;1{with obj_pelaaja {instance_destroy()}room_restart()}
+            <string>if global.myhp&lt;1{with obj_player {instance_destroy()}room_restart()}
 </string>
           </argument>
         </arguments>

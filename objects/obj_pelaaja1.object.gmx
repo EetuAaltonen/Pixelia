@@ -143,7 +143,7 @@ global.pause_draw=0;
             <string>hspeed=0;
 damage=1;
 roll=0;
-obj_pelaaja.sprite_index=spr_down;
+obj_player.sprite_index=spr_down;
 </string>
           </argument>
         </arguments>
@@ -321,9 +321,9 @@ if keyboard_check(vk_delete)
      room_restart()}
 
 //Ability
-if lights=1 and obj_pelaaja.image_xscale=1
+if lights=1 and obj_player.image_xscale=1
     {image_speed=0.5 image_xscale=1 sprite_index=spr_abilitylights}
-if lights=1 and obj_pelaaja.image_xscale=-1
+if lights=1 and obj_player.image_xscale=-1
     {image_speed=0.5 image_xscale=-1 sprite_index=spr_abilitylights}
 
 if roll=1 and  hspeed&gt;0 and not keyboard_check(vk_shift)
@@ -337,9 +337,9 @@ if roll=1 and hspeed&lt;0 and not keyboard_check(vk_shift)
     image_xscale=-1
     sprite_index=spr_roll}   
 //Use
-if use=1 and obj_pelaaja.image_xscale=1
+if use=1 and obj_player.image_xscale=1
     {image_speed=0.5 image_xscale=1 sprite_index=spr_abilitylights}
-if use=1 and obj_pelaaja.image_xscale=-1
+if use=1 and obj_player.image_xscale=-1
     {image_speed=0.5 image_xscale=-1 sprite_index=spr_abilitylights}
 
 //Lives

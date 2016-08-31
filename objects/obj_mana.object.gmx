@@ -147,7 +147,7 @@ if (mana_regerate == 1)
     
     if (global.mana &gt;= 0
         and mana_usage == 1
-        and obj_player.sprite_index == spr_pelaaja_shield)
+        and obj_player.sprite_index == spr_plr_shield)
     {
         mana_usage = 0;
         mana_regerate = 0;

@@ -96,7 +96,7 @@ alarm[2] = random_range(50, 80);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not(obj_pelaaja.action_state == "fishing")
+            <string>if not(obj_player.action_state == "fishing")
 {
     instance_destroy();
 }

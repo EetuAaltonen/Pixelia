@@ -246,8 +246,8 @@
     </sprites>
     <sprites name="Player">
       <sprites name="Abilities">
-        <sprite>sprites\spr_pelaaja_shield</sprite>
-        <sprite>sprites\spr_lights</sprite>
+        <sprite>sprites\spr_plr_shield</sprite>
+        <sprite>sprites\spr_plr_slice</sprite>
         <sprite>sprites\spr_pelaaja_slice</sprite>
         <sprite>sprites\spr_pelaaja_roll</sprite>
         <sprite>sprites\spr_player_bow</sprite>
@@ -599,8 +599,8 @@
     <object>objects\obj_pet_ammo</object>
     <objects name="Player">
       <objects name="Abilities">
-        <object>objects\obj_lights</object>
-        <object>objects\obj_pelaaja_shield</object>
+        <object>objects\obj_plr_slice</object>
+        <object>objects\obj_plr_shield</object>
       </objects>
       <object>objects\obj_fishing_bobber</object>
       <object>objects\obj_fishing_line</object>

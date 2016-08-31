@@ -137,7 +137,7 @@ switch (iron)
             <kind>1</kind>
             <string>count = random_range(3, 6);
 
-if (iron &gt; 1 and mining == 1 and obj_pelaaja.action_state = "mining")
+if (iron &gt; 1 and mining == 1 and obj_player.action_state = "mining")
 {
     plus = 0;
     iron -= 1;

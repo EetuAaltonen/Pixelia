@@ -51,7 +51,7 @@
             <string>draw_self();
 
 draw_self();
-if(distance_to_object(obj_pelaaja) &lt; 10)
+if(distance_to_object(obj_player) &lt; 10)
 {
     if (image_xscale == 1)
     {

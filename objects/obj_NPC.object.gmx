@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if(distance_to_object(obj_pelaaja) &lt; 10)
+if(distance_to_object(obj_player) &lt; 10)
 {
     if (image_xscale == 1)
     {
@@ -83,7 +83,7 @@ if(distance_to_object(obj_pelaaja) &lt; 10)
           <argument>
             <kind>1</kind>
             <string>if (global.dialog == false and
-    distance_to_object(obj_pelaaja) &lt; 10 and
+    distance_to_object(obj_player) &lt; 10 and
     global.inventory == 0)
 {
     global.dialog = true;

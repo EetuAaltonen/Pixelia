@@ -105,7 +105,7 @@ alarm[2] = 20; //Add gravity
 
 if (distance_to_object(obj_grass) == 0 and can_hurt == true)
 {
-    /*if not((distance_to_object(obj_pelaaja) == 0) and
+    /*if not((distance_to_object(obj_player) == 0) and
         (distance_to_object(obj_plr_bow) == 0) and
         (distance_to_object(obj_plr_aim) == 0))
     {       

@@ -72,7 +72,7 @@ alarm[1] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_pelaaja) &lt; 80)
+            <string>if (distance_to_object(obj_player) &lt; 80)
 {
     instance_create(x , y, obj_shadow_ammo);
 }
@@ -108,10 +108,10 @@ else if (hspeed &lt; 0)
     image_xscale = -1
 }
 
-if (distance_to_object(obj_pelaaja) &lt; 80
-    and distance_to_object(obj_pelaaja) &gt; 40)
+if (distance_to_object(obj_player) &lt; 80
+    and distance_to_object(obj_player) &gt; 40)
 {
-    move_towards_point(obj_pelaaja.x, obj_pelaaja.y-8, 1)
+    move_towards_point(obj_player.x, obj_player.y-8, 1)
 }
 else
 {
@@ -123,7 +123,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_pelaaja_shield">
+    <event eventtype="4" ename="obj_plr_shield">
       <action>
         <libid>1</libid>
         <id>603</id>

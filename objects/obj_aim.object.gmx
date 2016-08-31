@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*x = obj_pelaaja.x;
-y = obj_pelaaja.y;*/
+            <string>/*x = obj_player.x;
+y = obj_player.y;*/
 </string>
           </argument>
         </arguments>
@@ -49,18 +49,18 @@ y = obj_pelaaja.y;*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*hspeed = obj_pelaaja.hspeed;
-vspeed = obj_pelaaja.vspeed;
+            <string>/*hspeed = obj_player.hspeed;
+vspeed = obj_player.vspeed;
 
-y = obj_pelaaja.y;
+y = obj_player.y;
 
-if (obj_pelaaja.image_xscale == 1)
+if (obj_player.image_xscale == 1)
 {
-    x = obj_pelaaja.x+15;
+    x = obj_player.x+15;
 }
-else if (obj_pelaaja.image_xscale == -1)
+else if (obj_player.image_xscale == -1)
 {
-    x = obj_pelaaja.x-15;
+    x = obj_player.x-15;
 }*/
 </string>
           </argument>

@@ -12,6 +12,6 @@ else if ((instance_nearest(x, y, obj_iron_ore)).x < x)
 }
 if ((instance_nearest(x, y, obj_iron_ore)).iron == 1)
 {
-    obj_pelaaja.action_state = "null"
+    obj_player.action_state = "null"
     sprite_index = spr_pelaaja;
 }

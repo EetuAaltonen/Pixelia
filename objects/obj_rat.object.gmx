@@ -242,7 +242,7 @@ draw_state = false;
           <argument>
             <kind>1</kind>
             <string>//Gravity
-if (place_free(x, y+2) || place_meeting(x, y+2, obj_pelaaja))
+if (place_free(x, y+2) || place_meeting(x, y+2, obj_player))
 {
     gravity = 0.5;
 }
@@ -281,12 +281,12 @@ else if (hspeed &lt; 0)
     sprite_index = spr_rat_1;
     image_speed = 0.2;
 }
-else if (hspeed == 0 and obj_pelaaja.x &gt; x)
+else if (hspeed == 0 and obj_player.x &gt; x)
 {
     sprite_index = spr_rat;
     image_speed = 0;
 }
-else if (hspeed == 0 and obj_pelaaja.x &lt; x)
+else if (hspeed == 0 and obj_player.x &lt; x)
 {
     sprite_index = spr_rat_1;
     image_speed = 0;
@@ -312,7 +312,7 @@ else if (hspeed == 0 and obj_pelaaja.x &lt; x)
           <argument>
             <kind>1</kind>
             <string>//Attack
-if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &gt; x)
+if (distance_to_object(obj_player) &lt; 100 and obj_player.x &gt; x)
 {
     //Jump
     if (hspeed &gt; 0 and place_meeting(x+10, y, obj_grass) //!place_free(x+10, y)
@@ -328,7 +328,7 @@ if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &gt; x)
         hspeed = 1.5;
     }
 }
-else if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &lt; x)
+else if (distance_to_object(obj_player) &lt; 100 and obj_player.x &lt; x)
 {
     //Jump
     if (hspeed &lt; 0 and place_meeting(x-10, y, obj_grass) //!place_free(x-10, y)
@@ -339,7 +339,7 @@ else if (distance_to_object(obj_pelaaja) &lt; 100 and obj_pelaaja.x &lt; x)
         vspeed = -5;
         hspeed = -2;
     }
-    else if (distance_to_object(obj_pelaaja) &lt; 100)
+    else if (distance_to_object(obj_player) &lt; 100)
     {
         hspeed = -1.5;
     } 
@@ -369,7 +369,7 @@ else
           <argument>
             <kind>1</kind>
             <string>//Punch / Hit
-if (distance_to_object(obj_pelaaja) &lt; 6 and sprite_index == spr_rat
+if (distance_to_object(obj_player) &lt; 6 and sprite_index == spr_rat
     and can_punch == true)
 {
     can_punch = false;
@@ -377,7 +377,7 @@ if (distance_to_object(obj_pelaaja) &lt; 6 and sprite_index == spr_rat
     instance_create(x+15, y, obj_enemy_hit);
     (instance_nearest(x, y, obj_enemy_hit)).str = str;
 }
-else if (distance_to_object(obj_pelaaja) &lt; 6 and sprite_index == spr_rat_1
+else if (distance_to_object(obj_player) &lt; 6 and sprite_index == spr_rat_1
          and can_punch == true)
 {
     can_punch = false;
@@ -390,7 +390,7 @@ else if (distance_to_object(obj_pelaaja) &lt; 6 and sprite_index == spr_rat_1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
+    <event eventtype="4" ename="obj_plr_slice">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -511,7 +511,7 @@ alarm[1] = random_range(30, 150);
 //Font
 draw_set_font(fnt_enemies_stats);
 
-if (distance_to_object(obj_pelaaja) &lt; 60)
+if (distance_to_object(obj_player) &lt; 60)
 {
     
     if (global.enemy_stats1 == 0 and draw_state == false)

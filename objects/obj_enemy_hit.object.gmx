@@ -99,7 +99,7 @@ alarm[1] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_hitbox) == 0 and instance_exists(obj_pelaaja))
+            <string>if (distance_to_object(obj_hitbox) == 0 and instance_exists(obj_player))
 {
     if (global.damage == 1)
     {

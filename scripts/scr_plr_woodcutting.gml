@@ -12,6 +12,6 @@ else if ((instance_nearest(x, y, obj_tree)).x < x)
 }
 if ((instance_nearest(x, y, obj_tree)).log == 1)
 {
-    obj_pelaaja.action_state = "null"
+    obj_player.action_state = "null"
     sprite_index = spr_pelaaja;
 }

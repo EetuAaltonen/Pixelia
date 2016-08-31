@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_pelaaja.x;
-y = obj_pelaaja.y;
+            <string>x = obj_player.x;
+y = obj_player.y;
 image_speed = 0;
 </string>
           </argument>
@@ -50,9 +50,9 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_pelaaja.x;
-y = obj_pelaaja.y;
-speed = obj_pelaaja.speed;
+            <string>x = obj_player.x;
+y = obj_player.y;
+speed = obj_player.speed;
 </string>
           </argument>
         </arguments>

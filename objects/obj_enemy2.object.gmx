@@ -59,15 +59,15 @@ if(global.pause=1)
 //Folloving
 if hspeed &gt; 0 {image_xscale=1}
 if hspeed &lt; 0 {image_xscale=-1}
-if (distance_to_object(obj_pelaaja) &gt; 100)
+if (distance_to_object(obj_player) &gt; 100)
     {
         image_speed = 0;
         hspeed = 0;
         vspeed = 0;
     }
-else if (distance_to_object(obj_pelaaja) &lt; 100)
+else if (distance_to_object(obj_player) &lt; 100)
     {
-        dir = sign(obj_pelaaja.x - x);
+        dir = sign(obj_player.x - x);
         hspeed = dir * 1;
         vspeed = 0;
         image_speed = 0.5;
@@ -103,7 +103,7 @@ if place_free(x,y+1)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
+    <event eventtype="4" ename="obj_plr_slice">
       <action>
         <libid>1</libid>
         <id>603</id>

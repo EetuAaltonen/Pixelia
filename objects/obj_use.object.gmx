@@ -26,15 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>alarm[1] = 2;
-if (obj_pelaaja.image_xscale=1)
+if (obj_player.image_xscale=1)
 {
-    x = obj_pelaaja.x+10;
-    y = obj_pelaaja.y;
+    x = obj_player.x+10;
+    y = obj_player.y;
 }
-else if (obj_pelaaja.image_xscale=-1)
+else if (obj_player.image_xscale=-1)
 {
-    x = obj_pelaaja.x-10;
-    y = obj_pelaaja.y;
+    x = obj_player.x-10;
+    y = obj_player.y;
 }
 </string>
           </argument>

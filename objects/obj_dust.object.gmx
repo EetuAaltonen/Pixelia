@@ -49,20 +49,20 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=0.1;
-vspeed=obj_pelaaja.vspeed;
-hspeed=obj_pelaaja.hspeed;
+vspeed=obj_player.vspeed;
+hspeed=obj_player.hspeed;
 
-if obj_pelaaja.hspeed&gt;=3 and obj_pelaaja.sprite_index==spr_pelaaja
+if obj_player.hspeed&gt;=3 and obj_player.sprite_index==spr_pelaaja
 {
     visible=true;
-    x=obj_pelaaja.x-28;
-    y=obj_pelaaja.y+12;
+    x=obj_player.x-28;
+    y=obj_player.y+12;
 }
-else if obj_pelaaja.hspeed&lt;=-3 and obj_pelaaja.sprite_index==spr_pelaaja
+else if obj_player.hspeed&lt;=-3 and obj_player.sprite_index==spr_pelaaja
 {
     visible=true;
-    x=obj_pelaaja.x+28;
-    y=obj_pelaaja.y+12;
+    x=obj_player.x+28;
+    y=obj_player.y+12;
 }
 else
 {

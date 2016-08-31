@@ -29,7 +29,7 @@
 image_index = 0;
 image_xscale = 1;
 shoot = false;
-image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
+image_angle = point_direction(x, y, obj_player.x, obj_player.y);
 </string>
           </argument>
         </arguments>
@@ -77,16 +77,16 @@ image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
             <kind>1</kind>
             <string>if (/*distance_to_object(obj_archer) &lt; 6 and */instance_exists(obj_archer))
 {
-    if (instance_exists(obj_pelaaja))
+    if (instance_exists(obj_player))
     {
-        if (distance_to_object(obj_pelaaja) &lt; 100)
+        if (distance_to_object(obj_player) &lt; 100)
         {
-            image_angle = point_direction(x, y, obj_pelaaja.x, obj_pelaaja.y);
+            image_angle = point_direction(x, y, obj_player.x, obj_player.y);
             
-            /*if (not(x - obj_pelaaja.x) &gt; 5 and
-                not(x - obj_pelaaja.x) &lt; -5) 
+            /*if (not(x - obj_player.x) &gt; 5 and
+                not(x - obj_player.x) &lt; -5) 
             {*/
-                if (obj_pelaaja.x &gt; x)
+                if (obj_player.x &gt; x)
                 {
                     if (instance_exists(obj_archer))
                     {
@@ -136,9 +136,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_pelaaja))
+            <string>if (instance_exists(obj_player))
 {
-    if (distance_to_object(obj_pelaaja) == 0)
+    if (distance_to_object(obj_player) == 0)
         //and not distance_to_object(obj_grass) == 0)
     {
         if (shoot == false)

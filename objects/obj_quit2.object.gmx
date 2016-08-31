@@ -48,10 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vspeed=obj_pelaaja.vspeed;
-hspeed=obj_pelaaja.hspeed;
-x=obj_pelaaja.x;
-y=obj_pelaaja.y-20;
+            <string>vspeed=obj_player.vspeed;
+hspeed=obj_player.hspeed;
+x=obj_player.x;
+y=obj_player.y-20;
 
 if global.pause=1
 {

@@ -47,24 +47,24 @@ else if (hspeed &lt; -0.5)
     hspeed = -0.5;
 }
 //Push
-if (distance_to_object(obj_pelaaja) &lt; 10 and obj_pelaaja.action_state == "push")
+if (distance_to_object(obj_player) &lt; 10 and obj_player.action_state == "push")
 {
-    if (instance_nearest(x, y, obj_pelaaja).x &lt; x
+    if (instance_nearest(x, y, obj_player).x &lt; x
         and keyboard_check(vk_right))
     {
         hspeed = 0.7;
     }
-    else if (instance_nearest(x, y, obj_pelaaja).x &gt; x
+    else if (instance_nearest(x, y, obj_player).x &gt; x
         and keyboard_check(vk_left))
     {
         hspeed = -0.7;
     }
-    else if (instance_nearest(x, y, obj_pelaaja).x &gt; x
+    else if (instance_nearest(x, y, obj_player).x &gt; x
         and keyboard_check(vk_right))
     {
         hspeed = 0.3;
     }
-    else if (instance_nearest(x, y, obj_pelaaja).x &lt; x
+    else if (instance_nearest(x, y, obj_player).x &lt; x
         and keyboard_check(vk_left))
     {
         hspeed = -0.3;

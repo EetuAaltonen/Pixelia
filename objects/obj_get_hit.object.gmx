@@ -48,14 +48,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vspeed=obj_pelaaja.vspeed
-hspeed=obj_pelaaja.hspeed
-x=obj_pelaaja.x
-y=obj_pelaaja.y
+            <string>vspeed=obj_player.vspeed
+hspeed=obj_player.hspeed
+x=obj_player.x
+y=obj_player.y
 
-if obj_pelaaja.damage=0
+if obj_player.damage=0
     {visible=true}
-if obj_pelaaja.damage=1
+if obj_player.damage=1
     {visible=false}
 </string>
           </argument>

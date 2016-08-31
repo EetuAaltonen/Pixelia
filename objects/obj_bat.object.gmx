@@ -231,7 +231,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_lights">
+    <event eventtype="4" ename="obj_plr_slice">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -356,7 +356,7 @@ alarm[1] = random_range(30, 150);
 //Font
 draw_set_font(fnt_enemies_stats);
 
-if (distance_to_object(obj_pelaaja) &lt; 60)
+if (distance_to_object(obj_player) &lt; 60)
 {
     
     if (global.enemy_stats1 == 0 and draw_state == false)

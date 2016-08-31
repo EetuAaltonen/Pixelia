@@ -19,6 +19,6 @@ else if (instance_nearest(x,y,obj_crate).x < x)
 if (distance_to_object(instance_nearest(x, y, obj_crate)) > 3 ||
     instance_nearest(x, y, obj_crate).vspeed > 2)
 {
-    obj_pelaaja.action_state = "null";
+    obj_player.action_state = "null";
     sprite_index = spr_pelaaja;
 }
