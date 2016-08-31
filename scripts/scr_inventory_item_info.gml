@@ -1,3 +1,32 @@
+//Materials
+    //Icon
+    Icon["mater0"] = "spr_aim";
+    Icon["mater"] = "spr_icon_ironore";
+    Icon["mater2"] = "spr_icon_log";
+    Icon["mater3"] = "spr_icon_coal";
+    Icon["mater4"] = "spr_icon_ironbar";
+    Icon["mater5"] = "spr_icon_steelbar";
+    //Description
+    Descr["mater0"] = "Empty";
+    Descr["mater"] = "Ironore";
+    Descr["mater2"] = "Log";
+    Descr["mater3"] = "Coal";
+    Descr["mater4"] = "Ironbar";
+    Descr["mater5"] = "Steelbar";
+    //Object
+    Object["mater"] = obj_mater_ironore;
+    Object["mater2"] = obj_mater_log;
+    Object["mater3"] = obj_mater_coal;
+    Object["mater4"] = obj_mater_ironbar;
+    Object["mater5"] = obj_mater_steelbar;
+//Info
+Info["mater0"] = "Info...";
+Info["mater1"] = "Ironore";
+Info["mater2"] = "Log";
+Info["mater3"] = "Coal";
+Info["mater4"] = "Ironbar";
+Info["mater5"] = "Steelbar";
+/*
 //Icon
 Icon[0] = "spr_aim";
 Icon[1] = "spr_icon_ironore";

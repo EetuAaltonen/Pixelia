@@ -357,6 +357,7 @@
       <script>scripts\scr_first_loading_screen_objects.gml</script>
       <script>scripts\scr_loadgame.gml</script>
       <script>scripts\scr_save_to_inventory.gml</script>
+      <script>scripts\scr_save_material.gml</script>
       <script>scripts\scr_savegame.gml</script>
     </scripts>
     <script>scripts\scr_add_xp.gml</script>
