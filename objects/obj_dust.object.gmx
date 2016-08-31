@@ -52,13 +52,13 @@
 vspeed=obj_player.vspeed;
 hspeed=obj_player.hspeed;
 
-if obj_player.hspeed&gt;=3 and obj_player.sprite_index==spr_pelaaja
+if obj_player.hspeed&gt;=3 and obj_player.sprite_index==spr_player
 {
     visible=true;
     x=obj_player.x-28;
     y=obj_player.y+12;
 }
-else if obj_player.hspeed&lt;=-3 and obj_player.sprite_index==spr_pelaaja
+else if obj_player.hspeed&lt;=-3 and obj_player.sprite_index==spr_player
 {
     visible=true;
     x=obj_player.x+28;

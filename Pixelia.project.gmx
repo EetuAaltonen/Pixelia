@@ -248,10 +248,9 @@
       <sprites name="Abilities">
         <sprite>sprites\spr_plr_shield</sprite>
         <sprite>sprites\spr_plr_slice</sprite>
-        <sprite>sprites\spr_pelaaja_slice</sprite>
-        <sprite>sprites\spr_pelaaja_roll</sprite>
+        <sprite>sprites\spr_plr_roll</sprite>
         <sprite>sprites\spr_player_bow</sprite>
-        <sprite>sprites\spr_plr_bow_1</sprite>
+        <sprite>sprites\spr_plr_bow</sprite>
       </sprites>
       <sprites name="Old">
         <sprite>sprites\spr_roll</sprite>
@@ -265,7 +264,6 @@
       <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_hitbox_small</sprite>
       <sprite>sprites\spr_player</sprite>
-      <sprite>sprites\spr_plr_bow</sprite>
       <sprite>sprites\spr_plr_down</sprite>
       <sprite>sprites\spr_plr_fishing</sprite>
       <sprite>sprites\spr_plr_jump</sprite>

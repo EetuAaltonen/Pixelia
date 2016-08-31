@@ -1,6 +1,6 @@
 hspeed = 0;
 vspeed = 0;
-sprite_index = spr_pelaaja_woodcutting;
+sprite_index = spr_plr_woodcutting;
 image_speed = 0.1;
 if ((instance_nearest(x, y, obj_tree)).x > x)
 {
@@ -13,5 +13,5 @@ else if ((instance_nearest(x, y, obj_tree)).x < x)
 if ((instance_nearest(x, y, obj_tree)).log == 1)
 {
     obj_player.action_state = "null"
-    sprite_index = spr_pelaaja;
+    sprite_index = spr_player;
 }

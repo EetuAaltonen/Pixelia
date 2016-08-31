@@ -220,7 +220,7 @@ else if (growth == 100)
     {
         selecting_seed = false;
         obj_player.action_state = "null";
-        obj_player.sprite_index = spr_pelaaja;
+        obj_player.sprite_index = spr_player;
         growth = 1;
         alarm[1] = 20;
     }
@@ -229,7 +229,7 @@ else if (growth == 100)
         selected_seed = 1;
         selecting_seed = false;
         obj_player.action_state = "null";
-        obj_player.sprite_index = spr_pelaaja;
+        obj_player.sprite_index = spr_player;
     }
 }
 </string>

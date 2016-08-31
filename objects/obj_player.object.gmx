@@ -218,7 +218,7 @@ scr_current_room();
             <string>//Fix down animation stuck
 if (place_free(x,y-3) and roll == 0)
 {
-    sprite_index = spr_pelaaja;
+    sprite_index = spr_player;
 }
 </string>
           </argument>
@@ -291,7 +291,7 @@ if (place_free(x,y-3) and roll == 0)
             <kind>1</kind>
             <string>//Roll
 
-if (sprite_index = spr_pelaaja_roll)
+if (sprite_index = spr_plr_roll)
 {
     global.stamina -= 3;
 }
@@ -300,8 +300,8 @@ global.damage = 1;
 roll = 0;
 image_speed = 0;
 image_alpha = 1;
-sprite_index = spr_pelaaja_down;
-sprite_index = spr_pelaaja;
+sprite_index = spr_plr_down;
+sprite_index = spr_player;
 </string>
           </argument>
         </arguments>
@@ -351,7 +351,7 @@ sprite_index = spr_pelaaja;
           <argument>
             <kind>1</kind>
             <string>slice = 0;
-sprite_index=spr_pelaaja;
+sprite_index=spr_player;
 </string>
           </argument>
         </arguments>
@@ -553,7 +553,7 @@ else if (action_state == "null")
         and !place_free(x, y+3))
     {
         global.damage = 0;
-        sprite_index = spr_pelaaja_roll;
+        sprite_index = spr_plr_roll;
         hspeed = 5;
         gravity = 0;
         image_speed = 1;
@@ -564,7 +564,7 @@ else if (action_state == "null")
              and !place_free(x, y+3))
     {
         global.damage = 0;
-        sprite_index = spr_pelaaja_roll;
+        sprite_index = spr_plr_roll;
         hspeed = -5;
         gravity = 0;
         image_speed = 1;
@@ -1595,7 +1595,7 @@ if not(action_state == "bow")
 else if (action_state == "bow")
 {
     action_state = "null";
-    sprite_index = spr_pelaaja;
+    sprite_index = spr_player;
 }
 </string>
           </argument>
@@ -1707,7 +1707,7 @@ else if (action_state == "bow")
 global.stamina -= 2;
 slice = 1;
 image_speed = 0.5;
-sprite_index = spr_pelaaja_slice;
+sprite_index = spr_plr_slice;
 alarm[1] = 25;
 </string>
           </argument>
@@ -1841,7 +1841,7 @@ alarm[1] = 25;
     if (action_state == "push")
     {
         action_state = "null";
-        sprite_index = spr_pelaaja;
+        sprite_index = spr_player;
     }
     
     else if (action_state == "null" and 
@@ -1861,7 +1861,7 @@ alarm[1] = 25;
     else if (action_state == "mining")
     {
         action_state = "null";
-        sprite_index = spr_pelaaja;
+        sprite_index = spr_player;
     }
 
     //Woodcutting
@@ -1875,7 +1875,7 @@ alarm[1] = 25;
         else if (action_state == "woodcutting")
         {
             action_state = "null";
-            sprite_index = spr_pelaaja;
+            sprite_index = spr_player;
         }
     }
     
@@ -1890,7 +1890,7 @@ alarm[1] = 25;
     else if (action_state == "fishing")
     {
         action_state = "null";
-        sprite_index = spr_pelaaja;
+        sprite_index = spr_player;
     }
     
     //Ladder

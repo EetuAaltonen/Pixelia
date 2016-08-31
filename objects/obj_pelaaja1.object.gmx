@@ -274,9 +274,9 @@ if(global.pause=1)
 if hspeed &gt; 0 {image_xscale=1}
 if hspeed &lt; 0 {image_xscale=-1}
 if keyboard_check(vk_left) and not keyboard_check(vk_down)
-    {image_speed=0.5 hspeed=-2 sprite_index=spr_pelaaja}
+    {image_speed=0.5 hspeed=-2 sprite_index=spr_player}
 if keyboard_check(vk_right) and not keyboard_check(vk_down)
-    {image_speed=0.5 hspeed=2 sprite_index=spr_pelaaja}
+    {image_speed=0.5 hspeed=2 sprite_index=spr_player}
 
 //Run   
 if keyboard_check(vk_shift) and keyboard_check(vk_left) and not keyboard_check(vk_down)
@@ -688,7 +688,7 @@ if (!place_free(x+hspeed,y+vspeed))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hspeed=0{image_speed=0 sprite_index=spr_pelaaja}else{image_speed=0.2 sprite_index=spr_pelaaja}
+            <string>if hspeed=0{image_speed=0 sprite_index=spr_player}else{image_speed=0.2 sprite_index=spr_player}
 if (!place_free(x+hspeed,y))
 {
     if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}

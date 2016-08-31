@@ -90,7 +90,7 @@ spawner=1;
     obj_player.hspeed=0
     obj_player.vspeed=0
     obj_player.gravity=0
-    obj_player.sprite_index=spr_pelaaja
+    obj_player.sprite_index=spr_player
     obj_player.image_speed=0
     
     global.enemy=0

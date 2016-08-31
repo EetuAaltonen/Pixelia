@@ -56,7 +56,7 @@ if(global.pause=1)
     hspeed=0
     vspeed=0
     gravity=0
-    sprite_index=spr_pelaaja
+    sprite_index=spr_player
     image_speed=0
     exit;
 }
