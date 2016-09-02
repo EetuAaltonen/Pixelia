@@ -253,18 +253,15 @@ if (global.hud_state == "inventory1")
                 item_count += 1;
             }
             //Change category
-            if (search_id == "mater" and item_id == 100)
+            if (search_id == "mater" and item_id == 100) //This is first category of ordering
             {
-                //search_id = "ingr";
+                search_id = "ingr";
+                item_id = 1;
+            }
+            else if(search_id == "ingr" and item_id &lt; 101)
+            {
                 break;
             }
-            /*else if(search_id == "ingr" and item_id &lt; 101)
-            {
-            }*/
-            /*else
-            {
-                break;
-            }*/
         }
         ini_close();
         loop_stop = true;

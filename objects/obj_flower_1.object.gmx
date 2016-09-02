@@ -26,6 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.2;
+
+//Save to inventory info
+item_id = 1; //Id
+search_id = "ingr"; //Type
+added_amount = 1; //Added amount
 </string>
           </argument>
         </arguments>
@@ -52,8 +57,6 @@
 instance_create(x, y, obj_flower_1_collected)
 
 //Save to inventory
-global.n1 = 3;
-global.AddedItemAmount = 1;
 scr_save_to_inventory();
 
 instance_destroy();
