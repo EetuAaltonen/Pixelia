@@ -32,9 +32,11 @@ global.n1 = 0;
 global.n2 = 0;
 item_id = 0;
 item_amount = 0;
-search_id = 0;
 item_count = 0;
+
+//Read saved ini
 key = "";
+search_id = "";
 
 //Coins
 global.coins = 0;
@@ -158,16 +160,16 @@ if (keyboard_check_released(vk_tab))
             <kind>1</kind>
             <string>//Inventory page
 if (global.hud_state == "inventory1" and keyboard_check_released(vk_right) and
-    (global.item_count - ((global.inventory_page+1)*8)) &gt; 0)
+    (item_count - ((inventory_page+1)*8)) &gt; 0)
 {
-    global.inventory_page += 1;
-    global.page_update = true;
+    inventory_page += 1;
+    page_update = true;
 }
 else if (global.hud_state == "inventory1" and keyboard_check_released(vk_left)
-         and global.inventory_page &gt; 0)
+         and inventory_page &gt; 0)
 {
-    global.inventory_page -= 1;
-    global.page_update = true;
+    inventory_page -= 1;
+    page_update = true;
 }
 </string>
           </argument>

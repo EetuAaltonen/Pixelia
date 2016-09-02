@@ -33,9 +33,9 @@ wood = 1;
 hit = 0;
 
 //Save to inventory info
-item_id = 2; //Log
-search_id = "mater";
-added_amount = 1;
+item_id = 2; //Id
+search_id = "mater"; //Type
+added_amount = 1; //Added amount
 </string>
           </argument>
         </arguments>

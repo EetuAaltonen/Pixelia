@@ -89,8 +89,8 @@ can_open_or_close = true;
         instance_create(view_xview+464, view_yview+54, obj_craft_close_button);
         instance_create(view_xview+350, view_yview+147, obj_forg_crafted_item); //Crafted item (slot 4)
         
-        obj_forge_controller.update_amounts = true; //Update amounts in list
         obj_forge_controller.update_list = true;
+        obj_forge_controller.update_amounts = true; //Update amounts in list
         obj_forge_controller.create_once = true; //Create objects once on the list
     }
 }
