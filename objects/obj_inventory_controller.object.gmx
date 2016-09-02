@@ -225,34 +225,30 @@ if (global.hud_state == "inventory1")
         search_id = "mater";
         
         ini_open("Inventory.sav");
-        for(item_id = 1; item_id &lt; 102; item_id++)
+        for(item_id = 1; item_id &lt; 101; item_id++)
         {
             key = search_id + "[" + string(item_id) + "]";
             //Item amount
             item_amount[item_id] = ini_read_real("Save1", key, -1);
             
-            //Check if item amount != 0
-            if not(item_amount[item_id] == -1)
+            //Check if item amount &gt; 0
+            if (round(item_amount[item_id]) &gt; 0)
             {
-                //Check if item amount != 0
-                if not(round(item_amount[item_id]) == 0)
-                {
-                    //Item icon
-                    scr_inventory_item_info();
-                    item_icon[item_id] = string(Icon[item_id]);
-                    
-                    //Item description
-                    item_description[item_id] = string(Descr[item_id]);
-                    
-                    //Item amount is top of for loop
-                    
-                    //Draw
-                    item_icon_draw[item_id] = item_icon[item_id];
-                    item_description_draw[item_id] = item_description[item_id];
-                    item_amount_draw[item_id] = item_amount[item_id];
-                    
-                    item_count += 1;
-                }
+                //Item icon
+                scr_inventory_item_info();
+                item_icon[item_id] = string(Icon[item_id]);
+                
+                //Item description
+                item_description[item_id] = string(Descr[item_id]);
+                
+                //Item amount is top of for loop
+                
+                //Draw
+                item_icon_draw[item_id] = item_icon[item_id];
+                item_description_draw[item_id] = item_description[item_id];
+                item_amount_draw[item_id] = item_amount[item_id];
+                
+                item_count += 1;
             }
             //Change category
             if (search_id == "mater" and item_id == 100)
@@ -269,8 +265,8 @@ if (global.hud_state == "inventory1")
             }*/
         }
         ini_close();
-    } 
-    loop_stop = true;
+        loop_stop = true;
+    }
     var y_pos; //y position
     y_pos = 110;
     if (item_count &gt; 0)
@@ -306,23 +302,33 @@ if (global.hud_state == "inventory1")
             }
             page_update = false;
         }
-        for (item_id = start_count + 1; item_id &lt; end_count; item_id++;)
+        item_id = start_count;
+        var i;
+        for (i = start_count; i != end_count; i++;)
         {
-            //Item background
-            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y_pos);
-            //Item icons
-            draw_sprite(asset_get_index(string(item_icon_draw[item_id])), 0,view_xview+30, view_yview+7+y_pos);           
-            //Item description background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y_pos);
-            //Item description
-            draw_text_color(view_xview+55,view_yview+y_pos, string(item_description_draw[item_id]),
-                            c_black, c_black, c_black, c_black, 1);
-            //Item amount background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y_pos);
-            //Item amount
-            draw_text_color(view_xview+207,view_yview+y_pos, string(item_amount_draw[item_id]),
-                            c_black, c_black, c_black, c_black, 1);
-            y_pos += 19;
+            if (string_pos("spr_", string(item_icon_draw[item_id])))
+            { 
+                //Item background
+                draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y_pos);
+                //Item icons
+                draw_sprite(asset_get_index(string(item_icon_draw[item_id])), 0,view_xview+30, view_yview+7+y_pos);           
+                //Item description background
+                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y_pos);
+                //Item description
+                draw_text_color(view_xview+55,view_yview+y_pos, string(item_description_draw[item_id]),
+                                c_black, c_black, c_black, c_black, 1);
+                //Item amount background
+                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y_pos);
+                //Item amount
+                draw_text_color(view_xview+207,view_yview+y_pos, string(item_amount_draw[item_id]),
+                                c_black, c_black, c_black, c_black, 1);
+                y_pos += 19;
+            }
+            else
+            {
+                i -= 1;
+            }
+            item_id += 1;
         }
         //Page number background
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);

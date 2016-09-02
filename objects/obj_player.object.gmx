@@ -1505,11 +1505,11 @@ cooldown_shield = 0;
 
 if (image_xscale == 1)
 {
-    instance_create(x+3, y-1, obj_pelaaja_shield)
+    instance_create(x+3, y-1, obj_plr_shield)
 }
 else if (image_xscale == -1)
 {
-    instance_create(x-3, y-1, obj_pelaaja_shield)
+    instance_create(x-3, y-1, obj_plr_shield)
 }
 </string>
           </argument>
@@ -1707,7 +1707,6 @@ else if (action_state == "bow")
 global.stamina -= 2;
 slice = 1;
 image_speed = 0.5;
-sprite_index = spr_plr_slice;
 alarm[1] = 25;
 </string>
           </argument>
