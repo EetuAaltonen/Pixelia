@@ -92,6 +92,8 @@ can_open_or_close = true;
         obj_forge_controller.update_list = true;
         obj_forge_controller.update_amounts = true; //Update amounts in list
         obj_forge_controller.create_once = true; //Create objects once on the list
+        obj_forge_controller.page_refresh = true;
+        obj_forge_controller.forge_page = 0;
     }
 }
 </string>

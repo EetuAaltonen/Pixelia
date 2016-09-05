@@ -18,8 +18,6 @@ var SavedQuest= string(global.quest);
 
 var SavedCoins = global.coins;
 var SavedPotions = global.potions;
-var SavedIronores = global.ironore;
-var SavedLogs = global.logs;
 
 //Home village
 var SavedHomeHappiness = global.home_happiness;

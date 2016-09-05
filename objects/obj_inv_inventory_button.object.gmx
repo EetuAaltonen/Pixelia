@@ -32,7 +32,7 @@ if (!string_pos("inventory", string(global.hud_state)))
 }
 
 //Animation
-if (global.hud_state == 1)
+if (global.hud_state == "inventory1")
 {
     image_index = 1;
 }

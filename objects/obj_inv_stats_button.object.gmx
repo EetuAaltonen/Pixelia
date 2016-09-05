@@ -32,7 +32,7 @@ if (!string_pos("inventory", string(global.hud_state)))
 }
 
 //Animation
-if (global.hud_state == 2)
+if (global.hud_state == "inventory3")
 {
     image_index = 1;
 }
@@ -62,7 +62,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.hud_state = "inventory2";
+            <string>global.hud_state = "inventory3";
 </string>
           </argument>
         </arguments>

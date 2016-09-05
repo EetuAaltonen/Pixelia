@@ -26,13 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>//Forge
-forg1 = 0;
-forg2 = 0;
-forg_page = 0;
 
 //Read saved ini
 search_id = "mater";
-ref = 1;
 
 update_amounts = true; //Update amounts in list
 update_list = true;
@@ -76,149 +72,106 @@ if (global.hud_state == "forge")
             item_count = 0;
             search_id = "mater";
             i = 0;
+            
             ini_open("Inventory.sav");
             for(item_id = 1; item_id &lt; 101; item_id++)
             {
                 //Change category
-                if (search_id == "mater" and item_id == 100) //This is first category of ordering
+                if (item_id == 100)
                 {
                     break;
                 }
                 key = search_id + "[" + string(item_id) + "]";
                 //Item amount
-                item_amount[ref,item_id] = ini_read_real("Save1", key, -1);
+                item_amount[1,item_id] = ini_read_real("Save1", key, -1);
                 
                 //Check if item amount &gt; 0
-                if (round(item_amount[ref,item_id]) &gt; 0)
+                if (round(item_amount[1,item_id]) &gt; 0)
                 {
                     //Item icon
                     scr_inventory_item_info();
-                    item_icon[ref,item_id] = string(Icon[ref,item_id]);
+                    material[1,item_id] = string(Object[item_id]);
                     
                     //Item description
-                    item_description[ref,item_id] = string(Descr[ref,item_id]);
+                    item_description[1,item_id] = string(Descr[1,item_id]);
                     
                     //Item amount is top of for loop
                     
                     //Draw
-                    item_icon_draw[i] = item_icon[ref,item_id];
-                    item_description_draw[i] = item_description[ref,item_id];
-                    item_amount_draw[i] = item_amount[ref,item_id];
+                    material_create[i] = material[1,item_id];
+                    description_draw[i] = item_description[1,item_id];
+                    amount_draw[i] = item_amount[1,item_id];
                     
                     item_count += 1;
                     i += 1;
                 }
             }
-            ini_close();
-            forg_amount_draw[forg2] = 0;
-            forg_amount[forg1] = 0;
-            forg_object_draw[forg2] = "spr_aim";
-            forg_object[forg1] = "spr_aim";
-            forg1 = 1; //Start
-            forg2 = 0;
-            for(forg1 = 1; forg1 &lt; 101; forg1++)
-            { 
-                //Material amount
-                ini_open("Inventory.sav");
-                key = search_id + "[" + string(forg1) + "]";
-                ForgAmount = ini_read_real("Save1",key,-1);
-                ini_close();
-                
-                if (round(ForgAmount) &gt; 0)
-                {                      
-                    //Material object
-                    scr_inventory_item_info();
-                    ForgObject = Object[forg1];
+        }
+        ini_close();
+        update_amounts = false;
+    }
+    if (item_count &gt; 0)
+    {
+        if (page_refresh == true)
+        {
+            size_of_list = 8; //Limit of list
+            start_count = 0; //First item
+            if (item_count &gt; 8)
+            {                       //This have to be set!
+                if ((item_count - ((forge_page+1)*8)) &gt; 0 and forge_page == 0)
+                {
+                    start_count = 0;
+                    end_count = 8;
                     
-                    //Material description
-                    scr_inventory_item_info();
-                    ForgDescription = string(Descr[forg1]);    
-                
-                    forg_object[forg1] = ForgObject;
-                    forg_description[forg1] = ForgDescription;
-                    forg_amount[forg1] = round(ForgAmount);
-                    
-                    //Draw
-                    forg_object_draw[forg2] = forg_object[forg1];
-                    forg_description_draw[forg2] = forg_description[forg1];
-                    forg_amount_draw[forg2] = forg_amount[forg1];
-                    
-                    forg2 += 1;
+                }
+                else if ((item_count - ((forge_page+1)*8)) &gt; 0 and
+                        forge_page &gt; 0)
+                {
+                    start_count = (forge_page*8);
+                    end_count = ((forge_page*8)*2);
                 }
                 else
                 {
-                    //Forced delete Material if amount = 0 (while making potions)
-                    if (instance_exists(ForgObject))
-                    {
-                        forg_amount[(ForgObject).number] = 0;
-                    }
+                    start_count = (forge_page*8);
+                    end_count = item_count;
                 }
-            }
-            forg_count = forg2;
-            update_amounts = false;
-        }
-    }
-    update_list = false;
-    
-    //Draw everything
-    var y1, y2;
-    y1 = 110;
-    y2 = 110;
-    if (forg_count &gt; 0)
-    {
-        forg_end_count = 8; //Limit of list
-        forg_start_count = 0; //First item number
-        if (forg_count &gt; 8)
-        {
-            if ((forg_count - ((forg_page+1)*8)) &gt; 0 and forg_page == 0)
-            {
-                forg_start_count = 0;
-                forg_end_count = 8;
-                
-            }
-            else if ((forg_count - ((forg_page+1)*8)) &gt; 0 and
-                    forg_page &gt; 0)
-            {
-                forg_start_count = (forg_page*8);
-                forg_end_count = ((forg_page*8)*2);
             }
             else
             {
-                forg_start_count = (forg_page*8);
-                forg_end_count = forg_count;
+                end_count = item_count;
+                start_count = 0;
             }
+            page_refresh = false;
+            create_once = true;
         }
-        else
-        {
-            forg_end_count = forg_count;
-            forg_start_count = 0;
-        }
+        var y_pos; //y position
+        y_pos = 110;
         if (create_once == true)
         {
-            for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)
+            for (i = start_count; i &lt; end_count; i++;)
             {
                 //Materials
-                instance_create(view_xview+30, view_yview+7+y2, forg_object_draw[forg2])
-                y2 += 19;
+                instance_create(view_xview+30, view_yview+7+y_pos, material_create[i])
+                y_pos += 19;
             }
             create_once = false;
+            y_pos = 110;
         }
-        for (forg2 = forg_start_count; forg2 &lt; forg_end_count; forg2++;)
+        for (i = start_count; i &lt; end_count; i++;)
         {
             //Material background
-            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);               
+            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y_pos);               
             //Material description background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
-            //Create objects on the list
+            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y_pos);
             //Material description
-            draw_text_color(view_xview+55,view_yview+y1, string(forg_description_draw[forg2]),
+            draw_text_color(view_xview+55,view_yview+y_pos, string(description_draw[i]),
                             c_black, c_black, c_black, c_black, 1);
             //Material amount background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y_pos);
             //Material amount
-            draw_text_color(view_xview+207,view_yview+y1, string(forg_amount_draw[forg2]),
+            draw_text_color(view_xview+207,view_yview+y_pos, string(amount_draw[i]),
                             c_black, c_black, c_black, c_black, 1);
-            y1 += 19;
+            y_pos += 19;
         }
     }
     else
@@ -227,20 +180,23 @@ if (global.hud_state == "forge")
         draw_text_color(view_xview+30, view_yview+117, "You don't have any ores...",
                             c_black, c_black, c_black, c_black, 1);
     }
+    //Item count
+    draw_text_color(view_xview+350,view_yview+95, string(item_count),
+                    c_black, c_black, c_black, c_black, 1);
     //Forge
     draw_text_color(view_xview+20,view_yview+60, "Forge",
                     c_black, c_black, c_black, c_black, 1);
     //Page number background
     draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
     //Page number max
-    forg_page_max = (round(forg_count/8));
-    if ((forg_page_max - (forg_count/8)) &lt; 0 )
+    forg_page_max = (round(item_count/8));
+    if ((forg_page_max - (item_count/8)) &lt; 0 )
     {   
         forg_page_max += 1;
     }
     //Draw page number and max
     draw_text_color(view_xview+20,view_yview+87, 
-                    string("PAGE: " + string(forg_page + 1) + "       / " + string(forg_page_max)),
+                    string("PAGE: " + string(forge_page + 1) + "       / " + string(forg_page_max)),
                     c_black, c_black, c_black, c_black, 1);
 }
 </string>
