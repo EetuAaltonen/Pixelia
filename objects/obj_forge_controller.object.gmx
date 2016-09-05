@@ -32,6 +32,7 @@ forg_page = 0;
 
 //Read saved ini
 search_id = "mater";
+ref = 1;
 
 update_amounts = true; //Update amounts in list
 update_list = true;
@@ -71,6 +72,44 @@ if (global.hud_state == "forge")
     {
         if (update_amounts == true)
         {
+            //Better code
+            item_count = 0;
+            search_id = "mater";
+            i = 0;
+            ini_open("Inventory.sav");
+            for(item_id = 1; item_id &lt; 101; item_id++)
+            {
+                //Change category
+                if (search_id == "mater" and item_id == 100) //This is first category of ordering
+                {
+                    break;
+                }
+                key = search_id + "[" + string(item_id) + "]";
+                //Item amount
+                item_amount[ref,item_id] = ini_read_real("Save1", key, -1);
+                
+                //Check if item amount &gt; 0
+                if (round(item_amount[ref,item_id]) &gt; 0)
+                {
+                    //Item icon
+                    scr_inventory_item_info();
+                    item_icon[ref,item_id] = string(Icon[ref,item_id]);
+                    
+                    //Item description
+                    item_description[ref,item_id] = string(Descr[ref,item_id]);
+                    
+                    //Item amount is top of for loop
+                    
+                    //Draw
+                    item_icon_draw[i] = item_icon[ref,item_id];
+                    item_description_draw[i] = item_description[ref,item_id];
+                    item_amount_draw[i] = item_amount[ref,item_id];
+                    
+                    item_count += 1;
+                    i += 1;
+                }
+            }
+            ini_close();
             forg_amount_draw[forg2] = 0;
             forg_amount[forg1] = 0;
             forg_object_draw[forg2] = "spr_aim";

@@ -47,6 +47,14 @@
       <sprites name="Animals">
         <sprite>sprites\spr_feather</sprite>
       </sprites>
+      <sprites name="Ingredients">
+        <sprite>sprites\spr_flower_1</sprite>
+        <sprite>sprites\spr_flower_2</sprite>
+        <sprite>sprites\spr_flower_3</sprite>
+        <sprite>sprites\spr_icon_flower_1</sprite>
+        <sprite>sprites\spr_icon_flower_2</sprite>
+        <sprite>sprites\spr_icon_flower_3</sprite>
+      </sprites>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_fishing_spot</sprite>
@@ -64,14 +72,6 @@
         <sprite>sprites\spr_icon_coal</sprite>
         <sprite>sprites\spr_icon_ironbar</sprite>
         <sprite>sprites\spr_icon_steelbar</sprite>
-      </sprites>
-      <sprites name="Ingredients">
-        <sprite>sprites\spr_flower_1</sprite>
-        <sprite>sprites\spr_flower_2</sprite>
-        <sprite>sprites\spr_flower_3</sprite>
-        <sprite>sprites\spr_icon_flower_1</sprite>
-        <sprite>sprites\spr_icon_flower_2</sprite>
-        <sprite>sprites\spr_icon_flower_3</sprite>
       </sprites>
       <sprites name="Potions">
         <sprite>sprites\spr_icon_potion_1</sprite>
