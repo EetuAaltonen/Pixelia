@@ -225,6 +225,7 @@ else
     obj_forge_controller.update_list = true;
     obj_forge_controller.update_amounts = true; //Update amounts in list
     obj_forge_controller.create_once = true; //Create objects once on the list
+    obj_forge_controller.page_refresh = true;
 }
 </string>
           </argument>

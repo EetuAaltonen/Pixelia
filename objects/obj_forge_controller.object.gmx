@@ -90,7 +90,7 @@ if (global.hud_state == "forge")
                 {
                     //Item icon
                     scr_inventory_item_info();
-                    material[1,item_id] = string(Object[item_id]);
+                    material[1,item_id] = Object[1,item_id];
                     
                     //Item description
                     item_description[1,item_id] = string(Descr[1,item_id]);

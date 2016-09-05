@@ -14,11 +14,11 @@ Descr[1,3] = "Coal";
 Descr[1,4] = "Ironbar";
 Descr[1,5] = "Steelbar";
 //Object
-Object[1] = obj_mater_ironore;
-Object[1] = obj_mater_log;
-Object[1] = obj_mater_coal;
-Object[1] = obj_mater_ironbar;
-Object[1] = obj_mater_steelbar;
+Object[1,1] = obj_mater_ironore;
+Object[1,2] = obj_mater_log;
+Object[1,3] = obj_mater_coal;
+Object[1,4] = obj_mater_ironbar;
+Object[1,5] = obj_mater_steelbar;
 
 //Ingredients
 //Icon
