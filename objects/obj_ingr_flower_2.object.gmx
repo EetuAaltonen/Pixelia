@@ -28,7 +28,7 @@
             <string>selected = false;
 x_prev = x;
 y_prev = y;
-number = 4; //Order number in inventory
+number = 2; //Order number in inventory
 </string>
           </argument>
         </arguments>

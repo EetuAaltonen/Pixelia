@@ -50,14 +50,12 @@ number = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alch_slot_3 == false)
+            <string>if not (global.hud_state == "alchemy")
 {
-    image_index = 0;
+    global.alch_slot_3 = false;
+    instance_destroy();  
 }
-else
-{
-    image_index = 1;
-}
+
 </string>
           </argument>
         </arguments>
@@ -78,14 +76,14 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == false)
+            <string>if (global.alch_slot_3 == false)
 {
-    global.alch_slot_3 = false;
-    instance_destroy();
-    //x = view_xview+300;
-    //y = view_yview+177;  
+    image_index = 0;
 }
-
+else
+{
+    image_index = 1;
+}
 </string>
           </argument>
         </arguments>

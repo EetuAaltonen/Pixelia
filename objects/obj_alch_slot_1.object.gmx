@@ -50,12 +50,10 @@ number = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == false)
+            <string>if not (global.hud_state == "alchemy")
 {
     global.alch_slot_1 = false;
     instance_destroy();  
-    //x = view_xview + 300;
-    //y = view_yview + 117;  
 }
 </string>
           </argument>

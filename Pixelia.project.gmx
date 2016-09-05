@@ -488,6 +488,7 @@
           <object>objects\obj_alch_slot_2</object>
           <object>objects\obj_alch_slot_3</object>
           <object>objects\obj_alch_slot_4</object>
+          <object>objects\obj_alchemy_bg_controller</object>
           <object>objects\obj_alchemy_controller</object>
         </objects>
         <objects name="Forge">

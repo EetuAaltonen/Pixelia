@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Forge
-
-//Read saved ini
+            <string>//Read saved ini
 search_id = "mater";
 
 update_amounts = true; //Update amounts in list
@@ -189,14 +187,14 @@ if (global.hud_state == "forge")
     //Page number background
     draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
     //Page number max
-    forg_page_max = (round(item_count/8));
-    if ((forg_page_max - (item_count/8)) &lt; 0 )
+    forge_page_max = (round(item_count/8));
+    if ((forge_page_max - (item_count/8)) &lt; 0 )
     {   
-        forg_page_max += 1;
+        forge_page_max += 1;
     }
     //Draw page number and max
     draw_text_color(view_xview+20,view_yview+87, 
-                    string("PAGE: " + string(forge_page + 1) + "       / " + string(forg_page_max)),
+                    string("PAGE: " + string(forge_page + 1) + "       / " + string(forge_page_max)),
                     c_black, c_black, c_black, c_black, 1);
 }
 </string>
