@@ -45,3 +45,11 @@ Icon[3,2] = "spr_icon_potion_2";
 //Description
 Descr[3,1] = "Potion 1";
 Descr[3,2] = "Potion 2";
+
+//Foods
+//Icon
+Icon[4,1] = "spr_icon_salmon";
+Icon[4,2] = "spr_icon_tuna";
+//Description
+Descr[4,1] = "Salmon";
+Descr[4,2] = "Tuna";

@@ -33,26 +33,6 @@
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>531</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_fullscreen</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -125,17 +105,22 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu and !room == First_loading)
+            <string>if (room == Menu)
 {
-    if (global.pause == 0 || global.inventory &gt; 0 || 
-    global.alchemy == true || global.forge == true || global.workbench == true)
-    {
-        draw_self();
-    }
+    draw_self();
+}
+else if (room == First_loading)
+{
 }
 else
 {
-    draw_self();
+    if (instance_exists(obj_hud_state_switcher))
+    {
+        if not(global.hud_state = "null")
+        {
+            draw_self();
+        }
+    }
 }
 </string>
           </argument>
