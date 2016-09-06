@@ -46,6 +46,7 @@
     <sprites name="Collectable">
       <sprites name="Animals">
         <sprite>sprites\spr_feather</sprite>
+        <sprite>sprites\spr_icon_feather</sprite>
       </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_flower_1</sprite>
@@ -54,6 +55,8 @@
         <sprite>sprites\spr_icon_flower_1</sprite>
         <sprite>sprites\spr_icon_flower_2</sprite>
         <sprite>sprites\spr_icon_flower_3</sprite>
+        <sprite>sprites\spr_icon_water_flask</sprite>
+        <sprite>sprites\spr_water_flask</sprite>
       </sprites>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
@@ -409,6 +412,7 @@
     <objects name="Collectable">
       <objects name="Animals">
         <object>objects\obj_feather</object>
+        <object>objects\obj_feather_collected</object>
       </objects>
       <objects name="Ingredients">
         <object>objects\obj_flower_1</object>
@@ -417,6 +421,8 @@
         <object>objects\obj_flower_2_collected</object>
         <object>objects\obj_flower_3</object>
         <object>objects\obj_flower_3_collected</object>
+        <object>objects\obj_water_flask</object>
+        <object>objects\obj_water_flask_collected</object>
       </objects>
       <object>objects\obj_chest</object>
       <object>objects\obj_coin</object>
@@ -438,9 +444,11 @@
         <object>objects\obj_ingr_flower_1</object>
         <object>objects\obj_ingr_flower_2</object>
         <object>objects\obj_ingr_flower_3</object>
+        <object>objects\obj_ingr_water_flask</object>
       </objects>
       <objects name="Materials">
         <object>objects\obj_mater_ironore</object>
+        <object>objects\obj_mater_feather</object>
         <object>objects\obj_mater_log</object>
         <object>objects\obj_mater_coal</object>
         <object>objects\obj_mater_ironbar</object>

@@ -26,6 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.2;
+
+//Save to inventory info
+item_id = 6; //Id
+search_id = "mater"; //Type
+added_amount = 1; //Added amount
 </string>
           </argument>
         </arguments>
@@ -51,7 +56,11 @@
             <string>//Feather collected
 if (distance_to_object(obj_player) &lt; 10)
 {
-    //instance_create(x, y, obj_coin_collected)
+    instance_create(x, y, obj_feather_collected)
+    
+    //Save to inventory
+    scr_save_to_inventory();
+
     instance_destroy(); 
 }
 </string>

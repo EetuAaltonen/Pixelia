@@ -5,30 +5,43 @@ Icon[1,2] = "spr_icon_log";
 Icon[1,3] = "spr_icon_coal";
 Icon[1,4] = "spr_icon_ironbar";
 Icon[1,5] = "spr_icon_steelbar";
+Icon[1,6] = "spr_icon_steelbar";
 //Description
 Descr[1,1] = "Ironore";
 Descr[1,2] = "Log";
 Descr[1,3] = "Coal";
 Descr[1,4] = "Ironbar";
 Descr[1,5] = "Steelbar";
+Descr[1,6] = "Feather";
 //Object
 Object[1,1] = obj_mater_ironore;
 Object[1,2] = obj_mater_log;
 Object[1,3] = obj_mater_coal;
 Object[1,4] = obj_mater_ironbar;
 Object[1,5] = obj_mater_steelbar;
+Object[1,6] = obj_mater_feather;
 
 //Ingredients
 //Icon
-//Icon[2,0] = "spr_aim";
-Icon[2,1] = "spr_icon_flower_1";
-Icon[2,2] = "spr_icon_flower_2";
-Icon[2,3] = "spr_icon_flower_3";
+Icon[2,1] = "spr_icon_water_flask";
+Icon[2,2] = "spr_icon_flower_1";
+Icon[2,3] = "spr_icon_flower_2";
+Icon[2,4] = "spr_icon_flower_3";
 //Description
-Descr[2,1] = "Flower 1";
-Descr[2,2] = "Flower 2";
-Descr[2,3] = "Flower 3";
+Descr[2,1] = "Water Flask";
+Descr[2,2] = "Flower 1";
+Descr[2,3] = "Flower 2";
+Descr[2,4] = "Flower 3";
 //Object
-Object[2,1] = obj_ingr_flower_1;
-Object[2,2] = obj_ingr_flower_2;
-Object[2,3] = obj_ingr_flower_3;
+Object[2,1] = obj_ingr_water_flask;
+Object[2,2] = obj_ingr_flower_1;
+Object[2,3] = obj_ingr_flower_2;
+Object[2,4] = obj_ingr_flower_3;
+
+//Potions
+//Icon
+/*Icon[3,1] = "spr_icon_potion_1";
+Icon[3,2] = "spr_icon_potion_2";
+//Description
+Descr[3,1] = "Potion 1";
+Descr[3,2] = "Potion 2";

@@ -75,7 +75,7 @@ if (global.hud_state == "alchemy")
             for(item_id = 1; item_id &lt; 101; item_id++)
             {
                 //Change category
-                if (item_id == 100)
+                if (item_id == 5/*100*/)
                 {
                     break;
                 }

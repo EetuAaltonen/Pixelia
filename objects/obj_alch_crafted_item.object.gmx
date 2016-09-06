@@ -31,7 +31,7 @@ visible = false;
 sprite_index = spr_grass; //Default
 
 //Save to inventory
-search_id = "ingr";
+search_id = "poti";
 </string>
           </argument>
         </arguments>

@@ -28,7 +28,7 @@
             <string>image_speed = 0.2;
 
 //Save to inventory info
-item_id = 3; //Id
+item_id = 4; //Id
 search_id = "ingr"; //Type
 added_amount = 1; //Added amount
 </string>
