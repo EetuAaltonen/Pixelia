@@ -21,14 +21,14 @@ Object[1,5] = obj_mater_steelbar;
 //Ingredients
 //Icon
 //Icon[2,0] = "spr_aim";
-Icon[2,1] = "spr_flower_1";
-Icon[2,2] = "spr_flower_2";
-Icon[2,3] = "spr_flower_3";
+Icon[2,1] = "spr_icon_flower_1";
+Icon[2,2] = "spr_icon_flower_2";
+Icon[2,3] = "spr_icon_flower_3";
 //Description
 Descr[2,1] = "Flower 1";
 Descr[2,2] = "Flower 2";
 Descr[2,3] = "Flower 3";
 //Object
-Object[2,1] = obj_flower_1;
-Object[2,2] = obj_flower_2;
-Object[2,3] = obj_flower_3;
+Object[2,1] = obj_ingr_flower_1;
+Object[2,2] = obj_ingr_flower_2;
+Object[2,3] = obj_ingr_flower_3;

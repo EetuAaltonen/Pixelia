@@ -54,9 +54,9 @@ search_id = "ingr";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.forg_slot_1 == true ||
-    global.forg_slot_2 == true ||
-    global.forg_slot_3 == true)
+            <string>if (global.alch_slot_1 == true ||
+    global.alch_slot_2 == true ||
+    global.alch_slot_3 == true)
 {
     visible = true;
     recipe_check = true;   
@@ -87,7 +87,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not(global.hud_state == "forge")
+            <string>/*if not(global.hud_state == "alchemy")
 {
     instance_destroy();
 }
@@ -113,28 +113,28 @@ else
             <kind>1</kind>
             <string>if (recipe_check == true)
 {
-    scr_forge_recipes();
+    scr_alchemy_recipes();
     var number1, number2, number3, recipe_id;
     recipe_id = string("000");
-    if (global.forg_slot_1 == true)
+    if (global.alch_slot_1 == true)
     {
-        number1 = obj_forg_slot_1.number;
+        number1 = obj_alch_slot_1.number;
     }
     else
     {
         number1 = 0;
     }
-    if (global.forg_slot_2 == true)
+    if (global.alch_slot_2 == true)
     {
-        number2 = obj_forg_slot_2.number;
+        number2 = obj_alch_slot_2.number;
     }
     else
     {
         number2 = 0;
     }
-    if (global.forg_slot_3 == true)
+    if (global.alch_slot_3 == true)
     {
-        number3 = obj_forg_slot_3.number;
+        number3 = obj_alch_slot_3.number;
     }
     else
     {
@@ -189,31 +189,31 @@ else
 {
     //Change material count in inventory
     //var item1_amount, item2_amount, item3_amount; ???
-    if (global.forg_slot_1 == true)
+    if (global.alch_slot_1 == true)
     {
-        item_id = obj_forg_slot_1.number; //Id
-        search_id = "mater"; //Type
+        item_id = obj_alch_slot_1.number; //Id
+        search_id = "ingr"; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
-    if (global.forg_slot_2 == true)
+    if (global.alch_slot_2 == true)
     {
-        item_id = obj_forg_slot_2.number; //Id
-        search_id = "mater"; //Type
+        item_id = obj_alch_slot_2.number; //Id
+        search_id = "ingr"; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
-    if (global.forg_slot_3 == true)
+    if (global.alch_slot_3 == true)
     {
-        item_id = obj_forg_slot_3.number; //Id
-        search_id = "mater"; //Type
+        item_id = obj_alch_slot_3.number; //Id
+        search_id = "ingr"; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     //Add crafted material
     //Save to inventory info
     item_id = Id[sprite_index]; //Id
-    search_id = "mater"; //Type
+    search_id = "ingr"; //Type
     added_amount = 1; //Added amount
     scr_save_to_inventory();
     
@@ -222,10 +222,10 @@ else
     recipe_check = true; //Check if recipe is still exists
     
     //Update forge listing
-    obj_forge_controller.update_list = true;
-    obj_forge_controller.update_amounts = true; //Update amounts in list
-    obj_forge_controller.create_once = true; //Create objects once on the list
-    obj_forge_controller.page_refresh = true;
+    obj_alchemy_controller.update_list = true;
+    obj_alchemy_controller.update_amounts = true; //Update amounts in list
+    obj_alchemy_controller.create_once = true; //Create objects once on the list
+    obj_alchemy_controller.page_refresh = true;
 }
 </string>
           </argument>

@@ -26,9 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>selected = false;
-x_prev = x;
-y_prev = y;
 number = 2; //Order number in inventory
+object = obj_ingr_flower_2;
 </string>
           </argument>
         </arguments>
@@ -51,29 +50,8 @@ number = 2; //Order number in inventory
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.alchemy == false)
-{
-    instance_destroy();
-}
-if (global.alch_amount[number] == 0)
-{
-    if (y == obj_alch_slot_1.y)
-    {
-        global.alch_slot_1 = false;
-        obj_alch_slot_1.number = 0;
-    }
-    else if (y == obj_alch_slot_2.y)
-    {
-        global.alch_slot_2 = false;
-        obj_alch_slot_2.number = 0;
-    }
-    else if (y == obj_alch_slot_3.y)
-    {
-        global.alch_slot_3 = false;
-        obj_alch_slot_3.number = 0;
-    }
-    instance_destroy();
-}
+            <string>scr_check_if_instance_destroy();
+scr_check_if_selected_true();
 </string>
           </argument>
         </arguments>
@@ -96,54 +74,7 @@ if (global.alch_amount[number] == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (selected == false and global.alch_slot_4 == false)
-{
-    if (global.alch_slot_1 == false)
-    {
-        x = obj_alch_slot_1.x;
-        y = obj_alch_slot_1.y;
-        selected = true;
-        global.alch_slot_1 = true;
-        obj_alch_slot_1.number = number;
-    }
-    else if (global.alch_slot_2 == false)
-    {
-        x = obj_alch_slot_2.x;
-        y = obj_alch_slot_2.y;
-        selected = true;
-        global.alch_slot_2 = true;
-        obj_alch_slot_2.number = number;
-    }
-    else if (global.alch_slot_3 == false)
-    {
-        x = obj_alch_slot_3.x;
-        y = obj_alch_slot_3.y;
-        selected = true;
-        global.alch_slot_3 = true;
-        obj_alch_slot_3.number = number;
-    }
-}
-else if (selected == true)
-{
-    if (y == obj_alch_slot_1.y)
-    {
-        global.alch_slot_1 = false;
-        obj_alch_slot_1.number = 0;
-    }
-    else if (y == obj_alch_slot_2.y)
-    {
-        global.alch_slot_2 = false;
-        obj_alch_slot_2.number = 0;
-    }
-    else if (y == obj_alch_slot_3.y)
-    {
-        global.alch_slot_3 = false;
-        obj_alch_slot_3.number = 0;
-    }
-    x = x_prev;
-    y = y_prev;
-    selected = false;
-}
+            <string>scr_alch_mouse_released();
 </string>
           </argument>
         </arguments>

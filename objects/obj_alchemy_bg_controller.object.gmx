@@ -37,8 +37,8 @@ if (global.hud_state == "alchemy")
     draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
     
     //Crafted material info
-    //draw_text_color(view_xview+355,view_yview+175, string(Info[obj_alch_crafted_item.sprite_index]),
-    //                c_black, c_black, c_black, c_black, 1);
+    draw_text_color(view_xview+355,view_yview+175, string(Info[obj_alch_crafted_item.sprite_index]),
+                    c_black, c_black, c_black, c_black, 1);
 }
 </string>
           </argument>

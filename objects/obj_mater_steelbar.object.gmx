@@ -74,7 +74,7 @@ scr_check_if_selected_true();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_forg_mater_mouse_released_1();
+            <string>scr_forg_mouse_released();
 </string>
           </argument>
         </arguments>

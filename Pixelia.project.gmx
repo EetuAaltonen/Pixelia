@@ -320,19 +320,18 @@
     <scripts name="Crafting">
       <scripts name="Alchemy">
         <script>scripts\scr_alchemy_recipes.gml</script>
+        <script>scripts\scr_alch_mouse_released.gml</script>
       </scripts>
       <scripts name="Forge">
+        <script>scripts\scr_forg_mouse_released.gml</script>
         <script>scripts\scr_forge_recipes.gml</script>
-        <scripts name="Forge materials">
-          <script>scripts\scr_forg_mater_mouse_released_1.gml</script>
-          <script>scripts\scr_check_if_instance_destroy.gml</script>
-          <script>scripts\scr_check_if_selected_true.gml</script>
-        </scripts>
       </scripts>
       <scripts name="Workbench">
         <script>scripts\scr_workbench_craft.gml</script>
         <script>scripts\scr_workbench_recipes.gml</script>
       </scripts>
+      <script>scripts\scr_check_if_selected_true.gml</script>
+      <script>scripts\scr_check_if_instance_destroy.gml</script>
     </scripts>
     <scripts name="Home">
       <script>scripts\scr_prices.gml</script>
