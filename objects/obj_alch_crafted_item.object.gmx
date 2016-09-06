@@ -87,7 +87,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if not(global.hud_state == "alchemy")
+            <string>if not(global.hud_state == "alchemy")
 {
     instance_destroy();
 }
@@ -192,28 +192,24 @@ else
     if (global.alch_slot_1 == true)
     {
         item_id = obj_alch_slot_1.number; //Id
-        search_id = "ingr"; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.alch_slot_2 == true)
     {
         item_id = obj_alch_slot_2.number; //Id
-        search_id = "ingr"; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.alch_slot_3 == true)
     {
         item_id = obj_alch_slot_3.number; //Id
-        search_id = "ingr"; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     //Add crafted material
     //Save to inventory info
     item_id = Id[sprite_index]; //Id
-    search_id = "ingr"; //Type
     added_amount = 1; //Added amount
     scr_save_to_inventory();
     

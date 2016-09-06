@@ -5,7 +5,7 @@ Icon[1,2] = "spr_icon_log";
 Icon[1,3] = "spr_icon_coal";
 Icon[1,4] = "spr_icon_ironbar";
 Icon[1,5] = "spr_icon_steelbar";
-Icon[1,6] = "spr_icon_steelbar";
+Icon[1,6] = "spr_icon_feather";
 //Description
 Descr[1,1] = "Ironore";
 Descr[1,2] = "Log";
@@ -40,7 +40,7 @@ Object[2,4] = obj_ingr_flower_3;
 
 //Potions
 //Icon
-/*Icon[3,1] = "spr_icon_potion_1";
+Icon[3,1] = "spr_icon_potion_1";
 Icon[3,2] = "spr_icon_potion_2";
 //Description
 Descr[3,1] = "Potion 1";
