@@ -130,8 +130,8 @@ alarm[2] = random_range(50, 80);
         hspeed = 0;
         vspeed = 0;
         in_water = true;
-        obj_fishing_vein.alarm[1] = (random(100) + 100);
-        alarm[1] = random_range(50, 80);
+        obj_fishing_vein.alarm[1] = (round(random(300)) + 300);
+        alarm[1] = round(random_range(50, 80));
     }
 }
 </string>

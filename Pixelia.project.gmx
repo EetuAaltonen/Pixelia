@@ -48,7 +48,9 @@
         <sprite>sprites\spr_feather</sprite>
         <sprite>sprites\spr_icon_feather</sprite>
         <sprite>sprites\spr_icon_salmon</sprite>
+        <sprite>sprites\spr_icon_tuna</sprite>
         <sprite>sprites\spr_salmon</sprite>
+        <sprite>sprites\spr_tuna</sprite>
       </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_flower_1</sprite>
@@ -368,6 +370,7 @@
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <script>scripts\scr_info_text_number.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_sign</font>
@@ -416,6 +419,7 @@
         <object>objects\obj_feather</object>
         <object>objects\obj_feather_collected</object>
         <object>objects\obj_salmon_collected</object>
+        <object>objects\obj_tuna_collected</object>
       </objects>
       <objects name="Ingredients">
         <object>objects\obj_flower_1</object>
