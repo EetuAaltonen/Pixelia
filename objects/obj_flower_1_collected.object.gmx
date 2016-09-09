@@ -3,7 +3,7 @@
   <spriteName>spr_flower_1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5003</depth>
+  <depth>-200</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-move_towards_point(obj_money_target.x, obj_money_target.y, 8)
+move_towards_point(obj_money_target.x, obj_money_target.y, 8);
+info_text = "Flower 1";
 </string>
           </argument>
         </arguments>
@@ -53,6 +54,7 @@ move_towards_point(obj_money_target.x, obj_money_target.y, 8)
 
 if (distance_to_object(obj_money_target) &lt; 40)
 {
+    scr_collected_item_info_text();
     instance_destroy();
 }
 </string>

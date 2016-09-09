@@ -324,6 +324,13 @@
     <instance objName="obj_grass" x="1159" y="267" name="inst_DF25C84D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawner" x="898" y="230" name="inst_DBA112FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_flask" x="295" y="193" name="inst_A8CD39A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_salmon_collected" x="672" y="11" name="inst_5B5A99C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tuna_collected" x="985" y="140" name="inst_0B953A94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tuna_collected" x="1021" y="87" name="inst_6AAE4882" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tuna_collected" x="983" y="62" name="inst_01F44213" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_salmon_collected" x="728" y="46" name="inst_781BD408" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_salmon_collected" x="845" y="37" name="inst_1AFCF883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_salmon_collected" x="792" y="108" name="inst_D41BAE67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

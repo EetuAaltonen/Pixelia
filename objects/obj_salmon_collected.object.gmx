@@ -3,7 +3,7 @@
   <spriteName>spr_salmon</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5003</depth>
+  <depth>-200</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -54,10 +54,7 @@ info_text = "Salmon";
 
 if (distance_to_object(obj_player) &lt; 20)
 {
-    scr_info_text_number();
-    obj_inventory_controller.draw_info_text = true;
-    obj_inventory_controller.alarm[1] = 10;
-    obj_inventory_controller.text_y_pos -= 10;
+    scr_collected_item_info_text();
     instance_destroy();
 }
 </string>
