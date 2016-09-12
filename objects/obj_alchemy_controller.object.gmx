@@ -60,6 +60,12 @@ global.alch_slot_4 = false;
           <argument>
             <kind>1</kind>
             <string>//Forge
+//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
 if (global.hud_state == "alchemy")
 {
     if (update_list == true)
@@ -149,7 +155,7 @@ if (global.hud_state == "alchemy")
             for (i = start_count; i &lt; end_count; i++;)
             {
                 //Materials
-                instance_create(view_xview+30, view_yview+7+y_pos, material_create[i])
+                instance_create(view_xview+30, view_yview+y_pos, material_create[i])
                 y_pos += 19;
             }
             create_once = false;
@@ -158,34 +164,27 @@ if (global.hud_state == "alchemy")
         for (i = start_count; i &lt; end_count; i++;)
         {
             //Material background
-            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y_pos);               
+            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);               
             //Material description background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y_pos);
+            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
             //Material description
-            draw_text_color(view_xview+55,view_yview+y_pos, string(description_draw[i]),
-                            c_black, c_black, c_black, c_black, 1);
+            draw_text(view_xview+56,view_yview+y_pos, string(description_draw[i]));
             //Material amount background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y_pos);
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
             //Material amount
-            draw_text_color(view_xview+207,view_yview+y_pos, string(amount_draw[i]),
-                            c_black, c_black, c_black, c_black, 1);
+            draw_text(view_xview+207,view_yview+y_pos, string(amount_draw[i]));
             y_pos += 19;
         }
     }
     else
     {
         //If empty
-        draw_text_color(view_xview+30, view_yview+117, "You don't have any ores...",
-                            c_black, c_black, c_black, c_black, 1);
+        draw_text(view_xview+30, view_yview+117, "You don't have any ores...");
     }
-    //Item count
-    draw_text_color(view_xview+350,view_yview+95, string(item_count),
-                    c_black, c_black, c_black, c_black, 1);
     //Forge
-    draw_text_color(view_xview+20,view_yview+60, "Forge",
-                    c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+23,view_yview+65, "Alchemystation");
     //Page number background
-    draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
+    draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+87);
     //Page number max
     alchemy_page_max = (round(item_count/8));
     if ((alchemy_page_max - (item_count/8)) &lt; 0 )
@@ -193,9 +192,7 @@ if (global.hud_state == "alchemy")
         alchemy_page_max += 1;
     }
     //Draw page number and max
-    draw_text_color(view_xview+20,view_yview+87, 
-                    string("PAGE: " + string(alchemy_page + 1) + "       / " + string(alchemy_page_max)),
-                    c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+23,view_yview+87, string("PAGE:    " + string(alchemy_page + 1) + "  /  " + string(alchemy_page_max)));
 }
 </string>
           </argument>

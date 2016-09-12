@@ -34,6 +34,9 @@ search_id = "";
 //Coins
 global.coins = 0;
 
+//Potion
+global.potions = 0;
+
 //Skills
 global.auto_healing = 1;
 
@@ -66,7 +69,8 @@ info_text_alpha = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (draw_info_text == true)
+            <string>//Collected item info text
+if (draw_info_text == true)
 {
     if (text_y_pos == 0)
     {
@@ -252,31 +256,13 @@ else if (global.hud_state == "inventory1" and keyboard_check_released(vk_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Font
-draw_set_font(fnt_item_counter);
-draw_set_color(c_white);
+            <string>//Inventory
+//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 
-//Coins
-var coin;
-coin = global.coins;
-draw_text_color(view_xview+440,view_yview+278, string(coin),
-                c_black, c_black, c_black, c_black, 1);
-//Coin logo
-draw_sprite_ext(spr_money_draw, image_index, view_xview+425, 
-                view_yview+285, image_xscale, image_yscale, 
-                image_angle, c_white, image_alpha);                
-//Potions
-var potion;
-potion = global.potions;
-draw_text_color(view_xview+380,view_yview+278, string(potion),
-                c_black, c_black, c_black, c_black, 1);
-                
-//Potion logo
-draw_sprite_ext(spr_potion, image_index, view_xview+372, 
-                view_yview+285, image_xscale, image_yscale, 
-                image_angle, c_white, image_alpha);
-
-//Inventory
 if (global.hud_state == "inventory1")
 {
     if (loop_stop == false)
@@ -347,7 +333,7 @@ if (global.hud_state == "inventory1")
         loop_stop = true;
     }
     var y_pos; //y position
-    y_pos = 110;
+    y_pos = 120;
     if (item_count &gt; 0)
     {
         if (page_refresh == true)
@@ -384,21 +370,19 @@ if (global.hud_state == "inventory1")
         for (i = start_count; i != end_count; i++;)
         {
             if (string_pos("spr_", string(item_icon_draw[i])))
-            {
+            {                
                 //Item background
-                draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y_pos);
+                draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);
                 //Item icons
-                draw_sprite(asset_get_index(string(item_icon_draw[i])), 0,view_xview+30, view_yview+7+y_pos);           
+                draw_sprite(asset_get_index(string(item_icon_draw[i])), 0,view_xview+30, view_yview+y_pos);           
                 //Item description background
-                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y_pos);
+                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
                 //Item description
-                draw_text_color(view_xview+55,view_yview+y_pos, string(item_description_draw[i]),
-                                c_black, c_black, c_black, c_black, 1);
+                draw_text(view_xview+56,view_yview+y_pos, string(item_description_draw[i]));
                 //Item amount background
-                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y_pos);
+                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
                 //Item amount
-                draw_text_color(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]),
-                                c_black, c_black, c_black, c_black, 1);
+                draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]));
                 y_pos += 19;
             }
             else
@@ -407,8 +391,7 @@ if (global.hud_state == "inventory1")
             }
         }
         //Item count
-        draw_text_color(view_xview+300,view_yview+95, string(item_count),
-                        c_black, c_black, c_black, c_black, 1);
+        draw_text(view_xview+300,view_yview+95, string(item_count));
         //Page number background
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
         //Page number max
@@ -418,15 +401,12 @@ if (global.hud_state == "inventory1")
             inventory_page_max += 1;
         }
         //Draw page number and max
-        draw_text_color(view_xview+20,view_yview+87, 
-                        string("PAGE: " + string(inventory_page + 1) + "       / " + string(inventory_page_max)),
-                        c_black, c_black, c_black, c_black, 1);
+        draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(inventory_page + 1) + "  /  " + string(inventory_page_max)));
     }
     else
     {
         //If empty
-        draw_text_color(view_xview+30, view_yview+117, "Inventory is empty...",
-                            c_black, c_black, c_black, c_black, 1);
+        draw_text(view_xview+30, view_yview+120, "Inventory is empty...");
     }
 }
 else if (global.hud_state == "inventory2")
@@ -438,41 +418,33 @@ else if(global.hud_state == "inventory3")
     //Icon
     draw_sprite(spr_death_counter, 0, view_xview+30, view_yview+120);
     //Death counter
-    var death_counter;
-    death_counter = global.death_counter;
-    draw_text_color(view_xview+50,view_yview+112, string(death_counter),
-            c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+50,view_yview+112, string(global.death_counter));
     
     //Icon
     draw_sprite(spr_kill_counter, 0, view_xview+30, view_yview+150);
     //Kill counter
-    draw_text_color(view_xview+50,view_yview+143, string(global.kill_counter),
-            c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+50,view_yview+143, string(global.kill_counter));
     
     //Home village stats
     //Icon
     draw_sprite(spr_home_happiness, 0, view_xview+230, view_yview+120);
     //Happiness
-    draw_text_color(view_xview+250,view_yview+112, string(global.home_happiness),
-            c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+250,view_yview+112, string(global.home_happiness));
             
     //Icon
     draw_sprite(spr_home_defence, 0, view_xview+230, view_yview+150);
     //Defence
-    draw_text_color(view_xview+250,view_yview+143, string(global.home_defence),
-            c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+250,view_yview+143, string(global.home_defence));
     
     //Icon
     draw_sprite(spr_home_hunger, 0, view_xview+230, view_yview+180);
     //Hunger
-    draw_text_color(view_xview+250,view_yview+174, string(global.home_hunger),
-            c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+250,view_yview+174, string(global.home_hunger));
     
     //Icon
     draw_sprite(spr_home_thirst, 0, view_xview+230, view_yview+210);
     //Thirst
-    draw_text_color(view_xview+250,view_yview+205, string(global.home_thirst),
-            c_black, c_black, c_black, c_black, 1);
+    draw_text(view_xview+250,view_yview+205, string(global.home_thirst));
 }
 </string>
           </argument>
@@ -494,11 +466,61 @@ else if(global.hud_state == "inventory3")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (draw_info_text == true)
+            <string>//Font
+draw_set_font(fnt_hotbar_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
+//Level
+draw_text(view_xview+180,view_yview+286, "Level    " + string(global.level));
+//XP
+draw_text(view_xview+270,view_yview+286, "XP    " + string(global.xp) + "  /  " + string(global.xp_limit));
+
+//Coins
+draw_text(view_xview+443,view_yview+286, string(global.coins));
+//Coin logo
+draw_sprite_ext(spr_money_icon, image_index, view_xview+425, 
+                view_yview+286, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);                
+//Potions
+draw_text(view_xview+384,view_yview+286, string(global.potions));
+                
+//Potion logo
+draw_sprite_ext(spr_potion_icon, image_index, view_xview+372, 
+                view_yview+286, image_xscale, image_yscale, 
+                image_angle, c_white, image_alpha);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Font
+draw_set_font(fnt_collected_item_info_text);
+draw_set_color(c_black);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+if (draw_info_text == true)
 {
     if (global.hud_state == "null")
     {
-        draw_text_colour(view_xview+420, view_yview+250+text_y_pos, string(info_text[t]),
+        draw_text_colour(view_xview+450, view_yview+260+text_y_pos, string(info_text[t]),
                          c_black, c_black, c_black, c_black, info_text_alpha);
     }
 }

@@ -116,7 +116,10 @@ load = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_white);
+            <string>//Font
+draw_set_font(fnt_loading);
+draw_set_color(c_white);
+
 draw_text(view_xview+100, view_yview+100, "Loading...");
 </string>
           </argument>

@@ -71,6 +71,7 @@
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_iron_ore</sprite>
       <sprite>sprites\spr_medicpack</sprite>
+      <sprite>sprites\spr_potion</sprite>
       <sprite>sprites\spr_tree</sprite>
       <sprite>sprites\spr_tree_1</sprite>
     </sprites>
@@ -83,7 +84,6 @@
       <sprites name="Potions">
         <sprite>sprites\spr_icon_potion_1</sprite>
         <sprite>sprites\spr_icon_potion_2</sprite>
-        <sprite>sprites\spr_potion</sprite>
         <sprite>sprites\spr_potion_1</sprite>
         <sprite>sprites\spr_potion_2</sprite>
       </sprites>
@@ -149,7 +149,6 @@
         <sprite>sprites\spr_enemies_stats</sprite>
         <sprite>sprites\spr_hotbar_bg</sprite>
         <sprite>sprites\spr_hud_quest</sprite>
-        <sprite>sprites\spr_level_draw</sprite>
         <sprite>sprites\spr_Q_ready</sprite>
         <sprite>sprites\spr_quit_draw</sprite>
         <sprite>sprites\spr_restart</sprite>
@@ -202,6 +201,10 @@
         <sprite>sprites\spr_inv_item_description_bg</sprite>
         <sprite>sprites\spr_item_info_box</sprite>
       </sprites>
+      <sprites name="Menus">
+        <sprite>sprites\spr_menu_button_large</sprite>
+        <sprite>sprites\spr_menu_button_small</sprite>
+      </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>
         <sprite>sprites\spr_shop</sprite>
@@ -215,9 +218,10 @@
       <sprite>sprites\spr_E</sprite>
       <sprite>sprites\spr_first_loading</sprite>
       <sprite>sprites\spr_lightness</sprite>
-      <sprite>sprites\spr_money_draw</sprite>
+      <sprite>sprites\spr_money_icon</sprite>
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_pointer</sprite>
+      <sprite>sprites\spr_potion_icon</sprite>
       <sprite>sprites\spr_quests</sprite>
       <sprite>sprites\spr_screen</sprite>
       <sprite>sprites\spr_stats</sprite>
@@ -279,7 +283,6 @@
       <sprite>sprites\spr_saving</sprite>
       <sprite>sprites\sprite61</sprite>
     </sprites>
-    <sprite>sprites\spr_achiements</sprite>
     <sprite>sprites\spr_aim</sprite>
     <sprite>sprites\spr_arrow1</sprite>
     <sprite>sprites\spr_blocker5</sprite>
@@ -302,15 +305,9 @@
     <sprite>sprites\spr_pet_ammo</sprite>
     <sprite>sprites\spr_pixelia</sprite>
     <sprite>sprites\spr_platform</sprite>
-    <sprite>sprites\spr_play</sprite>
-    <sprite>sprites\spr_quit</sprite>
     <sprite>sprites\spr_sign_bg</sprite>
     <sprite>sprites\spr_spawner</sprite>
-    <sprite>sprites\spr_tree_5</sprite>
     <sprite>sprites\spr_wall_phy</sprite>
-    <sprite>sprites\spr_xp_draw</sprite>
-    <sprite>sprites\sprite77</sprite>
-    <sprite>sprites\sprite94</sprite>
     <sprites name="Traps">
       <sprite>sprites\spr_spike</sprite>
     </sprites>
@@ -368,16 +365,20 @@
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
+    <script>scripts\scr_collected_item_info_text.gml</script>
+    <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
     <script>scripts\scr_solidify.gml</script>
-    <script>scripts\scr_collected_item_info_text.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\fnt_sign</font>
-    <font>fonts\fnt_enemies_stats</font>
-    <font>fonts\fnt_item_counter</font>
+    <font>fonts\fnt_collected_item_info_text</font>
     <font>fonts\fnt_dialog</font>
+    <font>fonts\fnt_enemies_stats</font>
+    <font>fonts\fnt_hotbar_text</font>
     <font>fonts\fnt_loading</font>
+    <font>fonts\fnt_sign</font>
+    <font>fonts\fnt_menu_buttons</font>
+    <font>fonts\fnt_inventory_text</font>
   </fonts>
   <objects name="objects">
     <objects name="Ammon">
@@ -558,7 +559,6 @@
       <object>objects\obj_potion_target</object>
       <object>objects\obj_quests</object>
       <object>objects\obj_screen_controller</object>
-      <object>objects\obj_stats</object>
       <objects name="Shop">
         <object>objects\obj_shop_bg_controller</object>
         <object>objects\obj_shop_controller</object>
