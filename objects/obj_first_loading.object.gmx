@@ -117,10 +117,13 @@ load = false;
           <argument>
             <kind>1</kind>
             <string>//Font
+//Font
 draw_set_font(fnt_loading);
 draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 
-draw_text(view_xview+100, view_yview+100, "Loading...");
+draw_text(view_xview+150, view_yview+130, "Loading...");
 </string>
           </argument>
         </arguments>

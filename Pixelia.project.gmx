@@ -551,6 +551,7 @@
       </objects>
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>
+      <object>objects\obj_first_loading</object>
       <object>objects\obj_hotbar_bg_controller</object>
       <object>objects\obj_hud_state_switcher</object>
       <object>objects\obj_money_target</object>
@@ -605,7 +606,6 @@
     <object>objects\obj_cycle</object>
     <object>objects\obj_enemy_turn_left</object>
     <object>objects\obj_enemy_turn_right</object>
-    <object>objects\obj_first_loading</object>
     <object>objects\obj_goal</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_pet</object>
