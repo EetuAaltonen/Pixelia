@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-
-scr_forge_recipes();
+            <string>//Forge bg
 if (global.hud_state == "forge")
 {
     //Forge background
@@ -36,10 +34,16 @@ if (global.hud_state == "forge")
     //Crafted material info background
     draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
     
-    //Crafted material info
+    //Font
+    draw_set_font(fnt_inventory_text);
+    draw_set_color(c_black);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_middle);
+    
     scr_forge_recipes();
-    draw_text_color(view_xview+355,view_yview+175, string(Info[obj_forg_crafted_item.sprite_index]),
-                    c_black, c_black, c_black, c_black, 1);
+    
+    //Crafted material info
+    draw_text(view_xview+346,view_yview+180, string(Info[obj_forg_crafted_item.sprite_index]));
 }
 </string>
           </argument>
