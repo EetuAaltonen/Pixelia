@@ -11,7 +11,7 @@ var SavedLevel = global.level;
 var SavedXp = global.xp;
 var SavedXpLimit = global.xp_limit;
 
-var SavedSkillPoint = global.skillpoint;
+var SavedSkillPoint = global.skillpoints;
 var SavedDeathCounter = global.death_counter;
 var SavedKillCounter = global.kill_counter;
 

@@ -370,6 +370,7 @@
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_potion_collected.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <script>scripts\scr_check_weight.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

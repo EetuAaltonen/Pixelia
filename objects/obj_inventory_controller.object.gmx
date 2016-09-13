@@ -33,12 +33,14 @@ search_id = "";
 
 //Coins
 global.coins = 0;
-
 //Potion
 global.potions = 0;
 
 //Skills
 global.auto_healing = 1;
+
+//Max item weight
+global.max_item_weight = 100;
 
 //Collected item info text
 t = 1;
@@ -273,6 +275,9 @@ if (global.hud_state == "inventory1")
         search_id = "mater";
         i = 0;
         
+        //Weight
+        global.total_item_weight = 0;
+        
         ini_open("Inventory.sav");
         for(item_id = 1; item_id &lt; 100; item_id++)
         {
@@ -320,10 +325,17 @@ if (global.hud_state == "inventory1")
                 
                 //Item amount is top of for loop
                 
+                //Item weight
+                item_weight[ref,item_id] = string(Weight[ref,item_id]);
+                
                 //Draw
                 item_icon_draw[i] = item_icon[ref,item_id];
                 item_description_draw[i] = item_description[ref,item_id];
                 item_amount_draw[i] = item_amount[ref,item_id];
+                item_weight_draw[i] = item_weight[ref,item_id];
+                
+                //Weight
+                global.total_item_weight += real(item_weight_draw[i]);
                 
                 item_count += 1;
                 i += 1;
@@ -383,6 +395,11 @@ if (global.hud_state == "inventory1")
                 draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
                 //Item amount
                 draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]));
+                //Item weight background
+                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
+                //Item weight
+                draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
+                
                 y_pos += 19;
             }
             else
@@ -402,6 +419,11 @@ if (global.hud_state == "inventory1")
         }
         //Draw page number and max
         draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(inventory_page + 1) + "  /  " + string(inventory_page_max)));
+        
+        //Total and weight background
+        draw_sprite(spr_inv_item_description_bg, 0,view_xview+171, view_yview+95);
+        //Total and weight
+        draw_text(view_xview+150,view_yview+95, "Weight:  " + string(global.total_item_weight) + "  /  " + string(global.max_item_weight) + "  Kg");
     }
     else
     {
@@ -412,6 +434,7 @@ if (global.hud_state == "inventory1")
 else if (global.hud_state == "inventory2")
 {
     //Skilltree
+    draw_text(view_xview+30, view_yview+120, string(global.skillpoints));
 }
 else if(global.hud_state == "inventory3")
 {

@@ -20,6 +20,13 @@ Object[1,3] = obj_mater_coal;
 Object[1,4] = obj_mater_ironbar;
 Object[1,5] = obj_mater_steelbar;
 Object[1,6] = obj_mater_feather;
+//Weight
+Weight[1,1] = 0.25;
+Weight[1,2] = 0.25;
+Weight[1,3] = 0.20;
+Weight[1,4] = 0.30;
+Weight[1,5] = 0.35;
+Weight[1,6] = 0.05;
 
 //Ingredients
 //Icon
@@ -37,6 +44,11 @@ Object[2,1] = obj_ingr_water_flask;
 Object[2,2] = obj_ingr_flower_1;
 Object[2,3] = obj_ingr_flower_2;
 Object[2,4] = obj_ingr_flower_3;
+//Weight
+Weight[2,1] = 0.20;
+Weight[2,2] = 0.05;
+Weight[2,3] = 0.05;
+Weight[2,4] = 0.05;
 
 //Potions
 //Icon
@@ -45,6 +57,9 @@ Icon[3,2] = "spr_icon_potion_2";
 //Description
 Descr[3,1] = "Potion 1";
 Descr[3,2] = "Potion 2";
+//Weight
+Weight[3,1] = 0.20;
+Weight[3,2] = 0.20;
 
 //Foods
 //Icon
@@ -53,3 +68,6 @@ Icon[4,2] = "spr_icon_tuna";
 //Description
 Descr[4,1] = "Salmon";
 Descr[4,2] = "Tuna";
+//Weight
+Weight[4,1] = 1.00;
+Weight[4,2] = 1.00;
