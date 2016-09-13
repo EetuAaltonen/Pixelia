@@ -1,56 +1,24 @@
-/*if (file_exists("Save.sav"))
-{
-    file_delete("Save.sav");
-}*/
 ini_open("Save.sav");
-var SavedRoom = global.current_room; //base64_encode(string(global.current_room));
-var SavedHealth = global.player_health;
 
-var SavedLevel = global.level;
-var SavedXp = global.xp;
-var SavedXpLimit = global.xp_limit;
+ini_write_real("Save1","room",global.current_room);
+ini_write_real("Save1","health",global.player_health);
 
-var SavedSkillPoint = global.skillpoint;
-var SavedDeathCounter = global.death_counter;
-var SavedKillCounter = global.kill_counter;
+ini_write_real("Save1","level",global.level);
+ini_write_real("Save1","xp",global.xp);
+ini_write_real("Save1","xplimit",global.xp_limit);
 
-var SavedQuest= string(global.quest);
+ini_write_real("Save1","skillpoints",global.skillpoint);
+ini_write_real("Save1","deaths",global.death_counter);
+ini_write_real("Save1","kills",global.kill_counter);
 
-var SavedCoins = global.coins;
-var SavedPotions = global.potions;
+ini_write_string("Save1","quest",global.quest);
 
-//Home village
-var SavedHomeHappiness = global.home_happiness;
-var SavedHomeDefence = global.home_defence;
-var SavedHomeHunger = global.home_hunger;
-var SavedHomeThirst = global.home_thirst;
+ini_write_real("Save1","coins",global.coins);
+ini_write_real("Save1","potions",global.potions);
 
+ini_write_real("Save1","home_happiness",global.home_happiness);
+ini_write_real("Save1","home_defence",global.home_defence);
+ini_write_real("Save1","home_hunger",global.home_hunger);
+ini_write_real("Save1","home_thirst",global.home_thirst);
 
-ini_write_real("Save1","room",SavedRoom);
-ini_write_real("Save1","health",SavedHealth);
-
-ini_write_real("Save1","level",SavedLevel);
-ini_write_real("Save1","xp",SavedXp);
-ini_write_real("Save1","xplimit",SavedXpLimit);
-
-ini_write_real("Save1","coins",SavedCoins);
-ini_write_real("Save1","potions",SavedPotions);
-
-ini_write_real("Save1","skillpoints",SavedSkillPoint);
-ini_write_real("Save1","deaths",SavedDeathCounter);
-ini_write_real("Save1","kills",SavedKillCounter);
-
-ini_write_string("Save1","quest",SavedQuest);
-
-ini_write_real("Save1","potions",SavedPotions);
-
-ini_write_real("Save1","home_happiness",SavedHomeHappiness);
-ini_write_real("Save1","home_defence",SavedHomeDefence);
-ini_write_real("Save1","home_hunger",SavedHomeHunger);
-ini_write_real("Save1","home_thirst",SavedHomeThirst);
-
-//ini_write_real("Save1","quest",string(SavedQuest));
-
-//ini_write_string("Save1","room",SavedRoom);
-//ini_write_string("Save1","coins",SavedCoins);
 ini_close();

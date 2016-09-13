@@ -222,6 +222,7 @@
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_pointer</sprite>
       <sprite>sprites\spr_potion_icon</sprite>
+      <sprite>sprites\spr_quest_text_bg</sprite>
       <sprite>sprites\spr_quests</sprite>
       <sprite>sprites\spr_screen</sprite>
       <sprite>sprites\spr_stats</sprite>
@@ -553,12 +554,12 @@
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_first_loading</object>
       <object>objects\obj_hotbar_bg_controller</object>
+      <object>objects\obj_quest_controller</object>
       <object>objects\obj_hud_state_switcher</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
       <object>objects\obj_pointer</object>
       <object>objects\obj_potion_target</object>
-      <object>objects\obj_quests</object>
       <object>objects\obj_screen_controller</object>
       <objects name="Shop">
         <object>objects\obj_shop_bg_controller</object>

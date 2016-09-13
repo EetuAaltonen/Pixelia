@@ -31,3 +31,5 @@ Object[21] = obj_skill_Q;
 Object[22] = obj_skill_W;
 //Home village
 Object[23] = obj_home_village_controller;
+//Quest
+Object[24] = obj_quest_controller;

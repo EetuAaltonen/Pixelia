@@ -3,7 +3,7 @@
   <spriteName>spr_quests</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5002</depth>
+  <depth>-5004</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -48,12 +48,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_item_counter);
-draw_sprite(spr_hud_quest,0,view_xview+295, view_yview+3);
-draw_set_color(c_black);
+            <string>draw_sprite_ext(spr_inv_item_description_bg, image_index, view_xview+425, view_yview+13,
+                image_xscale, image_yscale, image_angle, c_white, image_alpha);
 
-quest = global.quest;
-draw_text(view_xview+305, view_yview+5, string(quest));
+//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
+draw_text(view_xview+360, view_yview+13, string(global.quest));
 </string>
           </argument>
         </arguments>
