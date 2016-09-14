@@ -31,6 +31,8 @@ key = "";
 ref = 1;
 search_id = "";
 
+create_once = true; //Create objects once on the list
+
 //Coins
 global.coins = 0;
 //Potion
@@ -316,9 +318,9 @@ if (global.hud_state == "inventory1")
             //Check if item amount &gt; 0
             if (round(item_amount[ref,item_id]) &gt; 0)
             {
-                //Item icon
+                //Item
                 scr_inventory_item_info();
-                item_icon[ref,item_id] = string(Icon[ref,item_id]);
+                item[ref,item_id] = Object[1,item_id];
                 
                 //Item description
                 item_description[ref,item_id] = string(Descr[ref,item_id]);
@@ -329,7 +331,7 @@ if (global.hud_state == "inventory1")
                 item_weight[ref,item_id] = string(Weight[ref,item_id]);
                 
                 //Draw
-                item_icon_draw[i] = item_icon[ref,item_id];
+                item_create[i] = item[ref,item_id];
                 item_description_draw[i] = item_description[ref,item_id];
                 item_amount_draw[i] = item_amount[ref,item_id];
                 item_weight_draw[i] = item_weight[ref,item_id];
@@ -339,6 +341,7 @@ if (global.hud_state == "inventory1")
             }
         }
         ini_close();
+        create_once = true;
         loop_stop = true;
     }
     var y_pos; //y position
@@ -376,33 +379,36 @@ if (global.hud_state == "inventory1")
             }
             page_update = false;
         }
-        for (i = start_count; i != end_count; i++;)
+        //Item create
+        if (create_once == true)
         {
-            if (string_pos("spr_", string(item_icon_draw[i])))
-            {                
-                //Item background
-                draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);
-                //Item icons
-                draw_sprite(asset_get_index(string(item_icon_draw[i])), 0,view_xview+30, view_yview+y_pos);           
-                //Item description background
-                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
-                //Item description
-                draw_text(view_xview+56,view_yview+y_pos, string(item_description_draw[i]));
-                //Item amount background
-                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-                //Item amount
-                draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
-                //Item weight background
-                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
-                //Item weight
-                draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
-                
+            for (i = start_count; i != end_count; i++;)
+            {
+                //Materials
+                instance_create(view_xview+30, view_yview+y_pos, item_create[i])
                 y_pos += 19;
             }
-            else
-            {
-                i -= 1;
-            }
+            create_once = false;
+            y_pos = 120;
+        } 
+        for (i = start_count; i != end_count; i++;)
+        {               
+            //Item background
+            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);        
+            //Item description background
+            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
+            //Item description
+            draw_text(view_xview+56,view_yview+y_pos, string(item_description_draw[i]));
+            //Item amount background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
+            //Item amount
+            draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
+            //Item weight background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
+            //Item weight
+            draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
+            
+            y_pos += 19;
         }
         //Item count
         draw_text(view_xview+300,view_yview+95, string(item_count));
