@@ -40,7 +40,10 @@ global.potions = 0;
 global.auto_healing = 1;
 
 //Max item weight
-global.max_item_weight = 100;
+global.max_item_weight = 10;
+
+//Total item weight
+global.total_item_weight = 0;
 
 //Collected item info text
 t = 1;
@@ -275,9 +278,6 @@ if (global.hud_state == "inventory1")
         search_id = "mater";
         i = 0;
         
-        //Weight
-        global.total_item_weight = 0;
-        
         ini_open("Inventory.sav");
         for(item_id = 1; item_id &lt; 100; item_id++)
         {
@@ -333,9 +333,6 @@ if (global.hud_state == "inventory1")
                 item_description_draw[i] = item_description[ref,item_id];
                 item_amount_draw[i] = item_amount[ref,item_id];
                 item_weight_draw[i] = item_weight[ref,item_id];
-                
-                //Weight
-                global.total_item_weight += real(item_weight_draw[i]);
                 
                 item_count += 1;
                 i += 1;
@@ -394,7 +391,7 @@ if (global.hud_state == "inventory1")
                 //Item amount background
                 draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
                 //Item amount
-                draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]));
+                draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
                 //Item weight background
                 draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
                 //Item weight

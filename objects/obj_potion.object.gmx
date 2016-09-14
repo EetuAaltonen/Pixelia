@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collected
-scr_potion_collected();
+            <string>//Potion collected
+if (distance_to_object(obj_player) &lt; 10)
+{
+    instance_create(x, y, obj_potion_collected)
+    instance_destroy(); 
+}
 </string>
           </argument>
         </arguments>

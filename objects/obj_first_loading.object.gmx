@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 50;
-load = false;
+            <string>load = false;
 </string>
           </argument>
         </arguments>
@@ -49,7 +48,8 @@ load = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>load = true;
+            <string>scr_loadgame();
+
 </string>
           </argument>
         </arguments>
@@ -72,10 +72,8 @@ load = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (load == true)
+            <string>if (load == false)
 {
-    global.current_room = Test;
-    
     //Create needed objects
     scr_first_loading_screen_objects();
     var n1, object;
@@ -91,8 +89,9 @@ load = false;
             instance_create(x-100, y-100, object);
         }
     }
-    scr_loadgame();
-    load = false;
+    alarm[1] = 50;
+    
+    load = true;
 }
 </string>
           </argument>
@@ -117,7 +116,6 @@ load = false;
           <argument>
             <kind>1</kind>
             <string>//Font
-//Font
 draw_set_font(fnt_loading);
 draw_set_color(c_white);
 draw_set_halign(fa_left);

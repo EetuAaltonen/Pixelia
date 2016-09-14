@@ -3,6 +3,8 @@ ini_open("Save.sav");
 ini_write_real("Save1","room",global.current_room);
 ini_write_real("Save1","health",global.player_health);
 
+ini_write_real("Save1","weight_of_items",global.total_item_weight);
+
 ini_write_real("Save1","level",global.level);
 ini_write_real("Save1","xp",global.xp);
 ini_write_real("Save1","xplimit",global.xp_limit);
