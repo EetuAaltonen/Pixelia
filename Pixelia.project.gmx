@@ -420,7 +420,6 @@
     <objects name="Collectable">
       <objects name="Animals">
         <object>objects\obj_feather</object>
-        <object>objects\obj_feather_collected</object>
         <object>objects\obj_salmon_collected</object>
         <object>objects\obj_tuna_collected</object>
       </objects>

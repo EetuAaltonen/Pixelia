@@ -1,7 +1,7 @@
 if (collecting == false)
 {
     collecting = true;
-    if ((global.max_item_weight - global.total_item_weight) - weight <= 0)
+    if ((global.max_item_weight - global.total_item_weight) - weight < 0)
     {
         draw_info = true;
         

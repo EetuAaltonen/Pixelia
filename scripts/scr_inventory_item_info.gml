@@ -21,9 +21,9 @@ Object[1,4] = obj_mater_ironbar;
 Object[1,5] = obj_mater_steelbar;
 Object[1,6] = obj_mater_feather;
 //Weight
-Weight[1,1] = 0.25;
-Weight[1,2] = 0.25;
-Weight[1,3] = 0.20;
+Weight[1,1] = 1.00;
+Weight[1,2] = 1.00;
+Weight[1,3] = 0.30;
 Weight[1,4] = 0.30;
 Weight[1,5] = 0.35;
 Weight[1,6] = 0.05;
@@ -69,5 +69,5 @@ Icon[4,2] = "spr_icon_tuna";
 Descr[4,1] = "Salmon";
 Descr[4,2] = "Tuna";
 //Weight
-Weight[4,1] = 1.00;
-Weight[4,2] = 1.00;
+Weight[4,1] = 0.50;
+Weight[4,2] = 0.50;

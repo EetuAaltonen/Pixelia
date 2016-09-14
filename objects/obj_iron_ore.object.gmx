@@ -34,6 +34,12 @@ mining = 1;
 item_id = 1; //Id
 search_id = "mater"; //Type
 added_amount = 1; //Added amount
+
+scr_inventory_item_info();
+weight = Weight[1,item_id];
+
+//Info text
+info_text = "Ironore";
 </string>
           </argument>
         </arguments>
@@ -142,33 +148,49 @@ switch (iron)
             <kind>1</kind>
             <string>count = random_range(3, 6);
 
-if (iron &gt; 1 and mining == 1 and obj_player.action_state = "mining")
+if ((global.max_item_weight - global.total_item_weight) - weight &gt;= 0)
 {
-    plus = 0;
-    iron -= 1;
-    image_index += 1;
-    mining = 0;
-    alarm[2] = 40; //mining
-    while (drop &lt; count)
+    if (iron &gt; 1 and mining == 1 and obj_player.action_state = "mining")
     {
-        instance_create(x,y-10,obj_mining_hit);
-        instance_create(x,y,obj_mining_dust);
-        drop += 1;    
+        iron -= 1;
+        image_index += 1;
+        mining = 0;
+        alarm[2] = 40; //mining
+        while (drop &lt; count)
+        {
+            instance_create(x,y-10,obj_mining_hit);
+            instance_create(x,y,obj_mining_dust);
+            drop += 1;    
+        }
+        drop = 0;
+        
+        //Weight
+        global.total_item_weight += weight;
+        
+        //XP
+        scr_add_xp();
+        
+        //Info text
+        scr_collected_item_info_text();
+        
+        //Save to inventory
+        scr_save_to_inventory();
     }
-    global.ironore += 1;
-    drop = 0;
-    
-    //XP
-    scr_add_xp();
-    
-    //Save to inventory
-    global.n1 = 1;
-    global.AddedItemAmount = 1;
-    scr_save_to_inventory();
+    else if (iron &lt;= 1)
+    {
+        alarm[1] = 200;
+    }
 }
-else if (iron &lt;= 1)
+else
 {
-    alarm[1] = 200;
+    var previous_info;
+    previous_info = info_text;
+    info_text = "Inventory is full!";
+    scr_collected_item_info_text();
+    info_text = previous_info;
+    
+    obj_player.action_state = "null";
+    obj_player.sprite_index = spr_player;
 }
 </string>
           </argument>
