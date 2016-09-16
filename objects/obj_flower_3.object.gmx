@@ -39,7 +39,7 @@ scr_inventory_item_info();
 weight = Weight[2,item_id];
 
 //Info text
-info_text = "Flower 1";
+info_text = "Flower 3";
 </string>
           </argument>
         </arguments>

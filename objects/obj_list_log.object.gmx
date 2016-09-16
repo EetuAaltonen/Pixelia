@@ -26,10 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>selected = false;
-item_id = 2; //Order number in inventory
-search_id = "mater";
+item_id = 2; //Id
+search_id = "mater"; //Type
 added_amount = -1; //Added amount
-//object = obj_mater_ironore;
 
 scr_inventory_item_info();
 weight = Weight[1,item_id];

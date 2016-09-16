@@ -26,8 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>selected = false;
-number = 4; //Order number in inventory
-object = obj_ingr_flower_3;
+item_id = 4; //Id
+search_id = "ingr"; //Type
+added_amount = -1; //Added amount
+
+scr_inventory_item_info();
+weight = Weight[2,item_id];
+
+//Info text
+info_text = "Flower 3";
 </string>
           </argument>
         </arguments>
@@ -52,6 +59,29 @@ object = obj_ingr_flower_3;
             <kind>1</kind>
             <string>scr_check_if_instance_destroy();
 scr_check_if_selected_true();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_drop_item();
 </string>
           </argument>
         </arguments>

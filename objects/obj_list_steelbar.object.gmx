@@ -26,9 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>selected = false;
-number = 5; //Order number in inventory
-search_id = 1; 
-//object = obj_mater_steelbar;
+item_id = 5; //Id
+search_id = "mater"; //Type
+added_amount = -1; //Added amount
+
+scr_inventory_item_info();
+weight = Weight[1,item_id];
+
+//Info text
+info_text = "Steelbar";
 </string>
           </argument>
         </arguments>
@@ -53,6 +59,29 @@ search_id = 1;
             <kind>1</kind>
             <string>scr_check_if_instance_destroy();
 scr_check_if_selected_true();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_drop_item();
 </string>
           </argument>
         </arguments>

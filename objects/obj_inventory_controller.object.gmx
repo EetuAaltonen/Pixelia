@@ -320,7 +320,7 @@ if (global.hud_state == "inventory1")
             {
                 //Item
                 scr_inventory_item_info();
-                item[ref,item_id] = Object[1,item_id];
+                item[ref,item_id] = Object[ref,item_id];
                 
                 //Item description
                 item_description[ref,item_id] = string(Descr[ref,item_id]);
