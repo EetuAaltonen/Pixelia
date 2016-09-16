@@ -66,6 +66,9 @@ else if (global.hud_state == "alchemy")
         }
     }
 }
+else if (global.hud_state == "inventory1")
+{
+}
 else
 {
     instance_destroy();

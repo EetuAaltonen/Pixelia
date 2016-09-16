@@ -1,4 +1,4 @@
-//Materials
+//listials
 //Icon
 Icon[1,1] = "spr_icon_ironore";
 Icon[1,2] = "spr_icon_log";
@@ -14,12 +14,12 @@ Descr[1,4] = "Ironbar";
 Descr[1,5] = "Steelbar";
 Descr[1,6] = "Feather";
 //Object
-Object[1,1] = obj_mater_ironore;
-Object[1,2] = obj_mater_log;
-Object[1,3] = obj_mater_coal;
-Object[1,4] = obj_mater_ironbar;
-Object[1,5] = obj_mater_steelbar;
-Object[1,6] = obj_mater_feather;
+Object[1,1] = obj_list_ironore;
+Object[1,2] = obj_list_log;
+Object[1,3] = obj_list_coal;
+Object[1,4] = obj_list_ironbar;
+Object[1,5] = obj_list_steelbar;
+Object[1,6] = obj_list_feather;
 //Weight
 Weight[1,1] = 1.00;
 Weight[1,2] = 1.00;
@@ -28,7 +28,7 @@ Weight[1,4] = 0.30;
 Weight[1,5] = 0.35;
 Weight[1,6] = 0.05;
 
-//Ingredients
+//listedients
 //Icon
 Icon[2,1] = "spr_icon_water_flask";
 Icon[2,2] = "spr_icon_flower_1";
@@ -40,10 +40,10 @@ Descr[2,2] = "Flower 1";
 Descr[2,3] = "Flower 2";
 Descr[2,4] = "Flower 3";
 //Object
-Object[2,1] = obj_ingr_water_flask;
-Object[2,2] = obj_ingr_flower_1;
-Object[2,3] = obj_ingr_flower_2;
-Object[2,4] = obj_ingr_flower_3;
+Object[2,1] = obj_list_water_flask;
+Object[2,2] = obj_list_flower_1;
+Object[2,3] = obj_list_flower_2;
+Object[2,4] = obj_list_flower_3;
 //Weight
 Weight[2,1] = 0.20;
 Weight[2,2] = 0.05;

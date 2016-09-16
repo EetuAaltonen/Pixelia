@@ -335,14 +335,17 @@
         <script>scripts\scr_workbench_craft.gml</script>
         <script>scripts\scr_workbench_recipes.gml</script>
       </scripts>
-      <script>scripts\scr_check_if_selected_true.gml</script>
-      <script>scripts\scr_check_if_instance_destroy.gml</script>
     </scripts>
     <scripts name="Home">
       <script>scripts\scr_prices.gml</script>
     </scripts>
     <scripts name="Inventory">
+      <script>scripts\scr_drop_item.gml</script>
       <script>scripts\scr_inventory_item_info.gml</script>
+    </scripts>
+    <scripts name="Listed items">
+      <script>scripts\scr_check_if_selected_true.gml</script>
+      <script>scripts\scr_check_if_instance_destroy.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_falling_damage.gml</script>
@@ -366,11 +369,11 @@
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
+    <script>scripts\scr_check_weight.gml</script>
+    <script>scripts\scr_collected_item.gml</script>
     <script>scripts\scr_collected_item_info_text.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_solidify.gml</script>
-    <script>scripts\scr_collected_item.gml</script>
-    <script>scripts\scr_check_weight.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
@@ -446,20 +449,6 @@
       <object>objects\obj_alchemy_station</object>
       <object>objects\obj_forge</object>
       <object>objects\obj_workbench</object>
-      <objects name="Ingredients">
-        <object>objects\obj_ingr_flower_1</object>
-        <object>objects\obj_ingr_flower_2</object>
-        <object>objects\obj_ingr_flower_3</object>
-        <object>objects\obj_ingr_water_flask</object>
-      </objects>
-      <objects name="Materials">
-        <object>objects\obj_mater_ironore</object>
-        <object>objects\obj_mater_feather</object>
-        <object>objects\obj_mater_log</object>
-        <object>objects\obj_mater_coal</object>
-        <object>objects\obj_mater_ironbar</object>
-        <object>objects\obj_mater_steelbar</object>
-      </objects>
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
@@ -547,16 +536,28 @@
           <object>objects\obj_st_more_str</object>
         </objects>
       </objects>
+      <objects name="Listed items">
+        <object>objects\obj_list_ironore</object>
+        <object>objects\obj_list_feather</object>
+        <object>objects\obj_list_log</object>
+        <object>objects\obj_list_coal</object>
+        <object>objects\obj_list_ironbar</object>
+        <object>objects\obj_list_steelbar</object>
+        <object>objects\obj_list_water_flask</object>
+        <object>objects\obj_list_flower_3</object>
+        <object>objects\obj_list_flower_2</object>
+        <object>objects\obj_list_flower_1</object>
+      </objects>
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_first_loading</object>
       <object>objects\obj_hotbar_bg_controller</object>
-      <object>objects\obj_quest_controller</object>
       <object>objects\obj_hud_state_switcher</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
       <object>objects\obj_pointer</object>
       <object>objects\obj_potion_target</object>
+      <object>objects\obj_quest_controller</object>
       <object>objects\obj_screen_controller</object>
       <objects name="Shop">
         <object>objects\obj_shop_bg_controller</object>
