@@ -53,6 +53,9 @@
         <sprite>sprites\spr_tuna</sprite>
       </sprites>
       <sprites name="Ingredients">
+        <sprite>sprites\spr_barbarea_vulgaris</sprite>
+        <sprite>sprites\spr_camomile</sprite>
+        <sprite>sprites\spr_celandine</sprite>
         <sprite>sprites\spr_flower_1</sprite>
         <sprite>sprites\spr_flower_2</sprite>
         <sprite>sprites\spr_flower_3</sprite>
@@ -60,6 +63,10 @@
         <sprite>sprites\spr_icon_flower_2</sprite>
         <sprite>sprites\spr_icon_flower_3</sprite>
         <sprite>sprites\spr_icon_water_flask</sprite>
+        <sprite>sprites\spr_lambsquarter</sprite>
+        <sprite>sprites\spr_nettle</sprite>
+        <sprite>sprites\spr_plantain</sprite>
+        <sprite>sprites\spr_sheeps_sorrel</sprite>
         <sprite>sprites\spr_water_flask</sprite>
       </sprites>
       <sprite>sprites\spr_coal_ore</sprite>
@@ -331,10 +338,6 @@
         <script>scripts\scr_forg_mouse_released.gml</script>
         <script>scripts\scr_forge_recipes.gml</script>
       </scripts>
-      <scripts name="Workbench">
-        <script>scripts\scr_workbench_craft.gml</script>
-        <script>scripts\scr_workbench_recipes.gml</script>
-      </scripts>
     </scripts>
     <scripts name="Home">
       <script>scripts\scr_prices.gml</script>
@@ -427,9 +430,16 @@
         <object>objects\obj_tuna_collected</object>
       </objects>
       <objects name="Ingredients">
+        <object>objects\obj_barbarea_vulgaris</object>
+        <object>objects\obj_celandine</object>
+        <object>objects\obj_nettle</object>
+        <object>objects\obj_camomile</object>
         <object>objects\obj_flower_1</object>
         <object>objects\obj_flower_2</object>
         <object>objects\obj_flower_3</object>
+        <object>objects\obj_lambsquarter</object>
+        <object>objects\obj_plantain</object>
+        <object>objects\obj_sheeps_sorrel</object>
         <object>objects\obj_water_flask</object>
       </objects>
       <object>objects\obj_chest</object>

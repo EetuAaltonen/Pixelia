@@ -114,33 +114,33 @@ else
             <string>if (recipe_check == true)
 {
     scr_alchemy_recipes();
-    var number1, number2, number3, recipe_id;
+    var item_id_1, item_id_2, item_id_3, recipe_id;
     recipe_id = string("000");
     if (global.alch_slot_1 == true)
     {
-        number1 = obj_alch_slot_1.number;
+        item_id_1 = obj_alch_slot_1.item_id;
     }
     else
     {
-        number1 = 0;
+        item_id_1 = 0;
     }
     if (global.alch_slot_2 == true)
     {
-        number2 = obj_alch_slot_2.number;
+        item_id_2 = obj_alch_slot_2.item_id;
     }
     else
     {
-        number2 = 0;
+        item_id_2 = 0;
     }
     if (global.alch_slot_3 == true)
     {
-        number3 = obj_alch_slot_3.number;
+        item_id_3 = obj_alch_slot_3.item_id;
     }
     else
     {
-        number3 = 0;
+        item_id_3 = 0;
     }
-    recipe_id = string(string(number1) + string(number2) + string(number3));
+    recipe_id = string(string(item_id_1) + string(item_id_2) + string(item_id_3));
     if (real(recipe_id) &lt;= array_length_1d(Recipe))
     {
         if (Recipe[recipe_id])
@@ -191,21 +191,21 @@ else
     //var item1_amount, item2_amount, item3_amount; ???
     if (global.alch_slot_1 == true)
     {
-        item_id = obj_alch_slot_1.number; //Id
+        item_id = obj_alch_slot_1.item_id; //Id
         search_id = "ingr";
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.alch_slot_2 == true)
     {
-        item_id = obj_alch_slot_2.number; //Id
+        item_id = obj_alch_slot_2.item_id; //Id
         search_id = "ingr";
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.alch_slot_3 == true)
     {
-        item_id = obj_alch_slot_3.number; //Id
+        item_id = obj_alch_slot_3.item_id; //Id
         search_id = "ingr";
         added_amount = -1; //Added amount
         scr_save_to_inventory();

@@ -25,44 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Workbench
-global.workbench = false;
-number_of_ores = 2; //In Inventory.sav (don't count 0!)
-workb_loop_stop = false;
-create_only_once = true;
-workb1 = 0;
-workb2 = 0;
-global.workb_slot_1 = false;
-global.workb_slot_2 = false;
-global.workb_slot_3 = false;
-global.workb_slot_4 = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Forced close workbench
-if (room == Menu or room == First_loading)
-{
-    global.workbench = false;
-}
+            <string>/*//Read saved ini
+search_id = "mater";
+
+update_amounts = true; //Update amounts in list
+update_list = true;
+create_once = true; //Create objects once on the list
+
+//Highlights off
+global.forg_slot_1 = false;
+global.forg_slot_2 = false;
+global.forg_slot_3 = false;
+global.forg_slot_4 = false;
 </string>
           </argument>
         </arguments>
@@ -85,147 +59,141 @@ if (room == Menu or room == First_loading)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!room == Menu)
-{   
-    //workbench
-    if (global.workbench == true)
+            <string>/*//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
+//Forge
+if (global.hud_state == "forge")
+{
+    if (update_list == true)
     {
-        if (workb_loop_stop == false)
+        if (update_amounts == true)
         {
-            workb_amount[workb2] = 0;
-            workb_amount[workb1] = 0;
-            workb_object[workb2] = "spr_aim";
-            workb_object[workb1] = "spr_aim";
-            workb1 = 1; //Start
-            workb2 = 0;
-            repeat(number_of_ores)
+            //Better code
+            item_count = 0;
+            search_id = "mater";
+            i = 0;
+            
+            ini_open("Inventory.sav");
+            for(item_id = 1; item_id &lt; 101; item_id++)
             {
-                //Material index
-                scr_inventory_item_info();
-                workbObject = Object[workb1];
+                //Change category
+                if (item_id == 100)
+                {
+                    break;
+                }
+                key = search_id + "[" + string(item_id) + "]";
+                //Item amount
+                item_amount[1,item_id] = ini_read_real("Save1", key, -1);
                 
-                //Material description
-                scr_inventory_item_info();
-                workbDescription = string(Descr[workb1]);
-                
-                //Material amount
-                ini_open("Inventory.sav");
-                workbAmount = ini_read_real("Save1",string(workb1),"0");
-                ini_close();
-                
-                if (not round(real(workbAmount)) == 0)
-                {                   
-                    workb_object[workb1] = workbObject;
-                    workb_description[workb1] = workbDescription;
-                    workb_amount[workb1] = round(workbAmount);
+                //Check if item amount &gt; 0
+                if (round(item_amount[1,item_id]) &gt; 0)
+                {
+                    //Item
+                    scr_inventory_item_info();
+                    material[1,item_id] = Object[1,item_id];
+                    
+                    //Item description
+                    item_description[1,item_id] = string(Descr[1,item_id]);
+                    
+                    //Item amount is top of for loop
                     
                     //Draw
-                    workb_object[workb2] = workb_object[workb1];
-                    workb_description[workb2] = workb_description[workb1];
-                    workb_amount[workb2] = workb_amount[workb1];
+                    material_create[i] = material[1,item_id];
+                    description_draw[i] = item_description[1,item_id];
+                    amount_draw[i] = item_amount[1,item_id];
                     
-                    workb2 += 1;
+                    item_count += 1;
+                    i += 1;
                 }
-                else
-                {
-                    //Forced delete Material if amount = 0 (while making potions)
-                    if (instance_exists(workbObject))
-                    {
-                        workb_amount[(workbObject).number] = 0;
-                    }
-                }
-                workb1 += 1;
             }
-            workb_count = workb2; 
         }
-        var y1, y2;
-        y1 = 110;
-        y2 = 110;
-        alch_loop_stop = true;
-        if (workb_count &gt; 0)
-        {
-            if (workb_page_update == true)
-            {
-                workb_end_count = 8; //Limit of list
-                workb_start_count = 0; //First item number
-                if (workb_count &gt; 8)
-                {
-                    if ((workb_count - ((workb_page+1)*8)) &gt; 0 and workb_page == 0)
-                    {
-                        workb_start_count = 0;
-                        workb_end_count = 8;
-                        
-                    }
-                    else if ((workb_count - ((workb_page+1)*8)) &gt; 0 and
-                            workb_page &gt; 0)
-                    {
-                        workb_start_count = (workb_page*8);
-                        workb_end_count = ((workb_page*8)*2);
-                    }
-                    else
-                    {
-                        workb_start_count = (workb_page*8);
-                        workb_end_count = workb_count;
-                    }
-                }
-                else
-                {
-                    workb_end_count = workb_count;
-                    workb_start_count = 0;
-                }
-                global.alch_page_update = false;
-            }
-            for (workb2 = workb_start_count; workb2 &lt; workb_end_count; workb2++;)
-            {
-                //Material background
-                draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+7+y1);               
-                //Material description background
-                draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+7+y1);
-                //Create objects on the list
-                if (create_only_once == true)
-                {
-                    for (workb2 = workb_start_count; workb2 &lt; workb_end_count; workb2++;)
-                    {
-                        //Materials
-                        instance_create(view_xview+30, view_yview+7+y2, workb_object[workb2])
-                        (workb_object[workb2]).amount = workb_amount[workb2];
-                        y2 += 19;
-                    }
-                    create_only_once = false;
-                }
-                //Material description
-                draw_text_color(view_xview+55,view_yview+y1, string(workb_description[workb2]),
-                                c_black, c_black, c_black, c_black, 1);
-                //Material amount background
-                draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+7+y1);
-                //Material amount
-                draw_text_color(view_xview+207,view_yview+y1, string(workb_amount[workb2]),
-                                c_black, c_black, c_black, c_black, 1);
-                y1 += 19;
-            }
-            //Workbench
-            draw_text_color(view_xview+20,view_yview+60, "Workbench",
-                            c_black, c_black, c_black, c_black, 1);
-            //Page number background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
-            //Page number max
-            workb_page_max = (round(workb_count/8));
-            if ((workb_page_max - (workb_count/8)) &lt; 0 )
-            {   
-                workb_page_max += 1;
-            }
-            //Draw page number and max
-            draw_text_color(view_xview+20,view_yview+87, 
-                            string("PAGE: " + string(workb_page + 1) + "       / " + string(workb_page_max)),
-                            c_black, c_black, c_black, c_black, 1);
-        }
-        else
-        {
-            //If empty
-            draw_text_color(view_xview+30, view_yview+117, "You don't have any ingredients...",
-                                c_black, c_black, c_black, c_black, 1);
-        }  
+        ini_close();
+        update_amounts = false;
     }
+    if (item_count &gt; 0)
+    {
+        if (page_refresh == true)
+        {
+            size_of_list = 8; //Limit of list
+            start_count = 0; //First item
+            if (item_count &gt; 8)
+            {                       //This have to be set!
+                if ((item_count - ((forge_page+1)*8)) &gt; 0 and forge_page == 0)
+                {
+                    start_count = 0;
+                    end_count = 8;
+                    
+                }
+                else if ((item_count - ((forge_page+1)*8)) &gt; 0 and
+                        forge_page &gt; 0)
+                {
+                    start_count = (forge_page*8);
+                    end_count = ((forge_page*8)*2);
+                }
+                else
+                {
+                    start_count = (forge_page*8);
+                    end_count = item_count;
+                }
+            }
+            else
+            {
+                end_count = item_count;
+                start_count = 0;
+            }
+            page_refresh = false;
+            create_once = true;
+        }
+        var y_pos; //y position
+        y_pos = 110;
+        if (create_once == true)
+        {
+            for (i = start_count; i &lt; end_count; i++;)
+            {
+                //Materials
+                instance_create(view_xview+30, view_yview+y_pos, material_create[i])
+                y_pos += 19;
+            }
+            create_once = false;
+            y_pos = 110;
+        }
+        for (i = start_count; i &lt; end_count; i++;)
+        {
+            //Material background
+            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);               
+            //Material description background
+            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
+            //Material description
+            draw_text(view_xview+56,view_yview+y_pos, string(description_draw[i]));
+            //Material amount background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
+            //Material amount
+            draw_text(view_xview+207,view_yview+y_pos, string(amount_draw[i]));
+            y_pos += 19;
+        }
+    }
+    else
+    {
+        //If empty
+        draw_text_color(view_xview+30, view_yview+117, "You don't have any ores...",
+                            c_black, c_black, c_black, c_black, 1);
+    }
+    //Forge
+    draw_text(view_xview+23,view_yview+65, "Forge");
+    //Page number background
+    draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+87);
+    //Page number max
+    forge_page_max = (round(item_count/8));
+    if ((forge_page_max - (item_count/8)) &lt; 0 )
+    {   
+        forge_page_max += 1;
+    }
+    //Draw page number and max
+    draw_text(view_xview+23,view_yview+87, string("PAGE:    " + string(forge_page + 1) + "  /  " + string(forge_page_max)));
 }
 </string>
           </argument>
