@@ -431,13 +431,13 @@
       </objects>
       <objects name="Ingredients">
         <object>objects\obj_barbarea_vulgaris</object>
-        <object>objects\obj_celandine</object>
-        <object>objects\obj_nettle</object>
         <object>objects\obj_camomile</object>
+        <object>objects\obj_celandine</object>
         <object>objects\obj_flower_1</object>
         <object>objects\obj_flower_2</object>
         <object>objects\obj_flower_3</object>
         <object>objects\obj_lambsquarter</object>
+        <object>objects\obj_nettle</object>
         <object>objects\obj_plantain</object>
         <object>objects\obj_sheeps_sorrel</object>
         <object>objects\obj_water_flask</object>
