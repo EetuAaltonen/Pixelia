@@ -5,7 +5,7 @@ scr_conver_search_name_to_id();
 scr_inventory_item_info();
 
 //Description
-description = Descr[2,item_id];
+description = Descr[search_id,item_id];
 
 //Weight
-weight = Weight[2,item_id];
+weight = Weight[search_id,item_id];

@@ -29,17 +29,16 @@
 
 //Save to inventory info
 item_id = 6; //Id
-search_id = "mater"; //Type
+search_name = "mater"; //Type
+search_id = 0; //Search id
 added_amount = 1; //Added amount
+description = ""; //Description
 
 collecting = false;
 collected = false;
 
-scr_inventory_item_info();
-weight = Weight[1,item_id];
-
-//Info text
-info_text = "Feather";
+//Infos
+scr_item_get_info();
 </string>
           </argument>
         </arguments>

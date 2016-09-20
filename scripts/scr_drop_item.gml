@@ -5,7 +5,7 @@ instance_create(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_it
 (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).sprite_index = sprite_index;
 (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).item_id = item_id;
 (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).search_id = search_id;
-(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).info_text = info_text;
+(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).description = description;
 (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).weight = weight;
 
 global.total_item_weight -= weight;

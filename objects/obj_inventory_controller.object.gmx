@@ -49,10 +49,10 @@ global.total_item_weight = 0;
 
 //Collected item info text
 t = 1;
-draw_info_text = false;
-info_text[t] = "";
+draw_description = false;
+description[t] = "";
 text_y_pos = 0;
-info_text_alpha = 0;
+description_alpha = 0;
 
 </string>
           </argument>
@@ -76,20 +76,20 @@ info_text_alpha = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collected item info text
-if (draw_info_text == true)
+            <string>//Collected item description
+if (draw_description == true)
 {
     if (text_y_pos == 0)
     {
-        if not(info_text[t] == "")
+        if not(description[t] == "")
         {
-            draw_info_text = true;
+            draw_description = true;
             text_y_pos -= 1;
             alarm[1] = 2;
         }
         else
         {
-            draw_info_text = false;
+            draw_description = false;
             t = 1;
         }
     }
@@ -99,30 +99,30 @@ if (draw_info_text == true)
         {
             text_y_pos -= 1;
             alarm[1] = 2;
-            if (text_y_pos &gt; -29 and info_text_alpha &lt; 1)
+            if (text_y_pos &gt; -29 and description_alpha &lt; 1)
             {
-                info_text_alpha += 0.10;   
+                description_alpha += 0.10;   
             }
             else if (text_y_pos &lt; -29)
             {
-                info_text_alpha -= 0.10;
+                description_alpha -= 0.10;
             }
         }
         else
         {
             text_y_pos = 0;
-            info_text_alpha = 0;
-            info_text[t] = "";
-            if (t + 1 &lt; array_length_1d(info_text))
+            description_alpha = 0;
+            description[t] = "";
+            if (t + 1 &lt; array_length_1d(description))
             {
                 t += 1;
             }
             else
             {
-                if not(info_text[1] == "")
+                if not(description[1] == "")
                 {
                     t = 1;
-                    draw_info_text = true;
+                    draw_description = true;
                 }
             }
             alarm[1] = 2;
@@ -542,12 +542,12 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-if (draw_info_text == true)
+if (draw_description == true)
 {
     if (global.hud_state == "null")
     {
-        draw_text_colour(view_xview+450, view_yview+260+text_y_pos, string(info_text[t]),
-                         c_black, c_black, c_black, c_black, info_text_alpha);
+        draw_text_colour(view_xview+450, view_yview+260+text_y_pos, string(description[t]),
+                         c_black, c_black, c_black, c_black, description_alpha);
     }
 }
 </string>

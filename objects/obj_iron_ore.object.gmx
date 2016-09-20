@@ -171,7 +171,7 @@ if ((global.max_item_weight - global.total_item_weight) - weight &gt;= 0)
         scr_add_xp();
         
         //Info text
-        scr_collected_item_info_text();
+        scr_collected_item_description();
         
         //Save to inventory
         scr_save_to_inventory();
@@ -186,7 +186,7 @@ else
     var previous_info;
     previous_info = info_text;
     info_text = "Inventory is full!";
-    scr_collected_item_info_text();
+    scr_collected_item_description();
     info_text = previous_info;
     
     obj_player.action_state = "null";

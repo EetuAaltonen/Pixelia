@@ -36,27 +36,41 @@ Icon[2,3] = "spr_icon_flower_2";
 Icon[2,4] = "spr_icon_flower_3";
 //Description
 Descr[2,1] = "Water Flask";
-Descr[2,2] = "Flower 1";
-Descr[2,3] = "Flower 2";
-Descr[2,4] = "Flower 3";
+Descr[2,2] = "Barbarea vulgaris";
+Descr[2,3] = "Camomile";
+Descr[2,4] = "Celandine";
+Descr[2,5] = "Lamsquarter";
+Descr[2,6] = "Nettle";
+Descr[2,7] = "Plantain";
+Descr[2,8] = "Sheep's sorrel";
 //Object
 Object[2,1] = obj_list_water_flask;
 Object[2,2] = obj_list_barbarea_vulgaris;
 Object[2,3] = obj_list_camomile;
 Object[2,4] = obj_list_celandine;
+Object[2,5] = obj_list_lambsquarter;
+Object[2,6] = obj_list_nettle;
+Object[2,7] = obj_list_plantain;
+Object[2,8] = obj_list_sheeps_sorrel;
 //Weight
 Weight[2,1] = 0.20;
 Weight[2,2] = 0.05;
 Weight[2,3] = 0.05;
 Weight[2,4] = 0.05;
+Weight[2,5] = 0.05;
+Weight[2,6] = 0.05;
+Weight[2,7] = 0.05;
+Weight[2,8] = 0.05;
 
 //Potions
 //Icon
 Icon[3,1] = "spr_icon_potion_1";
 Icon[3,2] = "spr_icon_potion_2";
 //Description
-Descr[3,1] = "Potion 1";
+Descr[3,1] = "Healing potion";
 Descr[3,2] = "Potion 2";
+//Object
+Object[3,1] = obj_list_healing_potion;
 //Weight
 Weight[3,1] = 0.20;
 Weight[3,2] = 0.20;

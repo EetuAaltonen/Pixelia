@@ -6,10 +6,10 @@ if (collecting == false)
         draw_info = true;
         
         var previous_info;
-        previous_info = info_text;
-        info_text = "Inventory is full!";
-        scr_collected_item_info_text();
-        info_text = previous_info;
+        previous_info = description;
+        description = "Inventory is full!";
+        scr_collected_item_description();
+        description = previous_info;
         
         alarm[1] = 50;
     }

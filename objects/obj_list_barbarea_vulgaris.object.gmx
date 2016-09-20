@@ -25,16 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>selected = false;
+            <string>//Save to inventory info
 item_id = 2; //Id
-search_id = "ingr"; //Type
+search_name = "ingr"; //Type
+search_id = 0; //Search id
 added_amount = -1; //Added amount
+description = ""; //Description
 
-scr_inventory_item_info();
-weight = Weight[2,item_id];
+selected = false;
 
-//Info text
-info_text = "Flower 1";
+//Infos
+scr_item_get_info();
 </string>
           </argument>
         </arguments>

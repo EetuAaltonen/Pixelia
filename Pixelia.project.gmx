@@ -56,18 +56,14 @@
         <sprite>sprites\spr_barbarea_vulgaris</sprite>
         <sprite>sprites\spr_camomile</sprite>
         <sprite>sprites\spr_celandine</sprite>
-        <sprite>sprites\spr_flower_1</sprite>
-        <sprite>sprites\spr_flower_2</sprite>
-        <sprite>sprites\spr_flower_3</sprite>
-        <sprite>sprites\spr_icon_flower_1</sprite>
-        <sprite>sprites\spr_icon_flower_2</sprite>
-        <sprite>sprites\spr_icon_flower_3</sprite>
-        <sprite>sprites\spr_icon_water_flask</sprite>
         <sprite>sprites\spr_lambsquarter</sprite>
         <sprite>sprites\spr_nettle</sprite>
         <sprite>sprites\spr_plantain</sprite>
         <sprite>sprites\spr_sheeps_sorrel</sprite>
         <sprite>sprites\spr_water_flask</sprite>
+      </sprites>
+      <sprites name="Potions">
+        <sprite>sprites\spr_healing_potion</sprite>
       </sprites>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
@@ -78,7 +74,6 @@
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_iron_ore</sprite>
       <sprite>sprites\spr_medicpack</sprite>
-      <sprite>sprites\spr_potion</sprite>
       <sprite>sprites\spr_tree</sprite>
       <sprite>sprites\spr_tree_1</sprite>
     </sprites>
@@ -376,7 +371,7 @@
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_check_weight.gml</script>
     <script>scripts\scr_collected_item.gml</script>
-    <script>scripts\scr_collected_item_info_text.gml</script>
+    <script>scripts\scr_collected_item_description.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_solidify.gml</script>
   </scripts>
@@ -435,9 +430,6 @@
         <object>objects\obj_barbarea_vulgaris</object>
         <object>objects\obj_camomile</object>
         <object>objects\obj_celandine</object>
-        <object>objects\obj_flower_1</object>
-        <object>objects\obj_flower_2</object>
-        <object>objects\obj_flower_3</object>
         <object>objects\obj_lambsquarter</object>
         <object>objects\obj_nettle</object>
         <object>objects\obj_plantain</object>
@@ -452,10 +444,12 @@
       <object>objects\obj_fishing_vein</object>
       <object>objects\obj_iron_ore</object>
       <object>objects\obj_medicpack</object>
-      <object>objects\obj_potion</object>
       <object>objects\obj_potion_collected</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_dropped_item</object>
+      <objects name="Potions">
+        <object>objects\obj_healing_potion</object>
+      </objects>
     </objects>
     <objects name="Crafting">
       <object>objects\obj_alchemy_station</object>
@@ -549,16 +543,27 @@
         </objects>
       </objects>
       <objects name="Listed items">
-        <object>objects\obj_list_ironore</object>
-        <object>objects\obj_list_feather</object>
-        <object>objects\obj_list_log</object>
-        <object>objects\obj_list_coal</object>
-        <object>objects\obj_list_ironbar</object>
-        <object>objects\obj_list_steelbar</object>
-        <object>objects\obj_list_water_flask</object>
-        <object>objects\obj_list_celandine</object>
-        <object>objects\obj_list_camomile</object>
-        <object>objects\obj_list_barbarea_vulgaris</object>
+        <objects name="Ingredients">
+          <object>objects\obj_list_barbarea_vulgaris</object>
+          <object>objects\obj_list_camomile</object>
+          <object>objects\obj_list_celandine</object>
+          <object>objects\obj_list_lambsquarter</object>
+          <object>objects\obj_list_nettle</object>
+          <object>objects\obj_list_plantain</object>
+          <object>objects\obj_list_sheeps_sorrel</object>
+          <object>objects\obj_list_water_flask</object>
+        </objects>
+        <objects name="Materials">
+          <object>objects\obj_list_coal</object>
+          <object>objects\obj_list_feather</object>
+          <object>objects\obj_list_ironbar</object>
+          <object>objects\obj_list_ironore</object>
+          <object>objects\obj_list_log</object>
+          <object>objects\obj_list_steelbar</object>
+        </objects>
+        <objects name="Potions">
+          <object>objects\obj_list_healing_potion</object>
+        </objects>
       </objects>
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>

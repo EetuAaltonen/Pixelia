@@ -30,13 +30,15 @@
 //Save to inventory info
 item_id = 2; //Id
 search_name = "ingr"; //Type
+search_id = 0; //Search id
 added_amount = 1; //Added amount
+description = ""; //Description
 
 collecting = false;
 collected = false;
 
 //Infos
-scr_item_get_infos();
+scr_item_get_info();
 </string>
           </argument>
         </arguments>
