@@ -28,18 +28,15 @@
             <string>image_speed = 0.2;
 
 //Save to inventory info
-item_id = 3; //Id
-search_id = "ingr"; //Type
+item_id = 2; //Id
+search_name = "ingr"; //Type
 added_amount = 1; //Added amount
 
 collecting = false;
 collected = false;
 
-scr_inventory_item_info();
-weight = Weight[2,item_id];
-
-//Info text
-info_text = "Flower 2";
+//Infos
+scr_item_get_infos();
 </string>
           </argument>
         </arguments>

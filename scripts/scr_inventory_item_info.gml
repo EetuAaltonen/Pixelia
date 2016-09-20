@@ -41,9 +41,9 @@ Descr[2,3] = "Flower 2";
 Descr[2,4] = "Flower 3";
 //Object
 Object[2,1] = obj_list_water_flask;
-Object[2,2] = obj_list_flower_1;
-Object[2,3] = obj_list_flower_2;
-Object[2,4] = obj_list_flower_3;
+Object[2,2] = obj_list_barbarea_vulgaris;
+Object[2,3] = obj_list_camomile;
+Object[2,4] = obj_list_celandine;
 //Weight
 Weight[2,1] = 0.20;
 Weight[2,2] = 0.05;

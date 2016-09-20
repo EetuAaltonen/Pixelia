@@ -349,6 +349,8 @@
     <scripts name="Listed items">
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_check_if_instance_destroy.gml</script>
+      <script>scripts\scr_item_get_info.gml</script>
+      <script>scripts\scr_conver_search_name_to_id.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_falling_damage.gml</script>
@@ -554,9 +556,9 @@
         <object>objects\obj_list_ironbar</object>
         <object>objects\obj_list_steelbar</object>
         <object>objects\obj_list_water_flask</object>
-        <object>objects\obj_list_flower_3</object>
-        <object>objects\obj_list_flower_2</object>
-        <object>objects\obj_list_flower_1</object>
+        <object>objects\obj_list_celandine</object>
+        <object>objects\obj_list_camomile</object>
+        <object>objects\obj_list_barbarea_vulgaris</object>
       </objects>
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>
