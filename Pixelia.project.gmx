@@ -374,6 +374,7 @@
     <script>scripts\scr_collected_item_description.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <script>scripts\scr_ingr_create_variables.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

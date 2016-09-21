@@ -37,7 +37,7 @@ description = ""; //Description
 collecting = false;
 collected = false;
 
-//Infos
+//Info
 scr_item_get_info();
 </string>
           </argument>

@@ -1,11 +1,34 @@
-//Convert search name to id
-scr_conver_search_name_to_id();
+if (type_id == 1)
+{
+
+}
+else if (type_id == 2)
+{
+    switch (sprite_index)
+    {
+        case spr_barbarea_vulgaris: 
+            item_id = 1; //Id
+            name = ""; //Name
+            description = ""; //Description
+            weight = 0; //Weight
+            added_amount = 0; //Added amount
+    }
+    
+    switch (item_id)
+    {
+        case 1:
+            type = "ingr";
+            category = "?";
+            item_id = 2;
+        break;
+    }
+}
 
 //Info location
 scr_inventory_item_info();
 
 //Description
-description = Descr[search_id,item_id];
+description = Descr[type_id,item_id];
 
 //Weight
-weight = Weight[search_id,item_id];
+weight = Weight[type_id,item_id];
