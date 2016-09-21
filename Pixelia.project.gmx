@@ -324,6 +324,12 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Collectable items">
+      <script>scripts\scr_ingr_create_variables.gml</script>
+      <script>scripts\scr_mater_create_variables.gml</script>
+      <script>scripts\scr_poti_create_variables.gml</script>
+      <script>scripts\scr_food_create_variables.gml</script>
+    </scripts>
     <scripts name="Crafting">
       <scripts name="Alchemy">
         <script>scripts\scr_alchemy_recipes.gml</script>
@@ -372,10 +378,14 @@
     <script>scripts\scr_collected_item.gml</script>
     <script>scripts\scr_collected_item_description.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
-    <script>scripts\scr_ingr_create_variables.gml</script>
-    <script>scripts\scr_poti_create_variables.gml</script>
     <script>scripts\scr_item_get_info.gml</script>
+    <script>scripts\scr_list_items.gml</script>
+    <script>scripts\scr_page_calculate.gml</script>
+    <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <scripts name="Particles">
+      <script>scripts\scr_woodcutting_dust.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

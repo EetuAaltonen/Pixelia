@@ -37,11 +37,37 @@ item_id = 2; //Id
 search_id = "mater"; //Type
 added_amount = 1; //Added amount
 
-scr_inventory_item_info();
+//Particles
+scr_woodcutting_dust();
+
+/*scr_inventory_item_info();
 weight = Weight[1,item_id];
 
 //Info text
 info_text = "Log";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_emitter_stream(wood_dust_particles, wood_dust_emitter, wood_dust, 0);
 </string>
           </argument>
         </arguments>
@@ -151,7 +177,11 @@ else if (hit == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>count = random_range(3, 6);
+            <string>//Create wood dust
+part_emitter_stream(wood_dust_particles, wood_dust_emitter, wood_dust, 1);
+
+alarm[5] = 10;
+/*count = random_range(3, 6);
 
 if ((global.max_item_weight - global.total_item_weight) - weight &gt;= 0)
 {

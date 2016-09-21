@@ -35,7 +35,7 @@ item_id = 1; //Id
 search_id = "mater"; //Type
 added_amount = 1; //Added amount
 
-scr_inventory_item_info();
+/*scr_inventory_item_info();
 weight = Weight[1,item_id];
 
 //Info text

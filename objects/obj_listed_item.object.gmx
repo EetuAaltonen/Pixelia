@@ -32,10 +32,9 @@ name = ""; //Name
 description = ""; //Description
 weight = 0; //Weight
 
-selected = false;
+fill_info = false;
 
-//Fill info
-scr_item_get_info();
+selected = false;
 </string>
           </argument>
         </arguments>
@@ -60,6 +59,32 @@ scr_item_get_info();
             <kind>1</kind>
             <string>scr_check_if_instance_destroy();
 scr_check_if_selected_true();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Fill info
+if (fill_info == true)
+{
+    scr_item_get_info();
+    fill_info = false;
+}
 </string>
           </argument>
         </arguments>
@@ -105,7 +130,7 @@ scr_check_if_selected_true();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_listed_item_mouse_released();
+            <string>//scr_listed_item_mouse_released();
 </string>
           </argument>
         </arguments>
