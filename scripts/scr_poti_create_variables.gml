@@ -2,7 +2,7 @@
 image_speed = 0.2;
 
 item_id = 0; //Id
-type_id = 2; //Type id
+type_id = 3; //Type id
 name = ""; //Name
 description = ""; //Description
 weight = 0; //Weight

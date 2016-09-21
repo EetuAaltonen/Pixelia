@@ -25,20 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.2;
-
-//Save to inventory info
-item_id = 2; //Id
-search_name = "ingr"; //Type
-search_id = 0; //Search id
-added_amount = 1; //Added amount
-description = ""; //Description
-
-collecting = false;
-collected = false;
-
-//Info
-scr_item_get_info();
+            <string>scr_ingr_create_variables();
 </string>
           </argument>
         </arguments>

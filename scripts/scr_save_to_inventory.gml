@@ -1,7 +1,7 @@
 //Save inventory
 ini_open("Inventory.sav");
 var saved_amount, key;
-key = search_name + "[" + string(item_id) + "]";
+key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
 saved_amount = ini_read_real("Save1",string(key),"0");
 saved_amount = round(saved_amount) + added_amount;
 if (saved_amount <= 0)

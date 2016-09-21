@@ -344,7 +344,6 @@
     <scripts name="Listed items">
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_check_if_instance_destroy.gml</script>
-      <script>scripts\scr_item_get_info.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
     </scripts>
     <scripts name="Player">
@@ -373,8 +372,10 @@
     <script>scripts\scr_collected_item.gml</script>
     <script>scripts\scr_collected_item_description.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
-    <script>scripts\scr_solidify.gml</script>
     <script>scripts\scr_ingr_create_variables.gml</script>
+    <script>scripts\scr_poti_create_variables.gml</script>
+    <script>scripts\scr_item_get_info.gml</script>
+    <script>scripts\scr_solidify.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
@@ -543,29 +544,6 @@
           <object>objects\obj_st_more_str</object>
         </objects>
       </objects>
-      <objects name="Listed items">
-        <objects name="Ingredients">
-          <object>objects\obj_list_barbarea_vulgaris</object>
-          <object>objects\obj_list_camomile</object>
-          <object>objects\obj_list_celandine</object>
-          <object>objects\obj_list_lambsquarter</object>
-          <object>objects\obj_list_nettle</object>
-          <object>objects\obj_list_plantain</object>
-          <object>objects\obj_list_sheeps_sorrel</object>
-          <object>objects\obj_list_water_flask</object>
-        </objects>
-        <objects name="Materials">
-          <object>objects\obj_list_coal</object>
-          <object>objects\obj_list_feather</object>
-          <object>objects\obj_list_ironbar</object>
-          <object>objects\obj_list_ironore</object>
-          <object>objects\obj_list_log</object>
-          <object>objects\obj_list_steelbar</object>
-        </objects>
-        <objects name="Potions">
-          <object>objects\obj_list_healing_potion</object>
-        </objects>
-      </objects>
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_first_loading</object>
@@ -586,6 +564,7 @@
         <object>objects\obj_mana</object>
         <object>objects\obj_stamina</object>
       </objects>
+      <object>objects\obj_listed_item</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
