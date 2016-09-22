@@ -1,6 +1,12 @@
 if (type_id == 1)
 {
-
+    switch (sprite_index)
+    {
+        case spr_feather: 
+            item_id = 6; //Id
+            added_amount = 1; //Added amount
+        break;
+    }
 }
 else if (type_id == 2)
 {

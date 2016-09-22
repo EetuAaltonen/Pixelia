@@ -25,20 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.2;
-
-//Save to inventory info
-item_id = 6; //Id
-search_name = "mater"; //Type
-search_id = 0; //Search id
-added_amount = 1; //Added amount
-description = ""; //Description
-
-collecting = false;
-collected = false;
-
-//Infos
-scr_item_get_info();
+            <string>scr_mater_create_variables();
 </string>
           </argument>
         </arguments>
@@ -68,6 +55,30 @@ scr_item_get_info();
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (obj_inventory_controller.page_update == true)
+{
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

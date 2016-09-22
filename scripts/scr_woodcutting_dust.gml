@@ -15,6 +15,5 @@ part_type_gravity(wood_dust, 0.02, 90);
 part_type_blend(wood_dust, 1);
 
 //Emitter
-var wood_dust_emitter
 wood_dust_emitter = part_emitter_create(wood_dust_particles);
 part_emitter_region(wood_dust_particles, wood_dust_emitter, x-20, x+20, y+35, y+35, ps_shape_ellipse, ps_distr_linear);
