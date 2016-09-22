@@ -18,7 +18,7 @@ if (global.forg_slot_3 == true)
     scr_save_to_inventory();
 }
 
-obj_smelter.forg_page_update = true;
+obj_smelter.forg_page_refresh = true;
 obj_smelter.forg_loop_stop = false;
 obj_smelter.create_only_once = true;
 

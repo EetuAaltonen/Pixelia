@@ -76,7 +76,7 @@ can_open_or_close = true;
     global.inventory == 0)
 {
     global.alchemy = true;
-    obj_crafting_table.workb_page_update = true;
+    obj_crafting_table.workb_page_refresh = true;
     obj_crafting_table.workb_loop_stop = false;
     obj_crafting_table.create_only_once = true;
     obj_crafting_table.workb_page = 0;    

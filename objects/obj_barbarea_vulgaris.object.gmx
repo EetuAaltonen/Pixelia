@@ -96,7 +96,7 @@ if (collected == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_inventory_controller.page_update == true)
+            <string>if (obj_inventory_controller.create_once == true)
 {
     instance_destroy();
 }

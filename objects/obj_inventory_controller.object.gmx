@@ -30,6 +30,7 @@
 key = "";
 type_id = "";
 
+page_refresh = true;
 create_once = true; //Create objects once on the list
 
 //Coins

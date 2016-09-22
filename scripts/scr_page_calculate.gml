@@ -27,5 +27,5 @@ if (page_refresh == true)
         end_count = item_count;
         start_count = 0;
     }
-    page_update = false;
+    page_refresh = false;
 }
