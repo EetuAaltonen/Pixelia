@@ -26,11 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.1;
-log = 5;
+Source = 5;
 drop = 0;
-count = 0;
 wood = 1;
-hit = 0;
 
 //Save to inventory info
 item_id = 2; //Id
@@ -177,13 +175,7 @@ else if (hit == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Create wood dust
-part_emitter_stream(wood_dust_particles, wood_dust_emitter, wood_dust, 1);
-
-alarm[5] = 10;
-/*count = random_range(3, 6);
-
-if ((global.max_item_weight - global.total_item_weight) - weight &gt;= 0)
+            <string>if ((global.max_item_weight - global.total_item_weight) - weight &gt;= 0)
 {
     if (log &gt; 1 and wood == 1 and obj_player.action_state == "woodcutting")
     {  
@@ -191,13 +183,6 @@ if ((global.max_item_weight - global.total_item_weight) - weight &gt;= 0)
         image_index += 1;
         wood = 0;
         alarm[2] = 40; //mining
-        while (drop &lt; count)
-        {
-            instance_create(x,y+15,obj_wood_hit);
-            instance_create(x,y+15,obj_wood_dust);
-            drop += 1;
-        }
-        drop = 0;
         hit = 1;
         
         //Weight
@@ -228,6 +213,11 @@ else
     obj_player.action_state = "null";
     obj_player.sprite_index = spr_player;
 }
+
+//Create wood dust
+part_emitter_stream(wood_dust_particles, wood_dust_emitter, wood_dust, 1);
+
+alarm[5] = 10;
 </string>
           </argument>
         </arguments>
