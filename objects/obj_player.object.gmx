@@ -1349,8 +1349,8 @@ scr_plr_dead();
 draw_text(x, y-30, string(action_state));
 if (action_state == "null")
 {
-    if (distance_to_object(obj_iron_ore) &lt; 10 || 
-        distance_to_object(obj_tree) &lt; 10 ||
+    if (distance_to_object(obj_source_iron_ore) &lt; 5 || 
+        distance_to_object(obj_source_tree) &lt; 5 ||
         distance_to_object(obj_fishing_spot) &lt; 4 ||
         distance_to_object(obj_ladder) &lt; 1 || 
         distance_to_object(obj_crate) &lt; 2 ||
@@ -1852,26 +1852,29 @@ alarm[1] = 25;
     }
 
     //Mining
-    if (action_state == "null" and distance_to_object(obj_iron_ore) &lt; 10)
+    if (instance_exists(obj_source_tree))
     {
-        action_state = "mining";
-        alarm[8] = 50;
-    }
-    else if (action_state == "mining")
-    {
-        action_state = "null";
-        sprite_index = spr_player;
+        if (action_state == "null" and distance_to_object(obj_source_iron_ore) &lt; 5)
+        {
+            action_state = "mining";
+            alarm[8] = 50;
+        }
+        else if (action_state == "mining" and distance_to_object(obj_source_iron_ore) &gt;= 5)
+        {
+            action_state = "null";
+            sprite_index = spr_player;
+        }
     }
 
     //Woodcutting
-    if (instance_exists(obj_tree))
+    if (instance_exists(obj_source_tree))
     {
-        if (action_state == "null" and distance_to_object(obj_tree) &lt; 10)
+        if (action_state == "null" and distance_to_object(obj_source_tree) &lt; 5)
         {
             action_state = "woodcutting"
             alarm[9] = 50;
         }
-        else if (action_state == "woodcutting")
+        else if (action_state == "woodcutting" and distance_to_object(obj_source_tree) &gt;= 5)
         {
             action_state = "null";
             sprite_index = spr_player;

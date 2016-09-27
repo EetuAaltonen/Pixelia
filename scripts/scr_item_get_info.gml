@@ -2,6 +2,11 @@ if (type_id == 1)
 {
     switch (sprite_index)
     {
+        case spr_source_tree || spr_source_tree_hit: 
+            item_id = 1; //Id
+            added_amount = 1; //Added amount
+        break;
+        
         case spr_feather: 
             item_id = 6; //Id
             added_amount = 1; //Added amount

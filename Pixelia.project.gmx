@@ -72,10 +72,10 @@
       <sprite>sprites\spr_gold_ore</sprite>
       <sprite>sprites\spr_icon_ironore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
-      <sprite>sprites\spr_iron_ore</sprite>
+      <sprite>sprites\spr_source_iron_ore</sprite>
       <sprite>sprites\spr_medicpack</sprite>
-      <sprite>sprites\spr_tree</sprite>
-      <sprite>sprites\spr_tree_1</sprite>
+      <sprite>sprites\spr_source_tree</sprite>
+      <sprite>sprites\spr_source_tree_hit</sprite>
     </sprites>
     <sprites name="Crafting">
       <sprites name="Forge materials">
@@ -325,10 +325,12 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Collectable items">
+      <script>scripts\scr_food_create_variables.gml</script>
       <script>scripts\scr_ingr_create_variables.gml</script>
       <script>scripts\scr_mater_create_variables.gml</script>
       <script>scripts\scr_poti_create_variables.gml</script>
-      <script>scripts\scr_food_create_variables.gml</script>
+      <script>scripts\scr_source_hit.gml</script>
+      <script>scripts\scr_source_image_index.gml</script>
     </scripts>
     <scripts name="Crafting">
       <scripts name="Alchemy">
@@ -454,10 +456,10 @@
       <object>objects\obj_coin_drop</object>
       <object>objects\obj_fishing_spot</object>
       <object>objects\obj_fishing_vein</object>
-      <object>objects\obj_iron_ore</object>
+      <object>objects\obj_source_iron_ore</object>
       <object>objects\obj_medicpack</object>
       <object>objects\obj_potion_collected</object>
-      <object>objects\obj_tree</object>
+      <object>objects\obj_source_tree</object>
       <object>objects\obj_dropped_item</object>
       <objects name="Potions">
         <object>objects\obj_healing_potion</object>
