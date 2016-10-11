@@ -2,8 +2,15 @@ if (type_id == 1)
 {
     switch (sprite_index)
     {
-        case spr_source_tree || spr_source_tree_hit: 
+        case spr_source_iron_ore:
+        case spr_source_iron_ore_hit:
             item_id = 1; //Id
+            added_amount = 1; //Added amount
+        break;
+        
+        case spr_source_tree:
+        case spr_source_tree_hit:
+            item_id = 2; //Id
             added_amount = 1; //Added amount
         break;
         

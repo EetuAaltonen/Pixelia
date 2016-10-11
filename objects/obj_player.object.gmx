@@ -1852,14 +1852,14 @@ alarm[1] = 25;
     }
 
     //Mining
-    if (instance_exists(obj_source_tree))
+    if (instance_exists(obj_source_iron_ore))
     {
         if (action_state == "null" and distance_to_object(obj_source_iron_ore) &lt; 5)
         {
             action_state = "mining";
             alarm[8] = 50;
         }
-        else if (action_state == "mining" and distance_to_object(obj_source_iron_ore) &gt;= 5)
+        else if (action_state == "mining")
         {
             action_state = "null";
             sprite_index = spr_player;
@@ -1874,7 +1874,7 @@ alarm[1] = 25;
             action_state = "woodcutting"
             alarm[9] = 50;
         }
-        else if (action_state == "woodcutting" and distance_to_object(obj_source_tree) &gt;= 5)
+        else if (action_state == "woodcutting")
         {
             action_state = "null";
             sprite_index = spr_player;

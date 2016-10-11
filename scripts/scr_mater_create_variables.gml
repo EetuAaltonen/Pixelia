@@ -1,6 +1,4 @@
 //Info
-image_speed = 0.2;
-
 item_id = 0; //Id
 type_id = 1; //Type id
 name = ""; //Name

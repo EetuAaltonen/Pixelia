@@ -73,6 +73,7 @@
       <sprite>sprites\spr_icon_ironore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_source_iron_ore</sprite>
+      <sprite>sprites\spr_source_iron_ore_hit</sprite>
       <sprite>sprites\spr_medicpack</sprite>
       <sprite>sprites\spr_source_tree</sprite>
       <sprite>sprites\spr_source_tree_hit</sprite>

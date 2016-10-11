@@ -1,7 +1,7 @@
 //Image index
 if (source < 5)
 {
-    sprite_index = spr_source_tree_hit
+    sprite_index = sprite_index_hit;
     switch (source)
     {
         case 4: image_index = 0; break;
@@ -13,7 +13,7 @@ if (source < 5)
 }
 else
 {
-    sprite_index = spr_source_tree;
-    image_speed = 0.1;
+    sprite_index = sprite_index_untoch;
+    image_speed = default_speed;
 }
 

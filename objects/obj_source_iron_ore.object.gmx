@@ -25,14 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.1;
+            <string>default_speed = 0;
+image_speed = default_speed;
+sprite_index_untoch = spr_source_iron_ore;
+sprite_index_hit = spr_source_iron_ore_hit;
+action_state = "mining";
 source = 5;
 can_hit = true;
 
 //Save to inventory info
-item_id = 2; //Id
-search_id = "mater"; //Type
-added_amount = 1; //Added amount
 scr_mater_create_variables();
 
 //Particles

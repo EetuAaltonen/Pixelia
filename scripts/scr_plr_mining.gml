@@ -9,13 +9,13 @@ if (instance_nearest(x, y, obj_source_iron_ore).source > 0)
     {
         image_xscale = 1;
         x = instance_nearest(x, y, obj_source_iron_ore).x - 15;
-        y = instance_nearest(x, y, obj_source_iron_ore).y + 32;
+        y = instance_nearest(x, y, obj_source_iron_ore).y - 1;
     }
     else if (instance_nearest(x, y, obj_source_iron_ore).x < x)
     {
         image_xscale = -1;
         x = instance_nearest(x, y, obj_source_iron_ore).x + 15;
-        y = instance_nearest(x, y, obj_source_iron_ore).y + 32;
+        y = instance_nearest(x, y, obj_source_iron_ore).y - 1;
     }
 }
 else
