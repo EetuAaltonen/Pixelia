@@ -1,4 +1,4 @@
-switch (search_name)
+/*switch (search_name)
 {
     case "mater": search_id = 1; break;
     case "ingr": search_id = 2; break;

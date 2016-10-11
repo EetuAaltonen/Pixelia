@@ -354,6 +354,7 @@
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_check_if_instance_destroy.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
+      <script>scripts\scr_listed_item_mouse_released.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scr_falling_damage.gml</script>
