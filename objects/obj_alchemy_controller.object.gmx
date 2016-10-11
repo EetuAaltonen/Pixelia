@@ -26,10 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>//Read saved ini
-search_id = "ingr";
+//Read saved ini
+key = "";
+type_id = "";
 
-update_amounts = true; //Update amounts in list
-update_list = true;
+page_refresh = true;
 create_once = true; //Create objects once on the list
 
 //Highlights off
@@ -59,7 +60,7 @@ global.alch_slot_4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Forge
+            <string>//Alchemy
 //Font
 draw_set_font(fnt_inventory_text);
 draw_set_color(c_black);
@@ -68,131 +69,16 @@ draw_set_valign(fa_middle);
 
 if (global.hud_state == "alchemy")
 {
-    if (update_list == true)
-    {
-        if (update_amounts == true)
-        {
-            //Better code
-            item_count = 0;
-            search_id = "ingr";
-            i = 0;
-            
-            ini_open("Inventory.sav");
-            for(item_id = 1; item_id &lt; 101; item_id++)
-            {
-                //Change category
-                if (item_id == 5/*100*/)
-                {
-                    break;
-                }
-                key = search_id + "[" + string(item_id) + "]";
-                //Item amount
-                item_amount[2,item_id] = ini_read_real("Save1", key, -1);
-                
-                //Check if item amount &gt; 0
-                if (round(item_amount[2,item_id]) &gt; 0)
-                {
-                    //Item
-                    scr_inventory_item_info();
-                    material[2,item_id] = Object[2,item_id];
-                    
-                    //Item description
-                    item_description[2,item_id] = string(Descr[2,item_id]);
-                    
-                    //Item amount is top of for loop
-                    
-                    //Draw
-                    material_create[i] = material[2,item_id];
-                    description_draw[i] = item_description[2,item_id];
-                    amount_draw[i] = item_amount[2,item_id];
-                    
-                    item_count += 1;
-                    i += 1;
-                }
-            }
-        }
-        ini_close();
-        update_amounts = false;
-    }
-    if (item_count &gt; 0)
-    {
-        if (page_refresh == true)
-        {
-            size_of_list = 8; //Limit of list
-            start_count = 0; //First item
-            if (item_count &gt; 8)
-            {                       //This have to be set!
-                if ((item_count - ((alchemy_page+1)*8)) &gt; 0 and alchemy_page == 0)
-                {
-                    start_count = 0;
-                    end_count = 8;
-                    
-                }
-                else if ((item_count - ((alchemy_page+1)*8)) &gt; 0 and
-                        alchemy_page &gt; 0)
-                {
-                    start_count = (alchemy_page*8);
-                    end_count = ((alchemy_page*8)*2);
-                }
-                else
-                {
-                    start_count = (alchemy_page*8);
-                    end_count = item_count;
-                }
-            }
-            else
-            {
-                end_count = item_count;
-                start_count = 0;
-            }
-            page_refresh = false;
-            create_once = true;
-        }
-        var y_pos; //y position
-        y_pos = 110;
-        if (create_once == true)
-        {
-            for (i = start_count; i &lt; end_count; i++;)
-            {
-                //Materials
-                instance_create(view_xview+30, view_yview+y_pos, material_create[i])
-                y_pos += 19;
-            }
-            create_once = false;
-            y_pos = 110;
-        }
-        for (i = start_count; i &lt; end_count; i++;)
-        {
-            //Material background
-            draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);               
-            //Material description background
-            draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
-            //Material description
-            draw_text(view_xview+56,view_yview+y_pos, string(description_draw[i]));
-            //Material amount background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-            //Material amount
-            draw_text(view_xview+207,view_yview+y_pos, string(amount_draw[i]));
-            y_pos += 19;
-        }
-    }
-    else
-    {
-        //If empty
-        draw_text(view_xview+30, view_yview+117, "You don't have any ores...");
-    }
-    //Forge
-    draw_text(view_xview+23,view_yview+65, "Alchemystation");
-    //Page number background
-    draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+87);
-    //Page number max
-    alchemy_page_max = (round(item_count/8));
-    if ((alchemy_page_max - (item_count/8)) &lt; 0 )
-    {   
-        alchemy_page_max += 1;
-    }
-    //Draw page number and max
-    draw_text(view_xview+23,view_yview+87, string("PAGE:    " + string(alchemy_page + 1) + "  /  " + string(alchemy_page_max)));
+    //Create
+    instance_create(view_xview+300, view_yview+117, obj_alch_slot_1); //Slots
+    instance_create(view_xview+300, view_yview+147, obj_alch_slot_2);
+    instance_create(view_xview+300, view_yview+177, obj_alch_slot_3);
+    instance_create(view_xview+350, view_yview+147, obj_alch_slot_4);
+    
+    instance_create(view_xview+464, view_yview+54, obj_craft_close_button);
+    instance_create(view_xview+350, view_yview+147, obj_alch_crafted_item); //Crafted item (slot 4)
+    
+    scr_alch_list_items();
 }
 </string>
           </argument>

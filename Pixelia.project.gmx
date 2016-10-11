@@ -383,6 +383,7 @@
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_item_get_info.gml</script>
     <script>scripts\scr_list_items.gml</script>
+    <script>scripts\scr_alch_list_items.gml</script>
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>

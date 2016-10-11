@@ -34,7 +34,7 @@ if (global.hud_state == "forge")
 }
 else if (global.hud_state == "alchemy")
 {
-    if (obj_alchemy_controller.update_amounts == true and selected == false)
+    /*if (obj_alchemy_controller.update_amounts == true and selected == false)
     {
         instance_destroy();
     }
@@ -64,7 +64,7 @@ else if (global.hud_state == "alchemy")
             obj_alch_slot_3.item_id = 0;
             instance_destroy();
         }
-    }
+    }*/
 }
 else if (global.hud_state == "inventory1")
 {

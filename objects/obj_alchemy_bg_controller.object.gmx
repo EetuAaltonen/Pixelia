@@ -43,7 +43,7 @@ if (global.hud_state == "alchemy")
     scr_alchemy_recipes();
     
     //Crafted material info
-    draw_text(view_xview+346,view_yview+180, string(Info[obj_alch_crafted_item.sprite_index]));
+    //draw_text(view_xview+346,view_yview+180, string(Info[obj_alch_crafted_item.sprite_index]));
 }
 </string>
           </argument>
