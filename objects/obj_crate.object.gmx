@@ -8,6 +8,53 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>carry = false;
+can_pickup = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>can_pickup = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -26,7 +73,7 @@
           <argument>
             <kind>1</kind>
             <string>//Gravity
-if (place_free(x, y+1))
+/*if (place_free(x, y+1))
 {
     gravity = 3;
     //image_angle = direction;
@@ -46,18 +93,60 @@ else if (hspeed &lt; -0.5)
 {
     hspeed = -0.5;
 }
+*/
 //Push
-if (distance_to_object(obj_player) &lt; 10 and obj_player.action_state == "push")
+if (obj_player.action_state != "push" &amp;&amp; carry == false
+    &amp;&amp; distance_to_object(obj_use) == 0 &amp;&amp; can_pickup == true)
+{
+    can_pickup = false;
+    alarm[0] = 20;
+    carry = true;
+    solid = false;
+    obj_player.action_state = "push";
+    if (obj_player.x &lt; x)
+    {
+        x = obj_player.x + 15;
+        y = obj_player.y;
+    }
+    else
+    {
+        x = obj_player.x - 15;
+        y = obj_player.y;
+    }
+}
+else if (obj_player.action_state == "push" &amp;&amp; carry == true)
+{
+    if (obj_player.image_xscale == 1)
+    {
+        x = obj_player.x + 20;
+        y = obj_player.y;
+    }
+    else
+    {
+        x = obj_player.x - 20;
+        y = obj_player.y;
+    }
+}
+else
+{
+    carry = false;
+}
+
+/*if (distance_to_object(obj_player) &lt; 10 and obj_player.action_state == "push")
 {
     if (instance_nearest(x, y, obj_player).x &lt; x
         and keyboard_check(vk_right))
     {
-        hspeed = 0.7;
+        //hspeed = 0.7;
+        x = obj_player.x + 10;
+        y = obj_player.y - 5;
     }
     else if (instance_nearest(x, y, obj_player).x &gt; x
         and keyboard_check(vk_left))
     {
-        hspeed = -0.7;
+        x = obj_player.x - 10;
+        y = obj_player.y - 5;
+        //hspeed = -0.7;
     }
     else if (instance_nearest(x, y, obj_player).x &gt; x
         and keyboard_check(vk_right))
@@ -79,7 +168,7 @@ else
 {
     hspeed = 0;
     vspeed = 0;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -218,6 +307,35 @@ else
           <argument>
             <kind>1</kind>
             <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (obj_player.action_state == "push" &amp;&amp; carry == true &amp;&amp; can_pickup == true)
+{
+    carry = false;
+    can_pickup = false;
+    alarm[0] = 20;
+    obj_player.action_state = "null";
+}
 </string>
           </argument>
         </arguments>
