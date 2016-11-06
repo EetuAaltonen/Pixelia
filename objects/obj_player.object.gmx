@@ -390,6 +390,30 @@ sprite_index=spr_player;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (distance_to_object(obj_door_2) == 0)
+{
+    scr_solidify();   
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -473,10 +497,6 @@ else if (action_state == "null")
     {
         gravity = 0.3;
     }
-    else if (!place_free(x, y+3) and roll == 0)
-    {
-        gravity = 0.5;
-    }
     
     //Too fast falling
     if (vspeed &lt; -4)
@@ -533,19 +553,22 @@ else if (action_state == "null")
     }
 
     //Jump
-    if (keyboard_check(vk_up) and not place_free(x, y+1))
+    /*if (keyboard_check_released(vk_up) and not place_free(x, y+1))
     {
         can_jump = 0;
-        alarm[10] = 10; //can_jump
-        vspeed -= 4;
+        alarm[10] = 60; //can_jump
+        //vspeed -= 4;
         
         vspeed = -4;
         sprite_index = spr_plr_jump;
         // audio_play_sound(snd_jump,1,false);
     }
-    else if (keyboard_check_released(vk_up))
+    else */if (keyboard_check_pressed(vk_up) /*&amp;&amp; can_jump == true */&amp;&amp;
+               !place_free(x, y+1))
     {
-        sprite_index = spr_player;
+        vspeed = -4;
+        can_jump = false;
+        alarm[10] = 20; //can_jump
     }
     
     //Roll
@@ -802,6 +825,29 @@ global.xp=global.xp+1
       </action>
     </event>
     <event eventtype="4" ename="obj_door_locked">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_door_2">
       <action>
         <libid>1</libid>
         <id>603</id>

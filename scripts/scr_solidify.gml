@@ -1,4 +1,4 @@
-if (!place_free(x+hspeed,y))
+if (!place_free(x + hspeed,y))
 {
     if (hspeed <= 0)
     {

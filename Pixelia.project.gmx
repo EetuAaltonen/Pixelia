@@ -106,7 +106,6 @@
       <sprite>sprites\spr_talk</sprite>
       <sprite>sprites\spr_leaf</sprite>
       <sprite>sprites\spr_wood_hit</sprite>
-      <sprite>sprites\spr_use</sprite>
       <sprite>sprites\spr_enemy_hit</sprite>
       <sprite>sprites\spr_wood_dust</sprite>
     </sprites>
@@ -285,6 +284,7 @@
       <sprite>sprites\spr_plr_mining</sprite>
       <sprite>sprites\spr_plr_woodcutting</sprite>
       <sprite>sprites\spr_saving</sprite>
+      <sprite>sprites\spr_use</sprite>
       <sprite>sprites\sprite61</sprite>
     </sprites>
     <sprite>sprites\spr_aim</sprite>
@@ -304,6 +304,7 @@
     <sprite>sprites\spr_goal</sprite>
     <sprite>sprites\spr_inventory_button</sprite>
     <sprite>sprites\spr_night</sprite>
+    <sprite>sprites\spr_no_mask</sprite>
     <sprite>sprites\spr_pause</sprite>
     <sprite>sprites\spr_pet</sprite>
     <sprite>sprites\spr_pet_ammo</sprite>
@@ -434,6 +435,7 @@
       <object>objects\obj_cave_bridge_broken</object>
       <object>objects\obj_cave_door</object>
       <object>objects\obj_door</object>
+      <object>objects\obj_door_2</object>
       <object>objects\obj_door_locked</object>
       <object>objects\obj_stairs_0001</object>
     </objects>
@@ -644,15 +646,16 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
-    <room>rooms\Test</room>
-    <room>rooms\First_loading</room>
+    <room>rooms\Blacksmith</room>
     <room>rooms\Cave</room>
     <room>rooms\Cave_0001</room>
+    <room>rooms\First_loading</room>
     <room>rooms\Home_Village</room>
-    <room>rooms\World</room>
     <room>rooms\Map</room>
-    <room>rooms\Blacksmith</room>
     <room>rooms\Skilltree</room>
+    <room>rooms\Test</room>
+    <room>rooms\Test_improved</room>
+    <room>rooms\World</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

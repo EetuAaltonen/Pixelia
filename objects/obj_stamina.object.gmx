@@ -225,8 +225,11 @@ switch (global.stamina)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+30,
+            <string>if (instance_exists(obj_player))
+{
+    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+30,
                     image_xscale, image_yscale, image_angle, c_white, image_alpha);
+}
 </string>
           </argument>
         </arguments>
