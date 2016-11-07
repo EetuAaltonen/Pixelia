@@ -1,4 +1,4 @@
-if (loop_stop == false)
+if (update_list == false)
 {
     //Better code
     item_count = 0;
@@ -7,7 +7,7 @@ if (loop_stop == false)
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
-    for(item_id = 1; item_id < 100; item_id++)
+    for(item_id = 1; item_id < Name[1,6]; item_id++)
     {
         //Change category
         if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering
@@ -61,7 +61,7 @@ if (loop_stop == false)
     }
     ini_close();
     create_once = true;
-    loop_stop = true;
+    update_list = true;
 }
 var y_pos; //y position
 y_pos = 120;

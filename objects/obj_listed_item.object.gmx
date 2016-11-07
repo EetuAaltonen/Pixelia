@@ -26,7 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>//Info
-item_id = 0; //Id
+item_id = 0;
+item_type = "";
+item_name = "";
+item_description = "";
+item_weight = 0;
+item_selected = false;
+
+/*item_id = 0; //Id
 type_id = 0; //Type id
 name = ""; //Name
 description = ""; //Description

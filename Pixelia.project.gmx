@@ -356,6 +356,9 @@
       <script>scripts\scr_conver_search_name_to_id.gml</script>
       <script>scripts\scr_listed_item_mouse_released.gml</script>
     </scripts>
+    <scripts name="Particles">
+      <script>scripts\scr_woodcutting_dust.gml</script>
+    </scripts>
     <scripts name="Player">
       <script>scripts\scr_falling_damage.gml</script>
       <script>scripts\scr_got_damage.gml</script>
@@ -376,6 +379,7 @@
       <script>scripts\scr_savegame.gml</script>
     </scripts>
     <script>scripts\scr_add_xp.gml</script>
+    <script>scripts\scr_alch_list_items.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_check_weight.gml</script>
@@ -384,13 +388,9 @@
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_item_get_info.gml</script>
     <script>scripts\scr_list_items.gml</script>
-    <script>scripts\scr_alch_list_items.gml</script>
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>
-    <scripts name="Particles">
-      <script>scripts\scr_woodcutting_dust.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
