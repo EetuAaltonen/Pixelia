@@ -65,6 +65,7 @@
       <sprites name="Potions">
         <sprite>sprites\spr_healing_potion</sprite>
       </sprites>
+      <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_fishing_spot</sprite>
@@ -72,9 +73,9 @@
       <sprite>sprites\spr_gold_ore</sprite>
       <sprite>sprites\spr_icon_ironore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
+      <sprite>sprites\spr_medicpack</sprite>
       <sprite>sprites\spr_source_iron_ore</sprite>
       <sprite>sprites\spr_source_iron_ore_hit</sprite>
-      <sprite>sprites\spr_medicpack</sprite>
       <sprite>sprites\spr_source_tree</sprite>
       <sprite>sprites\spr_source_tree_hit</sprite>
     </sprites>
@@ -239,7 +240,6 @@
       <sprite>sprites\spr_crate</sprite>
       <sprite>sprites\spr_crate_0001</sprite>
       <sprite>sprites\spr_crate_0002</sprite>
-      <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_torch</sprite>
       <sprite>sprites\spr_anvil</sprite>
       <sprite>sprites\spr_grave</sprite>
@@ -391,6 +391,7 @@
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <script>scripts\scr_custom_gravity.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

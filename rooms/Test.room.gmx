@@ -167,7 +167,6 @@
     <instance objName="obj_grass" x="39" y="267" name="inst_A2BE168F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="23" y="267" name="inst_71EABBDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="7" y="267" name="inst_827A8B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door_locked" x="414" y="135" name="inst_97D82F77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lever" x="367" y="191" name="inst_C4D03AF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="247" y="251" name="inst_C83B8BEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="7" y="207" name="inst_51FEDE3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

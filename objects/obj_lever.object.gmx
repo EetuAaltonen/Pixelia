@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-lever = 0;
+image_index = 0;
+activated = false;
 </string>
           </argument>
         </arguments>
@@ -49,11 +50,11 @@ lever = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (lever == 0)
+            <string>if (activated == false)
 {
-    lever = 1;
+    activated = true;
     image_index = 1;
-    instance_create(x, y, obj_lever_signal );
+    instance_create(x, y, obj_lever_signal);
 }
 </string>
           </argument>

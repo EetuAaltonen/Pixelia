@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>showtext = 0;
+            <string>showtext = false;
 </string>
           </argument>
         </arguments>
@@ -50,11 +50,11 @@
             <kind>1</kind>
             <string>if place_meeting(x,y,obj_player)
 {
-    showtext = 1;
+    showtext = true;
 }
 else
 {
-    showtext = 0;
+    showtext = false;
 }
 </string>
           </argument>
@@ -79,8 +79,7 @@ else
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
-if showtext == 1
+if (showtext == true)
 {
     draw_set_font(fnt_sign);
     draw_sprite(spr_sign_bg,1,x-63,y-83); 

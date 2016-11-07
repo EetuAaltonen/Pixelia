@@ -30,6 +30,7 @@ image_speed = 0;
 image_index = 0;
 drop = 0;
 value = random_range(5, 20);
+collected = false;
 </string>
           </argument>
         </arguments>
@@ -77,7 +78,26 @@ alarm[1] = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_alpha == 0)
+            <string>//Gravity
+scr_custom_gravity();
+
+if (distance_to_object(obj_use) == 0 &amp;&amp; collected == false)
+{
+    if (instance_exists(obj_use))
+    {
+        with (obj_use) instance_destroy();
+    }
+    collected = true;
+    while (drop &lt; value)
+    {
+        global.xp += (5 * global.level); 
+        instance_create(x,y-17,obj_coin_drop);
+        drop += 1;
+        image_index = 1;
+        alarm[1] = 20;
+    }
+}
+if (image_alpha == 0)
 {
     instance_destroy();
 }
@@ -86,7 +106,7 @@ alarm[1] = 20;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_use">
+    <event eventtype="4" ename="obj_crate">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -103,14 +123,53 @@ alarm[1] = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>while (drop &lt; value)
-{
-    global.xp += (5 * global.level); 
-    instance_create(x,y-17,obj_coin_drop);
-    drop += 1;
-    image_index = 1;
-    alarm[1] = 20;
-}
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_grass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>

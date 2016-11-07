@@ -70,6 +70,8 @@ instance_create(x, y, obj_pointer);
 
 //Gravity
 //acceleration = 0; //???
+//Highlight
+highlight = false;
 
 //Slice
 cooldown_slice = 1;
@@ -466,17 +468,8 @@ else if (action_state == "null" ||
          action_state == "jump" ||
          action_state == "carry_goods")
 {
-    var custom_gravity = 0.2;
-    
     //Gravity
-    if (vspeed &lt; 10)
-    {
-        vspeed += custom_gravity;
-    }
-    /*if (place_free(x, y+3) and roll == 0)
-    {
-        gravity = 0.3;
-    }*/
+    scr_custom_gravity();
     
     //Too fast falling
     if (vspeed &lt; -4)
@@ -654,6 +647,29 @@ scr_plr_dead();
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_door_locked">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_world">
       <action>
         <libid>1</libid>
@@ -824,29 +840,6 @@ global.xp=global.xp+1
           <argument>
             <kind>1</kind>
             <string>///test
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_door_locked">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
 </string>
           </argument>
         </arguments>
@@ -1388,6 +1381,45 @@ if (action_state == "null")
         distance_to_object(obj_cave_door) &lt; 4)
     {
         draw_sprite(spr_E,1,x,y-20);   
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+if (highlight == false)
+{
+    if(action_state == "null" || action_state == "jump")
+    {
+        if (distance_to_object(obj_crate) &lt; 40)
+        {
+            if (image_xscale == 1)
+            {
+                (instance_nearest(x+20, y, obj_crate)).image_blend = make_colour_hsv(0, 0, 180);
+            }
+            else
+            {
+                (instance_nearest(x-20, y, obj_crate)).image_blend = make_colour_hsv(0, 0, 180);
+            }
+            highlight = true;  
+        }
     }
 }
 </string>

@@ -27,9 +27,8 @@
             <kind>1</kind>
             <string>start_x = x;
 start_y = y;
-highlight = true;
 picked = false;
-solid = true;
+waiting_releasing = false;
 </string>
           </argument>
         </arguments>
@@ -76,20 +75,16 @@ obj_player.action_state = "null";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var custom_gravity = 0.2;
-//Check if already picked up
+            <string>//Check if already picked up
 if (picked == false)
 {
     //Gravity
-    if (vspeed &lt; 10)
-    {
-        vspeed += custom_gravity;
-    }
+    scr_custom_gravity();
     //Solid
     solid = true;
     mask_index = spr_crate;
     //Pickup
-    if (distance_to_object(obj_use) == 0)
+    if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1))
     {
         //Check if player can pickup the crate
         if (obj_player.action_state = "null" ||
@@ -162,6 +157,29 @@ else
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_chest">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_grass">
       <action>
         <libid>1</libid>
@@ -180,6 +198,37 @@ else
           <argument>
             <kind>1</kind>
             <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Check if can drop
+if (picked == true &amp;&amp; distance_to_object(obj_grass) &gt;= 8 &amp;&amp;
+    distance_to_object(obj_crate) &gt;= 10)
+{
+    //Drop
+    picked = false;
+    //This fix instantly pickup
+    waiting_releasing = true;
+}
 </string>
           </argument>
         </arguments>
@@ -232,9 +281,17 @@ y = start_y;
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if (highlight == true)
+if (instance_exists(obj_player))
 {
-    image_blend = make_colour_hsv(255, 255, random(255));
+    if (distance_to_object(obj_player) &gt; 40 || y != obj_player.y)
+    {
+        image_blend = make_colour_hsv(0, 0, -1);
+        obj_player.highlight = false;
+    }
+    else if(picked == true)
+    {
+        image_blend = make_colour_hsv(0, 0, 180);
+    }
 }
 </string>
           </argument>
@@ -258,8 +315,14 @@ if (highlight == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Check if can drop
-if (picked == true &amp;&amp; distance_to_object(obj_grass) &gt;= 10 &amp;&amp;
+            <string>//This fix instantly pickup
+if (waiting_releasing == true)
+{
+    alarm[0] = 30;
+    waiting_releasing = false;
+}
+/*//Check if can drop
+if (picked == true &amp;&amp; distance_to_object(obj_grass) &gt;= 8 &amp;&amp;
     distance_to_object(obj_crate) &gt;= 10)
 {
     //Drop
