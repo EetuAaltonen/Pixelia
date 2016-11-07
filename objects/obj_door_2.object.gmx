@@ -56,7 +56,8 @@ mask_index = spr_door;
             <kind>1</kind>
             <string>if (closed == true)
 {
-    if (distance_to_object(obj_use) == 0)
+    if (distance_to_object(obj_use) == 0 &amp;&amp; 
+        obj_player.action_state = "null")
     {
         closed = false;
         solid = false;
