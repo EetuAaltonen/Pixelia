@@ -114,12 +114,9 @@ else if (room == First_loading)
 }
 else
 {
-    if (instance_exists(obj_hud_state_switcher))
+    if (global.hud_state != "null")
     {
-        if not(global.hud_state = "null")
-        {
-            draw_self();
-        }
+        draw_self();
     }
 }
 </string>

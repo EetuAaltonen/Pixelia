@@ -565,7 +565,6 @@
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_first_loading</object>
       <object>objects\obj_hotbar_bg_controller</object>
-      <object>objects\obj_hud_state_switcher</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
       <object>objects\obj_pointer</object>
