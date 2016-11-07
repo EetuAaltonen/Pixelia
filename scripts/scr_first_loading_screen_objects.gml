@@ -23,13 +23,12 @@ Object[15] = obj_exp_counter;
 Object[16] = obj_money_target;
 Object[17] = obj_potion_target;
 //Screen
-Object[18] = obj_hud_state_switcher;
-Object[19] = obj_hotbar_bg_controller;
+Object[18] = obj_hotbar_bg_controller;
 //Skill hotbar icons
-Object[20] = obj_skill_A;
-Object[21] = obj_skill_Q;
-Object[22] = obj_skill_W;
+Object[19] = obj_skill_A;
+Object[20] = obj_skill_Q;
+Object[21] = obj_skill_W;
 //Home village
-Object[23] = obj_home_village_controller;
+Object[22] = obj_home_village_controller;
 //Quest
-Object[24] = obj_quest_controller;
+Object[23] = obj_quest_controller;

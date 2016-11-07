@@ -64,10 +64,10 @@ selected = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if (obj_inventory_controller.page_refresh == true)
+            <string>if (obj_inventory_controller.page_refresh == true)
 {
     instance_destroy();
-}*/
+}
 //scr_check_if_instance_destroy();
 //scr_check_if_selected_true();
 </string>

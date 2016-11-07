@@ -1,4 +1,4 @@
-if (update_list == false)
+if (page_refresh == true)
 {
     //Better code
     item_count = 0;
@@ -7,7 +7,7 @@ if (update_list == false)
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
-    for(item_id = 1; item_id < Name[1,6]; item_id++)
+    for(item_id = 1; item_id < 100/*Name[1,6]*/; item_id++)
     {
         //Change category
         if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering
@@ -60,14 +60,15 @@ if (update_list == false)
         }
     }
     ini_close();
+    //Calculate number of pages
+    scr_page_calculate();
     create_once = true;
-    update_list = true;
+    page_refresh = false;
 }
 var y_pos; //y position
 y_pos = 120;
 if (item_count > 0)
 {
-    scr_page_calculate();
     //Item create
     if (create_once == true)
     {
