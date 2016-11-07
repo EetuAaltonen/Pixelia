@@ -24,10 +24,10 @@ if (file_exists("Save.sav"))
     
     ini_close();
     
-    room_goto(global.current_room);
+    room_goto(Test_improved);//global.current_room);
 }
 else
 {
-    global.current_room = Test;
+    global.current_room = Test_improved//Test;
     room_goto(global.current_room);
 }
