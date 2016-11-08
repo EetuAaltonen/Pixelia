@@ -1,17 +1,18 @@
-var x_random, y_random;
-x_random = random_range(-10, 10);
-y_random = random_range(-5, -10);
-instance_create(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item);
-(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).sprite_index = sprite_index;
-(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).item_id = item_id;
-(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).type_id = type_id;
-(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).name = name;
-(instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).weight = weight;
-
-global.total_item_weight -= weight;
-
-//Save to inventory
-scr_save_to_inventory();
-
+var x_random, y_random, i;
+for (i = 1; i <= dropped_count; i++)
+{
+    x_random = random_range(-10, 10);
+    y_random = random_range(-5, -10);
+    instance_create(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item);
+    (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).sprite_index = sprite_index;
+    (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).type_id = type_id;
+    (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).get_attributes = true;
+    (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).added_amount = added_amount;
+    global.total_item_weight -= weight;
+    //Save to inventory
+    added_amount = -1;
+    scr_save_to_inventory();
+    added_amount = 1;
+}
 //Refresh inventory list
-global.hud_state = "null";
+obj_inventory_controller.page_refresh = true;

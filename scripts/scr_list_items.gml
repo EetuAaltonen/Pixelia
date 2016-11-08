@@ -78,7 +78,7 @@ if (item_count > 0)
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).sprite_index = asset_get_index(string(item_sprite_draw[i]));
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).type_id = item_type_id_draw[i];
-            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).fill_info = true;
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).get_attributes = true;
             y_pos += 19;
         }
         create_once = false;

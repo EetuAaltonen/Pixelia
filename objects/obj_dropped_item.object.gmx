@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-4005</depth>
+  <depth>-85</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,22 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
-gravity = 0;
-
-//Save to inventory info
-item_id = 1; //Id
-search_id = "mater"; //Type
-added_amount = 1; //Added amount
-
-collecting = false;
-collected = false;
-
-scr_inventory_item_info();
-weight = Weight[1,item_id];
-
-//Info text
-info_text = "";
+            <string>scr_dropped_item_create_attributes();
 </string>
           </argument>
         </arguments>
@@ -86,17 +71,20 @@ info_text = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*//Collected
-if (collected == true)
+            <string>//Fill info
+if (get_attributes == true)
 {
-    scr_collected_item();
+    sprite_index_ = sprite_index; //Sprite_index
+    //Get id
+    scr_item_get_id();
+    //Get attributes
+    scr_item_get_attributes();
+    get_attributes = false;
 }
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="obj_use">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -113,11 +101,82 @@ if (collected == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collecting
-if (collecting == false)
+            <string>//Collect
+if (distance_to_object(obj_use) == 0)
 {
+    if (instance_exists(obj_use))
+    {
+        with (obj_use) instance_destroy();
+    }
     scr_check_weight();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Item moves to player
+scr_move_to_player();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Gravity
+scr_custom_gravity();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_grass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
 </string>
           </argument>
         </arguments>

@@ -214,6 +214,8 @@
         <sprite>sprites\spr_shop_bg</sprite>
       </sprites>
       <sprite>sprites\spr_building</sprite>
+      <sprite>sprites\spr_button_decrease</sprite>
+      <sprite>sprites\spr_button_increase</sprite>
       <sprite>sprites\spr_counter</sprite>
       <sprite>sprites\spr_darkness</sprite>
       <sprite>sprites\spr_draw_hotbar_bg</sprite>
@@ -327,15 +329,15 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Collectable items">
-      <scripts name="Create_and_initialize">
+      <scripts name="Create/Initialize">
         <script>scripts\scr_food_create_variables.gml</script>
-        <script>scripts\scr_listed_item_create_attributes.gml</script>
         <script>scripts\scr_ingr_create_attributes.gml</script>
         <script>scripts\scr_item_get_attributes.gml</script>
         <script>scripts\scr_item_get_id.gml</script>
         <script>scripts\scr_mater_create_variables.gml</script>
         <script>scripts\scr_poti_create_variables.gml</script>
         <script>scripts\scr_common_attributes.gml</script>
+        <script>scripts\scr_dropped_item_create_attributes.gml</script>
       </scripts>
       <script>scripts\scr_check_weight.gml</script>
       <script>scripts\scr_collected_item_name.gml</script>
@@ -367,6 +369,9 @@
       <script>scripts\scr_conver_search_name_to_id.gml</script>
       <script>scripts\scr_list_items.gml</script>
       <script>scripts\scr_listed_item_mouse_released.gml</script>
+      <scripts name="Create/Initialize">
+        <script>scripts\scr_listed_item_create_attributes.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_woodcutting_dust.gml</script>
@@ -586,6 +591,9 @@
         <object>objects\obj_stamina</object>
       </objects>
       <object>objects\obj_listed_item</object>
+      <object>objects\obj_button_increase</object>
+      <object>objects\obj_button_confirm</object>
+      <object>objects\obj_button_decrease</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
