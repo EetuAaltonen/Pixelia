@@ -1,10 +1,8 @@
-if (collecting == false)
+if (move_to_player == false)
 {
-    collecting = true;
     if ((global.max_item_weight - global.total_item_weight) - weight < 0)
     {
-        draw_info = true;
-        
+        //draw_info = true; ??
         var previous_info;
         previous_info = name;
         name = "Inventory is full!";
@@ -15,13 +13,8 @@ if (collecting == false)
     }
     else
     {
-        collected = true;
-        image_speed = 0;
-        
         //Weight
         global.total_item_weight += weight;
-        
-        //Save to inventory
-        scr_save_to_inventory();
+        move_to_player = true;
     }
 }

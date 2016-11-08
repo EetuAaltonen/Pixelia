@@ -71,7 +71,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collected
+            <string>/*//Collected
 if (collected == true)
 {
     scr_collected_item();

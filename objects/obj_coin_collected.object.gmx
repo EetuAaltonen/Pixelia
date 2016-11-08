@@ -26,7 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.2;
-move_towards_point(obj_money_target.x, obj_money_target.y, 8)
+speed_ = 4;
+if (instance_exists(obj_money_target) &amp;&amp; instance_exists(obj_player))
+{    
+    move_towards_point(obj_money_target.x, obj_money_target.y, speed_);
+}
+else
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -49,10 +57,18 @@ move_towards_point(obj_money_target.x, obj_money_target.y, 8)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_towards_point(obj_money_target.x, obj_money_target.y, 8)
-if (distance_to_object(obj_money_target) &lt; 40)
+            <string>speed_ = obj_player.speed + 4;
+if (instance_exists(obj_money_target) &amp;&amp; instance_exists(obj_player))
 {
-    global.coins += 1;
+    move_towards_point(obj_money_target.x, obj_money_target.y, speed_)
+    if (distance_to_object(obj_money_target) &lt; 40)
+    {
+        global.coins += 1;
+        instance_destroy();
+    }
+}
+else
+{
     instance_destroy();
 }
 </string>

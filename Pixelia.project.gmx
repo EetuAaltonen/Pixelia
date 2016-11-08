@@ -327,10 +327,20 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Collectable items">
-      <script>scripts\scr_food_create_variables.gml</script>
-      <script>scripts\scr_ingr_create_variables.gml</script>
-      <script>scripts\scr_mater_create_variables.gml</script>
-      <script>scripts\scr_poti_create_variables.gml</script>
+      <scripts name="Create_and_initialize">
+        <script>scripts\scr_food_create_variables.gml</script>
+        <script>scripts\scr_listed_item_create_attributes.gml</script>
+        <script>scripts\scr_ingr_create_attributes.gml</script>
+        <script>scripts\scr_item_get_attributes.gml</script>
+        <script>scripts\scr_item_get_id.gml</script>
+        <script>scripts\scr_mater_create_variables.gml</script>
+        <script>scripts\scr_poti_create_variables.gml</script>
+        <script>scripts\scr_common_attributes.gml</script>
+      </scripts>
+      <script>scripts\scr_check_weight.gml</script>
+      <script>scripts\scr_collected_item_name.gml</script>
+      <script>scripts\scr_move_to_player.gml</script>
+      <script>scripts\scr_save_to_inventory.gml</script>
       <script>scripts\scr_source_hit.gml</script>
       <script>scripts\scr_source_image_index.gml</script>
     </scripts>
@@ -352,9 +362,10 @@
       <script>scripts\scr_inventory_item_info.gml</script>
     </scripts>
     <scripts name="Listed items">
-      <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_check_if_instance_destroy.gml</script>
+      <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
+      <script>scripts\scr_list_items.gml</script>
       <script>scripts\scr_listed_item_mouse_released.gml</script>
     </scripts>
     <scripts name="Particles">
@@ -375,19 +386,13 @@
       <script>scripts\scr_current_room.gml</script>
       <script>scripts\scr_first_loading_screen_objects.gml</script>
       <script>scripts\scr_loadgame.gml</script>
-      <script>scripts\scr_save_to_inventory.gml</script>
       <script>scripts\scr_savegame.gml</script>
     </scripts>
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_alch_list_items.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
-    <script>scripts\scr_check_weight.gml</script>
-    <script>scripts\scr_collected_item.gml</script>
-    <script>scripts\scr_collected_item_name.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
-    <script>scripts\scr_item_get_info.gml</script>
-    <script>scripts\scr_list_items.gml</script>
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>
@@ -458,7 +463,7 @@
       <object>objects\obj_chest</object>
       <object>objects\obj_coin</object>
       <object>objects\obj_coin_collected</object>
-      <object>objects\obj_coin_drop</object>
+      <object>objects\obj_coin_dropped</object>
       <object>objects\obj_fishing_spot</object>
       <object>objects\obj_fishing_vein</object>
       <object>objects\obj_source_iron_ore</object>

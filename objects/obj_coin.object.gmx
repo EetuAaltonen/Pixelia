@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Coin collected
+            <string>//Coin collect
 if (distance_to_object(obj_player) &lt; 10)
 {
     instance_create(x, y, obj_coin_collected)

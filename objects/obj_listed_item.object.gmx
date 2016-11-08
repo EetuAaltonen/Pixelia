@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//Info
 item_id = 0;
-item_type = "";
+type_id = 0;
 item_name = "";
 item_description = "";
 item_weight = 0;
@@ -93,7 +93,7 @@ selected = false;
             <string>//Fill info
 if (fill_info == true)
 {
-    scr_item_get_info();
+    scr_common_attributes();
     fill_info = false;
 }
 </string>

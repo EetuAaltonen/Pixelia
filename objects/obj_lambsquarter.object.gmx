@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_ingr_create_variables();
+            <string>scr_ingr_create_attributes();
 </string>
           </argument>
         </arguments>
@@ -71,7 +71,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collect
+            <string>/*//Collect
 if (distance_to_object(obj_use) == 0)
 {
     if (collecting == false)
