@@ -9,6 +9,7 @@ if (move_to_player == true)
         scr_collected_item_name();
         //Save to inventory
         scr_save_to_inventory();
+        obj_player.highlight = false;
         instance_destroy();  
     } 
 }

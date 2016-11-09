@@ -33,7 +33,7 @@ activated = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_use">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,8 +50,12 @@ activated = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (activated == false)
+            <string>if (distance_to_object(obj_use) == 0 &amp;&amp; activated == false)
 {
+    if (instance_exists(obj_use))
+    {
+        with (obj_use) instance_destroy();
+    }
     activated = true;
     image_index = 1;
     instance_create(x, y, obj_lever_signal);

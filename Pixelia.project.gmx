@@ -341,6 +341,7 @@
       </scripts>
       <script>scripts\scr_check_weight.gml</script>
       <script>scripts\scr_collected_item_name.gml</script>
+      <script>scripts\scr_highlight_self.gml</script>
       <script>scripts\scr_move_to_player.gml</script>
       <script>scripts\scr_save_to_inventory.gml</script>
       <script>scripts\scr_source_hit.gml</script>
@@ -430,6 +431,7 @@
       <object>objects\obj_heikko</object>
       <object>objects\obj_maa</object>
       <object>objects\obj_secret_stonewall</object>
+      <object>objects\obj_solidify_parent</object>
       <object>objects\obj_stone</object>
       <object>objects\obj_water</object>
     </objects>
@@ -445,7 +447,6 @@
       <object>objects\obj_cave_bridge_broken</object>
       <object>objects\obj_cave_door</object>
       <object>objects\obj_door</object>
-      <object>objects\obj_door_2</object>
       <object>objects\obj_door_locked</object>
       <object>objects\obj_stairs_0001</object>
     </objects>

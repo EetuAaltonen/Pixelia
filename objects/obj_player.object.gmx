@@ -369,30 +369,6 @@ sprite_index=spr_player;
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (distance_to_object(obj_door_2) == 0)
-{
-    scr_solidify();   
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -647,6 +623,30 @@ scr_plr_dead();
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_solidify_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+scr_falling_damage();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_world">
       <action>
         <libid>1</libid>
@@ -670,111 +670,6 @@ scr_plr_dead();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_desk">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_crate">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blocker5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;30{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_medicpack">
       <action>
         <libid>1</libid>
@@ -792,351 +687,8 @@ if (!place_free(x+hspeed,y+vspeed))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lives=5
-global.xp=global.xp+1
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_stairs_0001">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///test
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_door_locked">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_door_2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_door">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (obj_door.door = 1)
-{
-    if (!place_free(x+hspeed,y))
-        {
-           if (hspeed&lt;=0)
-           {
-                move_contact_solid(180,abs(hspeed));
-           }
-           if (hspeed&gt;=0)
-           {
-                move_contact_solid(0,abs(hspeed));
-           }
-                hspeed=0;
-        }
-    if (!place_free(x,y+vspeed))
-        {
-            if (vspeed&lt;0)
-            {
-                move_contact_solid(90,abs(vspeed));
-            }
-            if (vspeed&gt;0)
-            {
-                move_contact_solid(270,abs(vspeed));djump=1
-            }
-            vspeed=0;
-        }
-
-    if (!place_free(x+hspeed,y+vspeed))
-        {
-            hspeed=0;
-        }
-}
-else{}    
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_cave_bridge_broken">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_cave_bridge_0003">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_cave_bridge_0002">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_cave_bridge_0001">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith_wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith_roof">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith_floor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if vspeed&gt;25{lives=lives-1}
-if vspeed&gt;50{lives=lives-5}
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
+            <string>lives += 5;
+global.xp += 1 * global.level;
 </string>
           </argument>
         </arguments>
@@ -1162,141 +714,6 @@ if (!place_free(x+hspeed,y+vspeed))
             <string>//global.room_change = 1;
 //alarm[8]=10;
 room_goto(Home_Village/*Cave_0001*/);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_stone">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_maa">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (vspeed &gt; 25)
-{
-    globel.lives -= 1;
-}
-if (vspeed &gt; 50)
-{
-    global.player_health -= 5;
-}*/
-
-if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;=0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_heikko">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!place_free(x+hspeed,y))
-{
-    if (hspeed&lt;=0){move_contact_solid(180,abs(hspeed));}
-    if (hspeed&gt;0){move_contact_solid(0,abs(hspeed));}
-    hspeed=0;
-}
-if (!place_free(x,y+vspeed))
-{
-    if (vspeed&lt;0){move_contact_solid(90,abs(vspeed));}
-    if (vspeed&gt;0){move_contact_solid(270,abs(vspeed));djump=1}
-    vspeed=0;
-}
-
-if (!place_free(x+hspeed,y+vspeed))
-{
-    hspeed=0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_grass">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_solidify();
-scr_falling_damage();
 </string>
           </argument>
         </arguments>
@@ -1404,19 +821,33 @@ if (action_state == "null")
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if (highlight == false)
+/*if (highlight == false)
 {
     if(action_state == "null" || action_state == "jump")
     {
-        if (distance_to_object(obj_crate) &lt; 40)
+        if (distance_to_object(obj_crate) &lt; 40 || distance_to_object(obj_barbarea_vulgaris) &lt; 40)
         {
             if (image_xscale == 1)
             {
-                (instance_nearest(x+20, y, obj_crate)).image_blend = make_colour_hsv(0, 0, 180);
+                if (instance_nearest(x+20, y, obj_crate))
+                {
+                    (instance_nearest(x+20, y, obj_crate)).image_blend = make_colour_hsv(0, 0, 180);
+                }
+                else if (instance_nearest(x+20, y, obj_barbarea_vulgaris))
+                {
+                    (instance_nearest(x+20, y, obj_barbarea_vulgaris)).image_blend = make_colour_hsv(0, 0, 180);
+                }
             }
             else
             {
-                (instance_nearest(x-20, y, obj_crate)).image_blend = make_colour_hsv(0, 0, 180);
+                if (instance_nearest(x-20, y, obj_crate))
+                {
+                    (instance_nearest(x-20, y, obj_crate)).image_blend = make_colour_hsv(0, 0, 180);
+                }
+                else if (instance_nearest(x-20, y, obj_barbarea_vulgaris))
+                {
+                    (instance_nearest(x-20, y, obj_barbarea_vulgaris)).image_blend = make_colour_hsv(0, 0, 180);
+                }
             }
             highlight = true;  
         }
