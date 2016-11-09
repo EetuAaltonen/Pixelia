@@ -479,7 +479,7 @@ else if (action_state == "null" ||
         and keyboard_check(vk_left)
         and not keyboard_check(vk_down) 
         and !global.stamina == 0
-        and !place_free(x, y+3))
+        and !place_free(x, y+1))
     {
         image_speed = 0.5;
         hspeed = -4;
@@ -489,7 +489,7 @@ else if (action_state == "null" ||
         and keyboard_check(vk_right)
         and not keyboard_check(vk_down)
         and !global.stamina == 0
-        and !place_free(x, y+3))
+        and !place_free(x, y+1))
     {
         image_speed = 0.5;
         hspeed = 4;
@@ -499,6 +499,7 @@ else if (action_state == "null" ||
     if (keyboard_check_released(vk_right) || keyboard_check_released(vk_left))
     {
         hspeed = 0;
+        image_index = 0;
     }
 
     //Jump

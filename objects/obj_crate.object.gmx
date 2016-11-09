@@ -235,23 +235,7 @@ y = start_y;
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if (y == obj_player.y &amp;&amp; picked == false)
-{
-    scr_highlight_self();
-}
-/*else if (picked == true)
-{
-    image_blend = make_colour_hsv(0, 0, 150);
-    obj_player.highlight = true;
-}
-else
-{
-    if (image_blend = make_colour_hsv(0, 0, 150))
-    {
-        obj_player.highlight = false;
-    }
-    image_blend = make_colour_hsv(0, 0, -1);
-}
+scr_highlight_self();
 </string>
           </argument>
         </arguments>

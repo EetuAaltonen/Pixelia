@@ -102,7 +102,8 @@ if (get_attributes == true)
           <argument>
             <kind>1</kind>
             <string>//Collect
-if (distance_to_object(obj_use) == 0)
+if (distance_to_object(obj_use) == 0 &amp;&amp; 
+    image_blend != make_colour_hsv(0, 0, -1))
 {
     scr_check_weight();
 }
@@ -155,7 +156,7 @@ scr_custom_gravity();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_grass">
+    <event eventtype="4" ename="obj_solidify_parent">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -173,6 +174,30 @@ scr_custom_gravity();
           <argument>
             <kind>1</kind>
             <string>scr_solidify();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+scr_highlight_self();
 </string>
           </argument>
         </arguments>
