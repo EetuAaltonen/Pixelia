@@ -467,11 +467,42 @@ else if (action_state == "null" ||
     //Movement
     if (keyboard_check(vk_right))
     {
-        hspeed = 2;
+        if (image_index == 0 &amp;&amp; image_speed == 0)
+        {
+            image_index += 1;
+        }
+        hspeed = 1.5;
     }
     else if (keyboard_check(vk_left))
     {
-        hspeed = -2;
+        if (image_index == 0 &amp;&amp; image_speed == 0)
+        {
+            image_index += 1;
+        }
+        hspeed = -1.5;
+    }
+    
+    if (hspeed == 0)
+    {
+        image_speed = 0;
+        image_index = 0;   
+    }
+    else if (action_state == "jump" &amp;&amp; vspeed &lt; 0)
+    {
+        sprite_index = spr_plr_jump;
+        image_speed = 0;
+        image_index = 0;
+    }
+    else if (vspeed &gt; 0 &amp;&amp; place_free(x,y+4))
+    {
+        action_state = "fall";
+        sprite_index = spr_plr_jump;
+        image_speed = 0;
+        image_index = 0;
+    }
+    else
+    {
+        image_speed = 0.2;
     }
     
     //Run   
@@ -482,7 +513,7 @@ else if (action_state == "null" ||
         and !place_free(x, y+1))
     {
         image_speed = 0.5;
-        hspeed = -4;
+        hspeed = -2.5;
     }
     
     else if (keyboard_check(vk_shift)
@@ -492,7 +523,7 @@ else if (action_state == "null" ||
         and !place_free(x, y+1))
     {
         image_speed = 0.5;
-        hspeed = 4;
+        hspeed = 2.5;
     }
     
     //Stop
