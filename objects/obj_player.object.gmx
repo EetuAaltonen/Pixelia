@@ -443,6 +443,7 @@ else if (action_state == "planting")
 //Default movements
 else if (action_state == "null" ||
          action_state == "jump" ||
+         action_state == "crouch" ||
          action_state == "carry_goods")
 {
     //Gravity
@@ -491,13 +492,13 @@ else if (action_state == "null" ||
         image_speed = 0;
         image_index = 0;   
     }
-    else if (action_state == "jump" &amp;&amp; vspeed &lt; 0)
+    /*else if (action_state == "jump" &amp;&amp; vspeed &lt; 0)
     {
         sprite_index = spr_plr_jump;
         image_speed = 0;
         image_index = 0;
     }
-    /*else if (vspeed &gt; 0 &amp;&amp; place_free(x,y+4))
+    else if (vspeed &gt; 0 &amp;&amp; place_free(x,y+4))
     {
         action_state = "fall";
         sprite_index = spr_plr_jump;
@@ -511,20 +512,20 @@ else if (action_state == "null" ||
     
     //Run   
     if (keyboard_check(vk_shift) 
-        and keyboard_check(vk_left)
-        and not keyboard_check(vk_down) 
-        and !global.stamina == 0
-        and !place_free(x, y+1))
+        &amp;&amp; keyboard_check(vk_left)
+        &amp;&amp; not keyboard_check(vk_down) 
+        &amp;&amp; !global.stamina == 0
+        &amp;&amp; !place_free(x, y+1))
     {
         image_speed = 0.5;
         hspeed = -2.5;
     }
     
     else if (keyboard_check(vk_shift)
-        and keyboard_check(vk_right)
-        and not keyboard_check(vk_down)
-        and !global.stamina == 0
-        and !place_free(x, y+1))
+        &amp;&amp; keyboard_check(vk_right)
+        &amp;&amp; not keyboard_check(vk_down)
+        &amp;&amp; !global.stamina == 0
+        &amp;&amp; !place_free(x, y+1))
     {
         image_speed = 0.5;
         hspeed = 2.5;
@@ -559,8 +560,8 @@ else if (action_state == "null" ||
     }
     
     //Roll
-    if (roll == 1 and  hspeed &gt; 0 and not keyboard_check(vk_shift)
-        and !place_free(x, y+3))
+    if (roll == 1 &amp;&amp;  hspeed &gt; 0 &amp;&amp; not keyboard_check(vk_shift)
+        &amp;&amp; !place_free(x, y+3))
     {
         global.damage = 0;
         sprite_index = spr_plr_roll;
@@ -570,8 +571,8 @@ else if (action_state == "null" ||
         image_xscale = 1;
         image_alpha = 0.5;
     }
-    else if (roll == 1 and hspeed &lt; 0 and not keyboard_check(vk_shift)
-             and !place_free(x, y+3))
+    else if (roll == 1 &amp;&amp; hspeed &lt; 0 &amp;&amp; not keyboard_check(vk_shift)
+             &amp;&amp; !place_free(x, y+3))
     {
         global.damage = 0;
         sprite_index = spr_plr_roll;
@@ -582,30 +583,34 @@ else if (action_state == "null" ||
         image_alpha = 0.5;
     }
     
-    //Down
-    if (keyboard_check(vk_down) and hspeed == 0
-        and !keyboard_check(vk_left) 
-        and !keyboard_check(vk_right))
+    //Crouch
+    if (keyboard_check(vk_control))
     {
-        image_speed = 0;
-        sprite_index = spr_plr_down;
-    }
-    else if (keyboard_check(vk_down) and keyboard_check(vk_left))
-    {
-        image_speed = 0.2;
-        hspeed = -1;
-        sprite_index = spr_plr_down;
-    }
-    else if (keyboard_check(vk_down) and keyboard_check(vk_right))
-    {
-        image_speed = 0.2;
-        hspeed = 1;
-        sprite_index = spr_plr_down;
-    }
-    else if (keyboard_check_released(vk_down))
-    {
-        image_speed = 0;
-        sprite_index = spr_player; 
+        action_state = "crouch";
+        if (hspeed == 0)
+        {
+            action_state = "";
+            image_speed = 0;
+            sprite_index = spr_plr_down;
+        }
+        else if (keyboard_check(vk_left))
+        {
+            image_speed = 0.2;
+            hspeed = -1;
+            sprite_index = spr_plr_down;
+        }
+        else if (keyboard_check(vk_right))
+        {
+            image_speed = 0.2;
+            hspeed = 1;
+            sprite_index = spr_plr_down;
+        }
+        else if (keyboard_check_released(vk_control))
+        {
+            action_state = "null";
+            image_speed = 0;
+            sprite_index = spr_player; 
+        }
     }
     
     //Stairs

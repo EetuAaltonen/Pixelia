@@ -397,7 +397,7 @@
     <instance objName="obj_stone" x="696" y="168" name="inst_E1844A13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="697" y="184" name="inst_89E34C58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="681" y="184" name="inst_BAA55B93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0001" x="760" y="166" name="inst_8DF13831" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge" x="760" y="166" name="inst_8DF13831" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="808" y="168" name="inst_C5456AD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="824" y="184" name="inst_A347C359" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="824" y="168" name="inst_A754C15B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -542,7 +542,7 @@
     <instance objName="obj_stone" x="648" y="264" name="inst_A7A85D35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="648" y="280" name="inst_831E27C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="648" y="296" name="inst_D62EE39C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0001" x="776" y="262" name="inst_36C4600A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge" x="776" y="262" name="inst_36C4600A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="968" y="104" name="inst_1FA85BA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="984" y="136" name="inst_E47960EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="984" y="120" name="inst_C7F61D6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -703,7 +703,7 @@
     <instance objName="obj_stone" x="920" y="184" name="inst_1CEE3243" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="920" y="200" name="inst_1494449F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="935" y="151" name="inst_87EF1730" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="920" y="134" name="inst_22F48F90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="920" y="134" name="inst_22F48F90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="911" y="119" name="inst_0C32F8F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="915" y="104" name="inst_EA661867" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="915" y="120" name="inst_8E7043E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -933,8 +933,8 @@
     <instance objName="obj_stone" x="8" y="504" name="inst_9C726065" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="8" y="488" name="inst_780A0EB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="472" y="376" name="inst_F383FAD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="136" y="486" name="inst_5F5093F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0003" x="72" y="518" name="inst_7C1EE9E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="136" y="486" name="inst_5F5093F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_right" x="72" y="518" name="inst_7C1EE9E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="58" y="503" name="inst_4DAFD6B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="936" y="952" name="inst_503A1989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="56" y="536" name="inst_C04582E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1668,7 +1668,7 @@
     <instance objName="obj_stone" x="456" y="760" name="inst_35BC741A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="456" y="776" name="inst_88D29572" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="456" y="792" name="inst_2D36D503" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0001" x="440" y="662" name="inst_C2CF5623" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge" x="440" y="662" name="inst_C2CF5623" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="568" y="664" name="inst_66E60074" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="584" y="664" name="inst_8756D217" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="520" y="664" name="inst_F154D188" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1795,16 +1795,16 @@
     <instance objName="obj_stone" x="184" y="872" name="inst_CDB71674" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="184" y="856" name="inst_F9F25010" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="184" y="888" name="inst_0A2272C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="200" y="776" name="inst_2C9CD68E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0003" x="72" y="918" name="inst_80985487" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="120" y="886" name="inst_C845FED1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="200" y="776" name="inst_2C9CD68E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_right" x="72" y="918" name="inst_80985487" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="120" y="886" name="inst_C845FED1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="120" y="952" name="inst_91A93349" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="104" y="936" name="inst_2CC06041" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="88" y="936" name="inst_173909DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="72" y="936" name="inst_E9E05E2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0003" x="72" y="854" name="inst_AB5CFC9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="120" y="822" name="inst_448CF41E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0001" x="376" y="550" name="inst_96A21FAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_right" x="72" y="854" name="inst_AB5CFC9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="120" y="822" name="inst_448CF41E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge" x="376" y="550" name="inst_96A21FAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="344" y="568" name="inst_C7324E05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="440" y="568" name="inst_AE651CEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="584" y="520" name="inst_0C07D8FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2044,7 +2044,7 @@
     <instance objName="obj_stone" x="872" y="888" name="inst_4BD73D0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="936" y="840" name="inst_3ACEED8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="888" y="888" name="inst_E309F280" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="840" y="886" name="inst_B8064655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="840" y="886" name="inst_B8064655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="808" y="808" name="inst_D561CCC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="840" y="824" name="inst_FAE54CD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="760" y="936" name="inst_AEE101F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2069,7 +2069,7 @@
     <instance objName="obj_stone" x="776" y="808" name="inst_F5B3B98E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="824" y="824" name="inst_4970724B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="824" y="808" name="inst_6C33E24F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0003" x="872" y="822" name="inst_606CC671" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_right" x="872" y="822" name="inst_606CC671" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="936" y="696" name="inst_6EDBEEAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="920" y="696" name="inst_32339E45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stone" x="904" y="696" name="inst_251E1F92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

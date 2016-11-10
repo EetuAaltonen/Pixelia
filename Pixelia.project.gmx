@@ -28,10 +28,10 @@
       <sprite>sprites\spr_water_waves</sprite>
     </sprites>
     <sprites name="Buildings">
-      <sprite>sprites\spr_cave_bridge_0001</sprite>
+      <sprite>sprites\spr_cave_bridge</sprite>
       <sprite>sprites\spr_blacksmith_shop</sprite>
-      <sprite>sprites\spr_cave_bridge_0002</sprite>
-      <sprite>sprites\spr_cave_bridge_0003</sprite>
+      <sprite>sprites\spr_cave_bridge_left</sprite>
+      <sprite>sprites\spr_cave_bridge_right</sprite>
       <sprite>sprites\spr_cave_bridge_broken</sprite>
       <sprite>sprites\spr_blacksmith</sprite>
       <sprite>sprites\spr_door</sprite>
@@ -441,9 +441,9 @@
       <object>objects\obj_blacksmith_roof</object>
       <object>objects\obj_blacksmith_shop</object>
       <object>objects\obj_blacksmith_wall</object>
-      <object>objects\obj_cave_bridge_0001</object>
-      <object>objects\obj_cave_bridge_0002</object>
-      <object>objects\obj_cave_bridge_0003</object>
+      <object>objects\obj_cave_bridge</object>
+      <object>objects\obj_cave_bridge_left</object>
+      <object>objects\obj_cave_bridge_right</object>
       <object>objects\obj_cave_bridge_broken</object>
       <object>objects\obj_cave_door</object>
       <object>objects\obj_door</object>

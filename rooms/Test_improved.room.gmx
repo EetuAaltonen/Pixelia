@@ -424,7 +424,7 @@
     <instance objName="obj_ladder" x="855" y="150" name="inst_86ACBE79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ladder" x="855" y="119" name="inst_EE88308A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ladder" x="855" y="88" name="inst_F5B294C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cave_bridge_0002" x="855" y="121" name="inst_2DF9F6F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cave_bridge_left" x="855" y="121" name="inst_2DF9F6F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="887" y="123" name="inst_326D049D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
