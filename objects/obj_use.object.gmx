@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 2;
+            <string>alarm[1] = 1;
 if (obj_player.image_xscale == 1)
 {
     x = obj_player.x;

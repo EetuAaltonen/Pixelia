@@ -175,8 +175,7 @@ else
           <argument>
             <kind>1</kind>
             <string>//Check if can drop
-if (picked == true &amp;&amp; distance_to_object(obj_solidify_parent) &gt;= 8)/* &amp;&amp;
-    distance_to_object(obj_crate) &gt;= 10)*/
+if (picked == true &amp;&amp; distance_to_object(obj_solidify_parent) &gt;= 10)
 {
     //Drop
     picked = false;

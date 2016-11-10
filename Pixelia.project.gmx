@@ -341,7 +341,6 @@
       </scripts>
       <script>scripts\scr_check_weight.gml</script>
       <script>scripts\scr_collected_item_name.gml</script>
-      <script>scripts\scr_highlight_self.gml</script>
       <script>scripts\scr_move_to_player.gml</script>
       <script>scripts\scr_save_to_inventory.gml</script>
       <script>scripts\scr_source_hit.gml</script>
@@ -398,11 +397,12 @@
     <script>scripts\scr_alch_list_items.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
+    <script>scripts\scr_custom_gravity.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
+    <script>scripts\scr_highlight_self.gml</script>
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>
-    <script>scripts\scr_custom_gravity.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
