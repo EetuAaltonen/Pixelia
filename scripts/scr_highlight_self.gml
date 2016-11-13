@@ -16,6 +16,11 @@ if (instance_exists(obj_player))
                         image_blend = make_colour_hsv(0, 0, 150);
                         obj_player.highlight = true;
                     }
+                    else if (obj_player.highlight == true &&
+                             image_blend = make_colour_hsv(0, 0, 150))
+                    {
+                        draw_sprite(spr_E,1,obj_player.x,obj_player.y-20);
+                    }
                 }
                 else
                 {

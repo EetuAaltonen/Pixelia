@@ -825,7 +825,7 @@ scr_plr_dead();
             <kind>1</kind>
             <string>draw_self();
 draw_text(x, y-30, string(action_state));
-if (action_state == "null")
+/*if (action_state == "null")
 {
     if (distance_to_object(obj_source_iron_ore) &lt; 5 || 
         distance_to_object(obj_source_tree) &lt; 5 ||
