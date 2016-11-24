@@ -29,7 +29,7 @@
 depth_ = depth;
 sprite_index_untoch = spr_source_iron_ore;
 sprite_index_hit = spr_source_iron_ore_hit;
-sprite_index_item = spr_ironore;
+sprite_index_item = spr_iron_ore;
 type_id = 1;
 action_state = "mining";
 source = 5;
@@ -92,7 +92,7 @@ scr_woodcutting_dust();
 else
 {
     obj_player.highlight = false;
-    alarm[1] = 100;
+    alarm[1] = 1000;
 }
 </string>
           </argument>

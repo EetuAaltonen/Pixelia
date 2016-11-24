@@ -1,17 +1,17 @@
 //Item info
 //Sprite
-Sprite[1,1] = "spr_ironore";
+Sprite[1,1] = "spr_iron_ore";
 Sprite[1,2] = "spr_icon_log";
 Sprite[1,3] = "spr_icon_coal";
-Sprite[1,4] = "spr_icon_ironbar";
-Sprite[1,5] = "spr_icon_steelbar";
+Sprite[1,4] = "spr_icon_iron_bar";
+Sprite[1,5] = "spr_icon_steel_bar";
 Sprite[1,6] = "spr_icon_feather";
 //Name
-Name[1,1] = "Ironore";
+Name[1,1] = "Iron ore";
 Name[1,2] = "Log";
 Name[1,3] = "Coal";
-Name[1,4] = "Ironbar";
-Name[1,5] = "Steelbar";
+Name[1,4] = "Iron bar";
+Name[1,5] = "Steel bar";
 Name[1,6] = "Feather";
 //Weight
 Weight[1,1] = 1.00;

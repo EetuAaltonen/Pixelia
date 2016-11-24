@@ -2,7 +2,7 @@ if (type_id == 1)
 {
     switch (sprite_index_)
     {
-        case spr_ironore: item_id = 1;break;
+        case spr_iron_ore: item_id = 1;break;
     }
 }
 else if (type_id == 2)

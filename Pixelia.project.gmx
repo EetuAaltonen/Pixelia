@@ -64,7 +64,7 @@
         <sprite>sprites\spr_water_flask</sprite>
       </sprites>
       <sprites name="Ores">
-        <sprite>sprites\spr_ironore</sprite>
+        <sprite>sprites\spr_iron_ore</sprite>
         <sprite>sprites\spr_source_iron_ore</sprite>
         <sprite>sprites\spr_source_iron_ore_hit</sprite>
       </sprites>
@@ -77,7 +77,7 @@
       <sprite>sprites\spr_fishing_spot</sprite>
       <sprite>sprites\spr_fishing_vein</sprite>
       <sprite>sprites\spr_gold_ore</sprite>
-      <sprite>sprites\spr_icon_ironore</sprite>
+      <sprite>sprites\spr_icon_iron_ore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_medicpack</sprite>
       <sprite>sprites\spr_source_tree</sprite>
@@ -477,7 +477,7 @@
       <object>objects\obj_coin_dropped</object>
       <object>objects\obj_fishing_spot</object>
       <object>objects\obj_fishing_vein</object>
-      <object>objects\obj_source_ironore</object>
+      <object>objects\obj_source_iron_ore</object>
       <object>objects\obj_medicpack</object>
       <object>objects\obj_potion_collected</object>
       <object>objects\obj_source_tree</object>

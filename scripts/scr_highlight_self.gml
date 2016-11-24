@@ -1,6 +1,8 @@
 if (instance_exists(obj_player))
 {
-    if(obj_player.action_state == "null" || obj_player.action_state == "jump")
+    if(obj_player.action_state == "null" || 
+       obj_player.action_state == "jump" || 
+       obj_player.action_state == "crouch")
     {
         if (distance_to_object(obj_player) <= 35)
         {
