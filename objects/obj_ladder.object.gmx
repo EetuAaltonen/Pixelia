@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+depth_ = depth;
 if(place_meeting(x,y-sprite_height,object_index) &amp;&amp; place_meeting(x,y+sprite_height,object_index))
 {
     image_index = 3;

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x = x;
+            <string>depth_ = depth;
+start_x = x;
 start_y = y;
 picked = false;
 waiting_releasing = false;

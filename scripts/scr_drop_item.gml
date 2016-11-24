@@ -7,7 +7,6 @@ for (i = 1; i <= dropped_count; i++)
     (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).sprite_index = sprite_index;
     (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).type_id = type_id;
     (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).get_attributes = true;
-    (instance_nearest(obj_player.x + x_random, obj_player.y + y_random, obj_dropped_item)).added_amount = added_amount;
     global.total_item_weight -= weight;
     //Save to inventory
     added_amount = -1;

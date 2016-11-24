@@ -28,20 +28,21 @@
       <sprite>sprites\spr_water_waves</sprite>
     </sprites>
     <sprites name="Buildings">
-      <sprite>sprites\spr_cave_bridge</sprite>
+      <sprite>sprites\spr_blacksmith</sprite>
+      <sprite>sprites\spr_blacksmith_floor</sprite>
+      <sprite>sprites\spr_blacksmith_roof</sprite>
       <sprite>sprites\spr_blacksmith_shop</sprite>
+      <sprite>sprites\spr_blacksmith_wall</sprite>
+      <sprite>sprites\spr_build_blachsmith</sprite>
+      <sprite>sprites\spr_cave_bridge</sprite>
+      <sprite>sprites\spr_cave_bridge_broken</sprite>
       <sprite>sprites\spr_cave_bridge_left</sprite>
       <sprite>sprites\spr_cave_bridge_right</sprite>
-      <sprite>sprites\spr_cave_bridge_broken</sprite>
-      <sprite>sprites\spr_blacksmith</sprite>
-      <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_cave_door</sprite>
       <sprite>sprites\spr_cave_stairs_0001</sprite>
       <sprite>sprites\spr_cave_stairs_0002</sprite>
-      <sprite>sprites\spr_blacksmith_wall</sprite>
-      <sprite>sprites\spr_blacksmith_floor</sprite>
-      <sprite>sprites\spr_blacksmith_roof</sprite>
-      <sprite>sprites\spr_build_blachsmith</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_platform</sprite>
     </sprites>
     <sprites name="Collectable">
       <sprites name="Animals">
@@ -62,6 +63,11 @@
         <sprite>sprites\spr_sheeps_sorrel</sprite>
         <sprite>sprites\spr_water_flask</sprite>
       </sprites>
+      <sprites name="Ores">
+        <sprite>sprites\spr_ironore</sprite>
+        <sprite>sprites\spr_source_iron_ore</sprite>
+        <sprite>sprites\spr_source_iron_ore_hit</sprite>
+      </sprites>
       <sprites name="Potions">
         <sprite>sprites\spr_healing_potion</sprite>
       </sprites>
@@ -74,8 +80,6 @@
       <sprite>sprites\spr_icon_ironore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_medicpack</sprite>
-      <sprite>sprites\spr_source_iron_ore</sprite>
-      <sprite>sprites\spr_source_iron_ore_hit</sprite>
       <sprite>sprites\spr_source_tree</sprite>
       <sprite>sprites\spr_source_tree_hit</sprite>
     </sprites>
@@ -311,7 +315,6 @@
     <sprite>sprites\spr_pet</sprite>
     <sprite>sprites\spr_pet_ammo</sprite>
     <sprite>sprites\spr_pixelia</sprite>
-    <sprite>sprites\spr_platform</sprite>
     <sprite>sprites\spr_sign_bg</sprite>
     <sprite>sprites\spr_spawner</sprite>
     <sprite>sprites\spr_wall_phy</sprite>
@@ -343,6 +346,7 @@
       <script>scripts\scr_collected_item_name.gml</script>
       <script>scripts\scr_move_to_player.gml</script>
       <script>scripts\scr_save_to_inventory.gml</script>
+      <script>scripts\scr_source_create_item.gml</script>
       <script>scripts\scr_source_hit.gml</script>
       <script>scripts\scr_source_image_index.gml</script>
     </scripts>
@@ -442,12 +446,13 @@
       <object>objects\obj_blacksmith_shop</object>
       <object>objects\obj_blacksmith_wall</object>
       <object>objects\obj_cave_bridge</object>
+      <object>objects\obj_cave_bridge_broken</object>
       <object>objects\obj_cave_bridge_left</object>
       <object>objects\obj_cave_bridge_right</object>
-      <object>objects\obj_cave_bridge_broken</object>
       <object>objects\obj_cave_door</object>
       <object>objects\obj_door</object>
       <object>objects\obj_door_locked</object>
+      <object>objects\obj_platform</object>
       <object>objects\obj_stairs_0001</object>
     </objects>
     <objects name="Collectable">
@@ -472,7 +477,7 @@
       <object>objects\obj_coin_dropped</object>
       <object>objects\obj_fishing_spot</object>
       <object>objects\obj_fishing_vein</object>
-      <object>objects\obj_source_iron_ore</object>
+      <object>objects\obj_source_ironore</object>
       <object>objects\obj_medicpack</object>
       <object>objects\obj_potion_collected</object>
       <object>objects\obj_source_tree</object>
@@ -616,7 +621,6 @@
       <object>objects\obj_iron_bar</object>
       <object>objects\obj_ladder</object>
       <object>objects\obj_lever</object>
-      <object>objects\obj_platform</object>
       <object>objects\obj_shelf</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_torch</object>

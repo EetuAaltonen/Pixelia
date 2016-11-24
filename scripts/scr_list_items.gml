@@ -7,7 +7,7 @@ if (page_refresh == true)
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
-    for(item_id = 1; item_id < 100/*Name[1,6]*/; item_id++)
+    for(item_id = 1; item_id < 100; item_id++)
     {
         //Change category
         if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering

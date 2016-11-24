@@ -1,6 +1,6 @@
 //Item info
 //Sprite
-Sprite[1,1] = "spr_icon_ironore";
+Sprite[1,1] = "spr_ironore";
 Sprite[1,2] = "spr_icon_log";
 Sprite[1,3] = "spr_icon_coal";
 Sprite[1,4] = "spr_icon_ironbar";

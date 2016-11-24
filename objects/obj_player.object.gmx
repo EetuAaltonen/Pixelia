@@ -864,71 +864,12 @@ draw_text(x, y-30, string(action_state));
           <argument>
             <kind>1</kind>
             <string>//Use
-if (action_state == "null" || action_state == "jump")
+if (global.hud_state = "null")
 {
-    instance_create(x,y,obj_use);
-}
-/*
-//Mining
-if (instance_exists(obj_source_iron_ore))
-{
-    if (action_state == "null" and distance_to_object(obj_source_iron_ore) &lt; 5)
+    if (action_state == "null" || action_state == "jump")
     {
-        action_state = "mining";
-        alarm[8] = 50;
+        instance_create(x,y,obj_use);
     }
-    else if (action_state == "mining")
-    {
-        action_state = "null";
-        sprite_index = spr_player;
-    }
-}
-
-//Woodcutting
-if (instance_exists(obj_source_tree))
-{
-    if (action_state == "null" and distance_to_object(obj_source_tree) &lt; 5)
-    {
-        action_state = "woodcutting"
-        alarm[9] = 50;
-    }
-    else if (action_state == "woodcutting")
-    {
-        action_state = "null";
-        sprite_index = spr_player;
-    }
-}
-
-//Fishing
-if (action_state == "null" and distance_to_object(obj_fishing_spot) &lt; 4)
-{
-    obj_player.action_state = "fishing";
-    scr_plr_fishing();
-    instance_create(obj_player.x, obj_player.y-10, obj_fishing_bobber);
-    instance_create(obj_player.x, obj_player.y, obj_fishing_line);
-}
-else if (action_state == "fishing")
-{
-    action_state = "null";
-    sprite_index = spr_player;
-}
-
-//Ladder
-if (place_meeting(x, y, obj_ladder) and
-    action_state == "null" and keyboard_check(vk_down))
-{
-    action_state = "ladder";
-    x = (instance_nearest(x, y, obj_ladder).x);
-}
-else if (place_meeting(x, y, obj_ladder) and action_state == "ladder")
-{
-    action_state = "null";
-}
-
-//Cave Room Transport
-if (distance_to_object(obj_cave_door) &lt; 4)
-{
-    room_goto(Cave);
 }
 
 </string>

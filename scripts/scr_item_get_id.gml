@@ -2,11 +2,7 @@ if (type_id == 1)
 {
     switch (sprite_index_)
     {
-        case spr_source_iron_ore:
-        case spr_source_iron_ore_hit:item_id = 1;break;
-        case spr_source_tree:
-        case spr_source_tree_hit:item_id = 2;break;
-        case spr_feather:item_id = 6;break;
+        case spr_ironore: item_id = 1;break;
     }
 }
 else if (type_id == 2)

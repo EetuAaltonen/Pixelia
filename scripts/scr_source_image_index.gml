@@ -14,6 +14,5 @@ if (source < 5)
 else
 {
     sprite_index = sprite_index_untoch;
-    image_speed = default_speed;
 }
 

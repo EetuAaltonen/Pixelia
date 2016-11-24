@@ -1,4 +1,8 @@
-//Hit
+//Create particle
+//part_emitter_stream(wood_dust_particles, wood_dust_emitter, wood_dust, 1);
+//XP
+scr_add_xp();
+/*//Hit
 if ((global.max_item_weight - global.total_item_weight) - weight >= 0)
 {
     if (source > 0 and can_hit == true and obj_player.action_state == action_state)
