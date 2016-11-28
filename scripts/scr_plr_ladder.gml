@@ -23,7 +23,6 @@ if (keyboard_check(vk_left) || keyboard_check(vk_right))
 {
     if (distance_to_object(obj_solidify_parent) > 5)
     {
-        action_state = "null";
-        speed = 0;
+        scr_plr_set_action_state_null();
     }
 }

@@ -81,18 +81,21 @@ scr_woodcutting_dust();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (source &gt; 0)
+            <string>if (instance_exists(obj_player))
 {
-    //Hit
-    scr_source_create_item();
-    source -= 1;
-    alarm[0] = 50;
-    scr_source_hit();
-}
-else
-{
-    obj_player.highlight = false;
-    alarm[1] = 1000;
+    if (source &gt; 0 &amp;&amp; obj_player.action_state == "mining")
+    {
+        //Hit
+        scr_source_create_item();
+        source -= 1;
+        alarm[0] = 50;
+        scr_source_hit();
+    }
+    else
+    {
+        obj_player.highlight = false;
+        alarm[1] = 1000;
+    }
 }
 </string>
           </argument>

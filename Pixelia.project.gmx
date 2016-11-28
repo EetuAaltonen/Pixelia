@@ -389,6 +389,7 @@
       <script>scripts\scr_plr_fishing.gml</script>
       <script>scripts\scr_plr_ladder.gml</script>
       <script>scripts\scr_plr_mining.gml</script>
+      <script>scripts\scr_plr_set_action_state_null.gml</script>
       <script>scripts\scr_plr_woodcutting.gml</script>
     </scripts>
     <scripts name="Save/Load game">

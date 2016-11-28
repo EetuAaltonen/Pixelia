@@ -20,8 +20,5 @@ if (instance_nearest(x, y, obj_source_iron_ore).source > 0)
 }
 else
 {
-    action_state = "null";
-    sprite_index = spr_player;
-    solid = true;
-    mask_index = spr_player;
+    scr_plr_set_action_state_null();
 }

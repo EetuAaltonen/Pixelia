@@ -54,6 +54,7 @@ waiting_releasing = false;
             <kind>1</kind>
             <string>//This removes instantly pickup
 obj_player.action_state = "null";
+waiting_releasing = false;
 </string>
           </argument>
         </arguments>
@@ -95,11 +96,11 @@ if (picked == false)
         if (obj_player.action_state = "null" ||
             obj_player.action_state = "jump")
         {
-            //Pickup
-            picked = true;
             if (instance_exists(obj_player))
             {
                 obj_player.action_state = "carry_goods";
+                //Pickup
+                picked = true;
             }
         }
     }
@@ -176,12 +177,15 @@ else
           <argument>
             <kind>1</kind>
             <string>//Check if can drop
-if (picked == true &amp;&amp; distance_to_object(obj_solidify_parent) &gt;= 10)
+if (waiting_releasing == true)
 {
-    //Drop
-    picked = false;
-    //This fix instantly pickup
-    waiting_releasing = true;
+    if (distance_to_object(obj_solidify_parent) &gt;= 10)
+    {
+        //Drop
+        picked = false;
+        //This fix instantly pickup
+        alarm[0] = 30;
+    }
 }
 </string>
           </argument>
@@ -241,7 +245,7 @@ scr_highlight_self();
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="69">
+    <event eventtype="9" enumb="69">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -258,21 +262,22 @@ scr_highlight_self();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//This fix instantly pickup
-if (waiting_releasing == true)
+            <string>//Check if can drop
+if (picked == true)
 {
-    alarm[0] = 30;
-    waiting_releasing = false;
+    if (distance_to_object(obj_solidify_parent) &gt;= 10)
+    {
+        //Drop
+        picked = false;
+        //This fix instantly pickup
+        alarm[0] = 30;
+    }
+    else
+    {
+        waiting_releasing = true;
+    }
 }
-/*//Check if can drop
-if (picked == true &amp;&amp; distance_to_object(obj_grass) &gt;= 8 &amp;&amp;
-    distance_to_object(obj_crate) &gt;= 10)
-{
-    //Drop
-    picked = false;
-    //This fix instantly pickup
-    alarm[0] = 30;
-}
+
 </string>
           </argument>
         </arguments>
