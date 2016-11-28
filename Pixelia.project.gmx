@@ -80,8 +80,11 @@
       <sprite>sprites\spr_icon_iron_ore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_medicpack</sprite>
-      <sprite>sprites\spr_source_tree</sprite>
-      <sprite>sprites\spr_source_tree_hit</sprite>
+      <sprites name="Trees">
+        <sprite>sprites\spr_source_oak_tree</sprite>
+        <sprite>sprites\spr_source_oak_tree_hit</sprite>
+        <sprite>sprites\spr_oak_log</sprite>
+      </sprites>
     </sprites>
     <sprites name="Crafting">
       <sprites name="Forge materials">
@@ -476,15 +479,19 @@
       <object>objects\obj_coin</object>
       <object>objects\obj_coin_collected</object>
       <object>objects\obj_coin_dropped</object>
+      <object>objects\obj_dropped_item</object>
       <object>objects\obj_fishing_spot</object>
       <object>objects\obj_fishing_vein</object>
-      <object>objects\obj_source_iron_ore</object>
       <object>objects\obj_medicpack</object>
       <object>objects\obj_potion_collected</object>
-      <object>objects\obj_source_tree</object>
-      <object>objects\obj_dropped_item</object>
+      <objects name="Ores">
+        <object>objects\obj_source_iron_ore</object>
+      </objects>
       <objects name="Potions">
         <object>objects\obj_healing_potion</object>
+      </objects>
+      <objects name="Trees">
+        <object>objects\obj_source_oak_tree</object>
       </objects>
     </objects>
     <objects name="Crafting">

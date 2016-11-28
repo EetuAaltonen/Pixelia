@@ -76,7 +76,6 @@
     <instance objName="obj_grass" x="375" y="251" name="inst_C316E3D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="391" y="251" name="inst_B551F71E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="407" y="251" name="inst_3247993B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_source_tree" x="636" y="185" name="inst_29B0F6BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="423" y="251" name="inst_4A552C48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="439" y="251" name="inst_716992E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="455" y="251" name="inst_A0019090" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

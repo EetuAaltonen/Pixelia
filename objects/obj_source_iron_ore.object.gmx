@@ -93,6 +93,7 @@ scr_woodcutting_dust();
     }
     else
     {
+        image_blend = make_colour_hsv(0, 0, -1);
         obj_player.highlight = false;
         alarm[1] = 1000;
     }

@@ -892,7 +892,7 @@ if (global.hud_state = "null")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (action_state == "mining")
+            <string>if (action_state == "mining" || action_state == "woodcutting")
 {
     scr_plr_set_action_state_null();
 }

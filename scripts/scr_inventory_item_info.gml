@@ -1,14 +1,14 @@
 //Item info
 //Sprite
 Sprite[1,1] = "spr_iron_ore";
-Sprite[1,2] = "spr_icon_log";
-Sprite[1,3] = "spr_icon_coal";
-Sprite[1,4] = "spr_icon_iron_bar";
-Sprite[1,5] = "spr_icon_steel_bar";
-Sprite[1,6] = "spr_icon_feather";
+Sprite[1,2] = "spr_oak_log";
+//Sprite[1,3] = "spr_icon_coal"; spr_coal_ore (coming)
+//Sprite[1,4] = "spr_icon_iron_bar";
+//Sprite[1,5] = "spr_icon_steel_bar";
+// Sprite[1,6] = "spr_icon_feather";
 //Name
 Name[1,1] = "Iron ore";
-Name[1,2] = "Log";
+Name[1,2] = "Oak log";
 Name[1,3] = "Coal";
 Name[1,4] = "Iron bar";
 Name[1,5] = "Steel bar";
