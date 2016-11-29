@@ -59,7 +59,18 @@ global.forg_slot_4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Font
+            <string>//Inventory
+//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
+if (global.hud_state == "forge")
+{
+    scr_list_items();
+}
+/*//Font
 draw_set_font(fnt_inventory_text);
 draw_set_color(c_black);
 draw_set_halign(fa_left);

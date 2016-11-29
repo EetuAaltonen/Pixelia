@@ -17,4 +17,4 @@ part_type_alpha1(wood_dust, 0.2);
 
 //Emitter
 wood_dust_emitter = part_emitter_create(wood_dust_particles);
-part_emitter_region(wood_dust_particles, wood_dust_emitter, x-20, x+20, y+35, y+35, ps_shape_ellipse, ps_distr_linear);
+part_emitter_region(wood_dust_particles, wood_dust_emitter, x-20, x+20, y, y, ps_shape_ellipse, ps_distr_linear);

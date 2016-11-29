@@ -86,10 +86,9 @@ scr_woodcutting_dust();
     if (source &gt; 0 &amp;&amp; obj_player.action_state == "woodcutting")
     {
         //Hit
-        scr_source_create_item();
+        scr_source_hit();
         source -= 1;
         alarm[0] = 50;
-        scr_source_hit();
     }
     else
     {
