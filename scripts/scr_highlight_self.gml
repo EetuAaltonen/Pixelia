@@ -7,11 +7,10 @@ if (instance_exists(obj_player))
         if (distance_to_object(obj_player) <= 35)
         {
             if (y - obj_player.y <= 10 && y - obj_player.y >= -10 ||
-                distance_to_object(obj_player) == 0)
+                distance_to_object(obj_player) < 1)
             {
                 if ((x > obj_player.x && obj_player.image_xscale == 1) ||
-                    (x < obj_player.x && obj_player.image_xscale == -1) ||
-                     distance_to_object(obj_player) == 0)
+                    (x < obj_player.x && obj_player.image_xscale == -1))
                 {
                     if (obj_player.highlight == false)
                     {

@@ -10,20 +10,20 @@ if (!place_free(x + hspeed,y))
     }
     hspeed = 0;
 }
-if (!place_free(x,y+vspeed))
+if (!place_free(x,y+(vspeed*2)))
 {
     if (vspeed < 0)
     {
-        move_contact_solid(90,abs(vspeed));
+        move_contact_solid(90,abs((vspeed*2)));
     }
     if (vspeed > 0)
     {
-        move_contact_solid(270,abs(vspeed));    
+        move_contact_solid(270,abs((vspeed*2)));    
     }
     vspeed = 0;
 }
 
-if (!place_free(x+hspeed,y+vspeed))
+if (!place_free(x+hspeed,y+(vspeed*2)))
 {
     hspeed = 0;
 }

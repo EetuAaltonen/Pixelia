@@ -1,7 +1,7 @@
 if (file_exists("Save.sav"))
 {
     ini_open("Save.sav");
-    global.current_room = ini_read_real("Save1","room",Test);
+    global.current_room = ini_read_real("Save1","room",Test_improved);
     global.player_health = ini_read_real("Save1","health",20);
     
     global.total_item_weight = ini_read_real("Save1","weight_of_items",0);
@@ -28,6 +28,9 @@ if (file_exists("Save.sav"))
 }
 else
 {
+    ini_open("Save.sav");
+    ini_write_real("Save1","room",Test_improved);
+    ini_close();
     global.current_room = Test_improved//Test;
     room_goto(global.current_room);
 }

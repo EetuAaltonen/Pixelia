@@ -1,15 +1,26 @@
 var custom_gravity = 0.2;
-if (instance_exists(obj_water))
+var max_vspeed = 4;
+if (vspeed < max_vspeed)
 {
-    if (distance_to_object(obj_water) == 0)
+    if (instance_exists(obj_water))
     {
-        if (vspeed < 0.5)
+        if (distance_to_object(obj_water) == 0)
         {
-            vspeed += custom_gravity;
+            if (vspeed < 0.5)
+            {
+                vspeed += custom_gravity;
+            }
+            else if (vspeed >= 0.5)
+            {
+                vspeed = 0.5;
+            }
         }
-        else if (vspeed >= 0.5)
+        else
         {
-            vspeed = 0.5;
+            if (vspeed < 10)
+            {
+                vspeed += custom_gravity;
+            }
         }
     }
     else
@@ -19,11 +30,4 @@ if (instance_exists(obj_water))
             vspeed += custom_gravity;
         }
     }
-}
-else
-{
-    if (vspeed < 10)
-    {
-        vspeed += custom_gravity;
-    } 
 }
