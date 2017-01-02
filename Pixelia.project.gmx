@@ -67,14 +67,17 @@
       </sprites>
       <sprites name="Ores">
         <sprite>sprites\spr_iron_ore</sprite>
+        <sprite>sprites\spr_coal</sprite>
         <sprite>sprites\spr_source_iron_ore</sprite>
         <sprite>sprites\spr_source_iron_ore_hit</sprite>
+        <sprite>sprites\spr_source_coal_ore_hit</sprite>
+        <sprite>sprites\spr_ironbar</sprite>
+        <sprite>sprites\spr_steelbar</sprite>
       </sprites>
       <sprites name="Potions">
         <sprite>sprites\spr_healing_potion</sprite>
       </sprites>
       <sprite>sprites\spr_chest</sprite>
-      <sprite>sprites\spr_coal_ore</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_fishing_spot</sprite>
       <sprite>sprites\spr_fishing_vein</sprite>
@@ -225,6 +228,7 @@
       <sprite>sprites\spr_building</sprite>
       <sprite>sprites\spr_button_decrease</sprite>
       <sprite>sprites\spr_button_increase</sprite>
+      <sprite>sprites\spr_button_confirm</sprite>
       <sprite>sprites\spr_counter</sprite>
       <sprite>sprites\spr_darkness</sprite>
       <sprite>sprites\spr_draw_hotbar_bg</sprite>

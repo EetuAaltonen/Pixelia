@@ -102,12 +102,12 @@ if (item_count > 0)
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
         //Item description
         draw_text(view_xview+56,view_yview+y_pos, string(item_name_draw[i]));
+        //Item amount background
+        draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
+        //Item amount
+        draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
         if (string_pos("inventory", string(global.hud_state)))
         {
-            //Item amount background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-            //Item amount
-            draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
             //Item weight background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
             //Item weight

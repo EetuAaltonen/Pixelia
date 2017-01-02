@@ -1,5 +1,5 @@
 //Save inventory
-if (added_amount > 0)
+if (added_amount != 0)
 {
     ini_open("Inventory.sav");
     var saved_amount, key;

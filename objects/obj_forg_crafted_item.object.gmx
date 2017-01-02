@@ -29,6 +29,7 @@
 recipe_exists = false; //Check if recipe is exists
 visible = false;
 sprite_index = spr_grass; //Default
+image_speed = 0;
 
 //Save to inventory
 type_id = 1;
@@ -59,7 +60,7 @@ type_id = 1;
     global.forg_slot_3 == true)
 {
     visible = true;
-    //recipe_check = true;   
+    recipe_check = true;   
 }
 else
 {
@@ -87,7 +88,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!global.hud_state == "forge")
+            <string>if (global.hud_state != "forge")
 {
     instance_destroy();
 }
@@ -220,8 +221,12 @@ else
     item_id = 0; //Default info text
     recipe_exists = false; //Reset recipe state
     recipe_check = true; //Check if recipe is still exists
-    
+
     //Update forge listing
+    global.forg_slot_1 = false;
+    global.forg_slot_2 = false;
+    global.forg_slot_3 = false;
+    sprite_index = spr_grass; //Reset info text
     obj_forge_controller.page_refresh = true;
     obj_forge_controller.current_page = 0;
 }

@@ -3,7 +3,7 @@
   <spriteName>spr_button_increase</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5004</depth>
+  <depth>-5005</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -79,7 +79,8 @@ item_count = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_inventory_controller.page_refresh == true)
+            <string>if (obj_inventory_controller.page_refresh == true ||
+    global.hud_state != "inventory1")
 {
     instance_destroy();
 }

@@ -53,6 +53,11 @@ if (global.hud_state == "null")
 {
     instance_destroy();
 }
+else if (global.hud_state == "inventory1" &amp;&amp;
+         obj_inventory_controller.page_refresh == true)
+{
+    instance_destroy();
+}
 else if (global.hud_state == "forge" &amp;&amp; obj_forge_controller.page_refresh == true)
 {
     instance_destroy();
@@ -118,10 +123,6 @@ if (get_attributes == true)
             dropping_item = false;
             dropped_count = obj_button_increase.value;
             scr_drop_item();
-            with (obj_button_decrease) instance_destroy();
-            with (obj_button_confirm) instance_destroy();
-            with (obj_button_increase) instance_destroy();
-            instance_destroy();
         }
     }
 }
@@ -175,12 +176,15 @@ if (get_attributes == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ini_open("Inventory.sav");
-key = "Amount[" + string(type_id) + "," + string(item_id) + "]";      
-//Item amount
-item_count = ini_read_real("Save1", key, 0);
-ini_close();
-dropping_item = true;
+            <string>if (global.hud_state == "inventory1")
+{
+    ini_open("Inventory.sav");
+    key = "Amount[" + string(type_id) + "," + string(item_id) + "]";      
+    //Item amount
+    item_count = ini_read_real("Save1", key, 0);
+    ini_close();
+    dropping_item = true;
+}
 </string>
           </argument>
         </arguments>

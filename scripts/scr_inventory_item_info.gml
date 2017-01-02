@@ -1,17 +1,20 @@
 //Item info
+
+//Add info to scr_item_get_id too...
+
 //Sprite
 Sprite[1,1] = "spr_iron_ore";
 Sprite[1,2] = "spr_oak_log";
-//Sprite[1,3] = "spr_icon_coal"; spr_coal_ore (coming)
-//Sprite[1,4] = "spr_icon_iron_bar";
-//Sprite[1,5] = "spr_icon_steel_bar";
+Sprite[1,3] = "spr_coal";
+Sprite[1,4] = "spr_ironbar";
+Sprite[1,5] = "spr_steelbar";
 // Sprite[1,6] = "spr_icon_feather";
 //Name
 Name[1,1] = "Iron ore";
 Name[1,2] = "Oak log";
 Name[1,3] = "Coal";
-Name[1,4] = "Iron bar";
-Name[1,5] = "Steel bar";
+Name[1,4] = "Ironbar";
+Name[1,5] = "Steelbar";
 Name[1,6] = "Feather";
 //Weight
 Weight[1,1] = 1.00;
@@ -21,7 +24,7 @@ Weight[1,4] = 0.30;
 Weight[1,5] = 0.35;
 Weight[1,6] = 0.05;
 
-//listedients
+//Ingredients
 //Sprite
 Sprite[2,1] = "spr_water_flask";
 Sprite[2,2] = "spr_barbarea_vulgaris";

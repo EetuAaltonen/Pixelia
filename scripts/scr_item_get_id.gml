@@ -4,6 +4,9 @@ if (type_id == 1)
     {
         case spr_iron_ore: item_id = 1;break;
         case spr_oak_log: item_id = 2;break;
+        case spr_coal: item_id = 3;break;
+        case spr_ironbar: item_id = 4;break;
+        case spr_steelbar: item_id = 5;break;
     }
 }
 else if (type_id == 2)

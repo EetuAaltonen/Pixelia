@@ -29,10 +29,6 @@
 if (string_pos("inventory", string(global.hud_state)))
 {
     draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
-    if (instance_exists(obj_button_increase))
-    {
-        draw_sprite(spr_inv_item_description_bg, 0,view_xview+250, view_yview+150);
-    }
 }
 </string>
           </argument>
