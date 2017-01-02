@@ -22,6 +22,7 @@
       <sprite>sprites\spr_maa</sprite>
       <sprite>sprites\spr_stone</sprite>
       <sprite>sprites\spr_grass</sprite>
+      <sprite>sprites\spr_stonebrick</sprite>
       <sprite>sprites\spr_heikko</sprite>
       <sprite>sprites\spr_secret_stonewall</sprite>
       <sprite>sprites\spr_water</sprite>
@@ -436,6 +437,7 @@
     </objects>
     <objects name="Blocks">
       <object>objects\obj_grass</object>
+      <object>objects\obj_stonebrick</object>
       <object>objects\obj_heikko</object>
       <object>objects\obj_maa</object>
       <object>objects\obj_secret_stonewall</object>

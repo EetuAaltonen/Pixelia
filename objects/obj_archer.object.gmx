@@ -256,6 +256,28 @@ draw_state = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Gravity
+scr_custom_gravity();
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -290,7 +312,7 @@ if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
     instance_create(x, y, obj_arrow);
     (instance_nearest(x, y, obj_arrow)).mag = mag;
     //Animation
-        //Neutral
+    //Neutral
     alarm[2] = 20;
         //Ready
     alarm[3] = 80;
@@ -328,7 +350,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_grass">
+    <event eventtype="4" ename="obj_solidify_parent">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -346,6 +368,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>scr_solidify();
+scr_falling_damage();
 </string>
           </argument>
         </arguments>
@@ -369,6 +392,11 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>draw_self();
+
+//if (instance_exists(obj_player))
+//{
+//    draw_line(x, y, obj_player.x, obj_player.y);
+//}
 
 //Font
 draw_set_font(fnt_enemies_stats);

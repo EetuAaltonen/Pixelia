@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>depth_ = depth;
+image_speed = 0;
 image_index = 0;
 activated = false;
 </string>
