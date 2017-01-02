@@ -30,14 +30,17 @@ image_index = scr_auto_tile()
 if (image_index == 46 ||
     image_index == 21 )
 {
-    chest = random_range(1, 2000)
-    if (chest &lt; 2)
+    if (!place_meeting(x,y-1,obj_solidify_parent))
     {
-        instance_create(x,y-17,obj_chest);    
-    }
-    else
-    {
-        instance_create(x,y-9,obj_flower);
+        chest = random_range(1, 2000)
+        if (chest &lt; 2)
+        {
+            instance_create(x,y-17,obj_chest);    
+        }
+        else
+        {
+            instance_create(x,y-9,obj_flower);
+        }
     }
 }
 </string>

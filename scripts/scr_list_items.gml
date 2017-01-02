@@ -10,24 +10,34 @@ if (page_refresh == true)
     for(item_id = 1; item_id < 100; item_id++)
     {
         //Change category
-        if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering
+        if (string_pos("inventory", string(global.hud_state)))
         {
-            type_id = 2;
-            item_id = 1;
+            if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering
+            {
+                type_id = 2;
+                item_id = 1;
+            }
+            else if(type_id == 2 and item_id == array_length_2d(Sprite, type_id))
+            {
+                type_id = 3;
+                item_id = 1;
+            }
+            else if(type_id == 3 and item_id == array_length_2d(Sprite, type_id))
+            {
+                type_id = 4;
+                item_id = 1;
+            }
+            else if(type_id == 4 and item_id == array_length_2d(Sprite, type_id))
+            {
+                break;
+            }
         }
-        else if(type_id == 2 and item_id == array_length_2d(Sprite, type_id))
+        else if (global.hud_state == "forge")
         {
-            type_id = 3;
-            item_id = 1;
-        }
-        else if(type_id == 3 and item_id == array_length_2d(Sprite, type_id))
-        {
-            type_id = 4;
-            item_id = 1;
-        }
-        else if(type_id == 4 and item_id == array_length_2d(Sprite, type_id))
-        {
-            break;
+            if (type_id == 1 and item_id == array_length_2d(Sprite, type_id))
+            {
+                break;
+            }
         }
         key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
         
@@ -92,14 +102,17 @@ if (item_count > 0)
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
         //Item description
         draw_text(view_xview+56,view_yview+y_pos, string(item_name_draw[i]));
-        //Item amount background
-        draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-        //Item amount
-        draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
-        //Item weight background
-        draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
-        //Item weight
-        draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
+        if (string_pos("inventory", string(global.hud_state)))
+        {
+            //Item amount background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
+            //Item amount
+            draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
+            //Item weight background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
+            //Item weight
+            draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
+        }
         
         y_pos += 19;
     }
@@ -113,11 +126,13 @@ if (item_count > 0)
     }
     //Draw page number and max
     draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
-    
-    //Total and weight background
-    draw_sprite(spr_inv_item_description_bg, 0,view_xview+255, view_yview+95);
-    //Total and weight
-    draw_text(view_xview+190,view_yview+95, "Weight:  " + string(global.total_item_weight) + "  /  " + string(global.max_item_weight) + "  Kg");
+    if (string_pos("inventory", string(global.hud_state)))
+    {
+        //Total and weight background
+        draw_sprite(spr_inv_item_description_bg, 0,view_xview+255, view_yview+95);
+        //Total and weight
+        draw_text(view_xview+190,view_yview+95, "Weight:  " + string(global.total_item_weight) + "  /  " + string(global.max_item_weight) + "  Kg");
+    }
 }
 else
 {

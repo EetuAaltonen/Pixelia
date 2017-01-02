@@ -1,4 +1,8 @@
-if (global.hud_state == "alchemy")
+if (global.hud_state = "forge")
+{
+    scr_forg_mouse_released();
+}
+/*if (global.hud_state == "alchemy")
 {
     if (selected == false)
     {

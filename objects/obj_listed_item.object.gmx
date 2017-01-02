@@ -48,7 +48,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_inventory_controller.page_refresh == true)
+            <string>//if (obj_inventory_controller.page_refresh == true)
+if (global.hud_state == "null")
+{
+    instance_destroy();
+}
+else if (global.hud_state == "forge" &amp;&amp; obj_forge_controller.page_refresh == true)
 {
     instance_destroy();
 }

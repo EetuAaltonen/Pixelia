@@ -31,7 +31,7 @@ visible = false;
 sprite_index = spr_grass; //Default
 
 //Save to inventory
-search_id = "mater";
+type_id = 1;
 </string>
           </argument>
         </arguments>
@@ -59,7 +59,7 @@ search_id = "mater";
     global.forg_slot_3 == true)
 {
     visible = true;
-    recipe_check = true;   
+    //recipe_check = true;   
 }
 else
 {
@@ -87,7 +87,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not(global.hud_state == "forge")
+            <string>if (!global.hud_state == "forge")
 {
     instance_destroy();
 }
@@ -192,28 +192,28 @@ else
     if (global.forg_slot_1 == true)
     {
         item_id = obj_forg_slot_1.item_id; //Id
-        search_id = "mater"; //Type
+        type_id = 1; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.forg_slot_2 == true)
     {
         item_id = obj_forg_slot_2.item_id; //Id
-        search_id = "mater"; //Type
+        type_id = 1; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.forg_slot_3 == true)
     {
         item_id = obj_forg_slot_3.item_id; //Id
-        search_id = "mater"; //Type
+        type_id = 1; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     //Add crafted material
     //Save to inventory info
     item_id = Id[sprite_index]; //Id
-    search_id = "mater"; //Type
+    type_id = 1; //Type
     added_amount = 1; //Added amount
     scr_save_to_inventory();
     
@@ -222,10 +222,8 @@ else
     recipe_check = true; //Check if recipe is still exists
     
     //Update forge listing
-    obj_forge_controller.update_list = true;
-    obj_forge_controller.update_amounts = true; //Update amounts in list
-    obj_forge_controller.create_once = true; //Create objects once on the list
     obj_forge_controller.page_refresh = true;
+    obj_forge_controller.current_page = 0;
 }
 </string>
           </argument>
