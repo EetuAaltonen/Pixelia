@@ -30,6 +30,13 @@
       <sprite>sprites\spr_water_waves</sprite>
     </sprites>
     <sprites name="Buildings">
+      <sprites name="Decorations">
+        <sprites name="Castle">
+          <sprite>sprites\spr_dec_pennant</sprite>
+          <sprite>sprites\spr_dec_wall_flag</sprite>
+          <sprite>sprites\spr_dec_castle_gate</sprite>
+        </sprites>
+      </sprites>
       <sprite>sprites\spr_blacksmith</sprite>
       <sprite>sprites\spr_blacksmith_floor</sprite>
       <sprite>sprites\spr_blacksmith_roof</sprite>
@@ -453,6 +460,13 @@
       <object>objects\obj_water</object>
     </objects>
     <objects name="Buildings">
+      <objects name="Decorations">
+        <objects name="Castle">
+          <object>objects\obj_dec_pennant</object>
+          <object>objects\obj_dec_wall_flag</object>
+          <object>objects\obj_dec_castle_gate</object>
+        </objects>
+      </objects>
       <object>objects\obj_blacksmith</object>
       <object>objects\obj_blacksmith_floor</object>
       <object>objects\obj_blacksmith_roof</object>
