@@ -4,7 +4,7 @@ if (instance_exists(obj_player))
        obj_player.action_state == "jump" || 
        obj_player.action_state == "crouch")
     {
-        if (distance_to_object(obj_player) <= 35)
+        if (distance_to_object(obj_player) <= 30)
         {
             if (y - obj_player.y <= 10 && y - obj_player.y >= -10 ||
                 distance_to_object(obj_player) < 1)

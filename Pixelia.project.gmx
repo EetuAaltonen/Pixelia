@@ -35,6 +35,10 @@
           <sprite>sprites\spr_dec_pennant</sprite>
           <sprite>sprites\spr_dec_wall_flag</sprite>
           <sprite>sprites\spr_dec_castle_gate</sprite>
+          <sprite>sprites\spr_dec_window</sprite>
+          <sprite>sprites\spr_dec_chair</sprite>
+          <sprite>sprites\spr_dec_table</sprite>
+          <sprite>sprites\spr_dec_cup</sprite>
         </sprites>
       </sprites>
       <sprite>sprites\spr_blacksmith</sprite>
@@ -300,6 +304,7 @@
       <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_hitbox_small</sprite>
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_plr_sit</sprite>
       <sprite>sprites\spr_plr_down</sprite>
       <sprite>sprites\spr_plr_fishing</sprite>
       <sprite>sprites\spr_plr_jump</sprite>
@@ -341,6 +346,7 @@
       <sprite>sprites\spr_world</sprite>
       <sprite>sprites\spr_world_map</sprite>
     </sprites>
+    <sprite>sprites\spr_cargon_cart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_menu</background>
@@ -465,6 +471,11 @@
           <object>objects\obj_dec_pennant</object>
           <object>objects\obj_dec_wall_flag</object>
           <object>objects\obj_dec_castle_gate</object>
+          <object>objects\obj_dec_window</object>
+          <object>objects\obj_dec_chair</object>
+          <object>objects\obj_dec_table</object>
+          <object>objects\obj_dec_chair_parent</object>
+          <object>objects\obj_dec_cup</object>
         </objects>
       </objects>
       <object>objects\obj_blacksmith</object>
@@ -692,6 +703,7 @@
     <objects name="Travelling">
       <object>objects\obj_world</object>
     </objects>
+    <object>objects\obj_cargon_cart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
