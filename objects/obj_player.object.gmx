@@ -1402,6 +1402,7 @@ alarm[1] = 25;
 global.enemy_stats1 = 0;
 global.enemy_stats2 = 0;
 global.enemy_stats3 = 0;
+global.hud_state = "null";
 room_restart();
 </string>
           </argument>

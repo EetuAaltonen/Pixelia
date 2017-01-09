@@ -261,6 +261,10 @@
         <sprite>sprites\spr_stamina</sprite>
       </sprites>
     </sprites>
+    <sprites name="Map">
+      <sprite>sprites\spr_map_cargon_cart</sprite>
+      <sprite>sprites\spr_map_mountain</sprite>
+    </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_barrel</sprite>
       <sprite>sprites\spr_crate</sprite>
@@ -319,6 +323,7 @@
     <sprite>sprites\spr_blocker5</sprite>
     <sprite>sprites\spr_cannon_left</sprite>
     <sprite>sprites\spr_cannon_right</sprite>
+    <sprite>sprites\spr_cargon_cart</sprite>
     <sprite>sprites\spr_cave_rock</sprite>
     <sprite>sprites\spr_combat_skills</sprite>
     <sprite>sprites\spr_compass</sprite>
@@ -346,7 +351,6 @@
       <sprite>sprites\spr_world</sprite>
       <sprite>sprites\spr_world_map</sprite>
     </sprites>
-    <sprite>sprites\spr_cargon_cart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_menu</background>
@@ -623,7 +627,6 @@
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_first_loading</object>
       <object>objects\obj_hotbar_bg_controller</object>
-      <object>objects\obj_world_map_controller</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
       <object>objects\obj_pointer</object>
@@ -643,6 +646,11 @@
       <object>objects\obj_button_increase</object>
       <object>objects\obj_button_confirm</object>
       <object>objects\obj_button_decrease</object>
+    </objects>
+    <objects name="Map">
+      <object>objects\obj_map_mountain</object>
+      <object>objects\obj_map_cargon_cart</object>
+      <object>objects\obj_world_map_controller</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>
@@ -675,6 +683,7 @@
       <object>objects\obj_NPC</object>
     </objects>
     <object>objects\obj_aim</object>
+    <object>objects\obj_cargon_cart</object>
     <object>objects\obj_compass</object>
     <object>objects\obj_cycle</object>
     <object>objects\obj_enemy_turn_left</object>
@@ -703,7 +712,6 @@
     <objects name="Travelling">
       <object>objects\obj_world</object>
     </objects>
-    <object>objects\obj_cargon_cart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
