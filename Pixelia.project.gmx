@@ -655,6 +655,7 @@
       <object>objects\obj_world_map_controller</object>
       <object>objects\obj_map_castle</object>
       <object>objects\obj_map_forest</object>
+      <object>objects\obj_map_grid</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>

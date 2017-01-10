@@ -831,23 +831,11 @@ scr_plr_dead();
           <argument>
             <kind>1</kind>
             <string>draw_self();
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 draw_text(x, y-30, string(action_state));
-/*if (action_state == "null")
-{
-    if (distance_to_object(obj_source_iron_ore) &lt; 5 || 
-        distance_to_object(obj_source_tree) &lt; 5 ||
-        distance_to_object(obj_fishing_spot) &lt; 4 ||
-        distance_to_object(obj_ladder) &lt; 1 || 
-        distance_to_object(obj_crate) &lt; 2 ||
-        distance_to_object(obj_lever) &lt; 4 ||
-        distance_to_object(obj_alchemy_station) &lt; 10 ||
-        distance_to_object(obj_forge) &lt; 10 ||
-        distance_to_object(obj_workbench) &lt; 10 ||
-        distance_to_object(obj_cave_door) &lt; 4)
-    {
-        draw_sprite(spr_E,1,x,y-20);   
-    }
-}
 </string>
           </argument>
         </arguments>

@@ -35,8 +35,10 @@ create_once = true; //Create objects once on the list
 
 //Coins
 global.coins = 0;
+image_scale_coin = 1;
 //Potion
 global.potions = 0;
+image_scale_potion = 1;
 
 //Skills
 global.auto_healing = 1;
@@ -53,6 +55,124 @@ draw_name = false;
 name[t] = "";
 text_y_pos = 0;
 name_alpha = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (image_scale_coin &gt; 1)
+{
+    image_scale_coin -= 0.1;
+    alarm[5] = 5;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (image_scale_coin &lt; 1.2)
+{
+    image_scale_coin += 0.1;
+    alarm[4] = 5;
+}
+else
+{
+    alarm[5] = 5;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (image_scale_potion &gt; 1)
+{
+    image_scale_potion -= 0.1;
+    alarm[3] = 5;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (image_scale_potion &lt; 1.3)
+{
+    image_scale_potion += 0.1;
+    alarm[2] = 5;
+}
+else
+{
+    alarm[3] = 5;
+}
 
 </string>
           </argument>
@@ -188,7 +308,7 @@ if (global.auto_healing == 1
             <string>//Open inventory
 if (keyboard_check_released(vk_tab))
 {
-    if (!string_pos("inventory", string(global.hud_state)))
+    if (global.hud_state = "null")
     {
         global.hud_state = "inventory1";
         page_refresh = true;
@@ -335,14 +455,14 @@ draw_text(view_xview+270,view_yview+286, "XP    " + string(global.xp) + "  /  " 
 draw_text(view_xview+443,view_yview+286, string(global.coins));
 //Coin logo
 draw_sprite_ext(spr_money_icon, image_index, view_xview+425, 
-                view_yview+286, image_xscale, image_yscale, 
+                view_yview+286, image_scale_coin, image_scale_coin, 
                 image_angle, c_white, image_alpha);                
 //Potions
 draw_text(view_xview+384,view_yview+286, string(global.potions));
                 
 //Potion logo
 draw_sprite_ext(spr_potion_icon, image_index, view_xview+372, 
-                view_yview+286, image_xscale, image_yscale, 
+                view_yview+286, image_scale_potion, image_scale_potion, 
                 image_angle, c_white, image_alpha);
 </string>
           </argument>
@@ -404,6 +524,10 @@ if (draw_name == true)
 {
     global.potions -= 1;
     global.player_health += 10;
+}
+else if (global.potions == 0 and image_scale_potion == 1)
+{
+    alarm[2] = 5;   
 }
 </string>
           </argument>

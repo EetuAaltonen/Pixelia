@@ -61,7 +61,6 @@ if (global.hud_state == "map")
     else
     {
         global.hud_state = "map";
-        instance_create(view_xview, view_yview, obj_map_cargo_cart);
         instance_create(view_xview+250, view_yview+100, obj_map_mountain);
         instance_create(view_xview+280, view_yview+110, obj_map_mountain);
         instance_create(view_xview+310, view_yview+120, obj_map_mountain);
@@ -70,6 +69,8 @@ if (global.hud_state == "map")
         instance_create(view_xview+50, view_yview+50, obj_map_castle);
         instance_create(view_xview+200, view_yview+200, obj_map_castle);
         instance_create(view_xview+400, view_yview+50, obj_map_castle);
+        instance_create(view_xview, view_yview, obj_map_grid);
+        instance_create(view_xview, view_yview, obj_map_cargo_cart);
     }
 }
 </string>

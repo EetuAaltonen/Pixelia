@@ -32,6 +32,7 @@ x = target_x;
 y = target_y;
 distance_to_goal = 0;
 alarm[1] = 20;
+path = path_add();
 </string>
           </argument>
         </arguments>
@@ -82,7 +83,11 @@ alarm[1] = 20;
           <argument>
             <kind>1</kind>
             <string>image_angle = point_direction(x, y, target_x, target_y);
-mp_potential_step_object(target_x, target_y, 1, obj_map_mountain);
+if (mp_grid_path(obj_map_grid.grid, path, x, y, target_x, target_y, 1))
+{
+    path_start(path, 1, path_action_stop, false);
+}
+//mp_potential_step_object(target_x, target_y, 1, obj_map_mountain);
 </string>
           </argument>
         </arguments>
@@ -190,11 +195,11 @@ else
             <string>draw_self();
 if (distance_to_point(target_x, target_y) &gt; 20)
 {
-    draw_text(x-20, y-20, string(distance_to_goal) + " km");
+    draw_text(x-20, y-20, string(distance_to_goal * 2) + " km");
 }
 else
 {
-    draw_text(x-20, y-20, string(round(distance_to_point(target_x, target_y))) + " km");
+    draw_text(x-20, y-20, string(round(distance_to_point(target_x, target_y)) * 2) + " km");
 }
 </string>
           </argument>
