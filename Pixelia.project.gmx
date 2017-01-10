@@ -262,8 +262,10 @@
       </sprites>
     </sprites>
     <sprites name="Map">
-      <sprite>sprites\spr_map_cargon_cart</sprite>
+      <sprite>sprites\spr_map_cargo_cart</sprite>
       <sprite>sprites\spr_map_mountain</sprite>
+      <sprite>sprites\spr_map_castle</sprite>
+      <sprite>sprites\spr_map_forest</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_barrel</sprite>
@@ -649,8 +651,10 @@
     </objects>
     <objects name="Map">
       <object>objects\obj_map_mountain</object>
-      <object>objects\obj_map_cargon_cart</object>
+      <object>objects\obj_map_cargo_cart</object>
       <object>objects\obj_world_map_controller</object>
+      <object>objects\obj_map_castle</object>
+      <object>objects\obj_map_forest</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_achiements</object>

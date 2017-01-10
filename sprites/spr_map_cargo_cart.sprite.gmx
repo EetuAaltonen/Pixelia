@@ -20,9 +20,9 @@
   <width>17</width>
   <height>8</height>
   <frames>
-    <frame index="0">images\spr_map_cargon_cart_0.png</frame>
-    <frame index="1">images\spr_map_cargon_cart_1.png</frame>
-    <frame index="2">images\spr_map_cargon_cart_2.png</frame>
-    <frame index="3">images\spr_map_cargon_cart_3.png</frame>
+    <frame index="0">images\spr_map_cargo_cart_0.png</frame>
+    <frame index="1">images\spr_map_cargo_cart_1.png</frame>
+    <frame index="2">images\spr_map_cargo_cart_2.png</frame>
+    <frame index="3">images\spr_map_cargo_cart_3.png</frame>
   </frames>
 </sprite>

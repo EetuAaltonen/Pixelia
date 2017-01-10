@@ -20,7 +20,7 @@
   <width>16</width>
   <height>16</height>
   <frames>
-    <frame index="0">images\spr_map_mountain_0.png</frame>
-    <frame index="1">images\spr_map_mountain_1.png</frame>
+    <frame index="0">images\spr_map_forest_0.png</frame>
+    <frame index="1">images\spr_map_forest_1.png</frame>
   </frames>
 </sprite>
