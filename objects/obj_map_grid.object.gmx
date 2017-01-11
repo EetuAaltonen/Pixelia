@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>cell_width = 4;
-cell_height = 4;
+            <string>cell_width = 2;
+cell_height = 2;
 
-hcells = room_width / cell_width;
-vcells = room_height / cell_height;
+hcells = view_wview / cell_width;
+vcells = view_hview / cell_height;
 
-grid = mp_grid_create(0, 0, hcells, vcells, cell_width, cell_height);
+grid = mp_grid_create(view_xview, view_yview, hcells, vcells, cell_width, cell_height);
 
-mp_grid_add_instances(grid, obj_map_mountain, true);
+mp_grid_add_instances(grid, obj_map_mountain, false);
 </string>
           </argument>
         </arguments>
