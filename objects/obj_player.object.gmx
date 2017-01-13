@@ -619,18 +619,25 @@ else if (action_state == "null" ||
             sprite_index = spr_player; 
         }
     }
-    
     //Stairs
-    if (place_meeting(x+hspeed, y, obj_stairs_0001))
+    if (distance_to_object(obj_dec_stairs) == 0)
     {
-        scr_plr_cave_stairs();
+        scr_plr_stairs();
+        /*if (keyboard_check(vk_right))
+        {
+            move_contact_solid(90,8);
+            move_contact_solid(0,20);
+            move_contact_solid(270,8);
+        }
+        else if (keyboard_check(vk_left))
+        {
+            move_contact_solid(90,8);
+            move_contact_solid(180,20);
+            move_contact_solid(270,20);
+        }
+        move_contact_solid(270,12);
+        vspeed = 0;*/
     }
-    if (distance_to_object(obj_stairs_0001) == 0)
-    {
-        scr_solidify();
-        scr_falling_damage();
-    }
-    
     //Blocked
     if (!place_free(x,y-3))
     {
@@ -713,36 +720,6 @@ scr_plr_dead();
             <kind>1</kind>
             <string>lives += 5;
 global.xp += 1 * global.level;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_stairs_0001">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (keyboard_check(vk_right))
-{
-    move_contact_solid(0,4);
-}
-else if (keyboard_check(vk_left))
-{
-    move_contact_solid(180,4);
-}
 </string>
           </argument>
         </arguments>

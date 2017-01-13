@@ -40,6 +40,8 @@
           <sprite>sprites\spr_dec_table</sprite>
           <sprite>sprites\spr_dec_cup</sprite>
         </sprites>
+        <sprite>sprites\spr_dec_stairs</sprite>
+        <sprite>sprites\spr_dec_stairs_mask</sprite>
       </sprites>
       <sprite>sprites\spr_blacksmith</sprite>
       <sprite>sprites\spr_blacksmith_floor</sprite>
@@ -413,7 +415,7 @@
       <script>scripts\scr_falling_damage.gml</script>
       <script>scripts\scr_got_damage.gml</script>
       <script>scripts\scr_plr_bow.gml</script>
-      <script>scripts\scr_plr_cave_stairs.gml</script>
+      <script>scripts\scr_plr_stairs.gml</script>
       <script>scripts\scr_plr_dead.gml</script>
       <script>scripts\scr_plr_fishing.gml</script>
       <script>scripts\scr_plr_ladder.gml</script>
@@ -437,6 +439,8 @@
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <script>scripts\scr_enemy_draw_stats.gml</script>
+    <script>scripts\scr_enemy_generate_stats.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
@@ -483,6 +487,7 @@
           <object>objects\obj_dec_chair_parent</object>
           <object>objects\obj_dec_cup</object>
         </objects>
+        <object>objects\obj_dec_stairs</object>
       </objects>
       <object>objects\obj_blacksmith</object>
       <object>objects\obj_blacksmith_floor</object>
@@ -497,7 +502,6 @@
       <object>objects\obj_door</object>
       <object>objects\obj_door_locked</object>
       <object>objects\obj_platform</object>
-      <object>objects\obj_stairs_0001</object>
     </objects>
     <objects name="Collectable">
       <objects name="Animals">
@@ -688,7 +692,7 @@
       <object>objects\obj_NPC</object>
     </objects>
     <object>objects\obj_aim</object>
-    <object>objects\obj_cargon_cart</object>
+    <object>objects\obj_cargon_cart_wheel</object>
     <object>objects\obj_compass</object>
     <object>objects\obj_cycle</object>
     <object>objects\obj_enemy_turn_left</object>
