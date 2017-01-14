@@ -34,11 +34,14 @@
         <sprites name="Castle">
           <sprite>sprites\spr_dec_pennant</sprite>
           <sprite>sprites\spr_dec_wall_flag</sprite>
+          <sprite>sprites\spr_dec_window_2</sprite>
           <sprite>sprites\spr_dec_castle_gate</sprite>
           <sprite>sprites\spr_dec_window</sprite>
           <sprite>sprites\spr_dec_chair</sprite>
           <sprite>sprites\spr_dec_table</sprite>
           <sprite>sprites\spr_dec_cup</sprite>
+          <sprite>sprites\spr_dec_knight_statue</sprite>
+          <sprite>sprites\spr_dec_candlestick</sprite>
         </sprites>
         <sprite>sprites\spr_dec_stairs</sprite>
         <sprite>sprites\spr_dec_stairs_mask</sprite>
@@ -362,6 +365,7 @@
   <backgrounds name="background">
     <background>background\bgr_menu</background>
     <background>background\bg_map</background>
+    <background>background\bg_Pixelia_castle</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -490,6 +494,8 @@
           <object>objects\obj_dec_table</object>
           <object>objects\obj_dec_chair_parent</object>
           <object>objects\obj_dec_cup</object>
+          <object>objects\obj_dec_knight_statue</object>
+          <object>objects\obj_dec_candlestick</object>
         </objects>
         <object>objects\obj_dec_stairs</object>
       </objects>
@@ -737,6 +743,7 @@
     <room>rooms\Skilltree</room>
     <room>rooms\Test</room>
     <room>rooms\Test_improved</room>
+    <room>rooms\Pixelia_Castle_1</room>
     <room>rooms\World</room>
   </rooms>
   <help>

@@ -20,6 +20,6 @@
   <width>32</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\spr_dec_wall_flag_0.png</frame>
+    <frame index="0">images\spr_dec_window_2_0.png</frame>
   </frames>
 </sprite>
