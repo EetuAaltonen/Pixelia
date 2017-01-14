@@ -263,6 +263,9 @@
         <sprite>sprites\spr_stamina</sprite>
       </sprites>
     </sprites>
+    <sprites name="Language">
+      <sprite>sprites\spr_A</sprite>
+    </sprites>
     <sprites name="Map">
       <sprite>sprites\spr_map_cargo_cart</sprite>
       <sprite>sprites\spr_map_mountain</sprite>
@@ -441,6 +444,7 @@
     <script>scripts\scr_solidify.gml</script>
     <script>scripts\scr_enemy_draw_stats.gml</script>
     <script>scripts\scr_enemy_generate_stats.gml</script>
+    <script>scripts\scr_draw_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
