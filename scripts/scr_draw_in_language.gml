@@ -1,6 +1,9 @@
-var text_xpos = x+60;
-var text_ypos = y-60;
-var text = "fea";
+///scr_draw_text(argument0, argument1, argument2);
+
+text = argument0;
+text_xpos = argument1;
+text_ypos = argument2;
+
 var sprite_id = 0;
 var i = 0;
 

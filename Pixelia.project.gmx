@@ -191,6 +191,7 @@
         <sprite>sprites\spr_pic_bat</sprite>
         <sprite>sprites\spr_pic_rat</sprite>
         <sprite>sprites\spr_pic_archer</sprite>
+        <sprite>sprites\spr_ene_name_bg</sprite>
       </sprites>
       <sprites name="Inventory">
         <sprites name="Skilltree">
@@ -448,7 +449,7 @@
     <script>scripts\scr_solidify.gml</script>
     <script>scripts\scr_enemy_draw_stats.gml</script>
     <script>scripts\scr_enemy_generate_stats.gml</script>
-    <script>scripts\scr_draw_text.gml</script>
+    <script>scripts\scr_draw_in_language.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

@@ -841,8 +841,6 @@ draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_text(x, y-30, string(action_state));
-
-scr_draw_text();
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,7 @@ if (distance_to_object(obj_player) < 60)
             global.enemy_stats3 = 3;
             draw_state = global.enemy_stats3;
         }
-        view_yview_stats = (view_ypos*draw_state) + 5;
+        view_yview_stats = (view_ypos * (draw_state - 1)) + 2;
     }
     else
     {
@@ -34,253 +34,47 @@ if (distance_to_object(obj_player) < 60)
                     view_yview_stats, image_xscale, image_yscale, 
                     image_angle, c_white, 0.7);
                     
-        //Draw stats picture
-        draw_sprite_ext(spr_pic_bat, image_index, view_xview+145,
-                    view_yview_stats, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
-        
-        /*//Draw strength
-        var str_draw;
-        str_draw = str;
-        if (str > 1)
-        {       
-            draw_text_color(view_xview+180, view_yview_stats, string(str),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+165, view_yview_stats, "S:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-            draw_text_color(view_xview+180, view_yview_stats, string(str),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+165, view_yview_stats, "S: ",
-            c_white, c_white, c_white, c_white, 1);
-        }*/
-    }
-    
-    /*if (global.enemy_stats1 == 0 and draw_state == false)
-    {
-        //State
-        global.enemy_stats1 = 1;
-        draw_state = global.enemy_stats1;
-        depth = -4001;
-    }
-    else if (global.enemy_stats2 == 0 and draw_state == false)
-    {
-        //State
-        global.enemy_stats2 = 2;
-        draw_state = global.enemy_stats2;
-        depth = -4001;
-    }
-    else if (global.enemy_stats3 == 0 and draw_state == false)
-    {
-        //State
-        global.enemy_stats3 = 3;
-        draw_state = global.enemy_stats3;
-        depth = -4001;
-    }
-    else if (global.enemy_stats1 == draw_state)
-    {
-        //Draw stats background
-        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
-                    view_yview+3, image_xscale, image_yscale, 
-                    image_angle, c_white, 0.7);
-                    
-        //Draw stats picture
-        draw_sprite_ext(spr_pic_bat, image_index, view_xview+145,
-                    view_yview+10, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
+        //Draw stats name bg
+        draw_sprite(spr_ene_name_bg, image_index, view_xview+133,
+                    view_yview_stats + 2);
+        //Draw stats name
+        scr_draw_in_language(show_name, view_xview+138, view_yview_stats + 7);
         
         //Draw strength
         var str_draw;
         str_draw = str;
+        var c_color = c_white;
         if (str > 1)
-        {       
-            draw_text_color(view_xview+180, view_yview_stats, string(str),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+165, view_yview_stats, "S:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
         {
-            draw_text_color(view_xview+180, view_yview_stats, string(str),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+165, view_yview_stats, "S: ",
-            c_white, c_white, c_white, c_white, 1);
+            c_color = c_yellow;       
         }
+        draw_text_color(view_xview+178, view_yview_stats + 7, "S:",
+        c_color, c_color, c_color, c_color, 1);
+        draw_text_color(view_xview+192, view_yview_stats + 7, string(str),
+        c_color, c_color, c_color, c_color, 1);
         
         //Draw defence
-        var def_draw;
-        def_draw = def;
+        c_color = c_white;
         if (def > 1)
         {
-            draw_text_color(view_xview+210, view_yview_stats, string(def),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+195, view_yview_stats, "D:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            c_color = c_yellow;       
         }
-        else
-        {
-            draw_text_color(view_xview+210, view_yview_stats, string(def),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+195, view_yview_stats, "D:",
-            c_white, c_white, c_white, c_white, 1);
-        }
+        draw_text_color(view_xview+206, view_yview_stats + 7, "D:",
+        c_color, c_color, c_color, c_color, 1);
+        draw_text_color(view_xview+220, view_yview_stats + 7, string(def),
+        c_color, c_color, c_color, c_color, 1);
         
         //Draw magic
-        var mag_draw;
-        mag_draw = mag;    
+        c_color = c_white;
         if (mag > 1)
         {
-            draw_text_color(view_xview+240, view_yview_stats, string(mag),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+225, view_yview_stats, "M:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
+            c_color = c_yellow; 
         }
-        else
-        {
-            draw_text_color(view_xview+240, view_yview_stats, string(mag),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+225, view_yview_stats, "M:",
-            c_white, c_white, c_white, c_white, 1);
-        }
+        draw_text_color(view_xview+234, view_yview_stats + 7, "M:",
+        c_color, c_color, c_color, c_color, 1);
+        draw_text_color(view_xview+252, view_yview_stats + 7, string(mag),
+        c_color, c_color, c_color, c_color, 1);
     }
-    else if (global.enemy_stats2 == draw_state)
-    {
-        //Draw stats background
-        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
-                    view_yview+17, image_xscale, image_yscale, 
-                    image_angle, c_white, 0.7);
-                    
-        //Draw stats picture
-        draw_sprite_ext(spr_pic_bat, image_index, view_xview+145,
-                    view_yview+24, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
-        
-        //Draw strength
-        var str_draw;
-        str_draw = str;
-        if (str > 1)
-        {       
-            draw_text_color(view_xview+180, (view_yview_stats*2), string(str),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+165, (view_yview_stats*2), "S:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-            draw_text_color(view_xview+180, (view_yview_stats*2), string(str),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+165, (view_yview_stats*2), "S:",
-            c_white, c_white, c_white, c_white, 1);
-        }
-        
-        //Draw defence
-        var def_draw;
-        def_draw = def;
-        if (def > 1)
-        {
-            draw_text_color(view_xview+210, (view_yview_stats*2), string(def),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+195, (view_yview_stats*2), "D:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-            draw_text_color(view_xview+210, (view_yview_stats*2), string(def),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+195, (view_yview_stats*2), "D:",
-            c_white, c_white, c_white, c_white, 1);
-        }
-        
-        //Draw magic
-        var mag_draw;
-        mag_draw = mag;    
-        if (mag > 1)
-        {
-            draw_text_color(view_xview+240, (view_yview_stats*2), string(mag),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+225, (view_yview_stats*2), "M:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-           draw_text_color(view_xview+240, (view_yview_stats*2), string(mag),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+225, (view_yview_stats*2), "M:",
-            c_white, c_white, c_white, c_white, 1);
-        }
-    }
-    else if (global.enemy_stats3 == draw_state)
-    {
-        //Draw stats background
-        draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
-                    view_yview+31, image_xscale, image_yscale, 
-                    image_angle, c_white, 0.7);
-                    
-        //Draw stats picture
-        draw_sprite_ext(spr_pic_bat, image_index, view_xview+145,
-                    view_yview+38, image_xscale, image_yscale, 
-                    image_angle, c_white, image_alpha);
-        
-        //Draw strength
-        var str_draw;
-        str_draw = str;
-        if (str > 1)
-        {       
-            draw_text_color(view_xview+180, (view_yview_stats*3), string(str),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+165, (view_yview_stats*3), "S:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-            draw_text_color(view_xview+180, (view_yview_stats*3), string(str),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+165, (view_yview_stats*3), "S:",
-            c_white, c_white, c_white, c_white, 1);
-        }
-        
-        //Draw defence
-        var def_draw;
-        def_draw = def;
-        if (def > 1)
-        {
-            draw_text_color(view_xview+210, (view_yview_stats*3), string(def),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+195, (view_yview_stats*3), "D:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-            draw_text_color(view_xview+210, (view_yview_stats*3), string(def),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+195, (view_yview_stats*3), "D:",
-            c_white, c_white, c_white, c_white, 1);
-        }
-        
-        //Draw magic
-        var mag_draw;
-        mag_draw = mag;    
-        if (mag > 1)
-        {
-            draw_text_color(view_xview+240, (view_yview_stats*3), string(mag),
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-            draw_text_color(view_xview+225, (view_yview_stats*3), "M:",
-            c_yellow, c_yellow, c_yellow, c_yellow, 1);
-        }
-        else
-        {
-            draw_text_color(view_xview+240, (view_yview_stats*3), string(mag),
-            c_white, c_white, c_white, c_white, 1);
-            draw_text_color(view_xview+225, (view_yview_stats*3), "M:",
-            c_white, c_white, c_white, c_white, 1);
-        }
-    }
-    else
-    {
-        draw_state = false;
-    }*/
 }
 else if (draw_state != false) 
 {
