@@ -3,7 +3,7 @@
   <spriteName>spr_menu_button_small</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_end();
+            <string>global.pelaajaspawner = 1;
+room_goto(First_loading)
 </string>
           </argument>
         </arguments>
@@ -55,7 +56,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-draw_text(x, y, "Quit");
+draw_text(x, y, "Play");
 </string>
           </argument>
         </arguments>

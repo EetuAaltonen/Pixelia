@@ -411,10 +411,15 @@ sprite_index = spr_player;
             <kind>1</kind>
             <string>//Action states
 //If some menu is open
-if not(global.hud_state == "null")
+/*if (global.hud_state != "null")
 {
     hspeed = 0;
     vspeed = 0;
+}*/
+//Room change
+if (action_state = "room_change")
+{
+    hspeed = 0;
 }
 //Confirm
 else if (action_state == "confirm")

@@ -365,7 +365,6 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bgr_menu</background>
     <background>background\bg_map</background>
     <background>background\bg_Pixelia_castle</background>
   </backgrounds>
@@ -642,10 +641,20 @@
           <object>objects\obj_st_more_str</object>
         </objects>
       </objects>
+      <objects name="Menus">
+        <object>objects\obj_menu_achiements</object>
+        <object>objects\obj_menu_play</object>
+        <object>objects\obj_menu_options</object>
+        <object>objects\obj_menu_quit</object>
+      </objects>
+      <object>objects\obj_button_confirm</object>
+      <object>objects\obj_button_decrease</object>
+      <object>objects\obj_button_increase</object>
       <object>objects\obj_darkness</object>
       <object>objects\obj_exp_counter</object>
       <object>objects\obj_first_loading</object>
       <object>objects\obj_hotbar_bg_controller</object>
+      <object>objects\obj_listed_item</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
       <object>objects\obj_pointer</object>
@@ -661,10 +670,6 @@
         <object>objects\obj_mana</object>
         <object>objects\obj_stamina</object>
       </objects>
-      <object>objects\obj_listed_item</object>
-      <object>objects\obj_button_increase</object>
-      <object>objects\obj_button_confirm</object>
-      <object>objects\obj_button_decrease</object>
     </objects>
     <objects name="Map">
       <object>objects\obj_map_mountain</object>
@@ -673,11 +678,6 @@
       <object>objects\obj_map_castle</object>
       <object>objects\obj_map_forest</object>
       <object>objects\obj_map_grid</object>
-    </objects>
-    <objects name="Menus">
-      <object>objects\obj_achiements</object>
-      <object>objects\obj_play</object>
-      <object>objects\obj_quit</object>
     </objects>
     <objects name="Misc">
       <object>objects\obj_anvil</object>
@@ -737,6 +737,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
+    <room>rooms\Menu_Options</room>
     <room>rooms\Blacksmith</room>
     <room>rooms\Cave</room>
     <room>rooms\Cave_0001</room>

@@ -62,7 +62,7 @@
     <instance objName="obj_menu_quit" x="250" y="259" name="inst_71AAF699" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_menu_achiements" x="250" y="117" name="inst_03C1FC67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mouse" x="32" y="32" name="inst_9FADAE86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_screen_controller" x="-32" y="-16" name="inst_B50165CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_screen_controller" x="23" y="11" name="inst_B50165CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_menu_options" x="250" y="188" name="inst_81016DFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
