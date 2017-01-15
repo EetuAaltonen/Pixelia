@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>//if (obj_inventory_controller.page_refresh == true)
-if (global.hud_state == "null")
+if (global.hud_state == "null" || global.hud_state != "inventory1")
 {
     instance_destroy();
 }

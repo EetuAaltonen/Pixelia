@@ -319,6 +319,7 @@
       <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_hitbox_small</sprite>
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_plr_sword_swing</sprite>
       <sprite>sprites\spr_plr_sit</sprite>
       <sprite>sprites\spr_plr_down</sprite>
       <sprite>sprites\spr_plr_fishing</sprite>
