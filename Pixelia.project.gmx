@@ -451,6 +451,7 @@
     <script>scripts\scr_enemy_draw_stats.gml</script>
     <script>scripts\scr_enemy_generate_stats.gml</script>
     <script>scripts\scr_draw_in_language.gml</script>
+    <script>scripts\scr_resolution.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

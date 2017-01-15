@@ -25,14 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pause = false;
+            <string>reso_width = 1024;
+reso_height = 768;
+
+pause = false;
 display_reset(0, true);
 surface = 5; //1px = 5x5px
-if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)
+scr_resolution();
+/*if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)
 {
- surface_resize(application_surface, view_wport[0],view_hport[0]);
+    view_wport = view_wview;
+    view_hport = view_hview;
+    surface_resize(application_surface, view_wview, view_hview);
+    display_set_gui_size(view_wview, view_hview);
+    window_set_size(view_wview, view_hview);
 }
-//surface_resize(application_surface, view_wview[0]*surface, view_hview[0]*surface);
+surface_resize(application_surface, view_wview[0]*surface, view_hview[0]*surface);
 </string>
           </argument>
         </arguments>
@@ -138,12 +146,45 @@ if (pause == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)
+            <string>/*if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)
+{
+    view_wport = view_wview;
+    view_hport = view_hview;
+    surface_resize(application_surface, view_wview,view_hview);
+    display_set_gui_size(view_wview, view_hview);
+    window_set_size(view_wview, view_hview);
+}
+/*if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)
 {
     surface_resize(application_surface, view_wport[0],view_hport[0]);
-}
-/*surface_resize(application_surface, view_wview[0]*surface, view_hview[0]*surface);
+}*/
+//surface_resize(application_surface, view_wview[0]*surface, view_hview[0]*surface);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>reso_width = 1280;
+reso_height = 720;
+scr_resolution();
 </string>
           </argument>
         </arguments>
