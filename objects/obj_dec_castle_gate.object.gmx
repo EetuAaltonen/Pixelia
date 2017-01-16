@@ -60,7 +60,6 @@ depth_ = depth;
 if (image_index == 5)
 {
     image_speed = 0;
-    obj_player.action_state = "room_change";
     obj_screen_controller.target_room = Test_improved;
     obj_screen_controller.start = true;
     image_index = 6;

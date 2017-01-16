@@ -86,7 +86,7 @@ alarm[2] = 30;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_block_stone">
+    <event eventtype="4" ename="obj_maa">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -128,7 +128,7 @@ if (!place_free(x+hspeed,y+vspeed))
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_maa">
+    <event eventtype="4" ename="obj_block_stone">
       <action>
         <libid>1</libid>
         <id>603</id>

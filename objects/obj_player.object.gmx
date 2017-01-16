@@ -50,6 +50,8 @@
           <argument>
             <kind>1</kind>
             <string>//Spawn
+image_speed = 0;
+image_alpha = 0;
 x = obj_spawner.x;
 y = obj_spawner.y;
 global.room_change = 0;
@@ -93,6 +95,12 @@ roll = 0;
 cooldown = 1;
 
 scr_current_room();
+
+if (instance_exists(obj_screen_controller))
+{
+    obj_screen_controller.start = true;
+}
+
 </string>
           </argument>
         </arguments>
@@ -420,6 +428,8 @@ sprite_index = spr_player;
 if (action_state = "room_change")
 {
     hspeed = 0;
+    //Gravity
+    scr_custom_gravity();
 }
 //Confirm
 else if (action_state == "confirm")
@@ -761,29 +771,6 @@ scr_plr_dead();
             <kind>1</kind>
             <string>lives += 5;
 global.xp += 1 * global.level;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_blacksmith">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_goto(Pixelia_Castle_1);
 </string>
           </argument>
         </arguments>
