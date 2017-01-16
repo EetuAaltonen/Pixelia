@@ -38,6 +38,7 @@ target_room = "";
 alpha = 0;
 brightness = surface_create(room_width, room_height);
 start = false;
+transition_speed = 5;
 </string>
           </argument>
         </arguments>
@@ -63,7 +64,7 @@ start = false;
             <string>if (alpha &lt; 1)
 {   
     alpha += 0.05;
-    alarm[1] = 10;
+    alarm[1] = transition_speed;
 }
 else
 {
@@ -124,7 +125,7 @@ else
             <kind>1</kind>
             <string>if (start == true)
 {
-    alarm[1] = 10;
+    alarm[1] = transition_speed;
     start = false;
 }
 </string>

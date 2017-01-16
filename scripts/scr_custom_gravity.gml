@@ -2,9 +2,9 @@ var custom_gravity = 0.2;
 var max_vspeed = 4;
 if (vspeed < max_vspeed)
 {
-    if (instance_exists(obj_water))
+    if (instance_exists(obj_block_water))
     {
-        if (distance_to_object(obj_water) == 0)
+        if (distance_to_object(obj_block_water) == 0)
         {
             if (vspeed < 0.5)
             {

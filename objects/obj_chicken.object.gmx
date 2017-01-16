@@ -226,7 +226,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_stone">
+    <event eventtype="4" ename="obj_block_stone">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -249,7 +249,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_grass">
+    <event eventtype="4" ename="obj_block_grass">
       <action>
         <libid>1</libid>
         <id>603</id>

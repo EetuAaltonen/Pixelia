@@ -418,7 +418,7 @@ else if (distance_to_object(obj_player) &lt; 6 and sprite_index == spr_rat_1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_stone">
+    <event eventtype="4" ename="obj_block_stone">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -441,7 +441,7 @@ else if (distance_to_object(obj_player) &lt; 6 and sprite_index == spr_rat_1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_grass">
+    <event eventtype="4" ename="obj_block_grass">
       <action>
         <libid>1</libid>
         <id>603</id>

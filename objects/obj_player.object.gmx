@@ -933,34 +933,9 @@ if (global.hud_state = "null")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (action_state == "mining" || action_state == "woodcutting")
+            <string>if (action_state == "mining" || action_state == "woodcutting" || action_state == "sitting")
 {
     scr_plr_set_action_state_null();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (action_state == "sitting")
-{
-    action_state = "null";
-    sprite_index = spr_player;
 }
 </string>
           </argument>
