@@ -51,7 +51,6 @@
             <kind>1</kind>
             <string>//Spawn
 image_speed = 0;
-image_alpha = 0;
 x = obj_spawner.x;
 y = obj_spawner.y;
 global.room_change = 0;
