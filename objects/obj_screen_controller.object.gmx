@@ -39,7 +39,7 @@ target_room = false;
 alpha = 0;
 brightness = surface_create(view_wview, view_hview);
 start = false;
-transition_speed = 10;
+transition_speed = 5;
 </string>
           </argument>
         </arguments>
@@ -174,7 +174,7 @@ else
         alpha = 1;
         current_room = room;
         target_room = current_room;
-        alarm[2] = transition_speed;
+        alarm[2] = transition_speed + 20;
     }
     start = false;
 }

@@ -1150,7 +1150,7 @@ else if (action_state == "bow")
           <argument>
             <kind>1</kind>
             <string>//Slice
-if (action_state == "null")
+if (action_state == "null" || action_state == "jump")
 {
     if (global.stamina &gt;= 2)
     {

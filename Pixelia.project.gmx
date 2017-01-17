@@ -399,6 +399,12 @@
         <script>scripts\scr_forge_recipes.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Enemies">
+      <script>scripts\scr_enemy_die.gml</script>
+      <script>scripts\scr_enemy_draw_stats.gml</script>
+      <script>scripts\scr_enemy_generate_stats.gml</script>
+      <script>scripts\scr_reset_draw_state.gml</script>
+    </scripts>
     <scripts name="Home">
       <script>scripts\scr_prices.gml</script>
     </scripts>
@@ -442,15 +448,13 @@
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_blood_particle.gml</script>
     <script>scripts\scr_custom_gravity.gml</script>
+    <script>scripts\scr_draw_in_language.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
     <script>scripts\scr_highlight_self.gml</script>
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
-    <script>scripts\scr_solidify.gml</script>
-    <script>scripts\scr_enemy_draw_stats.gml</script>
-    <script>scripts\scr_enemy_generate_stats.gml</script>
-    <script>scripts\scr_draw_in_language.gml</script>
     <script>scripts\scr_resolution.gml</script>
+    <script>scripts\scr_solidify.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>

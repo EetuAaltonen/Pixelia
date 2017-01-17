@@ -155,36 +155,14 @@ scr_enemy_generate_stats();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (def &lt;= 0)
-{
-    //Enemies' stats
-    if (draw_state == global.enemy_stats1)
-    {
-        global.enemy_stats1 = 0;
-        draw_state = false;
-    }
-    else if (draw_state == global.enemy_stats2)
-    {
-        global.enemy_stats2 = 0;
-        draw_state = false;
-    }
-    else if (draw_state == global.enemy_stats3)
-    {
-        global.enemy_stats3 = 0;
-        draw_state = false;
-    }
-    //XP
-    global.xp += 20;
-    
-    //Kill counter
-    global.kill_counter += 1;
-    
-    instance_destroy();
-}
+            <string>//Gravity
+scr_custom_gravity();
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -201,14 +179,11 @@ scr_enemy_generate_stats();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Gravity
-scr_custom_gravity();
+            <string>scr_enemy_die();
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
