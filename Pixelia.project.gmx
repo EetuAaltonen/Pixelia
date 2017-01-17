@@ -436,6 +436,8 @@
       <script>scripts\scr_plr_mining.gml</script>
       <script>scripts\scr_plr_set_action_state_null.gml</script>
       <script>scripts\scr_plr_woodcutting.gml</script>
+      <script>scripts\scr_plr_movement.gml</script>
+      <script>scripts\scr_plr_stop_movement.gml</script>
     </scripts>
     <scripts name="Save/Load game">
       <script>scripts\scr_current_room.gml</script>

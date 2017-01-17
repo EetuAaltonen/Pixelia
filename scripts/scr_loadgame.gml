@@ -24,7 +24,7 @@ if (file_exists("Save.sav"))
     
     ini_close();
     
-    room_goto(Test_improved);//global.current_room);
+    room_goto(Pixelia_Castle_1);//global.current_room);
 }
 else
 {

@@ -58,7 +58,7 @@ else
             <kind>1</kind>
             <string>if (instance_exists(obj_player))
 {
-    if (distance_to_object(obj_player) &gt; 20)
+    if (distance_to_object(obj_player) &gt; 25)
     {
         instance_destroy();
     }

@@ -3,7 +3,7 @@
   <spriteName>spr_stonebrick</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>-4000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>obj_block_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
