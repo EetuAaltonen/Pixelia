@@ -234,8 +234,10 @@
         <sprite>sprites\spr_item_info_box</sprite>
       </sprites>
       <sprites name="Menus">
-        <sprite>sprites\spr_menu_button_large</sprite>
+        <sprite>sprites\spr_menu_button_large_old</sprite>
         <sprite>sprites\spr_menu_button_small</sprite>
+        <sprite>sprites\spr_orb_of_euphoria</sprite>
+        <sprite>sprites\spr_orb_of_dysphoria</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>
@@ -653,6 +655,9 @@
         <object>objects\obj_menu_play</object>
         <object>objects\obj_menu_options</object>
         <object>objects\obj_menu_quit</object>
+        <object>objects\obj_orb_of_euphoria</object>
+        <object>objects\obj_orb_of_dysforia</object>
+        <object>objects\obj_menu_button_parent</object>
       </objects>
       <object>objects\obj_button_confirm</object>
       <object>objects\obj_button_decrease</object>

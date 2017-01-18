@@ -28,7 +28,6 @@
             <string>move_towards_point(obj_player.x, obj_player.y, 10);
 gravity = 0;
 can_hurt = true;
-mag = 0;
 </string>
           </argument>
         </arguments>
@@ -100,7 +99,7 @@ image_angle = direction;
             <kind>1</kind>
             <string>if (can_hurt == true)
 {
-    global.player_health -= mag;
+    global.player_health -= 0;
     scr_got_damage();
     instance_destroy();
 }
@@ -132,7 +131,7 @@ image_angle = direction;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_block_grass">
+    <event eventtype="4" ename="obj_block_parent">
       <action>
         <libid>1</libid>
         <id>603</id>

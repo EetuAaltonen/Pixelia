@@ -40,7 +40,7 @@ if (instance_exists(obj_player))
             draw_sprite(spr_ene_name_bg, image_index, view_xview+133,
                         view_yview_stats + 2);
             //Draw stats name
-            scr_draw_in_language(show_name, view_xview+138, view_yview_stats + 7);
+            scr_draw_in_language(show_name, view_xview+138, view_yview_stats + 7, 1);
             
             //Draw strength
             var str_draw;
