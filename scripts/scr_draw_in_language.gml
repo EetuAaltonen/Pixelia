@@ -1,8 +1,9 @@
-///scr_draw_text(argument0, argument1, argument2);
+///scr_draw_in_language(argument0, argument1, argument2, argument3);
 
 text = argument0;
 text_xpos = argument1;
 text_ypos = argument2;
+text_scale = argument3;
 
 var sprite_id = 0;
 var i = 0;
@@ -25,8 +26,11 @@ for (i = 0; i < string_length(text); i++)
         case "l": sprite_id = 11;break;case "å": sprite_id = 26;break;
         case "m": sprite_id = 12;break;case "ä": sprite_id = 27;break;
         case "n": sprite_id = 13;break;case "ö": sprite_id = 28;break;
-        case "o": sprite_id = 14;break;
+        case "o": sprite_id = 14;break;case "_": sprite_id = "space";break;
         
     }
-    draw_sprite(spr_A, sprite_id, text_xpos + (10 * i), text_ypos);
+    if (sprite_id != "space")
+    {
+        draw_sprite_ext(spr_A, sprite_id, text_xpos + (10 * i), text_ypos, text_scale, text_scale, 0, c_black, 1);
+    }
 }

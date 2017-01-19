@@ -32,6 +32,7 @@ display_reset(0, true);
 surface = 5; //1px = 5x5px
 scr_resolution();
 //Pause
+background_temp = "";
 pause = false;
 //Room change
 current_room = false;
@@ -101,37 +102,6 @@ else
 else
 {
     room_goto(target_room);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (pause == true)
-{
-    background_add("Pause_screen.png", true, true);
-    instance_deactivate_all(true);
-}
-else
-{
-    instance_activate_all();
 }
 </string>
           </argument>
@@ -243,14 +213,14 @@ else
           <argument>
             <kind>1</kind>
             <string>//Font
-draw_set_font(fnt_inventory_text);
+draw_set_font(fnt_menu_buttons);
 draw_set_color(c_black);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 if (pause == true)
 {
-    draw_text(view_xview/2, view_yview/2, "Pause");
+    draw_text(view_xview + (view_wview/2), view_yview/2 + (view_hview/2), "Pause");
 }
 </string>
           </argument>
@@ -357,15 +327,12 @@ scr_resolution();
             <kind>1</kind>
             <string>if (pause == false)
 {
-    if (file_exists("Pause_screen.png"))
-    {
-        file_delete("Pause_screen.png");
-    }
-    screen_save("Pause_screen.png")
+    instance_deactivate_all(true);
     pause = true;
 }
 else
 {
+    instance_activate_all();
     pause = false;
 }
 </string>

@@ -234,8 +234,13 @@
         <sprite>sprites\spr_item_info_box</sprite>
       </sprites>
       <sprites name="Menus">
-        <sprite>sprites\spr_menu_button_large</sprite>
+        <sprite>sprites\spr_menu_button_large_old</sprite>
         <sprite>sprites\spr_menu_button_small</sprite>
+        <sprite>sprites\spr_menu_signature</sprite>
+        <sprite>sprites\spr_menu_logo</sprite>
+        <sprite>sprites\spr_logo_letters</sprite>
+        <sprite>sprites\spr_menu_orb_of_dysphoria</sprite>
+        <sprite>sprites\spr_menu_orb_of_euphoria</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>
@@ -367,6 +372,7 @@
   <backgrounds name="background">
     <background>background\bg_map</background>
     <background>background\bg_Pixelia_castle</background>
+    <background>background\bg_black</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -421,6 +427,9 @@
       <scripts name="Create/Initialize">
         <script>scripts\scr_listed_item_create_attributes.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="Menu">
+      <script>scripts\scr_menu_orb_create.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_woodcutting_dust.gml</script>
@@ -650,8 +659,12 @@
       </objects>
       <objects name="Menus">
         <object>objects\obj_menu_achiements</object>
-        <object>objects\obj_menu_play</object>
+        <object>objects\obj_menu_button_parent</object>
         <object>objects\obj_menu_options</object>
+        <object>objects\obj_menu_orb_of_dysforia</object>
+        <object>objects\obj_menu_orb_of_euphoria</object>
+        <object>objects\obj_menu_orb_parent</object>
+        <object>objects\obj_menu_play</object>
         <object>objects\obj_menu_quit</object>
       </objects>
       <object>objects\obj_button_confirm</object>
