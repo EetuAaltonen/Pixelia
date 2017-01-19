@@ -236,6 +236,9 @@
       <sprites name="Menus">
         <sprite>sprites\spr_menu_button_large_old</sprite>
         <sprite>sprites\spr_menu_button_small</sprite>
+        <sprite>sprites\spr_menu_signature</sprite>
+        <sprite>sprites\spr_menu_logo</sprite>
+        <sprite>sprites\spr_logo_letters</sprite>
         <sprite>sprites\spr_menu_orb_of_dysphoria</sprite>
         <sprite>sprites\spr_menu_orb_of_euphoria</sprite>
       </sprites>

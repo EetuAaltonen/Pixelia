@@ -87,6 +87,11 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 draw_text(x, y, "Play");
+
+//Logo
+draw_sprite(spr_menu_logo, 1, x, view_yview + 48);
+//Signature
+draw_sprite(spr_menu_signature, 1, view_xview + 2, (view_yview + view_hview - 10));
 </string>
           </argument>
         </arguments>
