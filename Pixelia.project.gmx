@@ -372,6 +372,7 @@
   <backgrounds name="background">
     <background>background\bg_map</background>
     <background>background\bg_Pixelia_castle</background>
+    <background>background\bg_black</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
