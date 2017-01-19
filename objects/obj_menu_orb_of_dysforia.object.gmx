@@ -30,7 +30,7 @@ scr_menu_orb_create();
 //Bloom color
 c_color = c_red;
 //Text
-text_ = "__the_orb_of_the_dysforia_";
+text_ = "__the_orb_of_dysforia_";
 </string>
           </argument>
         </arguments>

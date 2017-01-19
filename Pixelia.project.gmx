@@ -273,7 +273,7 @@
       </sprites>
     </sprites>
     <sprites name="Language">
-      <sprite>sprites\spr_A</sprite>
+      <sprite>sprites\spr_alphabet</sprite>
     </sprites>
     <sprites name="Map">
       <sprite>sprites\spr_map_cargo_cart</sprite>
