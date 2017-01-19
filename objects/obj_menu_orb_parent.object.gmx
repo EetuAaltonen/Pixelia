@@ -160,9 +160,9 @@ else
 }
 else
 {
-    if (size &gt; (sprite_width + (sprite_width/2)) )
+    if (size &gt; (sprite_width * 1.5))
     {
-        size -= (add_size*2);
+        size -= (add_size * 2);
     }
 }
 </string>

@@ -172,14 +172,9 @@ surface_reset_target();
             <string>draw_self();
 draw_set_blend_mode(bm_zero);
 draw_set_alpha(0.2);
-draw_ellipse_colour(x - size / 2, (y - 15) - size / 2,
-                    x + size / 2, (y - 15) + size / 2,
-                    c_orange, c_black, false);
+draw_circle_color(x, y - 10, size, c_orange, c_black, false);
 draw_set_blend_mode(bm_normal);
 draw_set_alpha(1);
-/*draw_set_blend_mode(bm_subtract);
-draw_surface(light,view_xview,view_yview);
-draw_set_blend_mode(bm_normal);
 </string>
           </argument>
         </arguments>

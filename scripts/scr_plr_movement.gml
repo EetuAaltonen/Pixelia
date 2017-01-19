@@ -10,14 +10,14 @@ else if (keyboard_check(vk_right))
     }
     if (keyboard_check(vk_shift) 
         && !keyboard_check(vk_down) 
-        && global.stamina != 0
+        && global.stamina > 0
         && !place_free(x, y+1))
     {
         //Run
         image_speed = 0.5;
         if (hspeed < max_run_speed)
         {
-            hspeed += run_acceleration;
+            hspeed += acceleration;
         }
         else
         {
@@ -29,7 +29,7 @@ else if (keyboard_check(vk_right))
         //Walk
         if (hspeed < max_walk_speed)
         {
-            hspeed += walk_acceleration;
+            hspeed += acceleration;
         }
         else
         {
@@ -44,15 +44,15 @@ else if (keyboard_check(vk_left))
         image_index += 1;
     }
     if (keyboard_check(vk_shift)
-    && not keyboard_check(vk_down)
-    && global.stamina != 0
+    && !keyboard_check(vk_down)
+    && global.stamina > 0
     && !place_free(x, y+1))
     {
         //Run
         image_speed = 0.5;
         if (hspeed > -max_run_speed)
         {
-            hspeed -= run_acceleration;
+            hspeed -= acceleration;
         }
         else
         {
@@ -64,7 +64,7 @@ else if (keyboard_check(vk_left))
         //Walk
         if (hspeed > -max_walk_speed)
         {
-            hspeed -= walk_acceleration;
+            hspeed -= acceleration;
         }
         else
         {

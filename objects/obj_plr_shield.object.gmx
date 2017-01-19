@@ -3,7 +3,7 @@
   <spriteName>spr_plr_shield</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-102</depth>
+  <depth>-103</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -80,14 +80,14 @@ vspeed = obj_player.vspeed;
 if (obj_player.image_xscale == 1)
 {
     image_xscale = 1;
-    x = obj_player.x+3;
-    y = obj_player.y-1;
+    x = obj_player.x + 10;
+    y = obj_player.y;
 }
-else if (obj_player.image_xscale == -1)
+else
 {
     image_xscale = -1;
-    x = obj_player.x-3;
-    y = obj_player.y-1;
+    x = obj_player.x - 10;
+    y = obj_player.y;
 }
 </string>
           </argument>

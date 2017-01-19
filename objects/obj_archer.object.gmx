@@ -247,8 +247,12 @@ if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.xp += 10;
-instance_destroy();
+            <string>if (get_damage == 1)
+{
+    get_damage = 0;
+    def = def - 1;
+    alarm[2] = 20;
+}
 </string>
           </argument>
         </arguments>

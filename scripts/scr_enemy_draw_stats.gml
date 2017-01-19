@@ -82,9 +82,11 @@ if (instance_exists(obj_player))
     {
         depth = -100;
         scr_reset_draw_state();
+        draw_state = false;
     }
 }
 else
 {
     scr_reset_draw_state();
+    draw_state = false;
 }
