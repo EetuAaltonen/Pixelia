@@ -241,6 +241,7 @@
         <sprite>sprites\spr_logo_letters</sprite>
         <sprite>sprites\spr_menu_orb_of_dysphoria</sprite>
         <sprite>sprites\spr_menu_orb_of_euphoria</sprite>
+        <sprite>sprites\spr_text_box</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>
@@ -666,6 +667,7 @@
         <object>objects\obj_menu_orb_parent</object>
         <object>objects\obj_menu_play</object>
         <object>objects\obj_menu_quit</object>
+        <object>objects\obj_text_box</object>
       </objects>
       <object>objects\obj_button_confirm</object>
       <object>objects\obj_button_decrease</object>
