@@ -48,17 +48,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (obj_inventory_controller.page_refresh == true)
-if (global.hud_state == "null" || global.hud_state != "inventory1")
-{
-    instance_destroy();
-}
-else if (global.hud_state == "inventory1" &amp;&amp;
+            <string>///Destroy function
+//if (obj_inventory_controller.page_refresh == true)
+if (global.hud_state == "inventory1" &amp;&amp;
          obj_inventory_controller.page_refresh == true)
 {
     instance_destroy();
 }
-else if (global.hud_state == "forge" &amp;&amp; obj_forge_controller.page_refresh == true)
+if (global.hud_state == "forge" &amp;&amp; obj_forge_controller.page_refresh == true)
+{
+    instance_destroy();
+}
+else if (global.hud_state == "null")
 {
     instance_destroy();
 }
