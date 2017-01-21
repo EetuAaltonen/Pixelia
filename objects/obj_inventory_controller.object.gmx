@@ -371,7 +371,7 @@ if (keyboard_check_released(vk_tab))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Inventory
+            <string>///Inventory
 //Font
 draw_set_font(fnt_inventory_text);
 draw_set_color(c_black);
@@ -440,7 +440,8 @@ else if(global.hud_state == "inventory3")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Font
+            <string>///Level, Coins, Potions
+//Font
 draw_set_font(fnt_hotbar_text);
 draw_set_color(c_black);
 draw_set_halign(fa_left);

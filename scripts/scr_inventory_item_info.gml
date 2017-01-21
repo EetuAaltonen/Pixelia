@@ -75,3 +75,11 @@ Name[4,2] = "Tuna";
 //Weight
 Weight[4,1] = 0.50;
 Weight[4,2] = 0.50;
+
+//Weapons
+//Sprite
+Sprite[5,1] = "spr_arrow_pouch";
+//Name
+Name[5,1] = "Arrow";
+//Weight
+Weight[5,1] = 0.05;

@@ -93,6 +93,7 @@
       <sprites name="Potions">
         <sprite>sprites\spr_healing_potion</sprite>
       </sprites>
+      <sprite>sprites\spr_arrow_pouch</sprite>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_fishing_spot</sprite>
@@ -381,6 +382,7 @@
       <scripts name="Create/Initialize">
         <script>scripts\scr_food_create_variables.gml</script>
         <script>scripts\scr_ingr_create_attributes.gml</script>
+        <script>scripts\scr_weap_create_attributes.gml</script>
         <script>scripts\scr_item_get_attributes.gml</script>
         <script>scripts\scr_item_get_id.gml</script>
         <script>scripts\scr_mater_create_variables.gml</script>
@@ -566,6 +568,7 @@
       <objects name="Trees">
         <object>objects\obj_source_oak_tree</object>
       </objects>
+      <object>objects\obj_arrow_pouch</object>
     </objects>
     <objects name="Crafting">
       <object>objects\obj_alchemy_station</object>
@@ -659,7 +662,7 @@
         </objects>
       </objects>
       <objects name="Menus">
-        <object>objects\obj_menu_achiements</object>
+        <object>objects\obj_menu_achievements</object>
         <object>objects\obj_menu_button_parent</object>
         <object>objects\obj_menu_options</object>
         <object>objects\obj_menu_orb_of_dysforia</object>

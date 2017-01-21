@@ -27,3 +27,14 @@ else if (type_id == 3)
 {
 
 }
+else if (type_id == 4)
+{
+
+}
+else if (type_id == 5)
+{
+    switch (sprite_index_)
+    {
+        case spr_arrow_pouch: item_id = 1;break;
+    }
+}

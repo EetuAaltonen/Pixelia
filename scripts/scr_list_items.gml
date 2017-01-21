@@ -29,6 +29,16 @@ if (page_refresh == true)
             }
             else if(type_id == 4 and item_id == array_length_2d(Sprite, type_id))
             {
+                type_id = 5;
+                item_id = 1;
+            }
+            else if(type_id == 5 and item_id == array_length_2d(Sprite, type_id))
+            {
+                type_id = 6;
+                item_id = 1;
+            }
+            else if(type_id == 6 and item_id == array_length_2d(Sprite, type_id))
+            {
                 break;
             }
         }
