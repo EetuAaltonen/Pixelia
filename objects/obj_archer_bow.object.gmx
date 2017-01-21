@@ -82,31 +82,22 @@ image_angle = point_direction(x, y, obj_player.x, obj_player.y);
         if (distance_to_object(obj_player) &lt; 100)
         {
             image_angle = point_direction(x, y, obj_player.x, obj_player.y);
-            
-            /*if (not(x - obj_player.x) &gt; 5 and
-                not(x - obj_player.x) &lt; -5) 
-            {*/
-                if (obj_player.x &gt; x)
+            if (obj_player.x &gt; x)
+            {
+                if (instance_exists(obj_archer))
                 {
-                    if (instance_exists(obj_archer))
-                    {
-                        x = (instance_nearest(x, y, obj_archer)).x + 5;
-                        y = (instance_nearest(x, y, obj_archer)).y + 4;
-                    }
-                    else
-                    {
-                        instance_destroy();
-                    }
+                    x = (instance_nearest(x, y, obj_archer)).x + 5;
+                    y = (instance_nearest(x, y, obj_archer)).y + 4;
                 }
-                else
+            }
+            else
+            {
+                if (instance_exists(obj_archer))
                 {
-                    if (instance_exists(obj_archer))
-                    {
-                        x = (instance_nearest(x, y, obj_archer)).x - 5;
-                        y = (instance_nearest(x, y, obj_archer)).y + 4;
-                    }
+                    x = (instance_nearest(x, y, obj_archer)).x - 5;
+                    y = (instance_nearest(x, y, obj_archer)).y + 4;
                 }
-            //}
+            }
         }
     }
 }
@@ -139,7 +130,6 @@ else
             <string>if (instance_exists(obj_player))
 {
     if (distance_to_object(obj_player) == 0)
-        //and not distance_to_object(obj_grass) == 0)
     {
         if (shoot == false)
         {
@@ -154,10 +144,14 @@ else
 //Destroy
 if (instance_exists(obj_archer))
 {
-    if ((instance_nearest(x, y, obj_archer)).def &lt;= 0)
+    if (distance_to_object(instance_nearest(x, y, obj_archer)) &gt; 10)
     {
-        instance_destroy();
+        //instance_destroy();
     }
+}
+else
+{
+    //instance_destroy();
 }
 </string>
           </argument>

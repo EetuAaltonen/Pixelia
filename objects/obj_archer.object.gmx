@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-99</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_enemy_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,11 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shoot = true;
-//Create a bow
-instance_create(x - 5, y + 6, obj_archer_bow);
-//Animation = Ready
-(instance_nearest(x, y, obj_archer_bow)).image_index = 2;
+            <string>//Can shoot
+shoot = true;
 //Damage
 get_damage = 1;
 //Stats
@@ -41,29 +38,11 @@ str = 1;
 def = 1;
 mag = 0;
 scr_enemy_generate_stats();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>get_damage = 1;
+
+//Create a bow
+instance_create(x - 5, y + 6, obj_archer_bow);
+//Animation = Ready
+(instance_nearest(x, y, obj_archer_bow)).image_index = 2;
 </string>
           </argument>
         </arguments>
@@ -179,27 +158,6 @@ scr_custom_gravity();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_enemy_die();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>//Turn
 if (obj_player.x &gt; x)
 {
@@ -211,47 +169,22 @@ else
 }
 
 //Shoot
-if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
+if (instance_exists(obj_archer_bow))
 {
-    instance_create(x, y, obj_arrow);
-    (instance_nearest(x, y, obj_arrow)).mag = mag;
-    //Animation
-    //Neutral
-    alarm[2] = 20;
-        //Ready
-    alarm[3] = 80;
-        //Shoot
-    alarm[1] = 100;
-    shoot = false;
-    (instance_nearest(x, y, obj_archer_bow)).image_index = 1;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_plr_slice">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (get_damage == 1)
-{
-    get_damage = 0;
-    def = def - 1;
-    alarm[2] = 20;
+    if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
+    {
+        instance_create(x, y, obj_arrow);
+        (instance_nearest(x, y, obj_arrow)).mag = mag;
+        //Animation
+        //Neutral
+        alarm[2] = 20;
+            //Ready
+        alarm[3] = 80;
+            //Shoot
+        alarm[1] = 100;
+        shoot = false;
+        (instance_nearest(x, y, obj_archer_bow)).image_index = 1;
+    }
 }
 </string>
           </argument>
@@ -277,30 +210,6 @@ if (shoot == true and (instance_nearest(x, y, obj_archer_bow)).shoot == true)
             <kind>1</kind>
             <string>scr_solidify();
 scr_falling_damage();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self();
-scr_enemy_draw_stats();
 </string>
           </argument>
         </arguments>

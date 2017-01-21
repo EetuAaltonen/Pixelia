@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,7 +85,7 @@
             <string>if (obj_button_increase.value &gt; 0)
 {
     obj_button_increase.value -= 1;
-    alarm[0] = 40;
+    alarm[1] = 40;
 }
 </string>
           </argument>

@@ -483,7 +483,6 @@
   <objects name="objects">
     <objects name="Ammon">
       <object>objects\obj_arrow</object>
-      <object>objects\obj_plr_arrow</object>
       <object>objects\obj_shadow_ammo</object>
       <object>objects\obj___ammo</object>
       <object>objects\obj_cannonball</object>
@@ -589,17 +588,18 @@
       <object>objects\obj_body</object>
     </objects>
     <objects name="Enemies">
-      <object>objects\obj_shadow</object>
-      <object>objects\obj_cannon_right</object>
-      <object>objects\obj_cannon_left</object>
+      <object>objects\obj_</object>
       <object>objects\obj_archer</object>
       <object>objects\obj_archer_bow</object>
-      <object>objects\obj_enemy</object>
-      <object>objects\obj_enemy2</object>
       <object>objects\obj_bat</object>
-      <object>objects\obj_rat</object>
+      <object>objects\obj_cannon_left</object>
+      <object>objects\obj_cannon_right</object>
+      <object>objects\obj_enemy</object>
       <object>objects\obj_enemy_hit</object>
-      <object>objects\obj_</object>
+      <object>objects\obj_enemy_parent</object>
+      <object>objects\obj_enemy2</object>
+      <object>objects\obj_rat</object>
+      <object>objects\obj_shadow</object>
     </objects>
     <objects name="Home_Village">
       <object>objects\obj_home_farmland</object>
@@ -741,9 +741,15 @@
     <object>objects\obj_pet_ammo</object>
     <objects name="Player">
       <objects name="Abilities">
+        <object>objects\obj_plr_attack_parent</object>
         <object>objects\obj_plr_shield</object>
-        <object>objects\obj_plr_slice</object>
         <object>objects\obj_use</object>
+        <objects name="Range">
+          <object>objects\obj_plr_arrow</object>
+        </objects>
+        <objects name="Melee">
+          <object>objects\obj_plr_slice</object>
+        </objects>
       </objects>
       <object>objects\obj_fishing_bobber</object>
       <object>objects\obj_fishing_line</object>

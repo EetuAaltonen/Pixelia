@@ -92,6 +92,7 @@ if (item_count > 0)
     //Item create
     if (create_once == true)
     {
+        create_once = false;
         for (i = start_count; i != end_count; i++;)
         {
             //Materials
@@ -101,7 +102,6 @@ if (item_count > 0)
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).get_attributes = true;
             y_pos += 19;
         }
-        create_once = false;
         y_pos = 120;
     } 
     for (i = start_count; i != end_count; i++;)
