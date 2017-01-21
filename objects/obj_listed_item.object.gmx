@@ -127,38 +127,27 @@ if (dropping_item == true)
         if (obj_button_confirm.confirmed == true)
         {
             dropping_item = false;
-            dropped_count = obj_button_increase.value;
-            scr_drop_item();
+            if (obj_button_confirm.value &gt; 0)
+            {
+                dropped_count = obj_button_confirm.value;
+                scr_drop_item();
+            }
+            if (instance_exists(obj_button_decrease))
+            {
+                with (obj_button_decrease) instance_destroy();
+            }
+            if (instance_exists(obj_button_increase))
+            {
+                with (obj_button_increase) instance_destroy();
+            }
+            if (instance_exists(obj_button_confirm))
+            {
+                with (obj_button_confirm) instance_destroy();
+            }
+            create_once = true;
+            obj_inventory_controller.page_refresh = true;
         }
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (dropping_item == true &amp;&amp; create_once == true)
-{
-    instance_create(view_xview+330, view_yview+150,obj_button_increase);
-    instance_create(view_xview+170, view_yview+150,obj_button_decrease);
-    instance_create(view_xview+250, view_yview+190,obj_button_confirm);
-    obj_button_increase.item_count = item_count;
-    create_once = false;
 }
 </string>
           </argument>
@@ -182,14 +171,27 @@ if (dropping_item == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state == "inventory1")
+            <string>///Start dropping items
+if (global.hud_state == "inventory1")
 {
-    ini_open("Inventory.sav");
-    key = "Amount[" + string(type_id) + "," + string(item_id) + "]";      
-    //Item amount
-    item_count = ini_read_real("Save1", key, 0);
-    ini_close();
-    dropping_item = true;
+    if (dropping_item == false)
+    {
+        ini_open("Inventory.sav");
+        key = "Amount[" + string(type_id) + "," + string(item_id) + "]";      
+        //Item amount
+        item_count = ini_read_real("Save1", key, 0);
+        ini_close();
+        //Create buttons to drop items
+        if (create_once == true)
+        {
+            instance_create(view_xview+330, view_yview+150,obj_button_increase);
+            instance_create(view_xview+170, view_yview+150,obj_button_decrease);
+            instance_create(view_xview+250, view_yview+190,obj_button_confirm);
+            obj_button_confirm.item_count = item_count;
+            create_once = false;
+        }
+        dropping_item = true;
+    }
 }
 </string>
           </argument>

@@ -25,40 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_button_increase.value &gt; 0)
+            <string>if (obj_button_confirm.value &gt; 0)
 {
     if (mouse_check_button(mb_left) &amp;&amp; distance_to_object(obj_mouse) == 0)
     {
-        obj_button_increase.value -= 1;
-        alarm[0] = 5;
+        obj_button_confirm.value -= 1;
+        alarm[1] = 5;
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (obj_inventory_controller.page_refresh == true ||
-    global.hud_state != "inventory1")
-{
-    instance_destroy();
 }
 </string>
           </argument>
@@ -82,9 +55,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_button_increase.value &gt; 0)
+            <string>if (obj_button_confirm.value &gt; 0)
 {
-    obj_button_increase.value -= 1;
+    obj_button_confirm.value -= 1;
     alarm[1] = 40;
 }
 </string>

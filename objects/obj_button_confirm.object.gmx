@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>confirmed = false;
+            <string>item_count = 0;
+value = 0;
+confirmed = false;
 </string>
           </argument>
         </arguments>
@@ -48,9 +50,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_inventory_controller.page_refresh == true ||
-    global.hud_state != "inventory1")
+            <string>if (global.hud_state != "inventory1")
 {
+    if (instance_exists(obj_button_decrease))
+    {
+        with (obj_button_decrease) instance_destroy();
+    }
+    if (instance_exists(obj_button_increase))
+    {
+        with (obj_button_increase) instance_destroy();
+    }
     instance_destroy();
 }
 </string>
@@ -75,9 +84,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_inventory_controller.page_refresh = true;
-scr_drop_item();
-//confirmed = true;
+            <string>///Confirm
+confirmed = true;
 </string>
           </argument>
         </arguments>
@@ -101,6 +109,13 @@ scr_drop_item();
           <argument>
             <kind>1</kind>
             <string>draw_self();
+//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_middle);
+draw_set_valign(fa_middle);
+draw_text(view_xview+250,view_yview+150, string(value) + " / " + string(item_count));
+
 draw_set_halign(fa_center);
 draw_text(x, y, "Confirm");
 </string>
