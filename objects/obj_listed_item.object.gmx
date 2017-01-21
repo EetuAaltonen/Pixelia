@@ -127,6 +127,7 @@ if (dropping_item == true)
         if (obj_button_confirm.confirmed == true)
         {
             dropping_item = false;
+            obj_inventory_controller.page_refresh = true;
             if (obj_button_confirm.value &gt; 0)
             {
                 dropped_count = obj_button_confirm.value;
@@ -145,7 +146,6 @@ if (dropping_item == true)
                 with (obj_button_confirm) instance_destroy();
             }
             create_once = true;
-            obj_inventory_controller.page_refresh = true;
         }
     }
 }

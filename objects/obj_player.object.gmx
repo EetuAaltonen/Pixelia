@@ -422,13 +422,14 @@ sprite_index = spr_player;
             <kind>1</kind>
             <string>///Action states
 //If some menu is open
-/*if (global.hud_state != "null")
+if (global.hud_state != "null")
 {
+    //Gravity
+    scr_custom_gravity();
     hspeed = 0;
-    vspeed = 0;
-}*/
+}
 //Room change
-if (action_state = "room_change")
+else if (action_state = "room_change")
 {
     hspeed = 0;
     //Gravity

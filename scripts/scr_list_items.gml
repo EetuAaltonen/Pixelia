@@ -1,9 +1,14 @@
 if (page_refresh == true)
 {
+    if (instance_exists(obj_listed_item))
+    {
+        with (obj_listed_item) instance_destroy();
+    }
     //Better code
     item_count = 0;
     type_id = 1;
     i = 0;
+    global.total_item_weight = 0;
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
@@ -67,6 +72,7 @@ if (page_refresh == true)
             
             //Item weight
             item_weight[type_id,item_id] = string(Weight[type_id,item_id]);
+            global.total_item_weight += (Weight[type_id,item_id] * item_amount[type_id,item_id]);
             
             //Draw
             item_type_id_draw[i] = type_id;

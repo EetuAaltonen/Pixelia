@@ -26,7 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>scr_weap_create_attributes();
-added_amount = 10; //Customed amount
+//Customed amount
+added_amount = 10;
+//Customed weight
+scr_inventory_item_info();
+weight = (Weight[type_id,item_id] * added_amount);
 </string>
           </argument>
         </arguments>
