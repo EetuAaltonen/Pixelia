@@ -420,7 +420,7 @@ sprite_index = spr_player;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Action states
+            <string>///Action states
 //If some menu is open
 /*if (global.hud_state != "null")
 {
@@ -483,6 +483,8 @@ else if (action_state == "ladder")
 else if (action_state == "bow")
 {
     scr_plr_bow();
+    //Gravity
+    scr_custom_gravity();
 }
 //Mining
 else if (action_state == "mining")
@@ -670,7 +672,7 @@ else if (action_state == "null" ||
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Damage
+            <string>///Damage
 if (global.damage == 0)
 {
     image_alpha = 0.7;
@@ -946,6 +948,7 @@ if not(action_state == "bow")
     action_state = "bow";
     instance_create(x, y, obj_plr_aim);
     instance_create(x, y, obj_plr_bow);
+    hspeed = 0;
 }
 else if (action_state == "bow")
 {

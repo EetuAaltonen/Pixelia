@@ -8,13 +8,12 @@ else if (keyboard_check(vk_left))
 {
     hspeed = -1;
 }
-//X_Scale
-if (obj_plr_aim.x > x)//(hspeed > 0) 
+//Image_xscale
+if (obj_plr_aim.x > x)
 {
     image_xscale = 1;
 }
-
-else if (obj_plr_aim.x < x)//(hspeed < 0) 
+else
 {
     image_xscale = -1;
 }
