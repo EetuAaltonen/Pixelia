@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Menu state
-menu_state = "main_menu";
+menu_state = "load_game";
 </string>
           </argument>
         </arguments>
@@ -80,7 +80,12 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-draw_text(x, y, "Options");
+draw_text(x, y, "Play");
+
+//Logo
+draw_sprite(spr_menu_logo, 1, view_xview + (view_wview/2), view_yview + 48);
+//Signature
+draw_sprite(spr_menu_signature, 1, view_xview + 2, (view_yview + view_hview - 10));
 </string>
           </argument>
         </arguments>

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Menu state
-menu_state = "main_menu";
+menu_state = "load_game";
 </string>
           </argument>
         </arguments>
@@ -49,8 +49,20 @@ menu_state = "main_menu";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.pelaajaspawner = 1;
-room_goto(First_loading)
+            <string>if (file_exists(obj_menu_text_box.txt))
+{
+    obj_menu_text_box.selected = false;
+    obj_menu_text_box.blink_icon = ""
+    var file = obj_menu_text_box.txt;
+    file_delete(file);
+    obj_menu_text_box.txt = "";
+    keyboard_string = obj_menu_text_box.txt;
+    if (instance_exists(obj_menu_saved_game))
+    {
+        with (obj_menu_saved_game) instance_destroy();
+    }
+    obj_screen_controller.read_saves = true;
+}
 </string>
           </argument>
         </arguments>
@@ -80,7 +92,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-draw_text(x, y, "Options");
+draw_text(x, y, "Delete");
 </string>
           </argument>
         </arguments>

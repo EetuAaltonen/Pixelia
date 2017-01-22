@@ -667,8 +667,12 @@
         <object>objects\obj_menu_orb_of_euphoria</object>
         <object>objects\obj_menu_orb_parent</object>
         <object>objects\obj_menu_play</object>
+        <object>objects\obj_menu_load_game</object>
+        <object>objects\obj_menu_delete</object>
         <object>objects\obj_menu_quit</object>
-        <object>objects\obj_text_box</object>
+        <object>objects\obj_menu_back</object>
+        <object>objects\obj_menu_text_box</object>
+        <object>objects\obj_menu_saved_game</object>
       </objects>
       <object>objects\obj_button_confirm</object>
       <object>objects\obj_button_decrease</object>

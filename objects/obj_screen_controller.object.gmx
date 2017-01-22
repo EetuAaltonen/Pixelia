@@ -31,6 +31,10 @@ reso_height = 768;
 display_reset(0, true);
 surface = 5; //1px = 5x5px
 scr_resolution();
+//Menu
+menu_state = "main_menu";
+create_buttons = true;
+read_saves = false;
 //Pause
 background_temp = "";
 pause = false;
@@ -147,6 +151,101 @@ else
         alarm[2] = transition_speed + 20;
     }
     start = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create menu buttons and change view
+if (room == Menu)
+{    
+    if (create_buttons == true)
+    {
+        if (menu_state == "main_menu")
+        {
+            instance_create(view_xview + 250, view_yview + 112, obj_menu_play);
+            instance_create(view_xview + 250, view_yview + 160, obj_menu_achievements);
+            instance_create(view_xview + 250, view_yview + 208, obj_menu_options);
+            instance_create(view_xview + 250, view_yview + 256, obj_menu_quit);
+        }
+        else if (menu_state == "load_game")
+        {
+            instance_create(view_xview + 100, view_yview + 112, obj_menu_text_box);
+            instance_create(view_xview + 100, view_yview + 160, obj_menu_load_game);
+            instance_create(view_xview + 100, view_yview + 208, obj_menu_delete);
+            instance_create(view_xview + 100, view_yview + 256, obj_menu_back);
+            read_saves = true; 
+        }
+        create_buttons = false;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Read saves
+if (read_saves == true)
+{
+    read_saves = false;
+    file = file_find_first("*.sav", 0);
+    if (string(file) == "Inventory.sav")
+    {
+        file = file_find_next();
+    }
+    if (file_exists(file) &amp;&amp; string(file) != "Inventory.sav")
+    {
+        instance_create(view_xview + 300, view_yview + 112,obj_menu_saved_game);
+        (instance_nearest(view_xview + 300, view_yview + 112,obj_menu_saved_game)).load_file = file;
+        for (i = 1; i != -1; i++)
+        {
+            file = file_find_next();
+            if (string(file) == "Inventory.sav")
+            {
+                file = file_find_next();
+            }
+            if (file_exists(file) &amp;&amp; string(file) != "Inventory.sav")
+            {
+                instance_create(view_xview + 300, view_yview + 112 + (50*i),obj_menu_saved_game);
+                (instance_nearest(view_xview + 300, view_yview + 112 + (50*i),obj_menu_saved_game)).load_file = file;
+            }
+            else
+            {
+                i = -2; //-2(+1) = -1
+            }
+        }
+    }
 }
 </string>
           </argument>
