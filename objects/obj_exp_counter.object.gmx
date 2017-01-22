@@ -34,7 +34,7 @@ global.xp = 0;
 global.xp_limit = 100;
 
 //Skillpoint
-global.skillpoints = 1;
+global.skill_points = 1;
 
 //Death counter
 global.death_counter = 0;
@@ -68,7 +68,7 @@ global.kill_counter = 0;
     //Level and xp
     if (global.xp &gt;= global.xp_limit)
     {
-        global.skillpoints += 1;
+        global.skill_points += 1;
         global.level += 1
         global.xp_limit += 100;
         global.xp = 0;

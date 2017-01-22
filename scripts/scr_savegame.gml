@@ -9,7 +9,7 @@ ini_write_real("Save1","level",global.level);
 ini_write_real("Save1","xp",global.xp);
 ini_write_real("Save1","xplimit",global.xp_limit);
 
-ini_write_real("Save1","skillpoints",global.skillpoints);
+ini_write_real("Save1","skill_points",global.skill_points);
 ini_write_real("Save1","deaths",global.death_counter);
 ini_write_real("Save1","kills",global.kill_counter);
 

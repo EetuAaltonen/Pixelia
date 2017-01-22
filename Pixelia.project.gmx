@@ -649,13 +649,14 @@
           <object>objects\obj_inv_close_button</object>
           <object>objects\obj_inv_inventory_button</object>
           <object>objects\obj_inv_save_exit_button</object>
-          <object>objects\obj_inv_skilltree_button</object>
+          <object>objects\obj_inv_skill_tree_button</object>
           <object>objects\obj_inv_stats_button</object>
         </objects>
         <object>objects\obj_inventory_bg_controller</object>
         <object>objects\obj_inventory_controller</object>
-        <objects name="Skilltree">
-          <object>objects\obj_skilltree_skill</object>
+        <objects name="Skill_tree">
+          <object>objects\obj_skill_tree_skill</object>
+          <object>objects\obj_skills_controller</object>
         </objects>
       </objects>
       <objects name="Menus">

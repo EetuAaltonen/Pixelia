@@ -10,7 +10,7 @@ if (file_exists("Save.sav"))
     global.xp = ini_read_real("Save1","xp",0);
     global.xp_limit = ini_read_real("Save1","xplimit",0);
     
-    global.skillpoints = ini_read_real("Save1","skillpoints",0);
+    global.skill_points = ini_read_real("Save1","skill_points",0);
     global.death_counter = ini_read_real("Save1","deaths",0);
     global.kill_counter = ini_read_real("Save1","kills",0);
 
