@@ -213,9 +213,6 @@
         </sprites>
         <sprite>sprites\spr_inv_close_button</sprite>
         <sprite>sprites\spr_inv_inventory_button</sprite>
-        <sprite>sprites\spr_inv_save_exit_button</sprite>
-        <sprite>sprites\spr_inv_skilltree_button</sprite>
-        <sprite>sprites\spr_inv_stats_button</sprite>
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_inventory_bg</sprite>
@@ -469,6 +466,9 @@
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_resolution.gml</script>
     <script>scripts\scr_solidify.gml</script>
+    <scripts name="Skilltree">
+      <script>scripts\scr_skilltree_skill_info.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
@@ -645,20 +645,17 @@
       </objects>
       <objects name="Inventory">
         <objects name="Buttons">
-          <object>objects\obj_inv_stats_button</object>
-          <object>objects\obj_inv_skilltree_button</object>
-          <object>objects\obj_inv_save_exit_button</object>
-          <object>objects\obj_inv_inventory_button</object>
+          <object>objects\obj_inv_button_parent</object>
           <object>objects\obj_inv_close_button</object>
+          <object>objects\obj_inv_inventory_button</object>
+          <object>objects\obj_inv_save_exit_button</object>
+          <object>objects\obj_inv_skilltree_button</object>
+          <object>objects\obj_inv_stats_button</object>
         </objects>
         <object>objects\obj_inventory_bg_controller</object>
         <object>objects\obj_inventory_controller</object>
         <objects name="Skilltree">
-          <object>objects\obj_st_2xcoin</object>
-          <object>objects\obj_st_carry_weight</object>
-          <object>objects\obj_st_more_mana</object>
-          <object>objects\obj_st_mana_reg</object>
-          <object>objects\obj_st_more_str</object>
+          <object>objects\obj_skilltree_skill</object>
         </objects>
       </objects>
       <objects name="Menus">
