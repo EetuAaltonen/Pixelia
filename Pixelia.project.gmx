@@ -240,6 +240,7 @@
         <sprite>sprites\spr_menu_orb_of_dysphoria</sprite>
         <sprite>sprites\spr_menu_orb_of_euphoria</sprite>
         <sprite>sprites\spr_text_box</sprite>
+        <sprite>sprites\spr_menu_saved_game</sprite>
       </sprites>
       <sprites name="Shop">
         <sprite>sprites\spr_shop_background</sprite>

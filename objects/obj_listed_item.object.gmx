@@ -179,7 +179,7 @@ if (global.hud_state == "inventory1")
         ini_open("Inventory.sav");
         key = "Amount[" + string(type_id) + "," + string(item_id) + "]";      
         //Item amount
-        item_count = ini_read_real("Save1", key, 0);
+        item_count = ini_read_real(global.save_file, key, 0);
         ini_close();
         //Create buttons to drop items
         if (create_once == true)

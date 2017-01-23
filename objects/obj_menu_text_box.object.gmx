@@ -33,7 +33,7 @@ txt_temp = "";
 blink_icon = "";
 blink_speed = 30;
 place_holder = "File name...";
-enabled_keys = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+enabled_keys = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
 //Menu state
 menu_state = "load_game";
 
@@ -128,7 +128,7 @@ if (selected == false &amp;&amp; txt == "")
 {
     if (!keyboard_check_pressed(vk_enter))
     {
-        if (!keyboard_check(vk_backspace))
+        if (!keyboard_check_pressed(vk_backspace))
         {
             if (string_length(keyboard_string) &lt;= max_width)
             {

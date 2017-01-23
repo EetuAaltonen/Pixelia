@@ -57,7 +57,7 @@ if (page_refresh == true)
         key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
         
         //Item amount
-        item_amount[type_id,item_id] = ini_read_real("Save1", key, -1);
+        item_amount[type_id,item_id] = ini_read_real(global.save_file, key, -1);
         
         //Check if item amount > 0
         if (round(item_amount[type_id,item_id]) > 0)
