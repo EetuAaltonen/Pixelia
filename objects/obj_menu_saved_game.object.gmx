@@ -29,6 +29,8 @@
 load_file = "";
 //Menu state
 menu_state = "load_game";
+//Datetime
+Datetime = current_time/*(string(current_hour) + "/" + string(current_minute) + "/" + string(current_second));/*(string(current_day) + "/" + string (current_month) + "/" + string(current_year));
 </string>
           </argument>
         </arguments>
@@ -86,7 +88,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-draw_text(x + (sprite_width/2), y + (sprite_height/2), string(load_file));
+draw_text(x + (sprite_width/2), y + (sprite_height/2), string(load_file) + " " + string(Datetime));
 </string>
           </argument>
         </arguments>
