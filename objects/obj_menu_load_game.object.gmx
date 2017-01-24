@@ -49,35 +49,38 @@ menu_state = "load_game";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_menu_text_box.selected = false;
-obj_menu_text_box.blink_icon = "";
-string_replace(obj_menu_text_box.txt, "|", "");
-var file = false;
-for (i = 0; i &lt; array_length_1d(obj_screen_controller.Saves); i++)  
+            <string>if (image_blend != make_colour_hsv(0, 0, 150))
 {
-    if (obj_menu_text_box.txt == obj_screen_controller.Saves[i])
+    obj_menu_text_box.selected = false;
+    obj_menu_text_box.blink_icon = "";
+    string_replace(obj_menu_text_box.txt, "|", "");
+    var file = false;
+    for (i = 0; i &lt; array_length_1d(obj_screen_controller.Saves); i++)  
     {
-        file = string(obj_screen_controller.Saves[i]);
+        if (obj_menu_text_box.txt == obj_screen_controller.Saves[i])
+        {
+            file = string(obj_screen_controller.Saves[i]);
+        }
     }
-}
-
-if (file != false)
-{
-    if show_question(("Load " + file + "?"))
+    
+    if (file != false)
     {
-        global.save_file = (file + ".sav");
-        global.pelaajaspawner = 1;
-        room_goto(First_loading);
+        if show_question(("Load " + file + "?"))
+        {
+            global.save_file = (file + ".sav");
+            global.pelaajaspawner = 1;
+            room_goto(First_loading);
+        }
     }
-}
-else
-{
-    file = obj_menu_text_box.txt;
-    if show_question(("Save doesn't exist, create " + file + "?"))
+    else
     {
-        global.save_file = (file + ".sav");
-        global.pelaajaspawner = 1;
-        room_goto(First_loading);
+        file = obj_menu_text_box.txt;
+        if show_question(("Save doesn't exist, create " + file + "?"))
+        {
+            global.save_file = (file + ".sav");
+            global.pelaajaspawner = 1;
+            room_goto(First_loading);
+        }
     }
 }
 </string>
@@ -115,6 +118,39 @@ draw_text(x, y, "Play");
 draw_sprite(spr_menu_logo, 1, view_xview + (view_wview/2), view_yview + 48);
 //Signature
 draw_sprite(spr_menu_signature, 1, view_xview + 2, (view_yview + view_hview - 10));
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check text length
+if (instance_exists(obj_menu_text_box))
+{
+    if (string_length(obj_menu_text_box.txt) &gt;= 4 &amp;&amp;
+        obj_menu_text_box.txt != obj_menu_text_box.place_holder)
+    {
+        image_blend = make_colour_hsv(0, 0, -1);
+    }
+    else
+    {
+        image_blend = make_colour_hsv(0, 0, 150);
+    }
+}
 </string>
           </argument>
         </arguments>

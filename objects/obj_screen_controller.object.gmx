@@ -246,6 +246,12 @@ if (read_saves == true)
         var y_pos = 96;
         instance_create(view_xview+x_pos, view_yview+y_pos,obj_menu_saved_game);
         (instance_nearest(view_xview + x_pos, view_yview + y_pos,obj_menu_saved_game)).load_file = string_replace(file, ".sav", "");
+        if (file_exists(file))
+        {
+            ini_open(file);
+            (instance_nearest(view_xview + x_pos, view_yview + y_pos,obj_menu_saved_game)).Datetime = ini_read_string(file,"last_played","");
+            ini_close();
+        }
         for (i = 1; i &lt;= 7; i++)
         {
             file = file_find_next();
@@ -258,6 +264,12 @@ if (read_saves == true)
                 instance_create(view_xview+x_pos, view_yview+y_pos+(margin_bottom*i),obj_menu_saved_game);
                 (instance_nearest(view_xview+x_pos, view_yview+y_pos+(margin_bottom*i),obj_menu_saved_game)).load_file = string_replace(file, ".sav", "");
                 Saves[i] = string_replace(file, ".sav", "");
+                if (file_exists(file))
+                {
+                    ini_open(file);
+                    (instance_nearest(view_xview+x_pos, view_yview+y_pos+(margin_bottom*i),obj_menu_saved_game)).Datetime = ini_read_string(file,"last_played","");
+                    ini_close();
+                }
             }
             else
             {

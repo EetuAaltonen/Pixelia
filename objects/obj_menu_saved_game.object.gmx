@@ -30,7 +30,7 @@ load_file = "";
 //Menu state
 menu_state = "load_game";
 //Datetime
-Datetime = current_time/*(string(current_hour) + "/" + string(current_minute) + "/" + string(current_second));/*(string(current_day) + "/" + string (current_month) + "/" + string(current_year));
+Datetime = "";
 </string>
           </argument>
         </arguments>
