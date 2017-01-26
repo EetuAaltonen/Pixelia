@@ -306,20 +306,26 @@ if (global.auto_healing == 1
           <argument>
             <kind>1</kind>
             <string>///Open inventory
-if (keyboard_check_released(vk_tab))
+if (keyboard_check_pressed(vk_tab))
 {
     if (global.hud_state = "null")
     {
-        global.hud_state = "inventory1";
-        page_refresh = true;
-        current_page = 0;
-        
-        //Create buttons
-        instance_create(view_xview+4, view_yview+54, obj_inv_inventory_button);
-        instance_create(view_xview+114, view_yview+54, obj_inv_skill_tree_button);
-        instance_create(view_xview+224, view_yview+54, obj_inv_stats_button);
-        instance_create(view_xview+334, view_yview+54, obj_inv_save_exit_button);
-        instance_create(view_xview+444, view_yview+54, obj_inv_close_button);
+        if (instance_exists(obj_player))
+        {
+            if (obj_player.action_state == "null")
+            {
+                global.hud_state = "inventory1";
+                page_refresh = true;
+                current_page = 0;
+                
+                //Create buttons
+                instance_create(view_xview+4, view_yview+54, obj_inv_inventory_button);
+                instance_create(view_xview+114, view_yview+54, obj_inv_skill_tree_button);
+                instance_create(view_xview+224, view_yview+54, obj_inv_stats_button);
+                instance_create(view_xview+334, view_yview+54, obj_inv_save_exit_button);
+                instance_create(view_xview+444, view_yview+54, obj_inv_close_button);
+            }
+        }
     }
     else if (string_pos("inventory", string(global.hud_state)))
     {    

@@ -51,7 +51,8 @@ reserved = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1) &amp;&amp;
+            <string>///Sit
+if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1) &amp;&amp;
     obj_player.action_state == "null")
 {
     if (instance_exists(obj_use))
@@ -107,7 +108,8 @@ reserved = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player.action_state == "null")
+            <string>///Reset values
+if (obj_player.action_state == "null")
 {
     sitting_direction = "null";
     reserved = false;
@@ -134,7 +136,8 @@ reserved = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Highlight self
+draw_self();
 if (reserved == false) 
 {
     scr_highlight_self();

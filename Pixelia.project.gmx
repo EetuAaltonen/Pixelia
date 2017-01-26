@@ -17,6 +17,7 @@
     </sprites>
     <sprites name="Animals">
       <sprite>sprites\spr_chicken</sprite>
+      <sprite>sprites\spr_mount_horse</sprite>
     </sprites>
     <sprites name="Blocks">
       <sprite>sprites\spr_maa</sprite>
@@ -767,6 +768,7 @@
     </objects>
     <objects name="Travelling">
       <object>objects\obj_world</object>
+      <object>objects\obj_mount_horse</object>
     </objects>
   </objects>
   <rooms name="rooms">

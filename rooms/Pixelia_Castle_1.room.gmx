@@ -904,7 +904,6 @@
     <instance objName="obj_block_stonebrick" x="568" y="232" name="inst_D8204D07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_stonebrick" x="584" y="200" name="inst_E8309C40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_stonebrick" x="568" y="168" name="inst_CFBA04EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_archer" x="256" y="224" name="inst_4C959BFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_stonebrick" x="568" y="200" name="inst_862ED675" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_stonebrick" x="568" y="216" name="inst_4B475907" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bat" x="528" y="208" name="inst_5E52831D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -912,6 +911,7 @@
     <instance objName="obj_bat" x="480" y="176" name="inst_6D03222C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bat" x="480" y="208" name="inst_BD21CA95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_arrow_pouch" x="552" y="233" name="inst_862EB007" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mount_horse" x="400" y="215" name="inst_1E38B675" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
