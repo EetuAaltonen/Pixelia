@@ -492,6 +492,7 @@
     </objects>
     <objects name="Animals">
       <object>objects\obj_chicken</object>
+      <object>objects\obj_mount_horse</object>
     </objects>
     <objects name="Blocks">
       <object>objects\obj_block_grass</object>
@@ -767,7 +768,6 @@
     </objects>
     <objects name="Travelling">
       <object>objects\obj_world</object>
-      <object>objects\obj_mount_horse</object>
     </objects>
   </objects>
   <rooms name="rooms">

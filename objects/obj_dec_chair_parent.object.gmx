@@ -51,6 +51,28 @@ reserved = false;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Gravity
+scr_custom_gravity();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Sit
 if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1) &amp;&amp;
     obj_player.action_state == "null")
@@ -59,6 +81,7 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
     {
         with (obj_use) instance_destroy();
     }
+    reserved = true;
     obj_player.x = x;
     obj_player.y = y-11;
     obj_player.action_state = "sitting";
@@ -86,7 +109,6 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
     }
     image_blend = make_colour_hsv(0, 0, -1);
     obj_player.highlight = false;
-    reserved = true;
 }
 </string>
           </argument>
@@ -114,6 +136,30 @@ if (obj_player.action_state == "null")
     sitting_direction = "null";
     reserved = false;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_solidify_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_solidify();
+scr_falling_damage();
 </string>
           </argument>
         </arguments>
