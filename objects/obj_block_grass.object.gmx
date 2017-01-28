@@ -37,10 +37,6 @@ if (image_index == 46 ||
         {
             instance_create(x,y-17,obj_chest);    
         }
-        else
-        {
-            instance_create(x,y-9,obj_flower);
-        }
     }
 }
 </string>
