@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>//Health
 global.player_health = 20;
+global.max_armor = 200;
+global.armor = 200;
 image_speed = 0;
 </string>
           </argument>
@@ -104,8 +106,16 @@ switch (global.player_health)
             <kind>1</kind>
             <string>if (instance_exists(obj_player))
 {
-    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+3,
-                    image_xscale, image_yscale, image_angle, c_white, image_alpha);
+    draw_sprite(sprite_index, image_index, view_xview+4, view_yview+3);
+    draw_sprite(spr_armor, image_index, view_xview+105, view_yview+3);
+    
+    //Font
+    draw_set_font(fnt_armor_text);
+    draw_set_color(c_white);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    
+    draw_text(view_xview+116, view_yview+14, string(global.armor));
 }
 
 </string>

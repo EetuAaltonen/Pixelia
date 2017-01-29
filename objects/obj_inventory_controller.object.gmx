@@ -33,6 +33,8 @@ type_id = "";
 page_refresh = true;
 create_once = true; //Create objects once on the list
 
+item_info_text = "Item info...";
+
 //Coins
 global.coins = 0;
 image_scale_coin = 1;

@@ -39,11 +39,6 @@ if (page_refresh == true)
             }
             else if(type_id == 5 and item_id == array_length_2d(Sprite, type_id))
             {
-                type_id = 6;
-                item_id = 1;
-            }
-            else if(type_id == 6 and item_id == array_length_2d(Sprite, type_id))
-            {
                 break;
             }
         }
@@ -68,6 +63,9 @@ if (page_refresh == true)
             //Item name
             item_name[type_id,item_id] = string(Name[type_id,item_id]);
             
+            //Item info
+            item_info[type_id,item_id] = string(Info[type_id,item_id]);
+            
             //Item amount is top of for loop
             
             //Item weight
@@ -78,6 +76,7 @@ if (page_refresh == true)
             item_type_id_draw[i] = type_id;
             item_sprite_draw[i] = item_sprite[type_id,item_id];
             item_name_draw[i] = item_name[type_id,item_id];
+            item_info_draw[i] = item_info[type_id,item_id];
             item_amount_draw[i] = item_amount[type_id,item_id];
             item_weight_draw[i] = item_weight[type_id,item_id];
             
@@ -101,11 +100,12 @@ if (item_count > 0)
         create_once = false;
         for (i = start_count; i != end_count; i++;)
         {
-            //Materials
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).sprite_index = asset_get_index(string(item_sprite_draw[i]));
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).type_id = item_type_id_draw[i];
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).get_attributes = true;
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).type_id = item_type_id_draw[i];
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).item_info = item_info_draw[i];
             y_pos += 19;
         }
         y_pos = 120;
@@ -144,6 +144,10 @@ if (item_count > 0)
     draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
     if (string_pos("inventory", string(global.hud_state)))
     {
+        //Item info background
+        draw_sprite(spr_inv_item_info_bg, 0,view_xview+335, view_yview+85);
+        //Item info text
+        draw_text(view_xview+350, view_yview+100, item_info_text);
         //Total and weight background
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+255, view_yview+95);
         //Total and weight

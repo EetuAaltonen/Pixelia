@@ -230,6 +230,7 @@
         <sprite>sprites\spr_inv_item_bg</sprite>
         <sprite>sprites\spr_inv_item_amount_bg</sprite>
         <sprite>sprites\spr_inv_item_description_bg</sprite>
+        <sprite>sprites\spr_inv_item_info_bg</sprite>
         <sprite>sprites\spr_item_info_box</sprite>
       </sprites>
       <sprites name="Menus">
@@ -269,6 +270,7 @@
       <sprite>sprites\spr_stats</sprite>
       <sprites name="Stats">
         <sprite>sprites\spr_lives</sprite>
+        <sprite>sprites\spr_armor</sprite>
         <sprite>sprites\spr_mana</sprite>
         <sprite>sprites\spr_stamina</sprite>
       </sprites>
@@ -419,6 +421,7 @@
     <scripts name="Inventory">
       <script>scripts\scr_drop_item.gml</script>
       <script>scripts\scr_inventory_item_info.gml</script>
+      <script>scripts\scr_inventory_item_info_text.gml</script>
     </scripts>
     <scripts name="Listed items">
       <script>scripts\scr_check_if_instance_destroy.gml</script>
@@ -481,6 +484,7 @@
     <font>fonts\fnt_sign</font>
     <font>fonts\fnt_menu_buttons</font>
     <font>fonts\fnt_inventory_text</font>
+    <font>fonts\fnt_armor_text</font>
   </fonts>
   <objects name="objects">
     <objects name="Ammon">

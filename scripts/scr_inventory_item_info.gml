@@ -1,7 +1,10 @@
 //Item info
+scr_inventory_item_info_text();
 
 //Add info to scr_item_get_id too...
+//Add info text to scr_inventory_item_info_text too...
 
+//Materials
 //Sprite
 Sprite[1,1] = "spr_iron_ore";
 Sprite[1,2] = "spr_oak_log";
@@ -34,7 +37,6 @@ Sprite[2,5] = "spr_lambsquarter";
 Sprite[2,6] = "spr_nettle";
 Sprite[2,7] = "spr_plantain";
 Sprite[2,8] = "spr_sheeps_sorrel";
-
 //Name
 Name[2,1] = "Water Flask";
 Name[2,2] = "Barbarea vulgaris";
