@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_blacksmith_floor" x="256" y="288" name="inst_B26FB928" locked="0" code="" scaleX="5.05000019073486" scaleY="11.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hitbox" x="-32" y="0" name="inst_E14F721A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plr_hitbox" x="-32" y="0" name="inst_E14F721A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="-64" y="64" name="inst_AF65648C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_world" x="0" y="256" name="inst_EB8C6385" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawner" x="64" y="244" name="inst_F8A02657" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

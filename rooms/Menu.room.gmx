@@ -60,7 +60,7 @@
   <instances>
     <instance objName="obj_mouse" x="16" y="272" name="inst_9FADAE86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_screen_controller" x="15" y="4" name="inst_14D7C3D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_arrow" x="336" y="368" name="inst_0694D834" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_arrow" x="336" y="368" name="inst_0694D834" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

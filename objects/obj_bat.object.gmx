@@ -70,7 +70,7 @@ alarm[1] = random_range(30, 150);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_hitbox">
+    <event eventtype="4" ename="obj_plr_hitbox">
       <action>
         <libid>1</libid>
         <id>603</id>

@@ -4,7 +4,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
-var view_ypos = 14;
+var view_ypos = 13;
 
 if (instance_exists(obj_player))
 {
@@ -27,20 +27,20 @@ if (instance_exists(obj_player))
                 global.enemy_stats3 = 3;
                 draw_state = global.enemy_stats3;
             }
-            view_yview_stats = (view_ypos * (draw_state - 1)) + 2;
+            view_yview_stats = (view_ypos * (draw_state - 1)) + 3;
         }
         else
         {
             //Draw stats background
-            draw_sprite_ext(spr_enemies_stats, image_index, view_xview+130,
+            draw_sprite_ext(spr_enemies_stats, image_index, view_xview+132,
                         view_yview_stats, image_xscale, image_yscale, 
                         image_angle, c_white, 0.7);
                         
             //Draw stats name bg
-            draw_sprite(spr_ene_name_bg, image_index, view_xview+133,
+            draw_sprite(spr_ene_name_bg, image_index, view_xview+135,
                         view_yview_stats + 2);
             //Draw stats name
-            scr_draw_in_language(show_name, view_xview+138, view_yview_stats + 7, 1);
+            scr_draw_in_language(show_name, view_xview+140, view_yview_stats + 7, 1);
             
             //Draw strength
             var str_draw;
@@ -50,9 +50,9 @@ if (instance_exists(obj_player))
             {
                 c_color = c_yellow;       
             }
-            draw_text_color(view_xview+178, view_yview_stats + 7, "S:",
+            draw_text_color(view_xview+180, view_yview_stats + 7, "S:",
             c_color, c_color, c_color, c_color, 1);
-            draw_text_color(view_xview+192, view_yview_stats + 7, string(str),
+            draw_text_color(view_xview+194, view_yview_stats + 7, string(str),
             c_color, c_color, c_color, c_color, 1);
             
             //Draw defence
@@ -61,9 +61,9 @@ if (instance_exists(obj_player))
             {
                 c_color = c_yellow;       
             }
-            draw_text_color(view_xview+206, view_yview_stats + 7, "D:",
+            draw_text_color(view_xview+208, view_yview_stats + 7, "D:",
             c_color, c_color, c_color, c_color, 1);
-            draw_text_color(view_xview+220, view_yview_stats + 7, string(def),
+            draw_text_color(view_xview+222, view_yview_stats + 7, string(def),
             c_color, c_color, c_color, c_color, 1);
             
             //Draw magic
@@ -72,9 +72,9 @@ if (instance_exists(obj_player))
             {
                 c_color = c_yellow; 
             }
-            draw_text_color(view_xview+234, view_yview_stats + 7, "M:",
+            draw_text_color(view_xview+236, view_yview_stats + 7, "M:",
             c_color, c_color, c_color, c_color, 1);
-            draw_text_color(view_xview+252, view_yview_stats + 7, string(mag),
+            draw_text_color(view_xview+254, view_yview_stats + 7, string(mag),
             c_color, c_color, c_color, c_color, 1);
         }
     }

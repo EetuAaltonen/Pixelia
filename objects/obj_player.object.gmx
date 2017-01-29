@@ -49,7 +49,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Spawn
+            <string>///Spawn and Create
 image_speed = 0;
 x = obj_spawner.x;
 y = obj_spawner.y;
@@ -69,10 +69,10 @@ global.enemy_stats2 = 0;
 global.enemy_stats3 = 0;
 
 //Hitbox
-instance_create(x, y, obj_hitbox);
+instance_create(x, y, obj_plr_hitbox);
 
 //Quest pointer
-instance_create(x, y, obj_pointer);
+instance_create(x, y, obj_plr_pointer);
 
 //acceleration = 0; //???
 //Highlight

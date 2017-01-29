@@ -262,7 +262,7 @@
       <sprite>sprites\spr_lightness</sprite>
       <sprite>sprites\spr_money_icon</sprite>
       <sprite>sprites\spr_mouse</sprite>
-      <sprite>sprites\spr_pointer</sprite>
+      <sprite>sprites\spr_plr_pointer</sprite>
       <sprite>sprites\spr_potion_icon</sprite>
       <sprite>sprites\spr_quest_text_bg</sprite>
       <sprite>sprites\spr_quests</sprite>
@@ -488,8 +488,6 @@
   </fonts>
   <objects name="objects">
     <objects name="Ammon">
-      <object>objects\obj_arrow</object>
-      <object>objects\obj_shadow_ammo</object>
       <object>objects\obj___ammo</object>
       <object>objects\obj_cannonball</object>
       <object>objects\obj_arrow1</object>
@@ -607,6 +605,11 @@
       <object>objects\obj_enemy2</object>
       <object>objects\obj_rat</object>
       <object>objects\obj_shadow</object>
+      <objects name="Attack">
+        <object>objects\obj_enemy_arrow</object>
+        <object>objects\obj_enemy_attack_parent</object>
+        <object>objects\obj_enemy_shadow_ball</object>
+      </objects>
     </objects>
     <objects name="Home_Village">
       <object>objects\obj_home_farmland</object>
@@ -691,7 +694,7 @@
       <object>objects\obj_listed_item</object>
       <object>objects\obj_money_target</object>
       <object>objects\obj_mouse</object>
-      <object>objects\obj_pointer</object>
+      <object>objects\obj_plr_pointer</object>
       <object>objects\obj_potion_target</object>
       <object>objects\obj_quest_controller</object>
       <object>objects\obj_screen_controller</object>
@@ -761,10 +764,10 @@
       </objects>
       <object>objects\obj_fishing_bobber</object>
       <object>objects\obj_fishing_line</object>
-      <object>objects\obj_hitbox</object>
       <object>objects\obj_player</object>
       <object>objects\obj_plr_aim</object>
       <object>objects\obj_plr_bow</object>
+      <object>objects\obj_plr_hitbox</object>
       <object>objects\obj_spawner</object>
     </objects>
     <objects name="Traps">

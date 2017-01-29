@@ -25,11 +25,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Health
+            <string>image_speed = 0;
+//Health
 global.player_health = 20;
-global.max_armor = 200;
-global.armor = 200;
-image_speed = 0;
+//Armor
+global.max_armor = 2;
+global.armor = 2;
+armor_reg = 1;
+global.armor_reg_time = 500;
+alarm[1] = global.armor_reg_time;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Armor regeration
+if (global.armor &lt; global.max_armor)
+{
+    global.armor += armor_reg;
+    alarm[1] = global.armor_reg_time;
+}
 </string>
           </argument>
         </arguments>
@@ -52,12 +84,7 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Limit
-if (global.player_health &gt; 20)
-{
-    global.player_health = 20;
-}
-//Lives image_index
+            <string>///Lives image_index
 switch (global.player_health)
 {
     case 20: image_index = 0; break;
@@ -104,14 +131,22 @@ switch (global.player_health)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_player))
+            <string>///Draw armor info
+if (instance_exists(obj_player))
 {
     draw_sprite(sprite_index, image_index, view_xview+4, view_yview+3);
     draw_sprite(spr_armor, image_index, view_xview+105, view_yview+3);
     
     //Font
     draw_set_font(fnt_armor_text);
-    draw_set_color(c_white);
+    if (global.armor &gt; 0)
+    {
+        draw_set_color(c_yellow);
+    }
+    else
+    {
+        draw_set_color(c_red);
+    }
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     
