@@ -87,9 +87,9 @@ if (global.hud_state != "inventory2")
     var margin_right = 50;
     var y_pos = 85;
     var margin_bottom = 35;
-    for (i = 0; i &lt;= 4; i++)
+    for (i = 1; i &lt;= 4; i++)
     {
-        for (a = 0; a &lt;= 4; a++)
+        for (a = 0; a &lt;= 8; a++)
         {
             instance_create(view_xview+x_pos+(margin_right*a), view_yview+y_pos+(margin_bottom*i), obj_skill_tree_skill);
             (instance_nearest(view_xview+x_pos+(margin_right*a), view_yview+y_pos+(margin_bottom*i), obj_skill_tree_skill)).id_x = a;
