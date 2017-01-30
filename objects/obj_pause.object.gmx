@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.pause = 0;
-global.pause_draw = 0;
-global.inventory = 0;
+            <string>//Global variables are moved to obj_first_loading
 
 </string>
           </argument>

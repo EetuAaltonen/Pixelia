@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.quest = "Beginning";
+            <string>//Global variables are moved to obj_first_loading
 </string>
           </argument>
         </arguments>

@@ -25,19 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Read saved ini
-//Read saved ini
-key = "";
+            <string>key = "";
 type_id = "";
 
 page_refresh = true;
 create_once = true; //Create objects once on the list
-
-//Highlights off
-global.alch_slot_1 = false;
-global.alch_slot_2 = false;
-global.alch_slot_3 = false;
-global.alch_slot_4 = false;
 </string>
           </argument>
         </arguments>

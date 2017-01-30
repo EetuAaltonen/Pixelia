@@ -36,20 +36,9 @@ create_once = true; //Create objects once on the list
 item_info_text = "Item info...";
 
 //Coins
-global.coins = 0;
 image_scale_coin = 1;
 //Potion
-global.potions = 0;
 image_scale_potion = 1;
-
-//Skills
-global.auto_healing = 1;
-
-//Max item weight
-global.max_item_weight = 10;
-
-//Total item weight
-global.total_item_weight = 0;
 
 //Collected item info text
 t = 1;

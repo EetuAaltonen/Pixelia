@@ -55,20 +55,20 @@ menu_state = "load_game";
     obj_menu_text_box.blink_icon = "";
     string_replace(obj_menu_text_box.txt, "|", "");
     var file = false;
-    for (i = 0; i &lt; array_length_1d(obj_screen_controller.Saves); i++)  
+    for (i = 0; i &lt; array_length_1d(obj_screen_controller.Saves); i++)
     {
         if (obj_menu_text_box.txt == obj_screen_controller.Saves[i])
         {
             file = string(obj_screen_controller.Saves[i]);
         }
     }
-    
+
     if (file != false)
     {
         if show_question(("Load " + file + "?"))
         {
             global.save_file = (file + ".sav");
-            global.pelaajaspawner = 1;
+            global.player_spawner = 1;
             room_goto(First_loading);
         }
     }
@@ -78,7 +78,7 @@ menu_state = "load_game";
         if show_question(("Save doesn't exist, create " + file + "?"))
         {
             global.save_file = (file + ".sav");
-            global.pelaajaspawner = 1;
+            global.player_spawner = 1;
             room_goto(First_loading);
         }
     }

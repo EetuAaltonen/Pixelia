@@ -25,8 +25,164 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>load = false;
-global.hud_state = "null";
+            <string>///Global variables
+load = false;
+
+/*[Hud state &amp; Room change]*/
+    global.hud_state = "null";
+    global.room_change = 0;
+
+/*[Enemies' stats]*/
+    global.enemy_stats1 = 0;
+    global.enemy_stats2 = 0;
+    global.enemy_stats3 = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Global variables - Player
+
+/*[Player]*/
+    //Health
+    global.player_health = 20;
+    global.damage = 1;
+    //Armor
+    global.max_armor = 2;
+    global.armor = 2;
+    global.armor_reg_time = 500;
+    //Stamina
+    global.stam_plus = 5; //Max = 10
+    global.stamina = (10 + global.stam_plus);
+    global.stamreg_plus = 0; //skill NEEDED???
+    //Mana
+    global.man_plus = 8; //Max = 10
+    global.mana = (10 + global.man_plus);
+    global.manreg_plus = 0; //skill NEEDED????
+    //Movement
+    global.load = 0; //Carrying - slow your movement
+    //Level
+    global.level = 1;
+    global.xp = 0;
+    global.xp_limit = 100;
+    //Skillpoint
+    global.skill_points = 0;
+    //Death counter
+    global.death_counter = 0;
+    //Kill counter
+    global.kill_counter = 0;
+    //Potion &amp; Coins
+    global.potions = 0;
+    global.coins = 0;
+    //NEEDED???
+    global.auto_healing = 1;
+    //Max &amp; Total item weight
+    global.max_item_weight = 10;
+    global.total_item_weight = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Global variables - Crafting
+
+/*[Forge]*/
+    //Highlights off
+    global.forg_slot_1 = false;
+    global.forg_slot_2 = false;
+    global.forg_slot_3 = false;
+    global.forg_slot_4 = false;
+    
+/*[Alchemy]*/
+    //Highlights off
+    global.alch_slot_1 = false;
+    global.alch_slot_2 = false;
+    global.alch_slot_3 = false;
+    global.alch_slot_4 = false;
+
+/*[Workbench]*/
+    //Highlights off
+    global.work_slot_1 = false;
+    global.work_slot_2 = false;
+    global.work_slot_3 = false;
+    global.work_slot_4 = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Global variables - Quest
+    global.quest = "Beginning";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Global variables - Pause
+
+    global.pause = 0;
+    global.pause_draw = 0;
+    global.inventory = 0;
 </string>
           </argument>
         </arguments>

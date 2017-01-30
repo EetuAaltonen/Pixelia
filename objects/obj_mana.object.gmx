@@ -27,12 +27,8 @@
             <kind>1</kind>
             <string>image_speed = 0;
 
-//Mana
-global.man_plus = 8; //Max = 10
-global.mana = (10 + global.man_plus);
 mana_usage = 1;
 manreg = 2;
-global.manreg_plus = 0; //skill
 mana_regerate = 1;
 alarm[1] = 50; //Mana regeration
 alarm[2] = 10; //Mana usage

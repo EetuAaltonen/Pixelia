@@ -49,7 +49,7 @@ menu_state = "main_menu";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.pelaajaspawner = 1;
+            <string>global.player_spawner = 1;
 room_goto(First_loading)
 </string>
           </argument>

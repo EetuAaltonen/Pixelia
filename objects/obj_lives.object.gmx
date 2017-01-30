@@ -26,13 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-//Health
-global.player_health = 20;
-//Armor
-global.max_armor = 2;
-global.armor = 2;
+
 armor_reg = 1;
-global.armor_reg_time = 500;
 alarm[1] = global.armor_reg_time;
 </string>
           </argument>

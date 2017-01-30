@@ -25,18 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Read saved ini
-search_id = "mater";
-
+            <string>search_id = "mater";
 update_amounts = true; //Update amounts in list
 update_list = true;
 create_once = true; //Create objects once on the list
-
-//Highlights off
-global.forg_slot_1 = false;
-global.forg_slot_2 = false;
-global.forg_slot_3 = false;
-global.forg_slot_4 = false;
 </string>
           </argument>
         </arguments>

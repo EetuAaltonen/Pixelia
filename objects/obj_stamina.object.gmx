@@ -27,12 +27,8 @@
             <kind>1</kind>
             <string>image_speed = 0;
 
-//Stamina
-global.stam_plus = 5; //Max = 10
-global.stamina = (10 + global.stam_plus);
 stamina_usage = 1;
 stamreg = 2;
-global.stamreg_plus = 0; //skill
 stamina_regerate = 1;
 alarm[1] = 50; //Stamina regeration
 alarm[2] = 10; //Stamina usage

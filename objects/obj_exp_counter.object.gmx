@@ -25,22 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Movement
-global.load = 0; //Carrying - slow your movement
-
-//Level
-global.level = 1;
-global.xp = 0;
-global.xp_limit = 100;
-
-//Skillpoint
-global.skill_points = 1;
-
-//Death counter
-global.death_counter = 0;
-
-//Kill counter
-global.kill_counter = 0;
+            <string>//Global variables are moved to obj_first_loading
 </string>
           </argument>
         </arguments>
