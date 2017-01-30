@@ -29,6 +29,37 @@ Sprite[4,2] = "spr_st_carry_weight";
 Sprite[4,3] = "spr_st_mana_reg";
 Sprite[4,4] = "spr_st_2xcoin";
 
+//Name
+Name[0, 0] = "Health regeneration time I";
+Name[0, 1] = "Health regeneration time II";
+Name[0, 2] = "Health regeneration amount I";
+Name[0, 3] = "Health regeneration amount II";
+Name[0, 4] = "Health regeneration time III";
+
+Name[1, 0] = "";
+Name[1, 1] = "";
+Name[1, 2] = "";
+Name[1, 3] = "";
+Name[1, 4] = "";
+
+Name[2, 0] = "";
+Name[2, 1] = "";
+Name[2, 2] = "";
+Name[2, 3] = "";
+Name[2, 4] = "";
+
+Name[3, 0] = "";
+Name[3, 1] = "";
+Name[3, 2] = "";
+Name[3, 3] = "";
+Name[3, 4] = "";
+
+Name[4, 0] = "";
+Name[4, 1] = "";
+Name[4, 2] = "";
+Name[4, 3] = "";
+Name[4, 4] = "";
+
 //Prices
 Price[0,0] = 5;
 Price[0,1] = 5;
