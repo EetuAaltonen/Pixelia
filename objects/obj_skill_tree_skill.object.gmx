@@ -29,7 +29,7 @@
 id_x = 0;
 id_y = 0;
 name = "";
-buff = "";
+bonus = "";
 price = 0;
 //Fill info
 get_attributes = false;
@@ -86,10 +86,64 @@ if (get_attributes == true)
 {
     scr_skilltree_skill_info();
     sprite_index = asset_get_index(string(Sprite[id_y, id_x]));
-    name = Name[id_y, id_x];
-    price = Price[id_y, id_x];
+    //name = Name[id_y, id_x];
+    //bonus = Bonus[id_y, id_x];
+    //price = Price[id_y, id_x];
+    info_txt = price;
     get_attributes = false;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clear info text
+obj_inventory_controller.skill_name = "";
+obj_inventory_controller.skill_bonus = "";
+obj_inventory_controller.skill_price = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set info text
+obj_inventory_controller.skill_name = name;
+obj_inventory_controller.skill_bonus = bonus;
+obj_inventory_controller.skill_price = price;
 </string>
           </argument>
         </arguments>
@@ -148,7 +202,7 @@ else
 //Font
 draw_set_font(fnt_inventory_text);
 draw_set_color(c_black);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 draw_text(x+(sprite_width/2)-1, y+(sprite_height)+5, string(price));
