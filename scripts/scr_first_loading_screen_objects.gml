@@ -34,5 +34,3 @@ Object[22] = obj_home_village_controller;
 Object[23] = obj_quest_controller;
 //Map
 Object[24] = obj_world_map_controller;
-//Skill tree
-Object[25] = obj_skills_controller;

@@ -197,36 +197,42 @@
       </sprites>
       <sprites name="Inventory">
         <sprites name="Skilltree">
-          <sprite>sprites\spr_st_2xcoin</sprite>
+          <sprite>sprites\spr_st_additional_armor_1</sprite>
+          <sprite>sprites\spr_st_additional_armor_2</sprite>
+          <sprite>sprites\spr_st_additional_damage_1</sprite>
+          <sprite>sprites\spr_st_additional_damage_2</sprite>
+          <sprite>sprites\spr_st_additional_damage_3</sprite>
           <sprite>sprites\spr_st_armor_reg_amount_1</sprite>
           <sprite>sprites\spr_st_armor_reg_amount_2</sprite>
           <sprite>sprites\spr_st_armor_reg_time_1</sprite>
           <sprite>sprites\spr_st_armor_reg_time_2</sprite>
-          <sprite>sprites\spr_st_auto_heal</sprite>
+          <sprite>sprites\spr_st_auto_healing</sprite>
           <sprite>sprites\spr_st_better_prices</sprite>
-          <sprite>sprites\spr_st_carry_weight</sprite>
+          <sprite>sprites\spr_st_carrying_capacity_1</sprite>
+          <sprite>sprites\spr_st_carrying_capacity_2</sprite>
           <sprite>sprites\spr_st_health_reg_amount_1</sprite>
           <sprite>sprites\spr_st_health_reg_amount_2</sprite>
           <sprite>sprites\spr_st_health_reg_time_1</sprite>
           <sprite>sprites\spr_st_health_reg_time_2</sprite>
-          <sprite>sprites\spr_st_hidden_things</sprite>
-          <sprite>sprites\spr_st_info_box</sprite>
-          <sprite>sprites\spr_st_mana_reg</sprite>
           <sprite>sprites\spr_st_mana_reg_amount_1</sprite>
           <sprite>sprites\spr_st_mana_reg_amount_2</sprite>
           <sprite>sprites\spr_st_mana_reg_time_1</sprite>
           <sprite>sprites\spr_st_mana_reg_time_2</sprite>
-          <sprite>sprites\spr_st_more_mana</sprite>
-          <sprite>sprites\spr_st_more_stamina</sprite>
-          <sprite>sprites\spr_st_more_str</sprite>
-          <sprite>sprites\spr_st_moving_speed</sprite>
+          <sprite>sprites\spr_st_max_health_1</sprite>
+          <sprite>sprites\spr_st_max_health_2</sprite>
+          <sprite>sprites\spr_st_max_mana_1</sprite>
+          <sprite>sprites\spr_st_max_mana_2</sprite>
+          <sprite>sprites\spr_st_max_stamina_1</sprite>
+          <sprite>sprites\spr_st_max_stamina_2</sprite>
+          <sprite>sprites\spr_st_moving_speed_1</sprite>
+          <sprite>sprites\spr_st_moving_speed_2</sprite>
           <sprite>sprites\spr_st_no_dakness</sprite>
-          <sprite>sprites\spr_st_stamina_reg</sprite>
+          <sprite>sprites\spr_st_scavenger_1</sprite>
+          <sprite>sprites\spr_st_scavenger_2</sprite>
           <sprite>sprites\spr_st_stamina_reg_amount_1</sprite>
           <sprite>sprites\spr_st_stamina_reg_amount_2</sprite>
           <sprite>sprites\spr_st_stamina_reg_time_1</sprite>
           <sprite>sprites\spr_st_stamina_reg_time_2</sprite>
-          <sprite>sprites\sprite170</sprite>
         </sprites>
         <sprite>sprites\spr_inv_close_button</sprite>
         <sprite>sprites\spr_inv_inventory_button</sprite>
@@ -687,7 +693,6 @@
         <object>objects\obj_inventory_controller</object>
         <objects name="Skill_tree">
           <object>objects\obj_skill_tree_skill</object>
-          <object>objects\obj_skills_controller</object>
         </objects>
       </objects>
       <objects name="Menus">

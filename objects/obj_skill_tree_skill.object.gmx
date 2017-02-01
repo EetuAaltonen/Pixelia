@@ -32,8 +32,71 @@ name = "";
 bonus = "";
 price = 0;
 unlocked = false;
+image_blend_ = 255;
+min_image_blend_ = 50;
+blend_time = 3;
+blend_amount = 25;
 //Fill info
 get_attributes = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (unlocked == true)
+{   
+    if (image_blend_ &gt; min_image_blend_)
+    {
+        image_blend_ -= blend_amount;
+        alarm[1] = blend_time;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (distance_to_point(mouse_x, mouse_y) == 0)
+{
+    ///Set info text
+    obj_inventory_controller.skill_name = name;
+    obj_inventory_controller.skill_bonus = bonus;
+    obj_inventory_controller.skill_price = price;
+}
 </string>
           </argument>
         </arguments>
@@ -93,14 +156,13 @@ if (get_attributes == true)
 {
     scr_st_skill_info();
     sprite_index = asset_get_index(string(Sprite[id_y, id_x]));
-    if (id_x &lt; 8)
-    {
-        name = Name[id_y, id_x];
-        //bonus = Bonus[id_y, id_x];
-        price = Price[id_y, id_x];
-        scr_st_check_skill_state();
-    }
+    name = Name[id_y, id_x];
+    //bonus = Bonus[id_y, id_x];
+    //price = Price[id_y, id_x];
+    scr_st_check_skill_state();
+    
     info_txt = price;
+    alarm[1] = blend_time;
     get_attributes = false;
 }
 </string>
@@ -134,32 +196,6 @@ obj_inventory_controller.skill_price = "";
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Set info text
-obj_inventory_controller.skill_name = name;
-obj_inventory_controller.skill_bonus = bonus;
-obj_inventory_controller.skill_price = price;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -188,6 +224,7 @@ if (unlocked == false)
         ini_write_string(global.save_file,key,"true");
         ini_close();
         unlocked = true;
+        alarm[1] = blend_time;
     //}
     //else
     //{
@@ -246,14 +283,7 @@ draw_text(x+(sprite_width/2)-1, y+(sprite_height)+5, string(price));
           <argument>
             <kind>1</kind>
             <string>///Unlocked
-if (unlocked)
-{
-    image_blend = make_colour_hsv(0, 0, 50);
-}
-else
-{
-    image_blend = make_colour_hsv(0, 0, -1);
-}
+image_blend = make_colour_hsv(0, 0, image_blend_);
 </string>
           </argument>
         </arguments>
