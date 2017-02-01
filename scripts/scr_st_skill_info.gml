@@ -14,10 +14,10 @@ Sprite[2,3] = "spr_st_mana_reg_time_2";
 Sprite[3,3] = "spr_st_mana_reg_amount_1";
 Sprite[4,3] = "spr_st_mana_reg_amount_2";
 
-Sprite[1,4] = "spr_st_more_mana";
-Sprite[2,4] = "spr_st_more_mana";
-Sprite[3,4] = "spr_st_more_mana";
-Sprite[4,4] = "spr_st_more_mana";
+Sprite[1,4] = "spr_st_armor_reg_time_1";
+Sprite[2,4] = "spr_st_armor_reg_time_2";
+Sprite[3,4] = "spr_st_armor_reg_amount_1";
+Sprite[4,4] = "spr_st_armor_reg_amount_2";
 
 Sprite[1,5] = "spr_st_more_mana";
 Sprite[2,5] = "spr_st_more_mana";

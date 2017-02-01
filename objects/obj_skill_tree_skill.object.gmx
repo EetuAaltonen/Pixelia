@@ -31,31 +31,10 @@ id_y = 0;
 name = "";
 bonus = "";
 price = 0;
+unlocked = false;
 //Fill info
 get_attributes = false;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -77,19 +56,17 @@ get_attributes = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fill info
-if (get_attributes == true)
+            <string>///Destroy function
+if (global.hud_state == "inventory2")
 {
-    scr_skilltree_skill_info();
-    sprite_index = asset_get_index(string(Sprite[id_y, id_x]));
-    if (id_x &lt; 8)
+    if (obj_inventory_controller.page_refresh == true)
     {
-        name = Name[id_y, id_x];
-        //bonus = Bonus[id_y, id_x];
-        price = Price[id_y, id_x];
+        instance_destroy();
     }
-    info_txt = price;
-    get_attributes = false;
+}
+else
+{
+    instance_destroy();
 }
 </string>
           </argument>
@@ -111,10 +88,20 @@ if (get_attributes == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Check destroy
-if (global.hud_state != "inventory2")
+            <string>///Fill info
+if (get_attributes == true)
 {
-    instance_destroy();
+    scr_st_skill_info();
+    sprite_index = asset_get_index(string(Sprite[id_y, id_x]));
+    if (id_x &lt; 8)
+    {
+        name = Name[id_y, id_x];
+        //bonus = Bonus[id_y, id_x];
+        price = Price[id_y, id_x];
+        scr_st_check_skill_state();
+    }
+    info_txt = price;
+    get_attributes = false;
 }
 </string>
           </argument>
@@ -190,15 +177,22 @@ obj_inventory_controller.skill_price = price;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_message("Name: " + name + ", Price: " + string(price));
-/*if (global.skill_points &gt;= price)
-{    
-    global.skill_points -= price;
-    show_message(string(id_y) + "," + string(id_x) + " activated");
-}
-else
+            <string>///Unlock skill
+if (unlocked == false)
 {
-    show_message("Not enough skill points!");
+    //if (global.skill_points &gt;= price)
+    //{    
+        global.skill_points -= price;
+        var key = "Skill[" + string(id_y) + "," + string(id_x) + "]";
+        ini_open("SkillTree.sav");
+        ini_write_string(global.save_file,key,"true");
+        ini_close();
+        unlocked = true;
+    //}
+    //else
+    //{
+    //    show_message("Not enough skill points!");
+    //}
 }
 </string>
           </argument>
@@ -222,7 +216,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Draw price
+draw_self();
 //Font
 draw_set_font(fnt_inventory_text);
 draw_set_color(c_black);
@@ -230,6 +225,35 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 draw_text(x+(sprite_width/2)-1, y+(sprite_height)+5, string(price));
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Unlocked
+if (unlocked)
+{
+    image_blend = make_colour_hsv(0, 0, 50);
+}
+else
+{
+    image_blend = make_colour_hsv(0, 0, -1);
+}
 </string>
           </argument>
         </arguments>

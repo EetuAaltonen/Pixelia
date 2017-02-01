@@ -350,7 +350,8 @@ if (keyboard_check_pressed(vk_tab))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_page_change();
+            <string>///Page change
+scr_page_change();
 </string>
           </argument>
         </arguments>
@@ -372,7 +373,7 @@ if (keyboard_check_pressed(vk_tab))
           <argument>
             <kind>1</kind>
             <string>///Reset page_refresh &amp; create_once
-if (global.hud_state != "inventory1")
+if (!string_pos("inventory", string(global.hud_state)))
 {
     page_refresh = true;
     create_once = true;
@@ -412,14 +413,8 @@ if (global.hud_state == "inventory1")
 }
 else if (global.hud_state == "inventory2")
 {
-    //Skilltree
-    draw_text(view_xview+400, view_yview+90, "Skill points: " + string(global.skill_points));
-    draw_text(view_xview+15, view_yview+90, "Name");
-    draw_text(view_xview+15, view_yview+100, skill_name);
-    draw_text(view_xview+200, view_yview+90, "Bonus");
-    draw_text(view_xview+200, view_yview+100, string(skill_bonus));
-    draw_text(view_xview+300, view_yview+90, "Price");
-    draw_text(view_xview+300, view_yview+100, string(skill_price));
+    scr_st_draw_info();
+    scr_st_create_skills();
 }
 else if(global.hud_state == "inventory3")
 {

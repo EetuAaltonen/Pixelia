@@ -198,6 +198,10 @@
       <sprites name="Inventory">
         <sprites name="Skilltree">
           <sprite>sprites\spr_st_2xcoin</sprite>
+          <sprite>sprites\spr_st_armor_reg_amount_1</sprite>
+          <sprite>sprites\spr_st_armor_reg_amount_2</sprite>
+          <sprite>sprites\spr_st_armor_reg_time_1</sprite>
+          <sprite>sprites\spr_st_armor_reg_time_2</sprite>
           <sprite>sprites\spr_st_auto_heal</sprite>
           <sprite>sprites\spr_st_better_prices</sprite>
           <sprite>sprites\spr_st_carry_weight</sprite>
@@ -434,6 +438,12 @@
       <script>scripts\scr_drop_item.gml</script>
       <script>scripts\scr_inventory_item_info.gml</script>
       <script>scripts\scr_inventory_item_info_text.gml</script>
+      <scripts name="Skilltree">
+        <script>scripts\scr_st_skill_info.gml</script>
+        <script>scripts\scr_st_check_skill_state.gml</script>
+        <script>scripts\scr_st_create_skills.gml</script>
+        <script>scripts\scr_st_draw_info.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Listed items">
       <script>scripts\scr_check_if_instance_destroy.gml</script>
@@ -483,9 +493,6 @@
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_resolution.gml</script>
     <script>scripts\scr_solidify.gml</script>
-    <scripts name="Skilltree">
-      <script>scripts\scr_skilltree_skill_info.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_collected_item_info_text</font>
@@ -589,6 +596,8 @@
     <objects name="Crafting">
       <object>objects\obj_alchemy_station</object>
       <object>objects\obj_forge</object>
+      <object>objects\obj_anvil</object>
+      <object>objects\obj_stove</object>
       <object>objects\obj_workbench</object>
     </objects>
     <objects name="Effects">
@@ -729,7 +738,6 @@
       <object>objects\obj_map_grid</object>
     </objects>
     <objects name="Misc">
-      <object>objects\obj_anvil</object>
       <object>objects\obj_barrel</object>
       <object>objects\obj_blocker5</object>
       <object>objects\obj_crate</object>

@@ -60,8 +60,6 @@ obj_menu_orb_of_dysforia.target_y = y;
             <kind>1</kind>
             <string>obj_screen_controller.menu_state = "load_game";
 obj_screen_controller.create_buttons = true;
-/*global.player_spawner = 1;
-room_goto(First_loading)*/
 </string>
           </argument>
         </arguments>

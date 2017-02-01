@@ -79,7 +79,13 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.hud_state = "inventory1";
+            <string>///Open skilltree &amp; Create skills
+if (global.hud_state != "inventory1")
+{
+    global.hud_state = "inventory1";
+    obj_inventory_controller.page_refresh = true;
+    obj_inventory_controller.create_once = true;
+}
 </string>
           </argument>
         </arguments>

@@ -229,7 +229,7 @@ if (read_saves == true)
     file = file_find_first("*.sav", 0);
     if (file_exists(file))
     {
-        if (string(file) == "Inventory.sav")
+        if (string(file) == "Inventory.sav" || string(file) == "SkillTree.sav")
         {
             file = file_find_next();
         }
@@ -239,7 +239,7 @@ if (read_saves == true)
         }
     }
     
-    if (file_exists(file) &amp;&amp; string(file) != "Inventory.sav")
+    if (file_exists(file) &amp;&amp; string(file) != "Inventory.sav" &amp;&amp; string(file) != "SkillTree.sav")
     {
         var margin_bottom = 22;
         var x_pos = 250;
@@ -255,7 +255,7 @@ if (read_saves == true)
         for (i = 1; i &lt;= 7; i++)
         {
             file = file_find_next();
-            if (string(file) == "Inventory.sav")
+            if (string(file) == "Inventory.sav" || string(file) == "SkillTree.sav")
             {
                 file = file_find_next();
             }
