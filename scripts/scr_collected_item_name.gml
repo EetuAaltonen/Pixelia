@@ -1,17 +1,18 @@
-var n;
-for(n = 1; n > 0; n++)
+var i, arrayLength;
+arrayLength = array_length_1d(obj_inventory_controller.name);
+for(i = 1; i > 0; i++)
 {
-    if (obj_inventory_controller.name[n] == "")
+    if (obj_inventory_controller.name[i] == "")
     {
-        obj_inventory_controller.name[n] = name;
-        n = 1;
+        obj_inventory_controller.name[i] = name;
+        i = 1;
         break;
     }
     else
     {
-        if (n + 1 >= array_length_1d(obj_inventory_controller.name))
+        if (i > arrayLength)
         {
-            obj_inventory_controller.name[n + 1] = "";
+            obj_inventory_controller.name[i] = "";
         }
     }
 }

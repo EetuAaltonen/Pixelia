@@ -17,34 +17,35 @@ if (page_refresh == true)
         //Change category
         if (string_pos("inventory", string(global.hud_state)))
         {
-            if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering
+            var arrayLength = array_length_2d(Sprite, type_id);
+            if (type_id == 1 and item_id == arrayLength) //This is first category of ordering
             {
                 type_id = 2;
                 item_id = 1;
             }
-            else if(type_id == 2 and item_id == array_length_2d(Sprite, type_id))
+            else if(type_id == 2 and item_id == arrayLength)
             {
                 type_id = 3;
                 item_id = 1;
             }
-            else if(type_id == 3 and item_id == array_length_2d(Sprite, type_id))
+            else if(type_id == 3 and item_id == arrayLength)
             {
                 type_id = 4;
                 item_id = 1;
             }
-            else if(type_id == 4 and item_id == array_length_2d(Sprite, type_id))
+            else if(type_id == 4 and item_id == arrayLength)
             {
                 type_id = 5;
                 item_id = 1;
             }
-            else if(type_id == 5 and item_id == array_length_2d(Sprite, type_id))
+            else if(type_id == 5 and item_id == arrayLength)
             {
                 break;
             }
         }
         else if (global.hud_state == "forge")
         {
-            if (type_id == 1 and item_id == array_length_2d(Sprite, type_id))
+            if (type_id == 1 and item_id == arrayLength)
             {
                 break;
             }

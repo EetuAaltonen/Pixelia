@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Menu state
+            <string>///Menu state
 menu_state = "load_game";
 </string>
           </argument>
@@ -49,13 +49,15 @@ menu_state = "load_game";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_blend != make_colour_hsv(0, 0, 150))
+            <string>///Click
+if (image_blend != make_colour_hsv(0, 0, 150))
 {
     obj_menu_text_box.selected = false;
     obj_menu_text_box.blink_icon = "";
     string_replace(obj_menu_text_box.txt, "|", "");
     var file = false;
-    for (i = 0; i &lt; array_length_1d(obj_screen_controller.Saves); i++)
+    var arrayLength = array_length_1d(obj_screen_controller.Saves);
+    for (i = 0; i &lt; arrayLength; i++)
     {
         if (obj_menu_text_box.txt == obj_screen_controller.Saves[i])
         {
@@ -105,7 +107,8 @@ menu_state = "load_game";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Draw logo and signature
+draw_self();
 //Font
 draw_set_font(fnt_menu_buttons);
 draw_set_color(c_black);
