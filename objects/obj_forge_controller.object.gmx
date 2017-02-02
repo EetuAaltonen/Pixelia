@@ -28,7 +28,7 @@
             <string>search_id = "mater";
 update_amounts = true; //Update amounts in list
 update_list = true;
-create_once = true; //Create objects once on the list
+createOnce = true; //Create objects once on the list
 </string>
           </argument>
         </arguments>

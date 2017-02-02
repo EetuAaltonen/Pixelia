@@ -78,7 +78,8 @@ alarm[1] = 1 * room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x == target_x &amp;&amp; y == target_y + wave)
+            <string>///Moving speed
+if (x == target_x &amp;&amp; y == target_y + wave)
 {
     moving_speed = 0;
     wave *= -1;
@@ -122,7 +123,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (target_x != false &amp;&amp; target_y != false)
+            <string>///Move to target
+if (target_x != false &amp;&amp; target_y != false)
 {
     move_towards_point(target_x, target_y + wave,
     min(moving_speed, point_distance(x, y, target_x, target_y + wave)));
@@ -151,7 +153,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (speed &lt; (max_speed/2))
+            <string>///Bloom size
+if (speed &lt; (max_speed/2))
 { 
     if (size &lt; max_size)
     {
@@ -185,7 +188,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Instance_destroy
+            <string>///Instance destroy
 if (obj_screen_controller.menu_state != "main_menu")
 {
     instance_destroy();

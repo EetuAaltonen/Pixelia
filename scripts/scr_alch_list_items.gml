@@ -42,7 +42,7 @@ if (loop_stop == false)
         }
     }
     ini_close();
-    create_once = true;
+    createOnce = true;
     loop_stop = true;
 }
 var y_pos; //y position
@@ -51,7 +51,7 @@ if (item_count > 0)
 {
     scr_page_calculate();
     //Item create
-    if (create_once == true)
+    if (createOnce == true)
     {
         for (i = start_count; i != end_count; i++;)
         {
@@ -62,7 +62,7 @@ if (item_count > 0)
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).fill_info = true;
             y_pos += 19;
         }
-        create_once = false;
+        createOnce = false;
         y_pos = 120;
     } 
     for (i = start_count; i != end_count; i++;)

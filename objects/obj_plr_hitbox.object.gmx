@@ -131,7 +131,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.damage == 1)
+            <string>/*if (global.damage == 1)
 {
     //Spike trap
     if (distance_to_object(obj_spikes) == 0)
@@ -164,7 +164,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_got_damage();
+            <string>//scr_got_damage();
 </string>
           </argument>
         </arguments>

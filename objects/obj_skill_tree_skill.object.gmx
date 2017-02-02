@@ -122,7 +122,7 @@ get_attributes = false;
             <string>///Destroy function
 if (global.hud_state == "inventory2")
 {
-    if (obj_inventory_controller.page_refresh == true)
+    if (obj_inventory_controller.pageUpdate == true)
     {
         instance_destroy();
     }

@@ -8,30 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_speed = 0;
-text = "";
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -49,10 +25,39 @@ text = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//When inventory closed
+            <string>///Instance destroy
 if (!string_pos("inventory", string(global.hud_state)))
 {
     instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change hudState
+if (global.hud_state != hudState)
+{
+    global.hud_state = hudState;
+    obj_inventory_controller.pageUpdate = true;
+    obj_inventory_controller.createOnce = true;
 }
 </string>
           </argument>
@@ -76,7 +81,8 @@ if (!string_pos("inventory", string(global.hud_state)))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Draw text
+draw_self();
 //Font
 draw_set_font(fnt_inventory_text);
 draw_set_color(c_black);
@@ -84,6 +90,36 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 draw_text(x + (sprite_width/2), y + (sprite_height/2), text);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Selected
+if (hudState == global.hud_state)
+{
+    var imageBlend = 100;
+    image_blend = make_colour_hsv(0, 0, imageBlend);
+}
+else
+{
+    image_blend = make_colour_hsv(0, 0, -1);
+}
 </string>
           </argument>
         </arguments>

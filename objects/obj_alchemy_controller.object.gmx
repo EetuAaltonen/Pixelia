@@ -28,8 +28,8 @@
             <string>key = "";
 type_id = "";
 
-page_refresh = true;
-create_once = true; //Create objects once on the list
+pageUpdate = true;
+createOnce = true; //Create objects once on the list
 </string>
           </argument>
         </arguments>

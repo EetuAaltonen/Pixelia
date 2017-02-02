@@ -94,7 +94,7 @@ depth_ = depth;
         instance_create(view_xview+464, view_yview+54, obj_craft_close_button);
         instance_create(view_xview+350, view_yview+147, obj_forg_crafted_item); //Crafted item (slot 4)
         
-        obj_forge_controller.page_refresh = true;
+        obj_forge_controller.pageUpdate = true;
         obj_forge_controller.current_page = 0;
     }
 }

@@ -231,7 +231,7 @@ if (recipe_check == true)
     global.forg_slot_2 = false;
     global.forg_slot_3 = false;
     sprite_index = spr_grass; //Reset info text
-    obj_forge_controller.page_refresh = true;
+    obj_forge_controller.pageUpdate = true;
     obj_forge_controller.current_page = 0;
 }
 </string>

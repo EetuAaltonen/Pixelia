@@ -108,7 +108,8 @@ if (mp_grid_path(obj_map_grid.grid, path, x, y, target_x, target_y, 1))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_angle &gt; 90 &amp;&amp; image_angle &lt; 270)
+            <string>///Image y scale
+if (image_angle &gt; 90 &amp;&amp; image_angle &lt; 270)
 {
     image_yscale = -1;
 }
@@ -138,7 +139,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state != "map")
+            <string>///Instance destroy
+if (global.hud_state != "map")
 {
     instance_destroy();
 }
@@ -162,7 +164,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_point(target_x, target_y) &gt; 5)
+            <string>///Image speed
+if (distance_to_point(target_x, target_y) &gt; 5)
 {
     image_speed = 0.2;
 }

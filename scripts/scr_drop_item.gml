@@ -14,4 +14,4 @@ for (i = 1; i <= dropped_count; i++)
     added_amount = 1;
 }
 //Refresh inventory list
-obj_inventory_controller.page_refresh = true;
+obj_inventory_controller.pageUpdate = true;

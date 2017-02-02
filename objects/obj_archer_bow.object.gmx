@@ -75,30 +75,32 @@ image_angle = point_direction(x, y, obj_player.x, obj_player.y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (/*distance_to_object(obj_archer) &lt; 6 and */instance_exists(obj_archer))
+            <string>///Aim
+if (instance_exists(obj_archer))
 {
-    if (instance_exists(obj_player))
+    if (point_distance(x, y, (instance_nearest(x, y, obj_archer).x), (instance_nearest(x, y, obj_archer).y)) &lt; obj_archer.sprite_width)
     {
-        if (distance_to_object(obj_player) &lt; 100)
+        if (instance_exists(obj_player))
         {
-            image_angle = point_direction(x, y, obj_player.x, obj_player.y);
-            if (obj_player.x &gt; x)
+            if (distance_to_object(obj_player) &lt; 100)
             {
-                if (instance_exists(obj_archer))
+                image_angle = point_direction(x, y, round(obj_player.x), round(obj_player.y));
+                if (round(obj_player.x) &gt; x || round(obj_player.x) == x)
                 {
                     x = (instance_nearest(x, y, obj_archer)).x + 5;
                     y = (instance_nearest(x, y, obj_archer)).y + 4;
                 }
-            }
-            else
-            {
-                if (instance_exists(obj_archer))
+                else
                 {
                     x = (instance_nearest(x, y, obj_archer)).x - 5;
                     y = (instance_nearest(x, y, obj_archer)).y + 4;
                 }
             }
         }
+    }
+    else
+    {
+        instance_destroy();
     }
 }
 else
@@ -140,18 +142,6 @@ else
             } 
         }
     }
-}
-//Destroy
-if (instance_exists(obj_archer))
-{
-    if (distance_to_object(instance_nearest(x, y, obj_archer)) &gt; 10)
-    {
-        //instance_destroy();
-    }
-}
-else
-{
-    //instance_destroy();
 }
 </string>
           </argument>

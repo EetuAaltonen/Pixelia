@@ -30,7 +30,7 @@ search_id = "mater";
 
 update_amounts = true; //Update amounts in list
 update_list = true;
-create_once = true; //Create objects once on the list
+createOnce = true; //Create objects once on the list
 </string>
           </argument>
         </arguments>
@@ -110,7 +110,7 @@ if (global.hud_state == "forge")
     }
     if (item_count &gt; 0)
     {
-        if (page_refresh == true)
+        if (pageUpdate == true)
         {
             size_of_list = 8; //Limit of list
             start_count = 0; //First item
@@ -139,12 +139,12 @@ if (global.hud_state == "forge")
                 end_count = item_count;
                 start_count = 0;
             }
-            page_refresh = false;
-            create_once = true;
+            pageUpdate = false;
+            createOnce = true;
         }
         var y_pos; //y position
         y_pos = 110;
-        if (create_once == true)
+        if (createOnce == true)
         {
             for (i = start_count; i &lt; end_count; i++;)
             {
@@ -152,7 +152,7 @@ if (global.hud_state == "forge")
                 instance_create(view_xview+30, view_yview+y_pos, material_create[i])
                 y_pos += 19;
             }
-            create_once = false;
+            createOnce = false;
             y_pos = 110;
         }
         for (i = start_count; i &lt; end_count; i++;)

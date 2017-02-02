@@ -1,4 +1,4 @@
-if (page_refresh == true)
+if (pageUpdate == true)
 {
     if (instance_exists(obj_listed_item))
     {
@@ -12,7 +12,7 @@ if (page_refresh == true)
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
-    for(item_id = 1; item_id < 100; item_id++)
+    for(item_id = 1; item_id > 0; item_id++)
     {
         //Change category
         if (string_pos("inventory", string(global.hud_state)))
@@ -88,17 +88,17 @@ if (page_refresh == true)
     ini_close();
     //Calculate number of pages
     scr_page_calculate();
-    create_once = true;
-    page_refresh = false;
+    createOnce = true;
+    pageUpdate = false;
 }
 var y_pos; //y position
 y_pos = 120;
 if (item_count > 0)
 {
     //Item create
-    if (create_once == true)
+    if (createOnce == true)
     {
-        create_once = false;
+        createOnce = false;
         for (i = start_count; i != end_count; i++;)
         {
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);

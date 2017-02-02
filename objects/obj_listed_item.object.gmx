@@ -81,14 +81,14 @@ if (get_attributes == true)
             <string>///Destroy function
 if (global.hud_state == "inventory1")
 {
-    if (obj_inventory_controller.page_refresh == true)
+    if (obj_inventory_controller.pageUpdate == true)
     {
         instance_destroy();
     }
 }
 else if (global.hud_state == "forge")
 {
-    if (obj_forge_controller.page_refresh == true)
+    if (obj_forge_controller.pageUpdate == true)
     {
         instance_destroy();
     }
@@ -127,7 +127,7 @@ if (dropping_item == true)
         if (obj_button_confirm.confirmed == true)
         {
             dropping_item = false;
-            obj_inventory_controller.page_refresh = true;
+            obj_inventory_controller.pageUpdate = true;
             if (obj_button_confirm.value &gt; 0)
             {
                 dropped_count = obj_button_confirm.value;
@@ -145,7 +145,7 @@ if (dropping_item == true)
             {
                 with (obj_button_confirm) instance_destroy();
             }
-            create_once = true;
+            createOnce = true;
         }
     }
 }
@@ -233,13 +233,13 @@ if (global.hud_state == "inventory1")
         item_count = ini_read_real(global.save_file, key, 0);
         ini_close();
         //Create buttons to drop items
-        if (create_once == true)
+        if (createOnce == true)
         {
             instance_create(view_xview+330, view_yview+150,obj_button_increase);
             instance_create(view_xview+170, view_yview+150,obj_button_decrease);
             instance_create(view_xview+250, view_yview+190,obj_button_confirm);
             obj_button_confirm.item_count = item_count;
-            create_once = false;
+            createOnce = false;
         }
         dropping_item = true;
     }

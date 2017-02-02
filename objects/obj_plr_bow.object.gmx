@@ -33,7 +33,7 @@ type_id = 5;
 item_id = 1;
 ini_open("Inventory.sav");
 key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
-arrow_count = ini_read_real("Save1", key, 0);
+arrowCount = ini_read_real(global.save_file, key, 0);
 ini_close();
 </string>
           </argument>
@@ -65,6 +65,39 @@ bow_can_shoot = true;
       </action>
     </event>
     <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Arrow count == 0
+if (arrowCount == 0)
+{
+    var obj = obj_player;
+    if (instance_exists(obj_player))
+    {
+        obj.hspeed = 0;
+        obj.sprite_index = spr_player;
+        obj.solid = true;
+        obj.mask_index = spr_player;
+        obj.action_state = "null";
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -119,7 +152,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy
+            <string>///Instance destroy
 if (obj_player.action_state != "bow")
 {
     instance_destroy();
@@ -151,7 +184,7 @@ if (instance_exists(obj_player))
 {
     if (obj_player.action_state == "bow")
     {
-        draw_text(obj_player.x, obj_player.y - 90, arrow_count);
+        draw_text(obj_player.x, obj_player.y - 70, arrowCount);
     }
 }
 </string>
@@ -179,19 +212,15 @@ if (instance_exists(obj_player))
             <string>///Shoot &amp; remove an arrow
 if (bow_can_shoot == true)
 {
-    ini_open("Inventory.sav");
-    key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
-    arrow_count = ini_read_real("Save1", key, 0);
-    if (arrow_count &gt; 0)
+    if (arrowCount &gt; 0)
     {
         instance_create(x, y, obj_plr_arrow);
         bow_can_shoot = false;
         alarm[1] = 50;
         added_amount = -1;
         scr_save_to_inventory();
-        arrow_count -= 1;
+        arrowCount -= 1;
     }
-    ini_close();
 }
 </string>
           </argument>

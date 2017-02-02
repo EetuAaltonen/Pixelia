@@ -426,6 +426,8 @@ if (global.hud_state != "null")
 else if (action_state = "room_change")
 {
     hspeed = 0;
+    image_speed = 0;
+    sprite_index = spr_player;
     //Gravity
     scr_custom_gravity();
 }
@@ -640,12 +642,12 @@ else if (action_state == "null" ||
         vspeed = 0;*/
     }
     //Blocked
-    if (!place_free(x,y-3))
+    /*if (!place_free(x,y-3))
     {
         image_speed = 0;
         sprite_index = spr_plr_down;
         alarm[7] = 10; //Fix animation stuck
-    }
+    }*/
 }
 </string>
           </argument>

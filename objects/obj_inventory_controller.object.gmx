@@ -30,8 +30,8 @@
 key = "";
 type_id = "";
 
-page_refresh = true;
-create_once = true; //Create objects once on the list
+pageUpdate = true;
+createOnce = true; //Create objects once on the list
 
 item_info_text = "Item info...";
 
@@ -311,7 +311,7 @@ if (keyboard_check_pressed(vk_tab))
             if (obj_player.action_state == "null")
             {
                 global.hud_state = "inventory1";
-                page_refresh = true;
+                pageUpdate = true;
                 current_page = 0;
                 
                 //Create buttons
@@ -326,7 +326,7 @@ if (keyboard_check_pressed(vk_tab))
     else if (string_pos("inventory", string(global.hud_state)))
     {    
         global.hud_state = "null";
-        page_refresh = true;
+        pageUpdate = true;
         scr_savegame();
     }
 }
@@ -372,11 +372,11 @@ scr_page_change();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reset page_refresh &amp; create_once
+            <string>///Reset pageUpdate &amp; createOnce
 if (!string_pos("inventory", string(global.hud_state)))
 {
-    page_refresh = true;
-    create_once = true;
+    pageUpdate = true;
+    createOnce = true;
 }
 </string>
           </argument>

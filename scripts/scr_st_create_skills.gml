@@ -1,8 +1,8 @@
 //Create skills
-if (page_refresh == true)
+if (pageUpdate == true)
 {
-    page_refresh = false;
-    if (create_once == true)
+    pageUpdate = false;
+    if (createOnce == true)
     {
         var x_pos = 10;
         var margin_right = 32;
@@ -18,6 +18,6 @@ if (page_refresh == true)
                 (instance_nearest(view_xview+x_pos+(margin_right*(a-1)), view_yview+y_pos+(margin_bottom*i), obj_skill_tree_skill)).get_attributes = true;
             }
         }
-        create_once = false;
+        createOnce = false;
     }
 }
