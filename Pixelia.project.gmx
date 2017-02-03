@@ -17,6 +17,7 @@
     </sprites>
     <sprites name="Animals">
       <sprite>sprites\spr_chicken</sprite>
+      <sprite>sprites\spr_cow</sprite>
       <sprite>sprites\spr_mount_horse</sprite>
     </sprites>
     <sprites name="Blocks">
@@ -65,12 +66,13 @@
     </sprites>
     <sprites name="Collectable">
       <sprites name="Animals">
-        <sprite>sprites\spr_feather</sprite>
         <sprite>sprites\spr_icon_feather</sprite>
         <sprite>sprites\spr_icon_salmon</sprite>
         <sprite>sprites\spr_icon_tuna</sprite>
         <sprite>sprites\spr_salmon</sprite>
         <sprite>sprites\spr_tuna</sprite>
+        <sprite>sprites\spr_feather</sprite>
+        <sprite>sprites\spr_leather</sprite>
       </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_barbarea_vulgaris</sprite>
@@ -486,6 +488,7 @@
       <script>scripts\scr_first_loading_screen_objects.gml</script>
       <script>scripts\scr_loadgame.gml</script>
       <script>scripts\scr_savegame.gml</script>
+      <script>scripts\scr_menu_load_create_save.gml</script>
     </scripts>
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_alch_list_items.gml</script>
@@ -518,7 +521,9 @@
       <object>objects\obj_arrow1</object>
     </objects>
     <objects name="Animals">
+      <object>objects\obj_animal_parent</object>
       <object>objects\obj_chicken</object>
+      <object>objects\obj_cow</object>
       <object>objects\obj_mount_horse</object>
     </objects>
     <objects name="Blocks">

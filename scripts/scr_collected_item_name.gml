@@ -10,9 +10,9 @@ for(i = 1; i > 0; i++)
     }
     else
     {
-        if (i > arrayLength)
+        if ((i + 1) == array_length_1d(obj_inventory_controller.name)) //Cause array start 0 and [0,1], length == 2 !
         {
-            obj_inventory_controller.name[i] = "";
+            obj_inventory_controller.name[i + 1] = "";
         }
     }
 }

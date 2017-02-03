@@ -52,38 +52,7 @@ menu_state = "load_game";
             <string>///Click
 if (image_blend != make_colour_hsv(0, 0, 150))
 {
-    obj_menu_text_box.selected = false;
-    obj_menu_text_box.blink_icon = "";
-    string_replace(obj_menu_text_box.txt, "|", "");
-    var file = false;
-    var arrayLength = array_length_1d(obj_screen_controller.Saves);
-    for (i = 0; i &lt; arrayLength; i++)
-    {
-        if (obj_menu_text_box.txt == obj_screen_controller.Saves[i])
-        {
-            file = string(obj_screen_controller.Saves[i]);
-        }
-    }
-
-    if (file != false)
-    {
-        if show_question(("Load " + file + "?"))
-        {
-            global.save_file = (file + ".sav");
-            global.player_spawner = 1;
-            room_goto(First_loading);
-        }
-    }
-    else
-    {
-        file = obj_menu_text_box.txt;
-        if show_question(("Save doesn't exist, create " + file + "?"))
-        {
-            global.save_file = (file + ".sav");
-            global.player_spawner = 1;
-            room_goto(First_loading);
-        }
-    }
+    scr_menu_load_create_save();
 }
 </string>
           </argument>
@@ -153,6 +122,33 @@ if (instance_exists(obj_menu_text_box))
     {
         image_blend = make_colour_hsv(0, 0, 150);
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Click
+if (image_blend != make_colour_hsv(0, 0, 150))
+{
+    scr_menu_load_create_save();
 }
 </string>
           </argument>

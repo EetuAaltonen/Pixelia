@@ -1,5 +1,8 @@
 //Item info text
 
+//Add info to scr_item_get_id too...
+//Add info text to scr_inventory_item_info too...
+
 //Materials
 //Info
 Info[1,1] = "Iron ore";
@@ -8,6 +11,7 @@ Info[1,3] = "Coal";
 Info[1,4] = "Ironbar";
 Info[1,5] = "Steelbar";
 Info[1,6] = "Feather";
+Info[1,7] = "Leather";
 
 //Ingredients
 //Info

@@ -74,7 +74,8 @@ skill_price = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_scale_coin &gt; 1)
+            <string>///Coin animation shrink
+if (image_scale_coin &gt; 1)
 {
     image_scale_coin -= 0.1;
     alarm[5] = 5;
@@ -101,7 +102,8 @@ skill_price = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_scale_coin &lt; 1.2)
+            <string>///Coin animation grow
+if (image_scale_coin &lt; 1.2)
 {
     image_scale_coin += 0.1;
     alarm[4] = 5;
@@ -133,7 +135,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_scale_potion &gt; 1)
+            <string>///Potion animation shrink
+if (image_scale_potion &gt; 1)
 {
     image_scale_potion -= 0.1;
     alarm[3] = 5;
@@ -160,7 +163,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_scale_potion &lt; 1.3)
+            <string>///Potion animation grow
+if (image_scale_potion &lt; 1.3)
 {
     image_scale_potion += 0.1;
     alarm[2] = 5;
@@ -192,12 +196,12 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collected item name
+            <string>///Collected item name
 if (draw_name == true)
 {
     if (text_y_pos == 0)
     {
-        if not(name[t] == "")
+        if (!name[t] == "")
         {
             draw_name = true;
             text_y_pos -= 1;

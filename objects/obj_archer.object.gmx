@@ -134,7 +134,7 @@ instance_create(x - 5, y + 6, obj_archer_bow);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Gravity
+            <string>///Gravity
 scr_custom_gravity();
 </string>
           </argument>

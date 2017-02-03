@@ -11,6 +11,8 @@ Sprite[1,2] = "spr_oak_log";
 Sprite[1,3] = "spr_coal";
 Sprite[1,4] = "spr_ironbar";
 Sprite[1,5] = "spr_steelbar";
+Sprite[1,6] = "spr_feather";
+Sprite[1,7] = "spr_leather";
 // Sprite[1,6] = "spr_icon_feather";
 //Name
 Name[1,1] = "Iron ore";
@@ -19,6 +21,7 @@ Name[1,3] = "Coal";
 Name[1,4] = "Ironbar";
 Name[1,5] = "Steelbar";
 Name[1,6] = "Feather";
+Name[1,7] = "Leather";
 //Weight
 Weight[1,1] = 1.00;
 Weight[1,2] = 1.00;
@@ -26,6 +29,7 @@ Weight[1,3] = 0.30;
 Weight[1,4] = 0.30;
 Weight[1,5] = 0.35;
 Weight[1,6] = 0.05;
+Weight[1,7] = 0.10;
 
 //Ingredients
 //Sprite

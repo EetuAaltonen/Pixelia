@@ -1,3 +1,6 @@
+//Add info to scr_inventory_item_info too...
+//Add info text to scr_inventory_item_info_text too...
+
 if (type_id == 1)
 {
     switch (sprite_index_)
@@ -7,6 +10,8 @@ if (type_id == 1)
         case spr_coal: item_id = 3;break;
         case spr_ironbar: item_id = 4;break;
         case spr_steelbar: item_id = 5;break;
+        case spr_feather: item_id = 6;break;
+        case spr_leather: item_id = 7;break;
     }
 }
 else if (type_id == 2)

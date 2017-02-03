@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.2;
+depth_ = depth;
 direction_of_vein = 1;
 </string>
           </argument>
@@ -49,7 +50,42 @@ direction_of_vein = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_fishing_vein))
+            <string>///Start fishing
+if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1))
+{
+    if (instance_exists(obj_player))
+    {
+        if (instance_exists(obj_use))
+        {
+            with (obj_use) instance_destroy();
+        }
+        obj_player.action_state = "fishing";
+        instance_create(obj_player.x, obj_player.y, obj_fishing_bobber);
+        instance_create(obj_player.x, obj_player.y, obj_fishing_line);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Fishing direction
+if (instance_exists(obj_fishing_vein))
 {
     if ((instance_nearest(x, y, obj_fishing_vein)).x &gt; x)
     {
@@ -60,6 +96,31 @@ direction_of_vein = 1;
         direction_of_vein = -1;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Highlight
+draw_self();
+scr_highlight_self();
 </string>
           </argument>
         </arguments>
