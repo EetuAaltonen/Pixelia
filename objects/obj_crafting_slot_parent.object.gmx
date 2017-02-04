@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Create variables
 itemId = false;
+typeId = false;
 sprite_index = spr_inv_item_bg;
 </string>
           </argument>
@@ -50,7 +51,8 @@ sprite_index = spr_inv_item_bg;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state == "null")
+            <string>///Instance Destroy
+if (global.hud_state == "null")
 {
     instance_destroy();
 }

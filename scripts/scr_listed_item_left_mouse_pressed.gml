@@ -20,7 +20,9 @@ if (global.hud_state != "null")
                 x = slot1.x;
                 y = slot1.y;
                 slot1.itemId = item_id;
+                slot1.typeId = type_id;
                 selected = true;
+                obj_crafted_item.checkRecipe = true;
             }
             else if (slot2.itemId == false)
             {
@@ -29,7 +31,9 @@ if (global.hud_state != "null")
                 x = slot2.x;
                 y = slot2.y;
                 slot2.itemId = item_id;
+                slot2.typeId = type_id;
                 selected = true;
+                obj_crafted_item.checkRecipe = true;
             }
             else if (slot3.itemId == false)
             {
@@ -38,78 +42,40 @@ if (global.hud_state != "null")
                 x = slot3.x;
                 y = slot3.y;
                 slot3.itemId = item_id;
+                slot2.typeId = type_id;
                 selected = true;
+                obj_crafted_item.checkRecipe = true;
             }
         }
         else if (selected == true)
         {
-            if (x == slot1.x && y == slot1.y)
+            if (slot1.itemId == item_id)
             {
                 x = prev_x;
                 y = prev_y;
                 slot1.itemId = false;
+                slot1.typeId = false;
                 selected = false;
+                obj_crafted_item.checkRecipe = true;
             }
-            else if (x == slot2.x && y == slot2.y)
+            else if (slot2.itemId == item_id)
             {
                 x = prev_x;
                 y = prev_y;
                 slot2.itemId = false;
+                slot2.typeId = false;
                 selected = false;
+                obj_crafted_item.checkRecipe = true;
             }
-            else if (x == slot3.x && y == slot3.y)
+            else if (slot3.itemId == item_id)
             {
                 x = prev_x;
                 y = prev_y;
                 slot3.itemId = false;
+                slot3.typeId = false;
                 selected = false;
+                obj_crafted_item.checkRecipe = true;
             }
         }
-    }
-}
-/*if (global.hud_state == "alchemy")
-{
-    if (selected == false)
-    {
-        if (global.alch_slot_1 == false)
-        {
-            instance_create(obj_alch_slot_1.x, obj_alch_slot_1.y, obj_listed_item);
-            (instance_nearest(obj_alch_slot_1.x, obj_alch_slot_1.y, obj_listed_item)).sprite_index = sprite_index;
-            (instance_nearest(obj_alch_slot_1.x, obj_alch_slot_1.y, obj_listed_item)).selected = true;
-            obj_alch_slot_1.item_id = item_id;
-            global.alch_slot_1 = true;
-        }
-        else if (global.alch_slot_2 == false)
-        {
-            instance_create(obj_alch_slot_2.x, obj_alch_slot_2.y, obj_listed_item);
-            (instance_nearest(obj_alch_slot_2.x, obj_alch_slot_2.y, obj_listed_item)).sprite_index = sprite_index;
-            (instance_nearest(obj_alch_slot_2.x, obj_alch_slot_2.y, obj_listed_item)).selected = true;
-            obj_alch_slot_2.item_id = item_id;
-            global.alch_slot_2 = true;
-        }
-        else if (global.alch_slot_3 == false)
-        {
-            instance_create(obj_alch_slot_2.x, obj_alch_slot_2.y, obj_listed_item);
-            (instance_nearest(obj_alch_slot_2.x, obj_alch_slot_2.y, obj_listed_item)).sprite_index = sprite_index;
-            (instance_nearest(obj_alch_slot_2.x, obj_alch_slot_2.y, obj_listed_item)).selected = true;
-            obj_alch_slot_3.item_id = item_id;
-            global.alch_slot_3 = true;
-        }
-    }
-    else
-    {
-        if (x == obj_alch_slot_1 && y == obj_alch_slot_1)
-        {
-            global.alch_slot_1 = false;
-        }
-        else if (x == obj_alch_slot_2 && y == obj_alch_slot_2)
-        {
-            global.alch_slot_2 = false;
-        }
-        else if (x == obj_alch_slot_2 && y == obj_alch_slot_2)
-        {
-            global.alch_slot_3 = false;
-        }
-        instance_destroy();
     }
 }

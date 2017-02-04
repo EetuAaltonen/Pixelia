@@ -424,16 +424,13 @@
       <script>scripts\scr_source_image_index.gml</script>
     </scripts>
     <scripts name="Crafting">
-      <scripts name="Alchemy">
+      <scripts name="Recipes">
         <script>scripts\scr_alchemy_recipes.gml</script>
-        <script>scripts\scr_alch_mouse_released.gml</script>
-      </scripts>
-      <scripts name="Forge">
-        <script>scripts\scr_forg_mouse_released.gml</script>
         <script>scripts\scr_forge_recipes.gml</script>
       </scripts>
-      <script>scripts\scr_open_crafting.gml</script>
       <script>scripts\scr_crating_create_variables.gml</script>
+      <script>scripts\scr_crafting_check_recipe.gml</script>
+      <script>scripts\scr_craft_item.gml</script>
     </scripts>
     <scripts name="Enemies">
       <script>scripts\scr_enemy_die.gml</script>
@@ -667,9 +664,6 @@
         <object>objects\obj_draw_craft_bg</object>
         <object>objects\obj_forg_crafted_item</object>
         <object>objects\obj_crafting_controller</object>
-        <objects name="Workbench">
-          <object>objects\obj_workbench_controller</object>
-        </objects>
       </objects>
       <objects name="Dialog">
         <object>objects\obj_dialog_controller</object>
