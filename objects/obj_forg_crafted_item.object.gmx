@@ -89,31 +89,6 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Instance destory
-if (global.hud_state != "forge")
-{
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Check recipe
 if (recipe_check == true)
 {
@@ -167,6 +142,31 @@ if (recipe_check == true)
         sprite_index = spr_grass;
     }
     recipe_check = false; //Stop checking 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instance destory
+if (global.hud_state != "forge")
+{
+    instance_destroy();
 }
 </string>
           </argument>

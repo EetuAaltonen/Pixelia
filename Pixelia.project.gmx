@@ -456,14 +456,15 @@
       </scripts>
     </scripts>
     <scripts name="Listed items">
+      <scripts name="Create/Initialize">
+        <script>scripts\scr_listed_item_create_attributes.gml</script>
+      </scripts>
       <script>scripts\scr_check_if_instance_destroy.gml</script>
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
       <script>scripts\scr_list_items.gml</script>
-      <script>scripts\scr_listed_item_mouse_released.gml</script>
-      <scripts name="Create/Initialize">
-        <script>scripts\scr_listed_item_create_attributes.gml</script>
-      </scripts>
+      <script>scripts\scr_listed_item_left_mouse_pressed.gml</script>
+      <script>scripts\scr_listed_item_right_mouse_pressed.gml</script>
     </scripts>
     <scripts name="Menu">
       <script>scripts\scr_menu_orb_create.gml</script>
@@ -655,26 +656,17 @@
     </objects>
     <objects name="HUD">
       <objects name="Crafting">
-        <objects name="Alchemy">
-          <object>objects\obj_alch_crafted_item</object>
-          <object>objects\obj_alch_slot_1</object>
-          <object>objects\obj_alch_slot_2</object>
-          <object>objects\obj_alch_slot_3</object>
-          <object>objects\obj_alch_slot_4</object>
-          <object>objects\obj_alchemy_bg_controller</object>
-          <object>objects\obj_alchemy_controller</object>
-        </objects>
-        <objects name="Forge">
-          <object>objects\obj_forg_bg_controller</object>
-          <object>objects\obj_forg_crafted_item</object>
-          <object>objects\obj_forg_slot_1</object>
-          <object>objects\obj_forg_slot_2</object>
-          <object>objects\obj_forg_slot_3</object>
-          <object>objects\obj_forg_slot_4</object>
-          <object>objects\obj_forge_controller</object>
-        </objects>
+        <object>objects\obj_crafted_item</object>
+        <object>objects\obj_crafting_bg_controller</object>
         <object>objects\obj_crafting_close_button</object>
+        <object>objects\obj_crafting_slot_1</object>
+        <object>objects\obj_crafting_slot_2</object>
+        <object>objects\obj_crafting_slot_3</object>
+        <object>objects\obj_crafting_slot_4</object>
+        <object>objects\obj_crafting_slot_parent</object>
         <object>objects\obj_draw_craft_bg</object>
+        <object>objects\obj_forg_crafted_item</object>
+        <object>objects\obj_crafting_controller</object>
         <objects name="Workbench">
           <object>objects\obj_workbench_controller</object>
         </objects>

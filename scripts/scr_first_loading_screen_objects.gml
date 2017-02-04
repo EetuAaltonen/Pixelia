@@ -6,8 +6,8 @@ Object[2] = obj_inventory_bg_controller;
 //Crafting
 Object[3] = obj_alchemy_controller;
 Object[4] = obj_alchemy_bg_controller;
-Object[5] = obj_forge_controller;
-Object[6] = obj_forg_bg_controller;
+Object[5] = obj_crafting_controller;
+Object[6] = obj_crafting_bg_controller;
 Object[7] = obj_workbench_controller;
 //Dialogs and shop
 Object[8] = obj_shop_controller;

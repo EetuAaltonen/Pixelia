@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="2" enumb="1">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -19,14 +19,15 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_forge</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Can open or close
-canOpenClose = true;
+            <string>///Create variables
+itemId = false;
+sprite_index = spr_inv_item_bg;
 </string>
           </argument>
         </arguments>
@@ -49,63 +50,9 @@ canOpenClose = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Open crafting
-if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1))
+            <string>if (global.hud_state == "null")
 {
-    if (instance_exists(obj_use))
-    {
-        with (obj_use) instance_destroy();
-    }
-    if (global.hud_state != hudState &amp;&amp; canOpenClose == true)
-    {
-        canOpenClose = false;
-        global.hud_state = hudState;
-        alarm[1] = 30;
-        
-        //Create slots
-        instance_create(view_xview+300, view_yview+117, obj_crafting_slot_1);
-        instance_create(view_xview+300, view_yview+147, obj_crafting_slot_2);
-        instance_create(view_xview+300, view_yview+177, obj_crafting_slot_3);
-        instance_create(view_xview+350, view_yview+147, obj_crafting_slot_4);
-        //Created item slot
-        instance_create(obj_crafting_slot_4.x, obj_crafting_slot_4.y, obj_crafted_item);
-        instance_create(view_xview+400, view_yview+54, obj_crafting_close_button);
-        
-        obj_crafting_controller.createOnce = true;
-        obj_crafting_controller.pageUpdate = true;
-        obj_crafting_controller.current_page = 0;
-        //scr_open_crafting();
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Press Tab or 'E' to close forge
-if (keyboard_check_pressed(ord('E') || keyboard_check_pressed(vk_tab)))
-{
-    if (global.hud_state == hudState and canOpenClose == true)
-    {
-        canOpenClose = false;
-        global.hud_state = "null";
-        alarm[1] = 30;
-    }
+    instance_destroy();
 }
 </string>
           </argument>
@@ -129,9 +76,16 @@ if (keyboard_check_pressed(ord('E') || keyboard_check_pressed(vk_tab)))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Highlight self
+            <string>///Highlight when filled
 draw_self();
-scr_highlight_self();
+if (itemId != false)
+{
+    image_blend = make_colour_hsv(0, 0, 150); 
+}
+else
+{
+    image_blend = make_colour_hsv(0, 0, -1);
+}
 </string>
           </argument>
         </arguments>
