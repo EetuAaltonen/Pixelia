@@ -30,7 +30,7 @@
 added_amount = 10;
 //Customed weight
 scr_inventory_item_info();
-weight = (Weight[type_id,item_id] * added_amount);
+weight = (Weight[typeId,itemId] * added_amount);
 </string>
           </argument>
         </arguments>

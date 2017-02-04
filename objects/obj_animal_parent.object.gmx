@@ -222,7 +222,7 @@ if (health_ &lt;= 0)
     }
     instance_create(x, y, obj_dropped_item);
     (instance_nearest(x, y, obj_dropped_item)).sprite_index = itemSpriteIndex;
-    (instance_nearest(x, y, obj_dropped_item)).type_id = typeId;
+    (instance_nearest(x, y, obj_dropped_item)).typeId = typeId;
     (instance_nearest(x, y, obj_dropped_item)).get_attributes = true;
     instance_destroy();
 }

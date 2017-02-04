@@ -1,4 +1,4 @@
 //Create variables
 image_speed = 0.2;
-canOpenClose = true;
+//canOpenClose = true;
 depth_ = depth;

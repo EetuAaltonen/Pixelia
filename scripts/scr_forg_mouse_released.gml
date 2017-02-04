@@ -8,7 +8,7 @@ if (selected = false)
         x = obj_forg_slot_1.x;
         y = obj_forg_slot_1.y;
         global.forg_slot_1 = true;
-        obj_forg_slot_1.item_id = item_id;
+        obj_forg_slot_1.itemId = itemId;
         selected = true;
     }
     else if (global.forg_slot_2 == false)
@@ -18,7 +18,7 @@ if (selected = false)
         x = obj_forg_slot_2.x;
         y = obj_forg_slot_2.y;
         global.forg_slot_2 = true;
-        obj_forg_slot_2.item_id = item_id;
+        obj_forg_slot_2.itemId = itemId;
         selected = true;
     }
     else if (global.forg_slot_3 == false)
@@ -28,7 +28,7 @@ if (selected = false)
         x = obj_forg_slot_3.x;
         y = obj_forg_slot_3.y;
         global.forg_slot_3 = true;
-        obj_forg_slot_3.item_id = item_id;
+        obj_forg_slot_3.itemId = itemId;
         selected = true;
     }
 }
@@ -39,7 +39,7 @@ else if (selected == true)
         x = prev_x;
         y = prev_y;
         global.forg_slot_1 = false;
-        obj_forg_slot_1.item_id = 0;
+        obj_forg_slot_1.itemId = 0;
         selected = false;
     }
     else if (x == obj_forg_slot_2.x and y == obj_forg_slot_2.y)
@@ -47,7 +47,7 @@ else if (selected == true)
         x = prev_x;
         y = prev_y;
         global.forg_slot_2 = false;
-        obj_forg_slot_2.item_id = 0;
+        obj_forg_slot_2.itemId = 0;
         selected = false;
     }
     else if (x == obj_forg_slot_3.x and y == obj_forg_slot_3.y)
@@ -55,7 +55,7 @@ else if (selected == true)
         x = prev_x;
         y = prev_y;
         global.forg_slot_3 = false;
-        obj_forg_slot_3.item_id = 0;
+        obj_forg_slot_3.itemId = 0;
         selected = false;
     }
 }

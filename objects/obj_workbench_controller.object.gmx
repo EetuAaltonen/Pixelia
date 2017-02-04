@@ -72,33 +72,33 @@ if (global.hud_state == "forge")
             i = 0;
             
             ini_open("Inventory.sav");
-            for(item_id = 1; item_id &lt; 101; item_id++)
+            for(itemId = 1; itemId &lt; 101; itemId++)
             {
                 //Change category
-                if (item_id == 100)
+                if (itemId == 100)
                 {
                     break;
                 }
-                key = search_id + "[" + string(item_id) + "]";
+                key = search_id + "[" + string(itemId) + "]";
                 //Item amount
-                item_amount[1,item_id] = ini_read_real("Save1", key, -1);
+                item_amount[1,itemId] = ini_read_real("Save1", key, -1);
                 
                 //Check if item amount &gt; 0
-                if (round(item_amount[1,item_id]) &gt; 0)
+                if (round(item_amount[1,itemId]) &gt; 0)
                 {
                     //Item
                     scr_inventory_item_info();
-                    material[1,item_id] = Object[1,item_id];
+                    material[1,itemId] = Object[1,itemId];
                     
                     //Item description
-                    item_description[1,item_id] = string(Descr[1,item_id]);
+                    item_description[1,itemId] = string(Descr[1,itemId]);
                     
                     //Item amount is top of for loop
                     
                     //Draw
-                    material_create[i] = material[1,item_id];
-                    description_draw[i] = item_description[1,item_id];
-                    amount_draw[i] = item_amount[1,item_id];
+                    material_create[i] = material[1,itemId];
+                    description_draw[i] = item_description[1,itemId];
+                    amount_draw[i] = item_amount[1,itemId];
                     
                     item_count += 1;
                     i += 1;

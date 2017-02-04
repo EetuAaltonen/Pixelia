@@ -6,81 +6,81 @@ if (pageUpdate == true)
     }
     //Better code
     item_count = 0;
-    type_id = 1;
+    typeId = 1;
     i = 0;
     global.total_item_weight = 0;
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
-    var arrayLength = array_length_2d(Sprite, type_id);
-    for(item_id = 1; item_id > 0; item_id++)
+    var arrayLength = array_length_2d(Sprite, typeId);
+    for(itemId = 1; itemId > 0; itemId++)
     {
         //Change category
         if (string_pos("inventory", string(global.hud_state)) || global.hud_state == "forge")
         {
-            var arrayLength = array_length_2d(Sprite, type_id);
-            if (type_id == 1 and item_id == arrayLength) //This is first category of ordering
+            var arrayLength = array_length_2d(Sprite, typeId);
+            if (typeId == 1 and itemId == arrayLength) //This is first category of ordering
             {
                 if (global.hud_state == "forge")
                 {
-                    if (type_id == 1 and item_id == arrayLength)
+                    if (typeId == 1 and itemId == arrayLength)
                     {
                         break;
                     }
                 }
-                type_id = 2;
-                item_id = 1;
+                typeId = 2;
+                itemId = 1;
             }
-            else if(type_id == 2 and item_id == arrayLength)
+            else if(typeId == 2 and itemId == arrayLength)
             {
-                type_id = 3;
-                item_id = 1;
+                typeId = 3;
+                itemId = 1;
             }
-            else if(type_id == 3 and item_id == arrayLength)
+            else if(typeId == 3 and itemId == arrayLength)
             {
-                type_id = 4;
-                item_id = 1;
+                typeId = 4;
+                itemId = 1;
             }
-            else if(type_id == 4 and item_id == arrayLength)
+            else if(typeId == 4 and itemId == arrayLength)
             {
-                type_id = 5;
-                item_id = 1;
+                typeId = 5;
+                itemId = 1;
             }
-            else if(type_id == 5 and item_id == arrayLength)
+            else if(typeId == 5 and itemId == arrayLength)
             {
                 break;
             }
         }
-        key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
+        key = "Amount[" + string(typeId) + "," + string(itemId) + "]";
         
         //Item amount
-        item_amount[type_id,item_id] = ini_read_real(global.save_file, key, -1);
+        item_amount[typeId,itemId] = ini_read_real(global.save_file, key, -1);
         
         //Check if item amount > 0
-        if (round(item_amount[type_id,item_id]) > 0)
+        if (round(item_amount[typeId,itemId]) > 0)
         {
             //Item
-            item_sprite[type_id,item_id] = Sprite[type_id,item_id];
+            item_sprite[typeId,itemId] = Sprite[typeId,itemId];
             
             //Item name
-            item_name[type_id,item_id] = string(Name[type_id,item_id]);
+            item_name[typeId,itemId] = string(Name[typeId,itemId]);
             
             //Item info
-            item_info[type_id,item_id] = string(Info[type_id,item_id]);
+            item_info[typeId,itemId] = string(Info[typeId,itemId]);
             
             //Item amount is top of for loop
             
             //Item weight
-            item_weight[type_id,item_id] = string(Weight[type_id,item_id]);
-            global.total_item_weight += (Weight[type_id,item_id] * item_amount[type_id,item_id]);
+            item_weight[typeId,itemId] = string(Weight[typeId,itemId]);
+            global.total_item_weight += (Weight[typeId,itemId] * item_amount[typeId,itemId]);
             
             //Draw
-            item_type_id_draw[i] = type_id;
-            item_sprite_draw[i] = item_sprite[type_id,item_id];
-            item_name_draw[i] = item_name[type_id,item_id];
-            item_info_draw[i] = item_info[type_id,item_id];
-            item_amount_draw[i] = item_amount[type_id,item_id];
-            item_weight_draw[i] = item_weight[type_id,item_id];
+            item_typeId_draw[i] = typeId;
+            item_sprite_draw[i] = item_sprite[typeId,itemId];
+            item_name_draw[i] = item_name[typeId,itemId];
+            item_info_draw[i] = item_info[typeId,itemId];
+            item_amount_draw[i] = item_amount[typeId,itemId];
+            item_weight_draw[i] = item_weight[typeId,itemId];
             
             item_count += 1;
             i += 1;
@@ -104,9 +104,9 @@ if (item_count > 0)
         {
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).sprite_index = asset_get_index(string(item_sprite_draw[i]));
-            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).type_id = item_type_id_draw[i];
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).typeId = item_typeId_draw[i];
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).get_attributes = true;
-            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).type_id = item_type_id_draw[i];
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).typeId = item_typeId_draw[i];
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).item_info = item_info_draw[i];
             y_pos += 19;
         }

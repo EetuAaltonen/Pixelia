@@ -2,11 +2,11 @@
 scr_inventory_item_info();
 
 //Name
-name = Name[type_id,item_id];
+name = Name[typeId,itemId];
 //Weight
-weight = Weight[type_id,item_id];
+weight = Weight[typeId,itemId];
 
 //Description
-//description = Descr[type_id,item_id];
+//description = Descr[typeId,itemId];
 
 

@@ -662,7 +662,6 @@
         <object>objects\obj_crafting_slot_4</object>
         <object>objects\obj_crafting_slot_parent</object>
         <object>objects\obj_draw_craft_bg</object>
-        <object>objects\obj_forg_crafted_item</object>
         <object>objects\obj_crafting_controller</object>
       </objects>
       <objects name="Dialog">

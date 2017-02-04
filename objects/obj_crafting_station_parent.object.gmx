@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Can open or close
-canOpenClose = true;
+//canOpenClose = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,12 +56,9 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
     {
         with (obj_use) instance_destroy();
     }
-    if (global.hud_state != hudState &amp;&amp; canOpenClose == true)
+    if (global.hud_state != hudState/* &amp;&amp; canOpenClose == true*/)
     {
-        canOpenClose = false;
-        global.hud_state = hudState;
-        alarm[1] = 30;
-        
+        //canOpenClose = false;
         //Create slots
         instance_create(view_xview+300, view_yview+117, obj_crafting_slot_1);
         instance_create(view_xview+300, view_yview+147, obj_crafting_slot_2);
@@ -71,16 +68,21 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
         instance_create(obj_crafting_slot_4.x, obj_crafting_slot_4.y, obj_crafted_item);
         instance_create(view_xview+400, view_yview+54, obj_crafting_close_button);
         
+        global.hud_state = hudState;
+        
         obj_crafting_controller.createOnce = true;
         obj_crafting_controller.pageUpdate = true;
         obj_crafting_controller.current_page = 0;
-        //scr_open_crafting();
+        
+        //alarm[1] = 30;
     }
 }
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -100,11 +102,11 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
             <string>///Press Tab or 'E' to close forge
 if (keyboard_check_pressed(ord('E') || keyboard_check_pressed(vk_tab)))
 {
-    if (global.hud_state == hudState and canOpenClose == true)
+    if (global.hud_state == hudState/* and canOpenClose == true*/)
     {
-        canOpenClose = false;
+        //canOpenClose = false;
         global.hud_state = "null";
-        alarm[1] = 30;
+        //alarm[1] = 30;
     }
 }
 </string>

@@ -28,7 +28,7 @@
             <string>//Inventory
 //Read saved ini
 key = "";
-type_id = "";
+typeId = "";
 
 pageUpdate = true;
 createOnce = true; //Create objects once on the list
@@ -254,7 +254,7 @@ if (draw_name == true)
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -308,7 +308,7 @@ if (global.auto_healing == 1
             <string>///Open inventory
 if (keyboard_check_pressed(vk_tab))
 {
-    if (global.hud_state = "null")
+    if (global.hud_state == "null")
     {
         if (instance_exists(obj_player))
         {

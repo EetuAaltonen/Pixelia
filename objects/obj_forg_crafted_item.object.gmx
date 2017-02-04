@@ -32,7 +32,7 @@ sprite_index = spr_grass; //Default
 image_speed = 0;
 
 //Save to inventory
-type_id = 1;
+typeId = 1;
 </string>
           </argument>
         </arguments>
@@ -93,33 +93,33 @@ else
 if (recipe_check == true)
 {
     scr_forge_recipes();
-    var item_id_1, item_id_2, item_id_3, recipe_id;
+    var itemId_1, itemId_2, itemId_3, recipe_id;
     recipe_id = string("000");
     if (global.forg_slot_1 == true)
     {
-        item_id_1 = obj_forg_slot_1.item_id;
+        itemId_1 = obj_forg_slot_1.itemId;
     }
     else
     {
-        item_id_1 = 0;
+        itemId_1 = 0;
     }
     if (global.forg_slot_2 == true)
     {
-        item_id_2 = obj_forg_slot_2.item_id;
+        itemId_2 = obj_forg_slot_2.itemId;
     }
     else
     {
-        item_id_2 = 0;
+        itemId_2 = 0;
     }
     if (global.forg_slot_3 == true)
     {
-        item_id_3 = obj_forg_slot_3.item_id;
+        itemId_3 = obj_forg_slot_3.itemId;
     }
     else
     {
-        item_id_3 = 0;
+        itemId_3 = 0;
     }
-    recipe_id = string(string(item_id_1) + string(item_id_2) + string(item_id_3));
+    recipe_id = string(string(itemId_1) + string(itemId_2) + string(itemId_3));
     var arrayLength = array_length_1d(Recipe);
     if (real(recipe_id) &lt;= arrayLength)
     {
@@ -196,33 +196,33 @@ if (global.hud_state != "forge")
     //var item1_amount, item2_amount, item3_amount; ???
     if (global.forg_slot_1 == true)
     {
-        item_id = obj_forg_slot_1.item_id; //Id
-        type_id = 1; //Type
+        itemId = obj_forg_slot_1.itemId; //Id
+        typeId = 1; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.forg_slot_2 == true)
     {
-        item_id = obj_forg_slot_2.item_id; //Id
-        type_id = 1; //Type
+        itemId = obj_forg_slot_2.itemId; //Id
+        typeId = 1; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     if (global.forg_slot_3 == true)
     {
-        item_id = obj_forg_slot_3.item_id; //Id
-        type_id = 1; //Type
+        itemId = obj_forg_slot_3.itemId; //Id
+        typeId = 1; //Type
         added_amount = -1; //Added amount
         scr_save_to_inventory();
     }
     //Add crafted material
     //Save to inventory info
-    item_id = Id[sprite_index]; //Id
-    type_id = 1; //Type
+    itemId = Id[sprite_index]; //Id
+    typeId = 1; //Type
     added_amount = 1; //Added amount
     scr_save_to_inventory();
     
-    item_id = 0; //Default info text
+    itemId = 0; //Default info text
     recipe_exists = false; //Reset recipe state
     recipe_check = true; //Check if recipe is still exists
 

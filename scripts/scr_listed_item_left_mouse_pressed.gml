@@ -19,8 +19,8 @@ if (global.hud_state != "null")
                 prev_y = y;
                 x = slot1.x;
                 y = slot1.y;
-                slot1.itemId = item_id;
-                slot1.typeId = type_id;
+                slot1.itemId = itemId;
+                slot1.typeId = typeId;
                 selected = true;
                 obj_crafted_item.checkRecipe = true;
             }
@@ -30,8 +30,8 @@ if (global.hud_state != "null")
                 prev_y = y;
                 x = slot2.x;
                 y = slot2.y;
-                slot2.itemId = item_id;
-                slot2.typeId = type_id;
+                slot2.itemId = itemId;
+                slot2.typeId = typeId;
                 selected = true;
                 obj_crafted_item.checkRecipe = true;
             }
@@ -41,15 +41,15 @@ if (global.hud_state != "null")
                 prev_y = y;
                 x = slot3.x;
                 y = slot3.y;
-                slot3.itemId = item_id;
-                slot2.typeId = type_id;
+                slot3.itemId = itemId;
+                slot3.typeId = typeId;
                 selected = true;
                 obj_crafted_item.checkRecipe = true;
             }
         }
         else if (selected == true)
         {
-            if (slot1.itemId == item_id)
+            if (slot1.itemId == itemId)
             {
                 x = prev_x;
                 y = prev_y;
@@ -58,7 +58,7 @@ if (global.hud_state != "null")
                 selected = false;
                 obj_crafted_item.checkRecipe = true;
             }
-            else if (slot2.itemId == item_id)
+            else if (slot2.itemId == itemId)
             {
                 x = prev_x;
                 y = prev_y;
@@ -67,7 +67,7 @@ if (global.hud_state != "null")
                 selected = false;
                 obj_crafted_item.checkRecipe = true;
             }
-            else if (slot3.itemId == item_id)
+            else if (slot3.itemId == itemId)
             {
                 x = prev_x;
                 y = prev_y;

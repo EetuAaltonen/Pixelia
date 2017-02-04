@@ -29,10 +29,10 @@
 image_index = 0;
 image_xscale = 1;
 bow_can_shoot = true;
-type_id = 5;
-item_id = 1;
+typeId = 5;
+itemId = 1;
 ini_open("Inventory.sav");
-key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
+key = "Amount[" + string(typeId) + "," + string(itemId) + "]";
 arrowCount = ini_read_real(global.save_file, key, 0);
 ini_close();
 </string>

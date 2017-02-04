@@ -1,7 +1,7 @@
 //Info initialize
 image_speed = 0.2;
-item_id = 0; //Id
-type_id = 3; //Type id
+itemId = 0; //Id
+typeId = 3; //Type id
 sprite_index_ = sprite_index;
 name = ""; //Name
 description = ""; //Description

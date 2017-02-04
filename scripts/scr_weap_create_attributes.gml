@@ -1,5 +1,5 @@
 //Attributes initialize
-type_id = 5; //Type id
+typeId = 5; //Type id
 //Get common attributes
 scr_common_attributes();
 //Get id

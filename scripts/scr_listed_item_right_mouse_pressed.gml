@@ -4,7 +4,7 @@ if (global.hud_state == "inventory1")
     if (dropping_item == false)
     {
         ini_open("Inventory.sav");
-        key = "Amount[" + string(type_id) + "," + string(item_id) + "]";      
+        key = "Amount[" + string(typeId) + "," + string(itemId) + "]";      
         //Item amount
         item_count = ini_read_real(global.save_file, key, 0);
         ini_close();

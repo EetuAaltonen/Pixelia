@@ -3,39 +3,39 @@ if (loop_stop == false)
     
     //Better code
     item_count = 0;
-    type_id = 2;
+    typeId = 2;
     i = 0;
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
-    for(item_id = 1; item_id < 100; item_id++)
+    for(itemId = 1; itemId < 100; itemId++)
     {
         //Change category
-        if (type_id == 1 and item_id == array_length_2d(Sprite, type_id)) //This is first category of ordering
+        if (typeId == 1 and itemId == array_length_2d(Sprite, typeId)) //This is first category of ordering
         {
             break;
         }
-        key = "Amount[" + string(type_id) + "," + string(item_id) + "]";
+        key = "Amount[" + string(typeId) + "," + string(itemId) + "]";
         
         //Item amount
-        item_amount[type_id,item_id] = ini_read_real("Save1", key, -1);
+        item_amount[typeId,itemId] = ini_read_real("Save1", key, -1);
         
         //Check if item amount > 0
-        if (round(item_amount[type_id,item_id]) > 0)
+        if (round(item_amount[typeId,itemId]) > 0)
         {
             //Item
-            item_sprite[type_id,item_id] = Sprite[type_id,item_id];
+            item_sprite[typeId,itemId] = Sprite[typeId,itemId];
             
             //Item name
-            item_name[type_id,item_id] = string(Name[type_id,item_id]);
+            item_name[typeId,itemId] = string(Name[typeId,itemId]);
             
             //Item amount is top of for loop
             
             //Draw
-            item_type_id_draw[i] = type_id;
-            item_sprite_draw[i] = item_sprite[type_id,item_id];
-            item_name_draw[i] = item_name[type_id,item_id];
-            item_amount_draw[i] = item_amount[type_id,item_id];
+            item_typeId_draw[i] = typeId;
+            item_sprite_draw[i] = item_sprite[typeId,itemId];
+            item_name_draw[i] = item_name[typeId,itemId];
+            item_amount_draw[i] = item_amount[typeId,itemId];
             
             item_count += 1;
             i += 1;
@@ -58,7 +58,7 @@ if (item_count > 0)
             //Materials
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).sprite_index = asset_get_index(string(item_sprite_draw[i]));
-            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).type_id = item_type_id_draw[i];
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).typeId = item_typeId_draw[i];
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).fill_info = true;
             y_pos += 19;
         }

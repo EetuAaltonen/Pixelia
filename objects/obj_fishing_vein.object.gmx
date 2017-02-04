@@ -50,11 +50,11 @@ catch_once = true;
           <argument>
             <kind>1</kind>
             <string>//Save to inventory info
-item_id = round(random_range(1,2)); //Id
+itemId = round(random_range(1,2)); //Id
 search_id = "food"; //Type
 added_amount = 1; //Added amount
 
-switch (item_id)
+switch (itemId)
 {
     case 1: instance_create(x, y, obj_salmon_collected); break;
     case 2: instance_create(x, y, obj_tuna_collected); break;
