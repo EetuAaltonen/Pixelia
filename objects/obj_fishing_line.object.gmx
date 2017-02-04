@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = 0.1;
+            <string>instance_destroy();
+image_xscale = 0.1;
 </string>
           </argument>
         </arguments>

@@ -12,14 +12,22 @@ if (pageUpdate == true)
     
     ini_open("Inventory.sav");
     scr_inventory_item_info();
+    var arrayLength = array_length_2d(Sprite, type_id);
     for(item_id = 1; item_id > 0; item_id++)
     {
         //Change category
-        if (string_pos("inventory", string(global.hud_state)))
+        if (string_pos("inventory", string(global.hud_state)) || global.hud_state == "forge")
         {
             var arrayLength = array_length_2d(Sprite, type_id);
             if (type_id == 1 and item_id == arrayLength) //This is first category of ordering
             {
+                if (global.hud_state == "forge")
+                {
+                    if (type_id == 1 and item_id == arrayLength)
+                    {
+                        break;
+                    }
+                }
                 type_id = 2;
                 item_id = 1;
             }
@@ -39,13 +47,6 @@ if (pageUpdate == true)
                 item_id = 1;
             }
             else if(type_id == 5 and item_id == arrayLength)
-            {
-                break;
-            }
-        }
-        else if (global.hud_state == "forge")
-        {
-            if (type_id == 1 and item_id == arrayLength)
             {
                 break;
             }
@@ -146,9 +147,9 @@ if (item_count > 0)
     if (string_pos("inventory", string(global.hud_state)))
     {
         //Item info background
-        draw_sprite(spr_inv_item_info_bg, 0,view_xview+335, view_yview+85);
+        draw_sprite(spr_inv_item_info_bg, 0,view_xview+334, view_yview+85);
         //Item info text
-        draw_text(view_xview+350, view_yview+100, item_info_text);
+        draw_text(view_xview+349, view_yview+100, item_info_text);
         //Total and weight background
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+255, view_yview+95);
         //Total and weight
