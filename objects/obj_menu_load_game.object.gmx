@@ -111,18 +111,7 @@ draw_sprite(spr_menu_signature, 1, view_xview + 2, (view_yview + view_hview - 10
           <argument>
             <kind>1</kind>
             <string>///Check text length
-if (instance_exists(obj_menu_text_box))
-{
-    if (string_length(obj_menu_text_box.txt) &gt;= 4 &amp;&amp;
-        obj_menu_text_box.txt != obj_menu_text_box.place_holder)
-    {
-        image_blend = make_colour_hsv(0, 0, -1);
-    }
-    else
-    {
-        image_blend = make_colour_hsv(0, 0, 150);
-    }
-}
+scr_check_save_name();
 </string>
           </argument>
         </arguments>

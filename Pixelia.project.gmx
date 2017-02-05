@@ -414,7 +414,6 @@
       <script>scripts\scr_check_weight.gml</script>
       <script>scripts\scr_collected_item_name.gml</script>
       <script>scripts\scr_move_to_player.gml</script>
-      <script>scripts\scr_save_to_inventory.gml</script>
       <script>scripts\scr_source_create_item.gml</script>
       <script>scripts\scr_source_hit.gml</script>
       <script>scripts\scr_source_image_index.gml</script>
@@ -441,6 +440,7 @@
       <script>scripts\scr_drop_item.gml</script>
       <script>scripts\scr_inventory_item_info.gml</script>
       <script>scripts\scr_inventory_item_info_text.gml</script>
+      <script>scripts\scr_save_to_inventory.gml</script>
       <scripts name="Skilltree">
         <script>scripts\scr_st_skill_info.gml</script>
         <script>scripts\scr_st_check_skill_state.gml</script>
@@ -465,6 +465,7 @@
     </scripts>
     <scripts name="Menu">
       <script>scripts\scr_menu_orb_create.gml</script>
+      <script>scripts\scr_check_save_name.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_woodcutting_dust.gml</script>

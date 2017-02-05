@@ -49,19 +49,44 @@ menu_state = "load_game";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (file_exists(obj_menu_text_box.txt))
+            <string>if (image_blend != make_colour_hsv(0, 0, 150))
 {
-    obj_menu_text_box.selected = false;
-    obj_menu_text_box.blink_icon = ""
-    var file = obj_menu_text_box.txt;
-    file_delete(file);
-    obj_menu_text_box.txt = "";
-    keyboard_string = obj_menu_text_box.txt;
-    if (instance_exists(obj_menu_saved_game))
+    var file = (string(obj_menu_text_box.txt) + ".sav");
+    if (file_exists(file))
     {
-        with (obj_menu_saved_game) instance_destroy();
+        if show_question(("Delete " + file + "?"))
+        {
+            obj_menu_text_box.selected = false;
+            obj_menu_text_box.blink_icon = ""
+            show_message(string(file));
+            file_delete(file);
+            obj_menu_text_box.txt = "";
+            keyboard_string = obj_menu_text_box.txt;
+            if (instance_exists(obj_menu_saved_game))
+            {
+                with (obj_menu_saved_game) instance_destroy();
+            }
+            obj_screen_controller.read_saves = true;
+            if (file_exists("Inventory.sav"))
+            {
+                ini_open("Inventory.sav");
+                if (ini_section_exists(file))
+                {
+                    ini_section_delete(file);
+                }
+                ini_close();
+            }
+            if (file_exists("SkillTree.sav"))
+            {
+                ini_open("SkillTree.sav");
+                if (ini_section_exists(file))
+                {
+                    ini_section_delete(file);
+                }
+                ini_close();
+            }
+        }
     }
-    obj_screen_controller.read_saves = true;
 }
 </string>
           </argument>
@@ -85,7 +110,8 @@ menu_state = "load_game";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Draw text
+draw_self();
 //Font
 draw_set_font(fnt_menu_buttons);
 draw_set_color(c_black);
@@ -93,6 +119,28 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 draw_text(x, y, "Delete");
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check text length
+scr_check_save_name();
 </string>
           </argument>
         </arguments>
