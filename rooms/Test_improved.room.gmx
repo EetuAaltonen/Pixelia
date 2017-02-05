@@ -541,6 +541,7 @@
     <instance objName="obj_alchemy_station" x="1111" y="247" name="inst_14588B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_anvil" x="1211" y="254" name="inst_C7A3D638" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stove" x="1013" y="248" name="inst_FE501623" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_flask" x="978" y="251" name="inst_365F0AD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

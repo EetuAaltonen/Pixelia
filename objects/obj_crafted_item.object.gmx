@@ -54,23 +54,24 @@ checkRecipe = false;
           <argument>
             <kind>1</kind>
             <string>///Check recipes
-if (global.hud_state == "forge")
+if (instance_exists(obj_crafting_slot_1) &amp;&amp;
+    instance_exists(obj_crafting_slot_2) &amp;&amp;
+    instance_exists(obj_crafting_slot_3))
 {
-    if (instance_exists(obj_crafting_slot_1) &amp;&amp;
-        instance_exists(obj_crafting_slot_2) &amp;&amp;
-        instance_exists(obj_crafting_slot_3))
+    
+    var slot1 = obj_crafting_slot_1;
+    var slot2 = obj_crafting_slot_2;
+    var slot3 = obj_crafting_slot_3;
+    var slot4 = obj_crafting_slot_4;
+    if (checkRecipe)
     {
-        
-        var slot1 = obj_crafting_slot_1;
-        var slot2 = obj_crafting_slot_2;
-        var slot3 = obj_crafting_slot_3;
-        var slot4 = obj_crafting_slot_4;
-        if (checkRecipe)
-        {
-            key = (string(slot1.itemId) + string(slot2.itemId) + string(slot3.itemId));
-            scr_crafting_check_recipe();
-        }
+        key = (string(slot1.itemId) + string(slot2.itemId) + string(slot3.itemId));
+        scr_crafting_check_recipe();
     }
+}
+else
+{
+    instance_destroy();
 }
 </string>
           </argument>

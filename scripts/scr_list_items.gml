@@ -1,5 +1,6 @@
 if (pageUpdate == true)
 {
+    createOnce = false;
     if (instance_exists(obj_listed_item))
     {
         with (obj_listed_item) instance_destroy();
@@ -16,40 +17,10 @@ if (pageUpdate == true)
     for(itemId = 1; itemId > 0; itemId++)
     {
         //Change category
-        if (string_pos("inventory", string(global.hud_state)) || global.hud_state == "forge")
+        scr_list_id_type();
+        if (createOnce)
         {
-            var arrayLength = array_length_2d(Sprite, typeId);
-            if (typeId == 1 and itemId == arrayLength) //This is first category of ordering
-            {
-                if (global.hud_state == "forge")
-                {
-                    if (typeId == 1 and itemId == arrayLength)
-                    {
-                        break;
-                    }
-                }
-                typeId = 2;
-                itemId = 1;
-            }
-            else if(typeId == 2 and itemId == arrayLength)
-            {
-                typeId = 3;
-                itemId = 1;
-            }
-            else if(typeId == 3 and itemId == arrayLength)
-            {
-                typeId = 4;
-                itemId = 1;
-            }
-            else if(typeId == 4 and itemId == arrayLength)
-            {
-                typeId = 5;
-                itemId = 1;
-            }
-            else if(typeId == 5 and itemId == arrayLength)
-            {
-                break;
-            }
+            break;
         }
         key = "Amount[" + string(typeId) + "," + string(itemId) + "]";
         
@@ -89,7 +60,6 @@ if (pageUpdate == true)
     ini_close();
     //Calculate number of pages
     scr_page_calculate();
-    createOnce = true;
     pageUpdate = false;
 }
 var y_pos; //y position

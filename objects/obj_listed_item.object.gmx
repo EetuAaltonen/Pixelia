@@ -93,6 +93,13 @@ else if (global.hud_state == "forge")
         instance_destroy();
     }
 }
+else if (global.hud_state == "alchemy")
+{
+    if (obj_crafting_controller.pageUpdate == true)
+    {
+        instance_destroy();
+    }
+}
 else
 {
     instance_destroy();

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>///Create variables
+image_speed = 0;
 
 mana_usage = 1;
 manreg = 2;

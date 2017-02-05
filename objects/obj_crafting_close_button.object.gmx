@@ -75,7 +75,8 @@ if (global.hud_state == "null")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.hud_state = "null";
+            <string>///Set hud state null
+global.hud_state = "null";
 </string>
           </argument>
         </arguments>

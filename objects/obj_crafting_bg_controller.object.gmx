@@ -25,24 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state == "forge" || global.hud_state == "alchemy")
+            <string>///Draw background
+if (global.hud_state == "forge" || global.hud_state == "alchemy")
 {
     //Forge background
     draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
 
     //Crafted material info background
     draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
-    
-    //Font
-    draw_set_font(fnt_inventory_text);
-    draw_set_color(c_black);
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_middle);
-    
-    //scr_forge_recipes();
-    
-    //Crafted material info
-    //draw_text(view_xview+346,view_yview+180, string(Info[obj_forg_crafted_item.sprite_index]));
 }
 </string>
           </argument>

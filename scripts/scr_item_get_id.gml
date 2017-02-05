@@ -30,7 +30,11 @@ else if (typeId == 2)
 }
 else if (typeId == 3)
 {
-
+    switch (sprite_index_)
+    {
+        case spr_healing_potion: itemId = 1;break;
+        case spr_icon_potion_2: itemId = 2;break;
+    }
 }
 else if (typeId == 4)
 {

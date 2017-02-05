@@ -67,11 +67,12 @@ load = false;
     global.armor = 2;
     global.armor_reg_time = 500;
     //Stamina
-    global.stam_plus = 5; //Max = 10
+    global.stam_plus = 0; //Max = 10
     global.stamina = (10 + global.stam_plus);
+    global.staminaRegenAmount = 1;
     global.stamreg_plus = 0; //skill NEEDED???
     //Mana
-    global.man_plus = 8; //Max = 10
+    global.man_plus = 0; //Max = 10
     global.mana = (10 + global.man_plus);
     global.manreg_plus = 0; //skill NEEDED????
     //Movement
@@ -247,6 +248,8 @@ if (load == false)
             instance_create(x-100, y-100, object);
         }
     }
+    //Check unlocked skills
+    scr_check_unlocked_skills();
     alarm[1] = 50;
     
     load = true;

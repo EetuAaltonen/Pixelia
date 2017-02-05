@@ -1,201 +1,231 @@
 //Sprite
 Sprite[1,1] = "spr_st_health_reg_time_1";
-Sprite[2,1] = "spr_st_health_reg_time_2";
-Sprite[3,1] = "spr_st_health_reg_amount_1";
-Sprite[4,1] = "spr_st_health_reg_amount_2";
+Sprite[1,2] = "spr_st_health_reg_time_2";
+Sprite[1,3] = "spr_st_health_reg_amount_1";
+Sprite[1,4] = "spr_st_health_reg_amount_2";
 
-Sprite[1,2] = "spr_st_stamina_reg_time_1";
+Sprite[2,1] = "spr_st_stamina_reg_time_1";
 Sprite[2,2] = "spr_st_stamina_reg_time_2";
-Sprite[3,2] = "spr_st_stamina_reg_amount_1";
-Sprite[4,2] = "spr_st_stamina_reg_amount_2";
+Sprite[2,3] = "spr_st_stamina_reg_amount_1";
+Sprite[2,4] = "spr_st_stamina_reg_amount_2";
 
-Sprite[1,3] = "spr_st_mana_reg_time_1";
-Sprite[2,3] = "spr_st_mana_reg_time_2";
+Sprite[3,1] = "spr_st_mana_reg_time_1";
+Sprite[3,2] = "spr_st_mana_reg_time_2";
 Sprite[3,3] = "spr_st_mana_reg_amount_1";
-Sprite[4,3] = "spr_st_mana_reg_amount_2";
+Sprite[3,4] = "spr_st_mana_reg_amount_2";
 
-Sprite[1,4] = "spr_st_armor_reg_time_1";
-Sprite[2,4] = "spr_st_armor_reg_time_2";
-Sprite[3,4] = "spr_st_armor_reg_amount_1";
+Sprite[4,1] = "spr_st_armor_reg_time_1";
+Sprite[4,2] = "spr_st_armor_reg_time_2";
+Sprite[4,3] = "spr_st_armor_reg_amount_1";
 Sprite[4,4] = "spr_st_armor_reg_amount_2";
 
-Sprite[1,5] = "spr_st_max_health_1";
-Sprite[2,5] = "spr_st_max_health_2";
-Sprite[3,5] = "spr_st_max_stamina_1";
-Sprite[4,5] = "spr_st_max_stamina_2";
+Sprite[5,1] = "spr_st_max_health_1";
+Sprite[5,2] = "spr_st_max_health_2";
+Sprite[5,3] = "spr_st_max_stamina_1";
+Sprite[5,4] = "spr_st_max_stamina_2";
 
-Sprite[1,6] = "spr_st_max_mana_1";
-Sprite[2,6] = "spr_st_max_mana_2";
-Sprite[3,6] = "spr_st_additional_armor_1";
-Sprite[4,6] = "spr_st_additional_armor_2";
+Sprite[6,1] = "spr_st_max_mana_1";
+Sprite[6,2] = "spr_st_max_mana_2";
+Sprite[6,3] = "spr_st_additional_armor_1";
+Sprite[6,4] = "spr_st_additional_armor_2";
 
-Sprite[1,7] = "spr_st_moving_speed_1";
-Sprite[2,7] = "spr_st_moving_speed_2";
-Sprite[3,7] = "spr_st_carrying_capacity_1";
-Sprite[4,7] = "spr_st_carrying_capacity_2";
+Sprite[7,1] = "spr_st_moving_speed_1";
+Sprite[7,2] = "spr_st_moving_speed_2";
+Sprite[7,3] = "spr_st_carrying_capacity_1";
+Sprite[7,4] = "spr_st_carrying_capacity_2";
 
-Sprite[1,8] = "spr_st_additional_damage_1";
-Sprite[2,8] = "spr_st_additional_damage_2";
-Sprite[3,8] = "spr_st_additional_damage_3";
-Sprite[4,8] = "spr_st_auto_healing";
+Sprite[8,1] = "spr_st_additional_damage_1";
+Sprite[8,2] = "spr_st_additional_damage_2";
+Sprite[8,3] = "spr_st_additional_damage_3";
+Sprite[8,4] = "spr_st_auto_healing";
 
-Sprite[1,9] = "spr_st_scavenger_1";
-Sprite[2,9] = "spr_st_scavenger_2";
-Sprite[3,9] = "spr_st_auto_healing";
-Sprite[4,9] = "spr_st_auto_healing";
+Sprite[9,1] = "spr_st_scavenger_1";
+Sprite[9,2] = "spr_st_scavenger_2";
+Sprite[9,3] = "spr_st_auto_healing";
+Sprite[9,4] = "spr_st_auto_healing";
 
-Sprite[1,10] = "spr_st_auto_healing";
-Sprite[2,10] = "spr_st_auto_healing";
-Sprite[3,10] = "spr_st_auto_healing";
-Sprite[4,10] = "spr_st_auto_healing";
+Sprite[10,1] = "spr_st_auto_healing";
+Sprite[10,2] = "spr_st_auto_healing";
+Sprite[10,3] = "spr_st_auto_healing";
+Sprite[10,4] = "spr_st_auto_healing";
 
-Sprite[1,11] = "spr_st_auto_healing";
-Sprite[2,11] = "spr_st_auto_healing";
-Sprite[3,11] = "spr_st_auto_healing";
-Sprite[4,11] = "spr_st_auto_healing";
+Sprite[11,1] = "spr_st_auto_healing";
+Sprite[11,2] = "spr_st_auto_healing";
+Sprite[11,3] = "spr_st_auto_healing";
+Sprite[11,4] = "spr_st_auto_healing";
 
-Sprite[1,12] = "spr_st_auto_healing";
-Sprite[2,12] = "spr_st_auto_healing";
-Sprite[3,12] = "spr_st_auto_healing";
-Sprite[4,12] = "spr_st_auto_healing";
+Sprite[12,1] = "spr_st_auto_healing";
+Sprite[12,2] = "spr_st_auto_healing";
+Sprite[12,3] = "spr_st_auto_healing";
+Sprite[12,4] = "spr_st_auto_healing";
 
-Sprite[1,13] = "spr_st_auto_healing";
-Sprite[2,13] = "spr_st_auto_healing";
-Sprite[3,13] = "spr_st_auto_healing";
-Sprite[4,13] = "spr_st_auto_healing";
+Sprite[13,1] = "spr_st_auto_healing";
+Sprite[13,2] = "spr_st_auto_healing";
+Sprite[13,3] = "spr_st_auto_healing";
+Sprite[13,4] = "spr_st_auto_healing";
 
-Sprite[1,14] = "spr_st_auto_healing";
-Sprite[2,14] = "spr_st_auto_healing";
-Sprite[3,14] = "spr_st_auto_healing";
-Sprite[4,14] = "spr_st_auto_healing";
+Sprite[14,1] = "spr_st_auto_healing";
+Sprite[14,2] = "spr_st_auto_healing";
+Sprite[14,3] = "spr_st_auto_healing";
+Sprite[14,4] = "spr_st_auto_healing";
 
-Sprite[1,15] = "spr_st_auto_healing";
-Sprite[2,15] = "spr_st_auto_healing";
-Sprite[3,15] = "spr_st_auto_healing";
-Sprite[4,15] = "spr_st_auto_healing";
+Sprite[15,1] = "spr_st_auto_healing";
+Sprite[15,2] = "spr_st_auto_healing";
+Sprite[15,3] = "spr_st_auto_healing";
+Sprite[15,4] = "spr_st_auto_healing";
 
 
 //Name
 Name[1,1] = "Health regeneration time I";
-Name[2,1] = "Health regeneration time II";
-Name[3,1] = "Health regeneration amount I";
-Name[4,1] = "Health regeneration amount II";
+Name[1,2] = "Health regeneration time II";
+Name[1,3] = "Health regeneration amount I";
+Name[1,4] = "Health regeneration amount II";
 
-Name[1,2] = "Stamina regeneration time I";
+Name[2,1] = "Stamina regeneration time I";
 Name[2,2] = "Stamina regeneration time II";
-Name[3,2] = "Stamina regeneration amount I";
-Name[4,2] = "Stamina regeneration amount II";
+Name[2,3] = "Stamina regeneration amount I";
+Name[2,4] = "Stamina regeneration amount II";
 
-Name[1,3] = "Mana regeration time I";
-Name[2,3] = "Mana regeration time II";
+Name[3,1] = "Mana regeration time I";
+Name[3,2] = "Mana regeration time II";
 Name[3,3] = "Mana regeration amount I";
-Name[4,3] = "Mana regeration amount II";
+Name[3,4] = "Mana regeration amount II";
 
-Name[1,4] = "Armor regeration time I";
-Name[2,4] = "Armor regeration time II";
-Name[3,4] = "Armor regeration amount I";
+Name[4,1] = "Armor regeration time I";
+Name[4,2] = "Armor regeration time II";
+Name[4,3] = "Armor regeration amount I";
 Name[4,4] = "Armor regeration amount II";
 
-Name[1,5] = "";
-Name[2,5] = "";
-Name[3,5] = "";
-Name[4,5] = "";
+Name[5,1] = "";
+Name[5,2] = "";
+Name[5,3] = "";
+Name[5,4] = "";
 
-Name[1,6] = "";
-Name[2,6] = "";
-Name[3,6] = "";
-Name[4,6] = "";
+Name[6,1] = "";
+Name[6,2] = "";
+Name[6,3] = "";
+Name[6,4] = "";
 
-Name[1,7] = "";
-Name[2,7] = "";
-Name[3,7] = "";
-Name[4,7] = "";
+Name[7,1] = "";
+Name[7,2] = "";
+Name[7,3] = "";
+Name[7,4] = "";
 
-Name[1,8] = "";
-Name[2,8] = "";
-Name[3,8] = "";
-Name[4,8] = "";
+Name[8,1] = "";
+Name[8,2] = "";
+Name[8,3] = "";
+Name[8,4] = "";
 
-Name[1,9] = "";
-Name[2,9] = "";
-Name[3,9] = "";
-Name[4,9] = "";
+Name[9,1] = "";
+Name[9,2] = "";
+Name[9,3] = "";
+Name[9,4] = "";
 
-Name[1,10] = "";
-Name[2,10] = "";
-Name[3,10] = "";
-Name[4,10] = "";
+Name[10,1] = "";
+Name[10,2] = "";
+Name[10,3] = "";
+Name[10,4] = "";
 
-Name[1,11] = "";
-Name[2,11] = "";
-Name[3,11] = "";
-Name[4,11] = "";
+Name[11,1] = "";
+Name[11,2] = "";
+Name[11,3] = "";
+Name[11,4] = "";
 
-Name[1,12] = "";
-Name[2,12] = "";
-Name[3,12] = "";
-Name[4,12] = "";
+Name[12,1] = "";
+Name[12,2] = "";
+Name[12,3] = "";
+Name[12,4] = "";
 
-Name[1,13] = "";
-Name[2,13] = "";
-Name[3,13] = "";
-Name[4,13] = "";
+Name[13,1] = "";
+Name[13,2] = "";
+Name[13,3] = "";
+Name[13,4] = "";
 
-Name[1,14] = "";
-Name[2,14] = "";
-Name[3,14] = "";
-Name[4,14] = "";
+Name[14,1] = "";
+Name[14,2] = "";
+Name[14,3] = "";
+Name[14,4] = "";
 
-Name[1,15] = "";
-Name[2,15] = "";
-Name[3,15] = "";
-Name[4,15] = "";
+Name[15,1] = "";
+Name[15,2] = "";
+Name[15,3] = "";
+Name[15,4] = "";
 
 //Bonus
-Bonus[1,0] = "-20%";
-Bonus[1,1] = "-50%";
-Bonus[1,2] = "+50%";
-Bonus[1,3] = "+100%";
+Bonus[1,1] = "-20";
+Bonus[1,2] = "-50";
+Bonus[1,3] = "+50";
+Bonus[1,4] = "+100";
 
-Bonus[1,4] = "-10%";
-Bonus[1,5] = "-30%";
-Bonus[1,6] = "-200%";
-Bonus[1,7] = "-150%";
+Bonus[2,1] = "-10";
+Bonus[2,2] = "-30";
+Bonus[2,3] = "100";
+Bonus[2,4] = "200";
 
-Bonus[1,8] = "-60%";
-Bonus[2,0] = "";
-Bonus[2,1] = "";
-Bonus[2,2] = "";
-
-Bonus[2,3] = "";
-Bonus[2,4] = "";
-Bonus[2,5] = "";
-Bonus[2,6] = "";
-
-Bonus[2,7] = "";
-Bonus[2,8] = "";
-Bonus[3,0] = "";
-Bonus[3,1] = "";
-
+Bonus[3,1] = "-60";
 Bonus[3,2] = "";
 Bonus[3,3] = "";
 Bonus[3,4] = "";
-Bonus[3,5] = "";
-
-Bonus[3,6] = "";
-Bonus[3,7] = "";
-Bonus[3,8] = "";
-Bonus[4,0] = "";
 
 Bonus[4,1] = "";
 Bonus[4,2] = "";
 Bonus[4,3] = "";
 Bonus[4,4] = "";
 
-Bonus[4,5] = "";
-Bonus[4,6] = "";
-Bonus[4,7] = "";
-Bonus[4,8] = "";
+Bonus[5,1] = "";
+Bonus[5,2] = "";
+Bonus[5,3] = "";
+Bonus[5,4] = "";
+
+Bonus[6,1] = "";
+Bonus[6,2] = "";
+Bonus[6,3] = "";
+Bonus[6,4] = "";
+
+Bonus[7,1] = "";
+Bonus[7,2] = "";
+Bonus[7,3] = "";
+Bonus[7,4] = "";
+
+Bonus[8,1] = "";
+Bonus[8,2] = "";
+Bonus[8,3] = "";
+Bonus[8,4] = "";
+
+Bonus[9,1] = "";
+Bonus[9,2] = "";
+Bonus[9,3] = "";
+Bonus[9,4] = "";
+
+Bonus[10,1] = "";
+Bonus[10,2] = "";
+Bonus[10,3] = "";
+Bonus[10,4] = "";
+
+Bonus[11,1] = "";
+Bonus[11,2] = "";
+Bonus[11,3] = "";
+Bonus[11,4] = "";
+
+Bonus[12,1] = "";
+Bonus[12,2] = "";
+Bonus[12,3] = "";
+Bonus[12,4] = "";
+
+Bonus[13,1] = "";
+Bonus[13,2] = "";
+Bonus[13,3] = "";
+Bonus[13,4] = "";
+
+Bonus[14,1] = "";
+Bonus[14,2] = "";
+Bonus[14,3] = "";
+Bonus[14,4] = "";
+
+Bonus[15,1] = "";
+Bonus[15,2] = "";
+Bonus[15,3] = "";
+Bonus[15,4] = "";
 
 //Prices
 Price[0,0] = 5;

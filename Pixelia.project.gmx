@@ -93,9 +93,6 @@
         <sprite>sprites\spr_ironbar</sprite>
         <sprite>sprites\spr_steelbar</sprite>
       </sprites>
-      <sprites name="Potions">
-        <sprite>sprites\spr_healing_potion</sprite>
-      </sprites>
       <sprite>sprites\spr_arrow_pouch</sprite>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_coin</sprite>
@@ -118,8 +115,7 @@
         <sprite>sprites\spr_icon_steelbar</sprite>
       </sprites>
       <sprites name="Potions">
-        <sprite>sprites\spr_icon_potion_1</sprite>
-        <sprite>sprites\spr_icon_potion_2</sprite>
+        <sprite>sprites\spr_healing_potion</sprite>
         <sprite>sprites\spr_potion_1</sprite>
         <sprite>sprites\spr_potion_2</sprite>
       </sprites>
@@ -462,6 +458,10 @@
       <script>scripts\scr_list_items.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed.gml</script>
       <script>scripts\scr_listed_item_right_mouse_pressed.gml</script>
+      <script>scripts\scr_list_id_type.gml</script>
+      <script>scripts\scr_list_id_type_inventory.gml</script>
+      <script>scripts\scr_list_id_type_forge.gml</script>
+      <script>scripts\scr_list_id_type_alchemy.gml</script>
     </scripts>
     <scripts name="Menu">
       <script>scripts\scr_menu_orb_create.gml</script>
@@ -487,8 +487,12 @@
       <script>scripts\scr_current_room.gml</script>
       <script>scripts\scr_first_loading_screen_objects.gml</script>
       <script>scripts\scr_loadgame.gml</script>
-      <script>scripts\scr_savegame.gml</script>
       <script>scripts\scr_menu_load_create_save.gml</script>
+      <script>scripts\scr_savegame.gml</script>
+      <scripts name="Skilltree">
+        <script>scripts\scr_add_unclocked_skill_bonus.gml</script>
+        <script>scripts\scr_check_unlocked_skills.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\scr_add_xp.gml</script>
     <script>scripts\scr_alch_list_items.gml</script>
@@ -661,7 +665,6 @@
         <object>objects\obj_crafting_slot_3</object>
         <object>objects\obj_crafting_slot_4</object>
         <object>objects\obj_crafting_slot_parent</object>
-        <object>objects\obj_draw_craft_bg</object>
         <object>objects\obj_crafting_controller</object>
       </objects>
       <objects name="Dialog">

@@ -4,7 +4,7 @@ Recipe[010] = spr_ironbar;
 Recipe[001] = spr_ironbar;
 Id[spr_ironbar] = 4;
 Type[spr_ironbar] = 1;
-Name[spr_ironbar] = "Ironbar";
+Name[spr_ironbar] = "Iron bar";
 
 //Coal
 Recipe[200] = spr_coal;
@@ -23,5 +23,5 @@ Recipe[034] = spr_steelbar;
 Recipe[043] = spr_steelbar;
 Id[spr_steelbar] = 5;
 Type[spr_steelbar] = 1;
-Name[spr_steelbar] = "Steelbar";
+Name[spr_steelbar] = "Steel bar";
 

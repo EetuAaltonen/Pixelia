@@ -1,4 +1,11 @@
-scr_forge_recipes();
+if (global.hud_state == "forge")
+{
+    scr_forge_recipes();
+}
+else if (global.hud_state == "alchemy")
+{
+    scr_alchemy_recipes();
+}
 var slot4 = obj_crafting_slot_4;
 if (real(key) < array_length_1d(Recipe))
 {

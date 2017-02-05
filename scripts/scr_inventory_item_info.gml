@@ -62,7 +62,7 @@ Weight[2,8] = 0.05;
 
 //Potions
 //Sprite
-Sprite[3,1] = "spr_icon_potion_1";
+Sprite[3,1] = "spr_healing_potion";
 Sprite[3,2] = "spr_icon_potion_2";
 //Name
 Name[3,1] = "Healing potion";
