@@ -225,6 +225,7 @@ if (unlocked == false)
         ini_close();
         unlocked = true;
         alarm[1] = blend_time;
+        scr_check_unlocked_skills();
     //}
     //else
     //{
