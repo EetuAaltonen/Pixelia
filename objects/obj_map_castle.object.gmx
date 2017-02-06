@@ -78,7 +78,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state != "map")
+            <string>if (global.hudState != "map")
 {
     instance_destroy();
 }

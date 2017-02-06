@@ -1,4 +1,4 @@
-switch(global.hud_state)
+switch(global.hudState)
 {
     case "inventory1":
     scr_list_id_type_inventory();

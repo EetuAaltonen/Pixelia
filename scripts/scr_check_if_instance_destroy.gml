@@ -1,4 +1,4 @@
-if (global.hud_state == "forge")
+if (global.hudState == "forge")
 {
     if (obj_forge_controller.update_amounts == true and selected == false)
     {
@@ -32,7 +32,7 @@ if (global.hud_state == "forge")
         }
     }
 }
-else if (global.hud_state == "alchemy")
+else if (global.hudState == "alchemy")
 {
     /*if (obj_alchemy_controller.update_amounts == true and selected == false)
     {
@@ -66,7 +66,7 @@ else if (global.hud_state == "alchemy")
         }
     }*/
 }
-else if (global.hud_state == "inventory1")
+else if (global.hudState == "inventory1")
 {
 }
 else

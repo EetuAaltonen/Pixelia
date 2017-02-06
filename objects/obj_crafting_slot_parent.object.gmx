@@ -52,7 +52,7 @@ sprite_index = spr_inv_item_bg;
           <argument>
             <kind>1</kind>
             <string>///Instance Destroy
-if (global.hud_state == "null")
+if (global.hudState == "null")
 {
     instance_destroy();
 }

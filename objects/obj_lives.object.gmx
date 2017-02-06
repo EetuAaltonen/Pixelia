@@ -28,7 +28,7 @@
             <string>image_speed = 0;
 
 armor_reg = 1;
-alarm[1] = global.armor_reg_time;
+alarm[1] = global.armorRegenSpeed;
 </string>
           </argument>
         </arguments>
@@ -55,7 +55,7 @@ alarm[1] = global.armor_reg_time;
 if (global.armor &lt; global.max_armor)
 {
     global.armor += armor_reg;
-    alarm[1] = global.armor_reg_time;
+    alarm[1] = global.armorRegenSpeed;
 }
 </string>
           </argument>

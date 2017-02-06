@@ -59,7 +59,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
-if (global.hud_state == "alchemy")
+if (global.hudState == "alchemy")
 {
     //Create
     instance_create(view_xview+300, view_yview+117, obj_alch_slot_1); //Slots

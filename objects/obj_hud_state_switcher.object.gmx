@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.hud_state = "null";
+            <string>global.hudState = "null";
 </string>
           </argument>
         </arguments>
@@ -48,16 +48,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (global.hud_state)
+            <string>switch (global.hudState)
 {
-    case "null": global.hud_state = "null"; break;
-    case "inventory1": global.hud_state = "inventory1"; break;
-    case "inventory2": global.hud_state = "inventory2"; break;
-    case "inventory3": global.hud_state = "inventory3"; break;
-    case "inventory4": global.hud_state = "inventory4"; break;
-    case "workbench": global.hud_state = "workbench"; break;
-    case "forge": global.hud_state = "forge"; break;
-    case "alchemy": global.hud_state = "alchemy"; break;
+    case "null": global.hudState = "null"; break;
+    case "inventory1": global.hudState = "inventory1"; break;
+    case "inventory2": global.hudState = "inventory2"; break;
+    case "inventory3": global.hudState = "inventory3"; break;
+    case "inventory4": global.hudState = "inventory4"; break;
+    case "workbench": global.hudState = "workbench"; break;
+    case "forge": global.hudState = "forge"; break;
+    case "alchemy": global.hudState = "alchemy"; break;
 }
 </string>
           </argument>

@@ -308,13 +308,13 @@ if (global.auto_healing == 1
             <string>///Open inventory
 if (keyboard_check_pressed(vk_tab))
 {
-    if (global.hud_state == "null")
+    if (global.hudState == "null")
     {
         if (instance_exists(obj_player))
         {
             if (obj_player.action_state == "null")
             {
-                global.hud_state = "inventory1";
+                global.hudState = "inventory1";
                 pageUpdate = true;
                 current_page = 0;
                 
@@ -327,9 +327,9 @@ if (keyboard_check_pressed(vk_tab))
             }
         }
     }
-    else if (string_pos("inventory", string(global.hud_state)))
+    else if (string_pos("inventory", string(global.hudState)))
     {    
-        global.hud_state = "null";
+        global.hudState = "null";
         pageUpdate = true;
         scr_savegame();
     }
@@ -377,7 +377,7 @@ scr_page_change();
           <argument>
             <kind>1</kind>
             <string>///Reset pageUpdate &amp; createOnce
-if (!string_pos("inventory", string(global.hud_state)))
+if (!string_pos("inventory", string(global.hudState)))
 {
     pageUpdate = true;
     createOnce = true;
@@ -411,16 +411,16 @@ draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
-if (global.hud_state == "inventory1")
+if (global.hudState == "inventory1")
 {
     scr_list_items();
 }
-else if (global.hud_state == "inventory2")
+else if (global.hudState == "inventory2")
 {
     scr_st_draw_info();
     scr_st_create_skills();
 }
-else if(global.hud_state == "inventory3")
+else if(global.hudState == "inventory3")
 {
     //Icon
     draw_sprite(spr_death_counter, 0, view_xview+30, view_yview+120);
@@ -526,7 +526,7 @@ draw_set_valign(fa_middle);
 
 if (draw_name == true)
 {
-    if (global.hud_state == "null")
+    if (global.hudState == "null")
     {
         draw_text_colour(view_xview+450, view_yview+260+text_y_pos, string(name[t]),
                          c_black, c_black, c_black, c_black, name_alpha);

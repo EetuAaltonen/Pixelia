@@ -50,7 +50,7 @@ confirmed = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state != "inventory1")
+            <string>if (global.hudState != "inventory1")
 {
     if (instance_exists(obj_button_decrease))
     {

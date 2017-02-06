@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Alchemy bg
-if (global.hud_state == "alchemy")
+if (global.hudState == "alchemy")
 {
     //Alchemy background
     draw_sprite(spr_inventory_background, 0, view_xview, view_yview);

@@ -56,7 +56,7 @@ mp_grid_add_instances(grid, obj_map_mountain, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state != "map")
+            <string>if (global.hudState != "map")
 {
     mp_grid_destroy(grid);
 }

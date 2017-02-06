@@ -120,7 +120,7 @@ if (distance_to_point(mouse_x, mouse_y) == 0)
           <argument>
             <kind>1</kind>
             <string>///Destroy function
-if (global.hud_state == "inventory2")
+if (global.hudState == "inventory2")
 {
     if (obj_inventory_controller.pageUpdate == true)
     {

@@ -60,8 +60,8 @@ draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
-if (global.hud_state == "forge" ||
-    global.hud_state == "alchemy")
+if (global.hudState == "forge" ||
+    global.hudState == "alchemy")
 {
     scr_list_items();
 }

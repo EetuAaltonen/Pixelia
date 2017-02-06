@@ -87,7 +87,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not(global.hud_state == "alchemy")
+            <string>if not(global.hudState == "alchemy")
 {
     instance_destroy();
 }

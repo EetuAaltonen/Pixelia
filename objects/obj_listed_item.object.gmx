@@ -79,21 +79,21 @@ if (get_attributes == true)
           <argument>
             <kind>1</kind>
             <string>///Destroy function
-if (global.hud_state == "inventory1")
+if (global.hudState == "inventory1")
 {
     if (obj_inventory_controller.pageUpdate == true)
     {
         instance_destroy();
     }
 }
-else if (global.hud_state == "forge")
+else if (global.hudState == "forge")
 {
     if (obj_crafting_controller.pageUpdate == true)
     {
         instance_destroy();
     }
 }
-else if (global.hud_state == "alchemy")
+else if (global.hudState == "alchemy")
 {
     if (obj_crafting_controller.pageUpdate == true)
     {

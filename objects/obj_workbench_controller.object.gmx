@@ -60,7 +60,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
 //Forge
-if (global.hud_state == "forge")
+if (global.hudState == "forge")
 {
     if (update_list == true)
     {

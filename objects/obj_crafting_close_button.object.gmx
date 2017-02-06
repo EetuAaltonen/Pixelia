@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>///Instance destroy
-if (global.hud_state == "null")
+if (global.hudState == "null")
 {
     instance_destroy();
 }
@@ -76,7 +76,7 @@ if (global.hud_state == "null")
           <argument>
             <kind>1</kind>
             <string>///Set hud state null
-global.hud_state = "null";
+global.hudState = "null";
 </string>
           </argument>
         </arguments>

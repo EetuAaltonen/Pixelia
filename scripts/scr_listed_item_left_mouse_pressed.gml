@@ -1,4 +1,4 @@
-if (global.hud_state != "null")
+if (global.hudState != "null")
 {
     if (instance_exists(obj_crafting_slot_1) &&
         instance_exists(obj_crafting_slot_2) &&

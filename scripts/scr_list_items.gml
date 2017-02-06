@@ -94,7 +94,7 @@ if (item_count > 0)
         draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
         //Item amount
         draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
-        if (string_pos("inventory", string(global.hud_state)))
+        if (string_pos("inventory", string(global.hudState)))
         {
             //Item weight background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
@@ -114,7 +114,7 @@ if (item_count > 0)
     }
     //Draw page number and max
     draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
-    if (string_pos("inventory", string(global.hud_state)))
+    if (string_pos("inventory", string(global.hudState)))
     {
         //Item info background
         draw_sprite(spr_inv_item_info_bg, 0,view_xview+334, view_yview+85);

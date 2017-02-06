@@ -1,5 +1,5 @@
 ///Start dropping items
-if (global.hud_state == "inventory1")
+if (global.hudState == "inventory1")
 {
     if (dropping_item == false)
     {

@@ -50,7 +50,7 @@ hudState = "inventoryNull";
           <argument>
             <kind>1</kind>
             <string>//Delete created objects
-global.hud_state = "null";
+global.hudState = "null";
 scr_first_loading_screen_objects();
 var i, object;
 var arrayLength = array_length_1d(Object);

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Map
-if (global.hud_state == "map")
+if (global.hudState == "map")
 {
     draw_sprite(spr_world_map,0,view_xview,view_yview);
 }
@@ -52,15 +52,15 @@ if (global.hud_state == "map")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state == "null" || global.hud_state == "map")
+            <string>if (global.hudState == "null" || global.hudState == "map")
 {
-    if (global.hud_state == "map")
+    if (global.hudState == "map")
     {
-        global.hud_state = "null";
+        global.hudState = "null";
     }
     else
     {
-        global.hud_state = "map";
+        global.hudState = "map";
         instance_create(view_xview+250, view_yview+100, obj_map_mountain);
         instance_create(view_xview+280, view_yview+110, obj_map_mountain);
         instance_create(view_xview+310, view_yview+120, obj_map_mountain);

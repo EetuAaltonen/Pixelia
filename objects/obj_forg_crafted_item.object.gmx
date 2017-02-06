@@ -164,7 +164,7 @@ if (recipe_check == true)
           <argument>
             <kind>1</kind>
             <string>///Instance destory
-if (global.hud_state != "forge")
+if (global.hudState != "forge")
 {
     instance_destroy();
 }

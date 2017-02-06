@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Instance destroy
-if (!string_pos("inventory", string(global.hud_state)))
+if (!string_pos("inventory", string(global.hudState)))
 {
     instance_destroy();
 }
@@ -53,9 +53,9 @@ if (!string_pos("inventory", string(global.hud_state)))
           <argument>
             <kind>1</kind>
             <string>///Change hudState
-if (global.hud_state != hudState)
+if (global.hudState != hudState)
 {
-    global.hud_state = hudState;
+    global.hudState = hudState;
     obj_inventory_controller.pageUpdate = true;
     obj_inventory_controller.createOnce = true;
 }
@@ -111,7 +111,7 @@ draw_text(x + (sprite_width/2), y + (sprite_height/2), text);
           <argument>
             <kind>1</kind>
             <string>///Selected
-if (hudState == global.hud_state)
+if (hudState == global.hudState)
 {
     var imageBlend = 100;
     image_blend = make_colour_hsv(0, 0, imageBlend);

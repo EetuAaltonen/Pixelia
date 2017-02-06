@@ -1,8 +1,8 @@
-if (global.hud_state == "forge")
+if (global.hudState == "forge")
 {
     scr_forge_recipes();
 }
-else if (global.hud_state == "alchemy")
+else if (global.hudState == "alchemy")
 {
     scr_alchemy_recipes();
 }

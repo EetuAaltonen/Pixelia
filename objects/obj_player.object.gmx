@@ -416,7 +416,7 @@ sprite_index = spr_player;
             <kind>1</kind>
             <string>///Action states
 //If some menu is open
-if (global.hud_state != "null")
+if (global.hudState != "null")
 {
     //Gravity
     scr_custom_gravity();
@@ -829,63 +829,7 @@ draw_text(x, y-30, string(action_state));
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="69">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Use
-if (global.hud_state = "null")
-{
-    if (action_state == "null" || action_state == "jump")
-    {
-        instance_create(x,y,obj_use);
-    }
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Reset action state
-if (action_state == "mining" || action_state == "woodcutting" || action_state == "sitting" || action_state == "fishing")
-{
-    scr_plr_set_action_state_null();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="87">
+    <event eventtype="9" enumb="87">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -926,7 +870,7 @@ if (global.mana &gt;= 5)
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="83">
+    <event eventtype="9" enumb="83">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -961,7 +905,7 @@ else if (action_state == "bow")
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="81">
+    <event eventtype="9" enumb="81">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1002,7 +946,63 @@ if (action_state == "null" || action_state == "jump")
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="65">
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Use
+if (global.hudState = "null")
+{
+    if (action_state == "null" || action_state == "jump")
+    {
+        instance_create(x,y,obj_use);
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset action state
+if (action_state == "mining" || action_state == "woodcutting" || action_state == "sitting" || action_state == "fishing")
+{
+    scr_plr_set_action_state_null();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="65">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1030,7 +1030,7 @@ if (action_state == "null" || action_state == "jump")
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="46">
+    <event eventtype="9" enumb="46">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1052,7 +1052,7 @@ if (action_state == "null" || action_state == "jump")
 global.enemy_stats1 = 0;
 global.enemy_stats2 = 0;
 global.enemy_stats3 = 0;
-global.hud_state = "null";
+global.hudState = "null";
 room_restart();
 </string>
           </argument>

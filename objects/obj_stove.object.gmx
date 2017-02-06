@@ -79,10 +79,10 @@ depth_ = depth;
     {
         with (obj_use) instance_destroy();
     }
-    if (global.hud_state != "forge" &amp;&amp; can_open_or_close == true)
+    if (global.hudState != "forge" &amp;&amp; can_open_or_close == true)
     {
         can_open_or_close = false;
-        global.hud_state = "forge";
+        global.hudState = "forge";
         alarm[1] = 30;
         
         //Create
@@ -121,10 +121,10 @@ depth_ = depth;
             <string>///Press Tab or 'E' to close forge
 if (keyboard_check_pressed(ord('E') || keyboard_check_pressed(vk_tab)))
 {
-    if (global.hud_state == "forge" and can_open_or_close == true)
+    if (global.hudState == "forge" and can_open_or_close == true)
     {
         can_open_or_close = false;
-        global.hud_state = "null";
+        global.hudState = "null";
         alarm[1] = 30;
     }
 }

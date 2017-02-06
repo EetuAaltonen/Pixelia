@@ -28,9 +28,8 @@
             <string>///Create variables
 image_speed = 0;
 
-mana_usage = 1;
-manreg = 2;
-mana_regerate = 1;
+manaUsage = 1;
+manaRegerate = true;
 alarm[1] = 50; //Mana regeration
 alarm[2] = 10; //Mana usage
 </string>
@@ -55,7 +54,8 @@ alarm[2] = 10; //Mana usage
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mana_regerate = 1;
+            <string>///Mana can regenerate
+manaRegerate = true;
 
 //Fix draw error
 global.mana = round(global.mana);
@@ -81,7 +81,8 @@ global.mana = round(global.mana);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mana_usage = 1;
+            <string>///Mana usage
+manaUsage = false;
 </string>
           </argument>
         </arguments>
@@ -104,11 +105,12 @@ global.mana = round(global.mana);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 100; //Mana regeration
-if (mana_regerate == 1)
+            <string>///Mana regenerate
+if (manaRegerate == true)
 {
-    global.mana += manreg + global.manreg_plus;
+    global.mana += global.manaRegenAmount + global.manaRegenPlus;
 }
+alarm[1] = global.manaRegenSpeed;
 </string>
           </argument>
         </arguments>
@@ -133,9 +135,9 @@ if (mana_regerate == 1)
             <kind>1</kind>
             <string>if (instance_exists(obj_player))
 {
-    if (global.mana &gt; (10 + global.man_plus))
+    if (global.mana &gt; (10 + global.manaPlus))
     {
-        global.mana = (10 + global.man_plus);
+        global.mana = (10 + global.manaPlus);
     }
     else if (global.mana &lt; 0)
     {
@@ -143,17 +145,36 @@ if (mana_regerate == 1)
     }
     
     if (global.mana &gt;= 0
-        and mana_usage == 1
+        and manaUsage == 1
         and obj_player.sprite_index == spr_plr_shield)
     {
-        mana_usage = 0;
-        mana_regerate = 0;
+        manaUsage = 0;
+        manaRegerate = false;
         alarm[1] = 5;
         alarm[3] = 50;
     }
 }
-
-//Mana image_index
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Mana image index
 switch (global.mana)
 {
     case 20: image_index = 0; break;
@@ -200,10 +221,10 @@ switch (global.mana)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_player))
+            <string>///Draw mana bar
+if (instance_exists(obj_player))
 {
-    draw_sprite_ext(sprite_index, image_index, view_xview+4, view_yview+40,
-                    image_xscale, image_yscale, image_angle, c_white, image_alpha);
+    draw_sprite(sprite_index, image_index, view_xview+4, view_yview+40,);
 }
 </string>
           </argument>

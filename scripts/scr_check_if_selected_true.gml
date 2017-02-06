@@ -1,4 +1,4 @@
-if (global.hud_state == "forge")
+if (global.hudState == "forge")
 {
     if (x == obj_forg_slot_1.x and y == obj_forg_slot_1.y)
     {
@@ -17,7 +17,7 @@ if (global.hud_state == "forge")
         selected = false;
     }
 }
-else if (global.hud_state == "alchemy")
+else if (global.hudState == "alchemy")
 {
     if (x == obj_alch_slot_1.x and y == obj_alch_slot_1.y)
     {

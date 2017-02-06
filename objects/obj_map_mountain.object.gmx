@@ -49,7 +49,7 @@ image_index = random_range(0,2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state != "map")
+            <string>if (global.hudState != "map")
 {
     instance_destroy();
 }

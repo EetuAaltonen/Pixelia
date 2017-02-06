@@ -50,7 +50,7 @@ number = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.hud_state != "forge")
+            <string>if (global.hudState != "forge")
 {
     global.forg_slot_1 = false;
     instance_destroy();  

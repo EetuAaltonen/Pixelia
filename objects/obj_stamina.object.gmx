@@ -105,12 +105,12 @@ staminaUsage = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stamina regerate
+            <string>///Stamina regenerate
 if (staminaRegerate == true)
 {
-    global.stamina += global.staminaRegenAmount + global.stamreg_plus;
+    global.stamina += global.staminaRegenAmount + global.staminaRegenPlus;
 }
-alarm[1] = 50;
+alarm[1] = global.staminaRegenSpeed;
 </string>
           </argument>
         </arguments>
@@ -136,9 +136,9 @@ alarm[1] = 50;
             <string>///Stamina usage
 if (instance_exists(obj_player))
 {
-    if (global.stamina &gt; (10 + global.stam_plus))
+    if (global.stamina &gt; (10 + global.staminaPlus))
     {
-        global.stamina = (10 + global.stam_plus);
+        global.stamina = (10 + global.staminaPlus);
     }
     else if (global.stamina &lt; 0)
     {

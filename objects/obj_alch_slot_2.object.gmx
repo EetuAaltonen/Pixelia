@@ -50,7 +50,7 @@ number = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not (global.hud_state == "alchemy")
+            <string>if not (global.hudState == "alchemy")
 {
     global.alch_slot_2 = false;
     instance_destroy();  

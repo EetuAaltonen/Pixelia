@@ -107,7 +107,7 @@ else
             <kind>1</kind>
             <string>if (instance_exists(obj_map_cargo_cart))
 {
-    if (global.hud_state == "map")
+    if (global.hudState == "map")
     {
         if (distance_to_object(obj_map_castle) == 0)
         {
@@ -148,7 +148,7 @@ else if (room == First_loading)
 }
 else
 {
-    if (global.hud_state != "null")
+    if (global.hudState != "null")
     {
         draw_self();
     }

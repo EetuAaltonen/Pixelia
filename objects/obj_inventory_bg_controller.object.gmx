@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Inventory bg
-if (string_pos("inventory", string(global.hud_state)))
+if (string_pos("inventory", string(global.hudState)))
 {
     draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
 }

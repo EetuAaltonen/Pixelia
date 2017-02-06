@@ -29,7 +29,7 @@
 load = false;
 
 /*[Hud state &amp; Room change]*/
-    global.hud_state = "null";
+    global.hudState = "null";
     global.room_change = 0;
 
 /*[Enemies' stats]*/
@@ -65,16 +65,19 @@ load = false;
     //Armor
     global.max_armor = 2;
     global.armor = 2;
-    global.armor_reg_time = 500;
+    global.armorRegenSpeed = 500;
     //Stamina
-    global.stam_plus = 0; //Max = 10
-    global.stamina = (10 + global.stam_plus);
+    global.staminaPlus = 0; //Max = 10
+    global.stamina = (10 + global.staminaPlus);
     global.staminaRegenAmount = 1;
-    global.stamreg_plus = 0; //skill NEEDED???
+    global.staminaRegenSpeed = 50;
+    global.staminaRegenPlus = 0; //skill NEEDED???
     //Mana
-    global.man_plus = 0; //Max = 10
-    global.mana = (10 + global.man_plus);
-    global.manreg_plus = 0; //skill NEEDED????
+    global.manaPlus = 0; //Max = 10
+    global.mana = (10 + global.staminaPlus);
+    global.manaRegenAmount = 1;
+    global.manaRegenSpeed = 100;
+    global.manaRegenPlus = 0; //skill NEEDED???
     //Movement
     global.load = 0; //Carrying - slow your movement
     //Level
