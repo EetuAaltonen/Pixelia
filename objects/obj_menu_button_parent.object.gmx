@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_screen_controller.menu_state != menu_state)
+            <string>///Instance destroy
+if (obj_screen_controller.menu_state != menu_state)
 {
     instance_destroy();
 }

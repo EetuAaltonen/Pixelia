@@ -52,7 +52,7 @@ alarm[1] = global.armorRegenSpeed;
           <argument>
             <kind>1</kind>
             <string>///Armor regeration
-if (global.armor &lt; global.max_armor)
+if (global.armor &lt; global.maxArmor)
 {
     global.armor += armor_reg;
     alarm[1] = global.armorRegenSpeed;
@@ -80,7 +80,7 @@ if (global.armor &lt; global.max_armor)
           <argument>
             <kind>1</kind>
             <string>///Lives image_index
-switch (global.player_health)
+switch (global.health)
 {
     case 20: image_index = 0; break;
     case 19: image_index = 1; break;

@@ -2,7 +2,7 @@ if (file_exists(global.save_file))
 {
     ini_open(global.save_file);
     global.current_room = ini_read_real(global.save_file,"room",Test_improved);
-    global.player_health = ini_read_real(global.save_file,"health",20);
+    global.health = ini_read_real(global.save_file,"health",20);
     
     global.total_item_weight = ini_read_real(global.save_file,"weight_of_items",0);
     

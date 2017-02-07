@@ -60,10 +60,11 @@ load = false;
 
 /*[Player]*/
     //Health
-    global.player_health = 20;
+    global.health = 20;
     global.damage = 1;
     //Armor
-    global.max_armor = 2;
+    global.maxArmor = 2;
+    global.armorPlus = 0;
     global.armor = 2;
     global.armorRegenSpeed = 500;
     //Stamina
@@ -79,7 +80,8 @@ load = false;
     global.manaRegenSpeed = 100;
     global.manaRegenPlus = 0; //skill NEEDED???
     //Movement
-    global.load = 0; //Carrying - slow your movement
+    global.movementSpeed = 0; //Carrying - slow your movement
+    global.load = 0;
     //Level
     global.level = 1;
     global.xp = 0;

@@ -1,5 +1,5 @@
-hspeed = 0;
-sprite_index = spr_player;
-solid = true;
-mask_index = spr_player;
-action_state = "null";
+obj_player.hspeed = 0;
+obj_player.sprite_index = spr_player;
+obj_player.solid = true;
+obj_player.mask_index = spr_player;
+obj_player.action_state = "null";

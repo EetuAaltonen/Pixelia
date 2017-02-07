@@ -57,7 +57,7 @@ if (instance_exists(obj_plr_hitbox))
         {
             if ((global.armor - damage) &lt; 0)
             {
-                global.player_health += (global.armor - damage);
+                global.health += (global.armor - damage);
             }
             if (global.armor &gt; 0)
             {

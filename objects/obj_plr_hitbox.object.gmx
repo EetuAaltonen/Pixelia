@@ -139,7 +139,7 @@ else
         (instance_nearest(x , y, obj_spikes)).image_index = 1;
         (instance_nearest(x , y, obj_spikes)).alarm[1] = 2000;
     }
-    global.player_health -= 1;
+    global.health -= 1;
     scr_got_damage();
 }
 </string>

@@ -96,8 +96,6 @@
       <sprite>sprites\spr_arrow_pouch</sprite>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_coin</sprite>
-      <sprite>sprites\spr_fishing_spot</sprite>
-      <sprite>sprites\spr_fishing_vein</sprite>
       <sprite>sprites\spr_gold_ore</sprite>
       <sprite>sprites\spr_icon_iron_ore</sprite>
       <sprite>sprites\spr_icon_log</sprite>
@@ -106,6 +104,14 @@
         <sprite>sprites\spr_source_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree_hit</sprite>
         <sprite>sprites\spr_oak_log</sprite>
+      </sprites>
+      <sprites name="Fishing">
+        <sprite>sprites\spr_fishing_spot</sprite>
+        <sprite>sprites\spr_fishing_vein</sprite>
+        <sprite>sprites\spr_fishing_bobber</sprite>
+        <sprite>sprites\spr_fishing_mini_game_bg</sprite>
+        <sprite>sprites\spr_fishing_mini_game_area_1</sprite>
+        <sprite>sprites\spr_fishing_mini_game_area_2</sprite>
       </sprites>
     </sprites>
     <sprites name="Crafting">
@@ -343,7 +349,6 @@
         <sprite>sprites\spr_abilitylights</sprite>
       </sprites>
       <sprite>sprites\spr_body</sprite>
-      <sprite>sprites\spr_fishing_bobber</sprite>
       <sprite>sprites\spr_fishing_line</sprite>
       <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_hitbox_small</sprite>
@@ -579,6 +584,11 @@
         <object>objects\obj_salmon</object>
         <object>objects\obj_tuna</object>
       </objects>
+      <objects name="Fishing">
+        <object>objects\obj_fishing_bobber</object>
+        <object>objects\obj_fishing_spot</object>
+        <object>objects\obj_fishing_vein</object>
+      </objects>
       <objects name="Ingredients">
         <object>objects\obj_barbarea_vulgaris</object>
         <object>objects\obj_camomile</object>
@@ -590,13 +600,12 @@
         <object>objects\obj_water_flask</object>
         <object>objects\obj_ingredient_parent</object>
       </objects>
+      <object>objects\obj_arrow_pouch</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_coin</object>
       <object>objects\obj_coin_collected</object>
       <object>objects\obj_coin_dropped</object>
       <object>objects\obj_dropped_item</object>
-      <object>objects\obj_fishing_spot</object>
-      <object>objects\obj_fishing_vein</object>
       <object>objects\obj_medicpack</object>
       <object>objects\obj_potion_collected</object>
       <objects name="Ores">
@@ -608,7 +617,6 @@
       <objects name="Trees">
         <object>objects\obj_source_oak_tree</object>
       </objects>
-      <object>objects\obj_arrow_pouch</object>
     </objects>
     <objects name="Crafting">
       <object>objects\obj_alchemy_station</object>
@@ -785,7 +793,6 @@
           <object>objects\obj_plr_slice</object>
         </objects>
       </objects>
-      <object>objects\obj_fishing_bobber</object>
       <object>objects\obj_player</object>
       <object>objects\obj_plr_aim</object>
       <object>objects\obj_plr_bow</object>

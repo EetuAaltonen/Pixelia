@@ -78,10 +78,10 @@ if (global.coins &lt; 0)
 //Auto-healing
 if (global.auto_healing == 1
     and global.potions &gt; 0
-    and global.player_health &lt; 5)
+    and global.health &lt; 5)
 {
     global.potions -= 1;
-    global.player_health += 10;
+    global.health += 10;
 }
 </string>
           </argument>

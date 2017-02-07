@@ -5,7 +5,7 @@ ini_write_real("Save1","logs",SavedLogs);
 ini_close();
 
 var SavedRoom = global.current_room; //base64_encode(string(global.current_room));
-var SavedHealth = global.player_health;
+var SavedHealth = global.health;
 
 var SavedLevel = global.level;
 var SavedXp = global.xp;

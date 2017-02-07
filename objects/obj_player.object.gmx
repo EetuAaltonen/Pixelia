@@ -791,7 +791,7 @@ scr_falling_damage();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.player_health = 0;
+            <string>global.health = 0;
 scr_plr_dead();
 </string>
           </argument>
