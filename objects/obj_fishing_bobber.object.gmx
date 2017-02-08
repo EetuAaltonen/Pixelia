@@ -31,9 +31,38 @@ catchFish = false;
 bobberX = 20;
 bobberSpeed = 1;
 bobberDirection = 1;
+bobberRotateDirection = 1;
+bobberRotateSpeed = 2;
+bobberTempImageAngle = image_angle;
+imageAngle = bobberTempImageAngle;
 screenCenterPointX = view_wview/2;
 depth_ = depth;
 alarm[3] = random_range(100, 200);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Image angle
+imageAngle += (1 * bobberRotateDirection);
+alarm[6] = bobberRotateSpeed;
 </string>
           </argument>
         </arguments>
@@ -114,6 +143,7 @@ if (instance_exists(obj_player))
 catchFish = true;
 show_message("Be ready!");
 alarm[4] = bobberSpeed;
+alarm[6] = bobberRotateSpeed;
 
 </string>
           </argument>
@@ -197,6 +227,41 @@ else if ((view_xview + screenCenterPointX + bobberX) &lt; (view_xview + screenCe
     bobberDirection = 1;
     bobberX += 2;
     alarm[4] = bobberSpeed;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bobber image angle
+if (imageAngle &gt; 15 &amp;&amp;
+    bobberRotateDirection == 1)
+{
+    imageAngle -= 1;
+    bobberRotateDirection = -1;
+    alarm[6] = bobberRotateSpeed;
+}
+else if (imageAngle &lt; -15 &amp;&amp;
+    bobberRotateDirection == -1)
+{
+    imageAngle += 1;
+    bobberRotateDirection = 1;
+    alarm[6] = bobberRotateSpeed;
 }
 </string>
           </argument>
@@ -337,7 +402,8 @@ if (catchFish)
     draw_sprite(spr_fishing_mini_game_bg, 0, viewXCenter, viewYCenter);
     draw_sprite(spr_fishing_mini_game_area_2, 0, viewXCenter, viewYCenter); 
     draw_sprite(spr_fishing_mini_game_area_1, 0, viewXCenter, viewYCenter);
-    draw_sprite_ext(spr_fishing_bobber, 0, viewXCenter + bobberX, viewYCenter, 3, 3, 0, c_white, 1);
+    draw_sprite_ext(spr_fishing_bobber, 0, viewXCenter + bobberX, viewYCenter, 3, 3, imageAngle, c_white, 1);
+    draw_text(viewXCenter + bobberX, viewYCenter - 20,string(imageAngle));
 }
 </string>
           </argument>
@@ -364,6 +430,8 @@ if (catchFish)
             <string>///Stop bobber
 bobberSpeed = 0;
 alarm[5] = 100;
+alarm[6] = -1;
+imageAngle = 0;
 </string>
           </argument>
         </arguments>
