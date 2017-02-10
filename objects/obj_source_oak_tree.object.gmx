@@ -58,7 +58,8 @@ scr_woodcutting_dust();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>source = 5;
+            <string>///Reset source
+source = 5;
 </string>
           </argument>
         </arguments>
@@ -81,11 +82,11 @@ scr_woodcutting_dust();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_player))
+            <string>///Hit
+if (instance_exists(obj_player))
 {
     if (source &gt; 0 &amp;&amp; obj_player.action_state == "woodcutting")
     {
-        //Hit
         scr_source_hit();
         source -= 1;
         alarm[0] = 50;
@@ -119,7 +120,7 @@ scr_woodcutting_dust();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Image index
+            <string>///Image index
 scr_source_image_index();
 </string>
           </argument>
@@ -141,7 +142,7 @@ scr_source_image_index();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collect
+            <string>///Start chopping
 if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1))
 {
     if (instance_exists(obj_use))
@@ -176,7 +177,8 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Highlight self
+draw_self();
 if (source &gt; 0)
 {
     scr_highlight_self();

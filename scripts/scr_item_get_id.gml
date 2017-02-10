@@ -38,7 +38,10 @@ else if (typeId == 3)
 }
 else if (typeId == 4)
 {
-
+    switch (sprite_index_)
+    {
+        case spr_icon_salmon: itemId = 1;break;
+    }
 }
 else if (typeId == 5)
 {

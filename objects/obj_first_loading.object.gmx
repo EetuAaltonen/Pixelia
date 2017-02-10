@@ -59,14 +59,19 @@ load = false;
             <string>///Global variables - Player
 
 /*[Player]*/
-    //Health
-    global.health = 20;
+    //Can get damage
     global.damage = 1;
+    //Health
+    global.maxArmor = 10;
+    global.healthPlus = 0;
+    global.health = 10;
     //Armor
     global.maxArmor = 2;
     global.armorPlus = 0;
-    global.armor = 2;
-    global.armorRegenSpeed = 500;
+    global.armor = (0 + global.armorPlus);
+    global.armorRegenAmount = 1;
+    global.armorRegenSpeed = 50;
+    global.armorRegenPlus = 0; //skill NEEDED???
     //Stamina
     global.staminaPlus = 0; //Max = 10
     global.stamina = (10 + global.staminaPlus);
