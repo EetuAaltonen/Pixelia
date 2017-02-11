@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Hotbar bg
-draw_sprite_ext(spr_hotbar_bg, image_index, view_xview+0, view_yview+270,
-                image_xscale, image_yscale, image_angle, c_white, image_alpha);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

@@ -8,30 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>obj_forge</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Can open or close
-//canOpenClose = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -56,7 +32,7 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
     {
         with (obj_use) instance_destroy();
     }
-    if (global.hudState != hudState/* &amp;&amp; canOpenClose == true*/)
+    if (global.hudState != hudState)
     {
         //canOpenClose = false;
         //Create slots
@@ -70,11 +46,8 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
         
         global.hudState = hudState;
         
-        obj_crafting_controller.createOnce = true;
         obj_crafting_controller.pageUpdate = true;
         obj_crafting_controller.current_page = 0;
-        
-        //alarm[1] = 30;
     }
 }
 </string>
@@ -102,11 +75,10 @@ if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0
             <string>///Press Tab or 'E' to close forge
 if (keyboard_check_pressed(ord('E') || keyboard_check_pressed(vk_tab)))
 {
-    if (global.hudState == hudState/* and canOpenClose == true*/)
+    if (global.hudState == hudState)
     {
         //canOpenClose = false;
         global.hudState = "null";
-        //alarm[1] = 30;
     }
 }
 </string>

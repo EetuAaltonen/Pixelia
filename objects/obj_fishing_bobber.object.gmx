@@ -38,6 +38,9 @@ bobberRotateSpeed = 2;
 bobberTempImageAngle = image_angle;
 imageAngle = bobberTempImageAngle;
 
+//Success text
+successText = "";
+
 viewXCenter = view_xview + view_wview/2;
 viewYCenter = view_yview + view_hview/2;
 
@@ -458,7 +461,17 @@ if (catchFish)
     draw_sprite_ext(spr_fishing_mini_game_area_2, 0, viewXCenter - (area1Xscale/2*4), viewYCenter, area1Xscale*4, 1, 0, c_white, 1);
     draw_sprite_ext(spr_fishing_mini_game_area_1, 0, viewXCenter - area1Xscale/2, viewYCenter, area1Xscale, 1, 0, c_white, 1);
     draw_sprite_ext(spr_fishing_bobber, 0, viewXCenter + bobberX, viewYCenter, 3, 3, imageAngle, c_white, 1);
-    draw_text(viewXCenter + bobberX, viewYCenter - 20,string(imageAngle));
+    
+    if (bobberSpeed == 0)
+    {
+        //Font
+        draw_set_font(fnt_inventory_text);
+        draw_set_color(c_black);
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        
+        draw_text(viewXCenter, viewYCenter - 20,string(successText));
+    }
 }
 </string>
           </argument>
@@ -488,20 +501,22 @@ if ((viewXCenter + bobberX) &lt; viewXCenter + (area1Xscale/2) &amp;&amp;
     (viewXCenter + bobberX) &gt; viewXCenter - (area1Xscale/2))
 {
     catchChange = 1;
+    successText = "Great!";
 }
 else if ((viewXCenter + bobberX) &lt; (viewXCenter + (area1Xscale/2*4)) &amp;&amp;
         (viewXCenter + bobberX) &gt; (viewXCenter - (area1Xscale/2*4)))
 {
     catchChange = 0.5;
+    successText = "Nice!";
 }
 else
 {
     catchChange = 0.02;
+    successText = "Fail!";
 }
-
-alarm[5] = 100;
 alarm[6] = -1;
 imageAngle = 0;
+alarm[5] = 100;
 </string>
           </argument>
         </arguments>

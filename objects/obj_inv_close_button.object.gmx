@@ -3,7 +3,7 @@
   <spriteName>spr_inv_close_button</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5002</depth>
+  <depth>-5003</depth>
   <persistent>-1</persistent>
   <parentName>obj_inv_button_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>

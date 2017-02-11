@@ -460,13 +460,16 @@
       <script>scripts\scr_check_if_instance_destroy.gml</script>
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
+      <script>scripts\scr_list_id_type.gml</script>
+      <script>scripts\scr_list_id_type_alchemy.gml</script>
+      <script>scripts\scr_list_id_type_forge.gml</script>
+      <script>scripts\scr_list_id_type_inventory.gml</script>
+      <script>scripts\scr_list_id_type_shop.gml</script>
       <script>scripts\scr_list_items.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed.gml</script>
+      <script>scripts\scr_listed_item_left_mouse_pressed_crafting.gml</script>
+      <script>scripts\scr_listed_item_left_mouse_pressed_shop.gml</script>
       <script>scripts\scr_listed_item_right_mouse_pressed.gml</script>
-      <script>scripts\scr_list_id_type.gml</script>
-      <script>scripts\scr_list_id_type_inventory.gml</script>
-      <script>scripts\scr_list_id_type_forge.gml</script>
-      <script>scripts\scr_list_id_type_alchemy.gml</script>
     </scripts>
     <scripts name="Menu">
       <script>scripts\scr_menu_orb_create.gml</script>

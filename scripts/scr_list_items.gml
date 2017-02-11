@@ -45,6 +45,12 @@ if (pageUpdate == true)
             item_weight[typeId,itemId] = string(Weight[typeId,itemId]);
             global.total_item_weight += (Weight[typeId,itemId] * item_amount[typeId,itemId]);
             
+            if (global.hudState == "shop")
+            {
+                //Item price
+                item_price[typeId,itemId] = string(Price[typeId,itemId]);
+            }
+            
             //Draw
             item_typeId_draw[i] = typeId;
             item_sprite_draw[i] = item_sprite[typeId,itemId];
@@ -52,6 +58,10 @@ if (pageUpdate == true)
             item_info_draw[i] = item_info[typeId,itemId];
             item_amount_draw[i] = item_amount[typeId,itemId];
             item_weight_draw[i] = item_weight[typeId,itemId];
+            if (global.hudState == "shop")
+            {
+                item_price_draw[i] = item_price[typeId,itemId];
+            }
             
             item_count += 1;
             i += 1;
@@ -81,7 +91,9 @@ if (item_count > 0)
             y_pos += 19;
         }
         y_pos = 120;
-    } 
+    }
+    //Background
+    draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
     for (i = start_count; i != end_count; i++;)
     {               
         //Item background
@@ -94,12 +106,19 @@ if (item_count > 0)
         draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
         //Item amount
         draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
-        if (string_pos("inventory", string(global.hudState)))
+        if (string_pos("inventory", string(global.hudState)) || global.hudState == "shop")
         {
             //Item weight background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
             //Item weight
             draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
+        }
+        if (global.hudState == "shop")
+        {
+            //Item price background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+362, view_yview+y_pos);
+            //Item price
+            draw_text(view_xview+341,view_yview+y_pos, string(item_price_draw[i]) + "  G");
         }
         
         y_pos += 19;

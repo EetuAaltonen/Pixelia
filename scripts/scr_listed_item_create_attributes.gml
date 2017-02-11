@@ -7,6 +7,8 @@ dropping_item = false;
 createOnce = true;
 selected = false;
 item_info = "";
+//Price (only in shops)
+price = 0;
 //Needed for crafting
 prev_x = x;
 prev_y = x;

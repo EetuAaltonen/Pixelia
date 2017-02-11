@@ -25,14 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw background
+            <string>/*///Draw background
 if (global.hudState == "forge" || global.hudState == "alchemy")
 {
     //Forge background
     draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
-
-    //Crafted material info background
-    draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
 }
 </string>
           </argument>

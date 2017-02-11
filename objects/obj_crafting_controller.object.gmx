@@ -64,6 +64,8 @@ if (global.hudState == "forge" ||
     global.hudState == "alchemy")
 {
     scr_list_items();
+    //Crafted material info background
+    draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
 }
 </string>
           </argument>

@@ -89,3 +89,5 @@ Sprite[5,1] = "spr_arrow_pouch";
 Name[5,1] = "Arrow";
 //Weight
 Weight[5,1] = 0.05;
+//Price
+Price[5,1] = 20;

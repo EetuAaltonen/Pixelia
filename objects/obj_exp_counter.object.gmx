@@ -3,7 +3,7 @@
   <spriteName>spr_counter</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5002</depth>
+  <depth>-5100</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -48,18 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_player))
-{
-    //Level and xp
-    if (global.xp &gt;= global.xp_limit)
-    {
-        global.skill_points += 1;
-        global.level += 1
-        global.xp_limit += 100;
-        global.xp = 0;
-    }  
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

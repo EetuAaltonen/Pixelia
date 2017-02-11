@@ -271,7 +271,7 @@ if (draw_name == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Coin
+            <string>///Coins and auto healing??
 if (global.coins &lt; 0)
 {
     global.coins = 0;
@@ -360,6 +360,8 @@ scr_page_change();
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -376,11 +378,16 @@ scr_page_change();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reset pageUpdate &amp; createOnce
-if (!string_pos("inventory", string(global.hudState)))
+            <string>///Level up
+if (instance_exists(obj_player))
 {
-    pageUpdate = true;
-    createOnce = true;
+    if (global.xp &gt;= global.xp_limit)
+    {
+        global.skill_points += 1;
+        global.level += 1
+        global.xp_limit += 100;
+        global.xp = 0;
+    }  
 }
 </string>
           </argument>
@@ -417,11 +424,15 @@ if (global.hudState == "inventory1")
 }
 else if (global.hudState == "inventory2")
 {
+    //Background
+    draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
     scr_st_draw_info();
     scr_st_create_skills();
 }
 else if(global.hudState == "inventory3")
 {
+    //Background
+    draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
     //Icon
     draw_sprite(spr_death_counter, 0, view_xview+30, view_yview+120);
     //Death counter
@@ -473,6 +484,95 @@ else if(global.hudState == "inventory3")
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Shop
+//Font
+draw_set_font(fnt_inventory_text);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
+if (global.hudState == "shop")
+{
+    scr_list_items();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collected item name
+//Font
+draw_set_font(fnt_collected_item_info_text);
+draw_set_color(c_black);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+if (draw_name == true)
+{
+    if (global.hudState == "null")
+    {
+        draw_text_colour(view_xview+450, view_yview+260+text_y_pos, string(name[t]),
+                         c_black, c_black, c_black, c_black, name_alpha);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hotbar background
+draw_sprite_ext(spr_hotbar_bg, image_index, view_xview+0, view_yview+270,
+                image_xscale, image_yscale, image_angle, c_white, image_alpha);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Level, Coins, Potions
 //Font
 draw_set_font(fnt_hotbar_text);
@@ -498,40 +598,6 @@ draw_text(view_xview+384,view_yview+286, string(global.potions));
 draw_sprite_ext(spr_potion_icon, image_index, view_xview+372, 
                 view_yview+286, image_scale_potion, image_scale_potion, 
                 image_angle, c_white, image_alpha);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Font
-draw_set_font(fnt_collected_item_info_text);
-draw_set_color(c_black);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-
-if (draw_name == true)
-{
-    if (global.hudState == "null")
-    {
-        draw_text_colour(view_xview+450, view_yview+260+text_y_pos, string(name[t]),
-                         c_black, c_black, c_black, c_black, name_alpha);
-    }
-}
 </string>
           </argument>
         </arguments>
