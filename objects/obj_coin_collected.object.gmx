@@ -57,7 +57,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed_ = obj_player.speed + 4;
+            <string>///Move to pouch
+speed_ = obj_player.speed + 4;
 if (instance_exists(obj_money_target) &amp;&amp; instance_exists(obj_player))
 {
     move_towards_point(obj_money_target.x, obj_money_target.y, speed_)

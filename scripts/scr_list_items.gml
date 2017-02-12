@@ -1,6 +1,9 @@
 if (pageUpdate == true)
 {
     createOnce = false;
+    //Clear item info
+    item_info_text = "Item info...";
+    
     if (instance_exists(obj_listed_item))
     {
         with (obj_listed_item) instance_destroy();
@@ -102,10 +105,20 @@ if (item_count > 0)
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
         //Item description
         draw_text(view_xview+56,view_yview+y_pos, string(item_name_draw[i]));
-        //Item amount background
-        draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-        //Item amount
-        draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
+        if (global.hudState == "shop")
+        {
+            //Item price background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
+            //Item price
+            draw_text(view_xview+207,view_yview+y_pos, string(item_price_draw[i]) + "  G");
+        }
+        else
+        {
+            //Item amount background
+            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
+            //Item amount
+            draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
+        }
         if (string_pos("inventory", string(global.hudState)) || global.hudState == "shop")
         {
             //Item weight background
@@ -113,14 +126,6 @@ if (item_count > 0)
             //Item weight
             draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
         }
-        if (global.hudState == "shop")
-        {
-            //Item price background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+362, view_yview+y_pos);
-            //Item price
-            draw_text(view_xview+341,view_yview+y_pos, string(item_price_draw[i]) + "  G");
-        }
-        
         y_pos += 19;
     }
     //Page number background
@@ -133,7 +138,7 @@ if (item_count > 0)
     }
     //Draw page number and max
     draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
-    if (string_pos("inventory", string(global.hudState)))
+    if (string_pos("inventory", string(global.hudState)) || global.hudState = "shop")
     {
         //Item info background
         draw_sprite(spr_inv_item_info_bg, 0,view_xview+334, view_yview+85);

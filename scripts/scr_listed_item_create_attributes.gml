@@ -12,5 +12,7 @@ price = 0;
 //Needed for crafting
 prev_x = x;
 prev_y = x;
+//Equipped
+equipped = false;
 //Get common attributes
 scr_common_attributes();

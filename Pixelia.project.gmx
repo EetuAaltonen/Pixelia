@@ -380,6 +380,7 @@
     <sprite>sprites\spr_gem</sprite>
     <sprite>sprites\spr_goal</sprite>
     <sprite>sprites\spr_inventory_button</sprite>
+    <sprite>sprites\spr_list_item_equipped_mark</sprite>
     <sprite>sprites\spr_night</sprite>
     <sprite>sprites\spr_no_mask</sprite>
     <sprite>sprites\spr_pause</sprite>
@@ -455,6 +456,7 @@
     </scripts>
     <scripts name="Listed items">
       <scripts name="Create/Initialize">
+        <script>scripts\scr_check_if_equipped.gml</script>
         <script>scripts\scr_listed_item_create_attributes.gml</script>
       </scripts>
       <script>scripts\scr_check_if_instance_destroy.gml</script>
