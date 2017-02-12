@@ -34,7 +34,8 @@ pageUpdate = true;
 createOnce = true; //Create objects once on the list
 
 item_info_text = "Item info...";
-
+//Filter
+filter = "null";
 //Coins
 image_scale_coin = 1;
 //Potion
@@ -317,6 +318,7 @@ if (keyboard_check_pressed(vk_tab))
                 global.hudState = "inventory1";
                 pageUpdate = true;
                 current_page = 0;
+                filter = "null";
                 
                 //Create buttons
                 instance_create(view_xview+4, view_yview+54, obj_inv_inventory_button);
@@ -620,14 +622,18 @@ draw_sprite_ext(spr_potion_icon, image_index, view_xview+372,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.potions &gt; 0 and global.health &lt; 20)
+            <string>///Use healing potion
+if (global.hudState == "null")
 {
-    global.potions -= 1;
-    global.health += 10;
-}
-else if (global.potions == 0 and image_scale_potion == 1)
-{
-    alarm[2] = 5;   
+    if (global.potions &gt; 0 and global.health &lt; 20)
+    {
+        global.potions -= 1;
+        global.health += 10;
+    }
+    else if (global.potions == 0 and image_scale_potion == 1)
+    {
+        alarm[2] = 5;   
+    }
 }
 </string>
           </argument>

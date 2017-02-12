@@ -3,7 +3,7 @@
   <spriteName>spr_text_box</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-5100</depth>
   <persistent>0</persistent>
   <parentName>obj_menu_button_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,6 +33,13 @@ txt_temp = "";
 blink_icon = "";
 blink_speed = 30;
 place_holder = "File name...";
+if (room != Menu)
+{
+    if (global.hudState == "inventory1")
+    {
+        place_holder = "Item name...";
+    }
+}
 enabled_keys = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
 //Menu state
 menu_state = "load_game";
@@ -106,6 +113,42 @@ if (selected == false &amp;&amp; txt == "")
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instance destroy
+if (room != Menu)
+{
+    //Destroy function
+    if (global.hudState == "inventory1")
+    {
+        if (obj_inventory_controller.pageUpdate == true)
+        {
+            instance_destroy();
+        }
+    }
+    else if (global.hudState != "inventory1")
+    {
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="5" enumb="1">
       <action>
@@ -160,6 +203,23 @@ if (selected == false &amp;&amp; txt == "")
         keyboard_string = "";
         blink_icon = "";
         selected = false;
+        if (global.hudState == "inventory1")
+        {
+            if (txt == "")
+            {
+                txt = place_holder;
+            }
+            if (txt != place_holder)
+            {
+                obj_inventory_controller.filter = txt;
+            }
+            else
+            {
+                obj_inventory_controller.filter = "null";
+            }
+            obj_inventory_controller.pageUpdate = true;
+            obj_inventory_controller.createOnce = true;
+        }
     }
 }
 </string>

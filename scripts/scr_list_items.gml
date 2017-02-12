@@ -3,6 +3,11 @@ if (pageUpdate == true)
     createOnce = false;
     //Clear item info
     item_info_text = "Item info...";
+    //Create search text box in inventory
+    if (global.hudState == "inventory1")
+    {
+        instance_create(view_xview+412, view_yview+230, obj_menu_text_box);
+    }
     
     if (instance_exists(obj_listed_item))
     {
@@ -33,41 +38,18 @@ if (pageUpdate == true)
         //Check if item amount > 0
         if (round(item_amount[typeId,itemId]) > 0)
         {
-            //Item
-            item_sprite[typeId,itemId] = Sprite[typeId,itemId];
-            
-            //Item name
-            item_name[typeId,itemId] = string(Name[typeId,itemId]);
-            
-            //Item info
-            item_info[typeId,itemId] = string(Info[typeId,itemId]);
-            
-            //Item amount is top of for loop
-            
-            //Item weight
-            item_weight[typeId,itemId] = string(Weight[typeId,itemId]);
-            global.total_item_weight += (Weight[typeId,itemId] * item_amount[typeId,itemId]);
-            
-            if (global.hudState == "shop")
+            filter = string_replace(string_lower(string(filter)), '_', ' ');
+            if (string_lower(filter) != "null")
             {
-                //Item price
-                item_price[typeId,itemId] = string(Price[typeId,itemId]);
+                if (string_pos(filter, string_lower(string(Name[typeId,itemId]))))
+                {
+                    scr_listed_item_initialize_list();
+                }
             }
-            
-            //Draw
-            item_typeId_draw[i] = typeId;
-            item_sprite_draw[i] = item_sprite[typeId,itemId];
-            item_name_draw[i] = item_name[typeId,itemId];
-            item_info_draw[i] = item_info[typeId,itemId];
-            item_amount_draw[i] = item_amount[typeId,itemId];
-            item_weight_draw[i] = item_weight[typeId,itemId];
-            if (global.hudState == "shop")
+            else
             {
-                item_price_draw[i] = item_price[typeId,itemId];
+                scr_listed_item_initialize_list();
             }
-            
-            item_count += 1;
-            i += 1;
         }
     }
     ini_close();
@@ -77,6 +59,8 @@ if (pageUpdate == true)
 }
 var y_pos; //y position
 y_pos = 120;
+//Background
+draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
 if (item_count > 0)
 {
     //Item create
@@ -95,8 +79,6 @@ if (item_count > 0)
         }
         y_pos = 120;
     }
-    //Background
-    draw_sprite(spr_inventory_background, 0, view_xview, view_yview);
     for (i = start_count; i != end_count; i++;)
     {               
         //Item background
@@ -128,27 +110,31 @@ if (item_count > 0)
         }
         y_pos += 19;
     }
-    //Page number background
-    draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
-    //Page number max
-    page_max = (round(item_count/8));
-    if ((page_max - (item_count/8)) < 0 )
-    {   
-        page_max += 1;
-    }
-    //Draw page number and max
-    draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
-    if (string_pos("inventory", string(global.hudState)) || global.hudState = "shop")
-    {
-        //Item info background
-        draw_sprite(spr_inv_item_info_bg, 0,view_xview+334, view_yview+85);
-        //Item info text
-        draw_text(view_xview+349, view_yview+100, item_info_text);
-        //Total and weight background
-        draw_sprite(spr_inv_item_description_bg, 0,view_xview+255, view_yview+95);
-        //Total and weight
-        draw_text(view_xview+190,view_yview+95, "Weight:  " + string(global.total_item_weight) + "  /  " + string(global.max_item_weight) + "  Kg");
-    }
+}
+//Page number background
+draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
+//Page number max
+page_max = (round(item_count/8));
+if ((page_max - (item_count/8)) < 0 )
+{   
+    page_max += 1;
+}
+//Draw page number and max
+if (page_max == 0)
+{
+    page_max = 1;
+}
+draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
+if (string_pos("inventory", string(global.hudState)) || global.hudState = "shop")
+{
+    //Item info background
+    draw_sprite(spr_inv_item_info_bg, 0,view_xview+334, view_yview+85);
+    //Item info text
+    draw_text(view_xview+349, view_yview+100, item_info_text);
+    //Total and weight background
+    draw_sprite(spr_inv_item_description_bg, 0,view_xview+255, view_yview+95);
+    //Total and weight
+    draw_text(view_xview+190,view_yview+95, "Weight:  " + string(global.total_item_weight) + "  /  " + string(global.max_item_weight) + "  Kg");
 }
 else
 {

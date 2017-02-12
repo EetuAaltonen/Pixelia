@@ -459,7 +459,6 @@
         <script>scripts\scr_check_if_equipped.gml</script>
         <script>scripts\scr_listed_item_create_attributes.gml</script>
       </scripts>
-      <script>scripts\scr_check_if_instance_destroy.gml</script>
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
       <script>scripts\scr_list_id_type.gml</script>
@@ -468,6 +467,7 @@
       <script>scripts\scr_list_id_type_inventory.gml</script>
       <script>scripts\scr_list_id_type_shop.gml</script>
       <script>scripts\scr_list_items.gml</script>
+      <script>scripts\scr_listed_item_initialize_list.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed_crafting.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed_shop.gml</script>

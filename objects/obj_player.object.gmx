@@ -681,29 +681,6 @@ scr_plr_dead();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_world">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_goto(Test);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_medicpack">
       <action>
         <libid>1</libid>
@@ -769,7 +746,8 @@ scr_falling_damage();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///EMPTY??
+</string>
           </argument>
         </arguments>
       </action>
@@ -791,7 +769,8 @@ scr_falling_damage();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.health = 0;
+            <string>///Instant death
+global.health = 0;
 scr_plr_dead();
 </string>
           </argument>
@@ -846,23 +825,26 @@ draw_text(x, y-30, string(action_state));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Shield
-if (global.mana &gt;= 5)
+            <string>///Shield
+if (global.hudState == "null")
 {
-    if (cooldown_shield == 1)
+    if (global.mana &gt;= 5)
     {
-        global.mana -= 5;
-        cooldown_shield = 0;
-        
-        if (image_xscale == 1)
+        if (cooldown_shield == 1)
         {
-            instance_create(x + 10, y, obj_plr_shield)
+            global.mana -= 5;
+            cooldown_shield = 0;
+            
+            if (image_xscale == 1)
+            {
+                instance_create(x + 10, y, obj_plr_shield)
+            }
+            else if (image_xscale == -1)
+            {
+                instance_create(x - 10, y, obj_plr_shield)
+            }
+            alarm[11] = 50;
         }
-        else if (image_xscale == -1)
-        {
-            instance_create(x - 10, y, obj_plr_shield)
-        }
-        alarm[11] = 50;
     }
 }
 </string>
@@ -887,18 +869,21 @@ if (global.mana &gt;= 5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Bow
-if not(action_state == "bow")
+            <string>///Bow
+if (global.hudState == "null")
 {
-    action_state = "bow";
-    instance_create(x, y, obj_plr_aim);
-    instance_create(x, y, obj_plr_bow);
-    hspeed = 0;
-}
-else if (action_state == "bow")
-{
-    action_state = "null";
-    sprite_index = spr_player;
+    if (action_state != "bow")
+    {
+        action_state = "bow";
+        instance_create(x, y, obj_plr_aim);
+        instance_create(x, y, obj_plr_bow);
+        hspeed = 0;
+    }
+    else if (action_state == "bow")
+    {
+        action_state = "null";
+        sprite_index = spr_player;
+    }
 }
 </string>
           </argument>
@@ -922,22 +907,25 @@ else if (action_state == "bow")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Slice
-if (action_state == "null" || action_state == "jump")
+            <string>///Slice
+if (global.hudState == "null")
 {
-    if (global.stamina &gt;= 2)
+    if (action_state == "null" || action_state == "jump")
     {
-        if (cooldown_slice == 1)
+        if (global.stamina &gt;= 2)
         {
-            action_state = "slice";
-            global.stamina -= 2;
-            slice = 1;
-            instance_create(x + (10 * image_xscale), y, obj_plr_slice);
-            cooldown_slice = 0;
-            alarm[1] = 25;
-            alarm[2] = 20;
-            image_speed = 0;
-            image_index = 0;
+            if (cooldown_slice == 1)
+            {
+                action_state = "slice";
+                global.stamina -= 2;
+                slice = 1;
+                instance_create(x + (10 * image_xscale), y, obj_plr_slice);
+                cooldown_slice = 0;
+                alarm[1] = 25;
+                alarm[2] = 20;
+                image_speed = 0;
+                image_index = 0;
+            }
         }
     }
 }
@@ -963,7 +951,7 @@ if (action_state == "null" || action_state == "jump")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Use
+            <string>///Use
 if (global.hudState = "null")
 {
     if (action_state == "null" || action_state == "jump")
@@ -993,7 +981,10 @@ if (global.hudState = "null")
           <argument>
             <kind>1</kind>
             <string>///Reset action state
-if (action_state == "mining" || action_state == "woodcutting" || action_state == "sitting" || action_state == "fishing")
+if (action_state == "mining" ||
+    action_state == "woodcutting" ||
+    action_state == "sitting" ||
+    action_state == "fishing")
 {
     scr_plr_set_action_state_null();
 }
@@ -1019,11 +1010,14 @@ if (action_state == "mining" || action_state == "woodcutting" || action_state ==
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.stamina &gt;= 3 and roll == 0 and !keyboard_check(vk_shift))
+            <string>///Roll
+if (global.hudState == "null")
 {
-    //Roll
-    roll = 1;
-    alarm[5] = 15;
+    if (global.stamina &gt;= 3 and roll == 0 and !keyboard_check(vk_shift))
+    {
+        roll = 1;
+        alarm[5] = 15;
+    }
 }
 </string>
           </argument>
@@ -1047,12 +1041,13 @@ if (action_state == "mining" || action_state == "woodcutting" || action_state ==
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
-//Enemies' stats
+            <string>///Restart Room
+//Enemies' stats NEEDED HERE??
 global.enemy_stats1 = 0;
 global.enemy_stats2 = 0;
 global.enemy_stats3 = 0;
 global.hudState = "null";
+instance_destroy();
 room_restart();
 </string>
           </argument>
