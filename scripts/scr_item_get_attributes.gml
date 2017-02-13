@@ -8,8 +8,8 @@ weight = Weight[typeId,itemId];
 
 if (global.hudState == "shop")
 {
-//Price
-price = Price[typeId,itemId];
+    //Price
+    price = Price[typeId,itemId];
 }
 
 //Description

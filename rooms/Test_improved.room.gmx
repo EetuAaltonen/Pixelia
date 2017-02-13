@@ -214,7 +214,6 @@
     <instance objName="obj_block_grass" x="807" y="299" name="inst_5B7BA88F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="807" y="283" name="inst_49D812E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="807" y="267" name="inst_2F2DCC96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_block_grass" x="791" y="235" name="inst_FB7EED00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="791" y="251" name="inst_0DF8AA22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="791" y="299" name="inst_F5CC5FAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="775" y="299" name="inst_8A7DD917" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -497,7 +496,6 @@
     <instance objName="obj_block_stonebrick" x="1271" y="203" name="inst_7857DA2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_stonebrick" x="1255" y="203" name="inst_CD852501" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cargon_cart_wheel" x="1056" y="208" name="inst_8D9AF468" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dec_stairs" x="815" y="243" name="inst_5553E572" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="759" y="251" name="inst_85614687" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_grass" x="759" y="235" name="inst_F49F12DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dec_stairs" x="735" y="243" name="inst_3C098B00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -543,6 +541,8 @@
     <instance objName="obj_stove" x="1008" y="192" name="inst_FE501623" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_flask" x="978" y="251" name="inst_365F0AD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_merchant" x="1016" y="248" name="inst_E07A8657" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bow" x="877" y="251" name="inst_E448C1E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_arrow_pouch" x="791" y="236" name="inst_97E85F8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

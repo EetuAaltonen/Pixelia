@@ -47,6 +47,7 @@ else if (typeId == 5)
 {
     switch (sprite_index_)
     {
-        case spr_arrow_pouch: itemId = 1;break;
+        case spr_arrow_pouch: itemId = 1;added_amount = 10;break;
+        case spr_bow: itemId = 2;break;
     }
 }

@@ -37,3 +37,4 @@ Info[4,2] = "Tuna";
 //Weapons
 //Info
 Info[5,1] = "Arrow";
+Info[5,2] = "Bow";

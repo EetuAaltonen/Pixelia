@@ -85,9 +85,13 @@ Weight[4,2] = 0.50;
 //Weapons
 //Sprite
 Sprite[5,1] = "spr_arrow_pouch";
+Sprite[5,2] = "spr_bow";
 //Name
 Name[5,1] = "Arrow";
+Name[5,2] = "Bow";
 //Weight
 Weight[5,1] = 0.05;
+Weight[5,2] = 1.50;
 //Price
 Price[5,1] = 20;
+Price[5,2] = 100;

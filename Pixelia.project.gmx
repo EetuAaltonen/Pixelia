@@ -74,6 +74,14 @@
         <sprite>sprites\spr_feather</sprite>
         <sprite>sprites\spr_leather</sprite>
       </sprites>
+      <sprites name="Fishing">
+        <sprite>sprites\spr_fishing_spot</sprite>
+        <sprite>sprites\spr_fishing_vein</sprite>
+        <sprite>sprites\spr_fishing_bobber</sprite>
+        <sprite>sprites\spr_fishing_mini_game_bg</sprite>
+        <sprite>sprites\spr_fishing_mini_game_area_1</sprite>
+        <sprite>sprites\spr_fishing_mini_game_area_2</sprite>
+      </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_barbarea_vulgaris</sprite>
         <sprite>sprites\spr_camomile</sprite>
@@ -94,6 +102,7 @@
         <sprite>sprites\spr_steelbar</sprite>
       </sprites>
       <sprite>sprites\spr_arrow_pouch</sprite>
+      <sprite>sprites\spr_bow</sprite>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_gold_ore</sprite>
@@ -104,14 +113,6 @@
         <sprite>sprites\spr_source_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree_hit</sprite>
         <sprite>sprites\spr_oak_log</sprite>
-      </sprites>
-      <sprites name="Fishing">
-        <sprite>sprites\spr_fishing_spot</sprite>
-        <sprite>sprites\spr_fishing_vein</sprite>
-        <sprite>sprites\spr_fishing_bobber</sprite>
-        <sprite>sprites\spr_fishing_mini_game_bg</sprite>
-        <sprite>sprites\spr_fishing_mini_game_area_1</sprite>
-        <sprite>sprites\spr_fishing_mini_game_area_2</sprite>
       </sprites>
     </sprites>
     <sprites name="Crafting">
@@ -409,7 +410,7 @@
       <scripts name="Create/Initialize">
         <script>scripts\scr_food_create_variables.gml</script>
         <script>scripts\scr_ingr_create_attributes.gml</script>
-        <script>scripts\scr_weap_create_attributes.gml</script>
+        <script>scripts\scr_equip_create_attributes.gml</script>
         <script>scripts\scr_item_get_attributes.gml</script>
         <script>scripts\scr_item_get_id.gml</script>
         <script>scripts\scr_mater_create_variables.gml</script>
@@ -589,6 +590,11 @@
         <object>objects\obj_salmon</object>
         <object>objects\obj_tuna</object>
       </objects>
+      <objects name="Equipments">
+        <object>objects\obj_arrow_pouch</object>
+        <object>objects\obj_bow</object>
+        <object>objects\obj_equipment_parent</object>
+      </objects>
       <objects name="Fishing">
         <object>objects\obj_fishing_bobber</object>
         <object>objects\obj_fishing_spot</object>
@@ -605,7 +611,6 @@
         <object>objects\obj_water_flask</object>
         <object>objects\obj_ingredient_parent</object>
       </objects>
-      <object>objects\obj_arrow_pouch</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_coin</object>
       <object>objects\obj_coin_collected</object>
