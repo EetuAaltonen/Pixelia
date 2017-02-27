@@ -892,13 +892,13 @@ if (global.hudState == "null")
                 else
                 {
                     //name = "No equipped arrows!";
-                    //scr_collected_item_name();
+                    //scr_add_new_toast();
                 }
             }
             else
             {
                 //name = "No equipped bow!";
-                //scr_collected_item_name();
+                //scr_add_new_toast();
             }
             if (equppedState)
             {

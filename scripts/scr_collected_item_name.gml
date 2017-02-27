@@ -1,26 +1,29 @@
+///scr_inventory_item_info(argument0);
+text = argument0;
 var i, arrayLength;
-arrayLength = array_length_1d(obj_inventory_controller.name);
+var controller = obj_inventory_controller;
+arrayLength = array_length_1d(controller.toast);
 for(i = 1; i > 0; i++)
 {
-    if (obj_inventory_controller.name[i] == "")
+    if (controller.toast[i] == "")
     {
-        obj_inventory_controller.name[i] = name;
+        controller.toast[i] = argument0;
         i = 1;
         break;
     }
     else
     {
-        if ((i + 1) == array_length_1d(obj_inventory_controller.name)) //Cause array start 0 and [0,1], length == 2 !
+        if ((i + 1) == array_length_1d(controller.toast)) //Cause array start 0 and [0,1], length == 2 !
         {
-            obj_inventory_controller.name[i + 1] = "";
+            controller.toast[i + 1] = "";
         }
     }
 }
-if (obj_inventory_controller.draw_name == false)
+if (controller.draw_toast == false)
 {
-    obj_inventory_controller.draw_name = true;
+    controller.draw_toast = true;
 }
-if (obj_inventory_controller.alarm[1] <= 0)
+if (controller.alarm[1] <= 0)
 {
-    obj_inventory_controller.alarm[1] = 2;
+    controller.alarm[1] = 2;
 }

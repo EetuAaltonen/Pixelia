@@ -110,9 +110,10 @@
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_medicpack</sprite>
       <sprites name="Trees">
+        <sprite>sprites\spr_oak_log</sprite>
+        <sprite>sprites\spr_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree_hit</sprite>
-        <sprite>sprites\spr_oak_log</sprite>
       </sprites>
     </sprites>
     <sprites name="Crafting">
@@ -419,7 +420,6 @@
         <script>scripts\scr_dropped_item_create_attributes.gml</script>
       </scripts>
       <script>scripts\scr_check_weight.gml</script>
-      <script>scripts\scr_collected_item_name.gml</script>
       <script>scripts\scr_move_to_player.gml</script>
       <script>scripts\scr_source_create_item.gml</script>
       <script>scripts\scr_source_hit.gml</script>
@@ -453,6 +453,9 @@
         <script>scripts\scr_st_check_skill_state.gml</script>
         <script>scripts\scr_st_create_skills.gml</script>
         <script>scripts\scr_st_draw_info.gml</script>
+      </scripts>
+      <scripts name="Toaster">
+        <script>scripts\scr_add_new_toast.gml</script>
       </scripts>
     </scripts>
     <scripts name="Listed items">
@@ -520,15 +523,16 @@
     <script>scripts\scr_solidify.gml</script>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\fnt_armor_text</font>
     <font>fonts\fnt_collected_item_info_text</font>
     <font>fonts\fnt_dialog</font>
     <font>fonts\fnt_enemies_stats</font>
     <font>fonts\fnt_hotbar_text</font>
-    <font>fonts\fnt_loading</font>
-    <font>fonts\fnt_sign</font>
-    <font>fonts\fnt_menu_buttons</font>
     <font>fonts\fnt_inventory_text</font>
-    <font>fonts\fnt_armor_text</font>
+    <font>fonts\fnt_loading</font>
+    <font>fonts\fnt_menu_buttons</font>
+    <font>fonts\fnt_sign</font>
+    <font>fonts\fnt_toaster</font>
   </fonts>
   <objects name="objects">
     <objects name="Ammon">

@@ -2,11 +2,7 @@ if (move_to_player == false)
 {
     if ((global.max_item_weight - global.total_item_weight) - weight < 0)
     {
-        var previous_info;
-        previous_info = name;
-        name = "Inventory is full!";
-        scr_collected_item_name();
-        name = previous_info;
+        scr_add_new_toast("Inventory is full!");
         
         alarm[1] = 50;
     }

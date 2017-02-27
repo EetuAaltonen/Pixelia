@@ -6,7 +6,7 @@ if (move_to_player == true)
     if (distance_to_object(obj_player) <= 1)
     {
         //Info text
-        scr_collected_item_name();
+        scr_add_new_toast(name);
         //Save to inventory
         scr_save_to_inventory();
         obj_player.highlight = false;

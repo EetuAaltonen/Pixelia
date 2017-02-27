@@ -8,7 +8,7 @@ if (collecting == false)
         var previous_info;
         previous_info = name;
         name = "Inventory is full!";
-        scr_collected_item_name();
+        scr_add_new_toast();
         name = previous_info;
         
         alarm[1] = 50;
