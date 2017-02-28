@@ -114,6 +114,8 @@
         <sprite>sprites\spr_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree_hit</sprite>
+        <sprite>sprites\spr_spruce_log</sprite>
+        <sprite>sprites\spr_spruce_tree</sprite>
       </sprites>
     </sprites>
     <sprites name="Crafting">
@@ -302,6 +304,7 @@
         <sprite>sprites\spr_mana</sprite>
         <sprite>sprites\spr_stamina</sprite>
       </sprites>
+      <sprite>sprites\spr_toaster_bg</sprite>
     </sprites>
     <sprites name="Language">
       <sprite>sprites\spr_alphabet</sprite>
@@ -630,6 +633,8 @@
       </objects>
       <objects name="Trees">
         <object>objects\obj_source_oak_tree</object>
+        <object>objects\obj_source_tree_parent</object>
+        <object>objects\spr_source_spruce_tree</object>
       </objects>
     </objects>
     <objects name="Crafting">

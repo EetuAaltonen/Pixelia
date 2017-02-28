@@ -200,7 +200,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///Draw toast
-if (draw_toast == true)
+if (draw_toast)
 {
     toasterSize = ds_list_size(toaster);
     toasterSpeed = 2;
@@ -502,17 +502,21 @@ if (global.hudState == "shop")
             <string>///Draw toast
 //Font
 draw_set_font(fnt_toaster);
-draw_set_color(c_black);
+draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-if (draw_toast == true)
+if (draw_toast)
 {
     if (global.hudState == "null")
     {
-        var margin = (((string_length(toast)*4)/2) - (string_length(toast)*4));
-        draw_text_colour(view_xview+450+margin , view_yview+260+toast_y_pos, toast,
-                         c_black, c_black, c_black, c_black, toast_alpha);
+        var margin = ((string_width(toast)/2)*(-1));
+        var bgWidth = (string_width(toast) + 10);
+        draw_sprite_ext(spr_toaster_bg,0,view_xview+480+margin-(bgWidth/2),
+                        view_yview+260+toast_y_pos,
+                        bgWidth,1,image_angle,c_black,toast_alpha/1.5);
+        draw_text_colour(view_xview+480+margin, view_yview+260+toast_y_pos, toast,
+                        c_white, c_white, c_white, c_white, toast_alpha);
     }
 }
 </string>
