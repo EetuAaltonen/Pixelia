@@ -544,6 +544,7 @@
     <instance objName="obj_bow" x="1120" y="208" name="inst_E448C1E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_arrow_pouch" x="791" y="236" name="inst_97E85F8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="spr_source_spruce_tree" x="769" y="179" name="inst_778CDAC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_NPC" x="817" y="247" name="inst_0C98C181" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

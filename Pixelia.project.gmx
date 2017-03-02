@@ -184,6 +184,7 @@
         <sprite>sprites\spr_dialog</sprite>
         <sprite>sprites\spr_dialog_background</sprite>
         <sprite>sprites\spr_dialog_bg</sprite>
+        <sprite>sprites\spr_dialog_option</sprite>
       </sprites>
       <sprites name="Draw">
         <sprite>sprites\spr_A_ready</sprite>
@@ -437,11 +438,18 @@
       <script>scripts\scr_crafting_check_recipe.gml</script>
       <script>scripts\scr_craft_item.gml</script>
     </scripts>
+    <scripts name="Dialog">
+      <script>scripts\scr_dialog.gml</script>
+    </scripts>
     <scripts name="Enemies">
       <script>scripts\scr_enemy_die.gml</script>
       <script>scripts\scr_enemy_draw_stats.gml</script>
       <script>scripts\scr_enemy_generate_stats.gml</script>
       <script>scripts\scr_reset_draw_state.gml</script>
+    </scripts>
+    <scripts name="Highlight self">
+      <script>scripts\scr_highlight_remove.gml</script>
+      <script>scripts\scr_highlight_self.gml</script>
     </scripts>
     <scripts name="Home">
       <script>scripts\scr_prices.gml</script>
@@ -519,7 +527,6 @@
     <script>scripts\scr_custom_gravity.gml</script>
     <script>scripts\scr_draw_in_language.gml</script>
     <script>scripts\scr_good_fonts.gml</script>
-    <script>scripts\scr_highlight_self.gml</script>
     <script>scripts\scr_page_calculate.gml</script>
     <script>scripts\scr_page_change.gml</script>
     <script>scripts\scr_resolution.gml</script>
@@ -696,8 +703,9 @@
         <object>objects\obj_crafting_controller</object>
       </objects>
       <objects name="Dialog">
-        <object>objects\obj_dialog_controller</object>
         <object>objects\obj_dialog_bg_controller</object>
+        <object>objects\obj_dialog_controller</object>
+        <object>objects\obj_dialog_option</object>
       </objects>
       <objects name="Draw">
         <object>objects\obj_building</object>
@@ -789,6 +797,7 @@
       <object>objects\obj_blacksmith_shoper</object>
       <object>objects\obj_merchant</object>
       <object>objects\obj_NPC</object>
+      <object>objects\obj_NPC_parent</object>
     </objects>
     <object>objects\obj_aim</object>
     <object>objects\obj_cargon_cart_wheel</object>

@@ -139,7 +139,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room == Menu)
+            <string>///Draw self
+if (room == Menu)
 {
     draw_self();
 }

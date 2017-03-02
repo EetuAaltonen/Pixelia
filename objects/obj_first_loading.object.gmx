@@ -167,8 +167,9 @@ load = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Global variables - Quest
-    global.quest = "Beginning";
+            <string>///Global variables - Quest / Dialogs
+global.quest = "Beginning";
+global.dialogId = 0;
 </string>
           </argument>
         </arguments>

@@ -25,11 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == true)
+            <string>/*if (global.dialog == true)
 {
-    //Background
-    draw_sprite_ext(spr_dialog_background, image_index, view_xview,view_yview+215,
-                    image_xscale, image_yscale, image_angle, c_white, 0.5);
+    
 }
 </string>
           </argument>

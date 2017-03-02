@@ -52,7 +52,8 @@ if (obj_screen_controller.menu_state != menu_state)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_menu_orb_of_euphoria) &amp;&amp; instance_exists(obj_menu_orb_of_dysforia))
+            <string>//Move orbs when meeting mouse
+if (instance_exists(obj_menu_orb_of_euphoria) &amp;&amp; instance_exists(obj_menu_orb_of_dysforia))
 {
     if (distance_to_object(obj_mouse) == 0)
     {

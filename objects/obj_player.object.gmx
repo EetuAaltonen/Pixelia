@@ -415,21 +415,17 @@ sprite_index = spr_player;
           <argument>
             <kind>1</kind>
             <string>///Action states
-//If some menu is open
-if (global.hudState != "null")
+//If some menu is open || Room change || Dialog
+if (global.hudState != "null" ||
+         action_state = "room_change" ||
+         action_state = "dialog")
 {
     //Gravity
     scr_custom_gravity();
-    hspeed = 0;
-}
-//Room change
-else if (action_state = "room_change")
-{
     hspeed = 0;
     image_speed = 0;
     sprite_index = spr_player;
-    //Gravity
-    scr_custom_gravity();
+    
 }
 //Confirm
 else if (action_state == "confirm")
@@ -990,7 +986,7 @@ if (global.hudState == "null")
           <argument>
             <kind>1</kind>
             <string>///Use
-if (global.hudState = "null")
+if (global.hudState == "null")
 {
     if (action_state == "null" || action_state == "jump")
     {

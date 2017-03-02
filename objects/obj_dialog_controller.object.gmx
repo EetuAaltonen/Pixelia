@@ -3,7 +3,7 @@
   <spriteName>spr_dialog</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-4100</depth>
+  <depth>-5000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.dialog = false;
+            <string>/*global.dialog = false;
 global.dialog_text = 0;
 global.dialog_min = 0; //first text
 global.dialog_max = 0; //second text
 global.dialog_check1 = 1;
-global.dialog_check2 = 2;
+global.dialog_check2 = 2;*/
+dialogText = "";
+dialogOptions = "null";
 t = 0;
+bgHeightOriginal = -20;
+bgHeight = bgHeightOriginal;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_plr_set_action_state_null();
 </string>
           </argument>
         </arguments>
@@ -54,14 +81,15 @@ t = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Text
-switch (global.dialog_text)
+            <string>///NEEDED?
+//Text
+/*switch (global.dialog_text)
 {
-    case 0: text = "..."; break;
-    case 1: text = "Hi,#how are you?"; break;
-    case 2: text = "I'm fine..."; break;
-    case 3: text = "Hi."; break;
-    case 4: text = "I can't talk right now. :("; break;
+    case 0: dialogText = "..."; break;
+    case 1: dialogText = "Hi,#how are you?"; break;
+    case 2: dialogText = "I'm fine..."; break;
+    case 3: dialogText = "Hi."; break;
+    case 4: dialogText = "I can't talk right now. :("; break;
 }
 </string>
           </argument>
@@ -85,12 +113,77 @@ switch (global.dialog_text)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Font
+            <string>///Draw dialog
+//Font
 draw_set_font(fnt_dialog);
 draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 
-if (global.dialog == true)
+if (global.hudState == "dialog")
 {
+    if (dialogOptions == "null")
+    {
+        if (file_exists("dialogs.ini"))
+        {
+            var X, Y, option;
+            X = view_xview+10;
+            var key;//;"options" + string(global.dialogId);
+            //dialogOptions = ini_read_real(global.quest,key,0);
+            ini_open("dialogs.ini");
+            key = "question" + string(global.dialogId);
+            dialogQuestion = ini_read_string(global.quest,key,"");
+            dialogOptions = 0;
+            bgHeight = bgHeightOriginal;
+            for (i = 0; i &gt;= 0; i++)
+            {
+                key = "option" + string(global.dialogId) + "_" + string(i);
+                option = ini_read_string(global.quest,key,"false");
+                Y = view_yview+300+(-42+(-14*i));
+                if (option == "false")
+                {
+                    if (dialogOptions == 0)
+                    {
+                        option = "Farewell";
+                        instance_create(X,Y,obj_dialog_option);
+                        var leave = (instance_nearest(X,Y,obj_dialog_option).optionLeave)
+                        (instance_nearest(X,Y,obj_dialog_option).option) = leave;
+                    }
+                    break;
+                }
+                else
+                {
+                    instance_create(X,Y,obj_dialog_option);
+                    (instance_nearest(X,Y,obj_dialog_option).option) = option;
+                    dialogOptions += 1;
+                }
+            }
+            if (dialogOptions &gt; 0)
+            {
+                bgHeight = (bgHeightOriginal*dialogOptions);
+            }
+            ini_close();
+        }
+        else
+        {
+            show_message("dialogs.ini is missing!");
+            dialogOptions = 0;
+        }
+    }
+    //Dialog background
+    draw_sprite_ext(spr_dialog_background, image_index, view_xview, view_yview+(300-30),
+                    image_xscale, bgHeight, image_angle, c_black, 0.8);
+    //Text halign right
+    draw_set_halign(fa_right);
+    //Dialog question
+    draw_text(view_xview+490, view_yview+(300-30+bgHeight+10),dialogQuestion);
+    
+    
+    
+    //draw_text(view_xview+10,view_yview+(300-30+bgHeight+10), dialogText);
+    /*//Background
+    draw_sprite_ext(spr_dialog_background, image_index, view_xview,view_yview+215,
+                    image_xscale, image_yscale, image_angle, c_white, 0.5);
     var dialog_check;
     dialog_check = global.dialog_check1;
     draw_text(view_xview+445,view_yview+225, string(dialog_check))
@@ -123,14 +216,14 @@ if (global.dialog == true)
     else if (global.dialog_text &gt;= global.dialog_max)
     {
         draw_sprite(spr_dialog_D, 1, view_xview+490, view_yview+250); 
-    }
+    }*/
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="68">
+    <event eventtype="9" enumb="69">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -147,7 +240,38 @@ if (global.dialog == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == true and 
+            <string>///Close dialog
+if (global.hudState == "dialog")
+{
+    global.hudState = "null";
+    obj_dialog_controller.dialogOptions = "null";
+    obj_dialog_controller.bgHeight = bgHeightOriginal;
+    alarm[1] = 10;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///NEEDED?
+/*if (global.dialog == true and 
     !global.dialog_text == 0 and
     global.dialog_text &lt; global.dialog_max)
 {
@@ -160,7 +284,7 @@ if (global.dialog == true)
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="65">
+    <event eventtype="9" enumb="37">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -177,7 +301,8 @@ if (global.dialog == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.dialog == true and
+            <string>///NEEDED?
+/*if (global.dialog == true and
     !global.dialog_text == 0 and
     global.dialog_text &gt; global.dialog_min)
 {

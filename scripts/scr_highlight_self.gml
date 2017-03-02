@@ -1,6 +1,7 @@
 if (instance_exists(obj_player))
 {
-    if(obj_player.action_state == "null" || 
+    if(global.hudState == "null" ||
+       obj_player.action_state == "null" || 
        obj_player.action_state == "jump" || 
        obj_player.action_state == "crouch")
     {
@@ -26,31 +27,21 @@ if (instance_exists(obj_player))
                 }
                 else
                 {
-                    if (image_blend == make_colour_hsv(0, 0, 150))
-                    {
-                        image_blend = make_colour_hsv(0, 0, -1);
-                        obj_player.highlight = false;
-                        depth = depth_;
-                    }
+                    scr_highlight_remove();
                 }
             }
             else
             {
-                if (image_blend == make_colour_hsv(0, 0, 150))
-                {
-                    image_blend = make_colour_hsv(0, 0, -1);
-                    obj_player.highlight = false;
-                    depth = depth_;
-                }
+                scr_highlight_remove();
             }
         }
         else
         {
-            if (image_blend == make_colour_hsv(0, 0, 150))
-            {
-                image_blend = make_colour_hsv(0, 0, -1);
-                obj_player.highlight = false;
-            }
+            scr_highlight_remove();
         }
+    }
+    else
+    {
+        scr_highlight_remove();
     }
 }
