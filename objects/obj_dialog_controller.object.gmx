@@ -120,27 +120,33 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
+scr_dialog_blacksmith();
+
 if (global.hudState == "dialog")
 {
     if (dialogOptions == "null")
     {
-        if (file_exists("dialogs.ini"))
+        //scr_dialog_blacksmith();
+        var X, Y, option;
+        X = view_xview+10;
+        var key;
+        dialogQuestion = Question[global.dialogId];
+        dialogOptions = 0;
+        bgHeight = bgHeightOriginal;
+        for (i = 0; i &gt;= 0; i++)
         {
-            var X, Y, option;
-            X = view_xview+10;
-            var key;//;"options" + string(global.dialogId);
-            //dialogOptions = ini_read_real(global.quest,key,0);
-            ini_open("dialogs.ini");
-            key = "question" + string(global.dialogId);
-            dialogQuestion = ini_read_string(global.quest,key,"");
-            dialogOptions = 0;
-            bgHeight = bgHeightOriginal;
-            for (i = 0; i &gt;= 0; i++)
+            if (i &lt; array_length_1d(Option))
             {
-                key = "option" + string(global.dialogId) + "_" + string(i);
-                option = ini_read_string(global.quest,key,"false");
+                //scr_dialog_blacksmith();
                 Y = view_yview+300+(-42+(-14*i));
-                if (option == "false")
+                if (string_length(Option[i]) &gt; 0)
+                {
+                    option = Option[i];
+                    instance_create(X,Y,obj_dialog_option);
+                    (instance_nearest(X,Y,obj_dialog_option).option) = option;
+                    dialogOptions += 1;
+                }
+                else
                 {
                     if (dialogOptions == 0)
                     {
@@ -151,23 +157,22 @@ if (global.hudState == "dialog")
                     }
                     break;
                 }
-                else
-                {
-                    instance_create(X,Y,obj_dialog_option);
-                    (instance_nearest(X,Y,obj_dialog_option).option) = option;
-                    dialogOptions += 1;
-                }
             }
-            if (dialogOptions &gt; 0)
+            else
             {
-                bgHeight = (bgHeightOriginal*dialogOptions);
+                if (dialogOptions == 0)
+                {
+                    option = "Farewell";
+                    instance_create(X,Y,obj_dialog_option);
+                    var leave = (instance_nearest(X,Y,obj_dialog_option).optionLeave)
+                    (instance_nearest(X,Y,obj_dialog_option).option) = leave;
+                }
+                break;
             }
-            ini_close();
         }
-        else
+        if (dialogOptions &gt; 0)
         {
-            show_message("dialogs.ini is missing!");
-            dialogOptions = 0;
+            bgHeight = (bgHeightOriginal*dialogOptions);
         }
     }
     //Dialog background
