@@ -29,7 +29,6 @@
 itemId = false;
 typeId = false;
 itemName = "";
-key = "";
 checkRecipe = false;
 </string>
           </argument>
@@ -62,11 +61,9 @@ if (instance_exists(obj_crafting_slot_1) &amp;&amp;
     var slot1 = obj_crafting_slot_1;
     var slot2 = obj_crafting_slot_2;
     var slot3 = obj_crafting_slot_3;
-    var slot4 = obj_crafting_slot_4;
     if (checkRecipe)
     {
-        key = (string(slot1.itemId) + string(slot2.itemId) + string(slot3.itemId));
-        scr_crafting_check_recipe();
+        scr_crafting_check_recipe(slot1.itemId, slot2.itemId, slot3.itemId);
     }
 }
 else

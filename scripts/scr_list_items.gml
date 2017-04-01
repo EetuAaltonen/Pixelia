@@ -136,8 +136,8 @@ if (string_pos("inventory", string(global.hudState)) || global.hudState = "shop"
     //Total and weight
     draw_text(view_xview+190,view_yview+95, "Weight:  " + string(global.total_item_weight) + "  /  " + string(global.max_item_weight) + "  Kg");
 }
-else
+/*else
 {
     //If empty
     draw_text(view_xview+30, view_yview+120, "Inventory is empty...");
-}
+}*/

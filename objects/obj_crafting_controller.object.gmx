@@ -26,10 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>//update_amounts = true; //Update amounts in list
-//update_list = true;
 pageUpdate = true;
 createOnce = true; //Create objects once on the list
 current_page = 0;
+//Filter
+filter = "null";
 </string>
           </argument>
         </arguments>
