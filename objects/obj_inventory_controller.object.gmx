@@ -301,13 +301,18 @@ if (keyboard_check_pressed(vk_tab))
                 pageUpdate = true;
                 current_page = 0;
                 filter = "null";
-                
                 //Create buttons
-                instance_create(view_xview+4, view_yview+54, obj_inv_inventory_button);
-                instance_create(view_xview+114, view_yview+54, obj_inv_skill_tree_button);
-                instance_create(view_xview+224, view_yview+54, obj_inv_stats_button);
-                instance_create(view_xview+334, view_yview+54, obj_inv_save_exit_button);
-                instance_create(view_xview+444, view_yview+54, obj_inv_close_button);
+                var buttons;
+                buttons[0] = obj_inv_backpack_button;
+                buttons[1] = obj_inv_equipments_button;
+                buttons[2] = obj_inv_skill_tree_button;
+                buttons[3] = obj_inv_stats_button;
+                buttons[4] = obj_inv_save_exit_button;
+                buttons[5] = obj_inv_close_button;
+                var arrayLength = array_length_1d(buttons);
+                for (i = 0; i &lt; arrayLength; i++) {
+                    instance_create(view_xview+4+(i*(85+5)), view_yview+54, buttons[i]);
+                }
             }
         }
     }
@@ -403,6 +408,10 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
 if (global.hudState == "inventory1")
+{
+    scr_list_items();
+}
+else if (global.hudState == "inventoryEquipments")
 {
     scr_list_items();
 }

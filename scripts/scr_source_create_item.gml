@@ -15,6 +15,6 @@ else
 }
 y_random = random_range(-5, -10);
 instance_create(x + x_random, y + y_random, obj_dropped_item);
-(instance_nearest(x + x_random, y + y_random, obj_dropped_item)).sprite_index = sprite_index_item;
+(instance_nearest(x + x_random, y + y_random, obj_dropped_item)).sprite_index = item_sprite_index;
 (instance_nearest(x + x_random, y + y_random, obj_dropped_item)).typeId = typeId;
 (instance_nearest(x + x_random, y + y_random, obj_dropped_item)).get_attributes = true;

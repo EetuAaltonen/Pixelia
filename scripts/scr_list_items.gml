@@ -101,7 +101,9 @@ if (item_count > 0)
             //Item amount
             draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
         }
-        if (string_pos("inventory", string(global.hudState)) || global.hudState == "shop")
+        if (string_pos("inventory", string(global.hudState)) &&
+            !string_pos("Equipments", string(global.hudState)) ||
+            global.hudState == "shop")
         {
             //Item weight background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
@@ -125,7 +127,9 @@ if (page_max == 0)
     page_max = 1;
 }
 draw_text(view_xview+22,view_yview+95, string("PAGE:    " + string(current_page + 1) + "  /  " + string(page_max)));
-if (string_pos("inventory", string(global.hudState)) || global.hudState = "shop")
+if (string_pos("inventory", string(global.hudState)) &&
+    !string_pos("Equipments", string(global.hudState)) ||
+    global.hudState = "shop")
 {
     //Item info background
     draw_sprite(spr_inv_item_info_bg, 0,view_xview+334, view_yview+85);

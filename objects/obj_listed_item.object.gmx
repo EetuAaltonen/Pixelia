@@ -84,7 +84,7 @@ if (get_attributes == true)
           <argument>
             <kind>1</kind>
             <string>///Destroy function
-if (global.hudState == "inventory1")
+if (global.hudState == "inventory1" || global.hudState == "inventoryEquipments")
 {
     if (obj_inventory_controller.pageUpdate == true)
     {
@@ -290,7 +290,7 @@ scr_listed_item_left_mouse_pressed();
             <kind>1</kind>
             <string>///Draw equipped mark
 draw_self();
-if (global.hudState == "inventory1")
+if (global.hudState == "inventory1" || global.hudState == "inventoryEquipments")
 {
     if (typeId == 5)
     {    

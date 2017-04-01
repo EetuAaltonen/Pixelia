@@ -1,6 +1,6 @@
 if (global.hudState != "null")
 {
-    if (global.hudState == "inventory1")
+    if (global.hudState == "inventory1" || global.hudState == "inventoryEquipments")
     {
         if (keyboard_check(vk_shift))
         {
