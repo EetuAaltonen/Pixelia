@@ -9,6 +9,7 @@ var key = "";
 switch(global.hudState) {
     case "forge": {scr_forge_recipes();} break;
     case "alchemy": {scr_alchemy_recipes();} break;
+    case "workbench": {scr_alchemy_recipes();} break;
 }
 
 for (i = 0; i >= 0; i++) {

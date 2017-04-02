@@ -51,3 +51,18 @@ else if (typeId == 5)
         case spr_bow: itemId = 2;break;
     }
 }
+else if (typeId == 6)
+{
+    switch (sprite_index_)
+    {
+        case spr_tool_knife: itemId = 1;added_amount = 1;break;
+        case spr_tool_saw: itemId = 2;added_amount = 1;break;
+    }
+}
+else if (typeId == 7)
+{
+    switch (sprite_index_)
+    {
+        case spr_wood_billet: itemId = 1;added_amount = 1;break;
+    }
+}

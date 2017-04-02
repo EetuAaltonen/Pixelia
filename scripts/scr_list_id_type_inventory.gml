@@ -21,5 +21,15 @@ else if(typeId == 4 and itemId == arrayLength)
 }
 else if(typeId == 5 and itemId == arrayLength)
 {
+    typeId = 6;
+    itemId = 1;
+}
+else if(typeId == 6 and itemId == arrayLength)
+{
+    typeId = 7;
+    itemId = 1;
+}
+else if(typeId == 7 and itemId == arrayLength)
+{
     createOnce = true;
 }

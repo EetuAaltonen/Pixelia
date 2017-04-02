@@ -1,10 +1,6 @@
-//Potion_1
-Potion[345] = obj_potion_1;
-Potion[354] = obj_potion_1;
-Potion[435] = obj_potion_1;
-Potion[453] = obj_potion_1;
-Potion[543] = obj_potion_1;
-Potion[534] = obj_potion_2;
-
-//Potion_2
+//Wood billet
+Recipe[120] = spr_wood_billet;
+Id[spr_wood_billet] = 1;
+Type[spr_wood_billet] = 7;
+Name[spr_wood_billet] = "Wood billet";
 

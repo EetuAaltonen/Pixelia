@@ -132,6 +132,9 @@
       <sprite>sprites\spr_alchemy_station</sprite>
       <sprite>sprites\spr_forge</sprite>
       <sprite>sprites\spr_workbench</sprite>
+      <sprites name="Workbench materials">
+        <sprite>sprites\spr_wood_billet</sprite>
+      </sprites>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_arrow_effect</sprite>
@@ -396,6 +399,10 @@
     <sprite>sprites\spr_sign_bg</sprite>
     <sprite>sprites\spr_spawner</sprite>
     <sprite>sprites\spr_wall_phy</sprite>
+    <sprites name="Tools">
+      <sprite>sprites\spr_tool_knife</sprite>
+      <sprite>sprites\spr_tool_saw</sprite>
+    </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_spike</sprite>
     </sprites>
@@ -413,15 +420,17 @@
   <scripts name="scripts">
     <scripts name="Collectable items">
       <scripts name="Create/Initialize">
+        <script>scripts\scr_common_attributes.gml</script>
+        <script>scripts\scr_dropped_item_create_attributes.gml</script>
+        <script>scripts\scr_equip_create_attributes.gml</script>
         <script>scripts\scr_food_create_variables.gml</script>
         <script>scripts\scr_ingr_create_attributes.gml</script>
-        <script>scripts\scr_equip_create_attributes.gml</script>
         <script>scripts\scr_item_get_attributes.gml</script>
         <script>scripts\scr_item_get_id.gml</script>
         <script>scripts\scr_mater_create_variables.gml</script>
+        <script>scripts\scr_workbench_mater_create_variables.gml</script>
         <script>scripts\scr_poti_create_variables.gml</script>
-        <script>scripts\scr_common_attributes.gml</script>
-        <script>scripts\scr_dropped_item_create_attributes.gml</script>
+        <script>scripts\scr_tool_create_attributes.gml</script>
       </scripts>
       <script>scripts\scr_check_weight.gml</script>
       <script>scripts\scr_move_to_player.gml</script>
@@ -433,6 +442,7 @@
       <scripts name="Recipes">
         <script>scripts\scr_alchemy_recipes.gml</script>
         <script>scripts\scr_forge_recipes.gml</script>
+        <script>scripts\scr_workbench_recipes.gml</script>
       </scripts>
       <script>scripts\scr_crating_create_variables.gml</script>
       <script>scripts\scr_crafting_check_recipe.gml</script>
@@ -484,6 +494,7 @@
       <script>scripts\scr_list_id_type_alchemy.gml</script>
       <script>scripts\scr_list_id_type_equipments.gml</script>
       <script>scripts\scr_list_id_type_forge.gml</script>
+      <script>scripts\scr_list_id_type_workbench.gml</script>
       <script>scripts\scr_list_id_type_inventory.gml</script>
       <script>scripts\scr_list_id_type_shop.gml</script>
       <script>scripts\scr_list_items.gml</script>
@@ -654,6 +665,10 @@
       <object>objects\obj_forge</object>
       <object>objects\obj_stove</object>
       <object>objects\obj_workbench</object>
+      <objects name="Workbench materials">
+        <object>objects\obj_wood_billet</object>
+        <object>objects\obj_workbench_material_parent</object>
+      </objects>
     </objects>
     <objects name="Effects">
       <object>objects\obj_arrow_effect</object>
@@ -829,6 +844,11 @@
       <object>objects\obj_plr_bow</object>
       <object>objects\obj_plr_hitbox</object>
       <object>objects\obj_spawner</object>
+    </objects>
+    <objects name="Tools">
+      <object>objects\obj_tool_knife</object>
+      <object>objects\obj_tool_saw</object>
+      <object>objects\obj_tool_parent</object>
     </objects>
     <objects name="Traps">
       <object>objects\obj_spikes</object>

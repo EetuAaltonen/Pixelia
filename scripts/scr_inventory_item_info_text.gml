@@ -38,3 +38,12 @@ Info[4,2] = "Tuna";
 //Info
 Info[5,1] = "Arrow";
 Info[5,2] = "Bow";
+
+//Tools
+//Info
+Info[6,1] = "Knife";
+Info[6,2] = "Saw";
+
+//Workbench materials
+//Info
+Info[7,1] = "Wood billet";

@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-5002</depth>
-  <persistent>-1</persistent>
+  <depth>0</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,12 +25,61 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//update_amounts = true; //Update amounts in list
-pageUpdate = true;
-createOnce = true; //Create objects once on the list
-current_page = 0;
-//Filter
-filter = "null";
+            <string>///Create attributes
+scr_tool_create_attributes();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move to player
+scr_move_to_player();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collect
+if (distance_to_object(obj_use) == 0 &amp;&amp; image_blend != make_colour_hsv(0, 0, -1))
+{
+    if (instance_exists(obj_use))
+    {
+        with (obj_use) instance_destroy();
+    }
+    scr_check_weight();
+}
 </string>
           </argument>
         </arguments>
@@ -53,22 +102,9 @@ filter = "null";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Open crafting
-
-//Font
-draw_set_font(fnt_inventory_text);
-draw_set_color(c_black);
-draw_set_halign(fa_left);
-draw_set_valign(fa_middle);
-
-if (global.hudState == "forge" ||
-    global.hudState == "alchemy" ||
-    global.hudState == "workbench")
-{
-    scr_list_items();
-    //Crafted material info background
-    draw_sprite(spr_item_info_box, 0,view_xview+407,view_yview+204);
-}
+            <string>///Highlight self
+draw_self();
+scr_highlight_self();
 </string>
           </argument>
         </arguments>

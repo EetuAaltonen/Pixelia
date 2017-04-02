@@ -91,14 +91,9 @@ if (global.hudState == "inventory1" || global.hudState == "inventoryEquipments")
         instance_destroy();
     }
 }
-else if (global.hudState == "forge")
-{
-    if (obj_crafting_controller.pageUpdate == true)
-    {
-        instance_destroy();
-    }
-}
-else if (global.hudState == "alchemy")
+else if (global.hudState == "forge" ||
+         global.hudState == "alchemy" ||
+         global.hudState == "workbench")
 {
     if (obj_crafting_controller.pageUpdate == true)
     {

@@ -95,3 +95,27 @@ Weight[5,2] = 1.50;
 //Price
 Price[5,1] = 20;
 Price[5,2] = 100;
+
+//Tools
+//Sprite
+Sprite[6,1] = "spr_tool_knife";
+Sprite[6,2] = "spr_tool_saw";
+//Name
+Name[6,1] = "Knife";
+Name[6,2] = "Saw";
+//Weight
+Weight[6,1] = 0.5;
+Weight[6,2] = 0.5;
+//Price
+Price[6,1] = 100;
+Price[6,2] = 150;
+
+//Workbench materials
+//Sprite
+Sprite[7,1] = "spr_wood_billet";
+//Name
+Name[7,1] = "Wood billet";
+//Weight
+Weight[7,1] = 0.05;
+//Price
+Price[7,1] = 10;
