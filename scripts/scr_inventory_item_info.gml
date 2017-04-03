@@ -3,6 +3,9 @@ scr_inventory_item_info_text();
 
 //Add info to scr_item_get_id too...
 //Add info text to scr_inventory_item_info_text too...
+Name["Default"] = "";
+Name[sprite_get_name(spr_wood_billet)] = "Wood Billet";
+Name[string(sprite_get_name(spr_tool_saw))] = "Saw";
 
 //Materials
 //Sprite

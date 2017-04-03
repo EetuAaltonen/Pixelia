@@ -1,11 +1,34 @@
 //Save inventory
-if (added_amount != 0)
+if (added_amount > 0)
 {
-    ini_open("Inventory.sav");
-    var saved_amount, key;
-    key = "Amount[" + string(typeId) + "," + string(itemId) + "]";
-    saved_amount = ini_read_real(global.save_file,string(key),0);
-    saved_amount += added_amount;
-    ini_write_real(global.save_file,key,saved_amount);
-    ini_close();
+    var spriteName = sprite_get_name(sprite_index_);
+    var itemInfo = ds_list_create();
+    var inInventory = false;
+    var listSize = ds_list_size(global.inventory);
+    var value, count, itemName, itemWeight;
+    //Read
+    for (i = 0; i < listSize; i++) {
+        value = ds_list_find_value(global.inventory, i);
+        if (string(ds_list_find_value(value, 0)) == spriteName) {
+            count = ds_list_find_value(value, 2);
+            count += added_amount;
+            ds_list_replace(value, 2, count);
+            ds_list_replace(global.inventory, i, value);
+            inInventory = true;
+            break;
+        }
+    }
+    if (!inInventory) {
+        //Write
+        ds_list_clear(itemInfo);
+        ds_list_add(itemInfo, spriteName);
+        itemName = scr_inventory_item_name(sprite_index_);
+        ds_list_add(itemInfo, itemName);
+        ds_list_add(itemInfo, added_amount);
+        itemWeight = scr_inventory_item_weight(sprite_index_);
+        ds_list_add(itemInfo, itemWeight);
+        ds_list_add(global.inventory, itemInfo);
+    }
+    itemWeight = scr_inventory_item_weight(sprite_index_);
+    global.total_item_weight += (added_amount*itemWeight);
 }

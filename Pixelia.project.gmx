@@ -65,15 +65,6 @@
       <sprite>sprites\spr_platform</sprite>
     </sprites>
     <sprites name="Collectable">
-      <sprites name="Animals">
-        <sprite>sprites\spr_icon_feather</sprite>
-        <sprite>sprites\spr_icon_salmon</sprite>
-        <sprite>sprites\spr_icon_tuna</sprite>
-        <sprite>sprites\spr_salmon</sprite>
-        <sprite>sprites\spr_tuna</sprite>
-        <sprite>sprites\spr_feather</sprite>
-        <sprite>sprites\spr_leather</sprite>
-      </sprites>
       <sprites name="Fishing">
         <sprite>sprites\spr_fishing_spot</sprite>
         <sprite>sprites\spr_fishing_vein</sprite>
@@ -82,24 +73,10 @@
         <sprite>sprites\spr_fishing_mini_game_area_1</sprite>
         <sprite>sprites\spr_fishing_mini_game_area_2</sprite>
       </sprites>
-      <sprites name="Ingredients">
-        <sprite>sprites\spr_barbarea_vulgaris</sprite>
-        <sprite>sprites\spr_camomile</sprite>
-        <sprite>sprites\spr_celandine</sprite>
-        <sprite>sprites\spr_lambsquarter</sprite>
-        <sprite>sprites\spr_nettle</sprite>
-        <sprite>sprites\spr_plantain</sprite>
-        <sprite>sprites\spr_sheeps_sorrel</sprite>
-        <sprite>sprites\spr_water_flask</sprite>
-      </sprites>
       <sprites name="Ores">
-        <sprite>sprites\spr_iron_ore</sprite>
-        <sprite>sprites\spr_coal</sprite>
         <sprite>sprites\spr_source_iron_ore</sprite>
         <sprite>sprites\spr_source_iron_ore_hit</sprite>
         <sprite>sprites\spr_source_coal_ore_hit</sprite>
-        <sprite>sprites\spr_ironbar</sprite>
-        <sprite>sprites\spr_steelbar</sprite>
       </sprites>
       <sprite>sprites\spr_arrow_pouch</sprite>
       <sprite>sprites\spr_bow</sprite>
@@ -119,11 +96,6 @@
       </sprites>
     </sprites>
     <sprites name="Crafting">
-      <sprites name="Forge materials">
-        <sprite>sprites\spr_icon_coal</sprite>
-        <sprite>sprites\spr_icon_ironbar</sprite>
-        <sprite>sprites\spr_icon_steelbar</sprite>
-      </sprites>
       <sprites name="Potions">
         <sprite>sprites\spr_healing_potion</sprite>
         <sprite>sprites\spr_potion_1</sprite>
@@ -132,8 +104,34 @@
       <sprite>sprites\spr_alchemy_station</sprite>
       <sprite>sprites\spr_forge</sprite>
       <sprite>sprites\spr_workbench</sprite>
-      <sprites name="Workbench materials">
+      <sprite>sprites\spr_icon_steelbar</sprite>
+      <sprites name="Materials">
+        <sprite>sprites\spr_icon_coal</sprite>
+        <sprite>sprites\spr_icon_ironbar</sprite>
         <sprite>sprites\spr_wood_billet</sprite>
+        <sprite>sprites\spr_ironbar</sprite>
+        <sprite>sprites\spr_steelbar</sprite>
+        <sprite>sprites\spr_iron_ore</sprite>
+        <sprite>sprites\spr_coal</sprite>
+        <sprite>sprites\spr_leather</sprite>
+        <sprite>sprites\spr_feather</sprite>
+        <sprite>sprites\spr_icon_feather</sprite>
+      </sprites>
+      <sprites name="Ingredients">
+        <sprite>sprites\spr_barbarea_vulgaris</sprite>
+        <sprite>sprites\spr_camomile</sprite>
+        <sprite>sprites\spr_celandine</sprite>
+        <sprite>sprites\spr_lambsquarter</sprite>
+        <sprite>sprites\spr_nettle</sprite>
+        <sprite>sprites\spr_plantain</sprite>
+        <sprite>sprites\spr_sheeps_sorrel</sprite>
+        <sprite>sprites\spr_water_flask</sprite>
+      </sprites>
+      <sprites name="Food">
+        <sprite>sprites\spr_icon_salmon</sprite>
+        <sprite>sprites\spr_icon_tuna</sprite>
+        <sprite>sprites\spr_salmon</sprite>
+        <sprite>sprites\spr_tuna</sprite>
       </sprites>
     </sprites>
     <sprites name="Effects">
@@ -469,10 +467,13 @@
     <scripts name="Inventory">
       <script>scripts\scr_drop_item.gml</script>
       <script>scripts\scr_inventory_item_info.gml</script>
+      <script>scripts\scr_inventory_item_name.gml</script>
+      <script>scripts\scr_inventory_item_weight.gml</script>
       <script>scripts\scr_inventory_item_info_text.gml</script>
       <script>scripts\scr_page_calculate.gml</script>
       <script>scripts\scr_page_change.gml</script>
       <script>scripts\scr_save_to_inventory.gml</script>
+      <script>scripts\scr_save_to_inventory_old.gml</script>
       <scripts name="Skilltree">
         <script>scripts\scr_st_skill_info.gml</script>
         <script>scripts\scr_st_check_skill_state.gml</script>
@@ -498,6 +499,7 @@
       <script>scripts\scr_list_id_type_inventory.gml</script>
       <script>scripts\scr_list_id_type_shop.gml</script>
       <script>scripts\scr_list_items.gml</script>
+      <script>scripts\scr_list_items_old.gml</script>
       <script>scripts\scr_listed_item_initialize_list.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed_crafting.gml</script>

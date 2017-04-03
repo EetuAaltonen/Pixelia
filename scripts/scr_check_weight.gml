@@ -9,7 +9,7 @@ if (move_to_player == false)
     else
     {
         //Weight
-        global.total_item_weight += weight;
+        //global.total_item_weight += weight;
         move_to_player = true;
     }
 }
