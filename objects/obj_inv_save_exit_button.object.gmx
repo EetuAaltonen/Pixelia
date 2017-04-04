@@ -63,6 +63,7 @@ for(i = 1; i &lt; arrayLength; i++)
     }
 }
 scr_savegame();
+ds_list_destroy(global.inventory);
 obj_screen_controller.menu_state = "main_menu";
 obj_screen_controller.create_buttons = true;
 room_goto(Menu);

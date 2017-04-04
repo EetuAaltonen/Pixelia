@@ -1,12 +1,20 @@
 if (file_exists(global.save_file))
 {
-    if (file_exists(global.save_file)) {
-        ini_open("Inventory");
-        var items = ini_read_string(global.save_file, "inventory", "");
-        if (items != "") {
-            ds_list_read(global.inventory, items);
+    var fileName = "Inventory.ini";
+    if (file_exists(fileName)) {
+        ini_open(fileName);
+        if (ini_section_exists(global.save_file)) {
+            for (i = 0; i >= 0; i++) {
+                var items = ds_list_create();
+                var values = ini_read_string(global.save_file, string(i), "");
+                if (values == "") {
+                    break;
+                }
+                ds_list_read(items, values);
+                ds_list_add(global.inventory, items);
+            }
+            global.total_item_weight = ini_read_real(global.save_file,"weight_of_items",0);
         }
-        global.total_item_weight = ini_read_real(global.save_file,"weight_of_items",0);
         ini_close();
     }
     ini_open(global.save_file);
@@ -30,7 +38,6 @@ if (file_exists(global.save_file))
     //= real(base64_decode(LoadedCoins));
     
     ini_close();
-    
     room_goto(Test_improved);//Pixelia_Castle_1);//global.current_room);
 }
 else

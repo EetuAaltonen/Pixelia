@@ -191,10 +191,8 @@ global.dialogId = 0;
           <argument>
             <kind>1</kind>
             <string>///Global variables - Pause
-
-    global.pause = 0;
-    global.pause_draw = 0;
-    global.inventory = 0;
+global.pause = 0;
+global.pause_draw = 0;
 </string>
           </argument>
         </arguments>

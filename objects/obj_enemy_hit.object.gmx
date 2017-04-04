@@ -110,7 +110,6 @@ alarm[1] = 10;
     {
         global.pause = 0;
         global.pause_draw = 0;
-        global.inventory = 0;
     }
 }
 </string>

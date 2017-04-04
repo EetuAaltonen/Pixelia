@@ -29,7 +29,7 @@ if (item_count > 0)
 {
     var listSize = ds_list_size(global.inventory);
     for (i = 0; i < listSize; i++) {
-        var info = ds_list_find_value(global.inventory, i); 
+        var info = ds_list_find_value(global.inventory, i);
         //Item create
         if (createOnce) {
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
