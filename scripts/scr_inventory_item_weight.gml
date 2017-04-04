@@ -1,4 +1,4 @@
-///scr_draw_in_language(argument0);
+///scr_inventory_item_weight(argument0);
 var weight = 0;
 var spriteIndex = string(sprite_get_name(argument0));
 switch(spriteIndex) {

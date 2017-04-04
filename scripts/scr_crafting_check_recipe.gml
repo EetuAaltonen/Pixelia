@@ -1,48 +1,52 @@
-///scr_draw_in_language(argument0, argument1, argument2);
+///scr_crafting_check_recipe(argument0, argument1, argument2);
 id1 = argument0;
 id2 = argument1;
 id3 = argument2;
 var slot4 = obj_crafting_slot_4;
 var recipeExists = false;
 var key = "";
-
-switch(global.hudState) {
-    case "forge": {scr_forge_recipes();} break;
-    case "alchemy": {scr_alchemy_recipes();} break;
-    case "workbench": {scr_alchemy_recipes();} break;
-}
-
+var info;
 for (i = 0; i >= 0; i++) {
     switch(i) {
-        case 0: {key = real(string(id1) + string(id2) + string(id3))} break;
-        case 1: {key = real(string(id1) + string(id3) + string(id2))} break;
-        case 2: {key = real(string(id2) + string(id1) + string(id3))} break;
-        case 3: {key = real(string(id2) + string(id3) + string(id1))} break;
-        case 4: {key = real(string(id3) + string(id1) + string(id2))} break;
-        case 5: {key = real(string(id3) + string(id2) + string(id1))} break;
+        case 0: {key = string(id1) + "," + string(id2) + "," + string(id3)} break;
+        case 1: {key = string(id1) + "," + string(id3) + "," + string(id2)} break;
+        case 2: {key = string(id2) + "," + string(id1) + "," + string(id3)} break;
+        case 3: {key = string(id2) + "," + string(id3) + "," + string(id1)} break;
+        case 4: {key = string(id3) + "," + string(id1) + "," + string(id2)} break;
+        case 5: {key = string(id3) + "," + string(id2) + "," + string(id1)} break;
     }
-    if (key < array_length_1d(Recipe))
-    {
-        if (Recipe[key])
-        {
-            sprite_index = Recipe[key];
-            visible = true;
-            itemId = Id[sprite_index];
-            typeId = Type[sprite_index];
-            itemName = Name[sprite_index];
-            slot4.itemId = itemId;
-            recipeExists = true;
-            break;
-        };
+    switch(global.hudState) {
+        case "forge": {spriteIndex = scr_forge_recipes(key);} break;
+        case "alchemy": {spriteIndex = scr_alchemy_recipes(key);} break;
+        case "workbench": {spriteIndex = scr_workbench_recipes(key);} break;
     }
+    if (spriteIndex) {
+        sprite_index = spriteIndex;
+        visible = true;
+        slot4.spriteIndex = spriteIndex;
+        recipeExists = true;
+        break;
+    };
     if (i == 5) {
         break;
     }
+    /*show_message(key);
+    show_message(sprite_get_name(Recipe[key]));
+    if (Recipe[string(id1) + "," + string(id2) + "," + string(id3)])
+    {
+        sprite_index = Recipe[key];
+        visible = true;
+        //itemId = Id[sprite_index];
+        //typeId = Type[sprite_index];
+        //itemName = Name[sprite_index];
+        slot4.spriteIndex = spriteIndex;
+        recipeExists = true;
+        break;
+    };*/
 }
 if (!recipeExists) {
-    itemId = false;
-    typeid = false;
+    spriteIndex = false;
     visible = false;
-    slot4.itemId = false;
+    slot4.spriteIndex = false;
 }
 checkRecipe = false;

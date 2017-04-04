@@ -7,70 +7,65 @@ if (instance_exists(obj_crafting_slot_1) &&
     var slot2 = obj_crafting_slot_2;
     var slot3 = obj_crafting_slot_3;
     var slot4 = obj_crafting_slot_4;
+    var spriteIndex = sprite_get_name(sprite_index);
     //scr_forg_mouse_released();
     scr_inventory_item_info();
     if (selected == false)
     {
-        if (slot1.itemId == false)
+        if (slot1.spriteIndex == false)
         {
             prev_x = x;
             prev_y = y;
             x = slot1.x;
             y = slot1.y;
-            slot1.itemId = itemId;
-            slot1.typeId = typeId;
+            slot1.spriteIndex = spriteIndex;
             selected = true;
             obj_crafted_item.checkRecipe = true;
         }
-        else if (slot2.itemId == false)
+        else if (slot2.spriteIndex == false)
         {
             prev_x = x;
             prev_y = y;
             x = slot2.x;
             y = slot2.y;
-            slot2.itemId = itemId;
-            slot2.typeId = typeId;
+            slot2.spriteIndex = spriteIndex;
             selected = true;
             obj_crafted_item.checkRecipe = true;
         }
-        else if (slot3.itemId == false)
+        else if (slot3.spriteIndex == false)
         {
             prev_x = x;
             prev_y = y;
             x = slot3.x;
             y = slot3.y;
-            slot3.itemId = itemId;
-            slot3.typeId = typeId;
+            slot3.spriteIndex = spriteIndex;
             selected = true;
             obj_crafted_item.checkRecipe = true;
         }
     }
     else if (selected == true)
     {
-        if (slot1.itemId == itemId)
+        if (slot1.spriteIndex == spriteIndex)
         {
             x = prev_x;
             y = prev_y;
-            slot1.itemId = false;
-            slot1.typeId = false;
+            slot1.spriteIndex = false;
             selected = false;
             obj_crafted_item.checkRecipe = true;
         }
-        else if (slot2.itemId == itemId)
+        else if (slot2.spriteIndex == spriteIndex)
         {
             x = prev_x;
             y = prev_y;
-            slot2.itemId = false;
-            slot2.typeId = false;
+            slot2.spriteIndex = false;
             selected = false;
             obj_crafted_item.checkRecipe = true;
         }
-        else if (slot3.itemId == itemId)
+        else if (slot3.spriteIndex == spriteIndex)
         {
             x = prev_x;
             y = prev_y;
-            slot3.itemId = false;
-            slot3.typeId = false;
+            slot3.spriteIndex = false;
             selected = false;
             obj_crafted_item.checkRecipe = true;
         }

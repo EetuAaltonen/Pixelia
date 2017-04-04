@@ -8,7 +8,7 @@ if (move_to_player == true)
         //Info text
         scr_add_new_toast(name);
         //Save to inventory
-        scr_save_to_inventory();
+        scr_save_to_inventory(sprite_index_, added_amount);
         obj_player.highlight = false;
         instance_destroy();  
     } 

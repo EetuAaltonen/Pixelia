@@ -1,4 +1,4 @@
-if (Recipe[key])
+if (visible)
 {
     if (instance_exists(obj_crafting_slot_1) &&
         instance_exists(obj_crafting_slot_2) &&
@@ -8,44 +8,30 @@ if (Recipe[key])
         var slot2 = obj_crafting_slot_2;
         var slot3 = obj_crafting_slot_3;
         var slot4 = obj_crafting_slot_4;
-        var tempItemId = itemId;
-        var tempTypeId = typeId;
         //Change material count in inventory
-        if (slot1.itemId != false)
+        if (slot1.spriteIndex != false)
         {
-            itemId = slot1.itemId;
-            typeId = slot1.typeId;
-            slot1.itemId = false;
-            slot1.typeId = false;
-            added_amount = -1; //Added amount
-            scr_save_to_inventory();  
+            added_amount = -1;
+            scr_save_to_inventory(slot1.spriteIndex, added_amount);
+            slot1.spriteIndex = false;  
         }
-        if (slot2.itemId != false)
+        if (slot2.spriteIndex != false)
         {
-            itemId = slot2.itemId;
-            typeId = slot2.typeId;
-            slot2.itemId = false;
-            slot2.typeId = false;
-            added_amount = -1; //Added amount
-            scr_save_to_inventory();  
+            added_amount = -1;
+            scr_save_to_inventory(slot2.spriteIndex, added_amount);
+            slot2.spriteIndex = false;   
         }
-        if (slot3.itemId != false)
+        if (slot3.spriteIndex != false)
         {
-            itemId = slot3.itemId;
-            typeId = slot3.typeId;
-            slot3.itemId = false;
-            slot3.typeId = false;
-            added_amount = -1; //Added amount
-            scr_save_to_inventory();  
+            added_amount = -1;
+            scr_save_to_inventory(slot3.spriteIndex, added_amount);
+            slot3.spriteIndex = false;   
         }
-        slot4.itemId = false;
         //Add crafted material
-        itemId = tempItemId;
-        typeId = tempTypeId;
-        added_amount = 1; //Added amount
-        scr_save_to_inventory();
-        itemId = false;
-        typeId = false;
+        added_amount = 1;
+        scr_save_to_inventory(slot4.spriteIndex, added_amount);
+        slot4.spriteIndex = false;
+        spriteIndex = false;
         checkRecipe = true;
         obj_crafting_controller.pageUpdate = true;
     }

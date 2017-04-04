@@ -26,9 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Create variables
-itemId = false;
-typeId = false;
-itemName = "";
+spriteIndex = false;
 checkRecipe = false;
 </string>
           </argument>
@@ -63,7 +61,7 @@ if (instance_exists(obj_crafting_slot_1) &amp;&amp;
     var slot3 = obj_crafting_slot_3;
     if (checkRecipe)
     {
-        scr_crafting_check_recipe(slot1.itemId, slot2.itemId, slot3.itemId);
+        scr_crafting_check_recipe(slot1.spriteIndex, slot2.spriteIndex, slot3.spriteIndex);
     }
 }
 else
@@ -150,7 +148,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
-draw_text(x, y+40, itemName);
+//draw_text(x, y+40, itemName);
 </string>
           </argument>
         </arguments>

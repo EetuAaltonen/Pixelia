@@ -1,17 +1,11 @@
-//Ironbar
-Recipe[100] = spr_ironbar;
-Id[spr_ironbar] = 4;
-Type[spr_ironbar] = 1;
-Name[spr_ironbar] = "Iron bar";
-
-//Coal
-Recipe[200] = spr_coal;
-Id[spr_coal] = 3;
-Type[spr_coal] = 1;
-Name[spr_coal] = "Coal";
-
-//Steel
-Recipe[340] = spr_steelbar;
-Id[spr_steelbar] = 5;
-Type[spr_steelbar] = 1;
-Name[spr_steelbar] = "Steel bar";
+///scr_draw_in_language(argument0);
+var sprite = false;
+var spriteIndex = argument0;
+switch(spriteIndex) {
+    //Materials
+    case "spr_wood_billet,0,0": {sprite = spr_coal;break;}
+    //Tools
+    case "spr_tool_saw": {sprite = "Saw";break;}
+    case "spr_tool_knife": {sprite = "Knife";break;}
+};
+return sprite;

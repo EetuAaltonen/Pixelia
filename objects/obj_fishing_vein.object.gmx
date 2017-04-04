@@ -49,7 +49,7 @@ catch_once = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Save to inventory info
+            <string>/*//Save to inventory info
 itemId = round(random_range(1,2)); //Id
 search_id = "food"; //Type
 added_amount = 1; //Added amount

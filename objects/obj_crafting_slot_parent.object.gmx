@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Create variables
-itemId = false;
-typeId = false;
+spriteIndex = false;
 sprite_index = spr_inv_item_bg;
 </string>
           </argument>
@@ -80,7 +79,7 @@ if (global.hudState == "null")
             <kind>1</kind>
             <string>///Highlight when filled
 draw_self();
-if (itemId != false)
+if (spriteIndex != false)
 {
     image_blend = make_colour_hsv(0, 0, 150); 
 }

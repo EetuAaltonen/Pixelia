@@ -69,39 +69,9 @@ if (item_count > 0)
         y_pos += 19;
     }
     createOnce = false;
-    /*for (i = start_count; i != end_count; i++;)
-    {               
-        //Item background
-        draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);        
-        //Item description background
-        draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
-        //Item description
-        draw_text(view_xview+56,view_yview+y_pos, string(item_name_draw[i]));
-        if (global.hudState == "shop")
-        {
-            //Item price background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-            //Item price
-            draw_text(view_xview+207,view_yview+y_pos, string(item_price_draw[i]) + "  G");
-        }
-        else
-        {
-            //Item amount background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
-            //Item amount
-            draw_text(view_xview+207,view_yview+y_pos, string(item_amount_draw[i]) + "  x");
-        }
-        if (string_pos("inventory", string(global.hudState)) &&
-            !string_pos("Equipments", string(global.hudState)) ||
-            global.hudState == "shop")
-        {
-            //Item weight background
-            draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
-            //Item weight
-            draw_text(view_xview+274,view_yview+y_pos, string(item_weight_draw[i]) + "  Kg");
-        }
-        y_pos += 19;
-    }*/
+} else {
+    //If empty
+    draw_text(view_xview+30, view_yview+120, "Inventory is empty...");
 }
 //Page number background
 draw_sprite(spr_inv_item_description_bg, 0,view_xview+87, view_yview+95);
@@ -130,8 +100,3 @@ if (string_pos("inventory", string(global.hudState)) &&
     //Total and weight
     draw_text(view_xview+190,view_yview+95, "Capacity:  " + string_format(global.total_item_weight, 0, 2) + "  /  " + string(global.max_item_weight) + "  Pw");
 }
-/*else
-{
-    //If empty
-    draw_text(view_xview+30, view_yview+120, "Inventory is empty...");
-}*/
