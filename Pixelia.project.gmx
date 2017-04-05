@@ -418,6 +418,7 @@
   <scripts name="scripts">
     <scripts name="Collectable items">
       <scripts name="Create/Initialize">
+        <script>scripts\scr_collectable_create_attributes.gml</script>
         <script>scripts\scr_common_attributes.gml</script>
         <script>scripts\scr_dropped_item_create_attributes.gml</script>
         <script>scripts\scr_equip_create_attributes.gml</script>
@@ -426,9 +427,9 @@
         <script>scripts\scr_item_get_attributes.gml</script>
         <script>scripts\scr_item_get_id.gml</script>
         <script>scripts\scr_mater_create_variables.gml</script>
-        <script>scripts\scr_workbench_mater_create_variables.gml</script>
         <script>scripts\scr_poti_create_variables.gml</script>
         <script>scripts\scr_tool_create_attributes.gml</script>
+        <script>scripts\scr_workbench_mater_create_variables.gml</script>
       </scripts>
       <script>scripts\scr_check_weight.gml</script>
       <script>scripts\scr_move_to_player.gml</script>

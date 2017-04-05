@@ -1,6 +1,6 @@
 ///scr_save_to_inventory(argument0, argument1)
-var spriteName;// = argument0;
-var addedAmount;// = argument1;
+var spriteName = sprite_get_name(argument0);
+var addedAmount = argument1;
 //Save inventory
 var itemInfo = ds_list_create();
 var inInventory = false;

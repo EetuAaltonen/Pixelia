@@ -215,7 +215,7 @@ if (bow_can_shoot == true)
         bow_can_shoot = false;
         alarm[1] = 50;
         added_amount = -1;
-        scr_save_to_inventory();
+        //scr_save_to_inventory();
         arrowCount -= 1;
     }
 }

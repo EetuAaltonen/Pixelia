@@ -34,6 +34,9 @@ if (item_count > 0)
         if (createOnce) {
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).sprite_index = asset_get_index(string(ds_list_find_value(info, 0)));
+            (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).itemCount = ds_list_find_value(info, 2);
+            Count[i] = ds_list_find_value(info, 2);
+            Weight[i] = string_format((ds_list_find_value(info, 2) * ds_list_find_value(info, 3)), 0, 2);
         }
         //Item background
         draw_sprite(spr_inv_item_bg, 0,view_xview+30, view_yview+y_pos);        
@@ -53,7 +56,7 @@ if (item_count > 0)
             //Item amount background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+228, view_yview+y_pos);
             //Item amount
-            draw_text(view_xview+207,view_yview+y_pos, string(ds_list_find_value(info, 2)) + "  x");
+            draw_text(view_xview+207,view_yview+y_pos, string(Count[i]) + "  x");
         }
         if (string_pos("inventory", string(global.hudState)) &&
             !string_pos("Equipments", string(global.hudState)) ||
@@ -62,9 +65,7 @@ if (item_count > 0)
             //Item weight background
             draw_sprite(spr_inv_item_amount_bg, 0,view_xview+295, view_yview+y_pos);
             //Item weight
-            itemWeight = (ds_list_find_value(info, 2) * ds_list_find_value(info, 3));
-            itemWeight = string_format(itemWeight, 0, 2);
-            draw_text(view_xview+274,view_yview+y_pos, itemWeight + "  Pw");
+            draw_text(view_xview+274,view_yview+y_pos, Weight[i] + "  Pw");
         }
         y_pos += 19;
     }

@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_listed_item_create_attributes();
+            <string>///Create attributes
+//scr_listed_item_create_attributes();
+itemCount = 0;
+sprite_index_ = sprite_index;
+droppingItem = false;
+createOnce = true;
+droppedCount = 0;
 </string>
           </argument>
         </arguments>
@@ -49,7 +55,7 @@
           <argument>
             <kind>1</kind>
             <string>///Fill info
-if (get_attributes == true)
+/*if (get_attributes == true)
 {
     sprite_index_ = sprite_index; //Sprite_index
     //Get id
@@ -134,17 +140,17 @@ else
           <argument>
             <kind>1</kind>
             <string>///Drop items
-if (dropping_item == true)
+if (droppingItem == true)
 {
     if (instance_exists(obj_button_confirm))
     {
         if (obj_button_confirm.confirmed == true)
         {
-            dropping_item = false;
+            droppingItem = false;
             obj_inventory_controller.pageUpdate = true;
             if (obj_button_confirm.value &gt; 0)
             {
-                dropped_count = obj_button_confirm.value;
+                droppedCount = obj_button_confirm.value;
                 scr_drop_item();
             }
             if (instance_exists(obj_button_decrease))
@@ -186,7 +192,7 @@ if (dropping_item == true)
           <argument>
             <kind>1</kind>
             <string>///Clear inventory info text
-if (obj_inventory_controller.item_info_text == item_info)
+/*if (obj_inventory_controller.item_info_text == item_info)
 {
     obj_inventory_controller.item_info_text = "Item info...";
 }
@@ -213,7 +219,7 @@ if (obj_inventory_controller.item_info_text == item_info)
           <argument>
             <kind>1</kind>
             <string>///Set inventory info text
-obj_inventory_controller.item_info_text = item_info;
+/*obj_inventory_controller.item_info_text = item_info;
 </string>
           </argument>
         </arguments>
@@ -285,7 +291,7 @@ scr_listed_item_left_mouse_pressed();
             <kind>1</kind>
             <string>///Draw equipped mark
 draw_self();
-if (global.hudState == "inventory1" || global.hudState == "inventoryEquipments")
+/*if (global.hudState == "inventory1" || global.hudState == "inventoryEquipments")
 {
     if (typeId == 5)
     {    

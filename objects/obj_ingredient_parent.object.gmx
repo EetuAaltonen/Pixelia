@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Create attributes
-scr_ingr_create_attributes();
+//scr_ingr_create_attributes();
+scr_collectable_create_attributes();
 </string>
           </argument>
         </arguments>
