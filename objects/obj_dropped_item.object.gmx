@@ -75,14 +75,9 @@ collecting = false;
           <argument>
             <kind>1</kind>
             <string>///Fill info
-/*if (get_attributes == true)
+if (get_attributes == true)
 {
-    sprite_index_ = sprite_index; //Sprite_index
-    //Get id
-    scr_item_get_id();
-    //Get attributes
-    scr_item_get_attributes();
-    get_attributes = false;
+    scr_collectable_create_attributes();
 }
 </string>
           </argument>

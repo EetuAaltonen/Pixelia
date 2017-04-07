@@ -87,11 +87,9 @@
       <sprite>sprites\spr_icon_log</sprite>
       <sprite>sprites\spr_medicpack</sprite>
       <sprites name="Trees">
-        <sprite>sprites\spr_oak_log</sprite>
         <sprite>sprites\spr_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree</sprite>
         <sprite>sprites\spr_source_oak_tree_hit</sprite>
-        <sprite>sprites\spr_spruce_log</sprite>
         <sprite>sprites\spr_spruce_tree</sprite>
       </sprites>
     </sprites>
@@ -106,16 +104,18 @@
       <sprite>sprites\spr_workbench</sprite>
       <sprite>sprites\spr_icon_steelbar</sprite>
       <sprites name="Materials">
-        <sprite>sprites\spr_icon_coal</sprite>
-        <sprite>sprites\spr_icon_ironbar</sprite>
-        <sprite>sprites\spr_wood_billet</sprite>
-        <sprite>sprites\spr_ironbar</sprite>
-        <sprite>sprites\spr_steelbar</sprite>
-        <sprite>sprites\spr_iron_ore</sprite>
         <sprite>sprites\spr_coal</sprite>
-        <sprite>sprites\spr_leather</sprite>
         <sprite>sprites\spr_feather</sprite>
+        <sprite>sprites\spr_gold_bar</sprite>
         <sprite>sprites\spr_icon_feather</sprite>
+        <sprite>sprites\spr_iron_bar</sprite>
+        <sprite>sprites\spr_iron_ore</sprite>
+        <sprite>sprites\spr_leather</sprite>
+        <sprite>sprites\spr_oak_log</sprite>
+        <sprite>sprites\spr_spruce_log</sprite>
+        <sprite>sprites\spr_steel_bar</sprite>
+        <sprite>sprites\spr_wood_billet</sprite>
+        <sprite>sprites\spr_wooden_handle</sprite>
       </sprites>
       <sprites name="Ingredients">
         <sprite>sprites\spr_barbarea_vulgaris</sprite>
@@ -327,8 +327,6 @@
       <sprite>sprites\spr_grave</sprite>
       <sprite>sprites\spr_lever</sprite>
       <sprite>sprites\spr_ladder</sprite>
-      <sprite>sprites\spr_gold_bar</sprite>
-      <sprite>sprites\spr_iron_bar</sprite>
       <sprite>sprites\spr_desk</sprite>
       <sprite>sprites\spr_furnace</sprite>
       <sprite>sprites\spr_flower</sprite>
@@ -670,6 +668,7 @@
       <object>objects\obj_workbench</object>
       <objects name="Workbench materials">
         <object>objects\obj_wood_billet</object>
+        <object>objects\obj_wooden_handle</object>
         <object>objects\obj_workbench_material_parent</object>
       </objects>
     </objects>

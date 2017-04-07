@@ -32,6 +32,7 @@ sprite_index_ = sprite_index;
 droppingItem = false;
 createOnce = true;
 droppedCount = 0;
+selected = false;
 </string>
           </argument>
         </arguments>

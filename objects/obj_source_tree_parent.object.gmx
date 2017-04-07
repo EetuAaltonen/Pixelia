@@ -28,10 +28,8 @@
             <string>image_speed = 0;
 depth_ = depth;
 sprite_index_untoch = sprite_index;
-//scr_get_sprite_index_hit();
 sprite_index_hit = spr_source_oak_tree_hit;
 item_sprite_index = spr_oak_log;
-typeId = 1;
 action_state = "woodcutting";
 source = 5;
 

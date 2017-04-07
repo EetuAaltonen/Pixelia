@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Create variables
-spriteIndex = false;
+sprite_index_ = false;
 checkRecipe = false;
 </string>
           </argument>

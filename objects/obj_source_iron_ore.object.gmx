@@ -29,8 +29,7 @@
 depth_ = depth;
 sprite_index_untoch = spr_source_iron_ore;
 sprite_index_hit = spr_source_iron_ore_hit;
-sprite_index_item = spr_iron_ore;
-typeId = 1;
+item_sprite_index = spr_iron_ore;
 action_state = "mining";
 source = 5;
 

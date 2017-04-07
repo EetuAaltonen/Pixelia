@@ -1,6 +1,8 @@
 ///scr_save_to_inventory(argument0, argument1)
-var spriteName = sprite_get_name(argument0);
+var spriteName = argument0;
 var addedAmount = argument1;
+show_message(spriteName);
+show_message(addedAmount);
 //Save inventory
 var itemInfo = ds_list_create();
 var inInventory = false;
@@ -27,15 +29,16 @@ if (!inInventory) {
         //Write
         ds_list_clear(itemInfo);
         ds_list_add(itemInfo, spriteName);
-        itemName = scr_inventory_item_name(sprite_index_);
+        itemName = scr_inventory_item_name(spriteName);
         ds_list_add(itemInfo, itemName);
         ds_list_add(itemInfo, addedAmount);
-        itemWeight = scr_inventory_item_weight(sprite_index_);
+        itemWeight = scr_inventory_item_weight(spriteName);
+        show_message(spriteName + ": " + itemName + " | " + string(itemWeight) + "PoW");
         ds_list_add(itemInfo, itemWeight);
         ds_list_add(global.inventory, itemInfo);
     }
 }
-itemWeight = scr_inventory_item_weight(sprite_index_);
+itemWeight = scr_inventory_item_weight(spriteName);
 global.total_item_weight += (addedAmount*itemWeight);
 
 //Write to file

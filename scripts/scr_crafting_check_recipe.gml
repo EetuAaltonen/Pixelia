@@ -6,6 +6,7 @@ var slot4 = obj_crafting_slot_4;
 var recipeExists = false;
 var key = "";
 var info;
+var spriteIndex;
 for (i = 0; i >= 0; i++) {
     switch(i) {
         case 0: {key = string(id1) + "," + string(id2) + "," + string(id3)} break;
@@ -22,27 +23,15 @@ for (i = 0; i >= 0; i++) {
     }
     if (spriteIndex) {
         sprite_index = spriteIndex;
+        sprite_index_ = sprite_get_name(sprite_index);
         visible = true;
-        slot4.spriteIndex = spriteIndex;
+        slot4.spriteIndex = sprite_index_;
         recipeExists = true;
         break;
     };
     if (i == 5) {
         break;
     }
-    /*show_message(key);
-    show_message(sprite_get_name(Recipe[key]));
-    if (Recipe[string(id1) + "," + string(id2) + "," + string(id3)])
-    {
-        sprite_index = Recipe[key];
-        visible = true;
-        //itemId = Id[sprite_index];
-        //typeId = Type[sprite_index];
-        //itemName = Name[sprite_index];
-        slot4.spriteIndex = spriteIndex;
-        recipeExists = true;
-        break;
-    };*/
 }
 if (!recipeExists) {
     spriteIndex = false;

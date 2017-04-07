@@ -35,6 +35,7 @@ if (item_count > 0)
             instance_create(view_xview+30, view_yview+y_pos, obj_listed_item);
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).sprite_index = asset_get_index(string(ds_list_find_value(info, 0)));
             (instance_nearest(view_xview+30, view_yview+y_pos, obj_listed_item)).itemCount = ds_list_find_value(info, 2);
+            Name[i] = ds_list_find_value(info, 1);
             Count[i] = ds_list_find_value(info, 2);
             Weight[i] = string_format((ds_list_find_value(info, 2) * ds_list_find_value(info, 3)), 0, 2);
         }
@@ -43,7 +44,7 @@ if (item_count > 0)
         //Item description background
         draw_sprite(spr_inv_item_description_bg, 0,view_xview+120, view_yview+y_pos);
         //Item description
-        draw_text(view_xview+56,view_yview+y_pos, string(ds_list_find_value(info, 1)));
+        draw_text(view_xview+56,view_yview+y_pos, Name[i]);
         if (global.hudState == "shop")
         {
             /*//Item price background
