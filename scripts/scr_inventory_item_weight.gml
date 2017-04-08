@@ -12,5 +12,7 @@ switch(spriteIndex) {
     //Tools
     case "spr_tool_saw": {weight = 0.5;break;}
     case "spr_tool_knife": {weight = 0.3;break;}
+    //Equipments
+    case "spr_broken_helmet": {weight = 0.8;break;}
 };
 return weight;

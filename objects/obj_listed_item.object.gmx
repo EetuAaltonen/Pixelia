@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Create attributes
-//scr_listed_item_create_attributes();
 itemCount = 0;
 sprite_index_ = sprite_index;
 droppingItem = false;
 createOnce = true;
 droppedCount = 0;
 selected = false;
+//scr_check_if_equipped();
 </string>
           </argument>
         </arguments>
@@ -152,7 +152,7 @@ if (droppingItem == true)
             if (obj_button_confirm.value &gt; 0)
             {
                 droppedCount = obj_button_confirm.value;
-                scr_drop_item();
+                scr_drop_item(sprite_index);
             }
             if (instance_exists(obj_button_decrease))
             {

@@ -9,12 +9,6 @@
     <sound>sound\snd_menu_bg</sound>
   </sounds>
   <sprites name="sprites">
-    <sprites name="Ammon">
-      <sprite>sprites\spr_arrow</sprite>
-      <sprite>sprites\spr_cannonball</sprite>
-      <sprite>sprites\spr___ammo</sprite>
-      <sprite>sprites\spr_shadow_ammo</sprite>
-    </sprites>
     <sprites name="Animals">
       <sprite>sprites\spr_chicken</sprite>
       <sprite>sprites\spr_cow</sprite>
@@ -78,8 +72,6 @@
         <sprite>sprites\spr_source_iron_ore_hit</sprite>
         <sprite>sprites\spr_source_coal_ore_hit</sprite>
       </sprites>
-      <sprite>sprites\spr_arrow_pouch</sprite>
-      <sprite>sprites\spr_bow</sprite>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_coin</sprite>
       <sprite>sprites\spr_gold_ore</sprite>
@@ -406,6 +398,27 @@
       <sprite>sprites\spr_world</sprite>
       <sprite>sprites\spr_world_map</sprite>
     </sprites>
+    <sprites name="Equipments">
+      <sprites name="Ammon">
+        <sprite>sprites\spr_arrow</sprite>
+        <sprite>sprites\spr_cannonball</sprite>
+        <sprite>sprites\spr___ammo</sprite>
+        <sprite>sprites\spr_shadow_ammo</sprite>
+        <sprite>sprites\spr_arrow_pouch</sprite>
+      </sprites>
+      <sprites name="Helmets">
+        <sprite>sprites\spr_broken_helmet</sprite>
+      </sprites>
+      <sprites name="Jewellery"/>
+      <sprites name="Weapons">
+        <sprites name="Range">
+          <sprite>sprites\spr_bow</sprite>
+        </sprites>
+        <sprites name="Swords">
+          <sprite>sprites\sprite311</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_map</background>
@@ -466,13 +479,13 @@
     <scripts name="Inventory">
       <script>scripts\scr_drop_item.gml</script>
       <script>scripts\scr_inventory_item_info.gml</script>
-      <script>scripts\scr_inventory_item_name.gml</script>
-      <script>scripts\scr_inventory_item_weight.gml</script>
       <script>scripts\scr_inventory_item_info_text.gml</script>
+      <script>scripts\scr_inventory_item_name.gml</script>
+      <script>scripts\scr_inventory_item_type.gml</script>
+      <script>scripts\scr_inventory_item_weight.gml</script>
       <script>scripts\scr_page_calculate.gml</script>
       <script>scripts\scr_page_change.gml</script>
       <script>scripts\scr_save_to_inventory.gml</script>
-      <script>scripts\scr_save_to_inventory_old.gml</script>
       <scripts name="Skilltree">
         <script>scripts\scr_st_skill_info.gml</script>
         <script>scripts\scr_st_check_skill_state.gml</script>
@@ -486,7 +499,6 @@
     <scripts name="Listed items">
       <scripts name="Create/Initialize">
         <script>scripts\scr_check_if_equipped.gml</script>
-        <script>scripts\scr_listed_item_create_attributes.gml</script>
       </scripts>
       <script>scripts\scr_check_if_selected_true.gml</script>
       <script>scripts\scr_conver_search_name_to_id.gml</script>
@@ -498,7 +510,6 @@
       <script>scripts\scr_list_id_type_inventory.gml</script>
       <script>scripts\scr_list_id_type_shop.gml</script>
       <script>scripts\scr_list_items.gml</script>
-      <script>scripts\scr_list_items_old.gml</script>
       <script>scripts\scr_listed_item_initialize_list.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed.gml</script>
       <script>scripts\scr_listed_item_left_mouse_pressed_crafting.gml</script>
@@ -560,11 +571,6 @@
     <font>fonts\fnt_toaster</font>
   </fonts>
   <objects name="objects">
-    <objects name="Ammon">
-      <object>objects\obj___ammo</object>
-      <object>objects\obj_cannonball</object>
-      <object>objects\obj_arrow1</object>
-    </objects>
     <objects name="Animals">
       <object>objects\obj_animal_parent</object>
       <object>objects\obj_chicken</object>
@@ -618,11 +624,6 @@
         <object>objects\obj_feather</object>
         <object>objects\obj_salmon</object>
         <object>objects\obj_tuna</object>
-      </objects>
-      <objects name="Equipments">
-        <object>objects\obj_arrow_pouch</object>
-        <object>objects\obj_bow</object>
-        <object>objects\obj_equipment_parent</object>
       </objects>
       <objects name="Fishing">
         <object>objects\obj_fishing_bobber</object>
@@ -857,6 +858,24 @@
     </objects>
     <objects name="Travelling">
       <object>objects\obj_world</object>
+    </objects>
+    <objects name="Equipments">
+      <objects name="Ammon">
+        <object>objects\obj___ammo</object>
+        <object>objects\obj_arrow1</object>
+        <object>objects\obj_cannonball</object>
+      </objects>
+      <objects name="Helmets">
+        <object>objects\obj_broken_helmet</object>
+      </objects>
+      <objects name="Jewellery"/>
+      <objects name="Weapons">
+        <objects name="Range">
+          <object>objects\obj_arrow_pouch</object>
+          <object>objects\obj_bow</object>
+        </objects>
+      </objects>
+      <object>objects\obj_equipment_parent</object>
     </objects>
   </objects>
   <rooms name="rooms">

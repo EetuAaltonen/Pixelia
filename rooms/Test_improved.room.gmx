@@ -551,6 +551,7 @@
     <instance objName="obj_wood_billet" x="938" y="247" name="inst_A2C01E33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wood_billet" x="938" y="242" name="inst_7A9E577C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tool_saw" x="912" y="251" name="inst_CC27D6CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_broken_helmet" x="999" y="251" name="inst_823C2769" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

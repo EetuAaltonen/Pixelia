@@ -7,7 +7,7 @@ show_message(addedAmount);
 var itemInfo = ds_list_create();
 var inInventory = false;
 var listSize = ds_list_size(global.inventory);
-var value, count, itemName, itemWeight;
+var value, count, itemName, itemWeight, itemType;
 //Read
 for (i = 0; i < listSize; i++) {
     value = ds_list_find_value(global.inventory, i);
@@ -26,6 +26,15 @@ for (i = 0; i < listSize; i++) {
 }
 if (!inInventory) {
     if (addedAmount > 0) {
+        /*
+            itemInfo = {
+                spriteName: argument0;
+                itemName: scr_inventory_item_name(spriteName);
+                addedAmount: argument1;
+                itemWeight: scr_inventory_item_weight(spriteName);
+                itemType: scr_inventory_item_type(spriteName);
+            }
+        */
         //Write
         ds_list_clear(itemInfo);
         ds_list_add(itemInfo, spriteName);
@@ -35,6 +44,8 @@ if (!inInventory) {
         itemWeight = scr_inventory_item_weight(spriteName);
         show_message(spriteName + ": " + itemName + " | " + string(itemWeight) + "PoW");
         ds_list_add(itemInfo, itemWeight);
+        itemType = scr_inventory_item_type(spriteName);
+        ds_list_add(itemInfo, itemType);
         ds_list_add(global.inventory, itemInfo);
     }
 }
